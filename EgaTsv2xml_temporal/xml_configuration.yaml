@@ -1,0 +1,37 @@
+#Configuration for defining which fields in which worksheets to be parsed in the
+#AMP-T2D submission pack V2 spreadsheet.
+#
+#At the top level, "worksheets" defines a list of worksheets (titles) to be parsed.
+#Then for each worksheet, you define which fields to be parsed from this worksheet.
+#These fields are either "required" or "optional". "required" fields must be found
+#in the worksheet so that this worksheet is valid. Otherwise this worksheet is not
+#valid. The field names must match those values in the header row in the worksheet.
+#
+#This is a YAML file
+
+# Worksheet specific requirements
+sample:
+  required:
+      - Sample_alias
+      - Center_name
+      - Title
+      - NCBI_taxid
+      - Scientific_name
+      - Common_name
+      - Description
+      - Tag
+      - Value
+
+run:
+    required:
+        - Run_alias
+        - Center_name
+        - CN_Acronym
+        - Experiment_reference
+        - Assembly_name
+        - Assembly_accession
+        - Filename
+        - Filetype
+        - Checksum_method
+        - Encrypted_checksum
+        - Unencrypted_checksum
