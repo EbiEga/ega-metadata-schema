@@ -45,6 +45,7 @@ class Input_reader():
         if not self.check_if_valid():
             print("ERROR in Input_reader(): given input file (%s) does not contain the required fields for '%s' object:\n\t- Required fields: %s\n\t- Input fields: %s" \
                   % (self.input_file_basename, self.conf_key, self.required_headers, self.input_file_headers), file=sys.stderr)
+            print("- Missing headers:\n%s" % self.missing_headers, file=sys.stderr)
             sys.exit()
 
     def generate_dataframe(self):
@@ -99,5 +100,9 @@ class Input_reader():
         #     (">=" so that we allow additional headers in the input file besides the required)
         self.input_file_headers = list(self.input_dataframe.columns.values)
         self.is_valid = set(self.input_file_headers) >= set(self.required_headers)
+
+        if not self.is_valid:
+            # We get which ones are required but not in the input:
+            self.missing_headers = set(self.required_headers) - set(self.input_file_headers)
 
         return self.is_valid

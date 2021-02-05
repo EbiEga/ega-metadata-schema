@@ -7,9 +7,14 @@ tool_info:  # Contains info about the conversion tool and this schema file.
     # update_date (ISO 8691 format): defines the date of the last update for this file.
     update_date: 2021-02-04
 
+# Contains info about where the XML schemas instances are. This information will be used
+#   when creating each object's XML.
 XML_schemas_info:
-    # Contains info about where the XML schemas instances are. This information will be used
-    #   when creating each object's XML.
+    # Information regardig the XSD download if needed:
+    file_extension: "xsd"
+    ftp_server: "ftp.ebi.ac.uk"
+    schemas_dir: "pub/databases/ena/doc/xsd/sra_1_5/"
+    # Information regarding the XML construction:
     schema_instance_reference: "noNamespaceSchemaLocation"
     schema_instance: "http://www.w3.org/2001/XMLSchema-instance"
     schemas_directory: "http://ftp.ebi.ac.uk/pub/databases/ena/doc/xsd/sra_1_5/"
@@ -17,7 +22,13 @@ XML_schemas_info:
         #! Here we will add all of the "htpp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/" files
         sample: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd"
         experiment: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.experiment.xsd"
-        run: "http://ftp.ebi.ac.uk/pub/databases/ena/doc/xsd/sra_1_5/SRA.run.xsd"
+        run: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/sra_1_5/SRA.run.xsd"
+        dac: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.dac.xsd"
+        dataset: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.dataset.xsd"
+        policy: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.policy.xsd"
+        analysis: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.analysis.xsd"
+        study: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd"
+        submission: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.submission.xsd"
 
 # Every element (XML node) can have 4 characteristics:
 #       - children: it contains a dictionary with the children elements of the current node (e.g. TAXON_ID and COMMON_NAME

@@ -3,6 +3,7 @@ from datetime import datetime
 import sys
 from yaml import safe_load
 import pandas as pd
+import os.path
 
 # The next tags will define every element of the schema_file (a YAML file containing XML's structure)
 children_tag = "children"
@@ -169,6 +170,11 @@ class XML_creator():
 
         # If, instead, we want to save the XML tree to a file:
         else:
+            # Check if output_dir where the output_xml will reside exists, create it if not
+            output_dir = os.path.dirname(self.output_xml)
+            dir_exists = os.path.isdir(output_dir)
+            if not dir_exists:
+                os.makedirs(output_dir)
             try:
                 with open(self.output_xml, "w") as xml_file:
                     exec("xml_file.write({})".format(xml_tree_toPrint))
