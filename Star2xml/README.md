@@ -39,12 +39,12 @@ pip3 install -r requirements.txt
 # Step 4. Deactivating the virtual environment
 deactivate
 ```
-If you wish to install dependencies on your working environment, you will only need to run the commands from steps 1 and 3. In case you do create a virtual environment, remember to always activate it (`source venv_star2xml/bin/activate`) prior running the scripts.
+If you wish to install dependencies on your working environment, you will only need to run the two commands from steps 1 and 3. In case you do create a virtual environment, remember to always activate it (`source venv_star2xml/bin/activate`) prior running the scripts.
 
 ### Scripts
 There are two main scripts you can run:
-* `star2xml.py`: used to generate XMLs
-* `validateXML.py`: used to validate XMLs
+* **star2xml.py**: used to **generate** XMLs
+* **validateXML.py**: used to **validate** XMLs
 
 Information of both scripts can be obtained using the command line help option [`-h`] (_e.g._ `./star2xml.py -h`).
 
@@ -132,17 +132,17 @@ Pre-defined files are ready for you to run the following commands, checking the 
 ```
 
 ## Filling out templates
-Depending on what type of submission you want to perform, you need to choose its corresponding template from the [available set](../templates/sequence-based-metadata). Since the most user-friendly formats tend to be spreadsheets, the templates we provide are ``.xlsx`` files. These can also be converted to ``.tsv`` and ``.csv`` if needed.
+Depending on what type of submission you want to perform, you need to **choose its corresponding template** from the [available set](../templates/sequence-based-metadata). Since the most user-friendly formats tend to be spreadsheets, the templates we provide are ``.xlsx`` files. These can also be converted to ``.tsv`` and ``.csv`` if needed.
 
-In all templates, each row will represent one repetition of a metadata object. For example, each of the rows in a sample spreadsheet given as input will represent one ``<SAMPLE>`` node in the final XML. All information that row contains will be associated with its corresponding ``<SAMPLE>`` node (its alias, description, etc.).
+In all templates, **each row will represent one repetition of a metadata object**. For example, each of the rows in a sample spreadsheet given as input will represent one ``<SAMPLE>`` node in the final XML. All information that row contains will be associated with its corresponding ``<SAMPLE>`` node (its alias, description, etc.).
 
 There are two types of columns in the input files:
 
-1. **Non-repetitive columns**. These fields describe a characteristic (text or attribute) of one single node (e.g. `text: "Scientific_name"`) for each metadata object (e.g. ``<SAMPLE>``). In the following image, we have 2 rows with 6 of these columns. These columns are alternatively coloured in yellow in the templates and shall not be deleted from the input file, but you can leave them empty for some or all rows.
+1. **Non-repetitive columns**. These fields describe a characteristic (text or attribute) of **one single node** (*e.g.* `text: "Scientific_name"`) **for each metadata object** (*e.g.* ``<SAMPLE>``). In the following image, we have 2 rows with 6 of these columns. These columns are alternatively coloured in yellow in the templates and shall not be deleted from the input file, but you can leave them empty for some or all rows.
 
 ![2 rows of the sample template - Non repeated fields](miscellaneous/Sample_template_2rows_non-repeated.png)
 
-2. **Repetitive columns**. These fields contain characteristics for a node that can be repeated (e.g. ``<SAMPLE_ATTRIBUTE>`` or ``<FILE>``) within each metadata object. In the following image we have 2 rows with 6 of these columns, which correspond to 2 repetitions of the same *repetitive block* (in this case ``Tag-Value-Units``). These blocks are alternatively coloured and can be added or deleted depending on your needs, but if there is a column from a repetitive block, their sibling columns are also needed (even if left empty): in our example, if we add a new repetition with columns ``Tag`` and ``Value``, there needs to be a third one, ``Units``.  
+2. **Repetitive columns**. These fields contain characteristics for **a node that can be repeated** (*e.g.* ``<SAMPLE_ATTRIBUTE>`` or ``<FILE>``) **within each metadata object**. In the following image we have 2 rows with 6 of these columns, which correspond to 2 repetitions of the same ***repetitive block*** (in this case ``Tag-Value-Units``). These blocks are alternatively coloured and can be added or deleted depending on your needs, but if there is a column from a repetitive block, their sibling columns are also required (even if left empty): in our example, if we add a new repetition with columns ``Tag`` and ``Value``, there needs to be a third one, ``Units``.  
 
 ![2 rows of the sample template - Repeated fields](miscellaneous/Sample_template_2rows_repeated.png)
 
@@ -156,8 +156,7 @@ The **order of columns is not relevant** as long as the repeated blocks' columns
 
 There are **two configuration files**: `input_configuration.yaml` and ``xml_schema.yaml``. The former simply **lists the required fields for each input file** (i.e. if the column name "Sample alias" needs to be present or not). The latter **describes the structure of the corresponding XML** (i.e. which nodes are children of which) and **associates each column name of the input file with its corresponding node's characteristic** (either an attribute or text). Both are `YAML` files, which are easy-to-read information holders, and can be interpreted as dictionaries/lists of elements. Besides the information displayed here, additional clues reside within the files themselves.
 
-### xml_schema.yaml
-### Basic structure
+### Basic structure - xml_schema.yaml
 At base level, the file contains **information of the tool itself** (`tool_info` - used to add details to reports), the **metadata schemas** (`XML_schemas_info` - used to both download `.xsd` files and create XMLs) and **one element for each metadata object** (e.g. `sample`) describing its architecture.
 
 A simple example of *what is what*, with content from the `xml_schema.yaml` (_up_), the input file (_right_) and the output XML (_down_), is the following:
