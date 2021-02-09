@@ -21,17 +21,53 @@ sample:
       - Description
       - Tag
       - Value
+      - Units
 
 run:
     required:
         - Run_alias
         - Center_name
-        - CN_Acronym
+        - Run_date
         - Experiment_reference
-        - Assembly_name
-        - Assembly_accession
         - Filename
         - Filetype
         - Checksum_method
         - Encrypted_checksum
         - Unencrypted_checksum
+
+study:
+    required:
+        - Study_alias
+        - Center_name
+        - Study_title
+        - Existing_study_type
+        - Study_abstract
+        - Tag
+        - Value
+        - Units
+
+analysis:
+    required:
+        - Analysis_alias
+        - Center_name
+        - Analysis_date
+        - Title
+        - Description
+        - Study_alias
+        - Study_CenterName
+        - Assembly_name
+        - Assembly_accession
+        - Sequence_accession
+        - Sequence_label
+        - Experiment_type
+        - Sample_alias
+        - Sample_CenterName
+        - Label
+        - Filename
+        - Filetype
+        - Checksum_method
+        - Encrypted_checksum
+        - Unencrypted_checksum
+        - Tag
+        - Value
+        - Units

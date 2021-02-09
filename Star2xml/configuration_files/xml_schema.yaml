@@ -1,11 +1,15 @@
-# This is the YAML schema file containing the hierarchy of elements and their attributes
+# This is the YAML schema file containing the hierarchy of elements and their characteristics
 # represented within the submission XML file.
+
+# -------- #
+# Miscellaneous information
+# -------- #
 
 tool_info:  # Contains info about the conversion tool and this schema file.
     # Version (string: !!str): defines the tool version for which this YAML was created.
     version: !!str 1.0
-    # update_date (ISO 8691 format): defines the date of the last update for this file.
-    update_date: 2021-02-04
+    # update_date (ISO 8691 format): defines the date of the last official update for this file.
+    update_date: 2021-02-08
 
 # Contains info about where the XML schemas instances are. This information will be used
 #   when creating each object's XML.
@@ -19,7 +23,6 @@ XML_schemas_info:
     schema_instance: "http://www.w3.org/2001/XMLSchema-instance"
     schemas_directory: "http://ftp.ebi.ac.uk/pub/databases/ena/doc/xsd/sra_1_5/"
     object_schemas:
-        #! Here we will add all of the "htpp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/" files
         sample: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd"
         experiment: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.experiment.xsd"
         run: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/sra_1_5/SRA.run.xsd"
@@ -30,6 +33,10 @@ XML_schemas_info:
         study: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd"
         submission: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.submission.xsd"
 
+# -------- #
+# XMLs structure
+# -------- #
+
 # Every element (XML node) can have 4 characteristics:
 #       - children: it contains a dictionary with the children elements of the current node (e.g. TAXON_ID and COMMON_NAME
 #                   would be the children of SAMPLE_NAME)
@@ -38,10 +45,10 @@ XML_schemas_info:
 #                               <FILE filename="path/to/file.txt"/>
 #                            </FILES>
 #       - attributes:   it contains a dictionary of the attributes, where the keys are the XML tags (e.g. "alias")
-#                       and its values are their corresponding column name in the dataframe (e.g. "Sample_ID")
+#                       and its values are their corresponding column name in the dataframe/input file (e.g. "Sample_ID")
 #                       Example: in the following XML, "filename" is the attribute of the element "FILE"
 #                                <FILE filename="path/to/file.txt"/>
-#       - text: it contains a string with the text that should be put within the XML element (e.g. <TAXON_ID>9606</TAXON_ID>)
+#       - text: it contains a string with the text that should be put within the XML element.
 #               Example: in the following XML, "gender" is the text within the element "TAG"
 #                                <TAG>gender</TAG
 #       - repetitive_node: if this line exists, it defines a repetitive node, which means that the tool will try to infer
@@ -54,13 +61,12 @@ XML_schemas_info:
 #                               <FILE filename="path/to/file3.txt"/>
 #                            </FILES>
 
-#! Important: if we create a node's attribute/text in this schema, there HAS to be a column in the input dataframe
-#!            referencing it. Even if it's empty.
+# Important: if we create a node's attribute/text in this schema, there HAS to be a column in the input dataframe
+#            referencing it (the script will be looking for it). Even if it's empty for some or all rows.
 
 ####-------------####
 # - SAMPLE OBJECT - #
 ####-------------####
-#! We may want to add the "links" element allowed within XSD sample schema.
 sample:
     attributes:
          alias: "Sample_alias"
@@ -97,21 +103,11 @@ run:
     attributes:
         alias: "Run_alias"
         center_name: "Center_name"
-        run_center: "CN_Acronym"
+        run_date: "Run_date"
     children:
         experiment_ref:
             attributes:
                 refname: "Experiment_reference"
-        run_type:
-            children:
-                reference_alignment:
-                    children:
-                        assembly:
-                            children:
-                                standard:
-                                    attributes:
-                                        refname: "Assembly_name"
-                                        accession: "Assembly_accession"
         data_block:
             children:
                 files:
@@ -124,3 +120,92 @@ run:
                                 checksum_method: "Checksum_method"
                                 checksum: "Encrypted_checksum"
                                 unencrypted_checksum: "Unencrypted_checksum"
+
+####------------####
+# - Study OBJECT - #
+####------------####
+study:
+    attributes:
+        alias: "Study_alias"
+        center_name: "Center_name"
+    children:
+        decriptor:
+            children:
+                study_title:
+                    text: "Study_title"
+                STUDY_TYPE:
+                    attributes:
+                        existing_study_type: "Existing_study_type"
+                STUDY_ABSTRACT:
+                    text: "Study_abstract"
+
+        study_attributes:
+            study_attribute:
+                repetitive_node:
+                children:
+                    tag:
+                        text: "Tag"
+                    value:
+                        text: "Value"
+                    units:
+                        text: "Units"
+
+####---------------####
+# - Analysis OBJECT - #
+####---------------####
+analysis:
+    attributes:
+        alias: "Analysis_alias"
+        center_name: "Center_name"
+        run_date: "Analysis_date"
+    children:
+        TITLE:
+            text: "Title"
+        description:
+            text: "Description"
+        STUDY_REF:
+            attributes:
+                refname: "Study_alias"
+                refcenter: "Study_CenterName"
+        SAMPLE_REF:
+            repetitive_node:
+            attributes:
+                refname: "Sample_alias"
+                refcenter: "Sample_CenterName"
+                label: "Label"
+        analysis_type:
+            children:
+                SEQUENCE_VARIATION:
+                    children:
+                        ASSEMBLY:
+                            children:
+                                STANDARD:
+                                    attributes:
+                                        refname: "Assembly_name"
+                                        accession: "Assembly_accession"
+                        SEQUENCE:
+                            attributes:
+                                accession: "Sequence_accession"
+                                label: "Sequence_label"
+                        EXPERIMENT_TYPE:
+                            text: "Experiment_type"
+        files:
+            children:
+                file:
+                    repetitive_node:
+                    attributes:
+                        filename: "Filename"
+                        filetype: "Filetype"
+                        checksum_method: "Checksum_method"
+                        checksum: "Encrypted_checksum"
+                        unencrypted_checksum: "Unencrypted_checksum"
+        ANALYSIS_ATTRIBUTES:
+            ANALYSIS_ATTRIBUTE:
+                repetitive_node:
+                children:
+                    tag:
+                        text: "Tag"
+                    value:
+                        text: "Value"
+                    units:
+                        text: "Units"

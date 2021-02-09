@@ -66,6 +66,8 @@ class XML_creator():
             sys.exit()
 
         self.input_dataframe = input_dataframe
+        # We remove empty rows (full of NaNs)
+        self.input_dataframe.dropna(axis = 0, how = "all", inplace = True)
 
         # We store the number of rows (number of metadata object repetitions) the dataframe contains
         self.dataframe_nrows = len(self.input_dataframe.index)
@@ -84,7 +86,7 @@ class XML_creator():
         schema_update_date = self.schema_general_dict[tool_info_tag][update_date_tag]
         date_now = datetime.today().isoformat()
 
-        General_info = """######----------------------------######\n### Starting the XML_creator() class ###\n######----------------------------######
+        General_info = """\n######----------------------------######\n### Starting the XML_creator() class ###\n######----------------------------######
         General information:
           - Execution datetime: {date_now}
           - Class object's instance: {object_instance}
@@ -116,7 +118,7 @@ class XML_creator():
             print(string_to_print)
 
         if self.debug_mode:
-            with open(self.log_filename, "w") as log_filename:
+            with open(self.log_filename, "a") as log_filename:
                 log_filename.write(string_to_print)
 
 
@@ -142,8 +144,8 @@ class XML_creator():
         # We prune empty nodes recursively
         self.prune_empty_nodes()
 
-        if self.verbose:
-            self.print_or_save_log("- Conversion completed! The generated XML is the following:")
+        if self.verbose or self.debug_mode:
+            self.print_or_save_log("\n- Conversion completed! The generated XML is the following:")
             self.save_xml(to_print = True)
 
         self.save_xml()

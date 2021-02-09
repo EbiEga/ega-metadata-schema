@@ -37,6 +37,7 @@ older versions of python have not been tested and are not guaranteed.
 """
 
 import argparse
+import sys
 import os.path
 
 # -------- #
@@ -116,10 +117,11 @@ xml_creation.construct_xml()
 xml_creation.save_xml()
 
 # If the output XML was generated and has some Bytes
-if (is_verbose or is_debug) and os.path.exists(output_xml) and os.path.getsize(output_xml) > 0:
-    print("- star2xml.py finished. XML generation completed!")
-    print("- The generated XML is: ", output_xml)
+if is_verbose or is_debug:
+    if os.path.exists(output_xml) and os.path.getsize(output_xml) > 0:
+        print("- star2xml.py finished. XML generation completed!")
+        print("- The generated XML is: ", output_xml)
 
-else:
-    print("ERROR in star2xml.py: unknown error in the generation of the XML: output_xml '%s' it is not a file or does not contain bytes" \
-          % output_xml, file=sys.stderr)
+    else:
+        print("ERROR in star2xml.py: unknown error in the generation of the XML: output_xml '%s' it is not a file or does not contain bytes" \
+              % output_xml, file=sys.stderr)

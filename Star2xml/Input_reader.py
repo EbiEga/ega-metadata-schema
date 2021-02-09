@@ -104,5 +104,5 @@ class Input_reader():
         if not self.is_valid:
             # We get which ones are required but not in the input:
             self.missing_headers = set(self.required_headers) - set(self.input_file_headers)
-
+            
         return self.is_valid

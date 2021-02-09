@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SAMPLE_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd">
+  <SAMPLE alias="P00155_sample_725" center_name="EBI-TEST">
+    <TITLE>SolveRD Sample 725 for Patient ID: P00155</TITLE>
+    <SAMPLE_NAME>
+      <TAXON_ID>9606</TAXON_ID>
+      <SCIENTIFIC_NAME>homo sapiens</SCIENTIFIC_NAME>
+      <COMMON_NAME>human</COMMON_NAME>
+    </SAMPLE_NAME>
+    <DESCRIPTION>Sample was extracted from pancreas upper portion</DESCRIPTION>
+    <SAMPLE_ATTRIBUTES>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>subject_id</TAG>
+        <VALUE>P00155</VALUE>
+        <UNITS>BioSample</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>gender</TAG>
+        <VALUE>male</VALUE>
+        <UNITS>X/Y</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>phenotype</TAG>
+        <VALUE>EFO:0002618</VALUE>
+        <UNITS>Experimental Ontology Factor accession</UNITS>
+      </SAMPLE_ATTRIBUTE>
+    </SAMPLE_ATTRIBUTES>
+  </SAMPLE>
+  <SAMPLE alias="P00157_sample_726" center_name="EBI-TEST">
+    <TITLE>SolveRD Sample 726 for Patient ID: P00157</TITLE>
+    <SAMPLE_NAME>
+      <TAXON_ID>9606</TAXON_ID>
+      <SCIENTIFIC_NAME>homo sapiens</SCIENTIFIC_NAME>
+      <COMMON_NAME>human</COMMON_NAME>
+    </SAMPLE_NAME>
+    <DESCRIPTION>Sample was extracted from pancreas lower portion</DESCRIPTION>
+    <SAMPLE_ATTRIBUTES>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>subject_id</TAG>
+        <VALUE>P00157</VALUE>
+        <UNITS>BioSample</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>gender</TAG>
+        <VALUE>female</VALUE>
+        <UNITS>X/X</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>phenotype</TAG>
+        <VALUE>EFO:0002618</VALUE>
+        <UNITS>Experimental Ontology Factor accession</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>parental_id</TAG>
+        <VALUE>P00157</VALUE>
+        <UNITS>BioSample</UNITS>
+      </SAMPLE_ATTRIBUTE>
+    </SAMPLE_ATTRIBUTES>
+  </SAMPLE>
+</SAMPLE_SET>

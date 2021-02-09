@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/sra_1_5/SRA.run.xsd">
+  <RUN alias="Run_alias1" center_name="Testing of EBI" run_date="2021-01-02T10:00:00">
+    <EXPERIMENT_REF refname="Experiment_P290"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="run_files/bam_file1.bam" filetype="bam" checksum_method="MD5" checksum="9bb73046a943e7be33e9870031c0ae35" unencrypted_checksum="52ab8b9d5962fae6dc0e2247c59a4d7e"/>
+        <FILE filename="run_files/sequence_file1.fastq" filetype="fastq" checksum_method="MD5" checksum="9bb73046a943e7be33e8870031c0ae35" unencrypted_checksum="52ab8b9d5962fae6dc0e2347c59a4d7e"/>
+      </FILES>
+    </DATA_BLOCK>
+  </RUN>
+  <RUN alias="Run_alias2" center_name="Testing of EBI" run_date="2021-01-02T10:30:00">
+    <EXPERIMENT_REF refname="Experiment_P290"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="run_files/bam_file2.bam" filetype="bam" checksum_method="MD5" checksum="9bb73066a943e7be33e9870031c0ae35" unencrypted_checksum="52ab8b9d5962fae5dc0e2247c59a4d7e"/>
+        <FILE filename="run_files/sequence_file2.fastq" filetype="fastq" checksum_method="MD5" checksum="9bb73046a942e7be33e8870031c0ae35" unencrypted_checksum="52ab8b9d5962fae6dc0e2347c59a4d6e"/>
+      </FILES>
+    </DATA_BLOCK>
+  </RUN>
+</RUN_SET>
