@@ -129,7 +129,7 @@ study:
         alias: "Study_alias"
         center_name: "Center_name"
     children:
-        decriptor:
+        DESCRIPTOR:
             children:
                 study_title:
                     text: "Study_title"
@@ -140,15 +140,16 @@ study:
                     text: "Study_abstract"
 
         study_attributes:
-            study_attribute:
-                repetitive_node:
-                children:
-                    tag:
-                        text: "Tag"
-                    value:
-                        text: "Value"
-                    units:
-                        text: "Units"
+            children:
+                study_attribute:
+                    repetitive_node:
+                    children:
+                        tag:
+                            text: "Tag"
+                        value:
+                            text: "Value"
+                        units:
+                            text: "Units"
 
 ####---------------####
 # - Analysis OBJECT - #
@@ -157,7 +158,7 @@ analysis:
     attributes:
         alias: "Analysis_alias"
         center_name: "Center_name"
-        run_date: "Analysis_date"
+        analysis_date: "Analysis_date"
     children:
         TITLE:
             text: "Title"
@@ -200,12 +201,13 @@ analysis:
                         checksum: "Encrypted_checksum"
                         unencrypted_checksum: "Unencrypted_checksum"
         ANALYSIS_ATTRIBUTES:
-            ANALYSIS_ATTRIBUTE:
-                repetitive_node:
-                children:
-                    tag:
-                        text: "Tag"
-                    value:
-                        text: "Value"
-                    units:
-                        text: "Units"
+            children:
+                ANALYSIS_ATTRIBUTE:
+                    repetitive_node:
+                    children:
+                        tag:
+                            text: "Tag"
+                        value:
+                            text: "Value"
+                        units:
+                            text: "Units"

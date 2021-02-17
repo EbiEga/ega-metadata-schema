@@ -77,7 +77,7 @@ arg_parser.add_argument('--download_xsd',
 arg_parser.add_argument('--verbose',
                         action='store_true',
                         default = False,
-                        help='A boolean switch to add verbosity to the function (will print into the terminal extra information, as well as the validation results with a friendlier format)')
+                        help='A boolean switch to add verbosity to the function (will print into the terminal extra information, as well as the validation errors and results with a friendlier format)')
 
 
 arguments = arg_parser.parse_args()
@@ -124,7 +124,7 @@ else:
 # -------- #
 # Validation of the output_xml against XML schemas (.xsd - and their download if missing)
 # -------- #
-from validation_scripts import check_xml_is_valid
+from scripts_for_validation import check_xml_is_valid
 import os.path
 import sys
 outcome_result = []
@@ -139,17 +139,12 @@ for index in range(num_validations):
     local_xsd_file = os.path.join(schema_dir, schema_xsd_filename)
     input_xml = input_xmls[index]
     xml_is_valid = check_xml_is_valid(xml_tree = input_xml,
-                                      schema_file = local_xsd_file)
+                                      schema_file = local_xsd_file,
+                                      verbose = is_verbose,
+                                      schema_key = schema_key)
 
-    # Based on the returned boolean of xml_is_valid() we print different veredicts
+    # Based on the returned boolean of xml_is_valid() we append a different result
     outcome_result.append(xml_is_valid)
-    if is_verbose:
-        if xml_is_valid:
-            veredict = "- Correctly validated:"
-        else:
-            veredict = "-/- Errors during validation:"
-
-        print("%s '%s'\t\tXML file: '%s'" % (veredict, schema_key, input_xml))
 
 # We finally print the outcome list (which can be redirected to a variable, text file, pipeline...):
 print(outcome_result)

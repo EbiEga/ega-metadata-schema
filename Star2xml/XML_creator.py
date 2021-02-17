@@ -1,7 +1,7 @@
 import lxml.etree as etree
 from datetime import datetime
 import sys
-from yaml import safe_load
+import yaml
 import pandas as pd
 import os.path
 
@@ -10,6 +10,7 @@ children_tag = "children"
 attribute_tag = "attributes"
 text_tag = "text"
 repetitive_tag = "repetitive_node"
+valid_dict_elements = set([children_tag, attribute_tag, text_tag, repetitive_tag])
 tool_info_tag = "tool_info"
 version_tag = "version"
 update_date_tag = "update_date"
@@ -45,9 +46,22 @@ class XML_creator():
         # We (try to) load the YAML schema (that contains XML element's dependencies, attributes, etc.)
         try:
             with open(schema_filename, "r") as schema_file:
-                self.schema_general_dict = safe_load(schema_file)
+                self.schema_general_dict = yaml.safe_load(schema_file)
+        except FileNotFoundError:
+            print("ERROR in XML_creator(): given schema filepath '%s' does not exist or could not be found." \
+                  % schema_filename, file=sys.stderr)
+            sys.exit()
+
+        except yaml.scanner.ScannerError as ScannerError:
+            print("ERROR in XML_creator(): in the given schema '%s' there was a scanning issue." \
+                  % schema_filename, file=sys.stderr)
+            print("\t - Problem: %s" \
+                  % ScannerError.problem, file=sys.stderr)
+            print("\t - Problem's location: %s" \
+                  % ScannerError.context_mark, file=sys.stderr)
+            sys.exit()
         except:
-            print("ERROR in XML_creator(): given schema filepath '%s' could not be read and loaded" \
+            print("ERROR in XML_creator(): unknown error happened trying to yaml.safe_load() the given schema filepath '%s'." \
                   % schema_filename, file=sys.stderr)
             sys.exit()
 
@@ -75,7 +89,6 @@ class XML_creator():
         #! We could put this outside of the function itself, and call the print_basic_info() method outside
         if self.debug_mode or self.verbose:
             self.print_basic_info()
-
 
     def print_basic_info(self):
         """
@@ -243,7 +256,7 @@ class XML_creator():
         current_level_dict = dict_element[schema_tag]
 
         # We save a comprobations list of the current node (i.e. if it has children, attributes, etc.)
-        comprobations_list = self.each_node_comprobations(current_level_dict = current_level_dict)
+        comprobations_list = self.each_node_comprobations(current_level_dict = current_level_dict, schema_tag = schema_tag)
 
         # Based on the comprobation list's content, we add the node and all of its characteristics
         self.additionOf_Node(schema_tag = schema_tag,
@@ -352,7 +365,7 @@ class XML_creator():
         # We iterate over children dictionaries to check which one has attributes/text
         for child in children_elements.keys():
             # If the children doesn't have attributes/text we skip it
-            children_comprobation_list = self.each_node_comprobations(current_level_dict = children_elements[child])
+            children_comprobation_list = self.each_node_comprobations(current_level_dict = children_elements[child], schema_tag = child)
             child_has_children = children_comprobation_list[2]
             child_has_attributes = children_comprobation_list[3]
             child_has_text = children_comprobation_list[6]
@@ -413,7 +426,7 @@ class XML_creator():
         return n_repetitions
 
 
-    def each_node_comprobations(self, current_level_dict):
+    def each_node_comprobations(self, current_level_dict, schema_tag = None):
         """
         Function to check the characteristics of each node from the YAML file. This function will return dictionaries,
             strings and booleans (e.g. if the node has no attributes has_attributes = False)
@@ -422,35 +435,62 @@ class XML_creator():
             - current_level_dict (dict): dictionary of the current element - i.e. if we are at "sample_name"
                                          as the current node, the current_level_dict would contain up to 4
                                          additional elements: children, text, attributes and repetitive_node.
+            - schema_tag (str): the schema tag (e.g. sample or taxon_id) corresponding to the key of the current_level_dict.
         """
         children_elements = {}
         element_attributes = {}
         text_column_name = None
 
-        # In each step, we try to access the corresponding part of the dictionary, if it fails, it's nonexistent.
+        # We first check that the current dictionary has some elements (e.g. "children" or "text")
         try:
-            children_elements = current_level_dict[children_tag]
-            has_children = True
+            current_dict_set = set(current_level_dict.keys())       # e.g. {"children", "text"}
         except:
+            # If the dictionary is empty, the node was left empty in the schema, and thus has no information (common mistake)
+            print("ERROR in XML_creator() - each_node_comprobations(): the given schema dictionary for schema tag '%s' is empty. This reflects an error (unused node) in the configuration file '%s', check the said schema tag within it." \
+                  % (schema_tag, self.schema_filename), file=sys.stderr)
+            sys.exit()
+
+        # Now we check if the keys of the current_element are (a subset of) the valid ones (children, text...)
+        if not current_dict_set.issubset(valid_dict_elements):
+            print("ERROR in XML_creator() - each_node_comprobations(): the given schema dictionary for schema tag '%s' contains non valid keys.\n\t - Valid keys: %s\n\t - Given keys: %s" \
+                  % (schema_tag, valid_dict_elements, current_dict_set), file=sys.stderr)
+            sys.exit()
+
+        # In each step, we check for the valid keys, associating its corresponding part of the dictionary
+        if children_tag in current_dict_set:
+            children_elements = current_level_dict[children_tag]
+            if children_elements is None:
+                print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had children characteristic, but was found empty." \
+                      % schema_tag, file=sys.stderr)
+                sys.exit()
+            has_children = True
+        else:
             has_children = False
 
-        try:
+        if attribute_tag in current_dict_set:
             element_attributes = current_level_dict[attribute_tag]
+            if element_attributes is None:
+                print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had attributes characteristic, but was found empty." \
+                      % schema_tag, file=sys.stderr)
+                sys.exit()
             has_attributes = True
-        except:
+        else:
             has_attributes = False
 
-        try:
+        if text_tag in current_dict_set:
             text_column_name = current_level_dict[text_tag]
+            if text_column_name is None:
+                print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had text characteristic, but was found empty." \
+                      % schema_tag, file=sys.stderr)
+                sys.exit()
             has_text = True
-        except:
+        else:
             has_text = False
 
         # We check if this node is one of the repetitive ones (e.g. repetitive_node: True)
-        try:
-            current_level_dict[repetitive_tag]
+        if repetitive_tag in current_dict_set:
             is_repetitive = True
-        except:
+        else:
             is_repetitive = False
 
         return is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text
@@ -530,7 +570,7 @@ class XML_creator():
         if not nodes_text or nodes_text is None or pd.isnull(nodes_text) or str.isspace(str(nodes_text)):
             return
 
-        exec("self.%s.text = '%s'" % (xml_node_tag, str(nodes_text)))
+        exec('self.%s.text = """%s"""' % (xml_node_tag, str(nodes_text)))
 
     def prune_empty_nodes(self):
         """

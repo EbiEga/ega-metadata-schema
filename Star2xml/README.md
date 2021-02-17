@@ -170,5 +170,9 @@ If the metadata requirements change and existing fields need to be removed or ne
 ## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Common mistakes ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
 
 * Missing fields of a repetitive block (in this case fields ``Value`` and ``Units`` are missing from the block ``Tag-Value-Units``)
-
 ![2 rows of the sample template - Missing fields](miscellaneous/Sample_template_2rows_incorrect1.png)
+
+* Not using the option `--download_xsd` the first time you try to validate XMLs: the schemas (`.xsd`) will be missing and the tool will throw the following error message:
+``` Bash
+ERROR in check_xml_is_valid(): the schema file 'downloaded_schemasXSD/SRA.sample.xsd' could not be accessed. If you have not downloaded the schema files (.xsd) yet, use '--download_xsd' when running the command.
+```
