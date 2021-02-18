@@ -188,7 +188,7 @@ class XML_creator():
             # Check if output_dir where the output_xml will reside exists, create it if not
             output_dir = os.path.dirname(self.output_xml)
             dir_exists = os.path.isdir(output_dir)
-            if not dir_exists:
+            if not dir_exists and output_dir is not '':
                 os.makedirs(output_dir)
             try:
                 with open(self.output_xml, "w") as xml_file:

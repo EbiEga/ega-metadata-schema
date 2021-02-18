@@ -108,7 +108,7 @@ optional arguments:
   --download_xsd        A boolean switch to give if you want the schemas (.xsd files) to be downloaded instead of
                         providing them
   --verbose             A boolean switch to add verbosity to the function (will print into the terminal extra
-                        information, as well as the validation results with a friendlier format)
+                        information, as well as the validation errors and results with a friendlier format)
 ```
 In this case we can validate as many XML files as we want in one go. For instance, in the following example we validate two XML files (`sample.xml` and `run.xml`) that correspond to two different metadata objects (`sample` and `run`). It is important to notice that, if we have not downloaded yet the metadata schema files (`.xsd`), we should provide the option `--download_xsd` the first time we run `validateXML.py`.
 ```Bash
@@ -148,9 +148,12 @@ There are two types of columns in the input files:
 
 Column names in the templates are **linked to the configuration files** (`input_configuration.yaml` and `xml_schema.yaml`), which leads to an important constraint: if there is a field described in a configuration file (e.g. ``center_name: "Center_name"``) there **needs** to be its corresponding column name within the input file (e.g. `Center_name`). In other words, unless the configuration file is properly modified, you shall not delete *non-repetitive columns* or completely delete all *repetitive blocks* from the input file. What you can do is leave them empty for some or all rows, or delete additional repetitive blocks that you don't need. At least one of each complete (with all its fields) repetitive block needs to be present within the input file, even if you leave it empty for some or all rows.
 
-The **order of columns is not relevant** as long as the repeated blocks' columns are not severely mixed (*e.g.* filling first `Tag` with the string corresponding to the second `Tag`). In fact, repeated columns can be mixed provided the order is maintained, thus making the following input valid (although a bit more chaotic).
+The **order of columns is not relevant** as long as the repeated blocks' columns are not severely mixed (*e.g.* filling first `Tag` with the string corresponding to the second `Tag`). In fact, repeated columns can be mixed provided the order is maintained, thus making the following input valid.
 
 ![2 rows of the sample template - Mixed, though correct, fields](miscellaneous/Sample_template_2rows_mixed.png)
+
+This allows for a handy way of dealing with **hundreds or thousands of columns** in an easy way (being able to put all columns of the same type in a sequence). For instance, we may want to generate an Analysis XML based on its spreadsheet, but the analysis encompasses thousand of samples (*i.e.* thousands of columns). Although there are multiple ways to input such columns, an easy approach is to use the **transpose function** (*e.g.* from excel - [help from microsoft](https://support.microsoft.com/en-us/office/transpose-rotate-data-from-rows-to-columns-or-vice-versa-3419f2e3-beab-4318-aae5-d0f862209744)). In our example the sample repetitive block contains 3 columns (``Sample_alias``, ``Sample_centerName`` and ``Label``). Therefore, we can do the following:
+![Example of using transpose to add columns](miscellaneous/Transpose_example.png)
 
 ## Configuration files
 

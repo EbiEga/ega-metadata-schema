@@ -64,6 +64,25 @@ XML_schemas_info:
 # Important: if we create a node's attribute/text in this schema, there HAS to be a column in the input dataframe
 #            referencing it (the script will be looking for it). Even if it's empty for some or all rows.
 
+####-----------------####
+# - COMMON KEY-VALUES - #
+####-----------------####
+# In this section we will store some of the values or even key-value pairs that are commonly
+#   used in this file. They are stored with "&", and accessed with "*" or "<<: *".
+common_key_values:
+  # The 4 main characteristics that elements in this file can have
+  children_tag: &child "children"
+  attributes_tag: &att "attributes"
+  text_tag: &tx "text"
+  repetitiveNode_tag: &RN "repetitive_node"
+  #
+  file_basic_attributes: &file_basic_attributes
+    filename: "Filename"
+    filetype: "Filetype"
+    checksum_method: "Checksum_method"
+    checksum: "Encrypted_checksum"
+    unencrypted_checksum: "Unencrypted_checksum"
+
 ####-------------####
 # - SAMPLE OBJECT - #
 ####-------------####
@@ -191,15 +210,13 @@ analysis:
                         EXPERIMENT_TYPE:
                             text: "Experiment_type"
         files:
-            children:
+            *child:
                 file:
                     repetitive_node:
                     attributes:
-                        filename: "Filename"
-                        filetype: "Filetype"
-                        checksum_method: "Checksum_method"
-                        checksum: "Encrypted_checksum"
-                        unencrypted_checksum: "Unencrypted_checksum"
+                        <<: *file_basic_attributes
+                        checklist: "checklist"
+
         ANALYSIS_ATTRIBUTES:
             children:
                 ANALYSIS_ATTRIBUTE:
