@@ -1,0 +1,6 @@
+pandas==1.2.2
+PyYAML==5.4.1
+argparse==1.4.0
+lxml==4.6.2
+datetime==4.3
+openpyxl==3.0.6

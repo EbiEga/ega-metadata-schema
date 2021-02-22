@@ -1,0 +1,230 @@
+# This is the YAML schema file containing the hierarchy of elements and their characteristics
+# represented within the submission XML file.
+
+# -------- #
+# Miscellaneous information
+# -------- #
+
+tool_info:  # Contains info about the conversion tool and this schema file.
+    # Version (string: !!str): defines the tool version for which this YAML was created.
+    version: !!str 1.0
+    # update_date (ISO 8691 format): defines the date of the last official update for this file.
+    update_date: 2021-02-08
+
+# Contains info about where the XML schemas instances are. This information will be used
+#   when creating each object's XML.
+XML_schemas_info:
+    # Information regardig the XSD download if needed:
+    file_extension: "xsd"
+    ftp_server: "ftp.ebi.ac.uk"
+    schemas_dir: "pub/databases/ena/doc/xsd/sra_1_5/"
+    # Information regarding the XML construction:
+    schema_instance_reference: "noNamespaceSchemaLocation"
+    schema_instance: "http://www.w3.org/2001/XMLSchema-instance"
+    schemas_directory: "http://ftp.ebi.ac.uk/pub/databases/ena/doc/xsd/sra_1_5/"
+    object_schemas:
+        sample: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd"
+        experiment: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.experiment.xsd"
+        run: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/sra_1_5/SRA.run.xsd"
+        dac: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.dac.xsd"
+        dataset: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.dataset.xsd"
+        policy: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.policy.xsd"
+        analysis: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.analysis.xsd"
+        study: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd"
+        submission: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.submission.xsd"
+
+# -------- #
+# XMLs structure
+# -------- #
+
+# Every element (XML node) can have 4 characteristics:
+#       - children: it contains a dictionary with the children elements of the current node (e.g. TAXON_ID and COMMON_NAME
+#                   would be the children of SAMPLE_NAME)
+#                   Example: in the following XML, the element "FILE" is the children of element "FILES"
+#                            <FILES>
+#                               <FILE filename="path/to/file.txt"/>
+#                            </FILES>
+#       - attributes:   it contains a dictionary of the attributes, where the keys are the XML tags (e.g. "alias")
+#                       and its values are their corresponding column name in the dataframe/input file (e.g. "Sample_ID")
+#                       Example: in the following XML, "filename" is the attribute of the element "FILE"
+#                                <FILE filename="path/to/file.txt"/>
+#       - text: it contains a string with the text that should be put within the XML element.
+#               Example: in the following XML, "gender" is the text within the element "TAG"
+#                                <TAG>gender</TAG
+#       - repetitive_node: if this line exists, it defines a repetitive node, which means that the tool will try to infer
+#                          how many times it shall be repeated (based on the input dataframe's columns). It can be a plain
+#                          "repetitive_node:" or with any other element inside (e.g. "repetitive_node: True").
+#                          Example: in the following XML, the element "FILE" is repeated thrice.
+#                            <FILES>
+#                               <FILE filename="path/to/file1.txt"/>
+#                               <FILE filename="path/to/file2.txt"/>
+#                               <FILE filename="path/to/file3.txt"/>
+#                            </FILES>
+
+# Important: if we create a node's attribute/text in this schema, there HAS to be a column in the input dataframe
+#            referencing it (the script will be looking for it). Even if it's empty for some or all rows.
+
+####-----------------####
+# - COMMON KEY-VALUES - #
+####-----------------####
+# In this section we will store some of the values or even key-value pairs that are commonly
+#   used in this file. They are stored with "&", and accessed with "*" or "<<: *".
+common_key_values:
+  # The 4 main characteristics that elements in this file can have
+  children_tag: &child "children"
+  attributes_tag: &att "attributes"
+  text_tag: &tx "text"
+  repetitiveNode_tag: &RN "repetitive_node"
+  #
+  file_basic_attributes: &file_basic_attributes
+    filename: "Filename"
+    filetype: "Filetype"
+    checksum_method: "Checksum_method"
+    checksum: "Encrypted_checksum"
+    unencrypted_checksum: "Unencrypted_checksum"
+
+####-------------####
+# - SAMPLE OBJECT - #
+####-------------####
+sample:
+    attributes:
+         alias: "Sample_alias"
+         center_name: "Center_name"
+    children:
+        title:
+            text: "Title"
+        sample_name:
+            children:
+                taxon_id:
+                    text: "NCBI_taxid"
+                scientific_name:
+                    text: "Scientific_name"
+                common_name:
+                    text: "Common_name"
+        description:
+            text: "Description"
+        sample_attributes:
+            children:
+                sample_attribute:
+                    repetitive_node:
+                    children:
+                        tag:
+                            text: "Tag"
+                        value:
+                            text: "Value"
+                        units:
+                            text: "Units"
+
+####----------####
+# - Run OBJECT - #
+####----------####
+run:
+    attributes:
+        alias: "Run_alias"
+        center_name: "Center_name"
+        run_date: "Run_date"
+    children:
+        experiment_ref:
+            attributes:
+                refname: "Experiment_reference"
+        data_block:
+            children:
+                files:
+                    children:
+                        file:
+                            repetitive_node:
+                            attributes:
+                                filename: "Filename"
+                                filetype: "Filetype"
+                                checksum_method: "Checksum_method"
+                                checksum: "Encrypted_checksum"
+                                unencrypted_checksum: "Unencrypted_checksum"
+
+####------------####
+# - Study OBJECT - #
+####------------####
+study:
+    attributes:
+        alias: "Study_alias"
+        center_name: "Center_name"
+    children:
+        DESCRIPTOR:
+            children:
+                study_title:
+                    text: "Study_title"
+                STUDY_TYPE:
+                    attributes:
+                        existing_study_type: "Existing_study_type"
+                STUDY_ABSTRACT:
+                    text: "Study_abstract"
+
+        study_attributes:
+            children:
+                study_attribute:
+                    repetitive_node:
+                    children:
+                        tag:
+                            text: "Tag"
+                        value:
+                            text: "Value"
+                        units:
+                            text: "Units"
+
+####---------------####
+# - Analysis OBJECT - #
+####---------------####
+analysis:
+    attributes:
+        alias: "Analysis_alias"
+        center_name: "Center_name"
+        analysis_date: "Analysis_date"
+    children:
+        TITLE:
+            text: "Title"
+        description:
+            text: "Description"
+        STUDY_REF:
+            attributes:
+                refname: "Study_alias"
+                refcenter: "Study_CenterName"
+        SAMPLE_REF:
+            repetitive_node:
+            attributes:
+                refname: "Sample_alias"
+                refcenter: "Sample_CenterName"
+                label: "Label"
+        analysis_type:
+            children:
+                SEQUENCE_VARIATION:
+                    children:
+                        ASSEMBLY:
+                            children:
+                                STANDARD:
+                                    attributes:
+                                        refname: "Assembly_name"
+                                        accession: "Assembly_accession"
+                        SEQUENCE:
+                            attributes:
+                                accession: "Sequence_accession"
+                                label: "Sequence_label"
+                        EXPERIMENT_TYPE:
+                            text: "Experiment_type"
+        files:
+            *child:
+                file:
+                    repetitive_node:
+                    attributes:
+                        <<: *file_basic_attributes
+                        checklist: "checklist"
+
+        ANALYSIS_ATTRIBUTES:
+            children:
+                ANALYSIS_ATTRIBUTE:
+                    repetitive_node:
+                    children:
+                        tag:
+                            text: "Tag"
+                        value:
+                            text: "Value"
+                        units:
+                            text: "Units"
