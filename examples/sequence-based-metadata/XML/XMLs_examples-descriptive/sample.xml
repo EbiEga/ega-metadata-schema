@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SAMPLE_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd">
+  <SAMPLE alias="TODO: Submitter designated name for the &quot;Sample&quot;. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)">
+    <TITLE>TODO: A short informative description of the sample. This text will be used to call out sample records in search results or in displays. </TITLE>    <!-- Optional block -->
+    <SAMPLE_NAME>
+      <TAXON_ID>TODO: NCBI Taxonomy Identifier of the organism (e.g. "9606" for human) </TAXON_ID>
+      <SCIENTIFIC_NAME>TODO: Scientific name of sample that distinguishes its taxonomy. Please use a name or synonym that is tracked in the INSDC Taxonomy database (e.g. "homo sapiens")</SCIENTIFIC_NAME>
+      <COMMON_NAME>TODO: GenBank common name of the organism (e.g. "human")</COMMON_NAME>
+    </SAMPLE_NAME>
+    <DESCRIPTION>TODO: A description of the sample (e.g. its origin, its method of isolation, etc.) explaining how this sample is different from others if applicable.</DESCRIPTION>    <!-- Optional block -->
+    <SAMPLE_ATTRIBUTES>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>subject_id</TAG>
+        <VALUE>TODO: Subject ID of the sample</VALUE>
+        <UNITS>TODO: Optional scientific unit. </UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>gender</TAG>
+        <VALUE>TODO: male/female/unknown</VALUE>
+        <UNITS>TODO: X/X, X/Y, XXY, etc.</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>phenotype</TAG>
+        <VALUE>TODO: Phenotype definition, EFO term (e.g. "EFO:0000574") recommended: https://www.ebi.ac.uk/efo/</VALUE>
+        <UNITS>TODO: Optional scientific unit, use "Experimental Ontology Factor accession" if the phenotype's value is an EFO term.</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>    <!-- Optional block -->
+        <TAG>TODO: Name of the custom attribute (e.g. age, height, BioSample IDs, additional notes, etc.)</TAG>
+        <VALUE>TODO: Value of the custom attribute (e.g. "20", "SAME124633", etc.)</VALUE>
+        <UNITS>TODO: Optional scientific units (e.g. years, meters, EOF, etc.)</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <!-- In case you want to provide several sample attributes, repeat the tag 
+           SAMPLE_ATTRIBUTE (using at least TAG and VALUE characteristics) as follows (uncommented): -->
+      <!-- <SAMPLE_ATTRIBUTE>
+        <TAG>TODO: Name of the custom attribute (e.g. age, height, BioSample IDs, additional notes, etc.)</TAG>
+        <VALUE>TODO: Value of the custom attribute (e.g. "20", "SAME124633", etc.)</VALUE>
+        <UNITS>TODO: Optional scientific units (e.g. years, meters, EOF, etc.)</UNITS>
+      </SAMPLE_ATTRIBUTE> -->
+    </SAMPLE_ATTRIBUTES>
+  </SAMPLE>
+  <!--  If you are submitting more than one Sample, replicate the block <SAMPLE> here, 
+        as many times as necessary.  -->
+</SAMPLE_SET>

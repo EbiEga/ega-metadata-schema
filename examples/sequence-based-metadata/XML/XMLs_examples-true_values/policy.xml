@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POLICY_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EGA.policy.xsd">
+	<POLICY alias="Human_genomicData_policy" center_name="EBI-TEST" broker_name="EGA">
+		<TITLE>Access policy to the human genomic data from Project F0094_2 </TITLE>
+		<DAC_REF accession="EGAC00001000084" refcenter="ENA"/>
+		<POLICY_FILE>http://docs.icgc.org/portal/access</POLICY_FILE>
+		<DATA_USES>     
+			<DATA_USE ontology="DUO" code="0000014" version="2019-01-07">
+				<URL>https://www.ebi.ac.uk/ols/ontologies/duo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDUO_0000026</URL>
+			</DATA_USE>
+		</DATA_USES>
+		<POLICY_LINKS>      
+			<POLICY_LINK>
+				<URL_LINK>
+					<LABEL>ICGC Data Access Agreements</LABEL>
+					<URL>http://www.icgc.org</URL>
+				</URL_LINK>
+			</POLICY_LINK>
+		</POLICY_LINKS>
+		<POLICY_ATTRIBUTES>     
+			<POLICY_ATTRIBUTE>
+				<TAG>ENA-SUBMISSION-TOOL</TAG>
+                <VALUE>SRA-Webin</VALUE>
+			</POLICY_ATTRIBUTE>
+		</POLICY_ATTRIBUTES>
+	</POLICY>
+</POLICY_SET>

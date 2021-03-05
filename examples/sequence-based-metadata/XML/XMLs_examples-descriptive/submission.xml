@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SRA.submission.xsd">
+	<SUBMISSION alias="TODO: Submitter designated name for the Dataset. The name must be unique within the submission account" center_name="TODO: The center name (acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)" submission_comment="TODO: Optional submitter assignated comment. Remove this attribute (submission_comment) if not used" lab_name="TODO: Optional laboratory name within submitting institution. Remove this attribute (lab_name) if not used">
+		<TITLE>TODO: Short text that can be used to define submissions in searches or in displays</TITLE>		<!-- Optional block -->
+		<CONTACTS>		<!-- Optional block -->
+			<CONTACT name="TODO: Optional name of contact person for this submission." inform_on_status="TODO: Optional internet address of the person or service to inform on any status changes for this submission (e.g. yourusername@gmail.com)" inform_on_error="TODO: Optional internet address of person or service to inform on any errors for this submission (e.g. yourusername@gmail.com)"/>
+			<!--  If you are submitting more than one contact, replicate the block <CONTACT> to </CONTACTS> here, as  many times as necessary as follows (uncommented): -->
+			<!-- <CONTACT name="TODO: Optional name of contact person for this submission (e.g. yourusername@gmail.com)" inform_on_status="TODO: Optional internet address of the person or service to inform on any status changes for this submission" inform_on_error="TODO: Optional internet address of person or service to inform on any errors for this submission (e.g. yourusername@gmail.com)"/> -->
+		</CONTACTS>
+		<ACTIONS>
+			<!-- Within a submission XML, there is a diverse type of Actions (e.g. ADD, MODIFY, HOLD... take a look at https://ena-docs.readthedocs.io/en/latest/submit/general-guide/programmatic.html#submission-xml) 
+				 
+				 Nevertheless, we will go through the 4 most common actions: ADD, MODIFY, VALIDATE and PROTECT. The three first can be repeated as many times as needed, and can be used alone or in combination with the others. These four will encompass most types of submissions:
+				 	1. ADD:	Add an object to the archive.
+					2. MODIFY:	Modify an object (previously submitted) in the archive.
+					3. VALIDATE:	Validates the submitted XMLs without actually submitting them.
+					4. PROTECT:	This action is required for data submitted to European Genome-Phenome Archive (EGA), since the EGA deals with controlled access data.
+
+				 Each <ACTION> can only be of one type (ADD, MODIFY...), and with the exception of <PROTECT>, the remaining three will exclusively refer to one single XML that you want to ADD, MODIFY or VALIDATE (i.e. one action is required for each XML or metadata object set). 				 
+				  -->
+			<ACTION>		<!-- Repeat this block as many times as needed, or remove it if you do not intend to "ADD" any new metadata -->
+				<ADD source="TODO: Filename or relative path to the XML file being submitted (e.g. submission/xmls/sample_object.xml)" schema="TODO: The type of the XML file being submitted (e.g sample). Choose one from the list at the end of this XML (XML_schema)"/>
+			</ACTION>		
+			<ACTION>		<!-- Repeat this block as many times as needed, or remove it if you do not intend to "MODIFY" any metadata -->
+				<MODIFY source="TODO: Filename or relative path to the XML file being modified (e.g. submission/xmls/sample_object.xml)" schema="TODO: The type of the XML file being modified (e.g sample). Choose one from the list at the end of this XML (XML_schema)"/>
+			</ACTION>
+			<ACTION>		<!-- Repeat this block as many times as needed, or remove it if you do not intend to "VALIDATE" any metadata -->
+				<VALIDATE source="TODO: Filename or relative path to the XML file being validated (e.g. submission/xmls/sample_object.xml)" schema="TODO: The type of the XML file being validated (e.g sample). Choose one from the list at the end of this XML (XML_schema)"/>
+			</ACTION>
+			<ACTION>
+				<!-- <PROTECT> action only needs to be present once within each <SUBMISSION> and requires no additional input -->
+				<PROTECT/>
+			</ACTION>
+		</ACTIONS>
+		<SUBMISSION_ATTRIBUTES>		<!-- Optional block -->
+			<SUBMISSION_ATTRIBUTE>
+				<TAG>TODO: Name of the custom attribute</TAG>
+				<VALUE>TODO: Value of the custom attribute</VALUE>
+				<UNITS>TODO: Optional scientific units of the custom attribute</UNITS>
+			</SUBMISSION_ATTRIBUTE>
+			<!-- If you want to provide several Submission attributes, repeat <SUBMISSION_ATTRIBUTE> as follows (uncommented): -->
+			<!-- <SUBMISSION_ATTRIBUTE>
+				<TAG>TODO: Name of the custom attribute</TAG>
+				<VALUE>TODO: Value of the custom attribute</VALUE>
+				<UNITS>TODO: Optional scientific units of the custom attribute</UNITS>
+			</SUBMISSION_ATTRIBUTE> -->
+		</SUBMISSION_ATTRIBUTES>
+	</SUBMISSION>
+</SUBMISSION_SET>
+<!-- XML_schema list:
+		- study
+		- experiment
+		- sample
+		- run
+		- analysis
+		- dataset
+		- policy
+		- dac
+		- project
+		- checklist
+		- sampleGroup
+		 -->

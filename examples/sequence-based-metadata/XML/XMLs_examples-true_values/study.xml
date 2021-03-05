@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<STUDY_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd">
+  <STUDY alias="Human Microbiome Project SP56J" center_name="EBI-TEST" broker_name="EGA">
+    <DESCRIPTOR>
+      <STUDY_TITLE>Strain for comparative analysis</STUDY_TITLE>
+      <STUDY_TYPE existing_study_type="Whole Genome Sequencing"/>
+      <STUDY_ABSTRACT>Background: In 2013, a prospective registry for adults with congenital heart disease (CHD) was established in Switzerland, providing detailed data on disease characteristics and outcomes: Swiss Adult Congenital HEart disease Registry (SACHER). Its aim is to improve the knowledge base of outcomes in adults with CHD. The registry design and baseline patient characteristics are reported.
+Methods: All patients with structural congenital heart defects or hereditary aortopathies, followed-up at dedicated adult CHD clinics, are asked to participate in SACHER. Data of participants are pseudonymised and collected in an electronic, web-based, database (secuTrial®). Collected data include detailed diagnosis, type of repair procedures, previous complications and adverse outcomes during follow-up.
+Results: From May 2014 to December 2016, 2836 patients (54% male, mean age 34 ± 14 years), with a wide variety of congenital heart lesions, have been enrolled into SACHER. Most prevalent were valve lesions (25%), followed by shunt lesions (22%), cyanotic and other complex congenital heart disease (16%), diseases affecting the right heart, i.e., tetralogy of Fallot or Ebstein anomaly (15%), and diseases of the left ventricular outflow tract (13%); 337 patients (12%) had concomitant congenital syndromes. The majority had undergone previous repair procedures (71%), 47% of those had one or more reinterventions.
+Conclusion: SACHER collects multicentre data on adults with CHD. Its structure enables prospective data analysis to assess detailed, lesion-specific outcomes with the aim to finally improve long-term outcomes.</STUDY_ABSTRACT>
+      <CENTER_PROJECT_NAME>Absiella dolichum DSM 3991</CENTER_PROJECT_NAME>
+      <RELATED_STUDIES>
+        <RELATED_STUDY>
+          <RELATED_LINK>
+            <DB>PROJECT</DB>
+            <ID>406</ID>
+            <LABEL>PRJNA89519</LABEL>
+          </RELATED_LINK>
+          <IS_PRIMARY>true</IS_PRIMARY>
+        </RELATED_STUDY>
+        <RELATED_STUDY>
+          <RELATED_LINK>
+            <DB>bioproject</DB>
+            <ID>110649</ID>
+            <LABEL>PRJNA110649</LABEL>
+          </RELATED_LINK>
+          <IS_PRIMARY>false</IS_PRIMARY>
+        </RELATED_STUDY>
+      </RELATED_STUDIES>
+      <STUDY_DESCRIPTION>A pilot study examining genetic determinants of microbiome associated with long term memory acquisition of individuals from the outskirts of London.</STUDY_DESCRIPTION>
+    </DESCRIPTOR>
+    <STUDY_ATTRIBUTES>
+      <STUDY_ATTRIBUTE>
+        <TAG>Author</TAG>
+        <VALUE>Ramón Jimenez, Juan</VALUE>
+      </STUDY_ATTRIBUTE>
+      <STUDY_ATTRIBUTE>
+        <TAG>study keyword</TAG>
+        <VALUE>UniEuk_EukBank</VALUE>
+      </STUDY_ATTRIBUTE>
+      <STUDY_ATTRIBUTE>
+        <TAG>Project Contributor</TAG>
+        <VALUE>Emily, Jhin</VALUE>
+      </STUDY_ATTRIBUTE>
+    </STUDY_ATTRIBUTES>
+  </STUDY>
+</STUDY_SET>

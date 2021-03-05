@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/sra_1_5/SRA.run.xsd">
+  <RUN alias="TODO: Submitter designated name for the 'Run'. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)" run_date="TODO: ISO date when the run took place (e.g. '2001-12-17T09:30:47Z'). If the time stamp is unknown, leave it as 0s (e.g. 2008-07-02T00:00:00)" run_center="TODO: If applicable, the name of the contract sequencing center that executed the run (e.g. 454MSC). Remove this attribute otherwise.">
+    <TITLE>TODO: Short text that can be used to define submissions in searches or in displays.</TITLE>    <!-- Optional block -->
+    <EXPERIMENT_REF refname="TODO: Identifies the parent experiment (that encompasses this run) by name within the namespace defined by attribute 'refcenter'." refcenter="TODO: Acronym of the center name used to submit the referenced experiment."/>
+    <RUN_TYPE>    <!-- Optional block, used if the Run is of type Reference alignment -->
+      <REFERENCE_ALIGNMENT>
+        <ASSEMBLY>
+          <STANDARD refname="TODO: Standard genome assembly name (e.g. GRCh37)" accession="TODO: Standard genome accession version (e.g. GCA_000001405.1)"/>
+        </ASSEMBLY>
+        <SEQUENCE accession="TODO: Accession of the sequence for the reference alignment in format 'Accession.version', with version being mandatory (e.g. CM000663.1)" label="TODO: How Reference Sequence is labeled in submission file(s) (e.g. chr1). It is equivalent to the @SQ label in a BAM file (optional when submitted file uses INSDC accession.version."/>
+        <!-- In case you want to provide several sequence references for the reference alignment, repeat the tag <SEQUENCE> as follows (uncommented): -->
+        <!-- <SEQUENCE accession="TODO: Accession of the sequence for the reference alignment in format 'Accession.version', with version being mandatory (e.g. CM000663.1)" label="TODO: How Reference Sequence is labeled in submission file(s) (e.g. chr1). It is equivalent to the @SQ label in a BAM file (optional when submitted file uses INSDC accession.version."/> -->
+      </REFERENCE_ALIGNMENT>
+    </RUN_TYPE>
+    <DATA_BLOCK member_name="TODO: Optional name (alias) given in the experiment XML of a pooled experiment. Use exclusively with demultiplexed data, otherwise, remove this attribute (member_name)">    <!-- Optional block -->
+      <FILES>
+        <FILE filename="TODO: The name or relative pathname of a run data file (e.g. path/to/files/file.fastq)" filetype="TODO: The run data file model. Choose from Controlled vocabulary: 'sra', 'srf', 'sff', 'fastq', 'fasta', 'tab', '454_native', '454_native_seq', '454_native_qual', 'Helicos_native', 'Illumina_native', 'Illumina_native_seq', 'Illumina_native_prb', 'Illumina_native_int', 'Illumina_native_qseq', 'Illumina_native_scarf', 'SOLiD_native', 'SOLiD_native_csfasta', 'SOLiD_native_qual', 'PacBio_HDF5', 'bam', 'cram', 'CompleteGenomics_native', 'OxfordNanopore_native'" checksum_method="MD5" checksum="TODO: CHECKSUM from encrypted file (e.g. 298ee70555532679d7c1f91b5dd07aef)" unencrypted_checksum="TODO: CHECKSUM from unencrypted file (e.g. e609bc52c035ff1a62cdba0f0689889j)" quality_scoring_system="TODO: How the input data are scored for quality (either 'phred' or 'log-odds')." quality_encoding="TODO: Character used in representing the minimum quality value (choose from 'ascii', 'decimal' or 'hexadecimal'). Helps specify how to decode text rendering of quality data. " ascii_offset="TODO: Character used in representing the minimum quality value (e.g. '!' or '@').  Helps specify how to decode text rendering of quality data."/>
+        <!-- In case you want to provide several files, repeat the tag <FILE> as follows (uncommented): -->
+        <!-- <FILE filename="TODO: The name or relative pathname of a run data file (e.g. path/to/files/file.fastq)" filetype="TODO: The run data file model. Choose from Controlled vocabulary: 'sra', 'srf', 'sff', 'fastq', 'fasta', 'tab', '454_native', '454_native_seq', '454_native_qual', 'Helicos_native', 'Illumina_native', 'Illumina_native_seq', 'Illumina_native_prb', 'Illumina_native_int', 'Illumina_native_qseq', 'Illumina_native_scarf', 'SOLiD_native', 'SOLiD_native_csfasta', 'SOLiD_native_qual', 'PacBio_HDF5', 'bam', 'cram', 'CompleteGenomics_native', 'OxfordNanopore_native'" checksum_method="MD5" checksum="TODO: CHECKSUM from encrypted file (e.g. 298ee70555532679d7c1f91b5dd07aef)" unencrypted_checksum="TODO: CHECKSUM from unencrypted file (e.g. e609bc52c035ff1a62cdba0f0689889j)" quality_scoring_system="TODO: How the input data are scored for quality (either 'phred' or 'log-odds')." quality_encoding="TODO: Character used in representing the minimum quality value (choose from 'ascii', 'decimal' or 'hexadecimal'). Helps specify how to decode text rendering of quality data. " ascii_offset="TODO: Character used in representing the minimum quality value (e.g. '!' or '@').  Helps specify how to decode text rendering of quality data."/> -->
+      </FILES>
+    </DATA_BLOCK>
+    <RUN_ATTRIBUTES>    <!-- Optional block -->
+      <RUN_ATTRIBUTE>
+        <TAG>TODO: Name of the custom attribute.</TAG>
+        <VALUE>TODO: Value of the custom attribute.</VALUE>
+        <UNITS>TODO: Optional scientific units.</UNITS>
+      </RUN_ATTRIBUTE>
+      <!-- In case you want to provide several run attributes, repeat the tag <RUN_ATTRIBUTE> as follows (uncommented): -->
+      <!-- <RUN_ATTRIBUTE>
+        <TAG>TODO: Name of the custom attribute.</TAG>
+        <VALUE>TODO: Value of the custom attribute.</VALUE>
+        <UNITS>TODO: Optional scientific units.</UNITS>
+      </RUN_ATTRIBUTE> -->
+    </RUN_ATTRIBUTES>
+  </RUN>
+  <!--  If you are submitting more than one Run, replicate the block <RUN> here, 
+        as many times as necessary.  -->
+</RUN_SET>

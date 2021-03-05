@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUBMISSION_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SRA.submission.xsd">
+	<SUBMISSION alias="2021.04.28_Submission_1000Project" center_name="EBI-TEST" broker_name="EGA">
+		<TITLE>Submission of new samples and study from the 1000 Genomes Project</TITLE>
+		<CONTACTS>		
+			<CONTACT name="Laura Richardson" inform_on_status="lrichardson@ebi.ac.uk" inform_on_error="lrichardson@ebi.ac.uk"/>
+		</CONTACTS>
+		<ACTIONS>
+			<ACTION>		
+				<ADD source="submission/xmls/sample_object.xml" schema="sample"/>
+			</ACTION>		
+			<ACTION>		
+				<ADD source="submission/xmls/sample_object.xml" schema="sample"/>
+			</ACTION>
+			<ACTION>		
+				<ADD source="submission/xmls/study_object.xml" schema="study"/>
+			</ACTION>
+			<ACTION>
+				<PROTECT/>
+			</ACTION>
+		</ACTIONS>
+		<SUBMISSION_ATTRIBUTES>	
+			<SUBMISSION_ATTRIBUTE>
+				<TAG>Submission process</TAG>
+				<VALUE>Programmatic submission</VALUE>
+			</SUBMISSION_ATTRIBUTE>
+		</SUBMISSION_ATTRIBUTES>
+	</SUBMISSION>
+</SUBMISSION_SET>
