@@ -2,7 +2,7 @@ import sys
 import pandas as pd
 #! Also need to install "openpyxl" package if you don't have it installed along pandas.
 import os
-from yaml import safe_load
+import yaml
 
 # Headers that define attributes within the YAML configuration file
 required_headers_key = "required"
@@ -26,11 +26,21 @@ class Input_reader():
         # We load the YAML file, creating a dictionary (of dictionaries) with its content.
         #     e.g. self.conf_dict = {'worksheets': ['Sample'], 'Sample': {'required': ['Sample_ID'], 'optional': ['Sample_title']}}
         try:
-            with open(conf_file, "r") as conf_file:
-                self.conf_dict = safe_load(conf_file)
+            with open(conf_file, "r") as f:
+                self.conf_dict = yaml.safe_load(f)
+
+        except yaml.scanner.ScannerError as ScannerError:
+            print("ERROR in Input_reader(): in the given configuration file '%s' there was a scanning issue." \
+                  % conf_file, file=sys.stderr)
+            print("\t - Problem: %s" \
+                  % ScannerError.problem, file=sys.stderr)
+            print("\t - Problem's location: %s" \
+                  % ScannerError.context_mark, file=sys.stderr)
+            sys.exit()
 
         except:
-            print("ERROR in Input_reader(): given configuration filepath '%s' could not be read" % conf_file, file=sys.stderr)
+            print("ERROR in Input_reader(): given configuration filepath '%s' could not be read" \
+                  % conf_file, file=sys.stderr)
             sys.exit()
 
         # We save the basename and file extension of the input file for future checks

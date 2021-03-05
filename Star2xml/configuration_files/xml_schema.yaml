@@ -17,27 +17,28 @@ XML_schemas_info:
     # Information regardig the XSD download if needed:
     file_extension: "xsd"
     ftp_server: "ftp.ebi.ac.uk"
-    schemas_dir: "pub/databases/ena/doc/xsd/sra_1_5/"
+    schemas_dir: "pub/databases/ena/doc/xsd/sra_1_6/"
     # Information regarding the XML construction:
     schema_instance_reference: "noNamespaceSchemaLocation"
     schema_instance: "http://www.w3.org/2001/XMLSchema-instance"
-    schemas_directory: "http://ftp.ebi.ac.uk/pub/databases/ena/doc/xsd/sra_1_5/"
+    schemas_directory: "http://ftp.ebi.ac.uk/pub/databases/ena/doc/xsd/sra_1_6/"
     object_schemas:
-        sample: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd"
-        experiment: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.experiment.xsd"
-        run: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/sra_1_5/SRA.run.xsd"
-        dac: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.dac.xsd"
-        dataset: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.dataset.xsd"
-        policy: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/EGA.policy.xsd"
-        analysis: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.analysis.xsd"
-        study: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.study.xsd"
-        submission: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.submission.xsd"
+        sample: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.sample.xsd"
+        experiment: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.experiment.xsd"
+        run: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/sra_1_6/SRA.run.xsd"
+        dac: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/EGA.dac.xsd"
+        dataset: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/EGA.dataset.xsd"
+        policy: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/EGA.policy.xsd"
+        analysis: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.analysis.xsd"
+        study: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.study.xsd"
+        submission: "ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.submission.xsd"
 
 # -------- #
 # XMLs structure
 # -------- #
 
-# Every element (XML node) can have 4 characteristics:
+# Every element (XML node) can have 4 characteristics. Their names are saved
+#   at the beginning of "common_key_values":
 #       - children: it contains a dictionary with the children elements of the current node (e.g. TAXON_ID and COMMON_NAME
 #                   would be the children of SAMPLE_NAME)
 #                   Example: in the following XML, the element "FILE" is the children of element "FILES"
@@ -60,6 +61,13 @@ XML_schemas_info:
 #                               <FILE filename="path/to/file2.txt"/>
 #                               <FILE filename="path/to/file3.txt"/>
 #                            </FILES>
+#       - add_empty_node: if this entry exists within an XML tag, the tool will know that this node holds information by
+#                         itself, even if left empty, and thus will not be removed from the XML at the prunning stage. 
+#                         Example: in the following XML, the element "SINGLE" is an empty node that needs to be left within the
+#                                  XML tree. 
+#                            <LIBRARY_LAYOUT>
+#                               <SINGLE/>
+#                            </LIBRARY_LAYOUT>
 
 # Important: if we create a node's attribute/text in this schema, there HAS to be a column in the input dataframe
 #            referencing it (the script will be looking for it). Even if it's empty for some or all rows.
@@ -70,161 +78,666 @@ XML_schemas_info:
 # In this section we will store some of the values or even key-value pairs that are commonly
 #   used in this file. They are stored with "&", and accessed with "*" or "<<: *".
 common_key_values:
-  # The 4 main characteristics that elements in this file can have
+  # The 5 main characteristics that elements in this file can have
   children_tag: &child "children"
   attributes_tag: &att "attributes"
   text_tag: &tx "text"
   repetitiveNode_tag: &RN "repetitive_node"
-  #
+  add_empty_node: &empty "add_empty_node"     # This one is used at XML tags that are empty but its pressence is meaningful by itself, with no
+                                              #   attributes nor text. 
+
+  #! To be uncommented once EE-1841 is done
+  # multiple_choice_child: &multi_child "multiple_choice_child"
+
+  # From this point we will save common attributes for objects that are sometimes
+  #   repeated within our schemas.
+  # Basic attributes of the file node (others will be specified at each schema)
   file_basic_attributes: &file_basic_attributes
     filename: "Filename"
     filetype: "Filetype"
     checksum_method: "Checksum_method"
     checksum: "Encrypted_checksum"
     unencrypted_checksum: "Unencrypted_checksum"
+  # The typical object's custom attribute (repetitive) with 3 nodes and text
+  custom_tag_value_node: &custom_tag_value_unit
+    *RN:
+    *child:
+      tag:
+          *tx: "Tag"
+      value:
+          *tx: "Value"
+      units:
+          *tx: "Units"
+
+  #! To be uncommented once EE-1841 is done
+  # Another common node for links, used in all objects
+  # URL_XREF_ENTREZ_links_node: &URL_XREF_ENTREZ_links_node
+  #   *RN:
+  #   *multi_child:
+  #     URL_LINK:
+  #       *child:
+  #         LABEL:
+  #           *tx: "URL_LINK.Label"
+  #         URL:
+  #           *tx: "URL_LINK.URL"
+  #     XREF_LINK:
+  #       *child:
+  #         DB:
+  #           *tx: "XREF_LINK.DB"
+  #         ID:
+  #           *tx: "XREF_LINK.ID"
+  #         #! Nobody used QUERY in an XREF link, there's literally no data for it so far in ERAPRO,
+  #         #     and there's little to no documentation about it. 
+  #         # QUERY:
+  #         #   *tx: "XREF_LINK.Query"
+  #         LABEL:
+  #           *tx: "XREF_LINK.label"
+  #     ENTREZ_LINK:
+  #       *child:
+  #         DB:
+  #           *tx: "ENTREZ_LINK.DB"
+  #         ID:
+  #           *tx: "ENTREZ_LINK.ID"
+  #         #! Just like with XREF: not a single entry of QUERY here.   
+  #         # QUERY:
+  #         #   *tx: "ENTREZ_LINK.query"
+  #         LABEL:
+  #           *tx: "ENTREZ_LINK.label"
+
+  # Node used in RUN and EXPERIMENT objects
+  platform_multichoice_node: &platform_multichoice_node
+    #! Choice:
+    *child:
+      LS454:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "LS454.Instrument_model"
+      ILLUMINA:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "ILLUMINA.Instrument_model"
+      HELICOS:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "HELICOS.Instrument_model"
+      ABI_SOLID:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "ABI_SOLID.Instrument_model"
+      COMPLETE_GENOMICS:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "COMPLETE_GENOMICS.Instrument_model"
+      BGISEQ:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "BGISEQ.Instrument_model"
+      OXFORD_NANOPORE:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "OXFORD_NANOPORE.Instrument_model"
+      PACBIO_SMRT:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "PACBIO_SMRT.Instrument_model"
+      ION_TORRENT:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "ION_TORRENT.Instrument_model"
+      CAPILLARY:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "CAPILLARY.Instrument_model"
+      DNBSEQ:
+        *child:
+          INSTRUMENT_MODEL:
+            *tx: "DNBSEQ.Instrument_model"
+  # The node referencing to the assembly and sequence used in the submitted reads
+  #!   We might want to remove some optional parts of it if it becomes too long.
+  ReferenceAssemblyType_node: &ReferenceAssemblyType_node
+    ASSEMBLY: # OPT
+      *child:
+        STANDARD:
+          *att:
+            refname: "Ref_Alignment.Assembly_name"
+            accession: "Ref_Alignment.Assembly_accessionVersion"  # REQ
+        #! Check if it's worth it to add the <CUSTOM> genome assembly node besides the standard -- THERE ARE some analysis with CUSTOM nodes for Reference Alignment
+    SEQUENCE: # OPT
+      *RN:
+      *att:
+        # refname: "RefSequence_name"
+        accession: "Ref_Alignment.SequenceAccession"  # REQ
+        label: "Ref_Alignment.SequenceLabel"
+  # The reference alignment that uses Assembly
+  ReferenceSequenceType_node: &ReferenceSequenceType_node
+    REFERENCE_ALIGNMENT:
+      *child:
+        <<: *ReferenceAssemblyType_node
+
 
 ####-------------####
 # - SAMPLE OBJECT - #
 ####-------------####
 sample:
-    attributes:
-         alias: "Sample_alias"
-         center_name: "Center_name"
-    children:
-        title:
-            text: "Title"
-        sample_name:
-            children:
-                taxon_id:
-                    text: "NCBI_taxid"
-                scientific_name:
-                    text: "Scientific_name"
-                common_name:
-                    text: "Common_name"
-        description:
-            text: "Description"
+    *att: # OPT
+         alias: "Sample_alias*"
+         center_name: "Center_name*"
+         broker_name: "Broker_name"
+    *child:
+        TITLE:
+          *tx: "Title*"
+        SAMPLE_NAME:
+          *child:
+            TAXON_ID:
+              *tx: "NCBI_taxid*"
+            SCIENTIFIC_NAME:
+              *tx: "Scientific_name*"
+            COMMON_NAME:
+              *tx: "Common_name*"
+        DESCRIPTION:
+          *tx: "Description"
+        #! To be uncommented once EE-1841
+        # SAMPLE_LINKS:
+        #   *child:
+        #     SAMPLE_LINK:
+        #       <<: *URL_XREF_ENTREZ_links_node
         sample_attributes:
-            children:
-                sample_attribute:
-                    repetitive_node:
-                    children:
-                        tag:
-                            text: "Tag"
-                        value:
-                            text: "Value"
-                        units:
-                            text: "Units"
-
-####----------####
-# - Run OBJECT - #
-####----------####
-run:
-    attributes:
-        alias: "Run_alias"
-        center_name: "Center_name"
-        run_date: "Run_date"
-    children:
-        experiment_ref:
-            attributes:
-                refname: "Experiment_reference"
-        data_block:
-            children:
-                files:
-                    children:
-                        file:
-                            repetitive_node:
-                            attributes:
-                                filename: "Filename"
-                                filetype: "Filetype"
-                                checksum_method: "Checksum_method"
-                                checksum: "Encrypted_checksum"
-                                unencrypted_checksum: "Unencrypted_checksum"
+          *child:
+            # Bear in mind that subject_id, gender and phenotype are mandatory
+            #   as tag/value/unit blocks in "sample"
+            sample_attribute:
+              <<: *custom_tag_value_unit
 
 ####------------####
 # - Study OBJECT - #
 ####------------####
 study:
-    attributes:
-        alias: "Study_alias"
-        center_name: "Center_name"
-    children:
-        DESCRIPTOR:
-            children:
-                study_title:
-                    text: "Study_title"
-                STUDY_TYPE:
-                    attributes:
-                        existing_study_type: "Existing_study_type"
-                STUDY_ABSTRACT:
-                    text: "Study_abstract"
+    *att: # OPT
+        alias: "Study_alias*"
+        center_name: "Center_name*"
+        broker_name: "Broker_name"
+    *child:
+        DESCRIPTOR: # REQ
+            *child:
+                STUDY_TITLE:  # REQ
+                  *tx: "Study_title*"
+                STUDY_TYPE: # REQ
+                  #! Choice:
+                  *att:
+                    existing_study_type: "Existing_study_type*"
+                    new_study_type: "New_study_type"
+                STUDY_ABSTRACT: # OPT
+                  *tx: "Study_abstract"
+                CENTER_PROJECT_NAME:  # OPT
+                  *tx: "Center_ProjectName"
+                RELATED_STUDIES:  # OPT
+                  *child:
+                    RELATED_STUDY:
+                      *RN:
+                      *child:
+                        RELATED_LINK:
+                          *child:
+                            DB:
+                              *tx: "RelatedStudy_DB"
+                            ID:
+                              *tx: "RelatedStudy_ID"
+                            #! Not a single study used the Query. 
+                            # QUERY:
+                            #   *tx: "RelatedStudy_Query"
+                            LABEL:
+                              *tx: "RelatedStudy_label"
+                        IS_PRIMARY:
+                          *tx: "RelatedStudy_IsPrimary"
+                STUDY_DESCRIPTION:  # OPT
+                  *tx: "Study_description"
+        #! To be uncommented once EE-1841
+        # STUDY_LINKS:  # OPT
+        #   *child:
+        #     STUDY_LINK:
+        #       <<: *URL_XREF_ENTREZ_links_node
+        STUDY_ATTRIBUTES:  # OPT
+          *child:
+            STUDY_ATTRIBUTE:
+              <<: *custom_tag_value_unit
 
-        study_attributes:
-            children:
-                study_attribute:
-                    repetitive_node:
-                    children:
-                        tag:
-                            text: "Tag"
-                        value:
-                            text: "Value"
-                        units:
-                            text: "Units"
+####----------####
+# - Run OBJECT - #
+####----------####
+run:
+    *att: # OPT
+        alias: "Run_alias*"
+        center_name: "Center_name*"
+        broker_name: "Broker_name"
+        run_date: "Run_date"
+        run_center: "Run_center"
+    *child:
+      TITLE:  # OPT
+        *tx: "Title"
+      EXPERIMENT_REF: # REQ
+        *att:
+            refname: "ExperimentReference_Name*"
+            refcenter: "ExperimentReference_Center*"
+            # accession: "ExperimentReference_Accession"
+
+      #! Check if it's worh it to add the <SPOT_DESCRIPTOR> element
+
+      #! The platform is already assigned in the EXPERIMENT metadata object
+      # PLATFORM: # OPT
+      #   <<: *platform_multichoice_node
+
+      #! Check if it's worh it to add the <PROCESSING> element, and add it as a common one
+      #!    since it's used in EXPERIMENTS too.
+
+      RUN_TYPE:
+        *child:
+          <<: *ReferenceSequenceType_node
+
+      DATA_BLOCK: # OPT
+        *child:
+          FILES:
+              *child:
+                  FILE:
+                      *RN:
+                      *att:
+                          <<: *file_basic_attributes
+                          quality_scoring_system: "Scoring_system" # OPT  Controlled Vocabulary
+                          quality_encoding: "MinQuality_Ascii" # OPT
+                          ascii_offset: "Ascii_offset"
+                  #! Check if it's worth it to add the <READ_LABEL> node
+      #! To be uncommented once EE-1841
+      # RUN_LINKS:  # OPT
+      #   *child:
+      #     RUN_LINK:
+      #       <<: *URL_XREF_ENTREZ_links_node
+      RUN_ATTRIBUTES:  # OPT
+        *child:
+          RUN_ATTRIBUTE:
+            <<: *custom_tag_value_unit
 
 ####---------------####
 # - Analysis OBJECT - #
 ####---------------####
 analysis:
-    attributes:
-        alias: "Analysis_alias"
-        center_name: "Center_name"
-        analysis_date: "Analysis_date"
-    children:
-        TITLE:
-            text: "Title"
-        description:
-            text: "Description"
-        STUDY_REF:
-            attributes:
-                refname: "Study_alias"
-                refcenter: "Study_CenterName"
-        SAMPLE_REF:
-            repetitive_node:
-            attributes:
-                refname: "Sample_alias"
-                refcenter: "Sample_CenterName"
-                label: "Label"
-        analysis_type:
-            children:
-                SEQUENCE_VARIATION:
-                    children:
-                        ASSEMBLY:
-                            children:
-                                STANDARD:
-                                    attributes:
-                                        refname: "Assembly_name"
-                                        accession: "Assembly_accession"
-                        SEQUENCE:
-                            attributes:
-                                accession: "Sequence_accession"
-                                label: "Sequence_label"
-                        EXPERIMENT_TYPE:
-                            text: "Experiment_type"
-        files:
-            *child:
-                file:
-                    repetitive_node:
-                    attributes:
-                        <<: *file_basic_attributes
-                        checklist: "checklist"
+  *att: # OPT
+    alias: "Analysis_alias*"
+    center_name: "Center_name*"
+    broker_name: "Broker_name"
+    analysis_date: "Analysis_date"
+    analysis_center: "Analysis_center"
+  *child:
+    TITLE:  # OPT
+      *tx: "Title"
+    DESCRIPTION:  # OPT
+      *tx: "Description"
+    STUDY_REF:  # REQ
+      *att:
+        refname: "Study_alias"
+        # refcenter: "Study_CenterName"
+        # accession: "Study_accession"
+        # label: "Study_label"
+    SAMPLE_REF:
+      *RN:
+      *att:
+        refname: "Sample_alias"
+        # refcenter: "Sample_CenterName"
+        # accession: "Sample_accession"
+        label: "Sample_Label"
+    EXPERIMENT_REF:
+      *RN:
+      *att:
+        refname: "Experiment_alias"
+        # refcenter: "Experiment_CenterName"
+        # accession: "Experiment_accession"
+    RUN_REF:
+      *RN:
+      *att:
+        refname: "Run_alias"
+        # refcenter: "Run_CenterName"
+        # accession: "Run_accession"
+        label: "Run_label"
+    ANALYSIS_REF:
+      *RN:
+      *att:
+        refname: "OtherAnalysis_alias"
+        # refcenter: "OtherAnalysis_CenterName"
+        # accession: "OtherAnalysis_accession"
+        label: "OtherAnalysis_label"
 
-        ANALYSIS_ATTRIBUTES:
-            children:
-                ANALYSIS_ATTRIBUTE:
-                    repetitive_node:
-                    children:
-                        tag:
-                            text: "Tag"
-                        value:
-                            text: "Value"
-                        units:
-                            text: "Units"
+    ANALYSIS_TYPE:  # REQ
+      #! choice:
+      *child:
+        <<: *ReferenceSequenceType_node
+        SEQUENCE_VARIATION:
+          *child:
+            ASSEMBLY: # OPT
+              *child:
+                STANDARD:
+                  *att:
+                    refname: "Seq_Variation.Assembly_name"
+                    accession: "Seq_Variation.Assembly_accessionVersion"  # REQ
+                SEQUENCE: # OPT
+                  *RN:
+                  *att:
+                    # refname: "RefSequence_name"
+                    accession: "Ref_Alignment.SequenceAccession"  # REQ
+                    label: "Ref_Alignment.SequenceLabel"
+            EXPERIMENT_TYPE:  # Controlled Vocabulary
+              *tx: "Seq_Variation.Experiment_type"
+            PROGRAM:
+              *tx: "Seq_Variation.Program"
+            PLATFORM:
+              *tx: "Seq_Variation.Platform"
+            # IMPUTATION:
+            #   *tx: "Imputation"
+
+        SEQUENCE_ASSEMBLY:
+          *child:
+            NAME:
+              *tx: "Seq_Assembly.Name"
+            TYPE: # Controlled Vocabulary
+              *tx: "Seq_Assembly.Type"
+            COVERAGE:
+              *tx: "Seq_Assembly.Coverage"
+            PLATFORM:
+              *tx: "Seq_Assembly.Platform"
+            MIN_GAP_LENGTH:
+              *tx: "Seq_Assembly.MinGapLen"
+            MOL_TYPE: # Controlled Vocabulary
+              *tx: "Seq_Assembly.MoleculeType"
+            PROGRAM:
+              *tx: "Seq_Assembly.Program"
+            PARTIAL:
+              *tx: "Seq_Assembly.Partial"
+            #! Check if it's worth it to use:
+            # TPA:
+            #   *tx: "Sequence_Assembly.TPA"
+            # AUTHORS:
+            #   *tx: "Sequence_Assembly.Authors"
+            # ADDRESS:
+            #   *tx: "Sequence_Assembly.Address"
+
+        SEQUENCE_FLATFILE:
+          *empty:
+
+        SEQUENCE_ANNOTATION:
+          *child:
+            ASSEMBLY: # OPT
+              *child:
+                STANDARD:
+                  *att:
+                    refname: "Seq_Annotation.Assembly_name"
+                    accession: "Seq_Annotation.Assembly_accessionVersion"  # REQ
+                SEQUENCE: # OPT      #!!! All of these "SEQUENCE" nodes that are repeated across different analysis types will have to be changed
+                                     #!!!   once the "choice" is implemented, so that we can use a common column for all of these, and it's the node what's chosen.
+                  *RN:
+                  *att:
+                    # refname: "RefSequence_name"
+                    accession: "Ref_Alignment.SequenceAccession"  # REQ
+                    label: "Ref_Alignment.SequenceLabel"
+
+        REFERENCE_SEQUENCE:
+          *empty:
+
+        SAMPLE_PHENOTYPE:
+          *empty:
+
+        PROCESSED_READS:
+          *child:
+            ASSEMBLY: # OPT
+              *child:
+                STANDARD:
+                  *att:
+                    refname: "Processed_Reads.Assembly_name"
+                    accession: "Processed_Reads.Assembly_accessionVersion"  # REQ
+                SEQUENCE: # OPT
+                  *RN:
+                  *att:
+                    # refname: "RefSequence_name"
+                    accession: "Ref_Alignment.SequenceAccession"  # REQ
+                    label: "Ref_Alignment.SequenceLabel"
+
+        GENOME_MAP:
+          *child:
+            PROGRAM:
+              *tx: "Genome_Map.Program"
+            PLATFORM: # Controlled Vocabulary
+              *tx: "Genome_Map.Platform"
+            DESCRIPTION:
+              *tx: "Genome_Map.Description"
+
+        AMR_ANTIBIOGRAM:
+          *empty:
+
+        PATHOGEN_ANALYSIS:
+          *empty:
+
+        TRANSCRIPTOME_ASSEMBLY:
+          *child:
+            NAME:
+              *tx: "Transcriptome_Assembly.Name"
+            TYPE: # Controlled Vocabulary
+              *tx: "Transcriptome_Assembly.Type"
+            PLATFORM:
+              *tx: "Transcriptome_Assembly.Platform"
+            PROGRAM:
+              *tx: "Transcriptome_Assembly.Program"
+            # TPA:
+            #   *tx: "TPA"
+            # AUTHORS:
+            #   *tx: "Authors"
+            # ADDRESS:
+            #   *tx: "Address"
+
+        #! There are only 2 analysis that use the NAME of TAXONOMIC_REFERENCE_SET, which denotes that its usage is marginal
+        TAXONOMIC_REFERENCE_SET:
+          *child:
+            NAME:
+              *tx: "Taxonomic_RefSet.Name"
+            TAXONOMY_SYSTEM:
+              *tx: "Taxonomic_RefSet.System"
+            # TAXONOMY_SYSTEM_VERSION:
+            #   *tx: "Taxonomic_RefSet.SystemVersion"
+            # CUSTOM_FIELDS:
+            #   *child:
+            #     FIELD:
+            #       *RN:
+            #       *child:
+            #         NAME:
+            #           *tx: "CustomField_Name"
+            #         DESCRIPTION:
+            #           *tx: "CustomField_Description"
+    FILES:
+      *child:
+        FILE:
+          *RN:
+          *att:
+            <<: *file_basic_attributes
+            checklist: "Checklist"
+
+    #! To be uncommented once EE-1841 is done
+    # ANALYSIS_LINKS:  # OPT
+    #   *child:
+    #     ANALYSIS_LINK:
+    #       <<: *URL_XREF_ENTREZ_links_node
+
+    ANALYSIS_ATTRIBUTES:  # OPT
+      *child:
+        ANALYSIS_ATTRIBUTE:
+          <<: *custom_tag_value_unit
+
+####-----------------####
+# - Experiment OBJECT - #
+####-----------------####
+
+experiment:
+  *att: # OPT
+     alias: "Experiment_alias*"
+     center_name: "Center_name*"
+     broker_name: "Broker_name"
+  *child:
+    TITLE:
+      *tx: "Title"
+    STUDY_REF:  # REQ
+      *att:
+        refname: "Study_refname*"
+        refcenter: "Study_refCenter*"
+        # accession: "Study_accession"
+    DESIGN: # REQ
+      *child:
+        DESIGN_DESCRIPTION: # REQ
+          *tx: "Design_description*"
+        SAMPLE_DESCRIPTOR:
+          *att:
+            # refname: "Sample_refname"
+            # refcenter: "Sample_refCenter"
+            accession: "Sample_accession*"
+          #! choice:      Although at ENA's schemas it seems there's only one choice.
+          #! The POOL element is hardly used (for what I've seen), and the sample accession is enough
+          #!    therefore. Check if it's worth it to add the pool element. 
+          # *child:
+          #   POOL:
+          #     *child:
+          #       DEFAULT_MEMBER:
+          #         *att:
+          #           refname: "DefaultMember_refname"
+          #           refcenter: "DefaultMember_refCenter"
+          #           accession: "DefaultMember_accession"
+          #           # member_name: "DefaultMember_name"
+          #           # proportion: "PercentageOfDefaultMember_Included"
+          #         # *child:
+          #           # READ_LABEL: # OPT
+          #       MEMBER: # REQ
+          #         *RN:
+          #         *att:
+          #           refname: "Member_refname"
+          #           refcenter: "Member_refCenter"
+          #           accession: "Member_accession"
+          #           # member_name: "Member_name"
+          #           # proportion: "PercentageOfMember_Included"
+          #         # *child:
+          #           # READ_LABEL: # OPT
+
+        LIBRARY_DESCRIPTOR: # REQ
+          *child:
+            LIBRARY_NAME: # OPT
+              *tx: "Library_name"
+            LIBRARY_STRATEGY: # REQ Controlled Vocabulary
+              *tx: "Library_strategy*"
+            LIBRARY_SOURCE: # REQ Controlled Vocabulary
+              *tx: "Library_source*"
+            LIBRARY_SELECTION:  # REQ Controlled Vocabulary
+              *tx: "Library_selection*"
+            LIBRARY_LAYOUT: # REQ
+              #! Choice:
+              *child:
+                SINGLE:
+                  *empty:
+                PAIRED:
+                  *att:
+                    NOMINAL_LENGTH: "Paired_Nominal_length"
+                    NOMINAL_SDEV: "Paired_Nominal_sdev"
+            TARGETED_LOCI:  # OPT
+              *child:
+                LOCUS:
+                  *RN:
+                  *att:
+                    locus_name: "Locus_name"  # Controlled Vocabulary
+                    description: "Locus_description"
+                  # *child:
+                  #   PROBE_SET:
+                  #     *child:
+                  #       DB:
+                  #         *tx: ""
+                  #       ID:
+                  #         *tx: ""
+                  #       LABEL:
+                  #         *tx: ""
+            # POOLING_STRATEGY: # OPT
+            #   *tx: "Pooling_strategy"
+            LIBRARY_CONSTRUCTION_PROTOCOL:
+              *tx: "Library_construction_protocol"
+
+        SPOT_DESCRIPTOR:
+          *child:
+            SPOT_DECODE_SPEC:
+              *child:
+                SPOT_LENGTH:
+                  *tx: "SPOT_LENGTH"
+                READ_SPEC:
+                  *RN:
+                  *child:
+                    READ_INDEX:
+                      *tx: "ReadSpec.READ_INDEX"
+                    READ_LABEL:
+                      *tx: "ReadSpec.READ_LABEL" 
+                    READ_CLASS:
+                      *tx: "ReadSpec.READ_CLASS"
+                    READ_TYPE:  # CV
+                      *tx: "ReadSpec.READ_TYPE"     
+                    RELATIVE_ORDER:
+                      *att:
+                        follows_read_index: "ReadSpec.Preceding_read_index"              
+                    BASE_COORD:
+                      *tx: "ReadSpec.BASE_COORD"
+                    EXPECTED_BASECALL_TABLE:
+                      *att:
+                        default_length: "ReadSpec.Expected_Default_Length"
+                        # base_coord: "ReadSpec.Expected_Default_Length"
+                      *child:
+                        BASECALL:
+                          #! *RN: but we cannot allow for it due to its dimensional complexity.
+                          #   It shall be noted though that there is such case in the database, and thus we find ourselves limited by this constraint. We could find alternative methods to get this information (e.g. getting all basecalls within one single cell, using a separator for each attribute or text, and another one for each "basecall" separation)
+                          #   but that will take a modification of the tooling, addition of a new characteristic within this YAML, etc. 
+                          #    like using separators within one single cell (e.g. )
+                          #    Example of what we can find: 
+                          #   <EXPECTED_BASECALL_TABLE>
+                          #     <BASECALL min_match="40" max_mismatch="5" match_edge="full">GTTGGAACCGAAAGGGTTTGAATTCAAACTTTCGGTTCCAAC</BASECALL>
+                          #     <BASECALL min_match="38" max_mismatch="5" match_edge="full">TCGTATAACTTCGTATAATGTATGCTATACAGTTATTACG</BASECALL>
+                          #     <BASECALL min_match="38" max_mismatch="5" match_edge="full">CGTAATAACTTCGTATAGCATACATTATAAAGTTATACGA</BASECALL>
+                          #   </EXPECTED_BASECALL_TABLE>
+                          *att:
+                            min_match: "ReadSpec.Basecall_min_match"
+                            max_mismatch: "ReadSpec.Basecall_max_mismatch"
+                            match_edge: "ReadSpec.Basecall_match_edge"
+                          *tx: "ReadSpec.Basecall"
+
+    PLATFORM: # REQ
+      <<: *platform_multichoice_node
+
+    PROCESSING:  # OPT
+      *child:
+        PIPELINE:
+          *child:
+            PIPE_SECTION:
+              *RN:
+              # *att:
+              #   section_name: "Pipeline_section_name"
+              *child:
+                STEP_INDEX:
+                  *tx: "Pipeline.StepIndex"
+                PREV_STEP_INDEX: # OPT
+                  #!! There's an issue with this element, since instead of being "0" for the first pipesection
+                  #!!   it says to set "nil=True", but our tool was not developed for users to modify those attributes. For now, instead we will imput N/A, NIL or leave it empty. 
+                  # *RN - But we cannot allow it due to the complexity of the dataframe. An alternative would be to create a whole list (within one cell) of previous steps with a separator of some sort (e.g. ";"). 
+                  *tx: "Pipeline.PreviousStepIndex"
+                PROGRAM:
+                  *tx: "Pipeline.Program"
+                VERSION:
+                  *tx: "Pipeline.ProgramVersion"
+                NOTES: # OPT
+                  *tx: "Pipeline.Notes"
+        #! Check how useful it would be to add DIRECTIVES
+        # DIRECTIVES: # OPT
+        #   *child:
+        #     SAMPLE_DEMUX_DIRECTIVE: # OPT Controlled Vocabulary
+        #       *tx: "Sample_demux_directive"
+    
+    #! To be uncommented once EE-1841 is done
+    # EXPERIMENT_LINKS: # OPT
+    #   *child:
+    #     EXPERIMENT_LINK:
+    #       <<: *URL_XREF_ENTREZ_links_node
+    EXPERIMENT_ATTRIBUTES:  # OPT
+      *child:
+        EXPERIMENT_ATTRIBUTE:
+          <<: *custom_tag_value_unit
