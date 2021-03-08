@@ -316,7 +316,7 @@ run:
       EXPERIMENT_REF: # REQ
         *att:
             refname: "ExperimentReference_Name*"
-            refcenter: "ExperimentReference_Center*"
+            # refcenter: "ExperimentReference_Center*"
             # accession: "ExperimentReference_Accession"
 
       #! Check if it's worh it to add the <SPOT_DESCRIPTOR> element
