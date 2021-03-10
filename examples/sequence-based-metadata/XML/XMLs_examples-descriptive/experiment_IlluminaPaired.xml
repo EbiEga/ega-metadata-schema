@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <EXPERIMENT_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.experiment.xsd">
-  <EXPERIMENT alias="TODO: Submitter designated name for the &quot;Experiment&quot;. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)">
+  <EXPERIMENT alias="TODO: Submitter designated name for the 'Experiment'. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)">
     <TITLE>TODO: Short text that can be used to call out experiment records in searches or in displays. This element is technically optional but should be used for all new records.</TITLE>    <!-- Optional block -->
-    <STUDY_REF refname="TODO: Identifies the parent study (that encompasses this experiment) by name within the namespace defined by attribute &quot;Study_refCenter&quot;." refcenter="TODO: Acronym of the center name used to submit the referenced study."/>
+    <STUDY_REF refname="TODO: Identifies the parent study (that encompasses this experiment) by name within the namespace defined by attribute 'Study_refCenter'." refcenter="TODO: Acronym of the center name used to submit the referenced study."/>
     <DESIGN>
-      <DESIGN_DESCRIPTION>TODO: Goal and setup of the individual library including library was constructed</DESIGN_DESCRIPTION>
+      <DESIGN_DESCRIPTION>TODO: Goal and setup of the individual library including how the library was constructed</DESIGN_DESCRIPTION>
       <SAMPLE_DESCRIPTOR accession="TODO: Accession ID of the Sample associated with this experiment."/>
       <LIBRARY_DESCRIPTOR>
         <LIBRARY_NAME>TODO: The submitter's name for this library.</LIBRARY_NAME>     <!-- Optional block -->
-        <LIBRARY_STRATEGY>TODO: Sequencing technique intended for this library. Choose one of the following terms (description in parenthesis):
+        <LIBRARY_STRATEGY>TODO: Sequencing technique intended for this library. Must be value from Controlled vocabulary (description in parenthesis):
               WGS	(Random sequencing of the whole genome)
               WGA	(whole genome amplification to replace some instances of RANDOM)
               WXS	(Random sequencing of exonic regions selected from the genome)
@@ -48,7 +48,7 @@
               ChM-Seq
               GBS
               OTHER	(Library strategy not listed)</LIBRARY_STRATEGY>
-        <LIBRARY_SOURCE>TODO: Specifies the type of source material that is being sequenced. Choose one of the following terms (description in parenthesis):
+        <LIBRARY_SOURCE>TODO: Specifies the type of source material that is being sequenced. Must be value from Controlled vocabulary (description in parenthesis):
               GENOMIC	(Genomic DNA (includes PCR products from genomic DNA))
               GENOMIC SINGLE CELL
               TRANSCRIPTOMIC	(Transcription products or non genomic DNA (EST, cDNA, RT-PCR, screened libraries))
@@ -59,7 +59,7 @@
               VIRAL RNA	(Viral RNA)
               OTHER	(Other, unspecified, or unknown library source material)
 </LIBRARY_SOURCE>
-        <LIBRARY_SELECTION>TODO: Method used to enrich the target in the sequence library preparation. Choose one of the following terms (description in parenthesis):
+        <LIBRARY_SELECTION>TODO: Method used to enrich the target in the sequence library preparation. Must be value from Controlled vocabulary (description in parenthesis):
               RANDOM	(Random selection by shearing or other method)
               PCR	(Source material was selected by designed primers)
               RANDOM PCR	(Source material was selected by randomly generated primers)
@@ -105,6 +105,7 @@
               ITS1-5.8S-ITS2
               exome
               other" description="TODO: Description of alternate locus and/or auxiliary information. "/>
+          <!-- If you want to provide several loci, repeat <LOCUS> here as many times as needed. -->
         </TARGETED_LOCI>
         <LIBRARY_CONSTRUCTION_PROTOCOL>TODO: Free form text describing the protocol by which the sequencing library was constructed</LIBRARY_CONSTRUCTION_PROTOCOL>   <!-- Optional block -->
       </LIBRARY_DESCRIPTOR>
@@ -119,22 +120,11 @@
             <READ_TYPE>TODO: The type of read. Choose one of the following terms: 'Forward', 'Reverse', 'Adapter', 'Primer', 'Linker', 'BarCode', 'Other'.</READ_TYPE>
             <RELATIVE_ORDER follows_read_index="TODO: Optionally specify the read index that precedes this read. The read is located beginning at the offset or cycle relative to another read. This choice is appropriate for example when specifying a read that follows a variable length expected sequence(s)."/>
             <BASE_COORD>TODO: The location (coordinates) of the read. Start in terms of base count (1 is beginning of spot)</BASE_COORD>
-            <EXPECTED_BASECALL_TABLE default_length="TODO: Specify whether the spot should have a default length (e.g. &quot;7&quot;) for this tag if the expected base cannot be matched.">
+            <EXPECTED_BASECALL_TABLE default_length="TODO: Specify whether the spot should have a default length (e.g. '7') for this tag if the expected base cannot be matched.">
               <BASECALL min_match="TODO: Minimum number of matches to trigger identification. " max_mismatch="TODO: Maximum number of mismatches for identification" match_edge="TODO: Where the match should occur. Changes the rules on how min_match and max_mismatch are counted.">TODO: Basecall itself (e.g. "AAGGTGC")</BASECALL>
             </EXPECTED_BASECALL_TABLE>
           </READ_SPEC>
-            <!-- If you want to provide several read specifications, repeat <READ_SPEC> as follows (uncommented): -->
-          <!-- <READ_SPEC>
-            <READ_INDEX>TODO: READ_INDEX starts at 0 and is incrementally increased for each sequential read spec within a spot descriptor. </READ_INDEX>
-            <READ_LABEL>TODO: A label to name this tag (e.g. "F", "R", "Forward_read"…). Can be used to determine read name.  </READ_LABEL>
-            <READ_CLASS>TODO: the class of the read, either 'Application Read' or 'Technical Read'.</READ_CLASS>
-            <READ_TYPE>TODO: The type of read. Choose one of the following terms: 'Forward', 'Reverse', 'Adapter', 'Primer', 'Linker', 'BarCode', 'Other'.</READ_TYPE>
-            <RELATIVE_ORDER follows_read_index="TODO: Optionally specify the read index that precedes this read. The read is located beginning at the offset or cycle relative to another read. This choice is appropriate for example when specifying a read that follows a variable length expected sequence(s)."/>
-            <BASE_COORD>TODO: The location (coordinates) of the read. Start in terms of base count (1 is beginning of spot)</BASE_COORD>
-            <EXPECTED_BASECALL_TABLE default_length="TODO: Specify whether the spot should have a default length (e.g. &quot;7&quot;) for this tag if the expected base cannot be matched.">
-              <BASECALL min_match="TODO: Minimum number of matches to trigger identification. " max_mismatch="TODO: Maximum number of mismatches for identification" match_edge="TODO: Where the match should occur. Changes the rules on how min_match and max_mismatch are counted.">TODO: Basecall itself (e.g. "AAGGTGC")</BASECALL>
-            </EXPECTED_BASECALL_TABLE>
-          </READ_SPEC> -->
+          <!-- If you want to provide several read specifications, repeat <READ_SPEC> here as many times as needed. -->
         </SPOT_DECODE_SPEC>
       </SPOT_DESCRIPTOR>
     </DESIGN>
@@ -161,14 +151,7 @@
           <VERSION>TODO: Version of the program or process for primary analysis (e.g. '2.3.306')</VERSION>
           <NOTES>TODO: Notes about the program or process for primary analysis (e.g. 'Image Analysis 1.3.4 - set birghtness to 30%')</NOTES>
         </PIPE_SECTION>
-        <!-- If you want to provide several pipe sections, repeat <PIPE_SECTION> as follows (uncommented): -->
-        <!-- <PIPE_SECTION>
-          <STEP_INDEX>TODO: Lexically ordered value (e.g. '1', '2'…) that allows for the pipe section to be hierarchically ordered.</STEP_INDEX>
-          <PREV_STEP_INDEX>TODO: Step index of the previous step in the workflow (e.g. '1', '2'…). If this is the first pipe section, use 'N/A'.</PREV_STEP_INDEX>
-          <PROGRAM>TODO: Name of the program or process for primary analysis (e.g. 'Rig Software'). This may include a test or condition that leads to branching in the workflow.</PROGRAM>
-          <VERSION>TODO: Version of the program or process for primary analysis (e.g. '2.3.306')</VERSION>
-          <NOTES>TODO: Notes about the program or process for primary analysis (e.g. 'Image Analysis 1.3.4 - set birghtness to 30%')</NOTES>
-        </PIPE_SECTION> -->
+        <!-- If you want to provide several pipe sections, repeat <PIPE_SECTION> here as many times as needed. -->
       </PIPELINE>
     </PROCESSING>
     <EXPERIMENT_ATTRIBUTES>   <!-- Optional block -->
@@ -177,12 +160,7 @@
         <VALUE>TODO: Value of the custom attribute.</VALUE>
         <UNITS>TODO: Optional scientific units.</UNITS>
       </EXPERIMENT_ATTRIBUTE>
-      <!-- If you want to provide several pipe sections, repeat <PIPE_SECTION> as follows (uncommented): -->
-      <!-- <EXPERIMENT_ATTRIBUTE>
-        <TAG>TODO: Name of the custom attribute.</TAG>
-        <VALUE>TODO: Value of the custom attribute.</VALUE>
-        <UNITS>TODO: Optional scientific units.</UNITS>
-      </EXPERIMENT_ATTRIBUTE> -->
+      <!-- If you want to provide several pipe sections, repeat <EXPERIMENT_ATTRIBUTE> (with at least TAG and VALUE) here as many times as needed. -->
     </EXPERIMENT_ATTRIBUTES>
   </EXPERIMENT>
   <!--  If you are submitting more than one Experiment, replicate the block <EXPERIMENT> here, 

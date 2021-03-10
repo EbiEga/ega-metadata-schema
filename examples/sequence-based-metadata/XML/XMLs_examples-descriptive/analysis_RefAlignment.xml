@@ -1,35 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ANALYSIS_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.analysis.xsd">
-  <ANALYSIS alias="TODO: Submitter designated name for the &quot;Analysis&quot;. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker" analysis_date="TODO: ISO date when the Analysis took place (e.g. &quot;2001-12-17T09:30:47Z&quot;). If the time stamp is unknown, leave it as 0s (2008-07-02T00:00:00)" analysis_center="TODO: If applicable, the name of the contract sequencing center that executed the Analysis.">
+  <ANALYSIS alias="TODO: Submitter designated name for the 'Analysis'. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker" analysis_date="TODO: ISO date when the Analysis took place (e.g. '2001-12-17T09:30:47Z'). If the time stamp is unknown, leave it as 0s (2008-07-02T00:00:00)" analysis_center="TODO: If applicable, the name of the center that executed the Analysis.">
     <TITLE>TODO: Short text describing the Analysis. It will be displayed in search results.</TITLE>    <!-- Optional block -->
     <DESCRIPTION>TODO: Describes the analysis in detail</DESCRIPTION>   <!-- Optional block -->
-    <STUDY_REF refname="TODO: Alias of the parent study, used to identify it. "/>   <!-- Optional block -->
-    <SAMPLE_REF refname="TODO: The alias of a sample associated with the analysis. If there are several samples associated to this analysis, repeat the block &quot;Sample_alias&quot;-&quot;Sample_Label&quot; as many times as needed." label="TODO: A label associating the sample with sample references in data files."/>    <!-- Optional block -->
-    <!-- If you want to provide several references to submitted samples, repeat <SAMPLE_REF> as follows (uncommented): -->
-    <!-- <SAMPLE_REF refname="TODO: The alias of a sample associated with the analysis. If there are several samples associated to this analysis, repeat the block &quot;Sample_alias&quot;-&quot;Sample_Label&quot; as many times as needed." label="TODO: A label associating the sample with sample references in data files."/> -->
-    <EXPERIMENT_REF refname="TODO: The alias of an Experiment associated with the analysis. If there are several Experiments associated to this analysis, repeat this column as many times as needed."/>    <!-- Optional block -->
-    <!-- If you want to provide several references to submitted experiments, repeat <EXPERIMENT_REF> as follows (uncommented): -->
-    <!-- <EXPERIMENT_REF refname="TODO: The alias of an Experiment associated with the analysis. If there are several Experiments associated to this analysis, repeat this column as many times as needed."/> -->
-    <RUN_REF refname="TODO: The alias of a Run associated with the analysis. If there are several Runs associated to this analysis, repeat the block &quot;Run_alias&quot;-&quot;Run_label&quot; as many times as needed." label="TODO: A label associating the run with run references in data files"/>    <!-- Optional block -->
-    <!-- If you want to provide several references to submitted runs, repeat <RUN_REF> as follows (uncommented): -->
-    <!-- <RUN_REF refname="TODO: The alias of a Run associated with the analysis. If there are several Runs associated to this analysis, repeat the block &quot;Run_alias&quot;-&quot;Run_label&quot; as many times as needed." label="TODO: A label associating the run with run references in data files"/> -->
-    <ANALYSIS_REF refname="TODO: The alias of an Analysis associated with the analysis (i.e. the one you are submitting). If there are several Analyses associated to this analysis, repeat the block &quot;OtherAnalysis_alias&quot;-&quot;OtherAnalysis_label&quot; as many times as needed." label="TODO: A label associating the analysis with analysis references in data files."/>    <!-- Optional block -->
-    <!-- If you want to provide several references to other submitted analysis, repeat <ANALYSIS_REF> as follows (uncommented): -->
-    <!-- <ANALYSIS_REF refname="TODO: The alias of an Analysis associated with the analysis (i.e. the one you are submitting). If there are several Analyses associated to this analysis, repeat the block &quot;OtherAnalysis_alias&quot;-&quot;OtherAnalysis_label&quot; as many times as needed." label="TODO: A label associating the analysis with analysis references in data files."/> -->
+    <STUDY_REF refname="TODO: Alias of the parent study, used to identify it."/>   <!-- Optional block -->
+    <SAMPLE_REF refname="TODO: The alias of a sample associated with the analysis." label="TODO: A label associating the sample with sample references in data files."/>    <!-- Optional block -->
+    <!-- If you want to provide several references to submitted samples, repeat <SAMPLE_REF> here as many times as needed. -->
+    <EXPERIMENT_REF refname="TODO: The alias of an Experiment associated with the analysis"/>    <!-- Optional block -->
+    <!-- If you want to provide several references to submitted experiments, repeat <EXPERIMENT_REF> here as many times as needed. -->
+    <RUN_REF refname="TODO: The alias of a Run associated with the analysis." label="TODO: A label associating the run with run references in data files"/>    <!-- Optional block -->
+    <!-- If you want to provide several references to submitted runs, repeat <RUN_REF> here as many times as needed. -->
+    <ANALYSIS_REF refname="TODO: The alias of an Analysis associated with the analysis (i.e. the one you are submitting)." label="TODO: A label associating the analysis with analysis references in data files."/>    <!-- Optional block -->
+    <!-- If you want to provide several references to other submitted analysis, repeat <ANALYSIS_REF> here as many times as needed. -->
     <ANALYSIS_TYPE>
       <REFERENCE_ALIGNMENT>
         <ASSEMBLY>    <!-- Optional block -->
           <STANDARD refname="TODO: Standard genome assembly name (e.g. GRCh37). Use this column exclusively if the Analysis is a Reference Alignment." accession="TODO: Standard genome accession version (e.g. GCA_000001405.1). Use this column exclusively if the Analysis is a Reference Alignment."/>
         </ASSEMBLY>
-        <SEQUENCE accession="TODO: Accession of the sequence for the reference alignment in format &quot;Accession.version&quot;, with version being mandatory (e.g. CM000663.1). Use this column exclusively if the Analysis is a Reference Alignment or Sequence Variation.&#10;&#10;In case you want to provide several sequence details, repeat the block &quot;Ref_Alignment.SequenceAccession&quot; - &quot;Ref_Alignment.SequenceLabel&quot; as many times as needed. " label="TODO:  This is how Reference Sequence is labeled in submission file(s) (e.g. chr1). It is equivalent to the @SQ label in a BAM file (optional when submitted file uses INSDC accession.version). Use this column exclusively if the Analysis is a Reference Alignment or Sequence Variation.&#10;&#10;In case you want to provide several sequence details, repeat the block &quot;Ref_Alignment.SequenceAccession&quot; - &quot;Ref_Alignment.SequenceLabel&quot; as many times as needed. "/>   <!-- Optional block -->
-        <!-- If you want to provide several reference sequences, repeat <SEQUENCE> as follows (uncommented): -->
-        <!-- <SEQUENCE accession="TODO: Accession of the sequence for the reference alignment in format &quot;Accession.version&quot;, with version being mandatory (e.g. CM000663.1). Use this column exclusively if the Analysis is a Reference Alignment or Sequence Variation.&#10;&#10;In case you want to provide several sequence details, repeat the block &quot;Ref_Alignment.SequenceAccession&quot; - &quot;Ref_Alignment.SequenceLabel&quot; as many times as needed. " label="TODO:  This is how Reference Sequence is labeled in submission file(s) (e.g. chr1). It is equivalent to the @SQ label in a BAM file (optional when submitted file uses INSDC accession.version). Use this column exclusively if the Analysis is a Reference Alignment or Sequence Variation&#10;&#10;In case you want to provide several sequence details, repeat the block &quot;Ref_Alignment.SequenceAccession&quot; - &quot;Ref_Alignment.SequenceLabel&quot; as many times as needed. "/> -->
+        <SEQUENCE accession="TODO: Accession of the sequence for the reference alignment in format 'Accession.version', with version being mandatory (e.g. CM000663.1). Use this column exclusively if the Analysis is a Reference Alignment or Sequence Variation." label="TODO:  This is how Reference Sequence is labeled in submission file(s) (e.g. chr1). It is equivalent to the @SQ label in a BAM file (optional when submitted file uses INSDC accession.version). Use this column exclusively if the Analysis is a Reference Alignment or Sequence Variation."/>   <!-- Optional block -->
+        <!-- If you want to provide several reference sequences, repeat <SEQUENCE> here as many times as needed. -->
       </REFERENCE_ALIGNMENT>
     </ANALYSIS_TYPE>
     <FILES>
-      <FILE filename="TODO: The name or relative pathname of an Analysis data file (e.g. path/to/files/file.fastq)" filetype= "TODO: The run data file model. Choose from Controlled vocabulary: 'tab', 'bam', 'bai', 'cram', 'crai', 'vcf', 'vcf_aggregate', 'bcf', 'tabix', 'wig', 'bed', 'gff', 'fasta', 'fastq', 'flatfile', 'chromosome_list', 'sample_list', 'readme_file', 'phenotype_file', 'BioNano_native', 'Kallisto_native', 'agp', 'unlocalised_list', 'info', 'manifest', 'csi', 'bcf_aggregate', 'other'." checksum_method="MD5" checksum="TODO: CHECKSUM from encrypted file (e.g. 298ee70555532679d7c1f91b5dd07aef)" unencrypted_checksum="TODO: CHECKSUM from unencrypted file (e.g. e609bc52c035ff1a62cdba0f0689889j)" checklist="TODO: The name of the checklist."/>
-      <!-- If you want to provide several files, repeat <FILE> as follows (uncommented): -->
-      <!-- <FILE filename="TODO: The name or relative pathname of an Analysis data file (e.g. path/to/files/file.fastq)" filetype="TODO: The run data file model. Choose from Controlled vocabulary: 'tab', 'bam', 'bai', 'cram', 'crai', 'vcf', 'vcf_aggregate', 'bcf', 'tabix', 'wig', 'bed', 'gff', 'fasta', 'fastq', 'flatfile', 'chromosome_list', 'sample_list', 'readme_file', 'phenotype_file', 'BioNano_native', 'Kallisto_native', 'agp', 'unlocalised_list', 'info', 'manifest', 'csi', 'bcf_aggregate', 'other'." checksum_method="MD5" checksum="TODO: CHECKSUM from encrypted file (e.g. 298ee70555532679d7c1f91b5dd07aef)" unencrypted_checksum="TODO: CHECKSUM from unencrypted file (e.g. e609bc52c035ff1a62cdba0f0689889j)" checklist="TODO: The name of the checklist."/> -->
+      <FILE filename="TODO: The name or relative pathname of an Analysis data file (e.g. path/to/files/file.fastq)" filetype= "TODO: The run data file type. Must be value from Controlled vocabulary: 'tab', 'bam', 'bai', 'cram', 'crai', 'vcf', 'vcf_aggregate', 'bcf', 'tabix', 'wig', 'bed', 'gff', 'fasta', 'fastq', 'flatfile', 'chromosome_list', 'sample_list', 'readme_file', 'phenotype_file', 'BioNano_native', 'Kallisto_native', 'agp', 'unlocalised_list', 'info', 'manifest', 'csi', 'bcf_aggregate', 'other'." checksum_method="MD5" checksum="TODO: CHECKSUM from encrypted file (e.g. 298ee70555532679d7c1f91b5dd07aef)" unencrypted_checksum="TODO: CHECKSUM from unencrypted file (e.g. e609bc52c035ff1a62cdba0f0689889j)" checklist="TODO: The name of the checklist."/>
+      <!-- If you want to provide several files, repeat <FILE> here as many times as needed. -->
     </FILES>
     <ANALYSIS_ATTRIBUTES>   <!-- Optional block -->
       <ANALYSIS_ATTRIBUTE>
@@ -37,12 +31,7 @@
         <VALUE>TODO: Value of the custom attribute.</VALUE>
         <UNITS>TODO: Optional scientific units.</UNITS>
       </ANALYSIS_ATTRIBUTE>
-      <!-- If you want to provide several custom analysis attributes, repeat <ANALYSIS_ATTRIBUTE> as follows (uncommented): -->
-      <!-- <ANALYSIS_ATTRIBUTE>
-        <TAG>TODO: Name of the custom attribute.</TAG>
-        <VALUE>TODO: Value of the custom attribute.</VALUE>
-        <UNITS>TODO: Optional scientific units.</UNITS>
-      </ANALYSIS_ATTRIBUTE> -->
+      <!-- If you want to provide several custom analysis attributes, repeat <ANALYSIS_ATTRIBUTE> (with at least TAG and VALUE) here as many times as needed. -->
     </ANALYSIS_ATTRIBUTES>
   </ANALYSIS>
   <!--  If you are submitting more than one Analysis, replicate the block <ANALYSIS> here, 

@@ -1,27 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <SAMPLE_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd">
-  <SAMPLE alias="HG03464" center_name="EBI-TEST" broker_name="EGA">
-    <TITLE>Sample HG03464 from the 1000 Genomes Project</TITLE>
+  <SAMPLE alias="Example!_HG03464" center_name="EBI-TEST" broker_name="EGA">
+    <TITLE>Example!_Sample HG03464 from the 1000 Genomes Project</TITLE>
     <SAMPLE_NAME>
       <TAXON_ID>9606</TAXON_ID>
       <SCIENTIFIC_NAME>homo sapiens</SCIENTIFIC_NAME>
       <COMMON_NAME>human</COMMON_NAME>
     </SAMPLE_NAME>
-    <DESCRIPTION>Individual HG03464 corresponds to a female from MSL</DESCRIPTION>
+    <DESCRIPTION>Example!_Individual HG03464 corresponds to a female from MSL</DESCRIPTION>
     <SAMPLE_ATTRIBUTES>
       <SAMPLE_ATTRIBUTE>
         <TAG>subject_id</TAG>
         <VALUE>HG03464</VALUE>
       </SAMPLE_ATTRIBUTE>
       <SAMPLE_ATTRIBUTE>
-        <TAG>gender</TAG>
-        <VALUE>female</VALUE>
-        <UNITS>X/X</UNITS>
+        <TAG>sex</TAG>
+        <VALUE>female</VALUE>   <!-- Use "female"/"male"/"unknown". If you want to explicitly provide the sample’s combination of sexual chromosomes, you can give them as the <VALUE> of an additional <SAMPLE_ATTRIBUTE>, whose <TAG> would be 'sex chromosomes' -->
       </SAMPLE_ATTRIBUTE>
       <SAMPLE_ATTRIBUTE>
         <TAG>phenotype</TAG>
         <VALUE>EFO:0000574</VALUE>
-        <UNITS>Experimental Ontology Factor accession</UNITS>
       </SAMPLE_ATTRIBUTE>
       <SAMPLE_ATTRIBUTE>
         <TAG>Population</TAG>

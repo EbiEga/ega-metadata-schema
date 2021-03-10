@@ -4,17 +4,14 @@
 	<DATASET alias="TODO: Submitter designated name for the Dataset. The name must be unique within the submission account" center_name="TODO: The center name (acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)">
 		<TITLE>TODO: Short text that can be used to call out data sets in searches or in displays</TITLE>
 		<DESCRIPTION>TODO: Free-form text describing the data sets</DESCRIPTION>		<!-- Optional block -->
-		<DATASET_TYPE>TODO: Optional type of the dataset. Choose from the following controlled vocabullary list: 'Whole genome sequencing','Exome sequencing','Genotyping by array','Transcriptome profiling by high-throughput sequencing','Transcriptome profiling by array','Amplicon sequencing','Methylation binding domain sequencing','Methylation profiling by high-throughput sequencing','Phenotype information','Study summary information','Genomic variant calling','Chromatin accessibility profiling by high-throughput sequencing','Histone modification profiling by high-throughput sequencing', 'Chip-Seq'. If the dataset is not within these listed types, remove the 'DATASET_TYPE' TAG</DATASET_TYPE>		<!-- Optional block -->
-		<!-- If you want to provide several dataset types, repeat <DATASET_TYPE> as follows (uncommented): -->
-		<!-- <DATASET_TYPE>TODO: Optional type of the dataset. Choose from the following controlled vocabullary list: 'Whole genome sequencing','Exome sequencing','Genotyping by array','Transcriptome profiling by high-throughput sequencing','Transcriptome profiling by array','Amplicon sequencing','Methylation binding domain sequencing','Methylation profiling by high-throughput sequencing','Phenotype information','Study summary information','Genomic variant calling','Chromatin accessibility profiling by high-throughput sequencing','Histone modification profiling by high-throughput sequencing', 'Chip-Seq'. If the dataset is not within these listed types, remove the 'DATASET_TYPE' TAG</DATASET_TYPE> -->
-		<RUN_REF accession="TODO: Accession number of the RUN that this dataset encompasses (RUN accessions start by EGAR...)"/>		<!-- Optional block -->
-        <ANALYSIS_REF accession="TODO: Accession number of the ANALYSIS that this dataset encompasses (ANALYSIS accessions start by EGAZ...)"/>		<!-- Optional block -->
+		<DATASET_TYPE>TODO: Type of the dataset. Must be value from Controlled vocabulary: 'Whole genome sequencing','Exome sequencing','Genotyping by array','Transcriptome profiling by high-throughput sequencing','Transcriptome profiling by array','Amplicon sequencing','Methylation binding domain sequencing','Methylation profiling by high-throughput sequencing','Phenotype information','Study summary information','Genomic variant calling','Chromatin accessibility profiling by high-throughput sequencing','Histone modification profiling by high-throughput sequencing', 'Chip-Seq'. If the dataset is not within these listed types, remove the 'DATASET_TYPE' TAG</DATASET_TYPE>		<!-- Optional block -->
+		<!-- If you want to provide several dataset types, repeat <DATASET_TYPE> here as many times as needed. -->
+		<RUN_REF accession="TODO: Accession number of the RUN that this dataset encompasses (RUN accessions start with EGAR...)"/>		<!-- Optional block -->
+        <ANALYSIS_REF accession="TODO: Accession number of the ANALYSIS that this dataset encompasses (ANALYSIS accessions start with EGAZ...)"/>		<!-- Optional block -->
         <!-- If the dataset is exclusively associated with either RUNs or ANALYSES, remove <RUN_REF> or <ANALYSIS_REF> accordingly. 
 
-			 If this dataset is associated to several RUNs or ANALYSES, repeat <RUN_REF> and/or <ANALYSIS_REF> as follows (uncommented): -->
-        <!-- <RUN_REF accession="TODO: Accession number of the RUN that this dataset encompasses (RUN accessions start by EGAR...)"/>
-        <ANALYSIS_REF accession="TODO: Accession number of the ANALYSIS that this dataset encompasses (ANALYSIS accessions start by EGAZ...)"/> -->
-		<POLICY_REF accession="TODO: Accession number of the POLICY that this dataset encompasses (POLICY accessions start by EGAP...)"/>
+			 If this dataset is associated to several RUNs or ANALYSES, repeat <RUN_REF> and/or <ANALYSIS_REF> here as many times as needed. -->
+		<POLICY_REF accession="TODO: Accession number of the POLICY that this dataset encompasses (POLICY accessions start with EGAP...)"/>
 		<DATASET_LINKS>		<!-- Optional block -->
 			<DATASET_LINK>
 				<URL_LINK>
@@ -22,13 +19,7 @@
 					<URL>TODO: Optional the internet service link (file:..., http:..., ftp:... etc.). In other words, the website address (e.g. http://www.mywebsite.org/dataset.html). </URL>
 				</URL_LINK>
 			</DATASET_LINK>
-            <!-- If you want to provide several dataset links, repeat <DATASET_LINK> as follows (uncommented): -->
-            <!-- <DATASET_LINK>
-				<URL_LINK>
-					<LABEL>TODO: Optional text label to display for the link</LABEL>
-					<URL>TODO: Optional the internet service link (file:..., http:..., ftp:... etc.). In other words, the website address (e.g. http://www.mywebsite.org/dataset.html). </URL>
-				</URL_LINK>
-			</DATASET_LINK> -->
+            <!-- If you want to provide several dataset links, repeat <DATASET_LINK> here as many times as needed. -->
 		</DATASET_LINKS>
 		<DATASET_ATTRIBUTES>		<!-- Optional block -->
 			<DATASET_ATTRIBUTE>
@@ -36,12 +27,7 @@
                 <VALUE>TODO: Optional value of the custom attribute.</VALUE>
                 <UNITS>TODO: Optional scientific units.</UNITS>
 			</DATASET_ATTRIBUTE>
-            <!-- If you want to provide several custom Dataset attributes, repeat <DATASET_ATTRIBUTE> as follows (uncommented): -->
-            <!-- <DATASET_ATTRIBUTE>
-				<TAG>TODO: Optional name of the custom attribute.</TAG>
-                <VALUE>TODO: Optional value of the custom attribute.</VALUE>
-                <UNITS>TODO: Optional scientific units.</UNITS>
-			</DATASET_ATTRIBUTE> -->
+            <!-- If you want to provide several custom Dataset attributes, repeat <DATASET_ATTRIBUTE> (with at least TAG and VALUE) here as many times as needed. -->
 		</DATASET_ATTRIBUTES>
 	</DATASET>
 	<!--  If you are submitting more than one Dataset, replicate the block <DATASET> here, 

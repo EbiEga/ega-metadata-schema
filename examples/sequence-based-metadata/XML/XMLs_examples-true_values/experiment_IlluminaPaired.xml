@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <EXPERIMENT_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.experiment.xsd">
-  <EXPERIMENT alias="BM_15day_Africa-RG50002" center_name="GEO" broker_name="EGA">
-    <TITLE>Illumina sequencing of Human RG50002 - 15 day treatment</TITLE>
+  <EXPERIMENT alias="Example!_BM_15day_Africa-RG50002" center_name="GEO" broker_name="EGA">
+    <TITLE>Example!_Illumina sequencing of Human RG50002 - 15 day treatment</TITLE>
     <STUDY_REF refname="Human Microbiome Project SP56J" refcenter="EBI-TEST"/>
     <DESIGN>
       <DESIGN_DESCRIPTION>Whole genome sequencing  - genomic library</DESIGN_DESCRIPTION>
@@ -24,13 +24,20 @@
           <SPOT_LENGTH>102</SPOT_LENGTH>
           <READ_SPEC>
             <READ_INDEX>0</READ_INDEX>
-            <READ_LABEL>Forward_readd</READ_LABEL>
+            <READ_LABEL>Forward_read</READ_LABEL>
             <READ_CLASS>Application Read</READ_CLASS>
             <READ_TYPE>Forward</READ_TYPE>
             <BASE_COORD>1</BASE_COORD>
           </READ_SPEC>
           <READ_SPEC>
             <READ_INDEX>1</READ_INDEX>
+            <READ_LABEL>Reverse_read</READ_LABEL>
+            <READ_CLASS>Application Read</READ_CLASS>
+            <READ_TYPE>Reverse</READ_TYPE>
+            <BASE_COORD>55</BASE_COORD>
+          </READ_SPEC>
+          <READ_SPEC>
+            <READ_INDEX>2</READ_INDEX>
             <READ_LABEL>barcode</READ_LABEL>
             <READ_CLASS>Technical Read</READ_CLASS>
             <READ_TYPE>BarCode</READ_TYPE>

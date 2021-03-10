@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ANALYSIS_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.analysis.xsd">
-  <ANALYSIS alias="D13_Liver_treatment_X" center_name="EBI-TEST" broker_name="EGA" analysis_date="2001-12-17T09:30:47Z" analysis_center="EBI-TEST">
-    <TITLE>Reference alignment of liver from D13 using treatment X</TITLE>
-    <DESCRIPTION>Reference alignment related to the obesity scoop, using compound X over samples from liver_D13 project</DESCRIPTION>
+  <ANALYSIS alias="Example!_D13_Liver_treatment_XX" center_name="EBI-TEST" broker_name="EGA" analysis_date="2001-12-17T09:30:47Z" analysis_center="EBI-TEST">
+    <TITLE>Example!_Reference alignment of liver from D13 using treatment X</TITLE>
+    <DESCRIPTION>Example!_Reference alignment related to the obesity scoop, using compound X over samples from liver_D13 project</DESCRIPTION>
     <STUDY_REF refname="Human Microbiome Project SP56J"/>
     <SAMPLE_REF refname="HG03464"/>
     <SAMPLE_REF refname="HG03465" label="Treated for a longer time"/>
@@ -21,8 +21,8 @@
       </REFERENCE_ALIGNMENT>
     </ANALYSIS_TYPE>
     <FILES>
-      <FILE filename="analysis/D13_liver.fastq" filetype="fastq" checksum_method="MD5" checksum="298ee70555532679d7c1f91b5dd07aef" unencrypted_checksum="e609bc52c035ff1a62cdba0f0689889j" checklist="D13_liver_checklist"/>
-      <FILE filename="analysis/D13_liver.cram" filetype="cram" checksum_method="MD5" checksum="298ee7055553213awdA1f91b5dd07aef" unencrypted_checksum="e609bc512315HAf1a62cdba0f0689889j"/>
+      <FILE filename="analysis/D13_liver.cram" filetype="cram" checksum_method="MD5" checksum="d41d8cd98f00b204e9800998ecf8427e" unencrypted_checksum="e4d909c290d0fb1ca068ffaddf22cbd0"/>
+      <FILE filename="analysis/D13_liver.crai" filetype="crai" checksum_method="MD5" checksum="298ee70555532679d7c1f91b5dd07aef" unencrypted_checksum="e609bc52c035ff1a62cdba0f0689889j"/>
     </FILES>
     <ANALYSIS_ATTRIBUTES>
       <ANALYSIS_ATTRIBUTE>

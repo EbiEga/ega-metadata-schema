@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DAC_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EGA.dac.xsd">
-	<DAC alias="ena-DAC_blueprint" center_name="EBI-TEST" broker_name="EGA">
-		<TITLE>Blueprint human genomic data reception</TITLE>
+	<DAC alias="Example!_ena-DAC_blueprint" center_name="EBI-TEST" broker_name="EGA">
+		<TITLE>Example!_Blueprint human genomic data reception</TITLE>
 		<CONTACTS>		
-			<CONTACT name="Laura Richardson" email="lrichardson@ebi.ac.uk" telephone_number="+44 686 546 222" organisation="ENA" main_contact="true"/>
-			<CONTACT name="Sam Ibarra" email="sibarra@ebi.ac.uk" organisation="ENA" main_contact="false"/>
+			<CONTACT name="Lastname, Firstname" email="flast@yourdomain.com" telephone_number="+44 686 - 546 222" organisation="ENA" main_contact="true"/>
+			<CONTACT name="Lastname, Firstname" email="flast@yourdomain.com" organisation="ENA" main_contact="false"/>
 		</CONTACTS>      
 		<DAC_ATTRIBUTES>		
 			<DAC_ATTRIBUTE>

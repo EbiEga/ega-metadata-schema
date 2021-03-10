@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DATASETS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EGA.dataset.xsd">
-	<DATASET alias="Dataset_1000Project_1000GP_2" center_name="EBI-TEST" broker_name="EGA">
-		<TITLE>1000 Genomes Project private human genomic data</TITLE>
-		<DESCRIPTION>The dataset encompasses 1 new Run and 4 new Analyses from the 1000 Genomes Project, all of them obtained the sub project 1000GP_2</DESCRIPTION>
+	<DATASET alias="Example!_Dataset_1000Project_1000GP_2" center_name="EBI-TEST" broker_name="EGA">
+		<TITLE>Example!_1000 Genomes Project private human genomic data</TITLE>
+		<DESCRIPTION>Example!_The dataset encompasses 1 new Run and 4 new Analyses from the 1000 Genomes Project, all of them obtained the sub project 1000GP_2</DESCRIPTION>
 		<DATASET_TYPE>Exome sequencing</DATASET_TYPE>
-		<RUN_REF accession="EGAR00002609204"/>
-		<ANALYSIS_REF accession="EGAZ00001314035"/>
+		<RUN_REF accession="EGAR00002647843"/>
+		<ANALYSIS_REF accession="EGAZ00001703906"/>
 		<ANALYSIS_REF accession="EGAZ00001314036"/>
 		<ANALYSIS_REF accession="EGAZ00001314037"/>
 		<ANALYSIS_REF accession="EGAZ00001314038"/>

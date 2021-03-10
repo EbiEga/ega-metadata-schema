@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <POLICY_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EGA.policy.xsd">
-	<POLICY alias="Human_genomicData_policy" center_name="EBI-TEST" broker_name="EGA">
-		<TITLE>Access policy to the human genomic data from Project F0094_2 </TITLE>
+	<POLICY alias="Example!_Human_genomicData_policy" center_name="EBI-TEST" broker_name="EGA">
+		<TITLE>Example!_Access policy to the human genomic data from Project F0094_2 </TITLE>
 		<DAC_REF accession="EGAC00001000084" refcenter="ENA"/>
 		<POLICY_FILE>http://docs.icgc.org/portal/access</POLICY_FILE>
 		<DATA_USES>     
