@@ -27,7 +27,6 @@ run:
       - Run_alias*
       - Center_name*
       - ExperimentReference_Name*
-      - ExperimentReference_Center*
 
 study:
     required:
