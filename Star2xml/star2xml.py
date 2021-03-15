@@ -113,6 +113,8 @@ xml_creation = XML_creator(schema_filename = schema_file,
                            verbose = is_verbose,
                            debug_mode = is_debug)
 
+if is_verbose or is_debug:
+    xml_creation.print_basic_info()
 xml_creation.construct_xml()
 xml_creation.save_xml()
 

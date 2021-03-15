@@ -10,7 +10,8 @@ children_tag = "children"
 attribute_tag = "attributes"
 text_tag = "text"
 repetitive_tag = "repetitive_node"
-valid_dict_elements = set([children_tag, attribute_tag, text_tag, repetitive_tag])
+add_empty_node_tag = "add_empty_node"
+valid_dict_elements = set([children_tag, attribute_tag, text_tag, repetitive_tag, add_empty_node_tag])
 tool_info_tag = "tool_info"
 version_tag = "version"
 update_date_tag = "update_date"
@@ -86,10 +87,6 @@ class XML_creator():
         # We store the number of rows (number of metadata object repetitions) the dataframe contains
         self.dataframe_nrows = len(self.input_dataframe.index)
 
-        #! We could put this outside of the function itself, and call the print_basic_info() method outside
-        if self.debug_mode or self.verbose:
-            self.print_basic_info()
-
     def print_basic_info(self):
         """
         Function to print some basic information about the tool, its schema file, etc.
@@ -145,9 +142,9 @@ class XML_creator():
         self.construct_xml_root()
         father_element = self.root_tag
 
-        # The following dictionary will be used to save how many times an element has been added. This will be useful
-        #     when indexing repeated columns in the dataframe.
-        self.element_counter = {}
+        # The following list will be populated with nodes that have the add_empty_node_tag. These nodes will not be removed
+        #   by the prunning function, since they have a meaning by themselves, although they are empty (e.g. SINGLE in LIBRARY_LAYOUT)
+        self.nodesThatNeedToBe_empty_list = []
 
         # We create the elements of the set (the whole XML tree).
         self.construct_xml_elements(schema_tag = self.schema_key,
@@ -188,7 +185,7 @@ class XML_creator():
             # Check if output_dir where the output_xml will reside exists, create it if not
             output_dir = os.path.dirname(self.output_xml)
             dir_exists = os.path.isdir(output_dir)
-            if not dir_exists and output_dir is not '':
+            if not dir_exists and output_dir != '':
                 os.makedirs(output_dir)
             try:
                 with open(self.output_xml, "w") as xml_file:
@@ -277,7 +274,7 @@ class XML_creator():
             - is_children (bool): specifies if we are iterating over children elements.
         """
         # We assign each variable of the comprobation list
-        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text = comprobations_list
+        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty = comprobations_list
 
         # We use another variable to avoid overwritting the father_element (e.g. SAMPLE_SET)
         given_father_element = father_element
@@ -302,7 +299,8 @@ class XML_creator():
                 # We add the node itself, with no characteristics so far
                 self.add_one_node(father_element = given_father_element,
                                   element_name = element_name,
-                                  schema_tag = schema_tag)
+                                  schema_tag = schema_tag, 
+                                  needsToBe_empty = needsToBe_empty)
 
                 # If this node in the YAML file have attributes or text defined, we add them to the node
                 if has_attributes:
@@ -337,7 +335,7 @@ class XML_creator():
                                          from executing each_node_comprobations() over the current node.
         """
         # We assign each variable of the comprobation list
-        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text = comprobations_list
+        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty = comprobations_list
 
         if is_repetitive:
             # If it has text/attributes, we count how many columns they have
@@ -388,15 +386,14 @@ class XML_creator():
     def get_numberOf_fields(self, comprobations_list):
         """
         Function that, given a comprobation_list, retrieves the ammount of fields of a dataframe that represent
-            a node's (1) text or (2) its attributes divided by its number of attributes (i.e. the number of times
-            that node is repeated).
+            a node's (1) text or (2) its attributes.
 
         Parameters:
             - comprobations_list (list): a list of dictionarioes, boolean values and strings from the YAML file, returned
                                          from executing self.each_node_comprobations() over the current node.
         """
         # We assign each variable of the comprobation list
-        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text = comprobations_list
+        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty = comprobations_list
 
         if has_text:
             field_toLookFor = text_column_name
@@ -433,8 +430,8 @@ class XML_creator():
 
         Parameters:
             - current_level_dict (dict): dictionary of the current element - i.e. if we are at "sample_name"
-                                         as the current node, the current_level_dict would contain up to 4
-                                         additional elements: children, text, attributes and repetitive_node.
+                                         as the current node, the current_level_dict would contain up to 5
+                                         additional elements: children, text, attributes, repetitive_node and add_empty_node.
             - schema_tag (str): the schema tag (e.g. sample or taxon_id) corresponding to the key of the current_level_dict.
         """
         children_elements = {}
@@ -492,10 +489,15 @@ class XML_creator():
             is_repetitive = True
         else:
             is_repetitive = False
+        
+        if add_empty_node_tag in current_dict_set:
+            needsToBe_empty = True
+        else:
+            needsToBe_empty = False
 
-        return is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text
+        return is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty
 
-    def add_one_node(self, father_element, element_name, schema_tag):
+    def add_one_node(self, father_element, element_name, schema_tag, needsToBe_empty):
         """
         Function that adds one node to the XML tree.
 
@@ -504,19 +506,65 @@ class XML_creator():
                                     etree.Element (a XML node) of the current node (e.g. SAMPLE_SET).
             - element_name (str): the name of the current node (e.g. sample_13)
             - schema_tag (str): the schema tag (e.g. sample or taxon_id) that is written within the YAML file.
+            - needsToBe_empty (bool): a boolean that specifies if the node has a meaning by itself although
+                                      being empty which, if True, will prevent from its removal (after the tree has been 
+                                      created) by the prunning function. 
         """
         # We add "xmlVar" first so that no other fixed variable of this scripts coincidentally is the element_name
+        # We create the pair "node name" + "father's node name" so that it's a unique identifier we use in the counter. Otherwise
+        #   repeated node names (e.g. LABEL) between different father nodes would lead to errors.
         xml_node_tag = "xmlVar_" + str(element_name)
         xml_fatherNode_tag = "xmlVar_" + str(father_element)
 
-        # If this element was added previously, we add 1 to its counter, if not, we set it at 0
-        if not xml_node_tag in self.element_counter:
-            self.element_counter[xml_node_tag] = 0
-        else:
-            self.element_counter[xml_node_tag] += 1
-
         # Using the element's variable content (str) as a variable we create the current node
         exec("self.%s = etree.SubElement(self.%s, schema_tag.upper())" % (xml_node_tag, xml_fatherNode_tag))
+
+        #   prunned in the future. 
+        if needsToBe_empty:
+            exec("self.nodesThatNeedToBe_empty_list.append(self.%s)" % xml_node_tag)
+    
+    def get_SameNodes_repetitions(self, xml_node_tag):
+        """
+        Function that will return the number of repetitions of a specific node within the XML tree. For instance, in the 
+            node "ANALYSIS" with an XPath "/ANALYSIS_SET/ANALYSIS/DESCRIPTOR[3]", the function would return "3". 
+        
+        Parameters:
+            - xml_node_tag (string): the name of the node within our function (e.g. xmlVar_DESCRIPTOR_0)
+        """
+        # In case we are given the node beneath the root (e.g. ANALYSIS_SET/ANALYSIS[2]), its repetition index (e.g. 2) will
+        #    not come from different columns, but from different rows (different dimension), and thus we skip it if the root
+        #    is its parent.
+        exec('global getRepetitions_root; getRepetitions_root = self.%s.getparent()' % xml_node_tag)
+        exec('global getRepetitions_equalRoots; getRepetitions_equalRoots = getRepetitions_root == self.%s' % self.xml_root_tag)
+
+        if getRepetitions_equalRoots:   
+            return 0
+        
+        # We use lxml.etree wrapper (ElementTree()) with the node and extract its xpath
+        exec('global getRepetitions_tree; getRepetitions_tree = etree.ElementTree(self.%s)' % xml_node_tag)
+        exec('global getRepetitions_xpath; getRepetitions_xpath = getRepetitions_tree.getpath(self.%s)' % xml_node_tag)
+        
+        modified_getRepetitions_xpath = getRepetitions_xpath
+
+        # We parse the complete XPath to remove the repetition of a base metadata object (e.g. from /ANALYSIS_SET/ANALYSIS[1]/ANALYSIS_ATTRIBUTES/ANALYSIS_ATTRIBUTE[3]/TAG 
+        #      to /ANALYSIS_ATTRIBUTES/ANALYSIS_ATTRIBUTE[3]/TAG). This is to avoid getting indexes from the base tag, or only accounting for the last tag (which would lead to errors)
+        for null in range(3):
+            slash_start = modified_getRepetitions_xpath.find("/")
+            modified_getRepetitions_xpath = modified_getRepetitions_xpath[slash_start + 1:]
+
+        # And now we get the repetition index from the XPath
+        start = modified_getRepetitions_xpath.rfind("[")
+        end = modified_getRepetitions_xpath.rfind("]")
+        
+        # If "[" was not found within the last part of the XPath, we return a 0
+        if start == -1:
+            return 0
+        
+        # If we did find an index (e.g. [2]) we return such index (e.g. 2), which will be used as index in the dataframe
+        repetition_index = modified_getRepetitions_xpath[start + 1 : end]    
+        
+        return int(repetition_index)
+        
 
     def set_attributes(self, element_name, attributes_dict, dataframe_index):
         """
@@ -530,22 +578,25 @@ class XML_creator():
             - dataframe_index (int): the index of the dataframe (e.g. 13), which represents the row of the df
                                      (i.e. the repetition of a metadata object)
         """
-        xml_node_tag = "xmlVar_" + element_name
+        # We create the pair "node name" + "father's node name" so that it's a unique identifier we use in the counter. Otherwise
+        #   repeated node names (e.g. LABEL) between different father nodes would lead to errors.
+        xml_node_tag = "xmlVar_" + str(element_name)
 
         # Here we add a ".X" to every value (which represents the field of the dataframe to search for the attribute)
         #     of the attributes dictionary, since every subsequent repeated column in the dataframe will have ".X"
-        #     where X is the repetition_index in self.element_counter[xml_node_tag].
+        #     where X is the times that same node is repeated across the XML (minus 1, since it starts at 0).
         # Except the first index, which will not be ".0" but the column name itself.
-        if self.element_counter[xml_node_tag] > 0:
-            attributes_dict = {k: v+'.{}'.format(self.element_counter[xml_node_tag]) for k, v in attributes_dict.items()}
+        repetitions = self.get_SameNodes_repetitions(xml_node_tag)
+        if repetitions > 0:
+            attributes_dict = {k: v+'.{}'.format(repetitions - 1) for k, v in attributes_dict.items()}
 
         # We iterate over the different attributes of this node:
         for attribute_name, column_name in attributes_dict.items():
             attribute_value = self.input_dataframe[column_name][dataframe_index]
             # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip adding this attribute
-            if not attribute_value or attribute_value is None or pd.isnull(attribute_value) or str.isspace(str(attribute_value)):
+            if (not attribute_value and attribute_value != 0) or attribute_value is None or pd.isnull(attribute_value) or str.isspace(str(attribute_value)):
                 continue
-            exec("self.%s.set('%s','%s')" % (xml_node_tag, str(attribute_name), str(attribute_value)))
+            exec("self.%s.set('''%s''','''%s''')" % (xml_node_tag, str(attribute_name), str(attribute_value)))
 
     def set_text(self, element_name, column_name, dataframe_index):
         """
@@ -557,35 +608,58 @@ class XML_creator():
             - dataframe_index (int): the index of the dataframe (e.g. 13), which represents the row of the df
                                      (i.e. the repetition of a metadata object)
         """
-        xml_node_tag = "xmlVar_" + element_name
+        # We create the pair "node name" + "father's node name" so that it's a unique identifier we use in the counter. Otherwise
+        #   repeated node names (e.g. LABEL) between different father nodes would lead to errors.
+        xml_node_tag = "xmlVar_" + str(element_name)
 
-        # We add ".X" at the end of the column name, just like with the attributes
-        if self.element_counter[xml_node_tag] > 0:
-            column_name = column_name + '.{}'.format(self.element_counter[xml_node_tag])
+        # We add ".X" at the end of the column name, just like with the attributes           
+        repetitions = self.get_SameNodes_repetitions(xml_node_tag)
+        if repetitions > 0:
+            column_name = column_name + '.{}'.format(repetitions - 1)
 
         # We extract the node's text from the dataframe
         nodes_text = self.input_dataframe[column_name][dataframe_index]
 
         # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip setting its text
-        if not nodes_text or nodes_text is None or pd.isnull(nodes_text) or str.isspace(str(nodes_text)):
+        if (not nodes_text and nodes_text != 0) or nodes_text is None or pd.isnull(nodes_text) or str.isspace(str(nodes_text)):
             return
 
-        exec('self.%s.text = """%s"""' % (xml_node_tag, str(nodes_text)))
+        exec("self.%s.text = '''%s'''" % (xml_node_tag, str(nodes_text)))
 
-    def prune_empty_nodes(self):
+    def prune_empty_nodes(self, empty_list = None):
         """
         Function that removes empty nodes (with no attributes, no children and no text) of an XML tree recursively.
             Why prune instead of avoid adding empty nodes? Because we don't know if they are empty until we have filled
             the XML tree.
-        """
-        # Using XPATH we save a list of the empty nodes ('not(node())') with no attributes ('not(@*)')
-        exec("self.empty_nodes_list = self.%s.xpath('.//*[not(@*) and not(node())]')" % self.xml_root_tag)
-
+        
+        Parameters:
+            - empty_list (list): list of empty nodes (of class etree.Element) that needs to be removed from the tree. If
+                                 no list is passed, the function gets such list by itself. 
+        """        
+        if not empty_list:
+            # Using XPATH we save a list of the empty nodes ('not(node())') with no attributes ('not(@*)')
+            exec("self.empty_nodes_list = self.%s.xpath('.//*[not(@*) and not(node())]')" % self.xml_root_tag)
+            
+            # We remove from the empty_nodes_list all the nodes that have to be left empty and hold a meaning like that. 
+            self.empty_nodes_list = self.remove_betweenLists(self.empty_nodes_list, self.nodesThatNeedToBe_empty_list)
+            
+        else:
+            self.empty_nodes_list = empty_list        
+        
         # We iterate over the list and remove empty nodes
         for empty_element in self.empty_nodes_list:
             empty_element.getparent().remove(empty_element)
 
         # If, after pruning, new nodes are left empty, we prune again
         exec("self.new_empty_nodes_list = self.%s.xpath('.//*[not(@*) and not(node())]')" % self.xml_root_tag)
+        # Bare in mind that we again remove all nodes that have to be left empty from the list of nodes to prune
+        self.new_empty_nodes_list = self.remove_betweenLists(self.new_empty_nodes_list, self.nodesThatNeedToBe_empty_list)
+        
         if self.new_empty_nodes_list:
-            self.prune_empty_nodes()
+            self.prune_empty_nodes(empty_list = self.new_empty_nodes_list)
+    
+    def remove_betweenLists(self, first_list, sublist):
+        """
+        Function that will remove all elements from a sublist that are in a bigger list (first_list). 
+        """
+        return list(set(first_list)-set(sublist))

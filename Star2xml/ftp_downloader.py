@@ -28,7 +28,7 @@ def download_files(download_directory, server = "ftp.ebi.ac.uk", username = "", 
 
     # Check if output_dir exists, create it if not
     dir_exists = os.path.isdir(output_dir)
-    if not dir_exists and output_dir is not '':
+    if not dir_exists and output_dir != '':
         os.makedirs(output_dir)
 
     # Change to the directory that contains the files to download and list them
