@@ -10,9 +10,6 @@
 				<ADD source="submission/xmls/sample_object.xml" schema="sample"/>
 			</ACTION>		
 			<ACTION>		
-				<ADD source="submission/xmls/sample_object.xml" schema="sample"/>
-			</ACTION>
-			<ACTION>		
 				<ADD source="submission/xmls/study_object.xml" schema="study"/>
 			</ACTION>
 			<ACTION>
