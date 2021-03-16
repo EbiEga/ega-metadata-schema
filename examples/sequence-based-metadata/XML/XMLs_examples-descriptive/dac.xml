@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DAC_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EGA.dac.xsd">
+	<DAC alias="TODO: Submitter designated name for the DAC. The name must be unique within the submission account" center_name="TODO: The center name (acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)">
+		<TITLE> TODO: Short text that can be used to call out DAC records in searches or in displays. </TITLE>		<!-- Optional block -->
+		<CONTACTS>		
+			<CONTACT name="TODO: Name of contact person for this DAC" email="TODO: email of the person to contact" telephone_number="TODO: telephone number of the person to contact" organisation="TODO: name of organisation contact affiliated to" main_contact="TODO: boolean (true/false) - If true then this is the main contact"/>
+            <!--  If you are submitting more than one contact, repeat <CONTACT> here as many times as needed. -->
+		</CONTACTS>      
+		<DAC_ATTRIBUTES>		<!-- Optional block -->
+			<DAC_ATTRIBUTE>
+				<TAG>TODO: Name of the custom attribute (e.g. "ENA-SUBMISSION-TOOL")</TAG>
+				<VALUE>TODO: Value of the custom attribute (e.g. "SRA-Webin")</VALUE>
+				<UNITS>TODO: Optional scientific units of the custom attribute</UNITS>
+			</DAC_ATTRIBUTE>
+			<!-- If you want to provide several DAC attributes, repeat <DAC_ATTRIBUTE> (with at least TAG and VALUE) here as many times as needed. -->
+		</DAC_ATTRIBUTES>
+	</DAC>
+	<!--  If you are submitting more than one DAC, replicate the block <DAC> here, 
+          as many times as necessary.  -->
+</DAC_SET>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POLICY_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EGA.policy.xsd">
+	<POLICY alias="TODO: Submitter designated name for the 'Policy'. The name must be unique within the submission account." center_name="TODO: The center name (its acronym) of the submitter's account" broker_name="TODO: The center name (its acronym) of the broker if applicable, if not, remove this attribute (broker_name)">
+		<TITLE>TODO: Short text that can be used to call out data access policies in searches or in displays</TITLE>
+		<DAC_REF accession="TODO: Accession number of the DAC that this policy is associated with (DAC accessions start with EGAC...)" refcenter="TODO: The center name (its acronym) of the submitter's account that created the DAC"/>
+        <!-- You can search the DAC this policy is associated with here: https://www.ebi.ac.uk/ega/dacs -->
+        <!--    Regarding the policy itself, you can:
+                    1. Provide the policy text itself through this XML (using <POLICY_TEXT>)
+                    2. Provide an URL that leads to your policy file (using <POLICY_FILE>)
+                    3. Supply either the policy text or such URL separately to Helpdesk (ega-helpdesk@ebi.ac.uk) (not using <POLICY_TEXT> nor <POLICY_FILE>)
+				
+				Nevertheless, either <POLICY_TEXT> or <POLICY_FILE> must be present (even if empty - e.g. <POLICY_TEXT></POLICY_TEXT>) for the XML to validate.
+                You can find policy documentation and statement examples on the EGA website (https://www.ebi.ac.uk/ega/submission/data_access_committee/policy_documentation) -->
+		<POLICY_TEXT>TODO: Text containing the policy. Use either this tag (POLICY_TEXT) or its alternative (POLICY_FILE)</POLICY_TEXT>        
+		<POLICY_FILE>TODO: File containing the policy text, to be accessed remotely (e.g. http://docs.icgc.org/portal/access/). Use either this tag (POLICY_FILE) or its alternative (POLICY_TEXT)</POLICY_FILE>
+		<DATA_USES>     <!-- Optional block -->
+			<DATA_USE ontology="DUO" code="TODO: Code of the Data Use Ontologies (DUO) related to the policy (e.g. 0000014). You can check yours at 'https://www.ebi.ac.uk/ols/ontologies/duo', and read about DUO here: https://github.com/EBISPOT/DUO." version="TODO: Data Use Ontology code version (e.g. 2019-01-07)">
+				<URL>TODO: Link to URL for the indicated DUO term (e.g. http://purl.obolibrary.org/obo/DUO_0000014)</URL>
+			</DATA_USE>
+            <!-- If you want to provide several data uses, repeat <DATA_USE> here as many times as needed. -->
+		</DATA_USES>
+		<POLICY_LINKS>      <!-- Optional block -->
+			<POLICY_LINK>
+				<URL_LINK>
+					<LABEL>TODO: Optional text label to display for the link (e.g. ICGC Data Access Agreements)</LABEL>
+					<URL>TODO: Optional the internet service link (file:..., http:..., ftp:... etc.). In other words, the website address (e.g. http://www.icgc.org)</URL>
+				</URL_LINK>
+			</POLICY_LINK>
+            <!-- If you want to provide several policy links, repeat <POLICY_LINK> here as many times as needed. -->
+		</POLICY_LINKS>
+		<POLICY_ATTRIBUTES>     <!-- Optional block -->
+			<POLICY_ATTRIBUTE>
+				<TAG>TODO: Optional name of the custom attribute.</TAG>
+                <VALUE>TODO: Optional value of the custom attribute.</VALUE>
+                <UNITS>TODO: Optional scientific units.</UNITS>
+			</POLICY_ATTRIBUTE>
+            <!-- If you want to provide several custom Policy attributes, repeat <POLICY_ATTRIBUTE> (with at least TAG and VALUE) here as many times as needed. -->
+		</POLICY_ATTRIBUTES>
+	</POLICY>
+	<!--  If you are submitting more than one Policy, replicate the block <POLICY> here, 
+		  as many times as necessary.  -->
+</POLICY_SET>

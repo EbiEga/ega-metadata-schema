@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<EXPERIMENT_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.experiment.xsd">
+  <EXPERIMENT alias="Example!_BM_15day_Africa-RG50002" center_name="GEO" broker_name="EGA">
+    <TITLE>Example!_Illumina sequencing of Human RG50002 - 15 day treatment</TITLE>
+    <STUDY_REF refname="Human Microbiome Project SP56J" refcenter="EBI-TEST"/>
+    <DESIGN>
+      <DESIGN_DESCRIPTION>Whole genome sequencing  - genomic library</DESIGN_DESCRIPTION>
+      <SAMPLE_DESCRIPTOR accession="SRS001987"/>
+      <LIBRARY_DESCRIPTOR>
+        <LIBRARY_NAME>Solexa-32824</LIBRARY_NAME>
+        <LIBRARY_STRATEGY>WGS</LIBRARY_STRATEGY>
+        <LIBRARY_SOURCE>GENOMIC</LIBRARY_SOURCE>
+        <LIBRARY_SELECTION>RANDOM</LIBRARY_SELECTION>
+        <LIBRARY_LAYOUT>
+          <PAIRED NOMINAL_LENGTH="260" NOMINAL_SDEV="50"/>
+        </LIBRARY_LAYOUT>
+        <TARGETED_LOCI>
+          <LOCUS locus_name="other" description="ITS2; nuclear rRNA"/>
+        </TARGETED_LOCI>
+        <LIBRARY_CONSTRUCTION_PROTOCOL>Standard Illumina paired-end library construction protocol. Purified DNA was randomly fragmented using nebulisation and fraction was obtained by gel electrophoresis.</LIBRARY_CONSTRUCTION_PROTOCOL>
+      </LIBRARY_DESCRIPTOR>
+      <SPOT_DESCRIPTOR>
+        <SPOT_DECODE_SPEC>
+          <SPOT_LENGTH>102</SPOT_LENGTH>
+          <READ_SPEC>
+            <READ_INDEX>0</READ_INDEX>
+            <READ_LABEL>Forward_read</READ_LABEL>
+            <READ_CLASS>Application Read</READ_CLASS>
+            <READ_TYPE>Forward</READ_TYPE>
+            <BASE_COORD>1</BASE_COORD>
+          </READ_SPEC>
+          <READ_SPEC>
+            <READ_INDEX>1</READ_INDEX>
+            <READ_LABEL>Reverse_read</READ_LABEL>
+            <READ_CLASS>Application Read</READ_CLASS>
+            <READ_TYPE>Reverse</READ_TYPE>
+            <BASE_COORD>55</BASE_COORD>
+          </READ_SPEC>
+          <READ_SPEC>
+            <READ_INDEX>2</READ_INDEX>
+            <READ_LABEL>barcode</READ_LABEL>
+            <READ_CLASS>Technical Read</READ_CLASS>
+            <READ_TYPE>BarCode</READ_TYPE>
+            <EXPECTED_BASECALL_TABLE default_length="4">
+              <BASECALL min_match="4" match_edge="full">TCAG</BASECALL>
+            </EXPECTED_BASECALL_TABLE>
+          </READ_SPEC>
+        </SPOT_DECODE_SPEC>
+      </SPOT_DESCRIPTOR>
+    </DESIGN>
+    <PLATFORM>
+      <ILLUMINA>
+        <INSTRUMENT_MODEL>Illumina Genome Analyzer</INSTRUMENT_MODEL>
+      </ILLUMINA>
+    </PLATFORM>
+    <PROCESSING>
+      <PIPELINE>
+        <PIPE_SECTION>
+          <STEP_INDEX>1</STEP_INDEX>
+          <PREV_STEP_INDEX>NIL</PREV_STEP_INDEX>
+          <PROGRAM>Rig Software</PROGRAM>
+          <VERSION>2.3.306</VERSION>
+          <NOTES>Image Analysis 1.3.4 - set birghtness to 30% through command X</NOTES>
+        </PIPE_SECTION>
+        <PIPE_SECTION>
+          <STEP_INDEX>2</STEP_INDEX>
+          <PREV_STEP_INDEX>1</PREV_STEP_INDEX>
+          <PROGRAM>GAPipeline</PROGRAM>
+          <VERSION>1.3.4</VERSION>
+          <NOTES>Base calling programm - Command X</NOTES>
+        </PIPE_SECTION>
+      </PIPELINE>
+    </PROCESSING>
+    <EXPERIMENT_ATTRIBUTES>
+      <EXPERIMENT_ATTRIBUTE>
+        <TAG>Forward Primer</TAG>
+        <VALUE>GCCTTGCCAGCCCGATCAGTGAGAGTTTGATCCTGGCTCAG</VALUE>
+      </EXPERIMENT_ATTRIBUTE>
+      <EXPERIMENT_ATTRIBUTE>
+        <TAG>Reverse Primer</TAG>
+        <VALUE>GCCTTGCCAGCCCGATAAGAGAGAGTTTGATCCTGGCTCAG</VALUE>
+      </EXPERIMENT_ATTRIBUTE>
+    </EXPERIMENT_ATTRIBUTES>
+  </EXPERIMENT>
+</EXPERIMENT_SET>

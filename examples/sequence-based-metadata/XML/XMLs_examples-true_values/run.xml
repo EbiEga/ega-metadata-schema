@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RUN_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/sra_1_6/SRA.run.xsd">
+  <RUN alias="Example!_DJ0001_13" center_name="EBI-TEST" broker_name="EGA" run_date="2009-07-20T23:21:00Z" run_center="EBI-TEST">
+    <TITLE>Example!_Illumina Sequencing of HG3125 NBRC 101655 - random whole genome shotgun library</TITLE>
+    <EXPERIMENT_REF refname="Experiment_NA415001" refcenter="EBI-TEST"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="runs/DJ0001_13/Example_DJ0001_13.cram" filetype="cram" checksum_method="MD5" checksum="298ee70555532679d7c1f91b5dd07aef" unencrypted_checksum="e609bc52c035ff1a62cdba0f0689889j" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!"/>
+        <FILE filename="runs/DJ0001_13/Example_DJ0001_14.cram" filetype="cram" checksum_method="MD5" checksum="d41d8cd98f00b204e9800998ecf8427e" unencrypted_checksum="e4d909c290d0fb1ca068ffaddf22cbd0" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!"/>
+      </FILES>
+    </DATA_BLOCK>
+    <RUN_ATTRIBUTES>
+      <RUN_ATTRIBUTE>
+        <TAG>flowcell_barcode</TAG>
+        <VALUE>C3JV3ACXY</VALUE>
+      </RUN_ATTRIBUTE>
+      <RUN_ATTRIBUTE>
+        <TAG>product_order</TAG>
+        <VALUE>PDO-2711991-X</VALUE>
+      </RUN_ATTRIBUTE>
+    </RUN_ATTRIBUTES>
+  </RUN>
+</RUN_SET>

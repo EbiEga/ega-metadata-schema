@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ANALYSIS_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.analysis.xsd">
+  <ANALYSIS alias="Example!_D13_Liver_treatment_XX" center_name="EBI-TEST" broker_name="EGA" analysis_date="2001-12-17T09:30:47Z" analysis_center="EBI-TEST">
+    <TITLE>Example!_Reference alignment of liver from D13 using treatment X</TITLE>
+    <DESCRIPTION>Example!_Reference alignment related to the obesity scoop, using compound X over samples from liver_D13 project</DESCRIPTION>
+    <STUDY_REF refname="Human Microbiome Project SP56J"/>
+    <SAMPLE_REF refname="HG03464"/>
+    <SAMPLE_REF refname="HG03465" label="Treated for a longer time"/>
+    <SAMPLE_REF refname="HG03463"/>
+    <EXPERIMENT_REF refname="BM_15day_Africa-RG50002"/>
+    <RUN_REF refname="Run_for_1000Genomes"/>
+    <ANALYSIS_REF refname="D12_Liver_treatment_Y" label="Previous analysis"/>
+    <ANALYSIS_TYPE>
+      <REFERENCE_ALIGNMENT>
+        <ASSEMBLY>
+          <STANDARD refname="GRCh37" accession="GCA_000001405.1"/>
+        </ASSEMBLY>
+        <SEQUENCE accession="CM000663.1" label="chr1"/>
+        <SEQUENCE accession="CM000664.1" label="chr2"/>
+        <SEQUENCE accession="CM000665.1" label="chr3"/>
+      </REFERENCE_ALIGNMENT>
+    </ANALYSIS_TYPE>
+    <FILES>
+      <FILE filename="analysis/D13_liver.cram" filetype="cram" checksum_method="MD5" checksum="d41d8cd98f00b204e9800998ecf8427e" unencrypted_checksum="e4d909c290d0fb1ca068ffaddf22cbd0"/>
+      <FILE filename="analysis/D13_liver.crai" filetype="crai" checksum_method="MD5" checksum="298ee70555532679d7c1f91b5dd07aef" unencrypted_checksum="e609bc52c035ff1a62cdba0f0689889j"/>
+    </FILES>
+    <ANALYSIS_ATTRIBUTES>
+      <ANALYSIS_ATTRIBUTE>
+        <TAG>Analysis protocol</TAG>
+        <VALUE>https://www.protocols.view/yourprotocol</VALUE>
+      </ANALYSIS_ATTRIBUTE>
+    </ANALYSIS_ATTRIBUTES>
+  </ANALYSIS>
+</ANALYSIS_SET>
