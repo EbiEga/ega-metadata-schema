@@ -39,11 +39,13 @@ analysis:
     required:
       - Analysis_alias*
       - Center_name*
+      - Analysis_type*
       
 experiment:
     required:
       - Experiment_alias*
       - Center_name*
+      - Experiment_layout*
       - Study_refname*
       - Study_refCenter*
       - Design_description*
@@ -51,6 +53,7 @@ experiment:
       - Library_strategy*
       - Library_source*
       - Library_selection*
+      - Platform*
 
 
 

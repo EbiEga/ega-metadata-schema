@@ -91,22 +91,34 @@ class Input_reader():
                 self.input_dataframe = pd.read_csv(filepath_or_buffer = self.input_file, sep = "\t", dtype = "object")
 
             elif self.input_filetype == ".xlsx":
-                self.input_dataframe = pd.read_excel(io = self.input_file, dtype = "object", engine='openpyxl')
+                self.input_dataframe = pd.read_excel(io = self.input_file, dtype = "object", engine='openpyxl', sheet_name = self.conf_key)
 
             else:
                 # If given a filetype that we didn't expect
                 print("ERROR in Input_reader() - generate_dataframe(): given input file (%s) has extension '%s', while the allowed file types are [.csv | .tsv | .xlsx]" \
                       % (self.input_file_basename, self.input_filetype), file=sys.stderr)
                 sys.exit()
+        except ValueError:
+            print("ERROR in Input_reader() - generate_dataframe(): given input file (%s) did not have a tab named '%s'" \
+                      % (self.input_file_basename, self.conf_key), file=sys.stderr)
+            sys.exit()
+            
         except:
             print("ERROR in Input_reader(): given input filepath '%s' could not be read" % self.input_file, file=sys.stderr)
             sys.exit()
         
         if descriptive_string != "":
-            # We check that the descriptive string is there
-            description_is_there = self.check_row_value(row_to_look = descriptive_row,
-                                                        column_to_look = descriptive_col, 
-                                                        value = descriptive_string)
+            try:
+                # We check that the descriptive string is there
+                description_is_there = self.check_row_value(row_to_look = descriptive_row,
+                                                            column_to_look = descriptive_col, 
+                                                            value = descriptive_string)
+                
+            # It could also be the case that the user removed all rows and only added one or two, for which we will
+            #     receive an index error, and we'll report it the same way. 
+            except IndexError:
+                description_is_there = False
+                
             if not description_is_there:
                 print("ERROR in Input_reader() - generate_dataframe(): a descriptive row was supposed to be at row %s and column %s, but it was not found. It may lead to real data being skipped.\n\t- Descriptive string: %s" \
                   % (descriptive_row, descriptive_col, descriptive_string), file=sys.stderr)
