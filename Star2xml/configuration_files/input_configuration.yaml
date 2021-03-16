@@ -12,62 +12,54 @@
 # Worksheet specific requirements
 sample:
   required:
-      - Sample_alias
-      - Center_name
-      - Title
-      - NCBI_taxid
-      - Scientific_name
-      - Common_name
-      - Description
+      - Sample_alias*
+      - Center_name*
+      - Title*
+      - NCBI_taxid*
+      - Scientific_name*
+      - Common_name*
       - Tag
       - Value
       - Units
 
 run:
     required:
-        - Run_alias
-        - Center_name
-        - Run_date
-        - Experiment_reference
-        - Filename
-        - Filetype
-        - Checksum_method
-        - Encrypted_checksum
-        - Unencrypted_checksum
+      - Run_alias*
+      - Center_name*
+      - ExperimentReference_Name*
 
 study:
     required:
-        - Study_alias
-        - Center_name
-        - Study_title
-        - Existing_study_type
-        - Study_abstract
-        - Tag
-        - Value
-        - Units
+      - Study_alias*
+      - Center_name*
+      - Study_title*
+      - Existing_study_type*
 
 analysis:
     required:
-        - Analysis_alias
-        - Center_name
-        - Analysis_date
-        - Title
-        - Description
-        - Study_alias
-        - Study_CenterName
-        - Assembly_name
-        - Assembly_accession
-        - Sequence_accession
-        - Sequence_label
-        - Experiment_type
-        - Sample_alias
-        - Sample_CenterName
-        - Label
-        - Filename
-        - Filetype
-        - Checksum_method
-        - Encrypted_checksum
-        - Unencrypted_checksum
-        - Tag
-        - Value
-        - Units
+      - Analysis_alias*
+      - Center_name*
+      - Analysis_type*
+      
+experiment:
+    required:
+      - Experiment_alias*
+      - Center_name*
+      - Experiment_layout*
+      - Study_refname*
+      - Study_refCenter*
+      - Design_description*
+      - Sample_accession*
+      - Library_strategy*
+      - Library_source*
+      - Library_selection*
+      - Platform*
+
+
+
+
+
+
+
+
+
