@@ -2,7 +2,7 @@ import sys
 from ftplib import FTP
 import os
 
-def download_files(download_directory, server = "ftp.ebi.ac.uk", username = "", password = "", output_dir = "downloaded_schemas", file_extension = ""):
+def download_files_ftp(download_directory, server = "ftp.ebi.ac.uk", username = "", password = "", output_dir = "downloaded_schemas", file_extension = ""):
     """
     Function to download a all files within a FTP server (and its download_directory) that fit into a specified file extension.
 
@@ -23,7 +23,7 @@ def download_files(download_directory, server = "ftp.ebi.ac.uk", username = "", 
     try:
         ftp.login()
     except:
-        print("ERROR in download_files(): could not login into the given server '%s'" % server, file=sys.stderr)
+        print("ERROR in ftp_downloader.py - download_files_ftp(): could not login into the given server '%s'" % server, file=sys.stderr)
         sys.exit()
 
     # Check if output_dir exists, create it if not
@@ -35,13 +35,13 @@ def download_files(download_directory, server = "ftp.ebi.ac.uk", username = "", 
     try:
         ftp.cwd(download_directory)
     except:
-        print("ERROR in download_files(): could not change directories to the given one '%s'" % download_directory, file=sys.stderr)
+        print("ERROR in download_files_ftp(): could not change directories to the given one '%s'" % download_directory, file=sys.stderr)
         sys.exit()
 
     try:
         files = ftp.nlst()
     except:
-        print("ERROR in download_files(): could not list the files in the given directory '%s'" % download_directory, file=sys.stderr)
+        print("ERROR in download_files_ftp(): could not list the files in the given directory '%s'" % download_directory, file=sys.stderr)
         sys.exit()
 
     # We iterate over the filenames, check their extensions and download them if they fit into the given one
