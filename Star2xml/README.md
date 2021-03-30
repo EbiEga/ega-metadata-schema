@@ -73,15 +73,15 @@ optional arguments:
   --debug               A boolean switch to set the functions in "debug" mode, which will add even more verbosity to the function (printing every step of the XML creation...)
   --validate            A boolean switch that will enable the validation of the scripts right after its creation. Thus, the function will call validateXML.py (in verbose mode) after it has finished creating the XMLs.
 
-Example of usage: $ ./star2xml.py "sample,run,experiment,analysis,study" "../templates/sequence-based-metadata/whole_submission_template.xlsx" --validate
+Example of usage: $ ./star2xml.py "sample,run,experiment,analysis,study" "../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx" --validate
 ```
 For example, if we had an excel spreadsheet (`run.xlsx`), with one run per row, and wanted to create its corresponding XML (`run.xml`), we would run the following command:
 ``` Bash
-./star2xml.py  'run' '../templates/sequence-based-metadata/whole_submission_template.xlsx' 'test_data/XML_examples/run.xml' --schema-file 'configuration_files/xml_schema.yaml' --configuration-file 'configuration_files/input_configuration.yaml'
+./star2xml.py  'run' '../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx' 'test_data/XML_examples/run.xml' --schema-file 'configuration_files/xml_schema.yaml' --configuration-file 'configuration_files/input_configuration.yaml'
 ```
 Both `--schema-file` and `--configuration-file` arguments can be omitted if their corresponding filepaths have not been modified (by default in `configuration_files/`). Thus, the command can be simplified:
 ``` Bash
-./star2xml.py  'run' '../templates/sequence-based-metadata/whole_submission_template.xlsx' 'test_data/XML_examples/run.xml'
+./star2xml.py  'run' '../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx' 'test_data/XML_examples/run.xml'
 ```
 
 ### validateXML.py
@@ -119,10 +119,10 @@ Once again, if we have not modified the schema filepath, option `--schema-file` 
 ### Mock examples
 Pre-defined files are ready for you to run the following commands, checking the tool's functionality and its output.
 ```Bash
-./star2xml.py  'run' '../templates/sequence-based-metadata/whole_submission_template.xlsx' 'test_data/XML_examples/test_run.xml' --verbose --validate
+./star2xml.py  'run' '../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx' 'test_data/XML_examples/test_run.xml' --verbose --validate
 ```
 ```Bash
-./star2xml.py  'sample' '../templates/sequence-based-metadata/whole_submission_template.xlsx' 'test_data/XML_examples/test_sample.xml' --verbose --validate
+./star2xml.py  'sample' '../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx' 'test_data/XML_examples/test_sample.xml' --verbose --validate
 ```
 ```Bash
 ./validateXML.py --verbose --download_xsd "sample,run" "../examples/sequence-based-metadata/XML/XMLs_examples-true_values/sample.xml,../examples/sequence-based-metadata/XML/XMLs_examples-true_values/run.xml"
