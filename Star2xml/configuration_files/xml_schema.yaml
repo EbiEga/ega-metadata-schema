@@ -9,7 +9,7 @@ tool_info:  # Contains info about the conversion tool and this schema file.
     # Version (string: !!str): defines the tool version for which this YAML was created.
     version: !!str 1.0
     # update_date (ISO 8691 format): defines the date of the last official update for this file.
-    update_date: 2021-02-08
+    update_date: 2021-03-16
 
 # Contains info about where the XML schemas instances are. This information will be used
 #   when creating each object's XML.
@@ -37,7 +37,7 @@ XML_schemas_info:
 # XMLs structure
 # -------- #
 
-# Every element (XML node) can have 4 characteristics. Their names are saved
+# Every element (XML node) can have 5 characteristics. Their names are saved
 #   at the beginning of "common_key_values":
 #       - children: it contains a dictionary with the children elements of the current node (e.g. TAXON_ID and COMMON_NAME
 #                   would be the children of SAMPLE_NAME)
@@ -68,6 +68,20 @@ XML_schemas_info:
 #                            <LIBRARY_LAYOUT>
 #                               <SINGLE/>
 #                            </LIBRARY_LAYOUT>
+#       - choice_tag: it contains the column name (e.g. "Analysis_type") whose value for that row will decide which child node is chosen
+#                     among the possible choices. All child nodes that contain the same column name at "choice_tag" will be excluded unless
+#                     their node names (e.g. SEQUENCE_VARIATION) are given as a value (or values separated by ";") of that column at their  
+#                     corresponding row.
+#                     In other words, if the 5th Analysis instance (row) is of type Sequence variation, all other children nodes of "ANALYSIS_TYPE"
+#                     that contain the choice "Analysis_type" will be excluded except for "SEQUENCE_VARIATION", since this will be the value that
+#                     one shall give at row 5 and column name "Analysis_type". In case of a multi-choice case, chosen nodes can be given as a 
+#                     list of node names separated by ";" (e.g. "SEQUENCE_VARIATION;SEQUENCE_FLATFILE")
+#                     Example: in the following XML, the Analysis type was chosen to be SEQUENCE_FLATFILE, and no other children of ANALYSIS_TYPE
+#                              will be considered. 
+#                              <ANALYSIS_TYPE>
+#                                 <SEQUENCE_FLATFILE/>
+#                              </ANALYSIS_TYPE>
+
 
 # Important: if we create a node's attribute/text in this schema, there HAS to be a column in the input dataframe
 #            referencing it (the script will be looking for it). Even if it's empty for some or all rows.
@@ -85,6 +99,7 @@ common_key_values:
   repetitiveNode_tag: &RN "repetitive_node"
   add_empty_node: &empty "add_empty_node"     # This one is used at XML tags that are empty but its pressence is meaningful by itself, with no
                                               #   attributes nor text. 
+  choice_tag: &choice "choice_tag"
 
   #! To be uncommented once EE-1841 is done
   # multiple_choice_child: &multi_child "multiple_choice_child"
@@ -146,49 +161,59 @@ common_key_values:
 
   # Node used in RUN and EXPERIMENT objects
   platform_multichoice_node: &platform_multichoice_node
-    #! Choice:
     *child:
       LS454:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "LS454.Instrument_model"
       ILLUMINA:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "ILLUMINA.Instrument_model"
       HELICOS:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "HELICOS.Instrument_model"
       ABI_SOLID:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "ABI_SOLID.Instrument_model"
       COMPLETE_GENOMICS:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "COMPLETE_GENOMICS.Instrument_model"
       BGISEQ:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "BGISEQ.Instrument_model"
       OXFORD_NANOPORE:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "OXFORD_NANOPORE.Instrument_model"
       PACBIO_SMRT:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "PACBIO_SMRT.Instrument_model"
       ION_TORRENT:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "ION_TORRENT.Instrument_model"
       CAPILLARY:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "CAPILLARY.Instrument_model"
       DNBSEQ:
+        *choice: "Platform*"
         *child:
           INSTRUMENT_MODEL:
             *tx: "DNBSEQ.Instrument_model"
@@ -199,20 +224,15 @@ common_key_values:
       *child:
         STANDARD:
           *att:
-            refname: "Ref_Alignment.Assembly_name"
-            accession: "Ref_Alignment.Assembly_accessionVersion"  # REQ
+            refname: "Assembly_name"
+            accession: "Assembly_accessionVersion"  # REQ
         #! Check if it's worth it to add the <CUSTOM> genome assembly node besides the standard -- THERE ARE some analysis with CUSTOM nodes for Reference Alignment
     SEQUENCE: # OPT
       *RN:
       *att:
         # refname: "RefSequence_name"
-        accession: "Ref_Alignment.SequenceAccession"  # REQ
-        label: "Ref_Alignment.SequenceLabel"
-  # The reference alignment that uses Assembly
-  ReferenceSequenceType_node: &ReferenceSequenceType_node
-    REFERENCE_ALIGNMENT:
-      *child:
-        <<: *ReferenceAssemblyType_node
+        accession: "SEQUENCE.Accession"  # REQ
+        label: "SEQUENCE.Label"
 
 
 ####-------------####
@@ -262,7 +282,6 @@ study:
                 STUDY_TITLE:  # REQ
                   *tx: "Study_title*"
                 STUDY_TYPE: # REQ
-                  #! Choice:
                   *att:
                     existing_study_type: "Existing_study_type*"
                     new_study_type: "New_study_type"
@@ -316,7 +335,7 @@ run:
       EXPERIMENT_REF: # REQ
         *att:
             refname: "ExperimentReference_Name*"
-            # refcenter: "ExperimentReference_Center*"
+            refcenter: "ExperimentReference_Center*"
             # accession: "ExperimentReference_Accession"
 
       #! Check if it's worh it to add the <SPOT_DESCRIPTOR> element
@@ -330,7 +349,9 @@ run:
 
       RUN_TYPE:
         *child:
-          <<: *ReferenceSequenceType_node
+          REFERENCE_ALIGNMENT:
+            *child:
+              <<: *ReferenceAssemblyType_node
 
       DATA_BLOCK: # OPT
         *child:
@@ -404,50 +425,45 @@ analysis:
         label: "OtherAnalysis_label"
 
     ANALYSIS_TYPE:  # REQ
-      #! choice:
       *child:
-        <<: *ReferenceSequenceType_node
-        SEQUENCE_VARIATION:
+        REFERENCE_ALIGNMENT:
+          *choice: "Analysis_type*"
           *child:
-            ASSEMBLY: # OPT
-              *child:
-                STANDARD:
-                  *att:
-                    refname: "Seq_Variation.Assembly_name"
-                    accession: "Seq_Variation.Assembly_accessionVersion"  # REQ
-                SEQUENCE: # OPT
-                  *RN:
-                  *att:
-                    # refname: "RefSequence_name"
-                    accession: "Ref_Alignment.SequenceAccession"  # REQ
-                    label: "Ref_Alignment.SequenceLabel"
+            <<: *ReferenceAssemblyType_node
+
+        SEQUENCE_VARIATION:
+          *choice: "Analysis_type*"
+          *child:
+            <<: *ReferenceAssemblyType_node
+
             EXPERIMENT_TYPE:  # Controlled Vocabulary
-              *tx: "Seq_Variation.Experiment_type"
+              *tx: "SEQUENCE_VARIATION.Experiment_type"
             PROGRAM:
-              *tx: "Seq_Variation.Program"
+              *tx: "SEQUENCE_VARIATION.Program"
             PLATFORM:
-              *tx: "Seq_Variation.Platform"
+              *tx: "SEQUENCE_VARIATION.Platform"
             # IMPUTATION:
             #   *tx: "Imputation"
 
         SEQUENCE_ASSEMBLY:
+          *choice: "Analysis_type*"
           *child:
             NAME:
-              *tx: "Seq_Assembly.Name"
+              *tx: "SEQUENCE_ASSEMBLY.Name"
             TYPE: # Controlled Vocabulary
-              *tx: "Seq_Assembly.Type"
+              *tx: "SEQUENCE_ASSEMBLY.Type"
             COVERAGE:
-              *tx: "Seq_Assembly.Coverage"
+              *tx: "SEQUENCE_ASSEMBLY.Coverage"
             PLATFORM:
-              *tx: "Seq_Assembly.Platform"
+              *tx: "SEQUENCE_ASSEMBLY.Platform"
             MIN_GAP_LENGTH:
-              *tx: "Seq_Assembly.MinGapLen"
+              *tx: "SEQUENCE_ASSEMBLY.MinGapLen"
             MOL_TYPE: # Controlled Vocabulary
-              *tx: "Seq_Assembly.MoleculeType"
+              *tx: "SEQUENCE_ASSEMBLY.MoleculeType"
             PROGRAM:
-              *tx: "Seq_Assembly.Program"
+              *tx: "SEQUENCE_ASSEMBLY.Program"
             PARTIAL:
-              *tx: "Seq_Assembly.Partial"
+              *tx: "SEQUENCE_ASSEMBLY.Partial"
             #! Check if it's worth it to use:
             # TPA:
             #   *tx: "Sequence_Assembly.TPA"
@@ -456,47 +472,30 @@ analysis:
             # ADDRESS:
             #   *tx: "Sequence_Assembly.Address"
 
-        SEQUENCE_FLATFILE:
-          *empty:
+        # SEQUENCE_FLATFILE:
+        #   *choice: "Analysis_type*"
+        #   *empty:
 
         SEQUENCE_ANNOTATION:
+          *choice: "Analysis_type*"
           *child:
-            ASSEMBLY: # OPT
-              *child:
-                STANDARD:
-                  *att:
-                    refname: "Seq_Annotation.Assembly_name"
-                    accession: "Seq_Annotation.Assembly_accessionVersion"  # REQ
-                SEQUENCE: # OPT      #!!! All of these "SEQUENCE" nodes that are repeated across different analysis types will have to be changed
-                                     #!!!   once the "choice" is implemented, so that we can use a common column for all of these, and it's the node what's chosen.
-                  *RN:
-                  *att:
-                    # refname: "RefSequence_name"
-                    accession: "Ref_Alignment.SequenceAccession"  # REQ
-                    label: "Ref_Alignment.SequenceLabel"
+            <<: *ReferenceAssemblyType_node
 
-        REFERENCE_SEQUENCE:
-          *empty:
+        # REFERENCE_SEQUENCE:
+        #   *choice: "Analysis_type*"
+        #   *empty:
 
         SAMPLE_PHENOTYPE:
+          *choice: "Analysis_type*"
           *empty:
 
         PROCESSED_READS:
+          *choice: "Analysis_type*"
           *child:
-            ASSEMBLY: # OPT
-              *child:
-                STANDARD:
-                  *att:
-                    refname: "Processed_Reads.Assembly_name"
-                    accession: "Processed_Reads.Assembly_accessionVersion"  # REQ
-                SEQUENCE: # OPT
-                  *RN:
-                  *att:
-                    # refname: "RefSequence_name"
-                    accession: "Ref_Alignment.SequenceAccession"  # REQ
-                    label: "Ref_Alignment.SequenceLabel"
+            <<: *ReferenceAssemblyType_node
 
         GENOME_MAP:
+          *choice: "Analysis_type*"
           *child:
             PROGRAM:
               *tx: "Genome_Map.Program"
@@ -505,13 +504,16 @@ analysis:
             DESCRIPTION:
               *tx: "Genome_Map.Description"
 
-        AMR_ANTIBIOGRAM:
-          *empty:
+        # AMR_ANTIBIOGRAM:
+        #   *choice: "Analysis_type*"
+        #   *empty:
 
         PATHOGEN_ANALYSIS:
+          *choice: "Analysis_type*"
           *empty:
 
         TRANSCRIPTOME_ASSEMBLY:
+          *choice: "Analysis_type*"
           *child:
             NAME:
               *tx: "Transcriptome_Assembly.Name"
@@ -529,12 +531,13 @@ analysis:
             #   *tx: "Address"
 
         #! There are only 2 analysis that use the NAME of TAXONOMIC_REFERENCE_SET, which denotes that its usage is marginal
-        TAXONOMIC_REFERENCE_SET:
-          *child:
-            NAME:
-              *tx: "Taxonomic_RefSet.Name"
-            TAXONOMY_SYSTEM:
-              *tx: "Taxonomic_RefSet.System"
+        # TAXONOMIC_REFERENCE_SET:
+        #   *choice: "Analysis_type*"
+        #   *child:
+        #     NAME:
+        #       *tx: "Taxonomic_RefSet.Name"
+        #     TAXONOMY_SYSTEM:
+        #       *tx: "Taxonomic_RefSet.System"
             # TAXONOMY_SYSTEM_VERSION:
             #   *tx: "Taxonomic_RefSet.SystemVersion"
             # CUSTOM_FIELDS:
@@ -628,14 +631,15 @@ experiment:
             LIBRARY_SELECTION:  # REQ Controlled Vocabulary
               *tx: "Library_selection*"
             LIBRARY_LAYOUT: # REQ
-              #! Choice:
               *child:
                 SINGLE:
+                  *choice: "Experiment_layout*"
                   *empty:
                 PAIRED:
+                  *choice: "Experiment_layout*"
                   *att:
-                    NOMINAL_LENGTH: "Paired_Nominal_length"
-                    NOMINAL_SDEV: "Paired_Nominal_sdev"
+                    NOMINAL_LENGTH: "PAIRED.Nominal_length"
+                    NOMINAL_SDEV: "PAIRED.Nominal_sdev"
             TARGETED_LOCI:  # OPT
               *child:
                 LOCUS:
