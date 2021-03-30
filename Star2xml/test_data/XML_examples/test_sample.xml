@@ -1,59 +1,73 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<SAMPLE_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd">
-  <SAMPLE alias="P00155_sample_725" center_name="EBI-TEST">
-    <TITLE>SolveRD Sample 725 for Patient ID: P00155</TITLE>
+<SAMPLE_SET xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_6/SRA.sample.xsd">
+  <SAMPLE alias="Example!_HG03464" center_name="EBI-TEST" broker_name="EGA">
+    <TITLE>Example!_Sample HG03464 from the 1000 Genomes Project</TITLE>
     <SAMPLE_NAME>
       <TAXON_ID>9606</TAXON_ID>
       <SCIENTIFIC_NAME>homo sapiens</SCIENTIFIC_NAME>
       <COMMON_NAME>human</COMMON_NAME>
     </SAMPLE_NAME>
-    <DESCRIPTION>Sample was extracted from pancreas upper portion</DESCRIPTION>
+    <DESCRIPTION>Example!_Individual HG03464 corresponds to a female from MSL</DESCRIPTION>
+    <SAMPLE_LINKS>
+      <SAMPLE_LINK>
+        <URL_LINK>
+          <LABEL>IGSR entry</LABEL>
+          <URL>https://www.internationalgenome.org/data-portal/sample/HG03464</URL>
+        </URL_LINK>
+      </SAMPLE_LINK>
+      <SAMPLE_LINK>
+        <URL_LINK>
+          <LABEL>dbSNP Batch ID 1061891</LABEL>
+          <URL>http://www.ncbi.nlm.nih.gov/SNP/snp_viewBatch.cgi?sbid=1061891</URL>
+        </URL_LINK>
+      </SAMPLE_LINK>
+      <SAMPLE_LINK>
+        <XREF_LINK>
+          <DB>bioproject</DB>
+          <ID>214517</ID>
+          <LABEL>PRJNA214517</LABEL>
+        </XREF_LINK>
+      </SAMPLE_LINK>
+      <SAMPLE_LINK>
+        <XREF_LINK>
+          <DB>pubmed</DB>
+          <ID>9039096</ID>
+        </XREF_LINK>
+      </SAMPLE_LINK>
+      <SAMPLE_LINK>
+        <ENTREZ_LINK>
+          <DB>biosample</DB>
+          <ID>289</ID>
+          <LABEL>SAMN00000289</LABEL>
+        </ENTREZ_LINK>
+      </SAMPLE_LINK>
+    </SAMPLE_LINKS>
     <SAMPLE_ATTRIBUTES>
       <SAMPLE_ATTRIBUTE>
         <TAG>subject_id</TAG>
-        <VALUE>P00155</VALUE>
-        <UNITS>BioSample</UNITS>
+        <VALUE>HG03464</VALUE>
       </SAMPLE_ATTRIBUTE>
       <SAMPLE_ATTRIBUTE>
-        <TAG>gender</TAG>
-        <VALUE>male</VALUE>
-        <UNITS>X/Y</UNITS>
-      </SAMPLE_ATTRIBUTE>
-      <SAMPLE_ATTRIBUTE>
-        <TAG>phenotype</TAG>
-        <VALUE>EFO:0002618</VALUE>
-        <UNITS>Experimental Ontology Factor accession</UNITS>
-      </SAMPLE_ATTRIBUTE>
-    </SAMPLE_ATTRIBUTES>
-  </SAMPLE>
-  <SAMPLE alias="P00157_sample_726" center_name="EBI-TEST">
-    <TITLE>SolveRD Sample 726 for Patient ID: P00157</TITLE>
-    <SAMPLE_NAME>
-      <TAXON_ID>9606</TAXON_ID>
-      <SCIENTIFIC_NAME>homo sapiens</SCIENTIFIC_NAME>
-      <COMMON_NAME>human</COMMON_NAME>
-    </SAMPLE_NAME>
-    <DESCRIPTION>Sample was extracted from pancreas lower portion</DESCRIPTION>
-    <SAMPLE_ATTRIBUTES>
-      <SAMPLE_ATTRIBUTE>
-        <TAG>subject_id</TAG>
-        <VALUE>P00157</VALUE>
-        <UNITS>BioSample</UNITS>
-      </SAMPLE_ATTRIBUTE>
-      <SAMPLE_ATTRIBUTE>
-        <TAG>gender</TAG>
+        <TAG>sex</TAG>
         <VALUE>female</VALUE>
-        <UNITS>X/X</UNITS>
       </SAMPLE_ATTRIBUTE>
       <SAMPLE_ATTRIBUTE>
         <TAG>phenotype</TAG>
-        <VALUE>EFO:0002618</VALUE>
-        <UNITS>Experimental Ontology Factor accession</UNITS>
+        <VALUE>EFO:0000574</VALUE>
       </SAMPLE_ATTRIBUTE>
       <SAMPLE_ATTRIBUTE>
-        <TAG>parental_id</TAG>
-        <VALUE>P00157</VALUE>
-        <UNITS>BioSample</UNITS>
+        <TAG>Population</TAG>
+        <VALUE>MSL</VALUE>
+        <UNITS>ISO3</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>Super Population</TAG>
+        <VALUE>AFR</VALUE>
+        <UNITS>ISO3</UNITS>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>Growth protocol</TAG>
+        <VALUE>https://www.encodeproject.org/documents/2a32df77-1325-4a2d-af71-2f2b68eb9830/@@download/attachment/Snyder_MCF7%20Cell%20Growth%20Protocol.pdf</VALUE>
       </SAMPLE_ATTRIBUTE>
     </SAMPLE_ATTRIBUTES>
   </SAMPLE>
