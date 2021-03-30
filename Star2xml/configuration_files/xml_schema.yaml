@@ -119,9 +119,7 @@ common_key_values:
   add_empty_node: &empty "add_empty_node"     # This one is used at XML tags that are empty but its pressence is meaningful by itself, with no
                                               #   attributes nor text. 
   choice_tag: &choice "choice_tag"
-
-  #! To be uncommented once EE-1841 is done
-  # multiple_choice_child: &multi_child "multiple_choice_child"
+  repetitiveNode_Father_Tag: &RN-father "repetitiveNode_Father_Tag"
 
   # From this point we will save common attributes for objects that are sometimes
   #   repeated within our schemas.
@@ -143,40 +141,41 @@ common_key_values:
       units:
           *tx: "Units"
 
-  #! To be uncommented once EE-1841 is done
   # Another common node for links, used in all objects
-  # URL_XREF_ENTREZ_links_node: &URL_XREF_ENTREZ_links_node
-  #   *RN:
-  #   *multi_child:
-  #     URL_LINK:
-  #       *child:
-  #         LABEL:
-  #           *tx: "URL_LINK.Label"
-  #         URL:
-  #           *tx: "URL_LINK.URL"
-  #     XREF_LINK:
-  #       *child:
-  #         DB:
-  #           *tx: "XREF_LINK.DB"
-  #         ID:
-  #           *tx: "XREF_LINK.ID"
-  #         #! Nobody used QUERY in an XREF link, there's literally no data for it so far in ERAPRO,
-  #         #     and there's little to no documentation about it. 
-  #         # QUERY:
-  #         #   *tx: "XREF_LINK.Query"
-  #         LABEL:
-  #           *tx: "XREF_LINK.label"
-  #     ENTREZ_LINK:
-  #       *child:
-  #         DB:
-  #           *tx: "ENTREZ_LINK.DB"
-  #         ID:
-  #           *tx: "ENTREZ_LINK.ID"
-  #         #! Just like with XREF: not a single entry of QUERY here.   
-  #         # QUERY:
-  #         #   *tx: "ENTREZ_LINK.query"
-  #         LABEL:
-  #           *tx: "ENTREZ_LINK.label"
+  URL_XREF_ENTREZ_links_node: &URL_XREF_ENTREZ_links_node
+    *child:
+      URL_LINK:
+        *RN:
+        *child:
+          LABEL:
+            *tx: "URL_LINK.Label"
+          URL:
+            *tx: "URL_LINK.URL"
+      XREF_LINK:
+        *RN:
+        *child:
+          DB:
+            *tx: "XREF_LINK.DB"
+          ID:
+            *tx: "XREF_LINK.ID"
+          #! Nobody used QUERY in an XREF link, there's literally no data for it so far in ERAPRO,
+          #     and there's little to no documentation about it. 
+          # QUERY:
+          #   *tx: "XREF_LINK.Query"
+          LABEL:
+            *tx: "XREF_LINK.label"
+      ENTREZ_LINK:
+        *RN:
+        *child:
+          DB:
+            *tx: "ENTREZ_LINK.DB"
+          ID:
+            *tx: "ENTREZ_LINK.ID"
+          #! Just like with XREF: not a single entry of QUERY here.   
+          # QUERY:
+          #   *tx: "ENTREZ_LINK.query"
+          LABEL:
+            *tx: "ENTREZ_LINK.label"
 
   # Node used in RUN and EXPERIMENT objects
   platform_multichoice_node: &platform_multichoice_node
@@ -275,11 +274,13 @@ sample:
               *tx: "Common_name*"
         DESCRIPTION:
           *tx: "Description"
-        #! To be uncommented once EE-1841
-        # SAMPLE_LINKS:
-        #   *child:
-        #     SAMPLE_LINK:
-        #       <<: *URL_XREF_ENTREZ_links_node
+
+        SAMPLE_LINKS:
+          *child:
+            SAMPLE_LINK:
+              *RN-father:
+              <<: *URL_XREF_ENTREZ_links_node
+
         sample_attributes:
           *child:
             # Bear in mind that subject_id, gender and phenotype are mandatory
@@ -328,11 +329,13 @@ study:
                           *tx: "RelatedStudy_IsPrimary"
                 STUDY_DESCRIPTION:  # OPT
                   *tx: "Study_description"
-        #! To be uncommented once EE-1841
-        # STUDY_LINKS:  # OPT
-        #   *child:
-        #     STUDY_LINK:
-        #       <<: *URL_XREF_ENTREZ_links_node
+
+        STUDY_LINKS:  # OPT
+          *child:
+            STUDY_LINK:
+              *RN-father:
+              <<: *URL_XREF_ENTREZ_links_node
+
         STUDY_ATTRIBUTES:  # OPT
           *child:
             STUDY_ATTRIBUTE:
@@ -384,11 +387,13 @@ run:
                           quality_encoding: "MinQuality_Ascii" # OPT
                           ascii_offset: "Ascii_offset"
                   #! Check if it's worth it to add the <READ_LABEL> node
-      #! To be uncommented once EE-1841
-      # RUN_LINKS:  # OPT
-      #   *child:
-      #     RUN_LINK:
-      #       <<: *URL_XREF_ENTREZ_links_node
+
+      RUN_LINKS:  # OPT
+        *child:
+          RUN_LINK:
+            *RN-father:
+            <<: *URL_XREF_ENTREZ_links_node
+
       RUN_ATTRIBUTES:  # OPT
         *child:
           RUN_ATTRIBUTE:
@@ -576,11 +581,11 @@ analysis:
             <<: *file_basic_attributes
             checklist: "Checklist"
 
-    #! To be uncommented once EE-1841 is done
-    # ANALYSIS_LINKS:  # OPT
-    #   *child:
-    #     ANALYSIS_LINK:
-    #       <<: *URL_XREF_ENTREZ_links_node
+    ANALYSIS_LINKS:  # OPT
+      *child:
+        ANALYSIS_LINK:
+          *RN-father:
+          <<: *URL_XREF_ENTREZ_links_node
 
     ANALYSIS_ATTRIBUTES:  # OPT
       *child:
@@ -690,22 +695,22 @@ experiment:
                   *RN:
                   *child:
                     READ_INDEX:
-                      *tx: "ReadSpec.READ_INDEX"
+                      *tx: "READ_SPEC.READ_INDEX"
                     READ_LABEL:
-                      *tx: "ReadSpec.READ_LABEL" 
+                      *tx: "READ_SPEC.READ_LABEL" 
                     READ_CLASS:
-                      *tx: "ReadSpec.READ_CLASS"
+                      *tx: "READ_SPEC.READ_CLASS"
                     READ_TYPE:  # CV
-                      *tx: "ReadSpec.READ_TYPE"     
+                      *tx: "READ_SPEC.READ_TYPE"     
                     RELATIVE_ORDER:
                       *att:
-                        follows_read_index: "ReadSpec.Preceding_read_index"              
+                        follows_read_index: "READ_SPEC.Preceding_read_index"              
                     BASE_COORD:
-                      *tx: "ReadSpec.BASE_COORD"
+                      *tx: "READ_SPEC.BASE_COORD"
                     EXPECTED_BASECALL_TABLE:
                       *att:
-                        default_length: "ReadSpec.Expected_Default_Length"
-                        # base_coord: "ReadSpec.Expected_Default_Length"
+                        default_length: "READ_SPEC.Expected_Default_Length"
+                        # base_coord: "READ_SPEC.Expected_Default_Length"
                       *child:
                         BASECALL:
                           #! *RN: but we cannot allow for it due to its dimensional complexity.
@@ -719,10 +724,10 @@ experiment:
                           #     <BASECALL min_match="38" max_mismatch="5" match_edge="full">CGTAATAACTTCGTATAGCATACATTATAAAGTTATACGA</BASECALL>
                           #   </EXPECTED_BASECALL_TABLE>
                           *att:
-                            min_match: "ReadSpec.Basecall_min_match"
-                            max_mismatch: "ReadSpec.Basecall_max_mismatch"
-                            match_edge: "ReadSpec.Basecall_match_edge"
-                          *tx: "ReadSpec.Basecall"
+                            min_match: "READ_SPEC.Basecall_min_match"
+                            max_mismatch: "READ_SPEC.Basecall_max_mismatch"
+                            match_edge: "READ_SPEC.Basecall_match_edge"
+                          *tx: "READ_SPEC.Basecall"
 
     PLATFORM: # REQ
       <<: *platform_multichoice_node
@@ -755,11 +760,12 @@ experiment:
         #     SAMPLE_DEMUX_DIRECTIVE: # OPT Controlled Vocabulary
         #       *tx: "Sample_demux_directive"
     
-    #! To be uncommented once EE-1841 is done
-    # EXPERIMENT_LINKS: # OPT
-    #   *child:
-    #     EXPERIMENT_LINK:
-    #       <<: *URL_XREF_ENTREZ_links_node
+    EXPERIMENT_LINKS: # OPT
+      *child:
+        EXPERIMENT_LINK:
+          *RN-father:
+          <<: *URL_XREF_ENTREZ_links_node
+
     EXPERIMENT_ATTRIBUTES:  # OPT
       *child:
         EXPERIMENT_ATTRIBUTE:

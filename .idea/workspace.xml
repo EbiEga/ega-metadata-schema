@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a2aedba-4d44-45fe-8c64-71bce33c1363" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ega-metadata-schema.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Star2xml/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Star2xml/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Star2xml/XML_creator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Star2xml/XML_creator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Star2xml/configuration_files/xml_schema.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Star2xml/configuration_files/xml_schema.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Star2xml/test_data/XML_examples/test_run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Star2xml/test_data/XML_examples/test_run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Star2xml/test_data/XML_examples/test_sample.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Star2xml/test_data/XML_examples/test_sample.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Star2xml/test_data/filled_examples/run.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Star2xml/test_data/filled_examples/sample.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sequence-based-metadata/analysis_template.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sequence-based-metadata/experiment_template.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sequence-based-metadata/run_template.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sequence-based-metadata/sample_template.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sequence-based-metadata/study_template.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sequence-based-metadata/whole_submission_template.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sequence-based-metadata/whole_submission_template.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
