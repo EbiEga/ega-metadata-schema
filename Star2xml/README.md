@@ -24,6 +24,7 @@ This tool was programmed in **Python** (**version 3.8+**) and depends on the fol
 | lxml | 4.6.2 | library for processing XML and HTML |
 | datetime | 4.3 | Supplies classes for manipulating dates and times |
 | openpyxl | 3.0.6 | Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files |
+| requests | 2.25.1 | HTTP library for Python (used to download files) |
 
 You may want to install the latest versions of this packages and check if it works (running the [mock command line examples](#Mock-examples) provided in this README). In case you want to install the specific versions we used to develop this tool, you are advised to create a **virtual environment** (to avoid overwriting other versions you may use).
 
@@ -50,29 +51,29 @@ Information of both scripts can be obtained using the command line help option [
 
 ### star2xml.py
 ```
-usage: star2xml.py [-h] [--schema-file [SCHEMA_FILE]] [--configuration-file [CONF_FILE]] [--verbose] [--debug]
-                   schema_key input_file output_xml
+usage: star2xml.py [-h] [--output_xmls OUTPUT_XMLS] [--schema-file [SCHEMA_FILE]] [--configuration-file [CONF_FILE]] [--verbose] [--debug] [--validate] schema_keys input_file
 
-A script to transform an input file (.csv, .tsv or .xlsx) into a dataframe, and then build an XML (which will be
-validated against ENA's schemas .XSD) with its information following the XML structure described in a YAML file
+A script to transform an input file (.csv, .tsv or .xlsx) into a dataframe, and then build an XML (which will be validated against ENA's schemas .XSD) with its information following the XML structure described in a YAML file
 
 positional arguments:
-  schema_key            Schema key for the metadata object (e.g. "sample", "run", "experiment"...)
-  input_file            Input file (.csv, .tsv or .xlsx) with metadata information to be transformed into a dataframe
-                        (e.g. "sample.xlsx")
-  output_xml            Output XML filepath, i.e. file that will contain the generated XML (e.g. "sample.xml")
+  schema_keys           Schema keys for the metadata object. Can be a single key (e.g. "sample", "run", "experiment"...), or several keys separated by commas (e.g. "sample,run,experiment")
+  input_file            Input file (.csv, .tsv or .xlsx) with metadata information to be transformed into a dataframe (e.g. "sample.xlsx"). If several schema keys are given, the input spreadsheet is expected to have a separated tab
+                        named after each schema key.
 
 optional arguments:
   -h, --help            show this help message and exit
+  --output_xmls OUTPUT_XMLS
+                        Output XML filepaths, i.e. file that will contain the generated XMLs. Can be a single filepath (e.g. "sample.xml"), several filepaths separated by commas (e.g. "sample.xml,run.xml,experiment.xml" - in the same
+                        order as the schema keys), or a directory (e.g. "output_xmls/" ) where all XMLs will be saved with their corresponding schema keys as their names.
   --schema-file [SCHEMA_FILE]
                         YAML file containing the schema for the metadata object(s) (e.g. "xml_schema.yaml")
   --configuration-file [CONF_FILE]
-                        YAML file containing the configuration (i.e. required fields) of the input file (e.g.
-                        "input_configuration.yaml")
+                        YAML file containing the configuration (i.e. required fields) of the input file (e.g. "input_configuration.yaml")
   --verbose             A boolean switch to add verbosity to the function (printing initial parameters, final XML...)
-  --debug               A boolean switch to set the functions in "debug" mode, which will add even more verbosity to
-                        the function (printing every step of the XML creation...)
+  --debug               A boolean switch to set the functions in "debug" mode, which will add even more verbosity to the function (printing every step of the XML creation...)
+  --validate            A boolean switch that will enable the validation of the scripts right after its creation. Thus, the function will call validateXML.py (in verbose mode) after it has finished creating the XMLs.
 
+Example of usage: $ ./star2xml.py "sample,run,experiment,analysis,study" "../templates/sequence-based-metadata/whole_submission_template.xlsx" --validate'
 ```
 For example, if we had an excel spreadsheet (`run.xlsx`), with one run per row, and wanted to create its corresponding XML (`run.xml`), we would run the following command:
 ``` Bash
@@ -85,30 +86,26 @@ Both `--schema-file` and `--configuration-file` arguments can be omitted if thei
 
 ### validateXML.py
 ```
-usage: validateXML.py [-h] [--schemas-dir [SCHEMA_DIR]] [--schema-file [SCHEMA_FILE]] [--download_xsd] [--verbose]
-                      schema_keys input_xmls
+usage: validateXML.py [-h] [--schemas-dir [SCHEMA_DIR]] [--schema-file [SCHEMA_FILE]] [--download_xsd] [--ftp_downloader] [--verbose] schema_keys input_xmls
 
-A script to validate one (or more) input XML files based on some XML schemas (.xsd files). If schemas are missing, it
-downloads them from a given FTP server. The function returns a list full of boolean values defined by the outcome of
+A script to validate one (or more) input XML files based on some XML schemas (.xsd files). If schemas are missing, it downloads them from a given FTP server. The function returns a list full of boolean values defined by the outcome of
 the validation (e.g. [False, True, True] if only the last 2 XMLs were correctly validated)
 
 positional arguments:
-  schema_keys           Schema key(s) (comma delimited) for the metadata object(s) (e.g. "sample,run" or
-                        "experiment"...)
-  input_xmls            Input XML(s) (comma delimited) with metadata information to be validated (e.g.
-                        "sample.xml,run.xml")
+  schema_keys           Schema key(s) (comma delimited) for the metadata object(s) (e.g. "sample,run" or "experiment"...)
+  input_xmls            Input XML(s) (comma delimited) with metadata information to be validated (e.g. "sample.xml,run.xml")
 
 optional arguments:
   -h, --help            show this help message and exit
   --schemas-dir [SCHEMA_DIR]
-                        Directory containing all the XSD schema files (e.g. "downloaded_schemasXSD/"). If --download-
-                        xsd is given, the XSD files will be downloaded into this directory.
+                        Directory containing all the XSD schema files (e.g. "downloaded_schemasXSD/"). If --download-xsd is given, the XSD files will be downloaded into this directory.
   --schema-file [SCHEMA_FILE]
                         YAML file containing the schema for the metadata object(s) (e.g. "xml_schema.yaml")
-  --download_xsd        A boolean switch to give if you want the schemas (.xsd files) to be downloaded instead of
-                        providing them
-  --verbose             A boolean switch to add verbosity to the function (will print into the terminal extra
-                        information, as well as the validation errors and results with a friendlier format)
+  --download_xsd        A boolean switch to give if you want the schemas (.xsd files) to be downloaded instead of providing them
+  --ftp_downloader      A boolean switch to use the ftp downloader instead of the default request.get() downloader for the ENA schemas (in GitHub), which is the main source of truth for ENA schemas.
+  --verbose             A boolean switch to add verbosity to the function (will print into the terminal extra information, as well as the validation errors and results with a friendlier format)
+
+Schema keys and their input XMLs have to be given in the same order!
 ```
 In this case we can validate as many XML files as we want in one go. For instance, in the following example we validate two XML files (`sample.xml` and `run.xml`) that correspond to two different metadata objects (`sample` and `run`). It is important to notice that, if we have not downloaded yet the metadata schema files (`.xsd`), we should provide the option `--download_xsd` the first time we run `validateXML.py`.
 ```Bash
@@ -128,7 +125,7 @@ Pre-defined files are ready for you to run the following commands, checking the 
 ./star2xml.py  'sample' 'test_data/filled_examples/sample.xlsx' 'test_data/XML_examples/test_sample.xml' --verbose
 ```
 ```Bash
-./validateXML.py "sample,run" "test_data/XML_examples/test_sample.xml,test_data/XML_examples/test_run.xml" --download_xsd --verbose
+./validateXML.py --verbose --download_xsd "sample,run" "../examples/sequence-based-metadata/XML/XMLs_examples-true_values/sample.xml,../examples/sequence-based-metadata/XML/XMLs_examples-true_values/run.xml"
 ```
 
 ## Filling out templates

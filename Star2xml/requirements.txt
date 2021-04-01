@@ -4,3 +4,4 @@ argparse==1.4.0
 lxml==4.6.2
 datetime==4.3
 openpyxl==3.0.6
+requests==2.25.1

@@ -3,8 +3,6 @@
 """
 Programme:  validateXML
 File:       validateXML.py
-Version:    1
-Date:       2021-02-05
 Function:   A script to validate a given XML against a given schema (.xsd)
 Copyright:  EMBL-EBI, 2021
 Address:    EMBL-EBI
@@ -40,44 +38,50 @@ older versions of python have not been tested and are not guaranteed.
 # -------- #
 import argparse
 
-program_description = """A script to validate one (or more) input XML files based
-on some XML schemas (.xsd files). If schemas are missing, it downloads them
-from a given FTP server. The function returns a list full of boolean values
-defined by the outcome of the validation (e.g. [False, True, True] if only the
-last 2 XMLs were correctly validated)
-"""
-
 arg_parser = argparse.ArgumentParser(prog = "validateXML.py",
-                                     description = program_description,
-                                     epilog = "Schema keys and their input XMLs have to be given in the same order!")
+                                    epilog = "Schema keys and their input XMLs have to be given in the same order!",
+                                    description = """A script to validate one (or more) input XML files based
+                                                    on some XML schemas (.xsd files). If schemas are missing, it downloads them
+                                                    from a given FTP server. The function returns a list full of boolean values
+                                                    defined by the outcome of the validation (e.g. [False, True, True] if only the
+                                                    last 2 XMLs were correctly validated)
+                                                    """)
 
 arg_parser.add_argument('schema_keys',
-                        help = 'Schema key(s) (comma delimited) for the metadata object(s) (e.g. "sample,run" or "experiment"...)')
+                        help = """Schema key(s) (comma delimited) for the metadata object(s) (e.g. "sample,run" or "experiment"...)""")
 
 arg_parser.add_argument('input_xmls',
-                        help = 'Input XML(s) (comma delimited) with metadata information to be validated (e.g. "sample.xml,run.xml")')
+                        help = """Input XML(s) (comma delimited) with metadata information to be validated (e.g. "sample.xml,run.xml")""")
 
 arg_parser.add_argument('--schemas-dir',
                         dest = 'schema_dir',
                         nargs = '?', # 0 or 1 arguments
                         default = 'downloaded_schemasXSD/',
-                        help = 'Directory containing all the XSD schema files (e.g. "downloaded_schemasXSD/"). If --download-xsd is given, the XSD files will be downloaded into this directory.')
+                        help = """Directory containing all the XSD schema files (e.g. "downloaded_schemasXSD/"). If 
+                                --download-xsd is given, the XSD files will be downloaded into this directory.""")
 
 arg_parser.add_argument('--schema-file',
                         dest = 'schema_file',
                         nargs = '?', # 0 or 1 arguments
                         default = 'configuration_files/xml_schema.yaml',
-                        help = 'YAML file containing the schema for the metadata object(s) (e.g. "xml_schema.yaml")')
+                        help = """YAML file containing the schema for the metadata object(s) (e.g. "xml_schema.yaml")""")
 
 arg_parser.add_argument('--download_xsd',
                         action='store_true',
                         default = False,
-                        help='A boolean switch to give if you want the schemas (.xsd files) to be downloaded instead of providing them')
+                        help="""A boolean switch to give if you want the schemas (.xsd files) to be downloaded instead of providing them""")
+
+arg_parser.add_argument('--ftp_downloader',
+                        action='store_false',
+                        default = True,
+                        help="""A boolean switch to use the ftp downloader instead of the default request.get() 
+                                downloader for the ENA schemas (in GitHub), which is the main source of truth for ENA schemas.""")
 
 arg_parser.add_argument('--verbose',
                         action='store_true',
                         default = False,
-                        help='A boolean switch to add verbosity to the function (will print into the terminal extra information, as well as the validation errors and results with a friendlier format)')
+                        help="""A boolean switch to add verbosity to the function (will print into the terminal extra information, 
+                                as well as the validation errors and results with a friendlier format)""")
 
 
 arguments = arg_parser.parse_args()
@@ -86,6 +90,7 @@ schema_keys = arguments.schema_keys.lower().split(',')
 schema_file = arguments.schema_file
 schema_dir = arguments.schema_dir
 is_xsd_missing = arguments.download_xsd
+git_downloader_method = arguments.ftp_downloader
 is_verbose = arguments.verbose
 
 # Assert a possible common mistake
@@ -93,30 +98,80 @@ assert len(schema_keys) == len(input_xmls), "Error: the given schema keys '{}' a
 
 # We load the information (like a dictionary) from the YAML file
 from yaml import safe_load
-with open(schema_file, "r") as schema_file:
-    schema_general_dict = safe_load(schema_file)
+try:
+    with open(schema_file, "r") as schema_file:
+        schema_general_dict = safe_load(schema_file)
+
+except FileNotFoundError:
+    print("ERROR in validateXML.py: given schema filepath '%s' does not exist or could not be found." \
+          % schema_file, file=sys.stderr)
+    sys.exit()
+
+except yaml.scanner.ScannerError as ScannerError:
+    print("ERROR in validateXML.py: in the given schema '%s' there was a scanning issue." \
+          % schema_file, file=sys.stderr)
+    print("\t - Problem: %s" \
+          % ScannerError.problem, file=sys.stderr)
+    print("\t - Problem's location: %s" \
+          % ScannerError.context_mark, file=sys.stderr)
+    sys.exit()
+
+except:
+    print("ERROR in validateXML.py: unknown error happened trying to yaml.safe_load() the given schema filepath '%s'." \
+          % schema_file, file=sys.stderr)
+    sys.exit()
 
 
 # -------- #
 # Download of XML schemas (.xsd files) if --download-xsd was given
 # -------- #
 if is_xsd_missing:
-    # Import the downloading function
-    from ftp_downloader import download_files
-
     if is_verbose:
-        print("# Download mode enable, XSD files will be downloaded to the directory '%s'" % schema_dir)
+            print("# Download mode enable, XSD files will be downloaded to the directory '%s'" % schema_dir)
+            
+    if git_downloader_method:
+        if is_verbose:
+            print("# Download function used is download_files_git() from git_downloader.py")
 
-    # Assign the server's information from the YAML file
-    file_extension = schema_general_dict["XML_schemas_info"]["file_extension"]
-    ftp_server = schema_general_dict["XML_schemas_info"]["ftp_server"]
-    schemas_dir = schema_general_dict["XML_schemas_info"]["schemas_dir"]
+        # We import the downloading function
+        from git_downloader import download_files_git
 
-    # Download the XSD files into the given schema directory
-    download_files(download_directory = schemas_dir,
-                   server = ftp_server,
-                   output_dir = schema_dir,
-                   file_extension = file_extension)
+        download_file_dict = schema_general_dict["XML_schemas_info"]["download_files_git"]
+
+        if isinstance(download_file_dict, dict):
+            # We transform the dictionary into the list we use as input
+            download_file_list = list(download_file_dict.values())
+        
+        elif isinstance(download_file_dict, list):
+            download_file_list = download_file_dict
+
+        else:
+            # If it's not a dictionary nor a list, we did something wrong
+            print("ERROR in validateXML.py: the information extracted from the yaml schema file (%s) with the keys 'XML_schemas_info' and 'download_files_git' did not return a dictionary nor a list.\n\t- Returned information: %s" \
+                    % (schema_file, download_file_dict), file=sys.stderr)
+            sys.exit()
+
+        # We retrieve the information for the download from the configuration file (xml_schema.yaml)
+        download_files_git(output_dir = schema_dir,
+                           raw_file_url_list = download_file_list)
+
+    else:
+        # Import the downloading function
+        from ftp_downloader import download_files_ftp
+
+        if is_verbose:
+            print("# Download function used is download_files_ftp() from ftp_downloader.py")
+
+        # Assign the server's information from the YAML file
+        file_extension = schema_general_dict["XML_schemas_info"]["file_extension"]
+        ftp_server = schema_general_dict["XML_schemas_info"]["ftp_server"]
+        schemas_dir = schema_general_dict["XML_schemas_info"]["schemas_dir"]
+
+        # Download the XSD files into the given schema directory
+        download_files_ftp(download_directory = schemas_dir,
+                           server = ftp_server,
+                           output_dir = schema_dir,
+                           file_extension = file_extension)
 else:
     if is_verbose:
         print("# Download mode disabled, XSD files will be expected to be at '%s'" % schema_dir)
