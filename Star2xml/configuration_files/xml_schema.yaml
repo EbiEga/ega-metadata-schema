@@ -770,3 +770,54 @@ experiment:
       *child:
         EXPERIMENT_ATTRIBUTE:
           <<: *custom_tag_value_unit
+
+          
+####--------------####
+# - Dataset OBJECT - #
+####--------------####
+
+dataset:
+  *att: # OPT
+     alias: "Dataset_alias*"
+     center_name: "Center_name*"
+     broker_name: "Broker_name"
+
+  *child:
+    TITLE: # REQ
+      *tx: "Dataset_title*"
+    
+    DESCRIPTION: # OPT
+      *tx: "Description"
+
+    DATASET_TYPE: # OPT
+      *RN: 
+      *tx: "Dataset_type"
+
+    RUN_REF:  # OPT
+      *att:
+        refname: "RUN.Alias"
+
+    ANALYSIS_REF: # OPT
+      *att:
+        refname: "ANALYSIS.Alias"
+
+    POLICY_REF: # REQ
+      *att:
+        accession: "POLICY.Accession"
+
+    DATASET_LINKS: # OPT
+      *child:
+        DATASET_LINK:
+          *RN-father:
+          <<: *URL_XREF_ENTREZ_links_node
+
+    DATASET_ATTRIBUTES:  # OPT
+      *child:
+        DATASET_ATTRIBUTE:
+          <<: *custom_tag_value_unit
+
+
+
+####-----------------####
+# - Submission OBJECT - #
+####-----------------####

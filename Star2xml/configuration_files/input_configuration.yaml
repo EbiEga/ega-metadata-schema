@@ -55,6 +55,11 @@ experiment:
       - Library_selection*
       - Platform*
 
+dataset:
+    required:
+      - Dataset_alias*
+      - Center_name*
+      - Dataset_title*
 
 
 
