@@ -11,7 +11,9 @@ attribute_tag = "attributes"
 text_tag = "text"
 repetitive_tag = "repetitive_node"
 add_empty_node_tag = "add_empty_node"
-valid_dict_elements = set([children_tag, attribute_tag, text_tag, repetitive_tag, add_empty_node_tag])
+choice_tag = "choice_tag"
+repetitiveNode_Father_Tag = "repetitiveNode_Father_Tag"
+valid_dict_elements = set([children_tag, attribute_tag, text_tag, repetitive_tag, add_empty_node_tag, choice_tag, repetitiveNode_Father_Tag])
 tool_info_tag = "tool_info"
 version_tag = "version"
 update_date_tag = "update_date"
@@ -145,12 +147,20 @@ class XML_creator():
         # The following list will be populated with nodes that have the add_empty_node_tag. These nodes will not be removed
         #   by the prunning function, since they have a meaning by themselves, although they are empty (e.g. SINGLE in LIBRARY_LAYOUT)
         self.nodesThatNeedToBe_empty_list = []
+        
+        # The following list will also be populated through the creation of the XML tree. In this case, the list will contain
+        #     tuples of nodes that are fathers of multiple choice repetitive nodes (e.g. SAMPLE_LINK), and their fathers (e.g
+        #     SAMPLE_LINKS)
+        self.nodesThatAreFathersOfRepetitiveNode = []
 
         # We create the elements of the set (the whole XML tree).
         self.construct_xml_elements(schema_tag = self.schema_key,
                                     dict_element = self.schema_general_dict,
                                     father_element = father_element)
 
+        # We re-structure the nodes that were father's of multiple choice repetitive nodes
+        self.reconfigure_FathersOfRepetitiveMultiChoice()
+        
         # We prune empty nodes recursively
         self.prune_empty_nodes()
 
@@ -253,34 +263,32 @@ class XML_creator():
         current_level_dict = dict_element[schema_tag]
 
         # We save a comprobations list of the current node (i.e. if it has children, attributes, etc.)
-        comprobations_list = self.each_node_comprobations(current_level_dict = current_level_dict, schema_tag = schema_tag)
+        comprobations_dict = self.each_node_comprobations(current_level_dict = current_level_dict, schema_tag = schema_tag)
 
         # Based on the comprobation list's content, we add the node and all of its characteristics
         self.additionOf_Node(schema_tag = schema_tag,
-                             comprobations_list = comprobations_list,
+                             comprobations_dict = comprobations_dict,
                              father_element = father_element,
                              is_children = is_children)
 
-    def additionOf_Node(self, schema_tag, comprobations_list, father_element, is_children = False):
+    def additionOf_Node(self, schema_tag, comprobations_dict, father_element, is_children = False):
         """
         Function that deals with the addition of a node and all of its characteristics. If the node has children,
             this function will also call construct_xml_elements() with the next level of depth in the hierarchy.
 
         Parameters:
             - schema_tag (str): a string with the schema_tag (e.g. sample_name or taxon_id) used to instance the node.
-            - comprobations_list (list): a list of dictionaries, boolean values and strings from the YAML file, returned
+            - comprobations_dict (dict): a dictionary of strings, boleans, other dictionaries... from the YAML file, returned
                                          from executing each_node_comprobations() over the current node.
             - father_element (str): the father element's name, which will be the variable name of the father.
             - is_children (bool): specifies if we are iterating over children elements.
         """
-        # We assign each variable of the comprobation list
-        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty = comprobations_list
 
         # We use another variable to avoid overwritting the father_element (e.g. SAMPLE_SET)
-        given_father_element = father_element
-
+        given_father_element = father_element            
+            
         # We get the number of repetitions of this node (default is 1 unless it's a repetitive node)
-        n_repetitions = self.retrieve_numberOf_repetitions(comprobations_list)
+        n_repetitions = self.retrieve_numberOf_repetitions(comprobations_dict)
 
         # Given the number of repetitions for this node, we add as many identical nodes (and their children)
         for repetition_index in range(int(n_repetitions)):
@@ -290,62 +298,113 @@ class XML_creator():
             for dataframe_index in range(self.dataframe_nrows):
                 # This variable will be used to create the element's instance in the XML tree
                 element_name = schema_tag + "_" + str(dataframe_index)
+                
+                # If the node is one of a possible choice, we need for each row to skip this children of the schema (e.g. REFERENCE_ALIGNMENT)
+                #     if the value of choice_column does not include it 
+                if comprobations_dict["is_choices"]:
+                    is_included = self.choices_subset(schema_tag, dataframe_index, comprobations_dict["choice_column"])
+                    
+                    # If the element we are in right now (e.g. REFERENCE_ALIGNMENT) is not within the chosen elements (e.g. SEQUENCE_VARIATION)
+                    #    for this row we skip it
+                    if not is_included:                       
+                        continue
 
                 # If we are dealing with a child's node (e.g. taxon_id_12 - 12 due to the 12th index of the dataframe),
                 #     the father needs to be created using the father's tag and the dataframe index (e.g. sample_name_12).
                 if is_children:
                     given_father_element = father_element + "_" + str(dataframe_index)
+                    
+                # If we skipped its father node because it was not chosen, we need first to check if that node exists
+                #     to continue with the process of adding its children. 
+                try: 
+                    exec('self.%s' % "xmlVar_" + str(given_father_element))
+                    father_exists = True
+                except AttributeError:
+                    father_exists = False    
+                    
+                if not father_exists:
+                    continue
 
                 # We add the node itself, with no characteristics so far
                 self.add_one_node(father_element = given_father_element,
                                   element_name = element_name,
                                   schema_tag = schema_tag, 
-                                  needsToBe_empty = needsToBe_empty)
+                                  comprobations_dict = comprobations_dict)
 
                 # If this node in the YAML file have attributes or text defined, we add them to the node
-                if has_attributes:
+                if comprobations_dict["has_attributes"]:
                     self.set_attributes(element_name = element_name,
-                                  attributes_dict = element_attributes,
+                                  attributes_dict = comprobations_dict["element_attributes"],
                                   dataframe_index = dataframe_index)
-                if has_text:
+                
+                if comprobations_dict["has_text"]:
                     self.set_text(element_name = element_name,
-                             column_name = text_column_name,
-                             dataframe_index = dataframe_index)
+                             column_name = comprobations_dict["text_column_name"],
+                             dataframe_index = dataframe_index)                    
 
             # If debug was given, we print (and write to logfile) the current step of the XML creation
             if self.debug_mode:
                 self.save_xml(to_print = True, schema_tag = schema_tag)
 
             # If we found out this node has children nodes, we call construct_xml_elements() recursively with them
-            if has_children:
+            if comprobations_dict["has_children"]:
                 # The new "child" will be the key to the next level of depth in the dictionary (e.g. "taxon_id")
                 #     while the children_elements will be the dictionary containing the "child" and their siblings.
-                for child in children_elements.keys():
+                for child in comprobations_dict["children_elements"].keys():
                     self.construct_xml_elements(schema_tag = child,
-                                                dict_element = children_elements,
+                                                dict_element = comprobations_dict["children_elements"],
                                                 father_element = schema_tag,
                                                 is_children = True) # It's a child, so the father element has to be modified with the index.
 
-    def retrieve_numberOf_repetitions(self, comprobations_list):
+    def choices_subset(self, schema_tag, dataframe_index, choice_column):
+        """
+        Function that will check for the Nth (N = dataframe_index) row wether the schema tag is within its value of the column name "choice_column"
+            and will return True/False based on such veredict. 
+        
+        Parameters:
+            - schema_tag (str): a string with the schema_tag (e.g. sample_name or taxon_id) used to instance the node.
+            - dataframe_index (int): the index of the dataframe (e.g. 13), which represents the row of the dataframe
+                                     (i.e. the repetition of a metadata object)
+            - choice_column (str): the column name in which the value to look for is (e.g. "Analysis_type")
+        """
+        # We check that there is indeed a column with such name, just in case (since several will be optional and not mandatory)
+        if not self.check_column_exists(self.input_dataframe, choice_column):
+            print("ERROR in XML_creator() - choices_subset(): given column name ('%s') at row '%s' with possible choices for a node could not be found within the input dataframe." \
+                  % (choice_column, dataframe_index + 1), file=sys.stderr)
+            sys.exit()
+        
+        # We retireve the value with the choices list and split it following specified format (";") as delimiter for each child
+        #     (e.g. "SEQUENCE_VARIATION;SEQUENCE_ANNOTATION;...")
+        choices_value = self.input_dataframe[choice_column][dataframe_index]
+        possible_choices_list = choices_value.split(";")
+        
+        # Just in case there are additional spaces at the start/end: 
+        possible_choices_list = [x.upper().strip() for x in possible_choices_list]
+        
+        # If one of the possible choices is the schema tag we are in currently, we return True. Otherwise False.
+        if schema_tag in possible_choices_list:
+            return True
+        else:
+            return False    
+    
+    def retrieve_numberOf_repetitions(self, comprobations_dict):
         """
         Function to retrieve how many repetitions of a repetitive node there are.
 
         Parameters:
-            - comprobations_list (list): a list of dictionaries, boolean values and strings from the YAML file, returned
+            - comprobations_dict (dict): a dictionary of strings, boleans, other dictionaries... from the YAML file, returned
                                          from executing each_node_comprobations() over the current node.
         """
-        # We assign each variable of the comprobation list
-        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty = comprobations_list
-
-        if is_repetitive:
+        
+        if comprobations_dict["is_repetitive"]:
             # If it has text/attributes, we count how many columns they have
-            if has_attributes or has_text:
-                n_repetitions = self.get_numberOf_fields(comprobations_list)
+            if comprobations_dict["has_attributes"] or comprobations_dict["has_text"]:
+                n_repetitions = self.get_numberOf_fields(comprobations_dict)
 
             # If it's a node with only children, we need to count the number of times a child attribute/text appears
             else:
                 # We iterate over its children to get the number of repetitions
-                n_repetitions = self.iterate_over_children(children_elements = children_elements)
+                n_repetitions = self.iterate_over_children(children_elements = comprobations_dict["children_elements"])
         else:
             n_repetitions = 1
 
@@ -363,14 +422,14 @@ class XML_creator():
         # We iterate over children dictionaries to check which one has attributes/text
         for child in children_elements.keys():
             # If the children doesn't have attributes/text we skip it
-            children_comprobation_list = self.each_node_comprobations(current_level_dict = children_elements[child], schema_tag = child)
-            child_has_children = children_comprobation_list[2]
-            child_has_attributes = children_comprobation_list[3]
-            child_has_text = children_comprobation_list[6]
+            comprobations_dict = self.each_node_comprobations(current_level_dict = children_elements[child], schema_tag = child)
+            child_has_children = comprobations_dict["has_children"]
+            child_has_attributes = comprobations_dict["has_attributes"]
+            child_has_text = comprobations_dict["has_text"]
 
             # If we reached a child with attributes/text, we use it to infer the number of repetitions of its fathers
             if child_has_attributes or child_has_text:
-                n_repetitions = self.get_numberOf_fields(children_comprobation_list)
+                n_repetitions = self.get_numberOf_fields(comprobations_dict)
                 return n_repetitions
 
             # If this child only has other children we iterate over them to check if some have attributes/text
@@ -383,25 +442,22 @@ class XML_creator():
         n_repetitions = 1
         return n_repetitions
 
-    def get_numberOf_fields(self, comprobations_list):
+    def get_numberOf_fields(self, comprobations_dict):
         """
         Function that, given a comprobation_list, retrieves the ammount of fields of a dataframe that represent
             a node's (1) text or (2) its attributes.
 
         Parameters:
-            - comprobations_list (list): a list of dictionarioes, boolean values and strings from the YAML file, returned
-                                         from executing self.each_node_comprobations() over the current node.
+            - comprobations_dict (dict): a dictionary of strings, boleans, other dictionaries... from the YAML file, returned
+                                         from executing each_node_comprobations() over the current node.
         """
-        # We assign each variable of the comprobation list
-        is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty = comprobations_list
+        if comprobations_dict["has_text"]:
+            field_toLookFor = comprobations_dict["text_column_name"]
 
-        if has_text:
-            field_toLookFor = text_column_name
-
-        elif has_attributes:
+        elif comprobations_dict["has_attributes"]:
             # We take the first value of the attributes (its column name). It shouldn't matter if it's the first
             #     or not, since all of their attribute columns SHOULD be present (even if empty).
-            field_toLookFor = next(iter(element_attributes.values()))
+            field_toLookFor = next(iter(comprobations_dict["element_attributes"].values()))
 
         else:
             # If the node has no attributes nor text, little information is in the df, so we only add one node (n_repetitions = 1)
@@ -426,7 +482,7 @@ class XML_creator():
     def each_node_comprobations(self, current_level_dict, schema_tag = None):
         """
         Function to check the characteristics of each node from the YAML file. This function will return dictionaries,
-            strings and booleans (e.g. if the node has no attributes has_attributes = False)
+            strings and booleans (e.g. if the node has no attributes has_attributes = False) within the returned comprobations_dict.
 
         Parameters:
             - current_level_dict (dict): dictionary of the current element - i.e. if we are at "sample_name"
@@ -434,9 +490,12 @@ class XML_creator():
                                          additional elements: children, text, attributes, repetitive_node and add_empty_node.
             - schema_tag (str): the schema tag (e.g. sample or taxon_id) corresponding to the key of the current_level_dict.
         """
+        comprobations_dict = {}
+
         children_elements = {}
         element_attributes = {}
-        text_column_name = None
+        comprobations_dict["text_column_name"] = None
+        comprobations_dict["choice_column"] = None
 
         # We first check that the current dictionary has some elements (e.g. "children" or "text")
         try:
@@ -455,49 +514,69 @@ class XML_creator():
 
         # In each step, we check for the valid keys, associating its corresponding part of the dictionary
         if children_tag in current_dict_set:
-            children_elements = current_level_dict[children_tag]
-            if children_elements is None:
+            comprobations_dict["children_elements"] = current_level_dict[children_tag]
+            if comprobations_dict["children_elements"] is None:
                 print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had children characteristic, but was found empty." \
                       % schema_tag, file=sys.stderr)
                 sys.exit()
-            has_children = True
+            comprobations_dict["has_children"] = True
         else:
-            has_children = False
+            comprobations_dict["has_children"] = False
 
         if attribute_tag in current_dict_set:
-            element_attributes = current_level_dict[attribute_tag]
-            if element_attributes is None:
+            comprobations_dict["element_attributes"] = current_level_dict[attribute_tag]
+            if comprobations_dict["element_attributes"] is None:
                 print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had attributes characteristic, but was found empty." \
                       % schema_tag, file=sys.stderr)
                 sys.exit()
-            has_attributes = True
+            comprobations_dict["has_attributes"] = True
         else:
-            has_attributes = False
+            comprobations_dict["has_attributes"] = False
 
         if text_tag in current_dict_set:
-            text_column_name = current_level_dict[text_tag]
-            if text_column_name is None:
+            comprobations_dict["text_column_name"] = current_level_dict[text_tag]
+            if comprobations_dict["text_column_name"] is None:
                 print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had text characteristic, but was found empty." \
                       % schema_tag, file=sys.stderr)
                 sys.exit()
-            has_text = True
+            comprobations_dict["has_text"] = True
         else:
-            has_text = False
+            comprobations_dict["has_text"] = False
 
         # We check if this node is one of the repetitive ones (e.g. repetitive_node: True)
         if repetitive_tag in current_dict_set:
-            is_repetitive = True
+            comprobations_dict["is_repetitive"] = True
         else:
-            is_repetitive = False
+            comprobations_dict["is_repetitive"] = False
         
         if add_empty_node_tag in current_dict_set:
-            needsToBe_empty = True
+            comprobations_dict["needsToBe_empty"] = True
         else:
-            needsToBe_empty = False
+            comprobations_dict["needsToBe_empty"] = False
+            
+        # We check if this node has a choice statement (will be used to index one or more of its childrens)
+        if choice_tag in current_dict_set:            
+            # choice_column can be one single element or a list of elements (child;child;child...) to choose from "children"
+            comprobations_dict["choice_column"] = current_level_dict[choice_tag]
+            if comprobations_dict["choice_column"] is None:
+                print("ERROR in XML_creator() - each_node_comprobations(): the given schema tag '%s' had 'choice' characteristic, but it was found empty." \
+                      % schema_tag, file=sys.stderr)
+                sys.exit()
+            comprobations_dict["is_choices"] = True
+        else:
+            comprobations_dict["is_choices"] = False
+            
+        # We check if the node is of special type "father of a multiple choice repetitive node". An example would be
+        #     the SAMPLE_LINK, which is repeated itself, but it has different possible children in each iteration.
+        if repetitiveNode_Father_Tag in current_dict_set:
+            comprobations_dict["repetitiveNode_Father_Tag"] = True
+        else:
+            comprobations_dict["repetitiveNode_Father_Tag"] = False
+        
+        # We return the list of possible comprobations within a node. Some will be a dictionary, some will be boolean and others will be strings        
+        return comprobations_dict
 
-        return is_repetitive, children_elements, has_children, element_attributes, has_attributes, text_column_name, has_text, needsToBe_empty
-
-    def add_one_node(self, father_element, element_name, schema_tag, needsToBe_empty):
+    def add_one_node(self, father_element, element_name, schema_tag, comprobations_dict):
         """
         Function that adds one node to the XML tree.
 
@@ -506,27 +585,40 @@ class XML_creator():
                                     etree.Element (a XML node) of the current node (e.g. SAMPLE_SET).
             - element_name (str): the name of the current node (e.g. sample_13)
             - schema_tag (str): the schema tag (e.g. sample or taxon_id) that is written within the YAML file.
-            - needsToBe_empty (bool): a boolean that specifies if the node has a meaning by itself although
-                                      being empty which, if True, will prevent from its removal (after the tree has been 
-                                      created) by the prunning function. 
+            - comprobations_dict (dict): a dictionary of strings, boleans, other dictionaries... from the YAML file, returned
+                                         from executing each_node_comprobations() over the current node.
         """
         # We add "xmlVar" first so that no other fixed variable of this scripts coincidentally is the element_name
         # We create the pair "node name" + "father's node name" so that it's a unique identifier we use in the counter. Otherwise
         #   repeated node names (e.g. LABEL) between different father nodes would lead to errors.
         xml_node_tag = "xmlVar_" + str(element_name)
         xml_fatherNode_tag = "xmlVar_" + str(father_element)
-
+        
         # Using the element's variable content (str) as a variable we create the current node
         exec("self.%s = etree.SubElement(self.%s, schema_tag.upper())" % (xml_node_tag, xml_fatherNode_tag))
 
-        #   prunned in the future. 
-        if needsToBe_empty:
+        # Avoid being prunned in the future. 
+        if comprobations_dict["needsToBe_empty"]:
             exec("self.nodesThatNeedToBe_empty_list.append(self.%s)" % xml_node_tag)
+        
+        # We add the node to a list that will be reconfigured at the end.
+        if comprobations_dict["repetitiveNode_Father_Tag"]:
+            exec("self.nodesThatAreFathersOfRepetitiveNode.append((self.%s, self.%s))" % (xml_node_tag, xml_fatherNode_tag))
     
     def get_SameNodes_repetitions(self, xml_node_tag):
         """
         Function that will return the number of repetitions of a specific node within the XML tree. For instance, in the 
-            node "ANALYSIS" with an XPath "/ANALYSIS_SET/ANALYSIS/DESCRIPTOR[3]", the function would return "3". 
+            node "ANALYSIS" with an XPath "/ANALYSIS_SET/ANALYSIS/DESCRIPTOR[3]", the function would return "3". It is 
+            important to notice that the last index of the XPath is what defines the number of repetitions of a node. For
+            instance, if we have three <ANALYSIS_ATTRIBUTE>, its XPath would be /ANALYSIS_SET/ANALYSIS[1]/ANALYSIS_ATTRIBUTES/ANALYSIS_ATTRIBUTE[3],
+            but if we were interested in how many tyimes <TAG> from an <ANALYSIS_ATTRIBUTE> is repeated, the repetition
+            index will not be within <TAG> itself, but within its father node <ANALYSIS_ATTRIBUTE>: 
+                /ANALYSIS_SET/ANALYSIS[1]/ANALYSIS_ATTRIBUTES/ANALYSIS_ATTRIBUTE[3]/TAG
+            
+            We could have issues if there were several repetitions within repetitions, beside the base node (e.g. ANALYSIS),
+            since the base node repetition derives from the Y axis (rows) of the input file, and other repetitions of the same XPath
+            derive from the X axis (columns) of the input file. Therefore, as we do not allow for repetitions within repetitions,
+            it should work properly. 
         
         Parameters:
             - xml_node_tag (string): the name of the node within our function (e.g. xmlVar_DESCRIPTOR_0)
@@ -562,7 +654,7 @@ class XML_creator():
         
         # If we did find an index (e.g. [2]) we return such index (e.g. 2), which will be used as index in the dataframe
         repetition_index = modified_getRepetitions_xpath[start + 1 : end]    
-        
+               
         return int(repetition_index)
         
 
@@ -592,6 +684,11 @@ class XML_creator():
 
         # We iterate over the different attributes of this node:
         for attribute_name, column_name in attributes_dict.items():
+            # If the column does not exist within the dataframe it could be that the same name was given to different nodes
+            #     and that will lead to errors, so we skip it. 
+            if not self.check_column_exists(self.input_dataframe, column_name):
+                return
+            
             attribute_value = self.input_dataframe[column_name][dataframe_index]
             # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip adding this attribute
             if (not attribute_value and attribute_value != 0) or attribute_value is None or pd.isnull(attribute_value) or str.isspace(str(attribute_value)):
@@ -617,6 +714,11 @@ class XML_creator():
         if repetitions > 0:
             column_name = column_name + '.{}'.format(repetitions - 1)
 
+        # If the column does not exist within the dataframe it could be that the same name was given to different nodes
+        #     and that will lead to errors, so we skip it. 
+        if not self.check_column_exists(self.input_dataframe, column_name):
+            return
+        
         # We extract the node's text from the dataframe
         nodes_text = self.input_dataframe[column_name][dataframe_index]
 
@@ -625,6 +727,21 @@ class XML_creator():
             return
 
         exec("self.%s.text = '''%s'''" % (xml_node_tag, str(nodes_text)))
+    
+    def check_column_exists(self, dataframe, column_name):
+        """
+        Function that will check that the given column-name exists within the given dataframe, and return
+            True if so, or False otherwise.
+        
+        Parameters:
+            - dataframe (pd.DataFrame): dataframe in which the column could exist.
+            - column_name (string): column name to search within the dataframe.
+        """
+        if column_name in dataframe.columns:
+            return True
+        else:
+            return False
+        
 
     def prune_empty_nodes(self, empty_list = None):
         """
@@ -661,5 +778,54 @@ class XML_creator():
     def remove_betweenLists(self, first_list, sublist):
         """
         Function that will remove all elements from a sublist that are in a bigger list (first_list). 
+
+        Parameters:
+            - first_list (list): sequence of elements of the biggest list of the two
+            - sublist (list): contains the elements that shall be removed from first_list
         """
         return list(set(first_list)-set(sublist))
+    
+    def reconfigure_FathersOfRepetitiveMultiChoice(self):
+        """
+        Function that will reconfigure the resulting XML tree by moving the children of a particular type of node: the father
+            node of a repeated and multiple choice node. To avoid messing with a lot of other functions, the way the XML is
+            created when a node like this appears is to add all children nodes within the same father node (e.g. SAMPLE_LINK).
+            Then, this function will move all those children to different father nodes, as independent leaves with independent
+            father elements. As an example, we would go from the XML tree of the left, to the XML tree of the right: 
+              <SAMPLE_LINK>                              <SAMPLE_LINK>
+                <URL_LINK>                                   <URL_LINK>
+                  <LABEL>Text </LABEL>                            <LABEL>Text </LABEL>
+                  <URL>Text </URL>                                <URL>Text </URL>
+                </URL_LINK>                                  </URL_LINK>
+                                                         </SAMPLE_LINK>
+                                                         <SAMPLE_LINK>
+                <XREF_LINK>                                  <XREF_LINK>
+                  <DB>Text </DB>                                  <DB>Text </DB>
+                  <ID>Text </ID>                                  <ID>Text </ID>
+                  <LABEL>Text </LABEL>                            <LABEL>Text </LABEL>
+                </XREF_LINK>                                 </XREF_LINK>
+              </SAMPLE_LINK>                             </SAMPLE_LINK>
+              
+            The function will use the list nodesThatAreFathersOfRepetitiveNode that was populated with tuples of this type of 
+                nodes (e.g. SAMPLE_LINK) and their father node (e.g. SAMPLE_LINKS)
+        """
+        
+        # We iterated over all the stored nodes of this type:
+        for tuple_element in self.nodesThatAreFathersOfRepetitiveNode:
+            child_to_reconfigure = tuple_element[0]
+            father_node = tuple_element[1]
+            
+            # We get the list of children nodes (e.g. XREF_LINK) the children to reconfigure (e.g. SAMPLE_LINK) has.
+            #     In our example the list would have 2 elements: the accession of URL_LINK and XREF_LINK. 
+            list_of_children = child_to_reconfigure.findall("./")
+            number_of_children = len(list_of_children)
+            
+            # We iterate over all the children (e.g. XREF_LINK) of the "children_to_reconfigure" (e.g. SAMPLE_LINK)
+            for child_of_list in list_of_children:
+                # We create a new father (e.g. SAMPLE_LINK) for this child (e.g. XREF_LINK), which will be the child
+                #     of the original child_to_reconfigure's father (e.g. SAMPLE_LINKS)
+                reconfigure_new_father = etree.SubElement(father_node, child_to_reconfigure.tag)
+                
+                # Now we move the current child_of_list into the newly created father node through etree's own "append()" function
+                reconfigure_new_father.append(child_of_list)            
+            
