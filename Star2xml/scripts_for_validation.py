@@ -26,8 +26,16 @@ def check_xml_is_valid(xml_tree, schema_file, verbose = False, schema_key = None
             sys.exit()
         try:
             xml_tree = etree.parse(xml_tree)
+        except etree.XMLSyntaxError as XMLSyntaxError:
+            print("ERROR in check_xml_is_valid(): the given filepath containing an XML tree '%s' could not be parsed due to a syntax error." % xml_tree, file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", XMLSyntaxError.msg, file=sys.stderr)
+            sys.exit()
+
         except:
             print("ERROR in check_xml_is_valid(): the given filepath containing an XML tree '%s' could not be parsed" % xml_tree, file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
             sys.exit()
 
     if not os.path.isfile(schema_file):
@@ -39,6 +47,8 @@ def check_xml_is_valid(xml_tree, schema_file, verbose = False, schema_key = None
         xml_validator = etree.XMLSchema(file = schema_file)
     except:
         print("ERROR in check_xml_is_valid(): the schema file '%s' could not be passed to the lxml.etree.XMLSchema() module." % schema_file, file=sys.stderr)
+        print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+        print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
         sys.exit()
 
     # We check if the XML tree is valid following the schema

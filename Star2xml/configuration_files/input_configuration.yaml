@@ -47,7 +47,6 @@ experiment:
       - Center_name*
       - Experiment_layout*
       - Study_refname*
-      - Study_refCenter*
       - Design_description*
       - Sample_accession*
       - Library_strategy*
@@ -62,9 +61,22 @@ dataset:
       - Dataset_title*
 
 
+submission:
+    required:
+      - Submission_alias*
+      - Center_name*
 
+dac:
+    required:
+      - DAC_alias*
+      - Center_name*
+      - CONTACT.name
+      - CONTACT.email
+      - CONTACT.organisation
 
-
-
-
-
+policy:
+    required:
+      - Policy_alias*
+      - Center_name*
+      - Policy_source*
+      - DAC_accession*      

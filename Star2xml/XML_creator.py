@@ -71,6 +71,8 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): unknown error happened trying to yaml.safe_load() the given schema filepath '%s'." \
                   % schema_filename, file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
             sys.exit()
 
         # We narrow the general dictionary to the one specific for our configuration key (e.g. "sample")
@@ -79,6 +81,8 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): given schema file '%s' does not contain the given schema key '%s' in its first layer" \
                   % (schema_filename, self.schema_key), file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
             sys.exit()
 
         # We check that the given input_dataframe is a dataframe (following Pandas' standards)
@@ -208,6 +212,8 @@ class XML_creator():
             except:
                 print("ERROR in XML_creator() - save_xml(): couldn not save the XML tree into the given filename '%s'" \
                   % (self.output_xml), file=sys.stderr)
+                print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+                print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
                 sys.exit()
 
     def construct_xml_root(self):
@@ -519,6 +525,8 @@ class XML_creator():
             # If the dictionary is empty, the node was left empty in the schema, and thus has no information (common mistake)
             print("ERROR in XML_creator() - each_node_comprobations(): the given schema dictionary for schema tag '%s' is empty. This reflects an error (unused node) in the configuration file '%s', check the said schema tag within it." \
                   % (schema_tag, self.schema_filename), file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
             sys.exit()
 
         # Now we check if the keys of the current_element are (a subset of) the valid ones (children, text...)

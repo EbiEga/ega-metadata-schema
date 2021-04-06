@@ -50,6 +50,8 @@ class Input_reader():
         except:
             print("ERROR in Input_reader(): given configuration filepath '%s' could not be read" \
                   % conf_file, file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
             sys.exit()
 
         # We save the basename and file extension of the input file for future checks
@@ -105,6 +107,8 @@ class Input_reader():
             
         except:
             print("ERROR in Input_reader(): given input filepath '%s' could not be read" % self.input_file, file=sys.stderr)
+            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
             sys.exit()
         
         if descriptive_string != "":
