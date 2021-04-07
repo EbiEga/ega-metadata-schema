@@ -71,8 +71,7 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): unknown error happened trying to yaml.safe_load() the given schema filepath '%s'." \
                   % schema_filename, file=sys.stderr)
-            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
-            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
+            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We narrow the general dictionary to the one specific for our configuration key (e.g. "sample")
@@ -81,8 +80,7 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): given schema file '%s' does not contain the given schema key '%s' in its first layer" \
                   % (schema_filename, self.schema_key), file=sys.stderr)
-            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
-            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
+            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We check that the given input_dataframe is a dataframe (following Pandas' standards)
@@ -395,7 +393,7 @@ class XML_creator():
         try:
             possible_choices_list = choices_value.split(";")
         except AttributeError:
-            print("ERROR in XML_creator() - choices_subset(): at row '%s' and column '%s', the value '%s' is not of valid type (current type is %s). This issue may appear if the user or the software used to edit the template entered unintended characters at some rows. To solve it simply modify or remove the mentioned coordinates within the template." \
+            print("ERROR in XML_creator() - choices_subset(): at row '%s' and column '%s', the value '%s' is not of valid type (current type is %s).\n\t- Check given coordinates and modify its value or its type to solve the issue." \
                   % (dataframe_index + 1, choice_column, choices_value, type(choices_value)), file=sys.stderr)
             sys.exit()
         
@@ -525,8 +523,7 @@ class XML_creator():
             # If the dictionary is empty, the node was left empty in the schema, and thus has no information (common mistake)
             print("ERROR in XML_creator() - each_node_comprobations(): the given schema dictionary for schema tag '%s' is empty. This reflects an error (unused node) in the configuration file '%s', check the said schema tag within it." \
                   % (schema_tag, self.schema_filename), file=sys.stderr)
-            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
-            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
+            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # Now we check if the keys of the current_element are (a subset of) the valid ones (children, text...)
@@ -850,5 +847,16 @@ class XML_creator():
                 reconfigure_new_father = etree.SubElement(father_node, child_to_reconfigure.tag)
                 
                 # Now we move the current child_of_list into the newly created father node through etree's own "append()" function
-                reconfigure_new_father.append(child_of_list)            
+                reconfigure_new_father.append(child_of_list)
+
+    def report_error_messages(self, error_type, error_message):
+        """
+        Function that prints to standard error both the type of error and the error message. 
+
+        Parameters:
+            - error_type (anything convertible to string): the type of error (e.g. taken from sys.exc_info()[0] after an unsuccesful "try")
+            - error_message (anything convertible to string): the error message (e.g. taken from sys.exc_info()[1] after an unsuccesful "try")
+        """
+        print(f"\t- Type of error: {str(error_type)}", file=sys.stderr)
+        print(f"\t- Error message: {str(error_message)}", file=sys.stderr)
             
