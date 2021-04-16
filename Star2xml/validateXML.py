@@ -42,7 +42,7 @@ arg_parser = argparse.ArgumentParser(prog = "validateXML.py",
                                     epilog = "Schema keys and their input XMLs have to be given in the same order!",
                                     description = """A script to validate one (or more) input XML files based
                                                     on some XML schemas (.xsd files). If schemas are missing, it downloads them
-                                                    from a given FTP server. The function returns a list full of boolean values
+                                                    from its GH repository (or FTP server). The function returns a list of boolean values
                                                     defined by the outcome of the validation (e.g. [False, True, True] if only the
                                                     last 2 XMLs were correctly validated)
                                                     """)
@@ -83,6 +83,14 @@ arg_parser.add_argument('--verbose',
                         help="""A boolean switch to add verbosity to the function (will print into the terminal extra information, 
                                 as well as the validation errors and results with a friendlier format)""")
 
+arg_parser.add_argument('--dont_stop_parsing',
+                        action='store_true',
+                        default = False,
+                        help="""A boolean switch that, if given, will make the validation continue if a parsing error is raised when parsing
+                                one of the given XMLs. Such file with errors will be reported as not validated, but the function will not stop,
+                                validating other files. The error will be displayed excplicitly as a warning if '--verbose' is also given.""")
+
+
 
 arguments = arg_parser.parse_args()
 input_xmls = arguments.input_xmls.split(',')
@@ -92,6 +100,7 @@ schema_dir = arguments.schema_dir
 is_xsd_missing = arguments.download_xsd
 git_downloader_method = arguments.ftp_downloader
 is_verbose = arguments.verbose
+dontExitOn_ParsingErrors = arguments.dont_stop_parsing
 
 # Assert a possible common mistake
 assert len(schema_keys) == len(input_xmls), "Error: the given schema keys '{}' and input XMLs '{}' do not match in length".format(schema_keys, input_xmls)
@@ -196,7 +205,8 @@ for index in range(num_validations):
     xml_is_valid = check_xml_is_valid(xml_tree = input_xml,
                                       schema_file = local_xsd_file,
                                       verbose = is_verbose,
-                                      schema_key = schema_key)
+                                      schema_key = schema_key,
+                                      dontExitOn_ParsingErrors = dontExitOn_ParsingErrors)
 
     # Based on the returned boolean of xml_is_valid() we append a different result
     outcome_result.append(xml_is_valid)

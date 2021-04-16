@@ -4,6 +4,7 @@ import sys
 import yaml
 import pandas as pd
 import os.path
+from utils import report_error_messages, check_for_invalid_chars
 
 # The next tags will define every element of the schema_file (a YAML file containing XML's structure)
 children_tag = "children"
@@ -17,6 +18,7 @@ valid_dict_elements = set([children_tag, attribute_tag, text_tag, repetitive_tag
 tool_info_tag = "tool_info"
 version_tag = "version"
 update_date_tag = "update_date"
+invalid_characters_dictionary = {'"': "'"}
 
 # The following dictionary is required in certain exceptions of different root names. The common format
 #       is adding "_SET" to the metadata key, but for some metadata object that rule is not followed.
@@ -71,7 +73,7 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): unknown error happened trying to yaml.safe_load() the given schema filepath '%s'." \
                   % schema_filename, file=sys.stderr)
-            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
+            report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We narrow the general dictionary to the one specific for our configuration key (e.g. "sample")
@@ -80,7 +82,7 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): given schema file '%s' does not contain the given schema key '%s' in its first layer" \
                   % (schema_filename, self.schema_key), file=sys.stderr)
-            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
+            report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We check that the given input_dataframe is a dataframe (following Pandas' standards)
@@ -210,8 +212,7 @@ class XML_creator():
             except:
                 print("ERROR in XML_creator() - save_xml(): couldn not save the XML tree into the given filename '%s'" \
                   % (self.output_xml), file=sys.stderr)
-                print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
-                print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
+                report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
                 sys.exit()
 
     def construct_xml_root(self):
@@ -393,8 +394,9 @@ class XML_creator():
         try:
             possible_choices_list = choices_value.split(";")
         except AttributeError:
-            print("ERROR in XML_creator() - choices_subset(): at row '%s' and column '%s', the value '%s' is not of valid type (current type is %s).\n\t- Check given coordinates and modify its value or its type to solve the issue." \
-                  % (dataframe_index + 1, choice_column, choices_value, type(choices_value)), file=sys.stderr)
+            # We need to add 3 more rows to the row index, since we discarded the first three rows at the dataframe creation. 
+            print("ERROR in XML_creator() - choices_subset(): at row '%s' of the spreadsheet and column '%s', the value '%s' is not of valid type (current type is %s).\n\t- Check given coordinates and modify its value or its type to solve the issue." \
+                  % (dataframe_index + 4, choice_column, choices_value, type(choices_value)), file=sys.stderr)
             sys.exit()
         
         # Just in case there are additional spaces at the start/end: 
@@ -523,7 +525,7 @@ class XML_creator():
             # If the dictionary is empty, the node was left empty in the schema, and thus has no information (common mistake)
             print("ERROR in XML_creator() - each_node_comprobations(): the given schema dictionary for schema tag '%s' is empty. This reflects an error (unused node) in the configuration file '%s', check the said schema tag within it." \
                   % (schema_tag, self.schema_filename), file=sys.stderr)
-            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
+            report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # Now we check if the keys of the current_element are (a subset of) the valid ones (children, text...)
@@ -713,7 +715,10 @@ class XML_creator():
             # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip adding this attribute
             if (not attribute_value and attribute_value != 0) or attribute_value is None or pd.isnull(attribute_value) or str.isspace(str(attribute_value)):
                 continue
-            exec("self.%s.set('''%s''','''%s''')" % (xml_node_tag, str(attribute_name), str(attribute_value)))
+            
+            # Before adding the string as an attribute, we check for invalid characters (e.g. '"')
+            attribute_value = check_for_invalid_chars(attribute_value, invalid_characters_dictionary)
+            exec('self.%s.set("""%s""","""%s""")' % (xml_node_tag, str(attribute_name), str(attribute_value)))
 
     def set_text(self, element_name, column_name, dataframe_index):
         """
@@ -740,13 +745,15 @@ class XML_creator():
             return
         
         # We extract the node's text from the dataframe
-        nodes_text = self.input_dataframe[column_name][dataframe_index]
+        nodes_text = str(self.input_dataframe[column_name][dataframe_index])
 
         # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip setting its text
         if (not nodes_text and nodes_text != 0) or nodes_text is None or pd.isnull(nodes_text) or str.isspace(str(nodes_text)):
             return
 
-        exec("self.%s.text = '''%s'''" % (xml_node_tag, str(nodes_text)))
+        # Before adding the string as text, we check for invalid characters (e.g. '"')
+        nodes_text = check_for_invalid_chars(nodes_text, invalid_characters_dictionary)
+        exec('self.%s.text = """%s"""' % (xml_node_tag, nodes_text))
     
     def check_column_exists(self, dataframe, column_name):
         """
@@ -848,15 +855,4 @@ class XML_creator():
                 
                 # Now we move the current child_of_list into the newly created father node through etree's own "append()" function
                 reconfigure_new_father.append(child_of_list)
-
-    def report_error_messages(self, error_type, error_message):
-        """
-        Function that prints to standard error both the type of error and the error message. 
-
-        Parameters:
-            - error_type (anything convertible to string): the type of error (e.g. taken from sys.exc_info()[0] after an unsuccesful "try")
-            - error_message (anything convertible to string): the error message (e.g. taken from sys.exc_info()[1] after an unsuccesful "try")
-        """
-        print(f"\t- Type of error: {str(error_type)}", file=sys.stderr)
-        print(f"\t- Error message: {str(error_message)}", file=sys.stderr)
             
