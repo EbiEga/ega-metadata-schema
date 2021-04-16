@@ -18,6 +18,11 @@ tool_info_tag = "tool_info"
 version_tag = "version"
 update_date_tag = "update_date"
 
+# The following dictionary is required in certain exceptions of different root names. The common format
+#       is adding "_SET" to the metadata key, but for some metadata object that rule is not followed.
+#       For instance, in "dataset", instead of "DATASET_SET", the correct root name is "DATASETS".
+exception_rootNames = {"DATASET": "DATASETS"}
+
 class XML_creator():
     """
     XML creation class using a YAML file containing the XML's schema and a dataframe containing its
@@ -66,6 +71,7 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): unknown error happened trying to yaml.safe_load() the given schema filepath '%s'." \
                   % schema_filename, file=sys.stderr)
+            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We narrow the general dictionary to the one specific for our configuration key (e.g. "sample")
@@ -74,6 +80,7 @@ class XML_creator():
         except:
             print("ERROR in XML_creator(): given schema file '%s' does not contain the given schema key '%s' in its first layer" \
                   % (schema_filename, self.schema_key), file=sys.stderr)
+            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We check that the given input_dataframe is a dataframe (following Pandas' standards)
@@ -203,6 +210,8 @@ class XML_creator():
             except:
                 print("ERROR in XML_creator() - save_xml(): couldn not save the XML tree into the given filename '%s'" \
                   % (self.output_xml), file=sys.stderr)
+                print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
+                print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
                 sys.exit()
 
     def construct_xml_root(self):
@@ -215,7 +224,11 @@ class XML_creator():
         # We store the first line of the XML file, which will contain the schema_key with "_SET", and two attributes:
         #    - xmlns:xsi                      (the schema instance, e.g. http://www.w3.org/2001/XMLSchema-instance)
         #    - xsi:noNamespaceSchemaLocation  (where the schema for that object resides, e.g. ftp://ftp.sra.ebi.ac.uk/meta/xsd/sra_1_5/SRA.sample.xsd)
-        self.root_tag = (self.schema_key + "_SET").upper()
+        # We also need to check if the schema key is one of the few exceptions in which the format for its root name is not the common one.
+        if self.schema_key.upper() in exception_rootNames.keys():
+            self.root_tag = exception_rootNames[self.schema_key.upper()]
+        else:
+            self.root_tag = (self.schema_key + "_SET").upper()
         self.xml_root_tag = "xmlVar_" + self.root_tag
         schema_instance = self.schema_general_dict["XML_schemas_info"]["schema_instance"]
         object_schema = self.schema_general_dict["XML_schemas_info"]["object_schemas"][self.schema_key]
@@ -376,7 +389,13 @@ class XML_creator():
         # We retireve the value with the choices list and split it following specified format (";") as delimiter for each child
         #     (e.g. "SEQUENCE_VARIATION;SEQUENCE_ANNOTATION;...")
         choices_value = self.input_dataframe[choice_column][dataframe_index]
-        possible_choices_list = choices_value.split(";")
+        # We have to first check if the choices_value can be split (e.g. floats will throw an attribute error)
+        try:
+            possible_choices_list = choices_value.split(";")
+        except AttributeError:
+            print("ERROR in XML_creator() - choices_subset(): at row '%s' and column '%s', the value '%s' is not of valid type (current type is %s).\n\t- Check given coordinates and modify its value or its type to solve the issue." \
+                  % (dataframe_index + 1, choice_column, choices_value, type(choices_value)), file=sys.stderr)
+            sys.exit()
         
         # Just in case there are additional spaces at the start/end: 
         possible_choices_list = [x.upper().strip() for x in possible_choices_list]
@@ -504,6 +523,7 @@ class XML_creator():
             # If the dictionary is empty, the node was left empty in the schema, and thus has no information (common mistake)
             print("ERROR in XML_creator() - each_node_comprobations(): the given schema dictionary for schema tag '%s' is empty. This reflects an error (unused node) in the configuration file '%s', check the said schema tag within it." \
                   % (schema_tag, self.schema_filename), file=sys.stderr)
+            self.report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # Now we check if the keys of the current_element are (a subset of) the valid ones (children, text...)
@@ -827,5 +847,16 @@ class XML_creator():
                 reconfigure_new_father = etree.SubElement(father_node, child_to_reconfigure.tag)
                 
                 # Now we move the current child_of_list into the newly created father node through etree's own "append()" function
-                reconfigure_new_father.append(child_of_list)            
+                reconfigure_new_father.append(child_of_list)
+
+    def report_error_messages(self, error_type, error_message):
+        """
+        Function that prints to standard error both the type of error and the error message. 
+
+        Parameters:
+            - error_type (anything convertible to string): the type of error (e.g. taken from sys.exc_info()[0] after an unsuccesful "try")
+            - error_message (anything convertible to string): the error message (e.g. taken from sys.exc_info()[1] after an unsuccesful "try")
+        """
+        print(f"\t- Type of error: {str(error_type)}", file=sys.stderr)
+        print(f"\t- Error message: {str(error_message)}", file=sys.stderr)
             

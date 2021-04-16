@@ -357,7 +357,7 @@ run:
       EXPERIMENT_REF: # REQ
         *att:
             refname: "ExperimentReference_Name*"
-            refcenter: "ExperimentReference_Center*"
+            # refcenter: "ExperimentReference_Center*"
             # accession: "ExperimentReference_Accession"
 
       #! Check if it's worh it to add the <SPOT_DESCRIPTOR> element
@@ -607,7 +607,7 @@ experiment:
     STUDY_REF:  # REQ
       *att:
         refname: "Study_refname*"
-        refcenter: "Study_refCenter*"
+        # refcenter: "Study_refCenter*"
         # accession: "Study_accession"
     DESIGN: # REQ
       *child:
@@ -769,4 +769,219 @@ experiment:
     EXPERIMENT_ATTRIBUTES:  # OPT
       *child:
         EXPERIMENT_ATTRIBUTE:
+          <<: *custom_tag_value_unit
+
+          
+####--------------####
+# - Dataset OBJECT - #
+####--------------####
+
+dataset:
+  *att: # OPT
+     alias: "Dataset_alias*"
+     center_name: "Center_name*"
+     broker_name: "Broker_name"
+
+  *child:
+    TITLE: # REQ
+      *tx: "Dataset_title*"
+    
+    DESCRIPTION: # OPT
+      *tx: "Description"
+
+    DATASET_TYPE: # OPT
+      *RN: 
+      *tx: "Dataset_type"
+
+    RUN_REF:  # OPT
+      *att:
+        refname: "RUN.Alias"
+
+    ANALYSIS_REF: # OPT
+      *att:
+        refname: "ANALYSIS.Alias"
+
+    POLICY_REF: # REQ
+      *att:
+        accession: "POLICY.Accession"
+
+    DATASET_LINKS: # OPT
+      *child:
+        DATASET_LINK:
+          *RN-father:
+          <<: *URL_XREF_ENTREZ_links_node
+
+    DATASET_ATTRIBUTES:  # OPT
+      *child:
+        DATASET_ATTRIBUTE:
+          <<: *custom_tag_value_unit
+
+
+
+####-----------------####
+# - Submission OBJECT - #
+####-----------------####
+
+submission:
+  *att: # OPT
+     alias: "Submission_alias*"
+     center_name: "Center_name*"
+     broker_name: "Broker_name"
+
+  *child:
+    TITLE: # OPT
+      *tx: "Submission_title"
+
+    CONTACTS: # OPT
+      *child:
+        CONTACT:
+          *RN:
+          *att:
+            name: "CONTACT.name"
+            inform_on_status: "CONTACT.address_Status"
+            inform_on_error: "CONTACT.address_Error"
+
+    ACTIONS: # OPT
+      *child:
+        ACTION:
+          *RN-father:
+          *child:
+            ADD:  # OPT
+              *RN:
+              *att: 
+                source: "ADD.Filepath"
+                schema: "ADD.Type"
+
+            MODIFY:  # OPT
+              *RN:
+              *att: 
+                source: "MODIFY.Filepath"
+                schema: "MODIFY.Type"
+
+            VALIDATE:  # OPT
+              *RN:
+              *att: 
+                source: "VALIDATE.Filepath"
+                schema: "VALIDATE.Type"
+                
+            PROTECT:  # OPT
+              *empty:
+
+    #! Nobody uses links within the Submission, so I guess we can avoid overcomplicating the template
+    # SUBMISSION_LINKS: # OPT
+    #   *child:
+    #     SUBMISSION_LINK:
+    #       *RN-father:
+    #       <<: *URL_XREF_ENTREZ_links_node
+
+    SUBMISSION_ATTRIBUTES:  # OPT
+      *child:
+        SUBMISSION_ATTRIBUTE:
+          <<: *custom_tag_value_unit
+
+####----------####
+# - DAC OBJECT - #
+####----------####
+
+dac:
+  *att: # OPT
+     alias: "DAC_alias*"
+     center_name: "Center_name*"
+     broker_name: "Broker_name"
+
+  *child:
+    TITLE: # OPT
+      *tx: "DAC_title"
+    
+    CONTACTS: # OPT
+      *child:
+        CONTACT:
+          *RN:
+          *att:
+            name: "CONTACT.name"
+            email: "CONTACT.email"
+            telephone_number: "CONTACT.telephone_number"
+            organisation: "CONTACT.organisation"
+            main_contact: "CONTACT.main_contact"
+
+    DAC_LINKS: # OPT
+      *child:
+        # As nobody uses XREF nor ENTREZ links (why would they), it's better to only put the URL_LINKs
+        DAC_LINK:
+          *RN-father:
+          *child:
+            URL_LINK:
+              *RN:
+              *child:
+                LABEL:
+                  *tx: "URL_LINK.Label"
+                URL:
+                  *tx: "URL_LINK.URL"
+
+    DAC_ATTRIBUTES:  # OPT
+      *child:
+        DAC_ATTRIBUTE:
+          <<: *custom_tag_value_unit
+    
+
+####-------------####
+# - Policy OBJECT - #
+####-------------####
+
+policy:
+  *att: # OPT
+     alias: "Policy_alias*"
+     center_name: "Center_name*"
+     broker_name: "Broker_name"
+
+  *child:
+    TITLE: # OPT
+      *tx: "Policy_title"
+      
+    DAC_REF: #REQ
+      *att:
+        # We can either ask the accession or the alias 
+        # alias: "DAC_alias"
+        # refcenter: "DAC_refcenter*"
+        accession: "DAC_accession*"
+
+    POLICY_TEXT:  # OPT/REQ
+      *choice: "Policy_source*"
+      *tx: "POLICY_TEXT"
+
+    POLICY_FILE:  # OPT/REQ
+      *choice: "Policy_source*"
+      *tx: "POLICY_FILE"
+
+    DATA_USES:  # OPT
+      *child:
+        DATA_USE:
+          *RN:
+          *att:
+            ontology: "Data_use.Ontology"
+            code: "Data_use.Code"
+            version: "Data_use.Version"
+          
+          *child:
+            URL:
+              *tx: "Data_use.URL"
+              
+
+    POLICY_LINKS: # OPT
+      *child:
+        # As nobody uses XREF nor ENTREZ links (why would they), it's better to only put the URL_LINKs
+        POLICY_LINK:
+          *RN-father:
+          *child:
+            URL_LINK:
+              *RN:
+              *child:
+                LABEL:
+                  *tx: "URL_LINK.Label"
+                URL:
+                  *tx: "URL_LINK.URL"
+
+    POLICY_ATTRIBUTES:  # OPT
+      *child:
+        POLICY_ATTRIBUTE:
           <<: *custom_tag_value_unit
