@@ -3,6 +3,7 @@ import pandas as pd
 #! Also need to install "openpyxl" package if you don't have it installed along pandas.
 import os
 import yaml
+from utils import report_error_messages
 
 # Headers that define attributes within the YAML configuration file
 required_headers_key = "required"
@@ -50,8 +51,7 @@ class Input_reader():
         except:
             print("ERROR in Input_reader(): given configuration filepath '%s' could not be read" \
                   % conf_file, file=sys.stderr)
-            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
-            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
+            report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
 
         # We save the basename and file extension of the input file for future checks
@@ -106,9 +106,8 @@ class Input_reader():
             sys.exit()
             
         except:
-            print("ERROR in Input_reader(): given input filepath '%s' could not be read" % self.input_file, file=sys.stderr)
-            print("\t- Type of error: ", sys.exc_info()[0], file=sys.stderr)
-            print("\t- Error message: ", sys.exc_info()[1], file=sys.stderr)
+            print("ERROR in Input_reader(): given input filepath '%s' could not be read. Check that the given schema keys (e.g. 'sample') are correct" % self.input_file, file=sys.stderr)
+            report_error_messages(sys.exc_info()[0], sys.exc_info()[1])
             sys.exit()
         
         if descriptive_string != "":
