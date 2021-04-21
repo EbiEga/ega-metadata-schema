@@ -39,54 +39,56 @@ older versions of python have not been tested and are not guaranteed.
 import argparse
 
 arg_parser = argparse.ArgumentParser(prog = "validateXML.py",
-                                    epilog = "Schema keys and their input XMLs have to be given in the same order!",
-                                    description = """A script to validate one (or more) input XML files based
+                                    epilog = "Schema keys (e.g. 'sample,run') and their input XMLs (e.g. 'sample.xml,run.xml') have to be given in the same order!",
+                                    description = """A script to validate one (or more) input XML(s) based
                                                     on some XML schemas (.xsd files). If schemas are missing, it downloads them
-                                                    from its GH repository (or FTP server). The function returns a list of boolean values
-                                                    defined by the outcome of the validation (e.g. [False, True, True] if only the
-                                                    last 2 XMLs were correctly validated)
+                                                    from its GH repository (or FTP server) (specified within the configuration files). 
+                                                    The function returns a list of boolean values defined by the outcome of the 
+                                                    validation (e.g. [False, True, True] if only the last 2 XMLs were correctly validated)
                                                     """)
 
 arg_parser.add_argument('schema_keys',
                         help = """Schema key(s) (comma delimited) for the metadata object(s) (e.g. "sample,run" or "experiment"...)""")
 
 arg_parser.add_argument('input_xmls',
-                        help = """Input XML(s) (comma delimited) with metadata information to be validated (e.g. "sample.xml,run.xml")""")
+                        help = """Input XML(s) (comma delimited) with metadata information to be validated (e.g. "sample.xml,run.xml" or "experiment.xml")""")
 
 arg_parser.add_argument('--schemas-dir',
                         dest = 'schema_dir',
                         nargs = '?', # 0 or 1 arguments
                         default = 'downloaded_schemasXSD/',
-                        help = """Directory containing all the XSD schema files (e.g. "downloaded_schemasXSD/"). If 
+                        help = """Directory containing all the XSD schema files (default: "downloaded_schemasXSD/"). If 
                                 --download-xsd is given, the XSD files will be downloaded into this directory.""")
 
 arg_parser.add_argument('--schema-file',
                         dest = 'schema_file',
                         nargs = '?', # 0 or 1 arguments
                         default = 'configuration_files/xml_schema.yaml',
-                        help = """YAML file containing the schema for the metadata object(s) (e.g. "xml_schema.yaml")""")
+                        help = """YAML file containing the schema for the metadata object(s) (default: "configuration_files/xml_schema.yaml")""")
 
 arg_parser.add_argument('--download_xsd',
                         action='store_true',
                         default = False,
-                        help="""A boolean switch to give if you want the schemas (.xsd files) to be downloaded instead of providing them""")
+                        help="""A boolean switch that will enable the download of the XML schemas (.xsd files) instead of having to provide them manually.""")
 
 arg_parser.add_argument('--ftp_downloader',
                         action='store_false',
                         default = True,
                         help="""A boolean switch to use the ftp downloader instead of the default request.get() 
-                                downloader for the ENA schemas (in GitHub), which is the main source of truth for ENA schemas.""")
+                                downloader for the ENA schemas (in GitHub), which is the main source of truth for ENA schemas. We advise you not to use this 
+                                option unless you know for sure that the version of the schemas within the configuration files (e.g. 'pub/databases/ena/doc/xsd/sra_1_6/') 
+                                is the proper one.""")
 
 arg_parser.add_argument('--verbose',
                         action='store_true',
                         default = False,
                         help="""A boolean switch to add verbosity to the function (will print into the terminal extra information, 
-                                as well as the validation errors and results with a friendlier format)""")
+                                as well as the validation errors and results with a friendlier format). Highly recommended.""")
 
 arg_parser.add_argument('--dont_stop_parsing',
                         action='store_true',
                         default = False,
-                        help="""A boolean switch that, if given, will make the validation continue if a parsing error is raised when parsing
+                        help="""A boolean switch that, if given, will make the validation continue if an error is raised when parsing
                                 one of the given XMLs. Such file with errors will be reported as not validated, but the function will not stop,
                                 validating other files. The error will be displayed excplicitly as a warning if '--verbose' is also given.""")
 
@@ -136,7 +138,7 @@ except:
 # -------- #
 if is_xsd_missing:
     if is_verbose:
-            print("# Download mode enable, XSD files will be downloaded to the directory '%s'" % schema_dir)
+            print("# Download mode enable, XSD files will be downloaded to the directory '%s' if not found already there." % schema_dir)
             
     if git_downloader_method:
         if is_verbose:

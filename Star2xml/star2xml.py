@@ -27,7 +27,7 @@ This script is based on work from an older project:
 For further information run:
     $ ./star2xml.py -h
 Example:
-    $ ./star2xml.py "sample,run,experiment,analysis,study" "../templates/sequence-based-metadata/whole_submission_template.xlsx" --validate
+    $ ./star2xml.py "study,sample,analysis,experiment,run,dataset,submission,dac,policy" "../templates/sequence-based-metadata/whole_submission_template.xlsx" --validate
 
 ======
 This script was written and tested using python 3.8, functionality with
@@ -43,10 +43,10 @@ from datetime import datetime
 # Parsing given arguments
 # -------- #
 arg_parser = argparse.ArgumentParser(prog = "star2xml.py",
-                                     description = """A script to transform an input file (.csv, .tsv or .xlsx) into a dataframe, and
-                                                    then build an XML (which will be validated against ENA's schemas .XSD) with
-                                                    its information following the XML structure described in a YAML file""",
-                                     epilog = """Example of usage: $ ./star2xml.py "sample,run,experiment,analysis,study" "../templates/sequence-based-metadata/whole_submission_template.xlsx" --validate'""")
+                                     description = """A script to transform an input file (.csv, .tsv or .xlsx) into one (or more) dataframe(s), and
+                                                    then build one (or more) XML(s) with its information following the XML structure described in a YAML file""",
+                                     epilog = """Example of usage: $ ./star2xml.py "study,sample,analysis,experiment,run,dataset,submission,dac,policy" 
+                                     "../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx" --validate""")
 
 arg_parser.add_argument('schema_keys',
                         help = """Schema keys for the metadata object. Can be a single key (e.g. "sample", "run", "experiment"...), 
@@ -60,23 +60,23 @@ arg_parser.add_argument('input_file',
 arg_parser.add_argument('--output_xmls',
                         dest = 'output_xmls',
                         default = 'output_xmls/',
-                        help = """Output XML filepaths, i.e. file that will contain the generated XMLs. Can be a single filepath 
-                                (e.g. "sample.xml"), several filepaths separated by commas (e.g. "sample.xml,run.xml,experiment.xml" 
-                                - in the same order as the schema keys), or a directory (e.g. "output_xmls/" ) where all XMLs will 
-                                be saved with their corresponding schema keys as their names.""")
+                        help = """Output XML filepaths, i.e. file(s) that will contain the generated XML(s). [OUTPUT_XMLS] can be 
+                        (1) a single filepath (e.g. "sample.xml"), (2) several filepaths separated by commas (e.g. "sample.xml,run.xml,experiment.xml" 
+                        - in the same order as the schema keys), (3) or a directory (default: "output_xmls/") where all XMLs will be saved with their 
+                        corresponding schema keys as their names (with the time-stamp if needed to avoid overwritting files).""")
 
 arg_parser.add_argument('--schema-file',
                         dest = 'schema_file',
                         nargs = '?', # 0 or 1 arguments
                         default = 'configuration_files/xml_schema.yaml',
-                        help = """YAML file containing the schema for the metadata object(s) (e.g. "xml_schema.yaml")""")
+                        help = """YAML file containing the schema for the metadata object(s) (default: "xml_schema.yaml")""")
 
 arg_parser.add_argument('--configuration-file',
                         dest = 'conf_file',
                         nargs = '?', # 0 or 1 arguments
                         default = 'configuration_files/input_configuration.yaml',
-                        help = """YAML file containing the configuration (i.e. required fields) of the input file (e.g. 
-                                "input_configuration.yaml")""")
+                        help = """YAML file containing the configuration (i.e. required fields) of the input file (default: 
+                        "input_configuration.yaml")""")
 
 arg_parser.add_argument('--verbose',
                         action='store_true',
