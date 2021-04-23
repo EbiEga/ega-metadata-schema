@@ -141,7 +141,7 @@ To get started with the tool, you can execute the following commands:
 
 ```Bash
 # Create one single XML from one tab of the joint spreadsheet:
-./star2xml.py "sample" "../templates/sequence-based-metadata/whole_submission_template.xlsx" --verbose
+./star2xml.py "sample" "../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx" --verbose
 
 # Validate the XML we just created:
 ./validateXML.py "sample" "output_xmls/sample.xml" --verbose --download_xsd
