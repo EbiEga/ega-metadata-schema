@@ -2,9 +2,12 @@
 ## Index
 1. [Overview](#Overview)
 2. [Usage](#Usage)
-  2.1. [Pre-requisites](#Pre-requisites)
-  2.2. [Scripts](#Scripts): [``star2xml.py``](#star2xml.py) and [``validateXML.py``](#validateXML.py)
-  2.3. [Mock examples](#Mock-examples)
+
+    2.1. [Pre-requisites](#Pre-requisites)
+
+    2.2. [Scripts](#Scripts): [``star2xml.py``](#star2xml.py) and [``validateXML.py``](#validateXML.py)
+    
+    2.3. [Mock examples](#Mock-examples)
 3. [Filling out templates](#Filling-out-templates)
 4. [Configuration files](#Configuration-files)
 5. [Common issues](#Common-issues)
@@ -17,7 +20,7 @@ The Star2xml tool eases the process of XML creation prior metadata submission to
 * **Where?**
     * Tool's scripts can be found in [Star2xml directory](./).
     * Required Python packages can be found at [requirements.txt](requirements.txt).
-    * Use the file [``EGA_metadata_submission_template_v1.xlsx``](../templates/sequence-based-metadata/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx) as a template to fill in with your data, which can be used as the input for the Star2xml tool. Further information about its format and how to fill each of their tabs exists in [its section](#Filling-out-templates) on this README.
+    * Use the file [``EGA_metadata_submission_template_v1.xlsx``](../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx) as a template to fill in with your data, which can be used as the input for the Star2xml tool. Further information about its format and how to fill each of their tabs exists in [its section](#Filling-out-templates) on this README.
     * Configuration files (`input_configuration.yaml` and `xml_schema.yaml`) reside in the [configurations directory](configuration_files/). Information regarding their structure and how to modify them is located both within the files themselves and [their section](#Configuration-files) on this README.
 
 
@@ -90,7 +93,7 @@ Example of usage: $ ./star2xml.py "study,sample,analysis,experiment,run,dataset,
 
 The **input file** will commonly be a **spreadsheet** with a tab named after each of the metadata objects (_e.g._ "run") we want to convert into XMLs. Instead of a joint spreadsheet, the tool also accepts **Comma and Tab Separated Values** (.csv and .tsv) files, each of which would contain data of one single metadata object (similar to one tab of the joint template). 
 
-For example, the joint template ([``EGA_metadata_submission_template_v1.xlsx``](../templates/sequence-based-metadata/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx)) contains a tab for each possible metadata object. Within each of them, one row corresponds to one metadata instance (_e.g._ one ``run`` per row), and each column to one field of information for such instance. In case we were interested in creating an XML containing the Run's metadata we would execute the following command:
+For example, the joint template ([``EGA_metadata_submission_template_v1.xlsx``](../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx)) contains a tab for each possible metadata object. Within each of them, one row corresponds to one metadata instance (_e.g._ one ``run`` per row), and each column to one field of information for such instance. In case we were interested in creating an XML containing the Run's metadata we would execute the following command:
 
 ``` Bash
 ./star2xml.py  'run' '../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx' --output_xmls 'output_xmls/run.xml' --schema-file 'configuration_files/xml_schema.yaml' --configuration-file 'configuration_files/input_configuration.yaml'
@@ -134,7 +137,7 @@ Once again, if we have not modified the schema's filepath, option `--schema-file
 ```Bash
 ./validateXML.py "sample,run" "output_xmls/sample.xml,output_xmls/run.xml" --verbose
 ```
-It is worth mentioning that if there is an error while parsing the given XMLs (_e.g._ there are unclosed nodes - i.e. missing '`>`'), the validation will stop by default to notify the error. If this is not the desired behaviour, you may provide the optional argument `--dont_stop_parsing` to avoid terminating the execution, and instead report the file with errors as non-validated.
+It is worth mentioning that if there is an error while parsing the given XMLs (_e.g._ there are unclosed nodes - _i.e._ missing '`>`'), the validation will stop by default to notify the error. If this is not the desired behaviour, you may provide the optional argument `--dont_stop_parsing` to avoid terminating the execution, and instead report the file with errors as non-validated.
 
 ### Mock examples
 To get started with the tool, you can execute the following commands:
@@ -151,7 +154,7 @@ To get started with the tool, you can execute the following commands:
 ```
 
 ## Filling out templates
-For this part of the documentation we will be using the joint template ([``EGA_metadata_submission_template_v1.xlsx``](../templates/sequence-based-metadata/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx)), a spreadsheet, since it is the most commonly used format. Nevertheless, stripping off the formatting, you may use a similar logic while filling plain text formats (``.csv`` and ``.tsv``)
+For this part of the documentation we will be using the joint template ([``EGA_metadata_submission_template_v1.xlsx``](../templates/sequence-based-metadata/EGA_metadata_submission_template_v1.xlsx)), a spreadsheet, since it is the most commonly used format. Nevertheless, stripping off the formatting, you may use a similar logic while filling plain text formats (``.csv`` and ``.tsv``)
 
 Based on the type of metadata objects you want to submit, you shall **fill their corresponding tabs** within such joint template. Each tab of the spreadsheet corresponds to one of the possible metadata objects (_e.g._ ``run``) from EGA, with the exception of the first tab, which is named ``Readme`` and contains information about the file's format. For all metadata tabs **each row will represent one repetition of a metadata object**. For example, each of the rows in the sample tab given as input will represent one ``<SAMPLE>`` node of the ``<SAMPLE_SET>`` in the final XML. All information that row contains will be associated with its corresponding ``<SAMPLE>`` node (its alias, description, etc.). 
 
@@ -193,7 +196,7 @@ Additional information can be obtained from the colour of the column headers (fi
 * Bright yellow: **required attributes**. All column headers that contain "``*``" are marked as required (_e.g._ ``Analysis_alias*``): their metadata shall be provided for each filled row.
 * No colour: **optional** (yet highly recommended) **attributes**. These columns may be left empty, although we advise to also provide their corresponding metadata, for it will enrich your submission.
 * Light yellow: **optionally required columns**. These are columns related to a choice from another column (based on multiple choice attributes). For instance, if our experiment's layout is ``PAIRED``, the two related columns (``PAIRED.Nominal_length`` and ``PAIRED.Nominal_sdev``) will change their header's format to light yellow, since these are required columns for a paired experiment.
-* Grey: **optionally ignored columns**. Column headers that do not appear to be chosen for any metadata instance (row), and thus can be ignored (i.e. left empty) (based on multiple choice attributes). For instance, if our experiment's layout is ``SINGLE``, the two columns previously mentioned that are related to a paired experiment would be highlighted in grey. 
+* Grey: **optionally ignored columns**. Column headers that do not appear to be chosen for any metadata instance (row), and thus can be ignored (_i.e._ left empty) (based on multiple choice attributes). For instance, if our experiment's layout is ``SINGLE``, the two columns previously mentioned that are related to a paired experiment would be highlighted in grey. 
 * Other colours: **repetition blocks**. As we mentioned describing the [types of columns](#Types-of-columns), there are repeated columns. Their headers are alternatively coloured for each repeated class to ease their identification. Besides, the body of the column is coloured in a lighter colour than their headers alternating between *repeated blocks* of the same class. 
 
 ![Header colours](miscellaneous/header_colours.png)
@@ -202,7 +205,7 @@ Additional information can be obtained from the colour of the column headers (fi
 
 This section of the README displays additional information about how the tool works using their configuration files. Such knowledge will most likely not be relevant to the average user, and thus **you may skip it**. Nevertheless, if you wish to change the configuration files, it will come in handy. 
 
-There are **two configuration files**: `input_configuration.yaml` and ``xml_schema.yaml``. The former simply **lists the required fields for each input file** (i.e. if a column named ``Sample_alias*`` needs to be present or not). The latter **describes the structure of the corresponding XML** (i.e. which nodes are children of which) and **associates each column name of the input file with its corresponding node's characteristic** (either an attribute or text). Both are `YAML` files, which are easy-to-read information holders, and can be interpreted as dictionaries/lists of elements. Besides the information displayed here, additional instructions on how to modify them reside within the files themselves.
+There are **two configuration files**: `input_configuration.yaml` and ``xml_schema.yaml``. The former simply **lists the required fields for each input file** (_i.e._ if a column named ``Sample_alias*`` needs to be present or not). The latter **describes the structure of the corresponding XML** (_i.e._ which nodes are children of which) and **associates each column name of the input file with its corresponding node's characteristic** (either an attribute or text). Both are `YAML` files, which are easy-to-read information holders, and can be interpreted as dictionaries/lists of elements. Besides the information displayed here, additional instructions on how to modify them reside within the files themselves.
 
 ### Basic structure - ``xml_schema.yaml``
 At base level, the file contains **information of the tool itself** (`tool_info` - used to add details to reports), the **metadata schemas** (`XML_schemas_info` - used to both download `.xsd` files and create XMLs) and **one element for each metadata object** (_e.g._ `sample`) describing its XML's architecture.

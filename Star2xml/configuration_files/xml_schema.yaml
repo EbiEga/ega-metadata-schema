@@ -9,7 +9,7 @@ tool_info:  # Contains info about the conversion tool and this schema file.
     # Version (string: !!str): defines the tool version for which this YAML was created.
     version: !!str 1.0
     # update_date (ISO 8691 format): defines the date of the last official update for this file.
-    update_date: 2021-03-22
+    update_date: 2021-04-26
 
 # Contains info about where the XML schemas instances are. This information will be used
 #   when creating each object's XML.
