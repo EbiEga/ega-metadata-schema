@@ -711,13 +711,15 @@ class XML_creator():
             if not self.check_column_exists(self.input_dataframe, column_name):
                 return
             
+            # We extract the value of the attribute from the dataframe.
             attribute_value = self.input_dataframe[column_name][dataframe_index]
+
             # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip adding this attribute
             if (not attribute_value and attribute_value != 0) or attribute_value is None or pd.isnull(attribute_value) or str.isspace(str(attribute_value)):
                 continue
             
             # Before adding the string as an attribute, we check for invalid characters (e.g. '"')
-            attribute_value = check_for_invalid_chars(attribute_value, invalid_characters_dictionary)
+            attribute_value = check_for_invalid_chars(str(attribute_value), invalid_characters_dictionary)
             exec('self.%s.set("""%s""","""%s""")' % (xml_node_tag, str(attribute_name), str(attribute_value)))
 
     def set_text(self, element_name, column_name, dataframe_index):
@@ -745,14 +747,14 @@ class XML_creator():
             return
         
         # We extract the node's text from the dataframe
-        nodes_text = str(self.input_dataframe[column_name][dataframe_index])
+        nodes_text = self.input_dataframe[column_name][dataframe_index]
 
         # If the value in the dataframe is empty, NaN, None or only contains white spaces we skip setting its text
         if (not nodes_text and nodes_text != 0) or nodes_text is None or pd.isnull(nodes_text) or str.isspace(str(nodes_text)):
             return
 
         # Before adding the string as text, we check for invalid characters (e.g. '"')
-        nodes_text = check_for_invalid_chars(nodes_text, invalid_characters_dictionary)
+        nodes_text = check_for_invalid_chars(str(nodes_text), invalid_characters_dictionary)
         exec('self.%s.text = """%s"""' % (xml_node_tag, nodes_text))
     
     def check_column_exists(self, dataframe, column_name):

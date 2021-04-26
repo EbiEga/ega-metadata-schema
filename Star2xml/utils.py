@@ -22,7 +22,10 @@ def check_for_invalid_chars(string_toCheck, chars_dict, stop_if_invalid = False)
         - chars_dict (dir): dictionary with the invalid characters as keys and their valid counterparts as values (e.g. {"?": "_"})
         - stop_if_invalid (bool): a boolean switch that decides if the function shall stop if those characters are found or continue.
     """
-    
+    # We check that the given string is indeed a string. If not, we return it as it is. 
+    if type(string_toCheck) is not str:
+        return string_toCheck
+
     # We iterate over the given dictionary, and if found, we replace their keys with their values
     for character in chars_dict.keys():
         if character in string_toCheck:
