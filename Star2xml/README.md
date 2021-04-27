@@ -45,7 +45,8 @@ You may want to install the latest versions of this packages and check if it wor
 To install Python dependencies:
 ```bash
 # Step 1. Cloning the tools repository
-git clone https://github.com/EbiEga/ega-metadata-schema/star2xml
+git clone git@github.com:EbiEga/ega-metadata-schema.git
+cd ega-metadata-schema/Star2xml/
 # Step 2. Creating and activating the virtual environment
 virtualenv -p python3 venv_star2xml
 source venv_star2xml/bin/activate
@@ -227,4 +228,10 @@ If the metadata requirements change and existing fields need to be removed or ne
 * Not using the option `--download_xsd` the first time you try to validate XMLs: the schemas (`.xsd`) will be missing and the tool will throw the following error message:
 ``` Bash
 ERROR in check_xml_is_valid(): the schema file 'downloaded_schemasXSD/SRA.sample.xsd' could not be accessed. If you have not downloaded the schema files (.xsd) yet, use '--download_xsd' when running the command.
+```
+* Line endings being an issue: when using different operating systems (e.g. using Windows Subsystem for Linux) an issue regarding line endings may arise when trying to execute the scripts (_e.g._ `/usr/bin/env: ‘python3\r’: No such file or directory` - notice the `/r` not being handled correctly by the interpreter). If such is the case, there are automatic ways to change all line endings within the scripts, which will solve the issue:
+``` bash
+sudo apt install dos2unix
+# Within the 'Star2xml/' folder do:
+dos2unix ./*.py
 ```
