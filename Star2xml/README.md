@@ -24,7 +24,9 @@ The Star2xml tool eases the process of XML creation prior metadata submission to
     * Configuration files (`input_configuration.yaml` and `xml_schema.yaml`) reside in the [configurations directory](configuration_files/). Information regarding their structure and how to modify them is located both within the files themselves and [their section](#Configuration-files) on this README.
 
 
- Currently **only metadata from Sequence data** (_e.g._ whole genome sequencing) **can be processed through star2xml**, while Array Format (AF) submissions have their own bespoken [procedures](https://ega-archive.org/submission/array_based/metadata) and [templates](https://github.com/EbiEga/ega-metadata-schema/blob/8dca24c694b0c005f1b0d665f1c6900e766f38d7/templates/array-based-metadata/EGA_Array_based_Format_V4.3.xlsx).
+We highly recommend you to take a look at the recorded session "[Star2xml: metadata converter](https://embl-ebi.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=58d299c7-7e25-4b48-8fc3-ad18011ef0b4)", where we go through an overview of what the basic usage of the tool is and how to use it. 
+
+Currently **only metadata from Sequence data** (_e.g._ whole genome sequencing) **can be processed through star2xml**, while Array Format (AF) submissions have their own bespoken [procedures](https://ega-archive.org/submission/array_based/metadata) and [templates](https://github.com/EbiEga/ega-metadata-schema/blob/8dca24c694b0c005f1b0d665f1c6900e766f38d7/templates/array-based-metadata/EGA_Array_based_Format_V4.3.xlsx).
 ## Usage
 ### Pre-requisites
 This tool was programmed in **Python** (**version 3.8+**) and depends on the following packages:
