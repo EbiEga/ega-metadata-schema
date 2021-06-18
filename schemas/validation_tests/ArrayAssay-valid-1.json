@@ -1,0 +1,66 @@
+{
+    "object_ids": {
+        "alias" : "MyArrayAssay", 
+        "center_name" : "EBI-TEST",
+        "accession": "EGAA00000000001"
+    },
+    "arrayAssay_center": "EBI-TEST",
+    "arrayAssay_date": "2021-06-24",
+    "sample_number": 2,
+    "sample_Labels": ["EGAN00000000001:Cy3", "EGAN00000000002:Biotin"],
+    "ArrayAssay_relationships": [
+        {
+            "r_type": "Referenced_in",
+            "r_source": "EGAA00002045411",
+            "r_sourceType": "ArrayAssay",
+            "r_target": "EGAE00000000001", 
+            "r_targetType": "ArrayExperiment"
+        },
+        {
+            "r_type": "Same_as [NCIT:C64637]",
+            "r_source": "EGAA00000000001",
+            "r_sourceType": "ArrayAssay",
+            "r_target": "EGAA00000000002", 
+            "r_targetType": "ArrayAssay"
+        },
+        {
+            "r_source": "EGAN00000000001",
+            "r_sourceType": "sample",
+            "r_type": "Referenced_in",
+            "r_target": "EGAA00000000001", 
+            "r_targetType": "ArrayAssay"
+        }
+    ],
+    "assay_files": [
+        {
+            "filename": "myfile1.cel",
+            "filetype": "CEL [EFO:0005630]",
+            "checksum_method": "MD5 [NCIT:C171276]",
+            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
+            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
+        },
+        {
+            "filename": "myfile2.cel",
+            "filetype": "CEL [EFO:0005630]",
+            "checksum_method": "MD5 [NCIT:C171276]",
+            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64453",
+            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64323"
+        }
+    ],
+    "arrayAssay_attributes": [
+        {
+            "tag": "weather_outside",
+            "value": "chilly and cloudy"
+            },
+        {
+            "units": "time_spent",
+            "tag": "14",
+            "value": "hours"
+            },
+        {
+            "units": "GBP",
+            "tag": "assay_price",
+            "value": "800"
+            }
+    ]
+}

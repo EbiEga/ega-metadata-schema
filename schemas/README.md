@@ -1,0 +1,11 @@
+# EGA Metadata Schemas
+## Overview
+In this directory you will find EGA's **metadata standards** or **_schemas_**: a coding system to catalogue information in structured descriptive records. These basically stablish **data elements** (_e.g._ what is ``Phenotype`` within a Sample) and the **rules** (_e.g._ if such ``Phenotype`` field can contain ``strings`` and ``integers`` or not) governing their use to describe instances. There is one schema file (_e.g._ ``EGA.ArrayExperiment.json``) for every metadata object (_e.g._ ``ArrayExperiment``), in addition to the common schema (``EGA.common-definitions.json``). 
+
+The current schemas are written in JavaScript Object Notation (**JSON**), providing both human- and machine-readable documentation. For further details regarding JSON-schemas visit [JSON-schema](https://json-schema.org/) and [Getting started](https://json-schema.org/learn/getting-started-step-by-step) (for an overview), or [Understanding JSON schema](https://json-schema.org/understanding-json-schema/) (for an detailed cover). 
+
+Furthermore, there is an additional folder, ``validation_tests``, in which there are several ``json`` files which serve as **examples that are supposed to pass validation** (if their name contains ``valid``) or **throw validation errors**. Besides, in that same directory there is a **jupyter notebook** that contains a small code block ready for you to use it to validate these example ``json`` files. 
+
+## Planning to modify the schemas?
+In case these schemas need to be modified, in this section you will find listed some details about the current approach that may ease the process:
+* **Shared definitions**. All schemas share some fields (_e.g._ ``alias``) or patterns (_e.g._ checksum patterns) which can lead to duplicated code. In order to avoid it, we created an additional schema that corresponds to none of the EGA objects: ``EGA.common-definitions.json``. In this file those repeated objected are written for other schemas or objects to inherit. The way these cross-file references are achieved is by using the IDs of the schemas (``$id`` within its first layer) and object's keywords (_e.g._ ``"EGA-sample-id-pattern``), which point to the objects within the files, using them as references (``$ref`` wherever they are needed). 

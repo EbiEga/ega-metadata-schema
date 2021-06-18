@@ -1,0 +1,531 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json",
+    "title": "EGA common metadata definitions v0.0.1",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/Object_coreIDs'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "definitions": {
+
+      "object_coreIDs": {
+        "type": "object",
+        "title": "Core identifiers of an object",
+        "description": "Base definition containing the properties (e.g. Sample's alias) of a minimal identification layer of an EGA object (e.g. Sample).",
+        "additionalProperties": false,
+        "properties": {
+          "alias": {
+            "type": "string",
+            "title": "Alias of an object",
+            "description": "Submitter designated name (e.g. 'my_sample_J13') for the object (e.g. Sample). The name must be unique within the submission account (e.g. 'ega-box-79'), since the aliases and submission accounts are concatenated within our database to obtain the unique alias (e.g. 'ega-box-79::my_sample_J13')."
+          },
+          "center_name": {
+            "type": "string",
+            "title": "Center name of the submitter",
+            "description": "Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is the acronym of the submitter's account (provided by the HelpDesk team)."
+          },
+          "accession" : {
+            "type": "string",
+            "title": "Accession of the object",
+            "description": "The object accession (i.e. unique identifier) assigned by the archive (EGA). Object accessions can be found in the 'Identifiers' section of the EGA-archive website (https://ega-archive.org/metadata/how-to-use-the-api) and commonly start with EGA, followed by the distinctive letter of the object and finally the numeric ID of the instance."
+          }
+        },
+        "anyOf": [
+          { "required": ["alias"]},
+          { "required": ["accession"]}
+        ]
+
+      },
+
+      "custom_attribute": {
+        "type": "object",
+        "title": "Custom attribute of an object",
+        "description": "Reusable attributes to encode tag-value pairs (e.g. Tag being 'Age' and its Value '40') with optional units (e.g. 'years').",
+        "required": ["tag", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "tag": {
+            "type": "string",
+            "title": "Tag of the custom attribute",
+            "description": "The name of the attribute (e.g. 'Age')."
+          },
+          "value": {
+            "type": ["string", "number"],
+            "title": "Value of the custom attribute",
+            "description": "The value of the attribute (e.g. '40')."
+          },
+          "units": {
+            "type": "string",
+            "title": "Units of the custom attribute",
+            "description": "The optional units of the attribute (e.g. 'years')."
+          }
+        }        
+      },
+
+      "file_object": {
+        "type": "object",
+        "title": "EGA File object",
+        "description": "Object containing the base metadata attributes of a file object in the EGA. These can inherited elsewhere with or without extending them.",
+        "required": ["filename", "filetype", "checksum_method", "unencrypted_checksum", "encrypted_checksum"],
+        "additionalProperties": false,
+        "properties": {
+          "filename": {
+            "type": "string",
+            "title": "Filename [data:1050]",
+            "description": "The full name of a file, including all of their file extensions (e.g. .gpg, .md5...), that identifies the file (e.g. 'my-bam-file.bam.gpg').",
+            "pattern": "^[^<>:;,?\"*|/]+$"
+          },
+          "filetype": {
+            "type": "string",
+            "title": "Filetype [NCIT:C172272]",
+            "description": "The nature of the content stored in an electronic file, chosen from a list of CV (e.g. CEL [EFO:0005630] or TSV [NCIT:C164049]).",
+            "enum": ["CEL [EFO:0005630]", "TSV [NCIT:C164049]", "ADF [NCIT:C172213]", "FASTQ [EFO:0004155]", "FASTA [NCIT:C47845]", "SDRF [NCIT:C172211]", "IDF [NCIT:C172212]", "VCF [NCIT:C172216]", "SRA [format:3698]", "SRF [EFO:0004154]", "SFF [EFO:0004156]", "BAM [EFO:0004157]", "CRAM [format:3462]", "XLSX [format:3620]", "CSV [format:3752]"]
+          },
+          "checksum_method": {
+            "type": "string",
+            "title": "Checksum method [ChecksumAlgorithm]",
+            "description": "The method, chosen from a list of CV (MD5 [NCIT:C171276] and SHA-256 [NCIT:C80226]), which yields the checksum from a data input for the purpose of detecting errors.",
+            "enum": ["MD5 [NCIT:C171276]", "SHA-256 [NCIT:C80226]"],
+            "default": "MD5 [NCIT:C171276]"
+          },
+          "unencrypted_checksum": {
+            "type": "string",
+            "title": "Checksum [NCIT:C43522] of the unencrypted file",
+            "description": "A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data, computed from the unencrypted files.",
+            "oneOf": [
+              { "$ref": "#/definitions/md5-checksum-pattern"},
+              { "$ref": "#/definitions/SHA-256-checksum-pattern"}
+            ]            
+          },
+          "encrypted_checksum": {
+            "type": "string",
+            "title": "Checksum [NCIT:C43522] of the encrypted file",
+            "description": "A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data, computed from the encrypted files.",
+            "oneOf": [
+              { "$ref": "#/definitions/md5-checksum-pattern"},
+              { "$ref": "#/definitions/SHA-256-checksum-pattern"}
+            ]
+          }
+        },
+        "allOf": [
+          { "title": "Check: checksum's format based on its method" },
+          {
+            "if": {
+              "required": [ "checksum_method" ],
+              "properties": {
+                "checksum_method": { "enum": ["MD5 [NCIT:C171276]"] }
+              }
+            },
+            "then": {
+              "required": [ "unencrypted_checksum", "encrypted_checksum" ],
+              "properties": { "unencrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern"},
+                              "encrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern"}
+              }
+            },
+            "else": {
+              "required": [ "unencrypted_checksum", "encrypted_checksum" ],
+              "properties": { "unencrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern"},
+                              "encrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern"}
+              }
+            }
+          }
+        ]        
+      },
+
+      "relationship_object": {
+        "type": "object",
+        "title": "EGA Relationships object",
+        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.",
+        "required": ["r_type", "r_source", "r_sourceType", "r_target", "r_targetType"],
+        "properties": {
+          "r_type": {
+            "type": "string",
+            "title": "Type of the relationship",
+            "description": "The Type of the relationship, chosen from a list of CV (e.g. Same_as [NCIT:C64637] or Develops_from [RO:0002202]), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
+            "enum": ["Referenced_in", "Develops_from [RO:0002202]", "Same_as [NCIT:C64637]", "Member_of [RO:0002350]", "Grouped_with", "Family_relationship_with [EFO:0004424]", "Child_of [GSSO:000728]", "Parent_of [GSSO:001986]", "Is_after [SIO:000211]", "Published_in [EFO:0001796]", "Submitted_by [NCIT:C25695]", "Contact_of", "Main_contact_of"]
+          },
+          "r_source": {
+            "type": "string",
+            "title": "Source of the relationship",
+            "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A   develops_from   sample_B' the source is 'sample_A'. The source can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...)."
+          },
+          "r_sourceType": {
+            "type": "string",
+            "title": "Type of the relationship's source",
+            "description": "Type of the relationship's source, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The source type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
+            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"]
+          },
+          "r_target": {
+            "type": "string",
+            "title": "Target of the relationship",
+            "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A   develops_from   sample_B' the target is 'sample_B'. The target can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...)."
+          },
+          "r_targetType": {
+            "type": "string",
+            "title": "Type of the relationship's target",
+            "description": "Type of the relationship's target, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The target type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
+            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"]            
+          }
+        },
+        "allOf": [
+          { "description": "Here we simply use the checks created elsewhere to make sure that if a given source or target type are given, their corresponding IDs (source or target) are valid." },
+          { "$ref": "#/definitions/relationships-source-patternCheck" },
+          { "$ref": "#/definitions/relationships-target-patternCheck" }
+        ]
+      },
+
+      "protocols_object": {
+        "type": "object",
+        "title": "EGA Protocols object",
+        "description": "Object containing the base metadata attributes of a Protocol object in the EGA. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
+        "required": ["protocol_type", "protocol_ontology", "protocol_description"],
+        "properties": {
+          "protocol_name": {
+            "type": "string",
+            "title": "Name of the protocol [NCIT:C42614]",
+            "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user."
+          },
+          "protocol_type": {
+            "type": "string",
+            "title": "Type of protocol [OBI:0000272] ",
+            "description": "Classification by tyope of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
+            "enum": ["Sample collection",  "Nucleic acid extraction",  "Nucleic acid labeling",  "Nucleic acid hybridization to array",  "Array scanning and feature extraction",  "Nucleic acid library construction",  "Growth",  "Dissociation", "Enrichment", "Treatment", "Conversion", "Clinical treatment", "Dissection", "Gene expression" ]
+          },
+          "protocol_ontology": {
+            "type": "string",
+            "title": "Name of the protocol type [NCIT:C21270]",
+            "description": "Ontology term (e.g. '[EFO:0005518]') of the Type of protocol.",
+            "enum": ["[EFO:0005518]",  "[EFO:0002944]",  "[EFO:0003813]",  "[EFO:0003815]",  "[EFO:0003814]",  "[EFO:0004184]",  "[EFO:0003789]",  "[EFO:0009088]", "[EFO:0009089]", "[EFO:0003969]", "[EFO:0005520]", "[EFO:0000355]", "[EFO:0005519]", "[EFO:0003788]" ]
+          },
+          "protocol_description": {
+            "type": "string",
+            "title": "Description of the protocol [NCIT:C25365]",
+            "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated by anyone who is granted access."
+          }
+        }
+      },
+
+      "relationships-source-patternCheck": {
+        "type": "object",
+        "title": "Check: relationship's source based on its sourceType",
+        "description": "This object exists with the only purpose of being a reference of pattern checks of the given source IDs based on their corresponding source types (e.g. if the sourceType is 'sample', its ID within the source field should be like 'EGAN0000000001')",
+        "allOf": [
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["experiment"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-experiment-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["study"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-study-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["sample"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-sample-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["submission"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-submission-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["run"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-run-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["dataset"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-dataset-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["analysis"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-analysis-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["policy"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-policy-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["DAC"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-DAC-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["ArrayExperiment"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-ArrayExperiment-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_sourceType" ],
+              "properties": { "r_sourceType": { "enum": ["ArrayAssay"] } }
+            },
+            "then": {
+              "required": [ "r_source" ],
+              "properties": { "r_source": { "$ref": "#/definitions/EGA-ArrayAssay-id-pattern" } }
+            }
+          }
+        ]                
+      },
+
+      "relationships-target-patternCheck": {
+        "type": "object",
+        "title": "Check: relationship's target based on its targetType",
+        "description": "This object exists with the only purpose of being a reference of pattern checks of the given target IDs based on their corresponding target types (e.g. if the targetType is 'sample', its ID within the target field should be like 'EGAN0000000001')",
+        "allOf": [
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["experiment"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-experiment-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["study"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-study-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["sample"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-sample-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["submission"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-submission-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["run"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-run-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["dataset"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-dataset-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["analysis"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-analysis-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["policy"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-policy-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["DAC"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-DAC-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["ArrayExperiment"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-ArrayExperiment-id-pattern" } }
+            }
+          },
+          {
+            "if": {
+              "required": [ "r_targetType" ],
+              "properties": { "r_targetType": { "enum": ["ArrayAssay"] } }
+            },
+            "then": {
+              "required": [ "r_target" ],
+              "properties": { "r_target": { "$ref": "#/definitions/EGA-ArrayAssay-id-pattern" } }
+            }
+          }
+        ]                
+      },
+
+      "md5-checksum-pattern": {
+        "type": "string",
+        "title": "Checksum pattern obtained by MD5",
+        "description": "This object exists to hold the pattern that a checksum would have if it was obtained using the algorithm MD5, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[0-9a-z](?:-?[0-9a-z]){31}$"
+      },
+
+      "SHA-256-checksum-pattern": {
+        "type": "string",
+        "title": "Checksum pattern obtained by SHA-256",
+        "description": "This object exists to hold the pattern that a checksum would have if it was obtained using the algorithm SHA-256, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[A-Fa-f0-9]{64}$"
+      },
+
+      "EGA-experiment-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA experiment's ID (EGAX...)",
+        "pattern": "^EGAX[0-9]{11}$"
+      },
+      
+      "EGA-study-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA study's ID (EGAS...)",
+        "pattern": "^EGAS[0-9]{11}$"
+      },
+
+      "EGA-sample-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA sample's ID (EGAN...)",
+        "pattern": "^EGAN[0-9]{11}$"
+      },
+
+      "EGA-submission-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA submission's ID (EGAB...)",
+        "pattern": "^EGAB[0-9]{11}$"
+      },
+
+      "EGA-run-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA run's ID (EGAR...)",
+        "pattern": "^EGAR[0-9]{11}$"
+      },
+
+      "EGA-dataset-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA dataset's ID (EGAD...)",
+        "pattern": "^EGAD[0-9]{11}$"
+      },
+
+      "EGA-analysis-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA analysis's ID (EGAZ...)",
+        "pattern": "^EGAZ[0-9]{11}$"
+      },
+
+      "EGA-policy-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA policy's ID (EGAP...)",
+        "pattern": "^EGAP[0-9]{11}$"
+      },
+
+      "EGA-DAC-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA DAC's ID (EGAC...)",
+        "pattern": "^EGAC[0-9]{11}$"
+      },
+
+      "EGA-ArrayExperiment-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA ArrayExperiment's ID (EGAE...)",
+        "pattern": "^EGAE[0-9]{11}$"
+      },
+
+      "EGA-ArrayAssay-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA ArrayAssay's ID (EGAA...)",
+        "pattern": "^EGAA[0-9]{11}$"
+      },
+
+      "EGA-ISO-date-YYYY-MM-DD-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA ISO date (YYYY-MM-DD)",
+        "pattern": "^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$"
+      }
+
+    }
+
+    
+  }
