@@ -794,10 +794,12 @@ dataset:
       *tx: "Dataset_type"
 
     RUN_REF:  # OPT
+      *RN:
       *att:
         refname: "RUN.Alias"
 
     ANALYSIS_REF: # OPT
+      *RN:
       *att:
         refname: "ANALYSIS.Alias"
 
