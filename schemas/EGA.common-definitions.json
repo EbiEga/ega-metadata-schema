@@ -186,7 +186,7 @@
           "protocol_type": {
             "type": "string",
             "title": "Type of protocol [OBI:0000272] ",
-            "description": "Classification by tyope of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
+            "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
             "enum": ["Sample collection",  "Nucleic acid extraction",  "Nucleic acid labeling",  "Nucleic acid hybridization to array",  "Array scanning and feature extraction",  "Nucleic acid library construction",  "Growth",  "Dissociation", "Enrichment", "Treatment", "Conversion", "Clinical treatment", "Dissection", "Gene expression" ]
           },
           "protocol_ontology": {

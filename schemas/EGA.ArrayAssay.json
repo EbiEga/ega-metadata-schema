@@ -41,13 +41,13 @@
       "sample_number": {
         "type": "integer",
         "title": "Number of samples of the ArrayAssay",
-        "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labeled differently). One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation)."
+        "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation)."
       },
 
       "sample_Labels": {
         "type": "array",
         "title": "Array of Sample-label pairs of the ArrayAssay",
-        "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labeled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but defining the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but EGA can add as many as required.",
+        "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but defining the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but EGA can add as many as required.",
         "additionalProperties": false,
         "items": [],
         "additionalItems": {
