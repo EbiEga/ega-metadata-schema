@@ -47,7 +47,7 @@
       "sample_Labels": {
         "type": "array",
         "title": "Array of Sample-label pairs of the ArrayAssay",
-        "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labeled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but definying the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but we can add as many as we want.",
+        "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labeled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but definying the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but EGA can add as many as required.",
         "additionalProperties": false,
         "items": [],
         "additionalItems": {
@@ -60,7 +60,7 @@
       "ArrayAssay_relationships": {
         "type": "array",
         "title": "ArrayAssay relationships",
-        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationshipos node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayAssay being linked to a Sample) the EGA. #! Using an empty item list but definying the relatiomship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but we can add as many as we want.",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayAssay being linked to a Sample) the EGA. #! Using an empty item list but definying the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
         "additionalProperties": false,
         "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" },
         "items": []
@@ -69,7 +69,7 @@
       "assay_files": {
         "type": "array",
         "title": "Assay files object from an ArrayAssay",
-        "description": "This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technlogies available for such purpose, the allowed filetypes shall be agred upon and updated accordingly. #! Using an empty item list but definying the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but we can add as many as we want.",
+        "description": "This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technlogies available for such purpose, the allowed filetypes shall be agred upon and updated accordingly. #! Using an empty item list but definying the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.",
         "additionalProperties": false,
         "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" },
         "items": []
@@ -78,7 +78,7 @@
       "arrayAssay_attributes": {
         "type": "array",
         "title": "ArrayAssay custom attributes",
-        "description": "Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but definying the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but we can add as many as we want.",
+        "description": "Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but definying the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
         "additionalProperties": false,
         "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" },
         "items": []
