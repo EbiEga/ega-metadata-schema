@@ -77,7 +77,7 @@
             "type": "string",
             "title": "Filetype [NCIT:C172272]",
             "description": "The nature of the content stored in an electronic file, chosen from a list of CV (e.g. CEL [EFO:0005630] or TSV [NCIT:C164049]).",
-            "enum": ["CEL [EFO:0005630]", "TSV [NCIT:C164049]", "ADF [NCIT:C172213]", "FASTQ [EFO:0004155]", "FASTA [NCIT:C47845]", "SDRF [NCIT:C172211]", "IDF [NCIT:C172212]", "VCF [NCIT:C172216]", "SRA [format:3698]", "SRF [EFO:0004154]", "SFF [EFO:0004156]", "BAM [EFO:0004157]", "CRAM [format:3462]", "XLSX [format:3620]", "CSV [format:3752]"]
+            "enum": ["CEL [EFO:0005630]", "TSV [NCIT:C164049]", "ADF [NCIT:C172213]", "FASTQ [EFO:0004155]", "FASTA [NCIT:C47845]", "SDRF [NCIT:C172211]", "IDF [NCIT:C172212]", "VCF [NCIT:C172216]", "SRA [format:3698]", "SRF [EFO:0004154]", "SFF [EFO:0004156]", "BAM [EFO:0004157]", "CRAM [format:3462]", "XLSX [format:3620]", "CSV [format:3752]", "BED [format:3003]", "IDAT [format:3578 ]", "MAP [format:3285]", "PED [format:3286]", "BIM", "FAM"]
           },
           "checksum_method": {
             "type": "string",
