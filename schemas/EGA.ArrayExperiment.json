@@ -35,33 +35,96 @@
         "description": "An in-depth description of the biological relevance and intent of the ArrayExperiment, including the experimental workflow."
       },
       "technology": {
-        "type": "string",
+        "type": "object",
         "title": "Microarray technology of the ArrayExperiment [EFO:0002698]",
-        "description": "Microarray technology applicable for the ArrayExperiment (e.g. One-colour microarray [EFO:0010939], Two-colour microarray [NCIT:C116153], Protein microarray [EFO:0002702]...)",
-        "enum": ["One-colour microarray [EFO:0010939]", "Two-colour microarray [NCIT:C116153]", "Methylation microarray [NCIT:C165222]", "Protein microarray [EFO:0002702]", "Metabolomic microarray [#!]", "Single Nucleotide Polymorphism Array [NCIT:C116151]", "Tissue Microarray [NCIT:C19922]"]
+        "description": "Microarray technology applicable for the ArrayExperiment. It contains both the ID  (e.g. One-colour microarray) and the CURIE  (e.g. EFO:0010939) of the technology.",
+        "required": ["technology_id"],
+        "additionalProperties": false,
+        "properties": {
+          "technology_id": {
+            "type": "string",
+            "title": "Microarray technology of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. Two-colour microarray), chosen from a list of CVs, of the microarray technology used at the ArrayExperiment.",
+            "enum": ["One-colour microarray", "Two-colour microarray", "Methylation microarray", "Protein microarray", "Metabolomic microarray", "Single Nucleotide Polymorphism Array", "Tissue Microarray"]
+          },
+          "technology_curie": {
+            "type": "string",
+            "title": "Microarray technology of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C116153), chosen from a list of CVs, of the microarray technology used at the ArrayExperiment.",
+            "enum": ["EFO:0010939", "NCIT:C116153", "NCIT:C165222", "EFO:0002702", "Metabolomic microarray", "NCIT:C116151", "NCIT:C19922"]
+          }
+        }
       },
       "array_label": {
-        "type": "string",
+        "type": "array",
         "title": "Array label of the ArrayExperiment [EFO:0000562]",
-        "description": "Chemicals (e.g. 'Cy3 fluorescent dye' or 'Biotin [CHEBI:15956]') conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that we take into account dual labelled arrays."
+        "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
+        "additionalProperties": false,
+        "items": [],
+        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" }
       },
       "experimental_design": {
-        "type": "string",
+        "type": "object",
         "title": "Experimental design of the ArrayExperiment [EFO:0001426]",
-        "description": "Experimental factor, chosen from a list of CV (e.g. RNA stability design [EFO:0001783], binding site identification design [EFO:0004664], case control design [EFO:0001427]), describing the method of investigating particular types of research questions or solving particular types of problems.",
-        "enum": ["RNA stability design [EFO:0001783]", "binding site identification design [EFO:0004664]", "case control design [EFO:0001427]", "cell component comparison design [EFO:0001743]", "cell cycle design [EFO:0001744]", "cell type comparison design [EFO:0001745]", "cellular modification design [EFO:0004666]", "clinical history design [EFO:0001780]", "compound treatment design [EFO:0001755]", "cross sectional design [EFO:0001428]", "development or differentiation design [EFO:0001746]", "disease state design [EFO:0001756]", "dose response design [EFO:0001757]", "twin design [EFO:0001431]", "genetic modification design [EFO:0001758]", "genotype design [EFO:0001748]", "growth condition design [EFO:0001759]", "imprinting design [EFO:0001747]", "injury design [EFO:0001760]", "innate behavior design [EFO:0001749]", "organism part comparison design [EFO:0001750]", "organism status design [EFO:0001751]", "pathogenicity design [EFO:0001761]", "population based design [EFO:0001430]", "sex design [EFO:0001752]", "species design [EFO:0001753]", "stimulus or stress design [EFO:0001762]", "strain or line design [EFO:0001754]", "time series design [EFO:0001779]"]
+        "description": "Experimental factor describing the method of investigating particular types of research questions or solving particular types of problems. It contains both the human readable ID (e.g. RNA stability design) and CURIE (e.g. EFO:0001783) of the experimental design.",
+        "required": ["experimental_design_id"],
+        "additionalProperties": false,
+        "properties": {
+          "experimental_design_id": {
+            "type": "string",
+            "title": "Experimental design of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. RNA stability design), chosen from a list of CVs, of the experimental design defining the ArrayExperiment.",
+            "enum": ["RNA stability design", "binding site identification design", "case control design", "cell component comparison design", "cell cycle design", "cell type comparison design", "cellular modification design", "clinical history design", "compound treatment design", "cross sectional design", "development or differentiation design", "disease state design", "dose response design", "twin design", "genetic modification design", "genotype design", "growth condition design", "imprinting design", "injury design", "innate behavior design", "organism part comparison design", "organism status design", "pathogenicity design", "population based design", "sex design", "species design", "stimulus or stress design", "strain or line design", "time series design"]
+          },
+          "experimental_design_curie": {
+            "type": "string",
+            "title": "Experimental design of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0001783), chosen from a list of CVs, of the experimental design defining the ArrayExperiment",
+            "enum": ["EFO:0001783", "EFO:0004664", "EFO:0001427", "EFO:0001743", "EFO:0001744", "EFO:0001745", "EFO:0004666", "EFO:0001780", "EFO:0001755", "EFO:0001428", "EFO:0001746", "EFO:0001756", "EFO:0001757", "EFO:0001431", "EFO:0001758", "EFO:0001748", "EFO:0001759", "EFO:0001747", "EFO:0001760", "EFO:0001749", "EFO:0001750", "EFO:0001751", "EFO:0001761", "EFO:0001430", "EFO:0001752", "EFO:0001753", "EFO:0001762", "EFO:0001754", "EFO:0001779"]
+          }
+        }
       },
       "array_type": {
-        "type": "string",
+        "type": "object",
         "title": "Array type of the ArrayExperiment [EFO:0002696]",
-        "description": "Type of array (not its purpose per se), chosen from a list of CV (e.g. Transcription profiling by array [EFO:0002768]), providing a glimpse of the used technology.",
-        "enum": ["3C [EFO:0007689]", "4C [EFO:0007690]", "ChIP-chip by array [EFO:0002760]", "ChIP-chip by SNP array [EFO:0002764]", "ChIP-chip by tiling array [EFO:0002762]", "RNAi profiling by array [EFO:0001030]", "Comparative genomic hybridization by array [EFO:0000749]", "Genotyping by array [EFO:0002767]", "Methylation profiling by array [EFO:0002759]", "microRNA profiling by RT-PCR [EFO:0007687]", "microRNA profiling by array [EFO:0000753]", "Proteomic profiling by array [EFO:0002765]", "RIP-chip (RNP immunoprecipitation-chip) by array [EFO:0005517]", "Tiling path by array [EFO:0001031]", "Transcription profiling by array [EFO:0002768]", "Transcription profiling by tiling array [EFO:0002769]", "Translation profiling [EFO:0001033]"]
+        "description": "Type of array (not its purpose per se) providing a glimpse of the used technology. It contains both the human readable ID (e.g. Proteomic profiling by array) and CURIE (e.g. EFO:0002765) of the array type.",
+        "required": ["array_type_id"],
+        "additionalProperties": false,
+        "properties": {
+          "array_type_id": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. Proteomic profiling by array), chosen from a list of CVs, of the array type used at the ArrayExperiment.",
+            "enum": ["3C", "4C", "ChIP-chip by array", "ChIP-chip by SNP array", "ChIP-chip by tiling array", "RNAi profiling by array", "Comparative genomic hybridization by array", "Genotyping by array", "Methylation profiling by array", "microRNA profiling by RT-PCR", "microRNA profiling by array", "Proteomic profiling by array", "RIP-chip (RNP immunoprecipitation-chip) by array", "Tiling path by array", "Transcription profiling by array", "Transcription profiling by tiling array", "Translation profiling"]
+          },
+          "array_type_curie": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0002765), chosen from a list of CVs, of the array type used at the ArrayExperiment.",
+            "enum": ["EFO:0007689", "EFO:0007690", "EFO:0002760", "EFO:0002764", "EFO:0002762", "EFO:0001030", "EFO:0000749", "EFO:0002767", "EFO:0002759", "EFO:0007687", "EFO:0000753", "EFO:0002765", "EFO:0005517", "EFO:0001031", "EFO:0002768", "EFO:0002769", "EFO:0001033"]
+          }
+        }
       },
       "assayed_molecule": {
-        "type": "string",
+        "type": "object",
         "title": "Assayed molecule in the ArrayExperiment [EFO:0002772]",
-        "description": "Type of molecule assayed, chosen from a list of CV (e.g. DNA assay [EFO:0001456] or RNA assay [EFO:0001457]).",
-        "enum": ["DNA assay [EFO:0001456]", "RNA assay [EFO:0001457]", "Metabolomic profiling [EFO:0000752]", "Protein assay [EFO:0001458]"]
+        "description": "Type of molecule assayed. It contains both the human readable ID (e.g. DNA assay) and CURIE (e.g. EFO:0001456) of the assayed molecule.",
+        "required": ["assayed_molecule_id"],
+        "additionalProperties": false,
+        "properties": {
+          "assayed_molecule_id": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. DNA assay), chosen from a list of CVs, of the assayed molecule.",
+            "enum": ["DNA assay", "RNA assay", "Metabolomic profiling", "Protein assay"]
+          },
+          "assayed_molecule_curie": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0001456), chosen from a list of CVs, of the assayed molecule.",
+            "enum": ["EFO:0001456", "EFO:0001457", "EFO:0000752", "EFO:0001458"]
+          }
+        }
       },
       "ADF_files": {
         "type": "array",

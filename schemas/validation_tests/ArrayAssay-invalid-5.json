@@ -5,7 +5,7 @@
         "accession": "EGAA00000000001"
     },
     "arrayAssay_center": "EBI-TEST",
-    "arrayAssay_date": "2021-06-24",
+    "arrayAssay_date": "2221-06-24",
     "sample_number": 2,
     "sample_labels": [
         {
@@ -69,8 +69,8 @@
                 "checksum_method_id": "MD5",
                 "checksum_method_curie": "NCIT:C171276"                
             },
-            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375c7b",
-            "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375b7b"
+            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
+            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
         },
         {
             "filename": "myfile2.fasta",
@@ -82,7 +82,7 @@
                 "checksum_method_id": "SHA-256",
                 "checksum_method_curie": "NCIT:C80226"                
             },
-            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375j7b",
+            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b",
             "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
         }
     ],

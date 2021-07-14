@@ -44,16 +44,37 @@
         "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation)."
       },
 
-      "sample_Labels": {
+      "sample_labels": {
         "type": "array",
         "title": "Array of Sample-label pairs of the ArrayAssay",
         "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but defining the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but EGA can add as many as required.",
         "additionalProperties": false,
         "items": [],
         "additionalItems": {
-          "type": "string",
-          "title": "Sample-label pair",
-          "pattern": "^EGAN\\d{11}:[a-zA-Z0-9 ]+$"
+          "type": "object",
+          "title": "Repeatable Sample-label node",
+          "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from object_coreIDs - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
+          "required": ["label", "object_ids"],
+          "additionalProperties": false,
+          "properties": {
+            "label": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" },
+            "object_ids": {
+              "type": "object",
+              "title": "Object's IDs block",
+              "allOf": [
+                {
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreIDs"
+                },
+                {
+                  "properties": {
+                    "accession": {
+                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
+                    }
+                  }
+                }
+              ]       
+            }
+          }
         }
       },
 

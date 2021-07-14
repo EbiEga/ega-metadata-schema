@@ -7,17 +7,42 @@
     "arrayAssay_center": "EBI-TEST",
     "arrayAssay_date": "2021-06-24",
     "sample_number": 2,
-    "sample_Labels": ["EGAN00000000001:Cy3", "EGAN00000000002:Biotin"],
+    "sample_labels": [
+        {
+            "label": {
+                "array_label_id": "Biotin",
+                "array_label_curie": "CHEBI:15956"
+                },
+            "object_ids": {
+                "accession": "EGAN00000000001"
+            }
+        },
+        {
+            "label": {
+                "array_label_id": "Cy3",
+                "array_label_curie": "CHEBI:37987"
+                },
+            "object_ids": {
+                "alias": "MySample_23",
+                "center_name": "EBI-TEST"
+            }
+        }
+    ],
     "ArrayAssay_relationships": [
         {
-            "r_type": "Referenced_in",
+            "r_type": {
+                "r_type_id": "Referenced_in"
+            },
             "r_source": "EGAA00002045411",
             "r_sourceType": "ArrayAssay",
             "r_target": "EGAE00000000001", 
             "r_targetType": "ArrayExperiment"
         },
         {
-            "r_type": "Same_as [NCIT:C64637]",
+            "r_type": {
+                "r_type_id": "Same_as",
+                "r_type_curie": "NCIT:C64637"
+            },
             "r_source": "EGAA00000000001",
             "r_sourceType": "ArrayAssay",
             "r_target": "EGAA00000000002", 
@@ -26,7 +51,9 @@
         {
             "r_source": "EGAN00000000001",
             "r_sourceType": "sample",
-            "r_type": "Referenced_in",
+            "r_type": {
+                "r_type_id": "Referenced_in"
+            },
             "r_target": "EGAA00000000001", 
             "r_targetType": "ArrayAssay"
         }
@@ -34,17 +61,29 @@
     "assay_files": [
         {
             "filename": "myfile1.cel",
-            "filetype": "CEL [EFO:0005630]",
-            "checksum_method": "MD5 [NCIT:C171276]",
+            "filetype": {
+                "filetype_id": "CEL",
+                "filetype_curie": "EFO:0005630"
+            },
+            "checksum_method": {
+                "checksum_method_id": "MD5",
+                "checksum_method_curie": "NCIT:C171276"                
+            },
             "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
             "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
         },
         {
-            "filename": "myfile2.cel",
-            "filetype": "CEL [EFO:0005630]",
-            "checksum_method": "MD5 [NCIT:C171276]",
-            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64453",
-            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64323"
+            "filename": "myfile2.fasta",
+            "filetype": {
+                "filetype_id": "FASTA",
+                "filetype_curie": "NCIT:C47845"
+            },
+            "checksum_method": {
+                "checksum_method_id": "SHA-256",
+                "checksum_method_curie": "NCIT:C80226"                
+            },
+            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b",
+            "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
         }
     ],
     "arrayAssay_attributes": [

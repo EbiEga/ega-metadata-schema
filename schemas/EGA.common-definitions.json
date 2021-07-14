@@ -29,7 +29,7 @@
           }
         },
         "anyOf": [
-          { "required": ["alias"]},
+          { "required": ["alias", "center_name"]},
           { "required": ["accession"]}
         ]
 
@@ -74,17 +74,45 @@
             "pattern": "^[^<>:;,?\"*|/]+$"
           },
           "filetype": {
-            "type": "string",
+            "type": "object",
             "title": "Filetype [NCIT:C172272]",
-            "description": "The nature of the content stored in an electronic file, chosen from a list of CV (e.g. CEL [EFO:0005630] or TSV [NCIT:C164049]).",
-            "enum": ["CEL [EFO:0005630]", "TSV [NCIT:C164049]", "ADF [NCIT:C172213]", "FASTQ [EFO:0004155]", "FASTA [NCIT:C47845]", "SDRF [NCIT:C172211]", "IDF [NCIT:C172212]", "VCF [NCIT:C172216]", "SRA [format:3698]", "SRF [EFO:0004154]", "SFF [EFO:0004156]", "BAM [EFO:0004157]", "CRAM [format:3462]", "XLSX [format:3620]", "CSV [format:3752]", "BED [format:3003]", "IDAT [format:3578 ]", "MAP [format:3285]", "PED [format:3286]", "BIM", "FAM"]
+            "description": "The nature of the content stored in an electronic file. Contains up to two properties, the name (e.g. CEL or TSV) and the CURIE (e.g. EFO:0005630 or NCIT:C164049), chosen from a list of CVs.",
+            "additionalProperties": false,
+            "properties": {
+              "filetype_id": {
+                "type": "string",
+                "title": "Filetype ID",
+                "description": "The ID or name (e.g. FASTA or TSV) associated with the given filetype.",
+                "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM"]
+              },
+              "filetype_curie": {
+                "type": "string",
+                "title": "Filetype CURIE",
+                "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C47845 or NCIT:C164049) associated with the given filetype.",
+                "enum": ["EFO:0005630", "NCIT:C164049", "NCIT:C172213", "EFO:0004155", "NCIT:C47845", "NCIT:C172211", "NCIT:C172212", "NCIT:C172216", "format:3698", "EFO:0004154", "EFO:0004156", "EFO:0004157", "format:3462", "format:3620", "format:3752", "format:3003", "format:3578 ", "format:3285", "format:3286"]
+              }
+            }
           },
           "checksum_method": {
-            "type": "string",
+            "type": "object",
             "title": "Checksum method [ChecksumAlgorithm]",
-            "description": "The method, chosen from a list of CV (MD5 [NCIT:C171276] and SHA-256 [NCIT:C80226]), which yields the checksum from a data input for the purpose of detecting errors.",
-            "enum": ["MD5 [NCIT:C171276]", "SHA-256 [NCIT:C80226]"],
-            "default": "MD5 [NCIT:C171276]"
+            "description": "Node containing both the ID (MD5 or SHA-256) and the CURIE (NCIT:C171276 or NCIT:C80226), describing the method which yields the checksum from a data input for the purpose of detecting errors.",
+            "additionalProperties": false,
+            "properties": {
+              "checksum_method_id": {
+                "type": "string",
+                "title": "Checksum method ID",
+                "description": "The ID or name (MD5 or SHA-256) associated with the used checksum method.",
+                "enum": ["MD5", "SHA-256"],
+                "default": "MD5"
+              },
+              "checksum_method_curie": {
+                "type": "string",
+                "title": "Checksum method CURIE",
+                "description": "The CURIE (i.e. ontologized term - NCIT:C171276 or NCIT:C80226) associated with the used checksum method.",
+                "enum": ["NCIT:C171276", "NCIT:C80226"]
+              }
+            }
           },
           "unencrypted_checksum": {
             "type": "string",
@@ -111,7 +139,14 @@
             "if": {
               "required": [ "checksum_method" ],
               "properties": {
-                "checksum_method": { "enum": ["MD5 [NCIT:C171276]"] }
+                "checksum_method": { 
+                  "required": [ "checksum_method_id" ],
+                  "properties": {
+                    "checksum_method_id": {
+                      "enum": ["MD5"]
+                    } 
+                  } 
+                }
               }
             },
             "then": {
@@ -135,12 +170,31 @@
         "title": "EGA Relationships object",
         "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.",
         "required": ["r_type", "r_source", "r_sourceType", "r_target", "r_targetType"],
+        "additionalProperties": false,
         "properties": {
           "r_type": {
-            "type": "string",
+            "type": "object",
             "title": "Type of the relationship",
-            "description": "The Type of the relationship, chosen from a list of CV (e.g. Same_as [NCIT:C64637] or Develops_from [RO:0002202]), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
-            "enum": ["Referenced_in", "Develops_from [RO:0002202]", "Same_as [NCIT:C64637]", "Member_of [RO:0002350]", "Grouped_with", "Family_relationship_with [EFO:0004424]", "Child_of [GSSO:000728]", "Parent_of [GSSO:001986]", "Is_after [SIO:000211]", "Published_in [EFO:0001796]", "Submitted_by [NCIT:C25695]", "Contact_of", "Main_contact_of"]
+            "description": "The Type of the relationship, containing both its ID (e.g. Same_as and the CURIE (e.g. NCIT:C64637), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
+            "anyOf": [
+              { "required": ["r_type_id"] },
+              { "required": ["r_type_curie"] }
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "r_type_id": {
+                "type": "string",
+                "title": "Type of the relationship - ID",
+                "description": "The human readable ID (e.g. Same_as), chosen from a list of CVs, of the type of the relationship.",
+                "enum": ["Referenced_in", "Develops_from", "Same_as", "Member_of", "Grouped_with", "Family_relationship_with", "Child_of", "Parent_of", "Is_after", "Published_in", "Submitted_by", "Contact_of", "Main_contact_of"]
+              },
+              "r_type_curie": {
+                "type": "string",
+                "title": "Type of the relationship - CURIE",
+                "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C64637), chosen from a list of CVs, of the type of the relationship.",
+                "enum": ["RO:0002202", "NCIT:C64637", "RO:0002350", "EFO:0004424", "GSSO:000728", "GSSO:001986", "SIO:000211", "EFO:0001796", "NCIT:C25695"]
+              }
+            }
           },
           "r_source": {
             "type": "string",
@@ -162,7 +216,7 @@
             "type": "string",
             "title": "Type of the relationship's target",
             "description": "Type of the relationship's target, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The target type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"]            
+            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"]
           }
         },
         "allOf": [
@@ -177,6 +231,7 @@
         "title": "EGA Protocols object",
         "description": "Object containing the base metadata attributes of a Protocol object in the EGA. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
         "required": ["protocol_type", "protocol_ontology", "protocol_description"],
+        "additionalProperties": false,
         "properties": {
           "protocol_name": {
             "type": "string",
@@ -192,8 +247,8 @@
           "protocol_ontology": {
             "type": "string",
             "title": "Name of the protocol type [NCIT:C21270]",
-            "description": "Ontology term (e.g. '[EFO:0005518]') of the Type of protocol.",
-            "enum": ["[EFO:0005518]",  "[EFO:0002944]",  "[EFO:0003813]",  "[EFO:0003815]",  "[EFO:0003814]",  "[EFO:0004184]",  "[EFO:0003789]",  "[EFO:0009088]", "[EFO:0009089]", "[EFO:0003969]", "[EFO:0005520]", "[EFO:0000355]", "[EFO:0005519]", "[EFO:0003788]" ]
+            "description": "Ontology term (e.g. 'EFO:0005518') of the Type of protocol.",
+            "enum": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788" ]
           },
           "protocol_description": {
             "type": "string",
@@ -201,6 +256,26 @@
             "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated by anyone who is granted access."
           }
         }
+      },
+
+      "array_label": {
+        "type": "object",
+          "title": "Repeatable array_label node",
+          "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.",
+          "required": ["array_label_id"],
+          "additionalProperties": false,
+          "properties": {
+            "array_label_id": {
+              "type": "string",
+              "title": "Array label of the ArrayExperiment - ID",
+              "description": "Human readable ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment."
+            },
+            "array_label_curie": {
+              "type": "string",
+              "title": "Array label of the ArrayExperiment - CURIE",
+              "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment."
+            }
+          } 
       },
 
       "relationships-source-patternCheck": {
