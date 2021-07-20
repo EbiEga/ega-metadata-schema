@@ -1,0 +1,105 @@
+{
+    "object_id": {
+        "alias" : "MyArrayAssay", 
+        "center_name" : "EBI-TEST",
+        "accession": "EGAA00000000001"
+    },
+    "arrayAssay_center": "EBI-TEST",
+    "arrayAssay_date": "2021-06-24",
+    "sample_number": 2,
+    "sample_labels": [
+        {
+            "label": {
+                "array_label_id": "Biotin",
+                "array_label_curie": "CHEBI:15956"
+                },
+            "object_id": {
+                "accession": "EGAN00000000001"
+            }
+        },
+        {
+            "label": {
+                "array_label_id": "Cy3",
+                "array_label_curie": "CHEBI:37987"
+                },
+            "object_id": {
+                "alias": "MySample_23",
+                "center_name": "EBI-TEST"
+            }
+        }
+    ],
+    "ArrayAssay_relationships": [
+        {
+            "r_type": {
+                "r_type_id": "Referenced_in"
+            },
+            "r_source": "EGAA00002045411",
+            "r_sourceType": "ArrayAssay",
+            "r_target": "EGAE00000000001", 
+            "r_targetType": "ArrayExperiment"
+        },
+        {
+            "r_type": {
+                "r_type_id": "Same_as",
+                "r_type_curie": "NCIT:C64637"
+            },
+            "r_source": "EGAA00000000001",
+            "r_sourceType": "ArrayAssay",
+            "r_target": "EGAA00000000002", 
+            "r_targetType": "ArrayAssay"
+        },
+        {
+            "r_source": "EGAN00000000001",
+            "r_sourceType": "sample",
+            "r_type": {
+                "r_type_id": "Referenced_in"
+            },
+            "r_target": "EGAA00000000001", 
+            "r_targetType": "ArrayAssay"
+        }
+    ],
+    "assay_files": [
+        {
+            "filename": "myfile1.cel",
+            "filetype": {
+                "filetype_id": "CEL",
+                "filetype_curie": "EFO:0005630"
+            },
+            "checksum_method": {
+                "checksum_method_id": "MD5",
+                "checksum_method_curie": "NCIT:C171275"                
+            },
+            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
+            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
+        },
+        {
+            "filename": "myfile2.fasta",
+            "filetype": {
+                "filetype_id": "FASTA",
+                "filetype_curie": "NCIT:C47845"
+            },
+            "checksum_method": {
+                "checksum_method_id": "SHA-256",
+                "checksum_method_curie": "NCIT:C80226"                
+            },
+            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b",
+            "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
+        }
+    ],
+    "arrayAssay_attributes": [
+        {
+            "tag": "weather_outside",
+            "value": "chilly and cloudy"
+            },
+        {
+            "units": "time_spent",
+            "tag": "14",
+            "value": "hours"
+            },
+        {
+            "units": "GBP",
+            "tag": "assay_price",
+            "value": "800"
+            }
+    ]
+}

@@ -1,0 +1,172 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json",
+    "type": "object",
+    "title": "EGA ArrayExperiment metadata schema",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object. This objects is intended to be similar to the Experiment metadata object from ENA, but containing metadata from an Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "technology", "array_label", "experimental_design", "array_type", "assayed_molecule"],
+    "additionalProperties": false,
+    "properties": {
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_coreID) by adding a pattern check based on this schema's nature: an ArrayExperiment (by using EGA-ArrayExperiment-id-pattern)", 
+        "allOf": [
+          {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreID"
+          },
+          {
+            "properties": {
+              "accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ArrayExperiment-id-pattern"
+              }
+            }
+          }
+        ]
+      },    
+      "title": {
+        "type": "string",
+        "title": "Title of the ArrayExperiment",
+        "description": "An informative experiment title that should serve as an overview of the experiment, including: used technology, samples, purpose... (e.g. Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls). This short text can be used to call out ArrayExperiment records in searches or in displays. This element is technically optional but should be used for all new records."
+      },
+      "description": {
+        "type": "string",
+        "title": "Description of the ArrayExperiment",
+        "description": "An in-depth description of the biological relevance and intent of the ArrayExperiment, including the experimental workflow."
+      },
+      "technology": {
+        "type": "object",
+        "title": "Microarray technology of the ArrayExperiment [EFO:0002698]",
+        "description": "Microarray technology applicable for the ArrayExperiment. It contains both the ID  (e.g. One-colour microarray) and the CURIE  (e.g. EFO:0010939) of the technology.",
+        "required": ["technology_id"],
+        "additionalProperties": false,
+        "properties": {
+          "technology_id": {
+            "type": "string",
+            "title": "Microarray technology of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. Two-colour microarray), chosen from a list of CVs, of the microarray technology used at the ArrayExperiment.",
+            "enum": ["One-colour microarray", "Two-colour microarray", "Methylation microarray", "Protein microarray", "Metabolomic microarray", "Single Nucleotide Polymorphism Array", "Tissue Microarray"]
+          },
+          "technology_curie": {
+            "type": "string",
+            "title": "Microarray technology of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C116153), chosen from a list of CVs, of the microarray technology used at the ArrayExperiment.",
+            "enum": ["EFO:0010939", "NCIT:C116153", "NCIT:C165222", "EFO:0002702", "Metabolomic microarray", "NCIT:C116151", "NCIT:C19922"]
+          }
+        }
+      },
+      "array_label": {
+        "type": "array",
+        "title": "Array label of the ArrayExperiment [EFO:0000562]",
+        "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
+        "additionalProperties": false,
+        "items": [],
+        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" }
+      },
+      "experimental_design": {
+        "type": "object",
+        "title": "Experimental design of the ArrayExperiment [EFO:0001426]",
+        "description": "Experimental factor describing the method of investigating particular types of research questions or solving particular types of problems. It contains both the human readable ID (e.g. RNA stability design) and CURIE (e.g. EFO:0001783) of the experimental design.",
+        "required": ["experimental_design_id"],
+        "additionalProperties": false,
+        "properties": {
+          "experimental_design_id": {
+            "type": "string",
+            "title": "Experimental design of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. RNA stability design), chosen from a list of CVs, of the experimental design defining the ArrayExperiment.",
+            "enum": ["RNA stability design", "binding site identification design", "case control design", "cell component comparison design", "cell cycle design", "cell type comparison design", "cellular modification design", "clinical history design", "compound treatment design", "cross sectional design", "development or differentiation design", "disease state design", "dose response design", "twin design", "genetic modification design", "genotype design", "growth condition design", "imprinting design", "injury design", "innate behavior design", "organism part comparison design", "organism status design", "pathogenicity design", "population based design", "sex design", "species design", "stimulus or stress design", "strain or line design", "time series design"]
+          },
+          "experimental_design_curie": {
+            "type": "string",
+            "title": "Experimental design of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0001783), chosen from a list of CVs, of the experimental design defining the ArrayExperiment",
+            "enum": ["EFO:0001783", "EFO:0004664", "EFO:0001427", "EFO:0001743", "EFO:0001744", "EFO:0001745", "EFO:0004666", "EFO:0001780", "EFO:0001755", "EFO:0001428", "EFO:0001746", "EFO:0001756", "EFO:0001757", "EFO:0001431", "EFO:0001758", "EFO:0001748", "EFO:0001759", "EFO:0001747", "EFO:0001760", "EFO:0001749", "EFO:0001750", "EFO:0001751", "EFO:0001761", "EFO:0001430", "EFO:0001752", "EFO:0001753", "EFO:0001762", "EFO:0001754", "EFO:0001779"]
+          }
+        }
+      },
+      "array_type": {
+        "type": "object",
+        "title": "Array type of the ArrayExperiment [EFO:0002696]",
+        "description": "Type of array (not its purpose per se) providing a glimpse of the used technology. It contains both the human readable ID (e.g. Proteomic profiling by array) and CURIE (e.g. EFO:0002765) of the array type.",
+        "required": ["array_type_id"],
+        "additionalProperties": false,
+        "properties": {
+          "array_type_id": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. Proteomic profiling by array), chosen from a list of CVs, of the array type used at the ArrayExperiment.",
+            "enum": ["3C", "4C", "ChIP-chip by array", "ChIP-chip by SNP array", "ChIP-chip by tiling array", "RNAi profiling by array", "Comparative genomic hybridization by array", "Genotyping by array", "Methylation profiling by array", "microRNA profiling by RT-PCR", "microRNA profiling by array", "Proteomic profiling by array", "RIP-chip (RNP immunoprecipitation-chip) by array", "Tiling path by array", "Transcription profiling by array", "Transcription profiling by tiling array", "Translation profiling"]
+          },
+          "array_type_curie": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0002765), chosen from a list of CVs, of the array type used at the ArrayExperiment.",
+            "enum": ["EFO:0007689", "EFO:0007690", "EFO:0002760", "EFO:0002764", "EFO:0002762", "EFO:0001030", "EFO:0000749", "EFO:0002767", "EFO:0002759", "EFO:0007687", "EFO:0000753", "EFO:0002765", "EFO:0005517", "EFO:0001031", "EFO:0002768", "EFO:0002769", "EFO:0001033"]
+          }
+        }
+      },
+      "assayed_molecule": {
+        "type": "object",
+        "title": "Assayed molecule in the ArrayExperiment [EFO:0002772]",
+        "description": "Type of molecule assayed. It contains both the human readable ID (e.g. DNA assay) and CURIE (e.g. EFO:0001456) of the assayed molecule.",
+        "required": ["assayed_molecule_id"],
+        "additionalProperties": false,
+        "properties": {
+          "assayed_molecule_id": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - ID",
+            "description": "The human readable ID (e.g. DNA assay), chosen from a list of CVs, of the assayed molecule.",
+            "enum": ["DNA assay", "RNA assay", "Metabolomic profiling", "Protein assay"]
+          },
+          "assayed_molecule_curie": {
+            "type": "string",
+            "title": "Array type of the ArrayExperiment - CURIE",
+            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0001456), chosen from a list of CVs, of the assayed molecule.",
+            "enum": ["EFO:0001456", "EFO:0001457", "EFO:0000752", "EFO:0001458"]
+          }
+        }
+      },
+      "ADF_files": {
+        "type": "array",
+        "title": "Array Design Format (ADF) [NCIT:C172213] file block",
+        "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. This object shall only be used if the EGA is the one storing such file. Otherwise, the Relationships object shall be used to point from the ArrayExperiment to the ADF submitted elsewhere. #! Using an empty item list but defining the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.",
+        "additionalProperties": false,
+        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" },
+        "items": []
+      },
+      "sample_number": {
+        "type": "integer",
+        "title": "Number of samples of the ArrayExperiment",
+        "description": "Number of samples included in the experiment. One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation)."
+      },
+
+      "ArrayExperiment_relationships": {
+        "type": "array",
+        "title": "ArrayExperiment relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
+        "additionalProperties": false,
+        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" },
+        "items": []
+      },
+
+      "ArrayExperiment_attributes": {
+        "type": "array",
+        "title": "ArrayExperiment custom attributes",
+        "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
+        "additionalProperties": false,
+        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" },
+        "items": []
+      },
+
+      "ArrayExperiment_protocols": {
+        "type": "array",
+        "title": "Protocols related to an ArrayExperiment",
+        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents. #! Using an empty item list but defining the protocols as possible additionalItems we create the correct constraint: anything but a protocol is rejected, but EGA can add as many as required.",
+        "additionalProperties": false,
+        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object" },
+        "items": []
+      }
+
+    }
+      
+  }
