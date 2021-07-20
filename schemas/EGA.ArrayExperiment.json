@@ -4,16 +4,16 @@
     "type": "object",
     "title": "EGA ArrayExperiment metadata schema",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object. This objects is intended to be similar to the Experiment metadata object from ENA, but containing metadata from an Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_ids", "technology", "array_label", "experimental_design", "array_type", "assayed_molecule"],
+    "required": ["object_id", "technology", "array_label", "experimental_design", "array_type", "assayed_molecule"],
     "additionalProperties": false,
     "properties": {
-      "object_ids": {
+      "object_id": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_coreIDs) by adding a pattern check based on this schema's nature: an ArrayExperiment (by using EGA-ArrayExperiment-id-pattern)", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_coreID) by adding a pattern check based on this schema's nature: an ArrayExperiment (by using EGA-ArrayExperiment-id-pattern)", 
         "allOf": [
           {
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreIDs"
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreID"
           },
           {
             "properties": {
