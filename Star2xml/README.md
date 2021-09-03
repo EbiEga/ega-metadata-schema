@@ -163,6 +163,8 @@ Based on the type of metadata objects you want to submit, you shall **fill their
 
 Rows that are completely empty will be discarded, as well as empty values within a non-empty row. In other words, **every empty coordinate of the spreadsheet that is not filled will not appear in the output XML**. 
 
+Please bear in mind that controlled vocabularies (CV - e.g. ``SEQUENCE_VARIATION`` as an Analysis type) are case-sensitive (i.e. ``Sequence_variation`` is considered a different CV). 
+
 ### Row's format
 
 It is important to notice the rows format:
