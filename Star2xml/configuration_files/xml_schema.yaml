@@ -476,18 +476,18 @@ analysis:
               *tx: "SEQUENCE_ASSEMBLY.Name"
             TYPE: # Controlled Vocabulary
               *tx: "SEQUENCE_ASSEMBLY.Type"
+            PARTIAL:
+              *tx: "SEQUENCE_ASSEMBLY.Partial"
             COVERAGE:
               *tx: "SEQUENCE_ASSEMBLY.Coverage"
+            PROGRAM:
+              *tx: "SEQUENCE_ASSEMBLY.Program"
             PLATFORM:
               *tx: "SEQUENCE_ASSEMBLY.Platform"
             MIN_GAP_LENGTH:
               *tx: "SEQUENCE_ASSEMBLY.MinGapLen"
             MOL_TYPE: # Controlled Vocabulary
-              *tx: "SEQUENCE_ASSEMBLY.MoleculeType"
-            PROGRAM:
-              *tx: "SEQUENCE_ASSEMBLY.Program"
-            PARTIAL:
-              *tx: "SEQUENCE_ASSEMBLY.Partial"
+              *tx: "SEQUENCE_ASSEMBLY.MoleculeType"                        
             #! Check if it's worth it to use:
             # TPA:
             #   *tx: "Sequence_Assembly.TPA"
