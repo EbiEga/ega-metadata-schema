@@ -47,7 +47,7 @@ You may want to install the latest versions of this packages and check if it wor
 To install Python dependencies:
 ```bash
 # Step 1. Cloning the tools repository
-git clone git@github.com:EbiEga/ega-metadata-schema.git
+git clone https://github.com/EbiEga/ega-metadata-schema.git
 cd ega-metadata-schema/Star2xml/
 # Step 2. Creating and activating the virtual environment
 virtualenv -p python3 venv_star2xml
@@ -163,6 +163,8 @@ Based on the type of metadata objects you want to submit, you shall **fill their
 
 Rows that are completely empty will be discarded, as well as empty values within a non-empty row. In other words, **every empty coordinate of the spreadsheet that is not filled will not appear in the output XML**. 
 
+Please bear in mind that controlled vocabularies (CV - e.g. ``SEQUENCE_VARIATION`` as an Analysis type) are case-sensitive (i.e. ``Sequence_variation`` is considered a different CV). 
+
 ### Row's format
 
 It is important to notice the rows format:
@@ -223,17 +225,18 @@ If the metadata requirements change and existing fields need to be removed or ne
 
 ## ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) Common issues ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+)
 
-* Missing fields of a repetitive block. In the following example fields ``Value`` and ``Units`` are missing from the first and second ``Tag-Value-Units`` (one of the common *repetition blocks*), respectively. Remember that repeated blocks need to be complete (if there is a ``Tag`` column, its two siblings ``Value`` and ``Units`` need to be there), but you can leave empty such columns for all or some rows, since every empty coordinate of the spreadsheet will be ignored. 
+* **Missing fields of a repetitive block**. In the following example fields ``Value`` and ``Units`` are missing from the first and second ``Tag-Value-Units`` (one of the common *repetition blocks*), respectively. Remember that repeated blocks need to be complete (if there is a ``Tag`` column, its two siblings ``Value`` and ``Units`` need to be there), but you can leave empty such columns for all or some rows, since every empty coordinate of the spreadsheet will be ignored. 
 
 ![2 rows of the sample template - Missing fields](miscellaneous/Sample_template_2rows_incorrect1.png)
 
-* Not using the option `--download_xsd` the first time you try to validate XMLs: the schemas (`.xsd`) will be missing and the tool will throw the following error message:
+* **Not using** the option `--download_xsd` the first time you try to validate XMLs: the schemas (`.xsd`) will be missing and the tool will throw the following error message:
 ``` Bash
 ERROR in check_xml_is_valid(): the schema file 'downloaded_schemasXSD/SRA.sample.xsd' could not be accessed. If you have not downloaded the schema files (.xsd) yet, use '--download_xsd' when running the command.
 ```
-* Line endings being an issue: when using different operating systems (e.g. using Windows Subsystem for Linux) an issue regarding line endings may arise when trying to execute the scripts (_e.g._ `/usr/bin/env: ‘python3\r’: No such file or directory` - notice the `/r` not being handled correctly by the interpreter). If such is the case, there are automatic ways to change all line endings within the scripts, which will solve the issue:
+* **Line endings being an issue**. When using different operating systems (e.g. using Windows Subsystem for Linux) an issue regarding line endings may arise when trying to execute the scripts (_e.g._ `/usr/bin/env: ‘python3\r’: No such file or directory` - notice the `/r` not being handled correctly by the interpreter). If such is the case, there are automatic ways to change all line endings within the scripts, which will solve the issue:
 ``` bash
 sudo apt install dos2unix
 # Within the 'Star2xml/' folder do:
 dos2unix ./*.py
 ```
+* **File permissions not being stablished by default**. In case executable files (e.g. ``star2xml.py``) are not executable by your user (take a look at its permissions - e.g. ``-rw-r--r--``), you will need to amend them manually (e.g. ``chmod u+x star2xml.py``).
