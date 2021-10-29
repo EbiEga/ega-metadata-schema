@@ -134,7 +134,8 @@
           }
         },
         "allOf": [
-          { "$ref": "#/definitions/checksum-pattern-check" }
+          { "$ref": "#/definitions/checksum-pattern-check" },
+          { "$ref": "#/definitions/filename-filetype-pattern-check" }
         ]        
       },
 
@@ -621,8 +622,582 @@
         "type": "string",
         "title": "Pattern of an EGA ISO date (YYYY-MM-DD)",
         "pattern": "^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$"
-      }
+      },
 
+      "filename-filetype-pattern-check": {
+        "type": "object",
+        "title": "Check: filetype checks based on its filename",
+        "description": "This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype_id shall be 'BAM' and not 'XLSX')",
+        "allOf": [
+          {
+            "if": {
+              "description": "CEL Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["CEL"] }
+                  }
+                }
+              }
+            },
+            "then": {
+              "required": [ "filename" ],
+              "properties": {
+                "filename": { "$ref": "#/definitions/cel-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "TSV Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["TSV"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/tsv-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "ADF Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["ADF"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/adf-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "FASTQ Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["FASTQ"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/fastq-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "FASTA Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["FASTA"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/fasta-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "SDRF Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["SDRF"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/sdrf-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "IDF Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["IDF"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/idf-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "VCF Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["VCF"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/vcf-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "SRA Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["SRA"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/sra-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "SRF Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["SRF"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/srf-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "SFF Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["SFF"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/sff-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "BAM Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["BAM"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/bam-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "CRAM Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["CRAM"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/cram-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "XLSX Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["XLSX"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/xlsx-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "CSV Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["CSV"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/csv-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "BED Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["BED"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/bed-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "IDAT Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["IDAT"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/idat-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "MAP Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["MAP"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/map-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "PED Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["PED"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/ped-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "BIM Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["BIM"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/bim-file-filename-pattern" }
+              }
+            }
+          },
+          {
+            "if": {
+              "description": "FAM Filename pattern-check",
+              "required": [ "filetype" ],
+              "properties": {
+                "filetype": {
+                  "required": ["filetype_id"],
+                  "properties": {
+                    "filetype_id": { "enum": ["FAM"] }
+                  }
+                }
+              }
+            },
+            "then": {
+                "required": [ "filename" ],
+                "properties": {
+                  "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
+              }
+            }
+          }
+      ]        
+    },
+
+      "cel-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a CEL file",
+        "description": "This object exists to hold the filename pattern that a 'CEL' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.cel(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "tsv-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a TSV file",
+        "description": "This object exists to hold the filename pattern that a 'TSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.tsv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "adf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a ADF file",
+        "description": "This object exists to hold the filename pattern that a 'ADF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.adf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "fastq-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FASTQ file",
+        "description": "This object exists to hold the filename pattern that a 'FASTQ' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.fastq(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "fasta-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FASTA file",
+        "description": "This object exists to hold the filename pattern that a 'FASTA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.fasta(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "sdrf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SDRF file",
+        "description": "This object exists to hold the filename pattern that a 'SDRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.sdrf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "idf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a IDF file",
+        "description": "This object exists to hold the filename pattern that a 'IDF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.idf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "vcf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a VCF file",
+        "description": "This object exists to hold the filename pattern that a 'VCF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.vcf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "sra-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SRA file",
+        "description": "This object exists to hold the filename pattern that a 'SRA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.sra(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "srf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SRF file",
+        "description": "This object exists to hold the filename pattern that a 'SRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.srf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "sff-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SFF file",
+        "description": "This object exists to hold the filename pattern that a 'SFF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.sff(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "bam-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BAM file",
+        "description": "This object exists to hold the filename pattern that a 'BAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "cram-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a CRAM file",
+        "description": "This object exists to hold the filename pattern that a 'CRAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.cram(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "xlsx-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a XLSX file",
+        "description": "This object exists to hold the filename pattern that a 'XLSX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.xlsx(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "csv-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a CSV file",
+        "description": "This object exists to hold the filename pattern that a 'CSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.csv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "bed-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BED file",
+        "description": "This object exists to hold the filename pattern that a 'BED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bed(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "idat-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a IDAT file",
+        "description": "This object exists to hold the filename pattern that a 'IDAT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.idat(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "map-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a MAP file",
+        "description": "This object exists to hold the filename pattern that a 'MAP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.map(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "ped-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a PED file",
+        "description": "This object exists to hold the filename pattern that a 'PED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.ped(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "bim-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BIM file",
+        "description": "This object exists to hold the filename pattern that a 'BIM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bim(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      },
+
+      "fam-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FAM file",
+        "description": "This object exists to hold the filename pattern that a 'FAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+      }
 
     }    
   }
