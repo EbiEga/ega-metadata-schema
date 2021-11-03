@@ -10,11 +10,17 @@
     "sample_labels": [
         {
             "label": {
-                "array_label_id": 23,
+                "array_label_id": "Biotin",
                 "array_label_curie": "CHEBI:15956"
                 },
             "object_id": {
-                "ega_accession": "EGAN00000000001"
+                "external_accessions": [
+                    {
+                        "external_accession": "SAMEA7616999",
+                        "accession_archive": "biosample",
+                        "accession_label": "test external accession"
+                    }
+                ]
             }
         },
         {

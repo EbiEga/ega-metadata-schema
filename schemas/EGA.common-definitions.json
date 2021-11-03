@@ -22,17 +22,27 @@
             "title": "Center name of the submitter",
             "description": "Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is the acronym of the submitter's account (provided by the HelpDesk team)."
           },
-          "accession" : {
+          "ega_accession": {
             "type": "string",
-            "title": "Accession of the object",
+            "title": "EGA's accession of the object",
             "description": "The object accession (i.e. unique identifier) assigned by the archive (EGA). Object accessions can be found in the 'Identifiers' section of the EGA-archive website (https://ega-archive.org/metadata/how-to-use-the-api) and commonly start with EGA, followed by the distinctive letter of the object and finally the numeric ID of the instance."
+          },
+          "external_accessions": {
+            "type": "array",
+            "title": "External accessions array",
+            "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession" },
+            "items": []
           }
+
         },
         "anyOf": [
           { "required": ["alias", "center_name"]},
-          { "required": ["accession"]}
+          { "required": ["ega_accession"]},
+          { "required": ["external_accessions"]}
         ]
-
       },
 
       "custom_attribute": {
@@ -1042,12 +1052,12 @@
                 }
               }
             },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
+              "then": {
+                  "required": [ "filename" ],
+                  "properties": {
+                    "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
+                  }
               }
-            }
           }
       ]        
     },
@@ -1197,7 +1207,32 @@
         "title": "Filename pattern of a FAM file",
         "description": "This object exists to hold the filename pattern that a 'FAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
-      }
+      },
 
+      "object_external_accession": {
+        "type": "object",
+        "title": "Object of external accession of the object",
+        "description": "External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives, the name of the archive (e.g. biosample, ena, ensembl...) and an optional label.",
+        "additionalProperties": false,
+        "required": ["external_accession", "accession_archive"],
+        "properties": {
+          "external_accession": {
+            "type": ["string", "number"],
+            "title": "External accession of the object",
+            "description": "Unique identifier of the object (e.g. SAMEA7616999), assigned by other archives (e.g. biosample)."
+          },
+          "accession_archive": {
+            "type": "string",
+            "title": "Name of the archive",
+            "description": "Name of the archive (e.g. biosample) from which the external accession is taken.",
+            "enum": ["ensembl", "ena", "pubmed", "protein", "nuccore", "ipg", "nucleotide", "structure", "genome", "annotinfo", "assembly", "bioproject", "biosample", "blastdbinfo", "books", "cdd", "clinvar", "gap", "gapplus", "grasp", "dbvar", "gene", "gds", "geoprofiles", "homologene", "medgen", "mesh", "ncbisearch", "nlmcatalog", "omim", "orgtrack", "pmc", "popset", "proteinclusters", "pcassay", "protfam", "biosystems", "pccompound", "pcsubstance", "seqannot", "snp", "sra", "taxonomy", "biocollections", "gtr"]
+          },
+          "accession_label": {
+            "type": ["string", "number"],
+            "title": "Label of the external accession",
+            "description": "Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier."
+          }
+        }
+      }
     }    
   }

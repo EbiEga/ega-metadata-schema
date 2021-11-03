@@ -2,7 +2,7 @@
     "object_id": {
         "alias" : "MyArrayExperiment_13", 
         "center_name" : "EBI-TEST",
-        "accession": "EGAE0000000001"
+        "ega_accession": "EGAE0000000001"
     },
     "title": "Testing ArrayExperiment title",
     "description": "Broad description of the testing ArrayExperiment",

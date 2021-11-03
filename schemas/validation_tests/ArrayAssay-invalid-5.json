@@ -2,7 +2,7 @@
     "object_id": {
         "alias" : "MyArrayAssay", 
         "center_name" : "EBI-TEST",
-        "accession": "EGAA00000000001"
+        "ega_accession": "EGAA00000000001"
     },
     "arrayAssay_center": "EBI-TEST",
     "arrayAssay_date": "2221-06-24",
@@ -14,7 +14,7 @@
                 "array_label_curie": "CHEBI:15956"
                 },
             "object_id": {
-                "accession": "EGAN00000000001"
+                "ega_accession": "EGAN00000000001"
             }
         },
         {
