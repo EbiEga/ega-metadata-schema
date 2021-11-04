@@ -15,17 +15,20 @@
           "alias": {
             "type": "string",
             "title": "Alias of an object",
-            "description": "Submitter designated name (e.g. 'my_sample_J13') for the object (e.g. Sample). The name must be unique within the submission account (e.g. 'ega-box-79'), since the aliases and submission accounts are concatenated within our database to obtain the unique alias (e.g. 'ega-box-79::my_sample_J13')."
+            "description": "Submitter designated name (e.g. 'my_sample_J13') for the object (e.g. Sample). The name must be unique within the submission account (e.g. 'ega-box-79'), since the aliases and submission accounts are concatenated within our database to obtain the unique alias (e.g. 'ega-box-79::my_sample_J13').",
+            "example": "my_sample_J13"
           },
           "center_name": {
             "type": "string",
             "title": "Center name of the submitter",
-            "description": "Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is the acronym of the submitter's account (provided by the HelpDesk team)."
+            "description": "Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is the acronym of the submitter's account (provided by the HelpDesk team).",
+            "example": "EBI-TEST"
           },
           "ega_accession": {
             "type": "string",
             "title": "EGA's accession of the object",
-            "description": "The object accession (i.e. unique identifier) assigned by the archive (EGA). Object accessions can be found in the 'Identifiers' section of the EGA-archive website (https://ega-archive.org/metadata/how-to-use-the-api) and commonly start with EGA, followed by the distinctive letter of the object and finally the numeric ID of the instance."
+            "description": "The object accession (i.e. unique identifier) assigned by the archive (EGA). Object accessions can be found in the 'Identifiers' section of the EGA-archive website (https://ega-archive.org/metadata/how-to-use-the-api) and commonly start with EGA, followed by the distinctive letter of the object and finally the numeric ID of the instance.",
+            "example": "EGAN00003245489"
           },
           "external_accessions": {
             "type": "array",
@@ -55,17 +58,20 @@
           "tag": {
             "type": "string",
             "title": "Tag of the custom attribute",
-            "description": "The name of the attribute (e.g. 'Age')."
+            "description": "The name of the attribute (e.g. 'Age').",
+            "example": "age"
           },
           "value": {
             "type": ["string", "number"],
             "title": "Value of the custom attribute",
-            "description": "The value of the attribute (e.g. '40')."
+            "description": "The value of the attribute (e.g. '40').",
+            "example": "40"
           },
           "units": {
             "type": "string",
             "title": "Units of the custom attribute",
-            "description": "The optional units of the attribute (e.g. 'years')."
+            "description": "The optional units of the attribute (e.g. 'years').",
+            "example": "years"
           }
         }        
       },
@@ -81,25 +87,30 @@
             "type": "string",
             "title": "Filename [data:1050]",
             "description": "The full name of a file, including all of their file extensions (e.g. .gpg, .md5...), that identifies the file (e.g. 'my-bam-file.bam.gpg').",
-            "pattern": "^[^<>:;,?\"*|/]+$"
+            "pattern": "^[^<>:;,?\"*|/]+$",
+            "example": "my-bam-file.bam.gpg"
           },
           "filetype": {
             "type": "object",
             "title": "Filetype [NCIT:C172272]",
             "description": "The nature of the content stored in an electronic file. Contains up to two properties, the name (e.g. CEL or TSV) and the CURIE (e.g. EFO:0005630 or NCIT:C164049), chosen from a list of CVs.",
+            "required": ["filetype_id"],
             "additionalProperties": false,
             "properties": {
               "filetype_id": {
                 "type": "string",
                 "title": "Filetype ID",
                 "description": "The ID or name (e.g. FASTA or TSV) associated with the given filetype.",
-                "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM"]
+                "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM"],
+                "term-curie-pairs": ["CEL__EFO:0005630", "TSV__NCIT:C164049", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
+                "example": "TSV"
               },
               "filetype_curie": {
                 "type": "string",
                 "title": "Filetype CURIE",
                 "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C47845 or NCIT:C164049) associated with the given filetype.",
-                "enum": ["EFO:0005630", "NCIT:C164049", "NCIT:C172213", "EFO:0004155", "NCIT:C47845", "NCIT:C172211", "NCIT:C172212", "NCIT:C172216", "format:3698", "EFO:0004154", "EFO:0004156", "EFO:0004157", "format:3462", "format:3620", "format:3752", "format:3003", "format:3578 ", "format:3285", "format:3286"]
+                "enum": ["EFO:0005630", "NCIT:C164049", "NCIT:C172213", "EFO:0004155", "NCIT:C47845", "NCIT:C172211", "NCIT:C172212", "NCIT:C172216", "format:3698", "EFO:0004154", "EFO:0004156", "EFO:0004157", "format:3462", "format:3620", "format:3752", "format:3003", "format:3578", "format:3285", "format:3286"],
+                "example": "NCIT:C164049"
               }
             }
           },
@@ -114,13 +125,15 @@
                 "title": "Checksum method ID",
                 "description": "The ID or name (MD5 or SHA-256) associated with the used checksum method.",
                 "enum": ["MD5", "SHA-256"],
-                "default": "MD5"
+                "term-curie-pairs": ["MD5__NCIT:C171276", "SHA-256__NCIT:C80226"],
+                "example": "MD5"
               },
               "checksum_method_curie": {
                 "type": "string",
                 "title": "Checksum method CURIE",
                 "description": "The CURIE (i.e. ontologized term - NCIT:C171276 or NCIT:C80226) associated with the used checksum method.",
-                "enum": ["NCIT:C171276", "NCIT:C80226"]
+                "enum": ["NCIT:C171276", "NCIT:C80226"],
+                "example": "NCIT:C171276"
               }
             }
           },
@@ -128,6 +141,7 @@
             "type": "string",
             "title": "Checksum [NCIT:C43522] of the unencrypted file",
             "description": "A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data, computed from the unencrypted files.",
+            "example": "46798b5cfca45c46a84b7419f8b74735",
             "oneOf": [
               { "$ref": "#/definitions/md5-checksum-pattern"},
               { "$ref": "#/definitions/SHA-256-checksum-pattern"}
@@ -137,6 +151,7 @@
             "type": "string",
             "title": "Checksum [NCIT:C43522] of the encrypted file",
             "description": "A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data, computed from the encrypted files.",
+            "example": "bc527343c7ffc103111f3a694b004e2f",
             "oneOf": [
               { "$ref": "#/definitions/md5-checksum-pattern"},
               { "$ref": "#/definitions/SHA-256-checksum-pattern"}
@@ -159,7 +174,7 @@
           "r_type": {
             "type": "object",
             "title": "Type of the relationship",
-            "description": "The Type of the relationship, containing both its ID (e.g. Same_as and the CURIE (e.g. NCIT:C64637), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
+            "description": "The Type of the relationship, containing both its ID (e.g. same_as and the CURIE (e.g. NCIT:C64637), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
             "anyOf": [
               { "required": ["r_type_id"] },
               { "required": ["r_type_curie"] }
@@ -169,38 +184,45 @@
               "r_type_id": {
                 "type": "string",
                 "title": "Type of the relationship - ID",
-                "description": "The human readable ID (e.g. Same_as), chosen from a list of CVs, of the type of the relationship.",
-                "enum": ["Referenced_in", "Develops_from", "Same_as", "Member_of", "Grouped_with", "Family_relationship_with", "Child_of", "Parent_of", "Is_after", "Published_in", "Submitted_by", "Contact_of", "Main_contact_of"]
+                "description": "The human readable ID (e.g. same_as), chosen from a list of CVs, of the type of the relationship.",
+                "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "parent_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
+                "term-curie-pairs": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "parent_of__GSSO:001986", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
+                "example": "referenced_by"
               },
               "r_type_curie": {
                 "type": "string",
                 "title": "Type of the relationship - CURIE",
                 "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C64637), chosen from a list of CVs, of the type of the relationship.",
-                "enum": ["RO:0002202", "NCIT:C64637", "RO:0002350", "EFO:0004424", "GSSO:000728", "GSSO:001986", "SIO:000211", "EFO:0001796", "NCIT:C25695"]
+                "enum": ["SIO:000252", "RO:0002202", "NCIT:C64637", "RO:0002350", "EFO:0004424", "GSSO:000728", "GSSO:001986", "SIO:000211", "EFO:0001796", "NCIT:C25695", "NCIT:C25461"],
+                "example": "RO:0002202"
               }
             }
           },
           "r_source": {
             "type": "string",
             "title": "Source of the relationship",
-            "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A   develops_from   sample_B' the source is 'sample_A'. The source can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...)."
+            "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A   develops_from   sample_B' the source is 'sample_A'. The source can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...).",
+            "example": "EGAN00003245489"
           },
           "r_sourceType": {
             "type": "string",
             "title": "Type of the relationship's source",
             "description": "Type of the relationship's source, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The source type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"]
+            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
+            "example": "sample"
           },
           "r_target": {
             "type": "string",
             "title": "Target of the relationship",
-            "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A   develops_from   sample_B' the target is 'sample_B'. The target can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...)."
+            "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A   develops_from   sample_B' the target is 'sample_B'. The target can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...).",
+            "example": "EGAX00002189113"
           },
           "r_targetType": {
             "type": "string",
             "title": "Type of the relationship's target",
             "description": "Type of the relationship's target, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The target type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"]
+            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
+            "example": "experiment"
           }
         },
         "allOf": [
@@ -214,30 +236,35 @@
         "type": "object",
         "title": "EGA Protocols object",
         "description": "Object containing the base metadata attributes of a Protocol object in the EGA. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
-        "required": ["protocol_type", "protocol_ontology", "protocol_description"],
+        "required": ["protocol_type", "protocol_description"],
         "additionalProperties": false,
         "properties": {
           "protocol_name": {
             "type": "string",
             "title": "Name of the protocol [NCIT:C42614]",
-            "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user."
+            "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.",
+            "example": "myProtocol-13"
           },
           "protocol_type": {
             "type": "string",
             "title": "Type of protocol [OBI:0000272] ",
             "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
-            "enum": ["Sample collection",  "Nucleic acid extraction",  "Nucleic acid labeling",  "Nucleic acid hybridization to array",  "Array scanning and feature extraction",  "Nucleic acid library construction",  "Growth",  "Dissociation", "Enrichment", "Treatment", "Conversion", "Clinical treatment", "Dissection", "Gene expression" ]
+            "enum": ["Sample collection",  "Nucleic acid extraction",  "Nucleic acid labeling",  "Nucleic acid hybridization to array",  "Array scanning and feature extraction",  "Nucleic acid library construction",  "Growth",  "Dissociation", "Enrichment", "Treatment", "Conversion", "Clinical treatment", "Dissection", "Gene expression"],
+            "term-curie-pairs": ["Sample collection__EFO:0005518", "Nucleic acid extraction__EFO:0002944", "Nucleic acid labeling__EFO:0003813", "Nucleic acid hybridization to array__EFO:0003815", "Array scanning and feature extraction__EFO:0003814", "Nucleic acid library construction__EFO:0004184", "Growth__EFO:0003789", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Treatment__EFO:0003969", "Conversion__EFO:0005520", "Clinical treatment__EFO:0000355", "Dissection__EFO:0005519", "Gene expression__EFO:0003788"],
+            "example": "Sample collection"
           },
-          "protocol_ontology": {
+          "protocol_curie": {
             "type": "string",
             "title": "Name of the protocol type [NCIT:C21270]",
             "description": "Ontology term (e.g. 'EFO:0005518') of the Type of protocol.",
-            "enum": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788" ]
+            "enum": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788"],
+            "example": "EFO:0005518"
           },
           "protocol_description": {
             "type": "string",
             "title": "Description of the protocol [NCIT:C25365]",
-            "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated by anyone who is granted access."
+            "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated by anyone who is granted access.",
+            "example": "First tilt the cell culture flask... ...and finally let it still for 2 hours."
           }
         }
       },
@@ -246,20 +273,22 @@
         "type": "object",
           "title": "Repeatable array_label node",
           "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.",
-          "required": ["array_label_id"],
+          "required": ["array_label_id", "array_label_curie"],
           "additionalProperties": false,
           "properties": {
             "array_label_id": {
               "type": "string",
               "title": "Array label of the ArrayExperiment - ID",
-              "description": "Human readable ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment."
+              "description": "Human readable ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
+              "example": "Cy3 dye"
             },
             "array_label_curie": {
               "type": "string",
               "title": "Array label of the ArrayExperiment - CURIE",
-              "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment."
+              "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment.",
+              "example": "CHEBI:37987"
             }
-          } 
+          }
       },
 
       "relationships-source-patternCheck": {
@@ -552,86 +581,100 @@
         "type": "string",
         "title": "Checksum pattern obtained by MD5",
         "description": "This object exists to hold the pattern that a checksum would have if it was obtained using the algorithm MD5, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[0-9a-z](?:-?[0-9a-z]){31}$"
+        "pattern": "^[0-9a-z](?:-?[0-9a-z]){31}$",
+        "example": "bc527343c7ffc103111f3a694b004e2f"
       },
 
       "SHA-256-checksum-pattern": {
         "type": "string",
         "title": "Checksum pattern obtained by SHA-256",
         "description": "This object exists to hold the pattern that a checksum would have if it was obtained using the algorithm SHA-256, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[A-Fa-f0-9]{64}$"
+        "pattern": "^[A-Fa-f0-9]{64}$",
+        "example": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
       },
 
       "EGA-experiment-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA experiment's ID (EGAX...)",
-        "pattern": "^EGAX[0-9]{11}$"
+        "pattern": "^EGAX[0-9]{11}$",
+        "example": "EGAX00002189113"
       },
       
       "EGA-study-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA study's ID (EGAS...)",
-        "pattern": "^EGAS[0-9]{11}$"
+        "pattern": "^EGAS[0-9]{11}$",
+        "example": "EGAS00001004508"
       },
 
       "EGA-sample-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA sample's ID (EGAN...)",
-        "pattern": "^EGAN[0-9]{11}$"
+        "pattern": "^EGAN[0-9]{11}$",
+        "example": "EGAN00003245489"
       },
 
       "EGA-submission-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA submission's ID (EGAB...)",
-        "pattern": "^EGAB[0-9]{11}$"
+        "pattern": "^EGAB[0-9]{11}$",
+        "example": "EGAB00001001831"
       },
 
       "EGA-run-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA run's ID (EGAR...)",
-        "pattern": "^EGAR[0-9]{11}$"
+        "pattern": "^EGAR[0-9]{11}$",
+        "example": "EGAR00001314547"
       },
 
       "EGA-dataset-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA dataset's ID (EGAD...)",
-        "pattern": "^EGAD[0-9]{11}$"
+        "pattern": "^EGAD[0-9]{11}$",
+        "example": "EGAD00001004170"
       },
 
       "EGA-analysis-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA analysis's ID (EGAZ...)",
-        "pattern": "^EGAZ[0-9]{11}$"
+        "pattern": "^EGAZ[0-9]{11}$",
+        "example": "EGAZ00001004170"
       },
 
       "EGA-policy-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA policy's ID (EGAP...)",
-        "pattern": "^EGAP[0-9]{11}$"
+        "pattern": "^EGAP[0-9]{11}$",
+        "example": "EGAP00001001831"
       },
 
       "EGA-DAC-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA DAC's ID (EGAC...)",
-        "pattern": "^EGAC[0-9]{11}$"
+        "pattern": "^EGAC[0-9]{11}$",
+        "example": "EGAC00001000908"
       },
 
       "EGA-ArrayExperiment-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA ArrayExperiment's ID (EGAE...)",
-        "pattern": "^EGAE[0-9]{11}$"
+        "pattern": "^EGAE[0-9]{11}$",
+        "example": "EGAE00001004508"
       },
 
       "EGA-ArrayAssay-id-pattern": {
         "type": "string",
         "title": "Pattern of an EGA ArrayAssay's ID (EGAA...)",
-        "pattern": "^EGAA[0-9]{11}$"
+        "pattern": "^EGAA[0-9]{11}$",
+        "example": "EGAA00002189113"
       },
 
       "EGA-ISO-date-YYYY-MM-DD-pattern": {
         "type": "string",
         "title": "Pattern of an EGA ISO date (YYYY-MM-DD)",
-        "pattern": "^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$"
+        "pattern": "^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$",
+        "example": "2021-04-30"
       },
 
       "filename-filetype-pattern-check": {
@@ -1066,147 +1109,168 @@
         "type": "string",
         "title": "Filename pattern of a CEL file",
         "description": "This object exists to hold the filename pattern that a 'CEL' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.cel(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.cel(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.cel.gz.gpg"
       },
 
       "tsv-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a TSV file",
         "description": "This object exists to hold the filename pattern that a 'TSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.tsv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.tsv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.tsv.gz.gpg"
       },
 
       "adf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a ADF file",
         "description": "This object exists to hold the filename pattern that a 'ADF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.adf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.adf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.adf.gz.gpg"
       },
 
       "fastq-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a FASTQ file",
         "description": "This object exists to hold the filename pattern that a 'FASTQ' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.fastq(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.fastq(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.fastq.gz.gpg"
       },
 
       "fasta-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a FASTA file",
         "description": "This object exists to hold the filename pattern that a 'FASTA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.fasta(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.fasta(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.fasta.gz.gpg"
       },
 
       "sdrf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SDRF file",
         "description": "This object exists to hold the filename pattern that a 'SDRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.sdrf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.sdrf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.sdrf.gz.gpg"
       },
 
       "idf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a IDF file",
         "description": "This object exists to hold the filename pattern that a 'IDF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.idf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.idf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.idf.gz.gpg"
       },
 
       "vcf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a VCF file",
         "description": "This object exists to hold the filename pattern that a 'VCF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.vcf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.vcf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.vcf.gz.gpg"
       },
 
       "sra-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SRA file",
         "description": "This object exists to hold the filename pattern that a 'SRA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.sra(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.sra(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.sra.gz"
       },
 
       "srf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SRF file",
         "description": "This object exists to hold the filename pattern that a 'SRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.srf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.srf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.srf.gz.gpg"
       },
 
       "sff-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SFF file",
         "description": "This object exists to hold the filename pattern that a 'SFF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.sff(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.sff(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.sff.gz.gpg"
       },
 
       "bam-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a BAM file",
         "description": "This object exists to hold the filename pattern that a 'BAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.bam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.bam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.bam.arj.gpg"
       },
 
       "cram-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a CRAM file",
         "description": "This object exists to hold the filename pattern that a 'CRAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.cram(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.cram(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.cram.gz.gpg"
       },
 
       "xlsx-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a XLSX file",
         "description": "This object exists to hold the filename pattern that a 'XLSX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.xlsx(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.xlsx(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.xlsx.tar.gpg"
       },
 
       "csv-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a CSV file",
         "description": "This object exists to hold the filename pattern that a 'CSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.csv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.csv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.csv"
       },
 
       "bed-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a BED file",
         "description": "This object exists to hold the filename pattern that a 'BED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.bed(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.bed(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.bed.gz.gpg"
       },
 
       "idat-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a IDAT file",
         "description": "This object exists to hold the filename pattern that a 'IDAT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.idat(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.idat(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.idat.zip"
       },
 
       "map-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a MAP file",
         "description": "This object exists to hold the filename pattern that a 'MAP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.map(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.map(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.map.gpg"
       },
 
       "ped-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a PED file",
         "description": "This object exists to hold the filename pattern that a 'PED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.ped(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.ped(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.ped.gz.gpg"
       },
 
       "bim-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a BIM file",
         "description": "This object exists to hold the filename pattern that a 'BIM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.bim(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.bim(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.bim.gz.gpg"
       },
 
       "fam-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a FAM file",
         "description": "This object exists to hold the filename pattern that a 'FAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$"
+        "pattern": "^[^<>:;,?\"*|/]+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "example": "my_file1.fam.gz.gpg"
       },
 
       "object_external_accession": {
@@ -1219,20 +1283,24 @@
           "external_accession": {
             "type": ["string", "number"],
             "title": "External accession of the object",
-            "description": "Unique identifier of the object (e.g. SAMEA7616999), assigned by other archives (e.g. biosample)."
+            "description": "Unique identifier of the object (e.g. SAMEA7616999), assigned by other archives (e.g. biosample).",
+            "example": "SAMEA7616999"
           },
           "accession_archive": {
             "type": "string",
             "title": "Name of the archive",
             "description": "Name of the archive (e.g. biosample) from which the external accession is taken.",
-            "enum": ["ensembl", "ena", "pubmed", "protein", "nuccore", "ipg", "nucleotide", "structure", "genome", "annotinfo", "assembly", "bioproject", "biosample", "blastdbinfo", "books", "cdd", "clinvar", "gap", "gapplus", "grasp", "dbvar", "gene", "gds", "geoprofiles", "homologene", "medgen", "mesh", "ncbisearch", "nlmcatalog", "omim", "orgtrack", "pmc", "popset", "proteinclusters", "pcassay", "protfam", "biosystems", "pccompound", "pcsubstance", "seqannot", "snp", "sra", "taxonomy", "biocollections", "gtr"]
+            "enum": ["ensembl", "ena", "pubmed", "protein", "nuccore", "ipg", "nucleotide", "structure", "genome", "annotinfo", "assembly", "bioproject", "biosample", "blastdbinfo", "books", "cdd", "clinvar", "gap", "gapplus", "grasp", "dbvar", "gene", "gds", "geoprofiles", "homologene", "medgen", "mesh", "ncbisearch", "nlmcatalog", "omim", "orgtrack", "pmc", "popset", "proteinclusters", "pcassay", "protfam", "biosystems", "pccompound", "pcsubstance", "seqannot", "snp", "sra", "taxonomy", "biocollections", "gtr"],
+            "example": "biosample"
           },
           "accession_label": {
             "type": ["string", "number"],
             "title": "Label of the external accession",
-            "description": "Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier."
+            "description": "Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
+            "example": "taken from biosample temporarily"
           }
         }
       }
+
     }    
   }

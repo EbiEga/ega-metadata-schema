@@ -14,7 +14,13 @@
                 "array_label_curie": "CHEBI:15956"
                 },
             "object_id": {
-                "ega_accession": "EGAN00000000001"
+                "external_accessions": [
+                    {
+                        "external_accession": "SAMEA7616999",
+                        "accession_archive": "made up archive",
+                        "accession_label": "test external accession"
+                    }
+                ]
             }
         },
         {
@@ -31,7 +37,7 @@
     "ArrayAssay_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAA00002045411",
             "r_sourceType": "ArrayAssay",
@@ -40,7 +46,7 @@
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAA00000000001",
@@ -52,7 +58,7 @@
             "r_source": "EGAN00000000001",
             "r_sourceType": "sample",
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_target": "EGAA00000000001", 
             "r_targetType": "ArrayAssay"
@@ -67,7 +73,7 @@
             },
             "checksum_method": {
                 "checksum_method_id": "MD5",
-                "checksum_method_curie": "NCIT:C171275"                
+                "checksum_method_curie": "NCIT:C171276"                
             },
             "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
             "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"

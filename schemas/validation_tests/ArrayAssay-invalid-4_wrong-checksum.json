@@ -5,7 +5,7 @@
         "ega_accession": "EGAA00000000001"
     },
     "arrayAssay_center": "EBI-TEST",
-    "arrayAssay_date": "2221-06-24",
+    "arrayAssay_date": "2021-06-24",
     "sample_number": 2,
     "sample_labels": [
         {
@@ -31,7 +31,7 @@
     "ArrayAssay_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAA00002045411",
             "r_sourceType": "ArrayAssay",
@@ -40,7 +40,7 @@
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAA00000000001",
@@ -52,7 +52,7 @@
             "r_source": "EGAN00000000001",
             "r_sourceType": "sample",
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_target": "EGAA00000000001", 
             "r_targetType": "ArrayAssay"
@@ -67,7 +67,7 @@
             },
             "checksum_method": {
                 "checksum_method_id": "MD5",
-                "checksum_method_curie": "NCIT:C171276"                
+                "checksum_method_curie": "NCIT:C171275"                
             },
             "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
             "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"

@@ -10,7 +10,7 @@
     "sample_labels": [
         {
             "label": {
-                "array_label_id": "Biotin",
+                "array_label_id": 23,
                 "array_label_curie": "CHEBI:15956"
                 },
             "object_id": {
@@ -31,7 +31,7 @@
     "ArrayAssay_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAA00002045411",
             "r_sourceType": "ArrayAssay",
@@ -40,10 +40,10 @@
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
-            "r_source": "EGAN00000000001",
+            "r_source": "EGAA00000000001",
             "r_sourceType": "ArrayAssay",
             "r_target": "EGAA00000000002", 
             "r_targetType": "ArrayAssay"
@@ -52,7 +52,7 @@
             "r_source": "EGAN00000000001",
             "r_sourceType": "sample",
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_target": "EGAA00000000001", 
             "r_targetType": "ArrayAssay"

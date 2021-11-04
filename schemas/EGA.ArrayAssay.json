@@ -28,7 +28,8 @@
       "arrayAssay_center": {
         "type": "string",
         "title": "Centername that performed the ArrayAssay",
-        "description": "The name of the center (e.g. 'EBI-TEST') responsible for the profiling by microarray (executed the ArrayAssay), if applicable (in case it’s different from the center submitting metadata)."
+        "description": "The name of the center (e.g. 'EBI-TEST') responsible for the profiling by microarray (executed the ArrayAssay), if applicable (in case it’s different from the center submitting metadata).",
+        "example": "EBI-TEST"
       },
 
       "arrayAssay_date": {
@@ -41,7 +42,8 @@
       "sample_number": {
         "type": "integer",
         "title": "Number of samples of the ArrayAssay",
-        "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation)."
+        "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
+        "example": "30"
       },
 
       "sample_labels": {

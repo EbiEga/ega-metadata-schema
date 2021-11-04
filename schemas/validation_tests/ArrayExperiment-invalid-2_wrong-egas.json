@@ -34,9 +34,9 @@
     "sample_number": 12,
     "ADF_files": [
         {
-            "filename": "myADF-file.fasta",
+            "filename": "myADF-file.xlsx",
             "filetype": {
-                "filetype_id": "FAM",
+                "filetype_id": "XLSX",
                 "filetype_curie": "format:3620"
             },
             "checksum_method": {
@@ -61,7 +61,7 @@
     "ArrayExperiment_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAN00002045411",
             "r_sourceType": "sample",
@@ -70,13 +70,13 @@
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAE00000000001",
             "r_sourceType": "ArrayExperiment",
             "r_target": "EGAE00000000003", 
-            "r_targetType": "ArrayExperiment"
+            "r_targetType": "study"
         }
     ],
     "ArrayExperiment_protocols": [

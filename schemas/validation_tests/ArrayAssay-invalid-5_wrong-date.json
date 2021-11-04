@@ -5,7 +5,7 @@
         "ega_accession": "EGAA00000000001"
     },
     "arrayAssay_center": "EBI-TEST",
-    "arrayAssay_date": "2021-06-24",
+    "arrayAssay_date": "2221-06-24",
     "sample_number": 2,
     "sample_labels": [
         {
@@ -14,13 +14,7 @@
                 "array_label_curie": "CHEBI:15956"
                 },
             "object_id": {
-                "external_accessions": [
-                    {
-                        "external_accession": "SAMEA7616999",
-                        "accession_archive": "made up archive",
-                        "accession_label": "test external accession"
-                    }
-                ]
+                "ega_accession": "EGAN00000000001"
             }
         },
         {
@@ -37,7 +31,7 @@
     "ArrayAssay_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAA00002045411",
             "r_sourceType": "ArrayAssay",
@@ -46,7 +40,7 @@
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAA00000000001",
@@ -58,7 +52,7 @@
             "r_source": "EGAN00000000001",
             "r_sourceType": "sample",
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_target": "EGAA00000000001", 
             "r_targetType": "ArrayAssay"

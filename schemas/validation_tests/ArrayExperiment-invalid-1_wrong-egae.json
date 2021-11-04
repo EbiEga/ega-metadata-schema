@@ -1,7 +1,8 @@
 {
     "object_id": {
         "alias" : "MyArrayExperiment_13", 
-        "center_name" : "EBI-TEST"
+        "center_name" : "EBI-TEST",
+        "ega_accession": "EGAE0000000001"
     },
     "title": "Testing ArrayExperiment title",
     "description": "Broad description of the testing ArrayExperiment",
@@ -61,7 +62,7 @@
     "ArrayExperiment_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAN00002045411",
             "r_sourceType": "sample",
@@ -70,20 +71,20 @@
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAE00000000001",
             "r_sourceType": "ArrayExperiment",
             "r_target": "EGAE00000000003", 
-            "r_targetType": "study"
+            "r_targetType": "ArrayExperiment"
         }
     ],
     "ArrayExperiment_protocols": [
         {
             "protocol_name": "ADN_hybridization_13.06.2040",
             "protocol_type": "Nucleic acid hybridization to array", 
-            "protocol_ontology": "EFO:0003815", 
+            "protocol_curie": "EFO:0003815", 
             "protocol_description": "Hybridization of radioactive or non-radioactive probes was performed overnight, at 65°C in a rotating tube (Hybaid hybridization oven, Thermo Scientific) in 250 mM sodium phosphate buffer (pH 7.4), 7% SDS, 1 mM EDTA. Two washes were performed in 20 mM sodium phosphate buffer (pH 7.4), 1% SDS, 1 mM EDTA. When using the commercial protocol with DIG-labeled probes, the membrane was hybridized and washed as recommended by the manufacturer (Roche DIG Easy Hyb 11 796 895 001). Membranes hybridized with radioactive probes were exposed 4 or 20 h on a phosphor screen before quantification. Membranes hybridized with non-radioactive probes were subsequently treated with an anti-DIG antibody"
         }
     ]
