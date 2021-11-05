@@ -10,10 +10,10 @@
       "object_id": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_coreID) by adding a pattern check based on this schema's nature: an ArrayExperiment (by using EGA-ArrayExperiment-id-pattern)", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an ArrayExperiment (by using EGA-ArrayExperiment-id-pattern)", 
         "allOf": [
           {
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreID"
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
             "properties": {
@@ -158,7 +158,7 @@
         "example": "30"
       },
 
-      "ArrayExperiment_relationships": {
+      "Array_experiment_relationships": {
         "type": "array",
         "title": "ArrayExperiment relationships",
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
@@ -168,7 +168,7 @@
         "items": []
       },
 
-      "ArrayExperiment_attributes": {
+      "Array_experiment_attributes": {
         "type": "array",
         "title": "ArrayExperiment custom attributes",
         "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
@@ -178,7 +178,7 @@
         "items": []
       },
 
-      "ArrayExperiment_protocols": {
+      "Array_experiment_protocols": {
         "type": "array",
         "title": "Protocols related to an ArrayExperiment",
         "description": "Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents. #! Using an empty item list but defining the protocols as possible additionalItems we create the correct constraint: anything but a protocol is rejected, but EGA can add as many as required.",

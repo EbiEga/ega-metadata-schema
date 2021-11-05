@@ -47,7 +47,7 @@
             "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
         }
     ],
-    "ArrayExperiment_attributes": [
+    "Array_experiment_attributes": [
         {            
             "tag": "sub_project",
             "value": "CB4-1UD"
@@ -58,15 +58,15 @@
             "units": "GBP"
         }
         ],
-    "ArrayExperiment_relationships": [
+    "Array_experiment_relationships": [
         {
             "r_type": {
                 "r_type_id": "referenced_by"
             },
             "r_source": "EGAN00002045411",
-            "r_sourceType": "sample",
+            "r_source_type": "sample",
             "r_target": "EGAE00000000001", 
-            "r_targetType": "ArrayExperiment"
+            "r_target_type": "ArrayExperiment"
         },
         {
             "r_type": {
@@ -74,12 +74,12 @@
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAE00000000001",
-            "r_sourceType": "ArrayExperiment",
+            "r_source_type": "ArrayExperiment",
             "r_target": "EGAE00000000003", 
-            "r_targetType": "study"
+            "r_target_type": "study"
         }
     ],
-    "ArrayExperiment_protocols": [
+    "Array_experiment_protocols": [
         {
             "protocol_name": "ADN_hybridization_13.06.2040",
             "protocol_type": "Nucleic acid hybridization to array", 

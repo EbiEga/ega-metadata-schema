@@ -3,10 +3,10 @@
     "type": "object",
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json",
     "title": "EGA common metadata definitions v0.0.1",
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/Object_coreIDs'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "definitions": {
 
-      "object_coreID": {
+      "object_core_id": {
         "type": "object",
         "title": "Core identifiers of an object",
         "description": "Base definition containing the properties (e.g. Sample's alias) of a minimal identification layer of an EGA object (e.g. Sample).",
@@ -168,7 +168,7 @@
         "type": "object",
         "title": "EGA Relationships object",
         "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.",
-        "required": ["r_type", "r_source", "r_sourceType", "r_target", "r_targetType"],
+        "required": ["r_type", "r_source", "r_source_type", "r_target", "r_target_type"],
         "additionalProperties": false,
         "properties": {
           "r_type": {
@@ -204,7 +204,7 @@
             "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A   develops_from   sample_B' the source is 'sample_A'. The source can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...).",
             "example": "EGAN00003245489"
           },
-          "r_sourceType": {
+          "r_source_type": {
             "type": "string",
             "title": "Type of the relationship's source",
             "description": "Type of the relationship's source, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The source type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
@@ -217,7 +217,7 @@
             "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A   develops_from   sample_B' the target is 'sample_B'. The target can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...).",
             "example": "EGAX00002189113"
           },
-          "r_targetType": {
+          "r_target_type": {
             "type": "string",
             "title": "Type of the relationship's target",
             "description": "Type of the relationship's target, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The target type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
@@ -227,8 +227,8 @@
         },
         "allOf": [
           { "description": "Here we simply use the checks created elsewhere to make sure that if a given source or target type are given, their corresponding IDs (source or target) are valid." },
-          { "$ref": "#/definitions/relationships-source-patternCheck" },
-          { "$ref": "#/definitions/relationships-target-patternCheck" }
+          { "$ref": "#/definitions/relationships-source-pattern-check" },
+          { "$ref": "#/definitions/relationships-target-pattern-check" }
         ]
       },
 
@@ -291,15 +291,15 @@
           }
       },
 
-      "relationships-source-patternCheck": {
+      "relationships-source-pattern-check": {
         "type": "object",
         "title": "Check: relationship's source based on its sourceType",
         "description": "This object exists with the only purpose of being a reference of pattern checks of the given source IDs based on their corresponding source types (e.g. if the sourceType is 'sample', its ID within the source field should be like 'EGAN0000000001')",
         "allOf": [
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["experiment"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["experiment"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -308,8 +308,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["study"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["study"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -318,8 +318,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["sample"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["sample"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -328,8 +328,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["submission"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["submission"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -338,8 +338,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["run"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["run"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -348,8 +348,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["dataset"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["dataset"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -358,8 +358,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["analysis"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["analysis"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -368,8 +368,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["policy"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["policy"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -378,8 +378,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["DAC"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["DAC"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -388,8 +388,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["ArrayExperiment"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["ArrayExperiment"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -398,8 +398,8 @@
           },
           {
             "if": {
-              "required": [ "r_sourceType" ],
-              "properties": { "r_sourceType": { "enum": ["ArrayAssay"] } }
+              "required": [ "r_source_type" ],
+              "properties": { "r_source_type": { "enum": ["ArrayAssay"] } }
             },
             "then": {
               "required": [ "r_source" ],
@@ -409,15 +409,15 @@
         ]                
       },
 
-      "relationships-target-patternCheck": {
+      "relationships-target-pattern-check": {
         "type": "object",
         "title": "Check: relationship's target based on its targetType",
         "description": "This object exists with the only purpose of being a reference of pattern checks of the given target IDs based on their corresponding target types (e.g. if the targetType is 'sample', its ID within the target field should be like 'EGAN0000000001')",
         "allOf": [
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["experiment"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["experiment"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -426,8 +426,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["study"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["study"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -436,8 +436,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["sample"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["sample"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -446,8 +446,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["submission"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["submission"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -456,8 +456,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["run"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["run"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -466,8 +466,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["dataset"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["dataset"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -476,8 +476,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["analysis"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["analysis"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -486,8 +486,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["policy"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["policy"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -496,8 +496,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["DAC"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["DAC"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -506,8 +506,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["ArrayExperiment"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["ArrayExperiment"] } }
             },
             "then": {
               "required": [ "r_target" ],
@@ -516,8 +516,8 @@
           },
           {
             "if": {
-              "required": [ "r_targetType" ],
-              "properties": { "r_targetType": { "enum": ["ArrayAssay"] } }
+              "required": [ "r_target_type" ],
+              "properties": { "r_target_type": { "enum": ["ArrayAssay"] } }
             },
             "then": {
               "required": [ "r_target" ],

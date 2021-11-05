@@ -4,16 +4,16 @@
     "type": "object",
     "title": "EGA ArrayAssay metadata schema",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object. This object is intended to contain metadata about the physical array to which the assayed molecule is hybridized. Used exclusively an Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "arrayAssay_center", "assay_files"],
+    "required": ["object_id", "array_assay_center", "assay_files"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_coreID) by adding a pattern check based on this schema's nature: an ArrayAssay (by using EGA-ArrayAssay-id-pattern)", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an ArrayAssay (by using EGA-ArrayAssay-id-pattern)", 
         "allOf": [
           {
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreID"
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
             "properties": {
@@ -25,14 +25,14 @@
         ]        
       },
 
-      "arrayAssay_center": {
+      "array_assay_center": {
         "type": "string",
         "title": "Centername that performed the ArrayAssay",
         "description": "The name of the center (e.g. 'EBI-TEST') responsible for the profiling by microarray (executed the ArrayAssay), if applicable (in case it’s different from the center submitting metadata).",
         "example": "EBI-TEST"
       },
 
-      "arrayAssay_date": {
+      "array_assay_date": {
         "type": "string",
         "title": "Date of the ArrayAssay",
         "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the ArrayAssay took place. If the protocols are long enough, the date shall be the day the ArrayAssay concluded.",
@@ -56,7 +56,7 @@
         "additionalItems": {
           "type": "object",
           "title": "Repeatable Sample-label node",
-          "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from object_coreID - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
+          "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from object_core_id - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
           "required": ["label", "object_id"],
           "additionalProperties": false,
           "properties": {
@@ -66,7 +66,7 @@
               "title": "Object's IDs block",
               "allOf": [
                 {
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreID"
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
                 },
                 {
                   "properties": {
@@ -81,7 +81,7 @@
         }
       },
 
-      "ArrayAssay_relationships": {
+      "Array_assay_relationships": {
         "type": "array",
         "title": "ArrayAssay relationships",
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayAssay being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
@@ -101,7 +101,7 @@
         "items": []
       },
 
-      "arrayAssay_attributes": {
+      "array_assay_attributes": {
         "type": "array",
         "title": "ArrayAssay custom attributes",
         "description": "Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",

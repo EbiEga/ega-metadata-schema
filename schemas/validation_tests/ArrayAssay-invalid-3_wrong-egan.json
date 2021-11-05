@@ -4,8 +4,8 @@
         "center_name" : "EBI-TEST",
         "ega_accession": "EGAA00000000001"
     },
-    "arrayAssay_center": "EBI-TEST",
-    "arrayAssay_date": "2021-06-24",
+    "array_assay_center": "EBI-TEST",
+    "array_assay_date": "2021-06-24",
     "sample_number": 2,
     "sample_labels": [
         {
@@ -28,15 +28,15 @@
             }
         }
     ],
-    "ArrayAssay_relationships": [
+    "Array_assay_relationships": [
         {
             "r_type": {
                 "r_type_id": "referenced_by"
             },
             "r_source": "EGAA00002045411",
-            "r_sourceType": "ArrayAssay",
+            "r_source_type": "ArrayAssay",
             "r_target": "EGAE00000000001", 
-            "r_targetType": "ArrayExperiment"
+            "r_target_type": "ArrayExperiment"
         },
         {
             "r_type": {
@@ -44,18 +44,18 @@
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAN00000000001",
-            "r_sourceType": "ArrayAssay",
+            "r_source_type": "ArrayAssay",
             "r_target": "EGAA00000000002", 
-            "r_targetType": "ArrayAssay"
+            "r_target_type": "ArrayAssay"
         },
         {
             "r_source": "EGAN00000000001",
-            "r_sourceType": "sample",
+            "r_source_type": "sample",
             "r_type": {
                 "r_type_id": "referenced_by"
             },
             "r_target": "EGAA00000000001", 
-            "r_targetType": "ArrayAssay"
+            "r_target_type": "ArrayAssay"
         }
     ],
     "assay_files": [
@@ -86,7 +86,7 @@
             "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
         }
     ],
-    "arrayAssay_attributes": [
+    "array_assay_attributes": [
         {
             "tag": "weather_outside",
             "value": "chilly and cloudy"
