@@ -58,7 +58,7 @@
             "units": "GBP"
         }
         ],
-    "Array_experiment_relationships": [
+    "array_experiment_relationships": [
         {
             "r_type": {
                 "r_type_id": "referenced_by"
