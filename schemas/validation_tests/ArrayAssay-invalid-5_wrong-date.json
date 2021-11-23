@@ -28,7 +28,7 @@
             }
         }
     ],
-    "Array_assay_relationships": [
+    "array_assay_relationships": [
         {
             "r_type": {
                 "r_type_id": "referenced_by"
