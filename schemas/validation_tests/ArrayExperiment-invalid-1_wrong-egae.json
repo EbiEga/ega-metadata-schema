@@ -48,7 +48,7 @@
             "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
         }
     ],
-    "Array_experiment_attributes": [
+    "array_experiment_attributes": [
         {            
             "tag": "sub_project",
             "value": "CB4-1UD"
