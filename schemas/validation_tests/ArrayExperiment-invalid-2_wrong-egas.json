@@ -79,7 +79,7 @@
             "r_target_type": "study"
         }
     ],
-    "Array_experiment_protocols": [
+    "array_experiment_protocols": [
         {
             "protocol_name": "ADN_hybridization_13.06.2040",
             "protocol_type": "Nucleic acid hybridization to array", 
