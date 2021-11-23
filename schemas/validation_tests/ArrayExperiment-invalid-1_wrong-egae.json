@@ -33,7 +33,7 @@
         "assayed_molecule_curie": "EFO:0001456"
     },
     "sample_number": 12,
-    "ADF_files": [
+    "adf_files": [
         {
             "filename": "myADF-file.xlsx",
             "filetype": {
