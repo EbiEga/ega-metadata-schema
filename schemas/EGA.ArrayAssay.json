@@ -53,32 +53,7 @@
         "minItems": 1,
         "additionalProperties": false,
         "items": [
-          {
-            "type": "object",
-            "title": "Repeatable Sample-label node",
-            "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from object_core_id - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
-            "required": ["label", "object_id"],
-            "additionalProperties": false,
-            "properties": {
-              "label": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" },
-              "object_id": {
-                "type": "object",
-                "title": "Object's IDs block",
-                "allOf": [
-                  {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
-                  },
-                  {
-                    "properties": {
-                      "ega_accession": {
-                        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
-                      }
-                    }
-                  }
-                ]       
-              }
-            }
-          }
+          { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association"}
         ]
       },
 
