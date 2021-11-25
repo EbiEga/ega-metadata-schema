@@ -69,8 +69,8 @@
                 "checksum_method_id": "MD5",
                 "checksum_method_curie": "NCIT:C171276"                
             },
-            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
-            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
+            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375c7b",
+            "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375b7b"
         },
         {
             "filename": "myfile2.fasta",
@@ -82,7 +82,7 @@
                 "checksum_method_id": "SHA-256",
                 "checksum_method_curie": "NCIT:C80226"                
             },
-            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b",
+            "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375j7b",
             "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
         }
     ],

@@ -32,7 +32,7 @@
         "assayed_molecule_curie": "EFO:0001456"
     },
     "sample_number": 12,
-    "ADF_files": [
+    "adf_files": [
         {
             "filename": "myADF-file.xlsx",
             "filetype": {
@@ -40,14 +40,14 @@
                 "filetype_curie": "format:3620"
             },
             "checksum_method": {
-                "checksum_method_id": "MD5",
-                "checksum_method_curie": "NCIT:C171276"                
+                "checksum_method_id": "SHA-256",
+                "checksum_method_curie": "NCIT:C80226"                
             },
             "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
             "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
         }
     ],
-    "ArrayExperiment_attributes": [
+    "array_experiment_attributes": [
         {            
             "tag": "sub_project",
             "value": "CB4-1UD"
@@ -58,32 +58,32 @@
             "units": "GBP"
         }
         ],
-    "ArrayExperiment_relationships": [
+    "array_experiment_relationships": [
         {
             "r_type": {
-                "r_type_id": "Referenced_in"
+                "r_type_id": "referenced_by"
             },
             "r_source": "EGAN00002045411",
-            "r_sourceType": "sample",
+            "r_source_type": "sample",
             "r_target": "EGAE00000000001", 
-            "r_targetType": "ArrayExperiment"
+            "r_target_type": "ArrayExperiment"
         },
         {
             "r_type": {
-                "r_type_id": "Same_as",
+                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
             "r_source": "EGAE00000000001",
-            "r_sourceType": "ArrayExperiment",
+            "r_source_type": "ArrayExperiment",
             "r_target": "EGAE00000000003", 
-            "r_targetType": "study"
+            "r_target_type": "ArrayExperiment"
         }
     ],
-    "ArrayExperiment_protocols": [
+    "array_experiment_protocols": [
         {
             "protocol_name": "ADN_hybridization_13.06.2040",
             "protocol_type": "Nucleic acid hybridization to array", 
-            "protocol_ontology": "EFO:0003815", 
+            "protocol_curie": "EFO:0003815", 
             "protocol_description": "Hybridization of radioactive or non-radioactive probes was performed overnight, at 65°C in a rotating tube (Hybaid hybridization oven, Thermo Scientific) in 250 mM sodium phosphate buffer (pH 7.4), 7% SDS, 1 mM EDTA. Two washes were performed in 20 mM sodium phosphate buffer (pH 7.4), 1% SDS, 1 mM EDTA. When using the commercial protocol with DIG-labeled probes, the membrane was hybridized and washed as recommended by the manufacturer (Roche DIG Easy Hyb 11 796 895 001). Membranes hybridized with radioactive probes were exposed 4 or 20 h on a phosphor screen before quantification. Membranes hybridized with non-radioactive probes were subsequently treated with an anti-DIG antibody"
         }
     ]
