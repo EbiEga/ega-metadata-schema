@@ -28,36 +28,6 @@
             }
         }
     ],
-    "array_assay_relationships": [
-        {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
-            "r_source": "EGAA00002045411",
-            "r_source_type": "ArrayAssay",
-            "r_target": "EGAE00000000001", 
-            "r_target_type": "ArrayExperiment"
-        },
-        {
-            "r_type": {
-                "r_type_id": "same_as",
-                "r_type_curie": "NCIT:C64637"
-            },
-            "r_source": "EGAA00000000001",
-            "r_source_type": "ArrayAssay",
-            "r_target": "EGAA00000000002", 
-            "r_target_type": "ArrayAssay"
-        },
-        {
-            "r_source": "EGAN00000000001",
-            "r_source_type": "sample",
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
-            "r_target": "EGAA00000000001", 
-            "r_target_type": "ArrayAssay"
-        }
-    ],
     "assay_files": [
         {
             "filename": "myfile1.cel",

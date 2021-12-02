@@ -63,20 +63,42 @@
             "r_type": {
                 "r_type_id": "referenced_by"
             },
-            "r_source": "EGAN00002045411",
-            "r_source_type": "sample",
-            "r_target": "EGAE00000000001", 
-            "r_target_type": "ArrayExperiment"
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAN00002045411"
+                },
+                "object_type": "sample"
+            },
+            "r_target": {
+                "object_id": {
+                    "alias": "my-array-experiment-23",
+                    "center_name": "EBI-TEST"
+                },
+                "object_type": "ArrayExperiment"
+            }
         },
         {
             "r_type": {
-                "r_type_id": "same_as",
                 "r_type_curie": "NCIT:C64637"
             },
-            "r_source": "EGAE00000000001",
-            "r_source_type": "ArrayExperiment",
-            "r_target": "EGAE00000000003", 
-            "r_target_type": "ArrayExperiment"
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAE00000000001"
+                },
+                "object_type": "ArrayExperiment"
+            },
+            "r_target": {
+                "object_id": {
+                    "external_accessions": [
+                        {
+                            "external_accession": "PRJEB47028",
+                            "accession_archive": "bioproject",
+                            "accession_label": "RNA-Seq of native and FusionRed-transfected canine tumor cell lines after 3 hours C-CPE treatment"
+                        }
+                    ]
+                },
+                "object_type": "ArrayExperiment"
+            }
         }
     ],
     "array_experiment_protocols": [
