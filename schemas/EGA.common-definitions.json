@@ -169,7 +169,7 @@
         "type": "object",
         "title": "EGA Relationships object",
         "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.",
-        "required": ["r_type", "r_source", "r_source_type", "r_target", "r_target_type"],
+        "required": ["r_type", "r_source", "r_target"],
         "additionalProperties": false,
         "properties": {
           "r_type": {
@@ -200,37 +200,22 @@
             }
           },
           "r_source": {
-            "type": "string",
+            "type": "object",
             "title": "Source of the relationship",
-            "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A   develops_from   sample_B' the source is 'sample_A'. The source can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...).",
-            "example": "EGAN00003245489"
-          },
-          "r_source_type": {
-            "type": "string",
-            "title": "Type of the relationship's source",
-            "description": "Type of the relationship's source, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The source type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
-            "example": "sample"
+            "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A develops_from sample_B' the source is 'sample_A'.",
+            "allOf": [
+              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" }
+            ]
           },
           "r_target": {
-            "type": "string",
+            "type": "object",
             "title": "Target of the relationship",
-            "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A   develops_from   sample_B' the target is 'sample_B'. The target can be: (1) an EGA's accession ID (e.g. EGAN...); (2) an external accession ID (e.g. 'SAMEA...' from BSD); (3) an Uniform Resource Locator (URL) (e.g. a GitHub repository, an ADF file submitted elsewhere...).",
-            "example": "EGAX00002189113"
-          },
-          "r_target_type": {
-            "type": "string",
-            "title": "Type of the relationship's target",
-            "description": "Type of the relationship's target, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). The target type can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
-            "example": "experiment"
+            "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.",
+            "allOf": [
+              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" }
+            ]
           }
-        },
-        "allOf": [
-          { "description": "#! TO CHANGE WITHIN OBJECTS - Here we simply use the checks created elsewhere to make sure that if a given source or target type are given, their corresponding IDs (source or target) are valid.",
-            "$ref": "#/definitions/relationships-source-pattern-check" },
-          { "$ref": "#/definitions/relationships-target-pattern-check" }
-        ]
+        }        
       },
 
       "protocols_object": {
@@ -292,240 +277,187 @@
           }
       },
 
-      "relationships-source-pattern-check": {
+      "object-id-and-object-type-check": {
         "type": "object",
-        "title": "Check: relationship's source based on its sourceType",
-        "description": "This object exists with the only purpose of being a reference of pattern checks of the given source IDs based on their corresponding source types (e.g. if the sourceType is 'sample', its ID within the source field should be like 'EGAN0000000001')",
-        "allOf": [
+        "title": "Check that the object_id's accession pattern and object_type match",
+        "description": "This object exists with the only purpose of being a reference as a pattern check of a given object_id and object_type. The constraint consists in asserting that, if the object identifier is an EGA accession, its pattern matches the object type (e.g. if object_type is 'sample', its EGA accession needs to match '^EGAN[0-9]{11}$')",
+        "anyOf": [
           {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["experiment"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-experiment-id-pattern" } }
+            "title": "Alias and Centername: object_id and object_type check",
+            "description": "A check that ensures that the alias and centername are given as the object_type. Since the alias and centername cannot be checked for specific object_types (i.e. each can name their objects in different ways), this block exists here just so that this option is allowed.",
+            "properties": {
+              "object_id": { 
+                "required": ["alias", "center_name"]
+              }
             }
           },
           {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["study"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-study-id-pattern" } }
+            "title": "External accession: object_id and object_type check",
+            "description": "A check that ensures that, if 'external_accession' is given as the object_type, the corresponding node exists within object_id",
+            "properties": {
+              "object_id": { 
+                "required": ["external_accessions"]
+              },
+              "object_type": {
+                "enum": ["external_accession"]
+              }
             }
           },
           {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["sample"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-sample-id-pattern" } }
+            "title": "Experiment: object_id and object_type check",
+            "description": "A check that ensures that, if 'experiment' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-experiment-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["experiment"]
+              }
+            }
+          }, 
+          {
+            "title": "Study: object_id and object_type check",
+            "description": "A check that ensures that, if 'study' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-study-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["study"]
+              }
+            }
+          },          
+          {
+            "title": "Sample: object_id and object_type check",
+            "description": "A check that ensures that, if 'sample' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-sample-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["sample"]
+              }
+            }
+          },          
+          {
+            "title": "Submission: object_id and object_type check",
+            "description": "A check that ensures that, if 'submission' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-submission-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["submission"]
+              }
+            }
+          },          
+          {
+            "title": "Run: object_id and object_type check",
+            "description": "A check that ensures that, if 'run' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-run-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["run"]
+              }
+            }
+          },          
+          {
+            "title": "Dataset: object_id and object_type check",
+            "description": "A check that ensures that, if 'dataset' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-dataset-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["dataset"]
+              }
+            }
+          },          
+          {
+            "title": "Analysis: object_id and object_type check",
+            "description": "A check that ensures that, if 'analysis' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-analysis-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["analysis"]
+              }
+            }
+          },          
+          {
+            "title": "Policy: object_id and object_type check",
+            "description": "A check that ensures that, if 'policy' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-policy-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["policy"]
+              }
+            }
+          },          
+          {
+            "title": "DAC: object_id and object_type check",
+            "description": "A check that ensures that, if 'DAC' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-DAC-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["DAC"]
+              }
+            }
+          },          
+          {
+            "title": "ArrayExperiment: object_id and object_type check",
+            "description": "A check that ensures that, if 'ArrayExperiment' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-ArrayExperiment-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["ArrayExperiment"]
+              }
             }
           },
           {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["submission"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-submission-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["run"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-run-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["dataset"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-dataset-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["analysis"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-analysis-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["policy"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-policy-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["DAC"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-DAC-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["ArrayExperiment"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-ArrayExperiment-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_source_type" ],
-              "properties": { "r_source_type": { "enum": ["ArrayAssay"] } }
-            },
-            "then": {
-              "required": [ "r_source" ],
-              "properties": { "r_source": { "$ref": "#/definitions/EGA-ArrayAssay-id-pattern" } }
+            "title": "ArrayAssay: object_id and object_type check",
+            "description": "A check that ensures that, if 'ArrayAssay' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-ArrayAssay-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["ArrayAssay"]
+              }
             }
           }
-        ]                
-      },
-
-      "relationships-target-pattern-check": {
-        "type": "object",
-        "title": "Check: relationship's target based on its targetType",
-        "description": "This object exists with the only purpose of being a reference of pattern checks of the given target IDs based on their corresponding target types (e.g. if the targetType is 'sample', its ID within the target field should be like 'EGAN0000000001')",
-        "allOf": [
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["experiment"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-experiment-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["study"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-study-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["sample"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-sample-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["submission"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-submission-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["run"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-run-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["dataset"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-dataset-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["analysis"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-analysis-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["policy"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-policy-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["DAC"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-DAC-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["ArrayExperiment"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-ArrayExperiment-id-pattern" } }
-            }
-          },
-          {
-            "if": {
-              "required": [ "r_target_type" ],
-              "properties": { "r_target_type": { "enum": ["ArrayAssay"] } }
-            },
-            "then": {
-              "required": [ "r_target" ],
-              "properties": { "r_target": { "$ref": "#/definitions/EGA-ArrayAssay-id-pattern" } }
-            }
-          }
-        ]                
+        ]                      
       },
       
       "checksum-pattern-check": {
@@ -1316,7 +1248,35 @@
             ]       
           }
         }
-      }
+      },
 
+      "one-relationship-end": {
+        "type": "object",
+        "title": "Relationship's object (either source or target)",
+        "description": "Node containing metadata (identifiers and the type of reference) of one of the ends of the relationship, whether it is the source or the target of the relationship.",
+        "additionalProperties": false,
+        "required": ["object_id", "object_type"],
+        "properties": {
+          "object_id": {
+            "type": "object",
+            "title": "Relationship's object's IDs block",
+            "description": "Node containing the main identifiers of the relationship's object (e.g. alias, center_name...), inherited from the common definitions (#/definitions/object_core_id).",
+            "allOf": [
+              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id" }
+            ]
+          },
+          "object_type": {
+            "type": "string",
+            "title": "Type of the relationship's object",
+            "description": "Type of the relationship's object, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
+            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
+            "example": "sample"
+          }
+        },
+        "allOf": [
+          { "title": "Check for object_id and object_type to match",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check" }
+        ]        
+      }
     }    
   }
