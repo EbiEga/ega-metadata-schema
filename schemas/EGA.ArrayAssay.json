@@ -17,6 +17,7 @@
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
+            "title": "Check that ArrayAssay EGA ID (EGAA) is correct",
             "properties": {
               "ega_accession": {
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ArrayAssay-id-pattern"
