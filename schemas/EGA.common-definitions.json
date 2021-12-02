@@ -227,8 +227,8 @@
           }
         },
         "allOf": [
-          { "description": "Here we simply use the checks created elsewhere to make sure that if a given source or target type are given, their corresponding IDs (source or target) are valid." },
-          { "$ref": "#/definitions/relationships-source-pattern-check" },
+          { "description": "#! TO CHANGE WITHIN OBJECTS - Here we simply use the checks created elsewhere to make sure that if a given source or target type are given, their corresponding IDs (source or target) are valid.",
+            "$ref": "#/definitions/relationships-source-pattern-check" },
           { "$ref": "#/definitions/relationships-target-pattern-check" }
         ]
       },
@@ -532,50 +532,38 @@
         "type": "object",
         "title": "Check: checksum checks based on its method",
         "description": "This object exists with the only purpose of being a reference of pattern checks of the given checksum (e.g. 'c6779ec2960296ed9a04f08d67f64423') of a file based on its corresponding method (e.g. if the given checksum method is 'MD5' the checksum shall fit into MD5's format of '^[0-9a-z](?:-?[0-9a-z]){31}$')",
-        "allOf": [
-          {
-            "if": {
-              "required": [ "checksum_method" ],
+        "anyOf": [
+          { 
+            "title": "Checksum pattern check - MD5",
+            "description": "A check that ensures that, if MD5 is given as a checksum_method_id, the checksums per se (e.g. unencrypted_checksum) follow MD5 patterns (md5-checksum-pattern).",
               "properties": {
                 "checksum_method": { 
-                  "required": [ "checksum_method_id" ],
                   "properties": {
                     "checksum_method_id": {
                       "enum": ["MD5"]
                     } 
-                  } 
-                }
+                  }
+                },
+                "unencrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern" },
+                "encrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern" }
               }
-            },
-            "then": {
-              "required": [ "unencrypted_checksum", "encrypted_checksum" ],
-              "properties": { "unencrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern"},
-                              "encrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern"}
-              }
-            }
           },
-          {
-            "if": {
-              "required": [ "checksum_method" ],
+          { 
+            "title": "Checksum pattern check - SHA-256",
+            "description": "A check that ensures that, if SHA-256 is given as a checksum_method_id, the checksums per se (e.g. unencrypted_checksum) follow SHA-256 patterns (sha-256-checksum-pattern).",
               "properties": {
                 "checksum_method": { 
-                  "required": [ "checksum_method_id" ],
                   "properties": {
                     "checksum_method_id": {
                       "enum": ["SHA-256"]
                     } 
-                  } 
-                }
+                  }
+                },
+                "unencrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern" },
+                "encrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern" }
               }
-            },
-            "then": {
-              "required": [ "unencrypted_checksum", "encrypted_checksum" ],
-              "properties": { "unencrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern"},
-                              "encrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern"}
-              }
-            }
           }
-        ]                
+        ]                    
       },
 
       "md5-checksum-pattern": {
