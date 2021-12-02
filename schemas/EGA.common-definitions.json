@@ -43,9 +43,18 @@
 
         },
         "anyOf": [
-          { "required": ["alias", "center_name"]},
-          { "required": ["ega_accession"]},
-          { "required": ["external_accessions"]}
+          { 
+            "title": "Check core IDs: combination of Alias and Center name",
+            "required": ["alias", "center_name"] 
+          },
+          { 
+            "title": "Check core IDs: EGA accession ID",
+            "required": ["ega_accession"] 
+          },
+          { 
+            "title": "Check core IDs: external accessions",
+            "required": ["external_accessions"] 
+          }
         ]
       },
 
@@ -144,9 +153,15 @@
             "description": "A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data, computed from the unencrypted files.",
             "examples": [ "46798b5cfca45c46a84b7419f8b74735" ],
             "oneOf": [
-              { "$ref": "#/definitions/md5-checksum-pattern"},
-              { "$ref": "#/definitions/SHA-256-checksum-pattern"}
-            ]            
+              { 
+                "title": "Check of MD5 checksum pattern", 
+                "$ref": "#/definitions/md5-checksum-pattern"
+              },
+              { 
+                "title": "Check of SHA-256 checksum pattern",
+                "$ref": "#/definitions/SHA-256-checksum-pattern"
+              }
+            ]
           },
           "encrypted_checksum": {
             "type": "string",
@@ -154,14 +169,26 @@
             "description": "A computed value which depends on the contents of a block of data and which is transmitted or stored along with the data in order to detect corruption of the data, computed from the encrypted files.",
             "examples": [ "bc527343c7ffc103111f3a694b004e2f" ],
             "oneOf": [
-              { "$ref": "#/definitions/md5-checksum-pattern"},
-              { "$ref": "#/definitions/SHA-256-checksum-pattern"}
+              { 
+                "title": "Check of MD5 checksum pattern", 
+                "$ref": "#/definitions/md5-checksum-pattern"
+              },
+              { 
+                "title": "Check of SHA-256 checksum pattern",
+                "$ref": "#/definitions/SHA-256-checksum-pattern"
+              }
             ]
           }
         },
         "allOf": [
-          { "$ref": "#/definitions/checksum-pattern-check" },
-          { "$ref": "#/definitions/filename-filetype-pattern-check" }
+          { 
+            "title": "Inherited check of checksum patterns", 
+            "$ref": "#/definitions/checksum-pattern-check" 
+          },
+          { 
+            "title": "Inherited check of filetype-filename patterns", 
+            "$ref": "#/definitions/filename-filetype-pattern-check" 
+          }
         ]        
       },
 
@@ -177,8 +204,14 @@
             "title": "Type of the relationship",
             "description": "The Type of the relationship, containing both its ID (e.g. same_as and the CURIE (e.g. NCIT:C64637), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
             "anyOf": [
-              { "required": ["r_type_id"] },
-              { "required": ["r_type_curie"] }
+              { 
+                "title": "Check that r_type is present",
+                "required": ["r_type_id"] 
+              },
+              { 
+                "title": "Check that r_type_curie is present", 
+                "required": ["r_type_curie"] 
+              }
             ],
             "additionalProperties": false,
             "properties": {
@@ -204,7 +237,10 @@
             "title": "Source of the relationship",
             "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A develops_from sample_B' the source is 'sample_A'.",
             "allOf": [
-              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" }
+              {
+                "title": "Inherited one-relationship-end object", 
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" 
+              }
             ]
           },
           "r_target": {
@@ -212,7 +248,10 @@
             "title": "Target of the relationship",
             "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.",
             "allOf": [
-              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" }
+              {
+                "title": "Inherited one-relationship-end object", 
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" 
+              }
             ]
           }
         }        
@@ -1048,9 +1087,11 @@
             "title": "Object's IDs block",
             "allOf": [
               {
+                "title": "Inherited object_core_id object",
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
               },
               {
+                "title": "Check that sample EGA ID (EGAN) pattern is correct",
                 "properties": {
                   "ega_accession": {
                     "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
@@ -1074,7 +1115,10 @@
             "title": "Relationship's object's IDs block",
             "description": "Node containing the main identifiers of the relationship's object (e.g. alias, center_name...), inherited from the common definitions (#/definitions/object_core_id).",
             "allOf": [
-              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id" }
+              { 
+                "title": "Inherited object_core_id object", 
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id" 
+              }
             ]
           },
           "object_type": {
@@ -1087,8 +1131,10 @@
           }
         },
         "allOf": [
-          { "title": "Check for object_id and object_type to match",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check" }
+          { 
+            "title": "Check for object_id and object_type to match",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check" 
+          }
         ]        
       }
     }    

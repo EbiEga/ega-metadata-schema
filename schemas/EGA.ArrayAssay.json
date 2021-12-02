@@ -13,6 +13,7 @@
         "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an ArrayAssay (by using EGA-ArrayAssay-id-pattern)", 
         "allOf": [
           {
+            "title": "Inherited object_core_id object",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
