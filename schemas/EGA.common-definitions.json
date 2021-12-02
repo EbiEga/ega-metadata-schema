@@ -36,9 +36,9 @@
             "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
             "minItems": 1,
             "additionalProperties": false,
-            "items": [
-              { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession" }
-            ]
+            "items": {
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession"
+            }
           }
 
         },
@@ -103,7 +103,7 @@
                 "title": "Filetype ID",
                 "description": "The ID or name (e.g. FASTA or TSV) associated with the given filetype.",
                 "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM"],
-                "term-curie-pairs": ["CEL__EFO:0005630", "TSV__NCIT:C164049", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
+                "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
                 "examples": [ "TSV" ]
               },
               "filetype_curie": {
@@ -126,7 +126,7 @@
                 "title": "Checksum method ID",
                 "description": "The ID or name (MD5 or SHA-256) associated with the used checksum method.",
                 "enum": ["MD5", "SHA-256"],
-                "term-curie-pairs": ["MD5__NCIT:C171276", "SHA-256__NCIT:C80226"],
+                "meta:enum": ["MD5__NCIT:C171276", "SHA-256__NCIT:C80226"],
                 "examples": [ "MD5" ]
               },
               "checksum_method_curie": {
@@ -187,7 +187,7 @@
                 "title": "Type of the relationship - ID",
                 "description": "The human readable ID (e.g. same_as), chosen from a list of CVs, of the type of the relationship.",
                 "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "parent_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
-                "term-curie-pairs": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "parent_of__GSSO:001986", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
+                "meta:enum": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "parent_of__GSSO:001986", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
                 "examples": [ "referenced_by" ]
               },
               "r_type_curie": {
@@ -236,7 +236,7 @@
             "title": "Type of protocol [OBI:0000272] ",
             "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
             "enum": ["Sample collection",  "Nucleic acid extraction",  "Nucleic acid labeling",  "Nucleic acid hybridization to array",  "Array scanning and feature extraction",  "Nucleic acid library construction",  "Growth",  "Dissociation", "Enrichment", "Treatment", "Conversion", "Clinical treatment", "Dissection", "Gene expression"],
-            "term-curie-pairs": ["Sample collection__EFO:0005518", "Nucleic acid extraction__EFO:0002944", "Nucleic acid labeling__EFO:0003813", "Nucleic acid hybridization to array__EFO:0003815", "Array scanning and feature extraction__EFO:0003814", "Nucleic acid library construction__EFO:0004184", "Growth__EFO:0003789", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Treatment__EFO:0003969", "Conversion__EFO:0005520", "Clinical treatment__EFO:0000355", "Dissection__EFO:0005519", "Gene expression__EFO:0003788"],
+            "meta:enum": ["Sample collection__EFO:0005518", "Nucleic acid extraction__EFO:0002944", "Nucleic acid labeling__EFO:0003813", "Nucleic acid hybridization to array__EFO:0003815", "Array scanning and feature extraction__EFO:0003814", "Nucleic acid library construction__EFO:0004184", "Growth__EFO:0003789", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Treatment__EFO:0003969", "Conversion__EFO:0005520", "Clinical treatment__EFO:0000355", "Dissection__EFO:0005519", "Gene expression__EFO:0003788"],
             "examples": [ "Sample collection" ]
           },
           "protocol_curie": {
@@ -602,428 +602,239 @@
         "type": "object",
         "title": "Check: filetype checks based on its filename",
         "description": "This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype_id shall be 'BAM' and not 'XLSX')",
-        "allOf": [
+        "anyOf": [
           {
-            "if": {
-              "description": "CEL Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "CEL Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["CEL"] }
+                      "filetype_id": { "enum": ["CEL"] }
                   }
-                }
-              }
-            },
-            "then": {
-              "required": [ "filename" ],
-              "properties": {
+                },
                 "filename": { "$ref": "#/definitions/cel-file-filename-pattern" }
               }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "TSV Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "TSV Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["TSV"] }
+                      "filetype_id": { "enum": ["TSV"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/tsv-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/tsv-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "ADF Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "ADF Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["ADF"] }
+                      "filetype_id": { "enum": ["ADF"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/adf-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/adf-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "FASTQ Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "FASTQ Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["FASTQ"] }
+                      "filetype_id": { "enum": ["FASTQ"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/fastq-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/fastq-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "FASTA Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "FASTA Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["FASTA"] }
+                      "filetype_id": { "enum": ["FASTA"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/fasta-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/fasta-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "SDRF Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "SDRF Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["SDRF"] }
+                      "filetype_id": { "enum": ["SDRF"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/sdrf-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/sdrf-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "IDF Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "IDF Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["IDF"] }
+                      "filetype_id": { "enum": ["IDF"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/idf-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/idf-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "VCF Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "VCF Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["VCF"] }
+                      "filetype_id": { "enum": ["VCF"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/vcf-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/vcf-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "SRA Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "SRA Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["SRA"] }
+                      "filetype_id": { "enum": ["SRA"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/sra-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/sra-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "SRF Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "SRF Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["SRF"] }
+                      "filetype_id": { "enum": ["SRF"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/srf-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/srf-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "SFF Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "SFF Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["SFF"] }
+                      "filetype_id": { "enum": ["SFF"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/sff-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/sff-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "BAM Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "BAM Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["BAM"] }
+                      "filetype_id": { "enum": ["BAM"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/bam-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/bam-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "CRAM Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "CRAM Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["CRAM"] }
+                      "filetype_id": { "enum": ["CRAM"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/cram-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/cram-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "XLSX Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "XLSX Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["XLSX"] }
+                      "filetype_id": { "enum": ["XLSX"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/xlsx-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/xlsx-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "CSV Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "CSV Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["CSV"] }
+                      "filetype_id": { "enum": ["CSV"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/csv-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/csv-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "BED Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "BED Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["BED"] }
+                      "filetype_id": { "enum": ["BED"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/bed-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/bed-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "IDAT Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "IDAT Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["IDAT"] }
+                      "filetype_id": { "enum": ["IDAT"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/idat-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/idat-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "MAP Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "MAP Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["MAP"] }
+                      "filetype_id": { "enum": ["MAP"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/map-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/map-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "PED Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "PED Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["PED"] }
+                      "filetype_id": { "enum": ["PED"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/ped-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/ped-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "BIM Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "BIM Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["BIM"] }
+                      "filetype_id": { "enum": ["BIM"] }
                   }
-                }
+                },
+                "filename": { "$ref": "#/definitions/bim-file-filename-pattern" }
               }
-            },
-            "then": {
-                "required": [ "filename" ],
-                "properties": {
-                  "filename": { "$ref": "#/definitions/bim-file-filename-pattern" }
-              }
-            }
-          },
+          },                
           {
-            "if": {
-              "description": "FAM Filename pattern-check",
-              "required": [ "filetype" ],
-              "properties": {
+            "title": "FAM Filename pattern-check",
+            "properties": {
                 "filetype": {
-                  "required": ["filetype_id"],
                   "properties": {
-                    "filetype_id": { "enum": ["FAM"] }
+                      "filetype_id": { "enum": ["FAM"] }
                   }
-                }
-              }
-            },
-              "then": {
-                  "required": [ "filename" ],
-                  "properties": {
-                    "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
-                  }
-              }
+                },
+                "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
+            }
           }
-      ]        
+        ]        
     },
 
       "cel-file-filename-pattern": {
@@ -1212,6 +1023,7 @@
             "title": "Name of the archive",
             "description": "Name of the archive (e.g. biosample) from which the external accession is taken.",
             "enum": ["ensembl", "ena", "pubmed", "protein", "nuccore", "ipg", "nucleotide", "structure", "genome", "annotinfo", "assembly", "bioproject", "biosample", "blastdbinfo", "books", "cdd", "clinvar", "gap", "gapplus", "grasp", "dbvar", "gene", "gds", "geoprofiles", "homologene", "medgen", "mesh", "ncbisearch", "nlmcatalog", "omim", "orgtrack", "pmc", "popset", "proteinclusters", "pcassay", "protfam", "biosystems", "pccompound", "pcsubstance", "seqannot", "snp", "sra", "taxonomy", "biocollections", "gtr"],
+            "meta:enum": ["ensembl__#! description TBD", "ena__#! description TBD", "pubmed__#! description TBD", "protein__#! description TBD", "nuccore__#! description TBD", "ipg__#! description TBD", "nucleotide__#! description TBD", "structure__#! description TBD", "genome__#! description TBD", "annotinfo__#! description TBD", "assembly__#! description TBD", "bioproject__#! description TBD", "biosample__#! description TBD", "blastdbinfo__#! description TBD", "books__#! description TBD", "cdd__#! description TBD", "clinvar__#! description TBD", "gap__#! description TBD", "gapplus__#! description TBD", "grasp__#! description TBD", "dbvar__#! description TBD", "gene__#! description TBD", "gds__#! description TBD", "geoprofiles__#! description TBD", "homologene__#! description TBD", "medgen__#! description TBD", "mesh__#! description TBD", "ncbisearch__#! description TBD", "nlmcatalog__#! description TBD", "omim__#! description TBD", "orgtrack__#! description TBD", "pmc__#! description TBD", "popset__#! description TBD", "proteinclusters__#! description TBD", "pcassay__#! description TBD", "protfam__#! description TBD", "biosystems__#! description TBD", "pccompound__#! description TBD", "pcsubstance__#! description TBD", "seqannot__#! description TBD", "snp__#! description TBD", "sra__#! description TBD", "taxonomy__#! description TBD", "biocollections__#! description TBD", "gtr__#! description TBD"],
             "examples": [ "biosample" ]
           },
           "accession_label": {
@@ -1270,6 +1082,7 @@
             "title": "Type of the relationship's object",
             "description": "Type of the relationship's object, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
             "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
+            "meta:enum": ["Contains information about the experimental design of the sequencing", "Information about the study", "Information about the used samples", "Information about the submission actions", "Contains information about the specific sequencing runs from the experiment", "Contains the collection of runs/analysis/ArrayAssay data files to be subject to controlled access", "Contains the analysis metadata and data files", "Contains information related to the Data Access Agreement (DAA) the dataset is subject to", "Contains information about the Data Access Committee (DAC)", "Contains information about the experimental design of the Array", "Contains information about the probed assay from the array", "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)", "An external URL resource, of any type"],
             "examples": [ "sample" ]
           }
         },
