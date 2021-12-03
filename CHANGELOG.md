@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Added all versions of the Array templates (reside within ``ega-metadata-schema/templates/array-based-metadata/deprecated_versions``). Taken from their [previous location](https://www.ebi.ac.uk/seqdb/confluence/display/EGA/EGA+AF+templates).
+- Added [docs](docs/) folder [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
+- Added [metadata model diagram](docs/metadata_model/README.md) [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
+- Added markdown documentation (json_browser) explaining the schemas (see [README](docs/json_browser/README.md)) [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
+- Added ``titles`` and ``descriptions`` to several constraints within the schemas (for the markdowns to have a better explanation) [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
+- Added ``examples`` and ``meta:enum`` keywords within the schemas for them to appear in the markdowns. [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 ### Modified
 - [star2xml](https://github.com/EGA-archive/star2xml) - Moved tool star2xml to its own repository: https://github.com/EGA-archive/star2xml. 
 - [JSON schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) - improved drafted JSON schemas for AF (Array Format) Array and Experiment metadata.
+- Modified the relationships node so that the target and source are of type ``object_core_id`` (being able to reference non-registered objects). [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 
 ## [0.0.0] - 2021-04-26
 ### Added
