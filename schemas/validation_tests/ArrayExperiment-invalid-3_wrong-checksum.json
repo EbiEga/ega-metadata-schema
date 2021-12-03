@@ -58,27 +58,6 @@
             "units": "GBP"
         }
         ],
-    "array_experiment_relationships": [
-        {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
-            "r_source": "EGAN00002045411",
-            "r_source_type": "sample",
-            "r_target": "EGAE00000000001", 
-            "r_target_type": "ArrayExperiment"
-        },
-        {
-            "r_type": {
-                "r_type_id": "same_as",
-                "r_type_curie": "NCIT:C64637"
-            },
-            "r_source": "EGAE00000000001",
-            "r_source_type": "ArrayExperiment",
-            "r_target": "EGAE00000000003", 
-            "r_target_type": "ArrayExperiment"
-        }
-    ],
     "array_experiment_protocols": [
         {
             "protocol_name": "ADN_hybridization_13.06.2040",

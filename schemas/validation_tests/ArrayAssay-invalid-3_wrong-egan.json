@@ -14,7 +14,7 @@
                 "array_label_curie": "CHEBI:15956"
                 },
             "object_id": {
-                "ega_accession": "EGAN00000000001"
+                "ega_accession": "EGAN000000000001"
             }
         },
         {
@@ -33,29 +33,19 @@
             "r_type": {
                 "r_type_id": "referenced_by"
             },
-            "r_source": "EGAA00002045411",
-            "r_source_type": "ArrayAssay",
-            "r_target": "EGAE00000000001", 
-            "r_target_type": "ArrayExperiment"
-        },
-        {
-            "r_type": {
-                "r_type_id": "same_as",
-                "r_type_curie": "NCIT:C64637"
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAXXXXXXXA00002045411"
+                },
+                "object_type": "ArrayAssay"
             },
-            "r_source": "EGAN00000000001",
-            "r_source_type": "ArrayAssay",
-            "r_target": "EGAA00000000002", 
-            "r_target_type": "ArrayAssay"
-        },
-        {
-            "r_source": "EGAN00000000001",
-            "r_source_type": "sample",
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
-            "r_target": "EGAA00000000001", 
-            "r_target_type": "ArrayAssay"
+            "r_target": {
+                "object_id": {
+                    "alias": "my-array-experiment-23",
+                    "center_name": "EBI-TEST"
+                },
+                "object_type": "ArrayExperiment"
+            }
         }
     ],
     "assay_files": [

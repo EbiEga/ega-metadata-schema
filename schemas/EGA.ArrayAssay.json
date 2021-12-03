@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json",
     "type": "object",
     "title": "EGA ArrayAssay metadata schema",
@@ -13,9 +13,11 @@
         "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an ArrayAssay (by using EGA-ArrayAssay-id-pattern)", 
         "allOf": [
           {
+            "title": "Inherited object_core_id object",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
+            "title": "Check that ArrayAssay EGA ID (EGAA) is correct",
             "properties": {
               "ega_accession": {
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ArrayAssay-id-pattern"
@@ -29,7 +31,9 @@
         "type": "string",
         "title": "Centername that performed the ArrayAssay",
         "description": "The name of the center (e.g. 'EBI-TEST') responsible for the profiling by microarray (executed the ArrayAssay), if applicable (in case it’s different from the center submitting metadata).",
-        "example": "EBI-TEST"
+        "examples": [
+          "EBI-TEST"
+        ]
       },
 
       "array_assay_date": {
@@ -43,7 +47,9 @@
         "type": "integer",
         "title": "Number of samples of the ArrayAssay",
         "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
-        "example": 30
+        "examples": [
+          30
+        ]
       },
 
       "sample_labels": {
@@ -52,32 +58,8 @@
         "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but defining the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but EGA can add as many as required.",
         "minItems": 1,
         "additionalProperties": false,
-        "items": [],
-        "additionalItems": {
-          "type": "object",
-          "title": "Repeatable Sample-label node",
-          "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from object_core_id - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
-          "required": ["label", "object_id"],
-          "additionalProperties": false,
-          "properties": {
-            "label": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" },
-            "object_id": {
-              "type": "object",
-              "title": "Object's IDs block",
-              "allOf": [
-                {
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
-                },
-                {
-                  "properties": {
-                    "ega_accession": {
-                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
-                    }
-                  }
-                }
-              ]       
-            }
-          }
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association"
         }
       },
 
@@ -87,8 +69,9 @@
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayAssay being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
         "minItems": 1,
         "additionalProperties": false,
-        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" },
-        "items": []
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
       },
 
       "assay_files": {
@@ -97,8 +80,9 @@
         "description": "This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technologies available for such purpose, the allowed filetypes shall be agreed upon and updated accordingly. #! Using an empty item list but defining the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.",
         "minItems": 1,
         "additionalProperties": false,
-        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" },
-        "items": []
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" 
+        }
       },
 
       "array_assay_attributes": {
@@ -107,8 +91,9 @@
         "description": "Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
         "minItems": 1,
         "additionalProperties": false,
-        "additionalItems": { "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" },
-        "items": []
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
       }
 
     }
