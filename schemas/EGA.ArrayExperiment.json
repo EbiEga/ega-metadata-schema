@@ -147,7 +147,7 @@
       "adf_files": {
         "type": "array",
         "title": "Array Design Format (ADF) [NCIT:C172213] file block",
-        "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. This object shall only be used if the EGA is the one storing such file. Otherwise, the Relationships object shall be used to point from the ArrayExperiment to the ADF submitted elsewhere. #! Using an empty item list but defining the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.",
+        "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. This object shall only be used if the EGA is the one storing such file. Otherwise, the Relationships object shall be used to point from the ArrayExperiment to the ADF submitted elsewhere.",
         "minItems": 1,
         "additionalProperties": false,
         "items": {
@@ -165,7 +165,7 @@
       "array_experiment_relationships": {
         "type": "array",
         "title": "ArrayExperiment relationships",
-        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a Sample) the EGA.",
         "minItems": 1,
         "additionalProperties": false,
         "items": {
@@ -176,7 +176,7 @@
       "array_experiment_attributes": {
         "type": "array",
         "title": "ArrayExperiment custom attributes",
-        "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
+        "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
         "additionalProperties": false,
         "minItems": 1,
         "items": {
@@ -187,7 +187,7 @@
       "array_experiment_protocols": {
         "type": "array",
         "title": "Protocols related to an ArrayExperiment",
-        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents. #! Using an empty item list but defining the protocols as possible additionalItems we create the correct constraint: anything but a protocol is rejected, but EGA can add as many as required.",
+        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
         "minItems": 1,
         "additionalProperties": false,
         "items": {
