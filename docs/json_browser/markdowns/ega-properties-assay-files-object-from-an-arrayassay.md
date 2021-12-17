@@ -4,7 +4,7 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/assay_files
 ```
 
-This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technologies available for such purpose, the allowed filetypes shall be agreed upon and updated accordingly. #! Using an empty item list but defining the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.
+This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technologies available for such purpose, the allowed filetypes shall be agreed upon and updated accordingly.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------ |

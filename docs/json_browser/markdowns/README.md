@@ -2,11 +2,15 @@
 
 ## Top-level Schemas
 
-*   [EGA ArrayAssay metadata schema](./ega.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json`
+*   [EGA ArrayAssay metadata schema v0.0.1](./ega.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json`
 
-*   [EGA ArrayExperiment metadata schema](./ega-1.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json`
+*   [EGA ArrayExperiment metadata schema v0.0.1](./ega-1.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json`
 
 *   [EGA common metadata definitions v0.0.1](./ega-2.md "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json`
+
+*   [EGA individual metadata schema v0.0.1](./ega-3.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json`
+
+*   [EGA sample metadata schema v0.0.1](./ega-4.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json`
 
 ## Other Schemas
 
@@ -38,6 +42,8 @@
 
 *   [EGA Relationships object](./ega-2-definitions-ega-relationships-object.md "Object containing the base metadata attributes of a relationship object in the EGA") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object`
 
+*   [Experimental condition \[XCO:0000000\]](./ega-2-definitions-experimental-condition-xco0000000.md "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor`
+
 *   [Experimental design of the ArrayExperiment \[EFO:0001426\]](./ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426.md "Experimental factor describing the method of investigating particular types of research questions or solving particular types of problems") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design`
 
 *   [Filetype \[NCIT:C172272\]](./ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "The nature of the content stored in an electronic file") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype`
@@ -47,6 +53,10 @@
 *   [Filetype \[NCIT:C172272\]](./ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "The nature of the content stored in an electronic file") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype`
 
 *   [Microarray technology of the ArrayExperiment \[EFO:0002698\]](./ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698.md "Microarray technology applicable for the ArrayExperiment") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology`
+
+*   [Minimal public attributes describing a sample](./ega-4-properties-minimal-public-attributes-describing-a-sample.md "Among all fields describing a sample, some may contain identifiable metadata and thus be private") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes`
+
+*   [Minimal public attributes describing an individual](./ega-3-properties-minimal-public-attributes-describing-an-individual.md "Among all fields describing an individual, some may contain identifiable metadata and thus be private") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes`
 
 *   [Object of external accession of the object](./ega-2-definitions-object-of-external-accession-of-the-object.md "External accession node containing the object accession (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession`
 
@@ -58,7 +68,21 @@
 
 *   [Object's IDs block](./ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md) – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id`
 
+*   [Object's IDs block](./ega-3-properties-objects-ids-block.md "Node containing the main identifiers of the object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id`
+
+*   [Object's IDs block](./ega-4-properties-objects-ids-block.md "Node containing the main identifiers of the object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id`
+
+*   [Organism \[OBI:0100026\] descriptor block](./ega-4-properties-organism-obi0100026-descriptor-block.md "This node describes the material entity the sample consists in") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/organism_descriptor`
+
 *   [Relationship's object (either source or target)](./ega-2-definitions-relationships-object-either-source-or-target.md "Node containing metadata (identifiers and the type of reference) of one of the ends of the relationship, whether it is the source or the target of the relationship") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end`
+
+*   [Relationship's object's IDs block](./ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "Node containing the main identifiers of the relationship's object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id`
+
+*   [Relationship's object's IDs block](./ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "Node containing the main identifiers of the relationship's object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id`
+
+*   [Relationship's object's IDs block](./ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "Node containing the main identifiers of the relationship's object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id`
+
+*   [Relationship's object's IDs block](./ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "Node containing the main identifiers of the relationship's object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id`
 
 *   [Relationship's object's IDs block](./ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "Node containing the main identifiers of the relationship's object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id`
 
@@ -78,6 +102,12 @@
 
 *   [Repeatable array_label node](./ega-2-definitions-repeatable-array_label-node.md "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label`
 
+*   [Sample group descriptor](./ega-4-properties-sample-group-descriptor.md "Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping`
+
+*   [Source of the relationship](./ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship’s source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
+
+*   [Source of the relationship](./ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship’s source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
+
 *   [Source of the relationship](./ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship’s source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
 
 *   [Source of the relationship](./ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship’s source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
@@ -89,6 +119,14 @@
 *   [Target of the relationship](./ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "Object reference of the relationship’s target") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target`
 
 *   [Target of the relationship](./ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "Object reference of the relationship’s target") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target`
+
+*   [Target of the relationship](./ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "Object reference of the relationship’s target") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target`
+
+*   [Target of the relationship](./ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "Object reference of the relationship’s target") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target`
+
+*   [Type of the relationship](./ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "The Type of the relationship, containing both its ID (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type`
+
+*   [Type of the relationship](./ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "The Type of the relationship, containing both its ID (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type`
 
 *   [Type of the relationship](./ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "The Type of the relationship, containing both its ID (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type`
 
@@ -138,7 +176,27 @@
 
 *   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
 
+*   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [External accessions array](./ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [Individual custom attributes](./ega-3-properties-individual-custom-attributes.md "Custom attributes of an individual: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_attributes`
+
+*   [Individual relationships](./ega-3-properties-individual-relationships.md "Comprises metadata (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_relationships`
+
 *   [Protocols related to an ArrayExperiment](./ega-1-properties-protocols-related-to-an-arrayexperiment.md "Comprises metadata (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_protocols`
+
+*   [Sample custom attributes](./ega-4-properties-sample-custom-attributes.md "Custom attributes of a sample: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_attributes`
+
+*   [Sample relationships](./ega-4-properties-sample-relationships.md "Comprises metadata (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships`
 
 ## Version Note
 

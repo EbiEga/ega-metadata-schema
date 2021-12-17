@@ -1,7 +1,7 @@
 # Relationship's object (either source or target) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target/allOf/0
 ```
 
 Node containing metadata (identifiers and the type of reference) of one of the ends of the relationship, whether it is the source or the target of the relationship.
@@ -10,7 +10,7 @@ Node containing metadata (identifiers and the type of reference) of one of the e
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
 
-## one-relationship-end Type
+## 0 Type
 
 `object` ([Relationship's object (either source or target)](ega-2-definitions-relationships-object-either-source-or-target.md))
 
@@ -44,7 +44,9 @@ all of
 
     *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
 
-# one-relationship-end Properties
+    *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
+
+# 0 Properties
 
 | Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                     |
 | :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -106,6 +108,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 | `"experiment"`         |             |
 | `"study"`              |             |
 | `"sample"`             |             |
+| `"individual"`         |             |
 | `"submission"`         |             |
 | `"run"`                |             |
 | `"dataset"`            |             |

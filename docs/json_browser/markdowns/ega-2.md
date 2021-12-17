@@ -105,7 +105,7 @@ The object accession (i.e. unique identifier) assigned by the archive (EGA). Obj
 
 ### external_accessions
 
-Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.
+Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
 
 `external_accessions`
 
@@ -445,6 +445,8 @@ all of
 
         *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
 
+        *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
+
 ### r_target
 
 Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.
@@ -494,6 +496,8 @@ all of
         *   [ArrayExperiment: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayexperiment-object_id-and-object_type-check.md "check type definition")
 
         *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
+
+        *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
 
 ## Definitions group protocols_object
 
@@ -869,6 +873,17 @@ Reference this group by using
 
 ```json
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ArrayAssay-id-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group EGA-individual-id-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-individual-id-pattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1394,6 +1409,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 | `"experiment"`         |             |
 | `"study"`              |             |
 | `"sample"`             |             |
+| `"individual"`         |             |
 | `"submission"`         |             |
 | `"run"`                |             |
 | `"dataset"`            |             |
@@ -1409,4 +1425,136 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 
 ```json
 "sample"
+```
+
+## Definitions group subject_id
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/subject_id"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group biological_sex
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/biological_sex"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group experimental_condition_descriptor
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor"}
+```
+
+| Property                                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                |
+| :------------------------------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [experimental_condition_term](#experimental_condition_term)               | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_term")               |
+| [experimental_condition_curie](#experimental_condition_curie)             | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_curie")             |
+| [experimental_condition_description](#experimental_condition_description) | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_description") |
+
+### experimental_condition_term
+
+Human-readable term that specifies the experimental condition (e.g. 'fibroadenoma').
+
+`experimental_condition_term`
+
+*   is required
+
+*   Type: `string` ([Experimental condition term](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_term")
+
+#### experimental_condition_term Type
+
+`string` ([Experimental condition term](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md))
+
+#### experimental_condition_term Examples
+
+```json
+"control"
+```
+
+```json
+"fibroadenoma"
+```
+
+```json
+"osteonecrosis"
+```
+
+### experimental_condition_curie
+
+Curie (i.e. ontologised term - e.g. 'EFO:0001461') of the experimental condition.
+
+`experimental_condition_curie`
+
+*   is optional
+
+*   Type: `string` ([Experimental condition curie](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_curie")
+
+#### experimental_condition_curie Type
+
+`string` ([Experimental condition curie](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md))
+
+#### experimental_condition_curie Examples
+
+```json
+"EFO:0001461"
+```
+
+```json
+"EFO:1000254"
+```
+
+```json
+"EFO:0004259"
+```
+
+### experimental_condition_description
+
+Broad description of the experimental condition, providing further details and context over the ontologised term.
+
+`experimental_condition_description`
+
+*   is optional
+
+*   Type: `string` ([Experimental condition description](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_description")
+
+#### experimental_condition_description Type
+
+`string` ([Experimental condition description](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md))
+
+#### experimental_condition_description Examples
+
+```json
+"A control role is borne by a material in a process in which results obtained from an experimental sample and a control sample are compared."
+```
+
+```json
+"A benign tumor of the breast characterized by the presence of stromal and epithelial elements."
+```
+
+```json
+"A none disease characterized by death of bone tissue due to a lack of blood supply."
 ```

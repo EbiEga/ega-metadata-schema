@@ -1,4 +1,4 @@
-# Untitled undefined type in EGA ArrayExperiment metadata schema Schema
+# Untitled undefined type in EGA ArrayExperiment metadata schema v0.0.1 Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id/allOf/1/properties

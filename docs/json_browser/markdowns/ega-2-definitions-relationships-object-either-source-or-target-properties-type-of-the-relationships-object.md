@@ -23,6 +23,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 | `"experiment"`         |             |
 | `"study"`              |             |
 | `"sample"`             |             |
+| `"individual"`         |             |
 | `"submission"`         |             |
 | `"run"`                |             |
 | `"dataset"`            |             |

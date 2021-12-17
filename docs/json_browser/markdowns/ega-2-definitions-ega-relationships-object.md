@@ -1,20 +1,20 @@
 # EGA Relationships object Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships/items
 ```
 
-Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.
+Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Ontologies of each type of connection are stored the meta:enum field, and details of each in its corresponding record within the ontologies.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                        |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json*](../out/EGA.sample.json "open original schema") |
 
-## relationship_object Type
+## items Type
 
 `object` ([EGA Relationships object](ega-2-definitions-ega-relationships-object.md))
 
-# relationship_object Properties
+# items Properties
 
 | Property              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
 | :-------------------- | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -96,6 +96,8 @@ all of
 
         *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
 
+        *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
+
 ## r_target
 
 Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.
@@ -145,3 +147,5 @@ all of
         *   [ArrayExperiment: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayexperiment-object_id-and-object_type-check.md "check type definition")
 
         *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
+
+        *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")

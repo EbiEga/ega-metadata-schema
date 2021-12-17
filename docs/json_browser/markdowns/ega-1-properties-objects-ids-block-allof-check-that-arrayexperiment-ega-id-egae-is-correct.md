@@ -16,9 +16,9 @@ unknown ([Check that ArrayExperiment EGA ID (EGAE) is correct](ega-1-properties-
 
 # 1 Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                   |
-| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-objects-ids-block-allof-check-that-arrayexperiment-ega-id-egae-is-correct-properties-pattern-of-an-ega-arrayexperiments-id-egae.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                          |
+| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-objects-ids-block-allof-check-that-arrayexperiment-ega-id-egae-is-correct-properties-pattern-of-an-ega-arrayexperiments-id-egae.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that ArrayExperiment EGA ID (EGAE) is correct](ega-1-properties-
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-objects-ids-block-allof-check-that-arrayexperiment-ega-id-egae-is-correct-properties-pattern-of-an-ega-arrayexperiments-id-egae.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-objects-ids-block-allof-check-that-arrayexperiment-ega-id-egae-is-correct-properties-pattern-of-an-ega-arrayexperiments-id-egae.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega_accession Type
 

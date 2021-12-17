@@ -4,7 +4,7 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_protocols
 ```
 
-Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents. #! Using an empty item list but defining the protocols as possible additionalItems we create the correct constraint: anything but a protocol is rejected, but EGA can add as many as required.
+Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                          |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------- |

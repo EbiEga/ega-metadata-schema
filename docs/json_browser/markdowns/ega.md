@@ -1,31 +1,33 @@
-# EGA ArrayAssay metadata schema Schema
+# EGA ArrayAssay metadata schema v0.0.1 Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object. This object is intended to contain metadata about the physical array to which the assayed molecule is hybridized. Used exclusively an Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object. This object is intended to contain metadata about the physical array to which the assayed molecule is hybridized. Used exclusively in Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.ArrayAssay.json](../out/EGA.ArrayAssay.json "open original schema") |
 
-## EGA ArrayAssay metadata schema Type
+## EGA ArrayAssay metadata schema v0.0.1 Type
 
-`object` ([EGA ArrayAssay metadata schema](ega.md))
+`object` ([EGA ArrayAssay metadata schema v0.0.1](ega.md))
 
-# EGA ArrayAssay metadata schema Properties
+# EGA ArrayAssay metadata schema v0.0.1 Properties
 
-| Property                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                        |
-| :------------------------------------------------------ | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_id](#object_id)                                 | Merged    | Required | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id")                                 |
-| [array_assay_center](#array_assay_center)               | `string`  | Required | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-centername-that-performed-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_center") |
-| [array_assay_date](#array_assay_date)                   | `string`  | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_date")      |
-| [sample_number](#sample_number)                         | `integer` | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-number-of-samples-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_number")           |
-| [sample_labels](#sample_labels)                         | `array`   | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-array-of-sample-label-pairs-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_labels") |
-| [array_assay_relationships](#array_assay_relationships) | `array`   | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-arrayassay-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_relationships")          |
-| [assay_files](#assay_files)                             | `array`   | Required | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-assay-files-object-from-an-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/assay_files")           |
-| [array_assay_attributes](#array_assay_attributes)       | `array`   | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-arrayassay-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_attributes")         |
+| Property                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                               |
+| :------------------------------------------------------ | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_id](#object_id)                                 | Merged    | Required | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id")                                 |
+| [object_title](#object_title)                           | `string`  | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-title-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_title")                        |
+| [object_description](#object_description)               | `string`  | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-description-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_description")            |
+| [array_assay_center](#array_assay_center)               | `string`  | Required | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-centername-that-performed-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_center") |
+| [array_assay_date](#array_assay_date)                   | `string`  | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_date")      |
+| [sample_number](#sample_number)                         | `integer` | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-number-of-samples-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_number")           |
+| [sample_labels](#sample_labels)                         | `array`   | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-array-of-sample-label-pairs-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_labels") |
+| [array_assay_relationships](#array_assay_relationships) | `array`   | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-arrayassay-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_relationships")          |
+| [assay_files](#assay_files)                             | `array`   | Required | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-assay-files-object-from-an-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/assay_files")           |
+| [array_assay_attributes](#array_assay_attributes)       | `array`   | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-arrayassay-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_attributes")         |
 
 ## object_id
 
@@ -39,7 +41,7 @@ Node containing the main identifiers of the object (e.g. alias, center_name...),
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id")
 
 ### object_id Type
 
@@ -57,6 +59,54 @@ all of
 
 *   [Check that ArrayAssay EGA ID (EGAA) is correct](ega-properties-objects-ids-block-allof-check-that-arrayassay-ega-id-egaa-is-correct.md "check type definition")
 
+## object_title
+
+An informative assay title that should serve as an overview (e.g. assay tag, usded technology, sample groups, purpose...) of the array assay and differentiate it from others. This short text can be used to call out ArrayAssay records in searches or in displays.
+
+`object_title`
+
+*   is optional
+
+*   Type: `string` ([Title of the ArrayAssay](ega-properties-title-of-the-arrayassay.md))
+
+*   cannot be null
+
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-title-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_title")
+
+### object_title Type
+
+`string` ([Title of the ArrayAssay](ega-properties-title-of-the-arrayassay.md))
+
+### object_title Examples
+
+```json
+"Assay number XS00013 of Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls"
+```
+
+## object_description
+
+An in-depth description of the ArrayAssay
+
+`object_description`
+
+*   is optional
+
+*   Type: `string` ([Description of the ArrayAssay](ega-properties-description-of-the-arrayassay.md))
+
+*   cannot be null
+
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-description-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_description")
+
+### object_description Type
+
+`string` ([Description of the ArrayAssay](ega-properties-description-of-the-arrayassay.md))
+
+### object_description Examples
+
+```json
+"Array assay number 901 of group X from EBI-TEST; this is the control group."
+```
+
 ## array_assay_center
 
 The name of the center (e.g. 'EBI-TEST') responsible for the profiling by microarray (executed the ArrayAssay), if applicable (in case it’s different from the center submitting metadata).
@@ -69,7 +119,7 @@ The name of the center (e.g. 'EBI-TEST') responsible for the profiling by microa
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-centername-that-performed-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_center")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-centername-that-performed-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_center")
 
 ### array_assay_center Type
 
@@ -93,7 +143,7 @@ ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the ArrayAssay took place.
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_date")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_date")
 
 ### array_assay_date Type
 
@@ -104,10 +154,10 @@ ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the ArrayAssay took place.
 **pattern**: the string must match the following regular expression: 
 
 ```regexp
-^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$
+^[0-9]{4}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(19%7C20\)%5B0-9%5D%7B2%7D-\(0%5B0-9%5D%7C1%5B0-2%5D\)-\(%5B012%5D%5B0-9%5D%7C3%5B01%5D\)%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B4%7D-\(0%5B0-9%5D%7C1%5B0-2%5D\)-\(%5B012%5D%5B0-9%5D%7C3%5B01%5D\)%24 "try regular expression with regexr.com")
 
 ### array_assay_date Examples
 
@@ -117,7 +167,7 @@ ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the ArrayAssay took place.
 
 ## sample_number
 
-Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate \[EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates \[CHEBI:24432] being used several times (see <https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation>).
+Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate \[EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates \[EFO:0002090] being used several times (see <https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation>).
 
 `sample_number`
 
@@ -127,7 +177,7 @@ Number of samples included in the Assay (i.e. pooled into one single microarray,
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-number-of-samples-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_number")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-number-of-samples-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_number")
 
 ### sample_number Type
 
@@ -141,7 +191,7 @@ Number of samples included in the Assay (i.e. pooled into one single microarray,
 
 ## sample_labels
 
-Sample-Label pairs (format being 'EGAN\[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour. #! Using an empty item list but defining the sample-label pairs as possible additionalItems we create the correct constraint: anything but a sample-label pair is rejected, but EGA can add as many as required.
+Sample-Label pairs (format being 'EGAN\[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour.
 
 `sample_labels`
 
@@ -151,7 +201,7 @@ Sample-Label pairs (format being 'EGAN\[0-9]{11}:Label' - e.g. 'EGAN00000000001:
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-array-of-sample-label-pairs-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_labels")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-array-of-sample-label-pairs-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_labels")
 
 ### sample_labels Type
 
@@ -163,7 +213,7 @@ Sample-Label pairs (format being 'EGAN\[0-9]{11}:Label' - e.g. 'EGAN00000000001:
 
 ## array_assay_relationships
 
-Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayAssay being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.
+Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayAssay being linked to a Sample) the EGA.
 
 `array_assay_relationships`
 
@@ -173,7 +223,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-arrayassay-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_relationships")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-arrayassay-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_relationships")
 
 ### array_assay_relationships Type
 
@@ -185,7 +235,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 ## assay_files
 
-This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technologies available for such purpose, the allowed filetypes shall be agreed upon and updated accordingly. #! Using an empty item list but defining the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.
+This array object contains the specific files derived from performing an hybridization of the assayed molecule to a physical array. Given the amount of technologies available for such purpose, the allowed filetypes shall be agreed upon and updated accordingly.
 
 `assay_files`
 
@@ -195,7 +245,7 @@ This array object contains the specific files derived from performing an hybridi
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-assay-files-object-from-an-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/assay_files")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-assay-files-object-from-an-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/assay_files")
 
 ### assay_files Type
 
@@ -207,7 +257,7 @@ This array object contains the specific files derived from performing an hybridi
 
 ## array_assay_attributes
 
-Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.
+Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
 
 `array_assay_attributes`
 
@@ -217,7 +267,7 @@ Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pair
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-arrayassay-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_attributes")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-arrayassay-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_attributes")
 
 ### array_assay_attributes Type
 

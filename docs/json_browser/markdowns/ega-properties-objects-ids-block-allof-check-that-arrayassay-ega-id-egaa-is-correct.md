@@ -16,9 +16,9 @@ unknown ([Check that ArrayAssay EGA ID (EGAA) is correct](ega-properties-objects
 
 # 1 Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                             |
-| :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-objects-ids-block-allof-check-that-arrayassay-ega-id-egaa-is-correct-properties-pattern-of-an-ega-arrayassays-id-egaa.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                    |
+| :------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA ArrayAssay metadata schema v0.0.1](ega-properties-objects-ids-block-allof-check-that-arrayassay-ega-id-egaa-is-correct-properties-pattern-of-an-ega-arrayassays-id-egaa.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that ArrayAssay EGA ID (EGAA) is correct](ega-properties-objects
 
 *   cannot be null
 
-*   defined in: [EGA ArrayAssay metadata schema](ega-properties-objects-ids-block-allof-check-that-arrayassay-ega-id-egaa-is-correct-properties-pattern-of-an-ega-arrayassays-id-egaa.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA ArrayAssay metadata schema v0.0.1](ega-properties-objects-ids-block-allof-check-that-arrayassay-ega-id-egaa-is-correct-properties-pattern-of-an-ega-arrayassays-id-egaa.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega_accession Type
 

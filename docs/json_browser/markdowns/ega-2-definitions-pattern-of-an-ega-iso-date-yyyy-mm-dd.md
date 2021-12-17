@@ -1,30 +1,30 @@
 # Pattern of an EGA ISO date (YYYY-MM-DD) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection_date
 ```
 
+ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. If the protocols are long enough, the date shall be the day the collection concluded.
 
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                        |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json*](../out/EGA.sample.json "open original schema") |
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
-
-## EGA-ISO-date-YYYY-MM-DD-pattern Type
+## sample_collection_date Type
 
 `string` ([Pattern of an EGA ISO date (YYYY-MM-DD)](ega-2-definitions-pattern-of-an-ega-iso-date-yyyy-mm-dd.md))
 
-## EGA-ISO-date-YYYY-MM-DD-pattern Constraints
+## sample_collection_date Constraints
 
 **pattern**: the string must match the following regular expression: 
 
 ```regexp
-^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$
+^[0-9]{4}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(19%7C20\)%5B0-9%5D%7B2%7D-\(0%5B0-9%5D%7C1%5B0-2%5D\)-\(%5B012%5D%5B0-9%5D%7C3%5B01%5D\)%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B4%7D-\(0%5B0-9%5D%7C1%5B0-2%5D\)-\(%5B012%5D%5B0-9%5D%7C3%5B01%5D\)%24 "try regular expression with regexr.com")
 
-## EGA-ISO-date-YYYY-MM-DD-pattern Examples
+## sample_collection_date Examples
 
 ```json
 "2021-04-30"

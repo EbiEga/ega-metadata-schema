@@ -16,10 +16,10 @@ Type of molecule assayed. It contains both the human readable ID (e.g. DNA assay
 
 # assayed_molecule Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                   |
-| :------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assayed_molecule_id](#assayed_molecule_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_id")       |
-| [assayed_molecule_curie](#assayed_molecule_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_curie") |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                          |
+| :------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayed_molecule_id](#assayed_molecule_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_id")       |
+| [assayed_molecule_curie](#assayed_molecule_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_curie") |
 
 ## assayed_molecule_id
 
@@ -33,7 +33,7 @@ The human readable ID (e.g. DNA assay), chosen from a list of CVs, of the assaye
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_id")
+*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_id")
 
 ### assayed_molecule_id Type
 
@@ -68,7 +68,7 @@ The CURIE (i.e. ontologized term - e.g. EFO:0001456), chosen from a list of CVs,
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_curie")
+*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule/properties/assayed_molecule_curie")
 
 ### assayed_molecule_curie Type
 
