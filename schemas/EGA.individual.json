@@ -1,0 +1,72 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+    "type": "object",
+    "title": "EGA individual metadata schema v0.0.1",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object. This object is intended to contain metadata about the individual, also known as the sample donor or subject of study. An individual is defined as a person that participates in an experiment or from which a material sample was derived. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "minimal_public_attributes"],
+    "additionalProperties": false,
+    "properties": {
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: a individual (by using EGA-individual-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that individual EGA ID (EGAN) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-individual-id-pattern"
+              }
+            }
+          }
+        ]
+      },
+     
+      "minimal_public_attributes":{
+        "type": "object",
+        "title": "Minimal public attributes describing an individual",
+        "description": "Among all fields describing an individual, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every individual should contain (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.",
+        "additionalProperties": false,
+        "required": ["subject_id", "biological_sex", "phenotype"],
+        "properties": {
+          "subject_id": {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/subject_id"
+          },
+          "biological_sex": {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/biological_sex"
+          },
+          "phenotype": {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor"
+          }
+        }
+      },
+
+      "individual_relationships": {
+        "type": "array",
+        "title": "Individual relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to an individual) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "individual_attributes": {
+        "type": "array",
+        "title": "Individual custom attributes",
+        "description": "Custom attributes of an individual: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
+    }
+      
+  }

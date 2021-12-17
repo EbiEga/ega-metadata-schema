@@ -1,0 +1,185 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+    "type": "object",
+    "title": "EGA sample metadata schema v0.0.1",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "organism_descriptor", "minimal_public_attributes"],
+    "additionalProperties": false,
+    "properties": {
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: a sample (by using EGA-sample-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that sample EGA ID (EGAN) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
+              }
+            }
+          }
+        ]
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the sample",
+        "description": "An informative sample title that should serve as an overview (e.g. sample tag, pseudonyms, sample type, sample groups, purpose...) of the sample and differentiate it from others. This short text can be used to call out sample records in searches or in displays.",
+        "examples": [ "Buccal swab from COVID+ patient NM305004" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the sample",
+        "description": "An informative sample descripotion that describes the sample and differentiates it from others.",
+        "examples": [ "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to..." ]
+      },
+
+      "organism_descriptor": {
+        "type": "object",
+        "title": "Organism [OBI:0100026] descriptor block",
+        "description": "This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
+        "additionalProperties": false,
+        "properties": {
+          "taxon_id": {
+            "type": "string",
+            "title": "Taxon identifier [APOLLO_SV:00000203]",
+            "description": "Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: https://www.ncbi.nlm.nih.gov/taxonomy). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
+            "pattern": "^[0-9]{1,7}$",
+            "examples": [ "9606" ]
+          },
+          "scientific_name": {
+            "type": "string",
+            "title": "Biologic entity classification scientific name [NCIT:C43459]",
+            "description": "The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').",
+            "examples": [ "homo sapiens" ]
+          },
+          "common_name": {
+            "type": "string",
+            "title": "Biologic entity classification common name [NCIT:C164690]",
+            "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
+            "examples": [ "human" ]
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Either the taxon ID is provided", 
+            "required": ["taxon_id"] 
+          },
+          {
+            "title": "Or the scientific name is provided", 
+            "required": ["scientific_name"] 
+          }          
+        ]
+      },
+      
+      "minimal_public_attributes":{
+        "type": "object",
+        "title": "Minimal public attributes describing a sample",
+        "description": "Among all fields describing a sample, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every sample should contain (even if they are unknown): subject id (sample donor id), biological sex and phenotype. These shall be displayed and queryable.",
+        "additionalProperties": false,
+        "required": ["subject_id", "biological_sex", "experimental_condition"],
+        "properties": {
+          "subject_id": {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/subject_id"
+          },
+          "biological_sex": {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/biological_sex"
+          },
+          "experimental_condition": {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor"
+          }
+        }
+      },
+
+      "sample_collection_date": {
+        "type": "string",
+        "title": "Date of the sample collection [NCIT:C81286]",
+        "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. If the protocols are long enough, the date shall be the day the collection concluded.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
+      },
+
+      "sample_grouping": {
+        "type": "object",
+        "title": "Sample group descriptor",
+        "description": "Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e.g. blood samples from different donors) physically or during the experimentation and analysis. One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
+        "additionalProperties": false,
+        "required": ["sample_group_boolean"],
+        "properties": {
+          "sample_group_boolean": {
+            "type": "boolean",
+            "title": "Sample group boolean",
+            "description": "Boolean flag on whether the sample object is a group or an individual sample. Please note that boolean values (true or false) cannot be quoted, nor in uppercase.",
+            "examples": [ true ]
+          }, 
+          "sample_number": {
+            "type": "integer",
+            "title": "Number of samples",
+            "description": "Number of individual samples (e.g. 300) encompassed by the sample group",
+            "examples": [ 300 ]
+          },
+          "sample_grouping_label": {
+            "type": "string",
+            "title": "Label of the sample grouping",
+            "description": "Optional label of the sample grouping, used to add context to the group.",
+            "examples": [ "Group of samples X based on the day they were taken." ]
+          }
+        },
+        "oneOf": [
+          { 
+            "title": "Either the sample_number is present and above 1",
+            "required": ["sample_number"],
+            "properties": {
+              "sample_group_boolean": {
+                "enum": [ true ]
+              },
+              "sample_number": {
+                "type": "integer",
+                "minimum": 2
+              }
+            }
+          },
+          { 
+            "title": "Or the sample_group_boolean is 'false', hence an individual sample with sample_number being '1' or no sample_number",
+            "properties": {
+              "sample_group_boolean": {
+                "enum": [ false ]
+              },
+              "sample_number": {
+                "enum": [ 1 ]
+              }
+            }
+          }
+        ]
+      },
+
+      "sample_relationships": {
+        "type": "array",
+        "title": "Sample relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to a sequencing run) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "sample_attributes": {
+        "type": "array",
+        "title": "Sample custom attributes",
+        "description": "Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
+    }
+      
+  }
