@@ -12,10 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added markdown documentation (json_browser) explaining the schemas (see [README](docs/json_browser/README.md)) [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 - Added ``titles`` and ``descriptions`` to several constraints within the schemas (for the markdowns to have a better explanation) [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 - Added ``examples`` and ``meta:enum`` keywords within the schemas for them to appear in the markdowns. [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
+- Added [``sample``](schemas/EGA.sample.json) and [``individual``](schemas/EGA.individual.json) JSON schemas [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 ### Modified
 - [star2xml](https://github.com/EGA-archive/star2xml) - Moved tool star2xml to its own repository: https://github.com/EGA-archive/star2xml. 
 - [JSON schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) - improved drafted JSON schemas for AF (Array Format) Array and Experiment metadata.
 - Modified the relationships node so that the target and source are of type ``object_core_id`` (being able to reference non-registered objects). [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
+- Updated markdown documentation of the schemas (see [README](docs/json_browser/markdowns/README.md)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
+- Updated JSON schemas ([``common definitions``](schemas/EGA.common-definitions.json), [``ArrayAssay``](schemas/EGA.ArrayAssay.json) and [``ArrayExperiment``](schemas/EGA.ArrayExperiment.json)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 
 ## [0.0.0] - 2021-04-26
 ### Added
