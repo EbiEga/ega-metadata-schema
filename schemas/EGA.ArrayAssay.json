@@ -2,8 +2,8 @@
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json",
     "type": "object",
-    "title": "EGA ArrayAssay metadata schema",
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object. This object is intended to contain metadata about the physical array to which the assayed molecule is hybridized. Used exclusively an Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "title": "EGA ArrayAssay metadata schema v0.0.1",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object. This object is intended to contain metadata about the physical array to which the assayed molecule is hybridized. Used exclusively in Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_id", "array_assay_center", "assay_files"],
     "additionalProperties": false,
     "properties": {
@@ -25,6 +25,20 @@
             }
           }
         ]        
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the ArrayAssay",
+        "description": "An informative assay title that should serve as an overview (e.g. assay tag, usded technology, sample groups, purpose...) of the array assay and differentiate it from others. This short text can be used to call out ArrayAssay records in searches or in displays.",
+        "examples": [ "Assay number XS00013 of Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the ArrayAssay",
+        "description": "An in-depth description of the ArrayAssay",
+        "examples": [ "Array assay number 901 of group X from EBI-TEST; this is the control group." ]
       },
 
       "array_assay_center": {

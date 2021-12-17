@@ -195,7 +195,7 @@
       "relationship_object": {
         "type": "object",
         "title": "EGA Relationships object",
-        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.",
+        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Ontologies of each type of connection are stored the meta:enum field, and details of each in its corresponding record within the ontologies.",
         "required": ["r_type", "r_source", "r_target"],
         "additionalProperties": false,
         "properties": {
@@ -495,6 +495,20 @@
                 "enum": ["ArrayAssay"]
               }
             }
+          },
+          {
+            "title": "Individual: object_id and object_type check",
+            "description": "A check that ensures that, if 'individual' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-individual-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["individual"]
+              }
+            }
           }
         ]                      
       },
@@ -628,6 +642,13 @@
         "title": "Pattern of an EGA ArrayAssay's ID (EGAA...)",
         "pattern": "^EGAA[0-9]{11}$",
         "examples": [ "EGAA00002189113" ]
+      },
+
+      "EGA-individual-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA Individual's ID (EGAI...)",
+        "pattern": "^EGAI[0-9]{11}$",
+        "examples": [ "EGAI00001159712" ]
       },
 
       "EGA-ISO-date-YYYY-MM-DD-pattern": {
@@ -1125,7 +1146,7 @@
             "type": "string",
             "title": "Type of the relationship's object",
             "description": "Type of the relationship's object, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
+            "enum": ["experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
             "meta:enum": ["Contains information about the experimental design of the sequencing", "Information about the study", "Information about the used samples", "Information about the submission actions", "Contains information about the specific sequencing runs from the experiment", "Contains the collection of runs/analysis/ArrayAssay data files to be subject to controlled access", "Contains the analysis metadata and data files", "Contains information related to the Data Access Agreement (DAA) the dataset is subject to", "Contains information about the Data Access Committee (DAC)", "Contains information about the experimental design of the Array", "Contains information about the probed assay from the array", "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)", "An external URL resource, of any type"],
             "examples": [ "sample" ]
           }
@@ -1136,6 +1157,55 @@
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check" 
           }
         ]        
+      },
+
+      "subject_id": {
+        "type": "string",
+        "title": "Subject ID",
+        "description": "A unique identifir (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance.",
+        "examples": [ "Donor-10031", "ID001", "9001", "AX_Dli" ]
+      },
+
+      "biological_sex": {
+        "type": "string",
+        "title": "Biological sex of the individual [PATO:0000047]",
+        "description": "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female.",
+        "enum": [ "male", "female", "hermaphrodite", "unknown" ],
+        "meta:enum": [ "A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.", "A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.", "An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.", "The biological sex is unknown." ],
+        "examples": [ "male" ]
+      },
+
+      "experimental_condition_descriptor": {
+        "type": "object",
+        "title": "Experimental condition [XCO:0000000]",
+        "description": "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment. We highly recommend the usage of ontologies to describe experimental conditions (search at 'https://www.ebi.ac.uk/ols/ontologies/efo').",
+        "additionalProperties": false,
+        "required": ["experimental_condition_term"],
+        "properties": {
+          "experimental_condition_term": {
+            "type": "string",
+            "title": "Experimental condition term",
+            "description": "Human-readable term that specifies the experimental condition (e.g. 'fibroadenoma').",
+            "examples": [ "control", "fibroadenoma", "osteonecrosis" ]
+          },
+          "experimental_condition_curie": {
+            "type": "string",
+            "title": "Experimental condition curie",
+            "description": "Curie (i.e. ontologised term - e.g. 'EFO:0001461') of the experimental condition.",
+            "examples": [ "EFO:0001461", "EFO:1000254", "EFO:0004259" ]
+          },
+          "experimental_condition_description": {
+            "type": "string",
+            "title": "Experimental condition description",
+            "description": "Broad description of the experimental condition, providing further details and context over the ontologised term.",
+            "examples": [
+              "A control role is borne by a material in a process in which results obtained from an experimental sample and a control sample are compared.",
+              "A benign tumor of the breast characterized by the presence of stromal and epithelial elements.", 
+              "A none disease characterized by death of bone tissue due to a lack of blood supply."
+            ]
+          }
+        }
       }
+
     }    
   }
