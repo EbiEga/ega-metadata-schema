@@ -69,7 +69,7 @@
       "sample_labels": {
         "type": "array",
         "title": "Array of Sample-label pairs of the ArrayAssay",
-        "description": "Sample-Label pairs (format being 'EGAN[0-9]{11}:Label' - e.g. 'EGAN00000000001:Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour.",
+        "description": "Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which samples used in this assay are labelled by which chemicals. Could be omitted if the array is of one single label and colour.",
         "minItems": 1,
         "additionalProperties": false,
         "items": { 
