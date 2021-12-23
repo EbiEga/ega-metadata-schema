@@ -30,7 +30,7 @@
       "minimal_public_attributes":{
         "type": "object",
         "title": "Minimal public attributes describing an individual",
-        "description": "Among all fields describing an individual, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every individual should contain (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.",
+        "description": "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.",
         "additionalProperties": false,
         "required": ["subject_id", "biological_sex", "phenotype"],
         "properties": {
