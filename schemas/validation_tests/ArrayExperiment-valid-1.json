@@ -3,6 +3,12 @@
         "alias" : "MyArrayExperiment_13", 
         "center_name" : "EBI-TEST"
     },
+    "schema_descriptor": {
+        "object_type": "ArrayExperiment",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    },
     "object_title": "Testing ArrayExperiment title",
     "object_description": "Broad description of the testing ArrayExperiment",
     "technology": {

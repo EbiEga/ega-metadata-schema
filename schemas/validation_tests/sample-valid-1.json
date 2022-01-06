@@ -4,6 +4,12 @@
         "center_name" : "EBI-TEST",
         "ega_accession": "EGAN00000000001"
     },
+    "schema_descriptor": {
+        "object_type": "sample",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    },
     "object_title": "Buccal swab from COVID+ patient NM305004",
     "object_description": "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to our labs in California",
     "organism_descriptor": {

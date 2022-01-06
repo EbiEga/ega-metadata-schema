@@ -4,6 +4,12 @@
         "center_name" : "EBI-TEST",
         "ega_accession": "EGAA00000000001"
     },
+    "schema_descriptor": {
+        "object_type": "ArrayAssay",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    },
     "array_assay_center": "EBI-TEST",
     "array_assay_date": "2021-06-24",
     "sample_number": 2,
