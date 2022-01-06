@@ -104,6 +104,8 @@
 
 *   [Sample group descriptor](./ega-4-properties-sample-group-descriptor.md "Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping`
 
+*   [Schema descriptor](./ega-2-definitions-schema-descriptor.md "This node is intended to be used to describe the schemas and standards that a JSON document was based on") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor`
+
 *   [Source of the relationship](./ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship’s source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
 
 *   [Source of the relationship](./ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship’s source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
