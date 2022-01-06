@@ -4,6 +4,11 @@
         "center_name" : "EBI-TEST",
         "ega_accession": "EGAI00000000001"
     },
+    "organism_descriptor": {
+        "taxon_id": "9606",
+        "scientific_name": "homo sapiens",
+        "common_name": "human"
+    },
     "minimal_public_attributes": {
         "subject_id": "donor-NM305004",
         "biological_sex": "male",

@@ -1206,6 +1206,44 @@
             ]
           }
         }
+      },
+
+      "organism_descriptor": {
+        "type": "object",
+        "title": "Organism [OBI:0100026] descriptor block",
+        "description": "This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
+        "additionalProperties": false,
+        "properties": {
+          "taxon_id": {
+            "type": "string",
+            "title": "Taxon identifier [APOLLO_SV:00000203]",
+            "description": "Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: https://www.ncbi.nlm.nih.gov/taxonomy). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
+            "pattern": "^[0-9]{1,7}$",
+            "examples": [ "9606" ]
+          },
+          "scientific_name": {
+            "type": "string",
+            "title": "Biologic entity classification scientific name [NCIT:C43459]",
+            "description": "The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').",
+            "examples": [ "homo sapiens" ]
+          },
+          "common_name": {
+            "type": "string",
+            "title": "Biologic entity classification common name [NCIT:C164690]",
+            "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
+            "examples": [ "human" ]
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Either the taxon ID is provided", 
+            "required": ["taxon_id"] 
+          },
+          {
+            "title": "Or the scientific name is provided", 
+            "required": ["scientific_name"] 
+          }          
+        ]
       }
 
     }    
