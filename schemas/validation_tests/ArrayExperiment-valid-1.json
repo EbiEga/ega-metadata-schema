@@ -3,12 +3,6 @@
         "alias" : "MyArrayExperiment_13", 
         "center_name" : "EBI-TEST"
     },
-    "schema_descriptor": {
-        "object_type": "ArrayExperiment",
-        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json",
-        "object_schema_version": "0.0.0",
-        "common_schema_version": "0.0.0"
-    },
     "object_title": "Testing ArrayExperiment title",
     "object_description": "Broad description of the testing ArrayExperiment",
     "technology": {
@@ -114,5 +108,11 @@
             "protocol_curie": "EFO:0003815", 
             "protocol_description": "Hybridization of radioactive or non-radioactive probes was performed overnight, at 65°C in a rotating tube (Hybaid hybridization oven, Thermo Scientific) in 250 mM sodium phosphate buffer (pH 7.4), 7% SDS, 1 mM EDTA. Two washes were performed in 20 mM sodium phosphate buffer (pH 7.4), 1% SDS, 1 mM EDTA. When using the commercial protocol with DIG-labeled probes, the membrane was hybridized and washed as recommended by the manufacturer (Roche DIG Easy Hyb 11 796 895 001). Membranes hybridized with radioactive probes were exposed 4 or 20 h on a phosphor screen before quantification. Membranes hybridized with non-radioactive probes were subsequently treated with an anti-DIG antibody"
         }
-    ]
+    ],
+    "schema_descriptor": {
+        "object_type": "ArrayExperiment",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
 }
