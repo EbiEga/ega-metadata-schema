@@ -16,10 +16,10 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 # label Properties
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                           |
-| :-------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [array_label_id](#array_label_id)       | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")       |
-| [array_label_curie](#array_label_curie) | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie") |
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [array_label_id](#array_label_id)       | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")       |
+| [array_label_curie](#array_label_curie) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie") |
 
 ## array_label_id
 
@@ -33,7 +33,7 @@ Human readable ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")
 
 ### array_label_id Type
 
@@ -57,7 +57,7 @@ CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie")
 
 ### array_label_curie Type
 

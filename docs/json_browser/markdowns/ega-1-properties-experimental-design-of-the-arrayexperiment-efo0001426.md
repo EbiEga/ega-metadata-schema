@@ -16,10 +16,10 @@ Experimental factor describing the method of investigating particular types of r
 
 # experimental_design Properties
 
-| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                            |
-| :------------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [experimental_design_id](#experimental_design_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_id")       |
-| [experimental_design_curie](#experimental_design_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_curie") |
+| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                     |
+| :------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [experimental_design_id](#experimental_design_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_id")       |
+| [experimental_design_curie](#experimental_design_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_curie") |
 
 ## experimental_design_id
 
@@ -33,7 +33,7 @@ The human readable ID (e.g. RNA stability design), chosen from a list of CVs, of
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_id")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_id")
 
 ### experimental_design_id Type
 
@@ -93,7 +93,7 @@ The CURIE (i.e. ontologized term - e.g. EFO:0001783), chosen from a list of CVs,
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_curie")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426-properties-experimental-design-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design/properties/experimental_design_curie")
 
 ### experimental_design_curie Type
 

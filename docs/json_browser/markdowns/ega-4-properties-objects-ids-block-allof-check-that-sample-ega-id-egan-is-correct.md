@@ -16,9 +16,9 @@ unknown ([Check that sample EGA ID (EGAN) is correct](ega-4-properties-objects-i
 
 # 1 Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                           |
-| :------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA sample metadata schema v0.0.1](ega-2-definitions-pattern-of-an-ega-samples-id-egan.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                    |
+| :------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-2-definitions-pattern-of-an-ega-samples-id-egan.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that sample EGA ID (EGAN) is correct](ega-4-properties-objects-i
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema v0.0.1](ega-2-definitions-pattern-of-an-ega-samples-id-egan.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA sample metadata schema](ega-2-definitions-pattern-of-an-ega-samples-id-egan.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega_accession Type
 

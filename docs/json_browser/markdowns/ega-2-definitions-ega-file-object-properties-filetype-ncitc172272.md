@@ -16,10 +16,10 @@ The nature of the content stored in an electronic file. Contains up to two prope
 
 # filetype Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                    |
-| :-------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [filetype_id](#filetype_id)       | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_id")       |
-| [filetype_curie](#filetype_curie) | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_curie") |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
+| :-------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype_id](#filetype_id)       | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_id")       |
+| [filetype_curie](#filetype_curie) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_curie") |
 
 ## filetype_id
 
@@ -33,7 +33,7 @@ The ID or name (e.g. FASTA or TSV) associated with the given filetype.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_id")
 
 ### filetype_id Type
 
@@ -85,7 +85,7 @@ The CURIE (i.e. ontologized term - e.g. NCIT:C47845 or NCIT:C164049) associated 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272-properties-filetype-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype/properties/filetype_curie")
 
 ### filetype_curie Type
 

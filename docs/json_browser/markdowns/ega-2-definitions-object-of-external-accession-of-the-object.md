@@ -16,11 +16,11 @@ External accession node containing the object accession (i.e. unique identifier 
 
 # items Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                               |
-| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [external_accession](#external_accession) | Multiple | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession") |
-| [accession_archive](#accession_archive)   | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")               |
-| [accession_label](#accession_label)       | Multiple | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")     |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                        |
+| :---------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [external_accession](#external_accession) | Multiple | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession") |
+| [accession_archive](#accession_archive)   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")               |
+| [accession_label](#accession_label)       | Multiple | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")     |
 
 ## external_accession
 
@@ -34,7 +34,7 @@ Unique identifier of the object (e.g. SAMEA7616999), assigned by other archives 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession")
 
 ### external_accession Type
 
@@ -58,7 +58,7 @@ Name of the archive (e.g. biosample) from which the external accession is taken.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")
 
 ### accession_archive Type
 
@@ -134,7 +134,7 @@ Optional label (e.g. 'taken from biosample temporarily') of the external accessi
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")
 
 ### accession_label Type
 

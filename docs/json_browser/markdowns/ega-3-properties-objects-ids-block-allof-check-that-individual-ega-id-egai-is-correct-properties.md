@@ -1,4 +1,4 @@
-# Untitled undefined type in EGA individual metadata schema v0.0.1 Schema
+# Untitled undefined type in EGA individual metadata schema Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id/allOf/1/properties

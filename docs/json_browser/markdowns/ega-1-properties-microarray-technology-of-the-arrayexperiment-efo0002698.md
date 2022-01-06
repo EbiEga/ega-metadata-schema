@@ -16,10 +16,10 @@ Microarray technology applicable for the ArrayExperiment. It contains both the I
 
 # technology Properties
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                              |
-| :------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [technology_id](#technology_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_id")       |
-| [technology_curie](#technology_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_curie") |
+| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                       |
+| :------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [technology_id](#technology_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_id")       |
+| [technology_curie](#technology_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_curie") |
 
 ## technology_id
 
@@ -33,7 +33,7 @@ The human readable ID (e.g. Two-colour microarray), chosen from a list of CVs, o
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_id")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_id")
 
 ### technology_id Type
 
@@ -71,7 +71,7 @@ The CURIE (i.e. ontologized term - e.g. NCIT:C116153), chosen from a list of CVs
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_curie")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698-properties-microarray-technology-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology/properties/technology_curie")
 
 ### technology_curie Type
 

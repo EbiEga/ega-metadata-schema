@@ -2,15 +2,15 @@
 
 ## Top-level Schemas
 
-*   [EGA ArrayAssay metadata schema v0.0.1](./ega.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json`
+*   [EGA ArrayAssay metadata schema](./ega.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayAssay metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json`
 
-*   [EGA ArrayExperiment metadata schema v0.0.1](./ega-1.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json`
+*   [EGA ArrayExperiment metadata schema](./ega-1.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json`
 
-*   [EGA common metadata definitions v0.0.1](./ega-2.md "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json`
+*   [EGA common metadata definitions](./ega-2.md "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json`
 
-*   [EGA individual metadata schema v0.0.1](./ega-3.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json`
+*   [EGA individual metadata schema](./ega-3.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json`
 
-*   [EGA sample metadata schema v0.0.1](./ega-4.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json`
+*   [EGA sample metadata schema](./ega-4.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json`
 
 ## Other Schemas
 
@@ -56,7 +56,7 @@
 
 *   [Minimal public attributes describing a sample](./ega-4-properties-minimal-public-attributes-describing-a-sample.md "Among all fields describing a sample, some may contain identifiable metadata and thus be private") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes`
 
-*   [Minimal public attributes describing an individual](./ega-3-properties-minimal-public-attributes-describing-an-individual.md "Among all fields describing an individual, some may contain identifiable metadata and thus be private") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes`
+*   [Minimal public attributes describing an individual](./ega-3-properties-minimal-public-attributes-describing-an-individual.md "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes`
 
 *   [Object of external accession of the object](./ega-2-definitions-object-of-external-accession-of-the-object.md "External accession node containing the object accession (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession`
 
@@ -72,7 +72,7 @@
 
 *   [Object's IDs block](./ega-4-properties-objects-ids-block.md "Node containing the main identifiers of the object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id`
 
-*   [Organism \[OBI:0100026\] descriptor block](./ega-4-properties-organism-obi0100026-descriptor-block.md "This node describes the material entity the sample consists in") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/organism_descriptor`
+*   [Organism \[OBI:0100026\] descriptor block](./ega-2-definitions-organism-obi0100026-descriptor-block.md "This node describes the material entity the sample consists in") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor`
 
 *   [Relationship's object (either source or target)](./ega-2-definitions-relationships-object-either-source-or-target.md "Node containing metadata (identifiers and the type of reference) of one of the ends of the relationship, whether it is the source or the target of the relationship") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end`
 
@@ -140,7 +140,7 @@
 
 *   [Array label of the ArrayExperiment \[EFO:0000562\]](./ega-1-properties-array-label-of-the-arrayexperiment-efo0000562.md "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_label`
 
-*   [Array of Sample-label pairs of the ArrayAssay](./ega-properties-array-of-sample-label-pairs-of-the-arrayassay.md "Sample-Label pairs (format being 'EGAN\[0-9]{11}:Label' - e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_labels`
+*   [Array of Sample-label pairs of the ArrayAssay](./ega-properties-array-of-sample-label-pairs-of-the-arrayassay.md "Sample-Label pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/sample_labels`
 
 *   [ArrayAssay custom attributes](./ega-properties-arrayassay-custom-attributes.md "Custom attributes of an ArrayAssay: reusable attributes to encode tag-value pairs (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_attributes`
 

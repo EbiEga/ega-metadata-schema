@@ -1,4 +1,4 @@
-# EGA ArrayExperiment metadata schema v0.0.1 Schema
+# EGA ArrayExperiment metadata schema Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json
@@ -10,27 +10,27 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.ArrayExperiment.json](../out/EGA.ArrayExperiment.json "open original schema") |
 
-## EGA ArrayExperiment metadata schema v0.0.1 Type
+## EGA ArrayExperiment metadata schema Type
 
-`object` ([EGA ArrayExperiment metadata schema v0.0.1](ega-1.md))
+`object` ([EGA ArrayExperiment metadata schema](ega-1.md))
 
-# EGA ArrayExperiment metadata schema v0.0.1 Properties
+# EGA ArrayExperiment metadata schema Properties
 
-| Property                                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
-| :---------------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_id](#object_id)                                           | Merged    | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id")                                               |
-| [object_title](#object_title)                                     | `string`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-title-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_title")                                 |
-| [object_description](#object_description)                         | `string`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-description-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_description")                     |
-| [technology](#technology)                                         | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology")        |
-| [array_label](#array_label)                                       | `array`   | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-label-of-the-arrayexperiment-efo0000562.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_label")                 |
-| [experimental_design](#experimental_design)                       | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design") |
-| [array_type](#array_type)                                         | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type")                   |
-| [assayed_molecule](#assayed_molecule)                             | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule")       |
-| [adf_files](#adf_files)                                           | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-design-format-adf-ncitc172213-file-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/adf_files")                  |
-| [sample_number](#sample_number)                                   | `integer` | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-number-of-samples-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/sample_number")                    |
-| [array_experiment_relationships](#array_experiment_relationships) | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-arrayexperiment-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_relationships")              |
-| [array_experiment_attributes](#array_experiment_attributes)       | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-arrayexperiment-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_attributes")             |
-| [array_experiment_protocols](#array_experiment_protocols)         | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-protocols-related-to-an-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_protocols")        |
+| Property                                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                  |
+| :---------------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [object_id](#object_id)                                           | Merged    | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id")                                               |
+| [object_title](#object_title)                                     | `string`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-title-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_title")                                 |
+| [object_description](#object_description)                         | `string`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-description-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_description")                     |
+| [technology](#technology)                                         | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology")        |
+| [array_label](#array_label)                                       | `array`   | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-array-label-of-the-arrayexperiment-efo0000562.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_label")                 |
+| [experimental_design](#experimental_design)                       | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design") |
+| [array_type](#array_type)                                         | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type")                   |
+| [assayed_molecule](#assayed_molecule)                             | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule")       |
+| [adf_files](#adf_files)                                           | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-array-design-format-adf-ncitc172213-file-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/adf_files")                  |
+| [sample_number](#sample_number)                                   | `integer` | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-number-of-samples-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/sample_number")                    |
+| [array_experiment_relationships](#array_experiment_relationships) | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-arrayexperiment-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_relationships")              |
+| [array_experiment_attributes](#array_experiment_attributes)       | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-arrayexperiment-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_attributes")             |
+| [array_experiment_protocols](#array_experiment_protocols)         | `array`   | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-protocols-related-to-an-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_protocols")        |
 
 ## object_id
 
@@ -44,7 +44,7 @@ Node containing the main identifiers of the object (e.g. alias, center_name...),
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id")
 
 ### object_id Type
 
@@ -74,7 +74,7 @@ An informative experiment title that should serve as an overview of the experime
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-title-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_title")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-title-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_title")
 
 ### object_title Type
 
@@ -98,7 +98,7 @@ An in-depth description of the biological relevance and intent of the ArrayExper
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-description-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_description")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-description-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_description")
 
 ### object_description Type
 
@@ -122,7 +122,7 @@ Microarray technology applicable for the ArrayExperiment. It contains both the I
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology")
 
 ### technology Type
 
@@ -140,7 +140,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-label-of-the-arrayexperiment-efo0000562.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_label")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-array-label-of-the-arrayexperiment-efo0000562.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_label")
 
 ### array_label Type
 
@@ -162,7 +162,7 @@ Experimental factor describing the method of investigating particular types of r
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-experimental-design-of-the-arrayexperiment-efo0001426.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/experimental_design")
 
 ### experimental_design Type
 
@@ -180,7 +180,7 @@ Type of array (not its purpose per se) providing a glimpse of the used technolog
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type")
 
 ### array_type Type
 
@@ -198,7 +198,7 @@ Type of molecule assayed. It contains both the human readable ID (e.g. DNA assay
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-assayed-molecule-in-the-arrayexperiment-efo0002772.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/assayed_molecule")
 
 ### assayed_molecule Type
 
@@ -216,7 +216,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-design-format-adf-ncitc172213-file-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/adf_files")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-array-design-format-adf-ncitc172213-file-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/adf_files")
 
 ### adf_files Type
 
@@ -228,7 +228,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 ## sample_number
 
-Number of samples included in the experiment. One sample corresponds to one biological replicate \[EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates \[CHEBI:24432] being used several times (see <https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation>).
+Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate \[EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates \[EFO:0002090] being used several times (see <https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation>).
 
 `sample_number`
 
@@ -238,7 +238,7 @@ Number of samples included in the experiment. One sample corresponds to one biol
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-number-of-samples-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/sample_number")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-number-of-samples-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/sample_number")
 
 ### sample_number Type
 
@@ -262,7 +262,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-arrayexperiment-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_relationships")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-arrayexperiment-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_relationships")
 
 ### array_experiment_relationships Type
 
@@ -284,7 +284,7 @@ Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-arrayexperiment-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_attributes")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-arrayexperiment-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_attributes")
 
 ### array_experiment_attributes Type
 
@@ -306,7 +306,7 @@ Comprises metadata (e.g. Type of protocol) of a plan specification related to an
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-protocols-related-to-an-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_protocols")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-protocols-related-to-an-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_experiment_protocols")
 
 ### array_experiment_protocols Type
 

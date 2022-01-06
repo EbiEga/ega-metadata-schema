@@ -16,11 +16,11 @@ Object containing the base metadata attributes of a relationship object in the E
 
 # items Properties
 
-| Property              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
-| :-------------------- | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r_type](#r_type)     | Merged | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")     |
-| [r_source](#r_source) | Merged | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source") |
-| [r_target](#r_target) | Merged | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target") |
+| Property              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :-------------------- | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [r_type](#r_type)     | Merged | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")     |
+| [r_source](#r_source) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source") |
+| [r_target](#r_target) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target") |
 
 ## r_type
 
@@ -34,7 +34,7 @@ The Type of the relationship, containing both its ID (e.g. same_as and the CURIE
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")
 
 ### r_type Type
 
@@ -58,7 +58,7 @@ Object reference of the relationship’s source. In other words, the starting po
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")
 
 ### r_source Type
 
@@ -110,7 +110,7 @@ Object reference of the relationship’s target. In other words, the ending poin
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")
 
 ### r_target Type
 

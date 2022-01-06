@@ -16,10 +16,10 @@ unknown ([Either the sample_number is present and above 1](ega-4-properties-samp
 
 # 0 Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                   |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sample_group_boolean](#sample_group_boolean) | Not specified | Optional | cannot be null | [EGA sample metadata schema v0.0.1](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_group_boolean") |
-| [sample_number](#sample_number)               | `integer`     | Required | cannot be null | [EGA sample metadata schema v0.0.1](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_number")               |
+| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                            |
+| :-------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sample_group_boolean](#sample_group_boolean) | Not specified | Optional | cannot be null | [EGA sample metadata schema](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_group_boolean") |
+| [sample_number](#sample_number)               | `integer`     | Required | cannot be null | [EGA sample metadata schema](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_number")               |
 
 ## sample_group_boolean
 
@@ -33,7 +33,7 @@ unknown ([Either the sample_number is present and above 1](ega-4-properties-samp
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema v0.0.1](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_group_boolean")
+*   defined in: [EGA sample metadata schema](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_group_boolean")
 
 ### sample_group_boolean Type
 
@@ -59,7 +59,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema v0.0.1](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_number")
+*   defined in: [EGA sample metadata schema](ega-4-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_number")
 
 ### sample_number Type
 

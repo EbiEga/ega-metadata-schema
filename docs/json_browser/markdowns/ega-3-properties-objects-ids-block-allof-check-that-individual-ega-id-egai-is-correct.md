@@ -1,4 +1,4 @@
-# Check that individual EGA ID (EGAN) is correct Schema
+# Check that individual EGA ID (EGAI) is correct Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id/allOf/1
@@ -12,13 +12,13 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.j
 
 ## 1 Type
 
-unknown ([Check that individual EGA ID (EGAN) is correct](ega-3-properties-objects-ids-block-allof-check-that-individual-ega-id-egan-is-correct.md))
+unknown ([Check that individual EGA ID (EGAI) is correct](ega-3-properties-objects-ids-block-allof-check-that-individual-ega-id-egai-is-correct.md))
 
 # 1 Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
-| :------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA individual metadata schema v0.0.1](ega-2-definitions-pattern-of-an-ega-individuals-id-egai.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                |
+| :------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA individual metadata schema](ega-2-definitions-pattern-of-an-ega-individuals-id-egai.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that individual EGA ID (EGAN) is correct](ega-3-properties-objec
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema v0.0.1](ega-2-definitions-pattern-of-an-ega-individuals-id-egai.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA individual metadata schema](ega-2-definitions-pattern-of-an-ega-individuals-id-egai.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega_accession Type
 

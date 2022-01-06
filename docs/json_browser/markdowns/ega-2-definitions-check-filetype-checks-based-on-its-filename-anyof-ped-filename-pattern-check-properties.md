@@ -1,4 +1,4 @@
-# Untitled undefined type in EGA common metadata definitions v0.0.1 Schema
+# Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/18/properties

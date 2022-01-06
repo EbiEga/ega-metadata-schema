@@ -4,7 +4,7 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes
 ```
 
-Among all fields describing an individual, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every individual should contain (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.
+Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------ |
@@ -16,11 +16,11 @@ Among all fields describing an individual, some may contain identifiable metadat
 
 # minimal_public_attributes Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                       |
-| :-------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [subject_id](#subject_id)         | `string` | Required | cannot be null | [EGA individual metadata schema v0.0.1](ega-2-definitions-subject-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id")                                       |
-| [biological_sex](#biological_sex) | `string` | Required | cannot be null | [EGA individual metadata schema v0.0.1](ega-2-definitions-biological-sex-of-the-individual-pato0000047.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex") |
-| [phenotype](#phenotype)           | `object` | Required | cannot be null | [EGA individual metadata schema v0.0.1](ega-2-definitions-experimental-condition-xco0000000.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotype")                 |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
+| :-------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [subject_id](#subject_id)         | `string` | Required | cannot be null | [EGA individual metadata schema](ega-2-definitions-subject-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id")                                       |
+| [biological_sex](#biological_sex) | `string` | Required | cannot be null | [EGA individual metadata schema](ega-2-definitions-biological-sex-of-the-individual-pato0000047.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex") |
+| [phenotype](#phenotype)           | `object` | Required | cannot be null | [EGA individual metadata schema](ega-2-definitions-experimental-condition-xco0000000.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotype")                 |
 
 ## subject_id
 
@@ -34,7 +34,7 @@ A unique identifir (e.g. 'Donor-10031') for the subject the sample derives from,
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema v0.0.1](ega-2-definitions-subject-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id")
+*   defined in: [EGA individual metadata schema](ega-2-definitions-subject-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id")
 
 ### subject_id Type
 
@@ -70,7 +70,7 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema v0.0.1](ega-2-definitions-biological-sex-of-the-individual-pato0000047.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex")
+*   defined in: [EGA individual metadata schema](ega-2-definitions-biological-sex-of-the-individual-pato0000047.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex")
 
 ### biological_sex Type
 
@@ -105,7 +105,7 @@ A state of being, an external or environmental factor or a treatment observed or
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema v0.0.1](ega-2-definitions-experimental-condition-xco0000000.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotype")
+*   defined in: [EGA individual metadata schema](ega-2-definitions-experimental-condition-xco0000000.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotype")
 
 ### phenotype Type
 

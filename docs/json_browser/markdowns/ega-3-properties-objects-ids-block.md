@@ -24,4 +24,4 @@ all of
 
     *   [Check core IDs: external accessions](ega-2-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that individual EGA ID (EGAN) is correct](ega-3-properties-objects-ids-block-allof-check-that-individual-ega-id-egan-is-correct.md "check type definition")
+*   [Check that individual EGA ID (EGAI) is correct](ega-3-properties-objects-ids-block-allof-check-that-individual-ega-id-egai-is-correct.md "check type definition")

@@ -1,4 +1,4 @@
-# Untitled integer in EGA sample metadata schema v0.0.1 Schema
+# Untitled integer in EGA sample metadata schema Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/0/properties/sample_number

@@ -22,10 +22,10 @@ any of
 
 # r_type Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                       |
-| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r_type_id](#r_type_id)       | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_id")       |
-| [r_type_curie](#r_type_curie) | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_curie") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                |
+| :---------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [r_type_id](#r_type_id)       | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_id")       |
+| [r_type_curie](#r_type_curie) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_curie") |
 
 ## r_type_id
 
@@ -39,7 +39,7 @@ The human readable ID (e.g. same_as), chosen from a list of CVs, of the type of 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_id")
 
 ### r_type_id Type
 
@@ -83,7 +83,7 @@ The CURIE (i.e. ontologized term - e.g. NCIT:C64637), chosen from a list of CVs,
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship-properties-type-of-the-relationship---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type/properties/r_type_curie")
 
 ### r_type_curie Type
 

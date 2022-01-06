@@ -16,10 +16,10 @@ Type of array (not its purpose per se) providing a glimpse of the used technolog
 
 # array_type Properties
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                        |
-| :------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [array_type_id](#array_type_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_id")       |
-| [array_type_curie](#array_type_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_curie") |
+| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                 |
+| :------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [array_type_id](#array_type_id)       | `string` | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_id")       |
+| [array_type_curie](#array_type_curie) | `string` | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_curie") |
 
 ## array_type_id
 
@@ -33,7 +33,7 @@ The human readable ID (e.g. Proteomic profiling by array), chosen from a list of
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_id")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_id")
 
 ### array_type_id Type
 
@@ -81,7 +81,7 @@ The CURIE (i.e. ontologized term - e.g. EFO:0002765), chosen from a list of CVs,
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema v0.0.1](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_curie")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-1-properties-array-type-of-the-arrayexperiment-efo0002696-properties-array-type-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/array_type/properties/array_type_curie")
 
 ### array_type_curie Type
 

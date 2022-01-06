@@ -1,4 +1,4 @@
-# Untitled undefined type in EGA common metadata definitions v0.0.1 Schema
+# Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/8/properties/object_id
@@ -16,9 +16,9 @@ unknown
 
 # object_id Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                          |
-| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-pattern-of-an-ega-analysiss-id-egaz.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/8/properties/object_id/properties/ega_accession") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
+| :------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-pattern-of-an-ega-analysiss-id-egaz.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/8/properties/object_id/properties/ega_accession") |
 
 ## ega_accession
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-pattern-of-an-ega-analysiss-id-egaz.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/8/properties/object_id/properties/ega_accession")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-pattern-of-an-ega-analysiss-id-egaz.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/8/properties/object_id/properties/ega_accession")
 
 ### ega_accession Type
 
