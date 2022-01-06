@@ -1,0 +1,46 @@
+{
+    "object_id": {
+        "alias" : "NM305004", 
+        "center_name" : "EBI-TEST",
+        "ega_accession": "EGAI00000000001"
+    },
+    "organism_descriptor": {
+        "taxon_id": "9606",
+        "scientific_name": "homo sapiens",
+        "common_name": "human"
+    },
+    "minimal_public_attributes": {
+        "subject_id": "donor-NM305004",
+        "biological_sex": "male",
+        "phenotype": {
+            "experimental_condition_term": "fibroadenoma",
+            "experimental_condition_curie": "EFO:1000254"
+        }
+    },
+    "individual_relationships": [
+        {
+            "r_type": {
+                "r_type_id": "develops_from"
+            },
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAN00000000001"
+                },
+                "object_type": "sample"
+            },
+            "r_target": {
+                "object_id": {
+                    "alias": "NM305004",
+                    "center_name": "EBI-TEST"
+                },
+                "object_type": "individual"               
+            }
+        }
+    ],
+    "individual_attributes": [
+        {
+            "tag": "haircolor",
+            "value": "red"
+        }
+    ]
+}

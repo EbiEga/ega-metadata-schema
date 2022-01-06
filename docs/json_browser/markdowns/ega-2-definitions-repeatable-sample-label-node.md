@@ -16,10 +16,10 @@ The base node of a label-sample association. One form of basic identification of
 
 # sample-label-association Properties
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :---------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [label](#label)         | `object` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
-| [object_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
+| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [label](#label)         | `object` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
+| [object_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
 
 ## label
 
@@ -33,7 +33,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")
 
 ### label Type
 
@@ -51,7 +51,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
 
 ### object_id Type
 

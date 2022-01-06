@@ -16,12 +16,12 @@ Object containing the base metadata attributes of a Protocol object in the EGA. 
 
 # protocols_object Properties
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                        |
-| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [protocol_name](#protocol_name)               | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")               |
-| [protocol_type](#protocol_type)               | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")                  |
-| [protocol_curie](#protocol_curie)             | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")         |
-| [protocol_description](#protocol_description) | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description") |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                 |
+| :-------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [protocol_name](#protocol_name)               | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")               |
+| [protocol_type](#protocol_type)               | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")                  |
+| [protocol_curie](#protocol_curie)             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")         |
+| [protocol_description](#protocol_description) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description") |
 
 ## protocol_name
 
@@ -35,7 +35,7 @@ Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")
 
 ### protocol_name Type
 
@@ -59,7 +59,7 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")
 
 ### protocol_type Type
 
@@ -104,7 +104,7 @@ Ontology term (e.g. 'EFO:0005518') of the Type of protocol.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")
 
 ### protocol_curie Type
 
@@ -149,7 +149,7 @@ Description of the protocol (e.g. 'First tilt the cell culture flask... ...and f
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")
 
 ### protocol_description Type
 

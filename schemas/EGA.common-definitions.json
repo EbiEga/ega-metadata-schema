@@ -2,7 +2,8 @@
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "object",
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json",
-    "title": "EGA common metadata definitions v0.0.1",
+    "title": "EGA common metadata definitions",
+    "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "definitions": {
 
@@ -33,7 +34,7 @@
           "external_accessions": {
             "type": "array",
             "title": "External accessions array",
-            "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
+            "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
             "minItems": 1,
             "additionalProperties": false,
             "items": {
@@ -195,7 +196,7 @@
       "relationship_object": {
         "type": "object",
         "title": "EGA Relationships object",
-        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Details of each type of connection are stored in its CV table.",
+        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Ontologies of each type of connection are stored the meta:enum field, and details of each in its corresponding record within the ontologies.",
         "required": ["r_type", "r_source", "r_target"],
         "additionalProperties": false,
         "properties": {
@@ -495,6 +496,20 @@
                 "enum": ["ArrayAssay"]
               }
             }
+          },
+          {
+            "title": "Individual: object_id and object_type check",
+            "description": "A check that ensures that, if 'individual' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-individual-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["individual"]
+              }
+            }
           }
         ]                      
       },
@@ -630,10 +645,17 @@
         "examples": [ "EGAA00002189113" ]
       },
 
+      "EGA-individual-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA Individual's ID (EGAI...)",
+        "pattern": "^EGAI[0-9]{11}$",
+        "examples": [ "EGAI00001159712" ]
+      },
+
       "EGA-ISO-date-YYYY-MM-DD-pattern": {
         "type": "string",
         "title": "Pattern of an EGA ISO date (YYYY-MM-DD)",
-        "pattern": "^(19|20)[0-9]{2}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$",
+        "pattern": "^[0-9]{4}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$",
         "examples": [ "2021-04-30" ]
       },
 
@@ -1125,7 +1147,7 @@
             "type": "string",
             "title": "Type of the relationship's object",
             "description": "Type of the relationship's object, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
-            "enum": ["experiment", "study", "sample", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
+            "enum": ["experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
             "meta:enum": ["Contains information about the experimental design of the sequencing", "Information about the study", "Information about the used samples", "Information about the submission actions", "Contains information about the specific sequencing runs from the experiment", "Contains the collection of runs/analysis/ArrayAssay data files to be subject to controlled access", "Contains the analysis metadata and data files", "Contains information related to the Data Access Agreement (DAA) the dataset is subject to", "Contains information about the Data Access Committee (DAC)", "Contains information about the experimental design of the Array", "Contains information about the probed assay from the array", "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)", "An external URL resource, of any type"],
             "examples": [ "sample" ]
           }
@@ -1136,6 +1158,93 @@
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check" 
           }
         ]        
+      },
+
+      "subject_id": {
+        "type": "string",
+        "title": "Subject ID",
+        "description": "A unique identifir (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance.",
+        "examples": [ "Donor-10031", "ID001", "9001", "AX_Dli" ]
+      },
+
+      "biological_sex": {
+        "type": "string",
+        "title": "Biological sex of the individual [PATO:0000047]",
+        "description": "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female.",
+        "enum": [ "male", "female", "hermaphrodite", "unknown" ],
+        "meta:enum": [ "A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.", "A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.", "An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.", "The biological sex is unknown." ],
+        "examples": [ "male" ]
+      },
+
+      "experimental_condition_descriptor": {
+        "type": "object",
+        "title": "Experimental condition [XCO:0000000]",
+        "description": "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment. We highly recommend the usage of ontologies to describe experimental conditions (search at 'https://www.ebi.ac.uk/ols/ontologies/efo').",
+        "additionalProperties": false,
+        "required": ["experimental_condition_term"],
+        "properties": {
+          "experimental_condition_term": {
+            "type": "string",
+            "title": "Experimental condition term",
+            "description": "Human-readable term that specifies the experimental condition (e.g. 'fibroadenoma').",
+            "examples": [ "control", "fibroadenoma", "osteonecrosis" ]
+          },
+          "experimental_condition_curie": {
+            "type": "string",
+            "title": "Experimental condition curie",
+            "description": "Curie (i.e. ontologised term - e.g. 'EFO:0001461') of the experimental condition.",
+            "examples": [ "EFO:0001461", "EFO:1000254", "EFO:0004259" ]
+          },
+          "experimental_condition_description": {
+            "type": "string",
+            "title": "Experimental condition description",
+            "description": "Broad description of the experimental condition, providing further details and context over the ontologised term.",
+            "examples": [
+              "A control role is borne by a material in a process in which results obtained from an experimental sample and a control sample are compared.",
+              "A benign tumor of the breast characterized by the presence of stromal and epithelial elements.", 
+              "A none disease characterized by death of bone tissue due to a lack of blood supply."
+            ]
+          }
+        }
+      },
+
+      "organism_descriptor": {
+        "type": "object",
+        "title": "Organism [OBI:0100026] descriptor block",
+        "description": "This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
+        "additionalProperties": false,
+        "properties": {
+          "taxon_id": {
+            "type": "string",
+            "title": "Taxon identifier [APOLLO_SV:00000203]",
+            "description": "Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: https://www.ncbi.nlm.nih.gov/taxonomy). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
+            "pattern": "^[0-9]{1,7}$",
+            "examples": [ "9606" ]
+          },
+          "scientific_name": {
+            "type": "string",
+            "title": "Biologic entity classification scientific name [NCIT:C43459]",
+            "description": "The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').",
+            "examples": [ "homo sapiens" ]
+          },
+          "common_name": {
+            "type": "string",
+            "title": "Biologic entity classification common name [NCIT:C164690]",
+            "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
+            "examples": [ "human" ]
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Either the taxon ID is provided", 
+            "required": ["taxon_id"] 
+          },
+          {
+            "title": "Or the scientific name is provided", 
+            "required": ["scientific_name"] 
+          }          
+        ]
       }
+
     }    
   }

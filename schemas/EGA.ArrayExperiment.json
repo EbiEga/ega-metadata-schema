@@ -3,6 +3,7 @@
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json",
     "type": "object",
     "title": "EGA ArrayExperiment metadata schema",
+    "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its ArrayExperiment metadata object. This objects is intended to be similar to the Experiment metadata object from ENA, but containing metadata from an Array Format (AF) submission. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_id", "technology", "array_label", "experimental_design", "array_type", "assayed_molecule"],
     "additionalProperties": false,
@@ -26,18 +27,20 @@
           }
         ]
       },    
-      "title": {
+      "object_title": {
         "type": "string",
         "title": "Title of the ArrayExperiment",
-        "description": "An informative experiment title that should serve as an overview of the experiment, including: used technology, samples, purpose... (e.g. 'Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls'). This short text can be used to call out ArrayExperiment records in searches or in displays. This element is technically optional but should be used for all new records.",
+        "description": "An informative experiment title that should serve as an overview of the experiment, including: used technology, samples, purpose... (e.g. 'Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls'). This short text can be used to call out ArrayExperiment records in searches or in displays.",
         "examples": [ "Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls" ]
       },
-      "description": {
+
+      "object_description": {
         "type": "string",
         "title": "Description of the ArrayExperiment",
         "description": "An in-depth description of the biological relevance and intent of the ArrayExperiment, including the experimental workflow.",
         "examples": [ "The experiment was conducted with the objective of... ...and obtained positive results at..." ]
       },
+
       "technology": {
         "type": "object",
         "title": "Microarray technology of the ArrayExperiment [EFO:0002698]",
@@ -62,6 +65,7 @@
           }
         }
       },
+
       "array_label": {
         "type": "array",
         "title": "Array label of the ArrayExperiment [EFO:0000562]",
@@ -72,6 +76,7 @@
           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" 
         }
       },
+
       "experimental_design": {
         "type": "object",
         "title": "Experimental design of the ArrayExperiment [EFO:0001426]",
@@ -96,6 +101,7 @@
           }
         }
       },
+
       "array_type": {
         "type": "object",
         "title": "Array type of the ArrayExperiment [EFO:0002696]",
@@ -120,6 +126,7 @@
           }
         }
       },
+
       "assayed_molecule": {
         "type": "object",
         "title": "Assayed molecule in the ArrayExperiment [EFO:0002772]",
@@ -144,10 +151,11 @@
           }
         }
       },
+      
       "adf_files": {
         "type": "array",
         "title": "Array Design Format (ADF) [NCIT:C172213] file block",
-        "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. This object shall only be used if the EGA is the one storing such file. Otherwise, the Relationships object shall be used to point from the ArrayExperiment to the ADF submitted elsewhere. #! Using an empty item list but defining the file object as possible additionalItems we create the correct constraint: anything but a file object is rejected, but EGA can add as many as required.",
+        "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. This object shall only be used if the EGA is the one storing such file. Otherwise, the Relationships object shall be used to point from the ArrayExperiment to the ADF submitted elsewhere.",
         "minItems": 1,
         "additionalProperties": false,
         "items": {
@@ -158,14 +166,14 @@
       "sample_number": {
         "type": "integer",
         "title": "Number of samples of the ArrayExperiment",
-        "description": "Number of samples included in the experiment. One sample corresponds to one biological replicate [EFO:0002091] (it could be the genetic content from a single cell, a tissue… from a single individual or from several individuals). Shall not be mistaken for technical replicates [CHEBI:24432] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
+        "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
         "examples": [ 30 ]
       },
 
       "array_experiment_relationships": {
         "type": "array",
         "title": "ArrayExperiment relationships",
-        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a Sample) the EGA. #! Using an empty item list but defining the relationship as possible additionalItems we create the correct constraint: anything but a relationship object is rejected, but EGA can add as many as required.",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a Sample) the EGA.",
         "minItems": 1,
         "additionalProperties": false,
         "items": {
@@ -176,7 +184,7 @@
       "array_experiment_attributes": {
         "type": "array",
         "title": "ArrayExperiment custom attributes",
-        "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.",
+        "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
         "additionalProperties": false,
         "minItems": 1,
         "items": {
@@ -187,7 +195,7 @@
       "array_experiment_protocols": {
         "type": "array",
         "title": "Protocols related to an ArrayExperiment",
-        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents. #! Using an empty item list but defining the protocols as possible additionalItems we create the correct constraint: anything but a protocol is rejected, but EGA can add as many as required.",
+        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification related to an ArrayExperiment, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
         "minItems": 1,
         "additionalProperties": false,
         "items": {

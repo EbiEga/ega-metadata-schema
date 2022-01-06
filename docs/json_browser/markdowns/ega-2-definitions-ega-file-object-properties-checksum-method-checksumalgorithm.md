@@ -16,10 +16,10 @@ Node containing both the ID (MD5 or SHA-256) and the CURIE (NCIT:C171276 or NCIT
 
 # checksum_method Properties
 
-| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                      |
-| :---------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [checksum_method_id](#checksum_method_id)       | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_id")       |
-| [checksum_method_curie](#checksum_method_curie) | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_curie") |
+| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                               |
+| :---------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [checksum_method_id](#checksum_method_id)       | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_id")       |
+| [checksum_method_curie](#checksum_method_curie) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_curie") |
 
 ## checksum_method_id
 
@@ -33,7 +33,7 @@ The ID or name (MD5 or SHA-256) associated with the used checksum method.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_id")
 
 ### checksum_method_id Type
 
@@ -66,7 +66,7 @@ The CURIE (i.e. ontologized term - NCIT:C171276 or NCIT:C80226) associated with 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm-properties-checksum-method-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/properties/checksum_method_curie")
 
 ### checksum_method_curie Type
 

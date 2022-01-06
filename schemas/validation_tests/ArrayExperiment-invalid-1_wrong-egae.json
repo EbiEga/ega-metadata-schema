@@ -4,8 +4,8 @@
         "center_name" : "EBI-TEST",
         "ega_accession": "EGAE0000000001"
     },
-    "title": "Testing ArrayExperiment title",
-    "description": "Broad description of the testing ArrayExperiment",
+    "object_title": "Testing ArrayExperiment title",
+    "object_description": "Broad description of the testing ArrayExperiment",
     "technology": {
         "technology_id": "One-colour microarray",
         "technology_curie": "EFO:0010939"

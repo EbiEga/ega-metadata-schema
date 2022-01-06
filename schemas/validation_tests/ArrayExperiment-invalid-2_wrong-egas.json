@@ -3,8 +3,8 @@
         "alias" : "MyArrayExperiment_13", 
         "center_name" : "EBI-TEST"
     },
-    "title": "Testing ArrayExperiment title",
-    "description": "Broad description of the testing ArrayExperiment",
+    "object_title": "Testing ArrayExperiment title",
+    "object_description": "Broad description of the testing ArrayExperiment",
     "technology": {
         "technology_id": "One-colour microarray",
         "technology_curie": "EFO:0010939"

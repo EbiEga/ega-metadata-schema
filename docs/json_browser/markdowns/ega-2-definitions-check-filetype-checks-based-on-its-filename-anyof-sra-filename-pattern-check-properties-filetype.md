@@ -1,4 +1,4 @@
-# Untitled undefined type in EGA common metadata definitions v0.0.1 Schema
+# Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/8/properties/filetype
@@ -16,9 +16,9 @@ unknown
 
 # filetype Properties
 
-| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                           |
-| :-------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filetype_id](#filetype_id) | Not specified | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-sra-filename-pattern-check-properties-filetype-properties-filetype_id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/8/properties/filetype/properties/filetype_id") |
+| Property                    | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                    |
+| :-------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype_id](#filetype_id) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-sra-filename-pattern-check-properties-filetype-properties-filetype_id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/8/properties/filetype/properties/filetype_id") |
 
 ## filetype_id
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-sra-filename-pattern-check-properties-filetype-properties-filetype_id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/8/properties/filetype/properties/filetype_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-sra-filename-pattern-check-properties-filetype-properties-filetype_id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/8/properties/filetype/properties/filetype_id")
 
 ### filetype_id Type
 

@@ -1,4 +1,4 @@
-# EGA common metadata definitions v0.0.1 Schema
+# EGA common metadata definitions Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json
@@ -10,11 +10,11 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to store commo
 | :--------------------- | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
 | Cannot be instantiated | Yes        | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json](../out/EGA.common-definitions.json "open original schema") |
 
-## EGA common metadata definitions v0.0.1 Type
+## EGA common metadata definitions Type
 
-`object` ([EGA common metadata definitions v0.0.1](ega-2.md))
+`object` ([EGA common metadata definitions](ega-2.md))
 
-# EGA common metadata definitions v0.0.1 Definitions
+# EGA common metadata definitions Definitions
 
 ## Definitions group object_core_id
 
@@ -24,12 +24,12 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"}
 ```
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                 |
-| :------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [alias](#alias)                             | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/alias")                      |
-| [center_name](#center_name)                 | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/center_name")      |
-| [ega_accession](#ega_accession)             | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/ega_accession")    |
-| [external_accessions](#external_accessions) | `array`  | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions") |
+| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
+| :------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [alias](#alias)                             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/alias")                      |
+| [center_name](#center_name)                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/center_name")      |
+| [ega_accession](#ega_accession)             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/ega_accession")    |
+| [external_accessions](#external_accessions) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions") |
 
 ### alias
 
@@ -43,7 +43,7 @@ Submitter designated name (e.g. 'my_sample_J13') for the object (e.g. Sample). T
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/alias")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/alias")
 
 #### alias Type
 
@@ -67,7 +67,7 @@ Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/center_name")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/center_name")
 
 #### center_name Type
 
@@ -91,7 +91,7 @@ The object accession (i.e. unique identifier) assigned by the archive (EGA). Obj
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/ega_accession")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/ega_accession")
 
 #### ega_accession Type
 
@@ -105,7 +105,7 @@ The object accession (i.e. unique identifier) assigned by the archive (EGA). Obj
 
 ### external_accessions
 
-Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema. #! Using an empty item list but defining the custom attributes as possible additionalItems we create the correct constraint: anything but a custom attribute is rejected, but EGA can add as many as required.
+Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
 
 `external_accessions`
 
@@ -115,7 +115,7 @@ Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions")
 
 #### external_accessions Type
 
@@ -133,11 +133,11 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute"}
 ```
 
-| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
-| :-------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [tag](#tag)     | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/tag")     |
-| [value](#value) | Multiple | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/value") |
-| [units](#units) | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/units") |
+| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
+| :-------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [tag](#tag)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/tag")     |
+| [value](#value) | Multiple | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/value") |
+| [units](#units) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/units") |
 
 ### tag
 
@@ -151,7 +151,7 @@ The name of the attribute (e.g. 'Age').
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/tag")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/tag")
 
 #### tag Type
 
@@ -175,7 +175,7 @@ The value of the attribute (e.g. '40').
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/value")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/value")
 
 #### value Type
 
@@ -199,7 +199,7 @@ The optional units of the attribute (e.g. 'years').
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/units")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/units")
 
 #### units Type
 
@@ -219,13 +219,13 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object"}
 ```
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
-| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filename](#filename)                         | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")                                       |
-| [filetype](#filetype)                         | `object` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")                                    |
-| [checksum_method](#checksum_method)           | `object` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")                |
-| [unencrypted_checksum](#unencrypted_checksum) | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum") |
-| [encrypted_checksum](#encrypted_checksum)     | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")     |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
+| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [filename](#filename)                         | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")                                       |
+| [filetype](#filetype)                         | `object` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")                                    |
+| [checksum_method](#checksum_method)           | `object` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")                |
+| [unencrypted_checksum](#unencrypted_checksum) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum") |
+| [encrypted_checksum](#encrypted_checksum)     | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")     |
 
 ### filename
 
@@ -239,7 +239,7 @@ The full name of a file, including all of their file extensions (e.g. .gpg, .md5
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")
 
 #### filename Type
 
@@ -273,7 +273,7 @@ The nature of the content stored in an electronic file. Contains up to two prope
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")
 
 #### filetype Type
 
@@ -291,7 +291,7 @@ Node containing both the ID (MD5 or SHA-256) and the CURIE (NCIT:C171276 or NCIT
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")
 
 #### checksum_method Type
 
@@ -309,7 +309,7 @@ A computed value which depends on the contents of a block of data and which is t
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum")
 
 #### unencrypted_checksum Type
 
@@ -339,7 +339,7 @@ A computed value which depends on the contents of a block of data and which is t
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")
 
 #### encrypted_checksum Type
 
@@ -365,11 +365,11 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"}
 ```
 
-| Property              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
-| :-------------------- | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r_type](#r_type)     | Merged | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")     |
-| [r_source](#r_source) | Merged | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source") |
-| [r_target](#r_target) | Merged | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target") |
+| Property              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :-------------------- | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [r_type](#r_type)     | Merged | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")     |
+| [r_source](#r_source) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source") |
+| [r_target](#r_target) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target") |
 
 ### r_type
 
@@ -383,7 +383,7 @@ The Type of the relationship, containing both its ID (e.g. same_as and the CURIE
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-type-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")
 
 #### r_type Type
 
@@ -407,7 +407,7 @@ Object reference of the relationship’s source. In other words, the starting po
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")
 
 #### r_source Type
 
@@ -445,6 +445,8 @@ all of
 
         *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
 
+        *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
+
 ### r_target
 
 Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.
@@ -457,7 +459,7 @@ Object reference of the relationship’s target. In other words, the ending poin
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")
 
 #### r_target Type
 
@@ -495,6 +497,8 @@ all of
 
         *   [ArrayAssay: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-arrayassay-object_id-and-object_type-check.md "check type definition")
 
+        *   [Individual: object_id and object_type check](ega-2-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
+
 ## Definitions group protocols_object
 
 Reference this group by using
@@ -503,12 +507,12 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object"}
 ```
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                        |
-| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [protocol_name](#protocol_name)               | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")               |
-| [protocol_type](#protocol_type)               | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")                  |
-| [protocol_curie](#protocol_curie)             | `string` | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")         |
-| [protocol_description](#protocol_description) | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description") |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                 |
+| :-------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [protocol_name](#protocol_name)               | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")               |
+| [protocol_type](#protocol_type)               | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")                  |
+| [protocol_curie](#protocol_curie)             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")         |
+| [protocol_description](#protocol_description) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description") |
 
 ### protocol_name
 
@@ -522,7 +526,7 @@ Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-ncitc42614.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")
 
 #### protocol_name Type
 
@@ -546,7 +550,7 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-type-of-protocol-obi0000272-.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type")
 
 #### protocol_type Type
 
@@ -591,7 +595,7 @@ Ontology term (e.g. 'EFO:0005518') of the Type of protocol.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-name-of-the-protocol-type-ncitc21270.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_curie")
 
 #### protocol_curie Type
 
@@ -636,7 +640,7 @@ Description of the protocol (e.g. 'First tilt the cell culture flask... ...and f
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-protocols-object-properties-description-of-the-protocol-ncitc25365.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")
 
 #### protocol_description Type
 
@@ -656,10 +660,10 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label"}
 ```
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                           |
-| :-------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [array_label_id](#array_label_id)       | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")       |
-| [array_label_curie](#array_label_curie) | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie") |
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [array_label_id](#array_label_id)       | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")       |
+| [array_label_curie](#array_label_curie) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie") |
 
 ### array_label_id
 
@@ -673,7 +677,7 @@ Human readable ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id")
 
 #### array_label_id Type
 
@@ -697,7 +701,7 @@ CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node-properties-array-label-of-the-arrayexperiment---curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_curie")
 
 #### array_label_curie Type
 
@@ -869,6 +873,17 @@ Reference this group by using
 
 ```json
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ArrayAssay-id-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group EGA-individual-id-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-individual-id-pattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1135,11 +1150,11 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession"}
 ```
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                               |
-| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [external_accession](#external_accession) | Multiple | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession") |
-| [accession_archive](#accession_archive)   | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")               |
-| [accession_label](#accession_label)       | Multiple | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")     |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                        |
+| :---------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [external_accession](#external_accession) | Multiple | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession") |
+| [accession_archive](#accession_archive)   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")               |
+| [accession_label](#accession_label)       | Multiple | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")     |
 
 ### external_accession
 
@@ -1153,7 +1168,7 @@ Unique identifier of the object (e.g. SAMEA7616999), assigned by other archives 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-external-accession-of-the-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession")
 
 #### external_accession Type
 
@@ -1177,7 +1192,7 @@ Name of the archive (e.g. biosample) from which the external accession is taken.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-name-of-the-archive.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_archive")
 
 #### accession_archive Type
 
@@ -1253,7 +1268,7 @@ Optional label (e.g. 'taken from biosample temporarily') of the external accessi
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")
 
 #### accession_label Type
 
@@ -1273,10 +1288,10 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association"}
 ```
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :---------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [label](#label)         | `object` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
-| [object_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
+| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [label](#label)         | `object` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
+| [object_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
 
 ### label
 
@@ -1290,7 +1305,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")
 
 #### label Type
 
@@ -1308,7 +1323,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
 
 #### object_id Type
 
@@ -1334,10 +1349,10 @@ Reference this group by using
 {"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end"}
 ```
 
-| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                     |
-| :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object_id](#object_id-1)   | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id")    |
-| [object_type](#object_type) | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_type") |
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                              |
+| :-------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [object_id](#object_id-1)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id")    |
+| [object_type](#object_type) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_type") |
 
 ### object_id
 
@@ -1351,7 +1366,7 @@ Node containing the main identifiers of the relationship's object (e.g. alias, c
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id")
 
 #### object_id Type
 
@@ -1379,7 +1394,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_type")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_type")
 
 #### object_type Type
 
@@ -1394,6 +1409,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 | `"experiment"`         |             |
 | `"study"`              |             |
 | `"sample"`             |             |
+| `"individual"`         |             |
 | `"submission"`         |             |
 | `"run"`                |             |
 | `"dataset"`            |             |
@@ -1409,4 +1425,232 @@ Type of the relationship's object, chosen from a list of CV (e.g. arrayExperimen
 
 ```json
 "sample"
+```
+
+## Definitions group subject_id
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/subject_id"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group biological_sex
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/biological_sex"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group experimental_condition_descriptor
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor"}
+```
+
+| Property                                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                         |
+| :------------------------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [experimental_condition_term](#experimental_condition_term)               | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_term")               |
+| [experimental_condition_curie](#experimental_condition_curie)             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_curie")             |
+| [experimental_condition_description](#experimental_condition_description) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_description") |
+
+### experimental_condition_term
+
+Human-readable term that specifies the experimental condition (e.g. 'fibroadenoma').
+
+`experimental_condition_term`
+
+*   is required
+
+*   Type: `string` ([Experimental condition term](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_term")
+
+#### experimental_condition_term Type
+
+`string` ([Experimental condition term](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-term.md))
+
+#### experimental_condition_term Examples
+
+```json
+"control"
+```
+
+```json
+"fibroadenoma"
+```
+
+```json
+"osteonecrosis"
+```
+
+### experimental_condition_curie
+
+Curie (i.e. ontologised term - e.g. 'EFO:0001461') of the experimental condition.
+
+`experimental_condition_curie`
+
+*   is optional
+
+*   Type: `string` ([Experimental condition curie](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_curie")
+
+#### experimental_condition_curie Type
+
+`string` ([Experimental condition curie](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-curie.md))
+
+#### experimental_condition_curie Examples
+
+```json
+"EFO:0001461"
+```
+
+```json
+"EFO:1000254"
+```
+
+```json
+"EFO:0004259"
+```
+
+### experimental_condition_description
+
+Broad description of the experimental condition, providing further details and context over the ontologised term.
+
+`experimental_condition_description`
+
+*   is optional
+
+*   Type: `string` ([Experimental condition description](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_description")
+
+#### experimental_condition_description Type
+
+`string` ([Experimental condition description](ega-2-definitions-experimental-condition-xco0000000-properties-experimental-condition-description.md))
+
+#### experimental_condition_description Examples
+
+```json
+"A control role is borne by a material in a process in which results obtained from an experimental sample and a control sample are compared."
+```
+
+```json
+"A benign tumor of the breast characterized by the presence of stromal and epithelial elements."
+```
+
+```json
+"A none disease characterized by death of bone tissue due to a lack of blood supply."
+```
+
+## Definitions group organism_descriptor
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor"}
+```
+
+| Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                  |
+| :---------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [taxon_id](#taxon_id)               | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier-apollo_sv00000203.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id")                               |
+| [scientific_name](#scientific_name) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name-ncitc43459.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/scientific_name") |
+| [common_name](#common_name)         | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name-ncitc164690.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/common_name")        |
+
+### taxon_id
+
+Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: <https://www.ncbi.nlm.nih.gov/taxonomy>). You can find further details at '<https://www.uniprot.org/help/taxonomic_identifier>'. This is appropriate for individual organisms and some environmental samples.
+
+`taxon_id`
+
+*   is optional
+
+*   Type: `string` ([Taxon identifier \[APOLLO_SV:00000203\]](ega-2-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier-apollo_sv00000203.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-2-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier-apollo_sv00000203.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id")
+
+#### taxon_id Type
+
+`string` ([Taxon identifier \[APOLLO_SV:00000203\]](ega-2-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier-apollo_sv00000203.md))
+
+#### taxon_id Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[0-9]{1,7}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B1%2C7%7D%24 "try regular expression with regexr.com")
+
+#### taxon_id Examples
+
+```json
+"9606"
+```
+
+### scientific_name
+
+The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').
+
+`scientific_name`
+
+*   is optional
+
+*   Type: `string` ([Biologic entity classification scientific name \[NCIT:C43459\]](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name-ncitc43459.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name-ncitc43459.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/scientific_name")
+
+#### scientific_name Type
+
+`string` ([Biologic entity classification scientific name \[NCIT:C43459\]](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name-ncitc43459.md))
+
+#### scientific_name Examples
+
+```json
+"homo sapiens"
+```
+
+### common_name
+
+Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.
+
+`common_name`
+
+*   is optional
+
+*   Type: `string` ([Biologic entity classification common name \[NCIT:C164690\]](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name-ncitc164690.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name-ncitc164690.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/common_name")
+
+#### common_name Type
+
+`string` ([Biologic entity classification common name \[NCIT:C164690\]](ega-2-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name-ncitc164690.md))
+
+#### common_name Examples
+
+```json
+"human"
 ```

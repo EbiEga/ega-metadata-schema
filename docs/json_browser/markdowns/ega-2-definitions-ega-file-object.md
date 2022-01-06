@@ -68,13 +68,13 @@ all of
 
 # file_object Properties
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
-| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filename](#filename)                         | `string` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")                                       |
-| [filetype](#filetype)                         | `object` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")                                    |
-| [checksum_method](#checksum_method)           | `object` | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")                |
-| [unencrypted_checksum](#unencrypted_checksum) | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum") |
-| [encrypted_checksum](#encrypted_checksum)     | Merged   | Required | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")     |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
+| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [filename](#filename)                         | `string` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")                                       |
+| [filetype](#filetype)                         | `object` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")                                    |
+| [checksum_method](#checksum_method)           | `object` | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")                |
+| [unencrypted_checksum](#unencrypted_checksum) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum") |
+| [encrypted_checksum](#encrypted_checksum)     | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")     |
 
 ## filename
 
@@ -88,7 +88,7 @@ The full name of a file, including all of their file extensions (e.g. .gpg, .md5
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filename-data1050.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")
 
 ### filename Type
 
@@ -122,7 +122,7 @@ The nature of the content stored in an electronic file. Contains up to two prope
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-filetype-ncitc172272.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")
 
 ### filetype Type
 
@@ -140,7 +140,7 @@ Node containing both the ID (MD5 or SHA-256) and the CURIE (NCIT:C171276 or NCIT
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-method-checksumalgorithm.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")
 
 ### checksum_method Type
 
@@ -158,7 +158,7 @@ A computed value which depends on the contents of a block of data and which is t
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum")
 
 ### unencrypted_checksum Type
 
@@ -188,7 +188,7 @@ A computed value which depends on the contents of a block of data and which is t
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/encrypted_checksum")
 
 ### encrypted_checksum Type
 

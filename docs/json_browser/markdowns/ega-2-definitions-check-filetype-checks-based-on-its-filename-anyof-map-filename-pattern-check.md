@@ -16,10 +16,10 @@ unknown ([MAP Filename pattern-check](ega-2-definitions-check-filetype-checks-ba
 
 # 17 Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                    |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filetype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filetype")                       |
-| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions v0.0.1](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filename-pattern-of-a-map-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filename") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filetype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filetype")                       |
+| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filename-pattern-of-a-map-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filename") |
 
 ## filetype
 
@@ -33,7 +33,7 @@ unknown ([MAP Filename pattern-check](ega-2-definitions-check-filetype-checks-ba
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filetype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filetype")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filetype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filetype")
 
 ### filetype Type
 
@@ -51,7 +51,7 @@ This object exists to hold the filename pattern that a 'MAP' filetype_id would h
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions v0.0.1](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filename-pattern-of-a-map-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-2-definitions-check-filetype-checks-based-on-its-filename-anyof-map-filename-pattern-check-properties-filename-pattern-of-a-map-file.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filename")
 
 ### filename Type
 
