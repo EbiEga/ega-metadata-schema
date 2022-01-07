@@ -12,7 +12,7 @@ Comprises metadata (e.g. Type of protocol) of a plan specification related to an
 
 ## array_experiment_protocols Type
 
-`object[]` ([EGA Protocols object](ega-2-definitions-ega-protocols-object.md))
+`object[]` ([EGA Protocols object](ega-4-definitions-ega-protocols-object.md))
 
 ## array_experiment_protocols Constraints
 

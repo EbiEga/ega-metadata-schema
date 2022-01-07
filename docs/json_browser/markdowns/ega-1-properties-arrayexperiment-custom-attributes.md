@@ -12,7 +12,7 @@ Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value
 
 ## array_experiment_attributes Type
 
-`object[]` ([Custom attribute of an object](ega-2-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
 
 ## array_experiment_attributes Constraints
 

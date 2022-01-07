@@ -12,7 +12,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 ## array_experiment_relationships Type
 
-`object[]` ([EGA Relationships object](ega-2-definitions-ega-relationships-object.md))
+`object[]` ([EGA Relationships object](ega-4-definitions-ega-relationships-object.md))
 
 ## array_experiment_relationships Constraints
 

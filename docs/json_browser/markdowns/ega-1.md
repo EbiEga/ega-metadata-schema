@@ -19,7 +19,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | Property                                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                  |
 | :---------------------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [object_id](#object_id)                                           | Merged    | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_id")                                               |
-| [schema_descriptor](#schema_descriptor)                           | `object`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-2-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/schema_descriptor")                                      |
+| [schema_descriptor](#schema_descriptor)                           | `object`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-4-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/schema_descriptor")                                      |
 | [object_title](#object_title)                                     | `string`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-title-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_title")                                 |
 | [object_description](#object_description)                         | `string`  | Optional | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-description-of-the-arrayexperiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/object_description")                     |
 | [technology](#technology)                                         | `object`  | Required | cannot be null | [EGA ArrayExperiment metadata schema](ega-1-properties-microarray-technology-of-the-arrayexperiment-efo0002698.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/technology")        |
@@ -55,11 +55,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-2-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-2-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-2-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that ArrayExperiment EGA ID (EGAE) is correct](ega-1-properties-objects-ids-block-allof-check-that-arrayexperiment-ega-id-egae-is-correct.md "check type definition")
 
@@ -71,15 +71,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-2-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA ArrayExperiment metadata schema](ega-2-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/schema_descriptor")
+*   defined in: [EGA ArrayExperiment metadata schema](ega-4-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#/properties/schema_descriptor")
 
 ### schema_descriptor Type
 
-`object` ([Schema descriptor](ega-2-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 ## object_title
 
@@ -155,7 +155,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   is required
 
-*   Type: `object[]` ([Repeatable array_label node](ega-2-definitions-repeatable-array_label-node.md))
+*   Type: `object[]` ([Repeatable array_label node](ega-4-definitions-repeatable-array_label-node.md))
 
 *   cannot be null
 
@@ -163,7 +163,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 ### array_label Type
 
-`object[]` ([Repeatable array_label node](ega-2-definitions-repeatable-array_label-node.md))
+`object[]` ([Repeatable array_label node](ega-4-definitions-repeatable-array_label-node.md))
 
 ### array_label Constraints
 
@@ -231,7 +231,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 *   is optional
 
-*   Type: `object[]` ([EGA File object](ega-2-definitions-ega-file-object.md))
+*   Type: `object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
 
 *   cannot be null
 
@@ -239,7 +239,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 ### adf_files Type
 
-`object[]` ([EGA File object](ega-2-definitions-ega-file-object.md))
+`object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
 
 ### adf_files Constraints
 
@@ -277,7 +277,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   is optional
 
-*   Type: `object[]` ([EGA Relationships object](ega-2-definitions-ega-relationships-object.md))
+*   Type: `object[]` ([EGA Relationships object](ega-4-definitions-ega-relationships-object.md))
 
 *   cannot be null
 
@@ -285,7 +285,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 ### array_experiment_relationships Type
 
-`object[]` ([EGA Relationships object](ega-2-definitions-ega-relationships-object.md))
+`object[]` ([EGA Relationships object](ega-4-definitions-ega-relationships-object.md))
 
 ### array_experiment_relationships Constraints
 
@@ -299,7 +299,7 @@ Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-2-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -307,7 +307,7 @@ Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value
 
 ### array_experiment_attributes Type
 
-`object[]` ([Custom attribute of an object](ega-2-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
 
 ### array_experiment_attributes Constraints
 
@@ -321,7 +321,7 @@ Comprises metadata (e.g. Type of protocol) of a plan specification related to an
 
 *   is optional
 
-*   Type: `object[]` ([EGA Protocols object](ega-2-definitions-ega-protocols-object.md))
+*   Type: `object[]` ([EGA Protocols object](ega-4-definitions-ega-protocols-object.md))
 
 *   cannot be null
 
@@ -329,7 +329,7 @@ Comprises metadata (e.g. Type of protocol) of a plan specification related to an
 
 ### array_experiment_protocols Type
 
-`object[]` ([EGA Protocols object](ega-2-definitions-ega-protocols-object.md))
+`object[]` ([EGA Protocols object](ega-4-definitions-ega-protocols-object.md))
 
 ### array_experiment_protocols Constraints
 

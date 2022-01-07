@@ -12,7 +12,7 @@ This array object contains the specific files derived from performing an hybridi
 
 ## assay_files Type
 
-`object[]` ([EGA File object](ega-2-definitions-ega-file-object.md))
+`object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
 
 ## assay_files Constraints
 
