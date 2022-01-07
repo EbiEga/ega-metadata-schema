@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json",
+    "type": "object",
+    "title": "EGA submission metadata schema",
+    "meta:version": "0.0.0",
+    "description": "Empty for the moment.",
+    "required": [""],
+    "additionalProperties": false,
+    "properties": {
+      
+    }      
+  }
