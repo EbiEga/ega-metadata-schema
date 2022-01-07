@@ -22,223 +22,152 @@
         "minItems": 1,
         "additionalitems": false,
         "items": {
-          "title": "Conditional schemas being applied based on object_type from schema_descriptor of each node",
+          "title": "Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object.",
+          "description": "Based on the value found within 'object_type' (i.e. if it matches the 'enum' of each type), the corresponding schema (defined within '$ref') is evaluated.",
           "anyOf": [
             {
-              "if": {
-                "title": "If the object is of type experiment",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["experiment"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an experiment",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["experiment"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type experiment",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type study",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["study"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an study",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["study"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type study",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type sample",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["sample"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an sample",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["sample"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type sample",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type individual",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["individual"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an individual",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["individual"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type individual",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type submission",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["submission"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an submission",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["submission"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type submission",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type run",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["run"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an run",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["run"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type run",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.run.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.run.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type dataset",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["dataset"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an dataset",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["dataset"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type dataset",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type analysis",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["analysis"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an analysis",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["analysis"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type analysis",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type policy",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["policy"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an policy",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["policy"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type policy",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type DAC",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["DAC"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an DAC",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["DAC"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type DAC",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type ArrayExperiment",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["ArrayExperiment"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an ArrayExperiment",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["ArrayExperiment"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type ArrayExperiment",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#"
             },
             {
-              "if": {
-                "title": "If the object is of type ArrayAssay",
-                "required": ["schema_descriptor"],
-                "properties": {
-                  "schema_descriptor": { 
-                    "object_type": {
-                      "enum": ["ArrayAssay"]
-                    }
+              "title": "The object's 'schema_descriptor' defines it as an ArrayAssay",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["ArrayAssay"]
                   }
                 }
               },
-              "then": {
-                "title": "Then the schema that applies is of type ArrayAssay",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#"
-              },
-              "else": false       
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#"
             }
           ]      
         }
