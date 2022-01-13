@@ -98,7 +98,7 @@
             "type": "string",
             "title": "Filename [data:1050]",
             "description": "The full name of a file, including all of their file extensions (e.g. .gpg, .md5...), that identifies the file (e.g. 'my-bam-file.bam.gpg').",
-            "pattern": "^[^<>:;,?\"*|/]+$",
+            "pattern": "^[^<>:;,?\"*|]+$",
             "examples": [ "my-bam-file.bam.gpg" ]
           },
           "filetype": {
@@ -902,7 +902,7 @@
         "type": "string",
         "title": "Filename pattern of a CEL file",
         "description": "This object exists to hold the filename pattern that a 'CEL' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.cel(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.cel(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.cel.gz.gpg" ]
       },
 
@@ -910,7 +910,7 @@
         "type": "string",
         "title": "Filename pattern of a TSV file",
         "description": "This object exists to hold the filename pattern that a 'TSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.tsv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.tsv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.tsv.gz.gpg" ]
       },
 
@@ -918,7 +918,7 @@
         "type": "string",
         "title": "Filename pattern of a ADF file",
         "description": "This object exists to hold the filename pattern that a 'ADF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.adf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.adf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.adf.gz.gpg" ]
       },
 
@@ -926,7 +926,7 @@
         "type": "string",
         "title": "Filename pattern of a FASTQ file",
         "description": "This object exists to hold the filename pattern that a 'FASTQ' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.fastq(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.fastq(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.fastq.gz.gpg" ]
       },
 
@@ -934,7 +934,7 @@
         "type": "string",
         "title": "Filename pattern of a FASTA file",
         "description": "This object exists to hold the filename pattern that a 'FASTA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.fasta(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.fasta(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.fasta.gz.gpg" ]
       },
 
@@ -942,7 +942,7 @@
         "type": "string",
         "title": "Filename pattern of a SDRF file",
         "description": "This object exists to hold the filename pattern that a 'SDRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.sdrf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.sdrf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.sdrf.gz.gpg" ]
       },
 
@@ -950,7 +950,7 @@
         "type": "string",
         "title": "Filename pattern of a IDF file",
         "description": "This object exists to hold the filename pattern that a 'IDF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.idf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.idf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.idf.gz.gpg" ]
       },
 
@@ -958,7 +958,7 @@
         "type": "string",
         "title": "Filename pattern of a VCF file",
         "description": "This object exists to hold the filename pattern that a 'VCF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.vcf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.vcf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.vcf.gz.gpg" ]
       },
 
@@ -966,7 +966,7 @@
         "type": "string",
         "title": "Filename pattern of a SRA file",
         "description": "This object exists to hold the filename pattern that a 'SRA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.sra(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.sra(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.sra.gz" ]
       },
 
@@ -974,7 +974,7 @@
         "type": "string",
         "title": "Filename pattern of a SRF file",
         "description": "This object exists to hold the filename pattern that a 'SRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.srf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.srf(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.srf.gz.gpg" ]
       },
 
@@ -982,7 +982,7 @@
         "type": "string",
         "title": "Filename pattern of a SFF file",
         "description": "This object exists to hold the filename pattern that a 'SFF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.sff(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.sff(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.sff.gz.gpg" ]
       },
 
@@ -990,7 +990,7 @@
         "type": "string",
         "title": "Filename pattern of a BAM file",
         "description": "This object exists to hold the filename pattern that a 'BAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.bam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.bam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.bam.arj.gpg" ]
       },
 
@@ -998,7 +998,7 @@
         "type": "string",
         "title": "Filename pattern of a CRAM file",
         "description": "This object exists to hold the filename pattern that a 'CRAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.cram(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.cram(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.cram.gz.gpg" ]
       },
 
@@ -1006,7 +1006,7 @@
         "type": "string",
         "title": "Filename pattern of a XLSX file",
         "description": "This object exists to hold the filename pattern that a 'XLSX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.xlsx(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.xlsx(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.xlsx.tar.gpg" ]
       },
 
@@ -1014,7 +1014,7 @@
         "type": "string",
         "title": "Filename pattern of a CSV file",
         "description": "This object exists to hold the filename pattern that a 'CSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.csv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.csv(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.csv" ]
       },
 
@@ -1022,7 +1022,7 @@
         "type": "string",
         "title": "Filename pattern of a BED file",
         "description": "This object exists to hold the filename pattern that a 'BED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.bed(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.bed(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.bed.gz.gpg" ]
       },
 
@@ -1030,7 +1030,7 @@
         "type": "string",
         "title": "Filename pattern of a IDAT file",
         "description": "This object exists to hold the filename pattern that a 'IDAT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.idat(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.idat(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.idat.zip" ]
       },
 
@@ -1038,7 +1038,7 @@
         "type": "string",
         "title": "Filename pattern of a MAP file",
         "description": "This object exists to hold the filename pattern that a 'MAP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.map(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.map(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.map.gpg" ]
       },
 
@@ -1046,7 +1046,7 @@
         "type": "string",
         "title": "Filename pattern of a PED file",
         "description": "This object exists to hold the filename pattern that a 'PED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.ped(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.ped(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.ped.gz.gpg" ]
       },
 
@@ -1054,7 +1054,7 @@
         "type": "string",
         "title": "Filename pattern of a BIM file",
         "description": "This object exists to hold the filename pattern that a 'BIM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.bim(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.bim(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.bim.gz.gpg" ]
       },
 
@@ -1062,7 +1062,7 @@
         "type": "string",
         "title": "Filename pattern of a FAM file",
         "description": "This object exists to hold the filename pattern that a 'FAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "pattern": "^.+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.fam.gz.gpg" ]
       },
 
