@@ -19,6 +19,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | Property                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                        |
 | :------------------------------------------------------ | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [object_id](#object_id)                                 | Merged    | Required | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_id")                                 |
+| [schema_descriptor](#schema_descriptor)                 | `object`  | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-2-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/schema_descriptor")                      |
 | [object_title](#object_title)                           | `string`  | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-title-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_title")                        |
 | [object_description](#object_description)               | `string`  | Optional | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-description-of-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/object_description")            |
 | [array_assay_center](#array_assay_center)               | `string`  | Required | cannot be null | [EGA ArrayAssay metadata schema](ega-properties-centername-that-performed-the-arrayassay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/array_assay_center") |
@@ -58,6 +59,24 @@ all of
     *   [Check core IDs: external accessions](ega-2-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that ArrayAssay EGA ID (EGAA) is correct](ega-properties-objects-ids-block-allof-check-that-arrayassay-ega-id-egaa-is-correct.md "check type definition")
+
+## schema_descriptor
+
+This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
+
+`schema_descriptor`
+
+*   is optional
+
+*   Type: `object` ([Schema descriptor](ega-2-definitions-schema-descriptor.md))
+
+*   cannot be null
+
+*   defined in: [EGA ArrayAssay metadata schema](ega-2-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#/properties/schema_descriptor")
+
+### schema_descriptor Type
+
+`object` ([Schema descriptor](ega-2-definitions-schema-descriptor.md))
 
 ## object_title
 

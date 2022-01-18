@@ -80,5 +80,11 @@
             "tag": "blood volume",
             "value": "30"
         }
-    ]
+    ],
+    "schema_descriptor": {
+        "object_type": "sample",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
 }

@@ -42,5 +42,11 @@
             "tag": "haircolor",
             "value": "red"
         }
-    ]
+    ],
+    "schema_descriptor": {
+        "object_type": "individual",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
 }

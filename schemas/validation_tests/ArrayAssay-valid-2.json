@@ -115,5 +115,11 @@
             "tag": "assay_price",
             "value": "800"
             }
-    ]
+    ],
+    "schema_descriptor": {
+        "object_type": "ArrayAssay",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
 }

@@ -1272,6 +1272,59 @@
             "required": ["scientific_name"] 
           }          
         ]
+      },
+
+      "schema_descriptor": {
+        "type": "object",
+        "title": "Schema descriptor",
+        "description": "This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.",
+        "additionalProperties": false,
+        "required": ["object_type", "described_by_schema_uri", "object_schema_version", "common_schema_version"],
+        "properties": {
+          "object_type": {
+            "type": "string",
+            "title": "Type of the object",
+            "description": "Type of the object (e.g. 'sample') the JSON document describes.",
+            "enum": [ "experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay" ]
+          },
+          "described_by_schema_uri": {
+            "type": "string",
+            "title": "URI of the schema",
+            "description": "URI of the schema (e.g. 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json') that describes the JSON document (e.g. 'my_sample.json')",
+            "pattern": "^https://github\\.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA\\..+\\.json$",
+            "examples": ["https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json"]
+          },
+          "object_schema_version": {
+            "type": "string",
+            "title": "Version of the object's schema",
+            "description": "The version of the object's schema, the one specific for the object the JSON document corresponds to (e.g. 'EGA.sample.json'), not the common definitions schema's version (i.e. 'EGA.common-definitions.json').",
+            "allOf": [
+              {
+                "title": "Check semantic versioning pattern",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/semantic-versioning-pattern"
+              }
+            ]
+          },
+          "common_schema_version": {
+            "type": "string",
+            "title": "Version of the common definition's schema",
+            "description": "The version of the common definition's schema, the one containing all shared definitions (i.e. 'EGA.common-definitions.json'), not the one specific to the object described by the JSON document (e.g. 'EGA.sample.json').",
+            "allOf": [
+              {
+                "title": "Check semantic versioning pattern",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/semantic-versioning-pattern"
+              }
+            ]
+          }
+        }
+      },
+
+      "semantic-versioning-pattern": {
+        "type": "string",
+        "title": "Semantic versioning pattern",
+        "description": "This object exists to hold the pattern that semantic versioning has, for it to be referenced elsewhere within this (or other) JSON schema. For further details about semantic versioning check 'https://semver.org/'",
+        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+        "examples": [ "2.5.1" ]
       }
 
     }    
