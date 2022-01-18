@@ -1,0 +1,108 @@
+{
+    "object_id": {
+        "alias" : "EE-2244_ArrayExperiment_Expression_B_cells", 
+        "center_name" : "EBI-TEST"
+    },
+    "object_title": "Expression_B_cells",
+    "object_description": "Expression measurements in B cells",
+    "technology": {
+        "technology_id": "One-colour microarray"
+    },
+    "array_label": [
+        {
+            "array_label_id": "Biotin",
+            "array_label_curie": "CHEBI:15956"
+        }
+    ],
+    "experimental_design": {
+        "experimental_design_id": "case control design",
+        "experimental_design_curie": "EFO:0001427"
+    },
+    "array_type": {
+        "array_type_id": "Transcription profiling by array",
+        "array_type_curie": "EFO:0002769"
+    },
+    "assayed_molecule": {
+        "assayed_molecule_id": "RNA assay",
+        "assayed_molecule_curie": "EFO:0001457"
+    },
+    "sample_number": 124,
+    "adf_files": [
+        {
+            "filename": "Expression_B_cells.adf.txt",
+            "filetype": {
+                "filetype_id": "TXT"
+            },
+            "checksum_method": {
+                "checksum_method_id": "MD5"
+            },
+            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
+            "encrypted_checksum": "bc527343c7ffc103111f3a694b004e2f"
+        }
+    ],
+    "array_experiment_relationships": [
+        {
+            "r_type": {
+                "r_type_id": "referenced_by"
+            },
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAS00002045411"
+                },
+                "object_type": "study"
+            },
+            "r_target": {
+                "object_id": {
+                    "alias" : "EE-2244_ArrayExperiment_Expression_B_cells", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "ArrayExperiment"
+            }
+        },
+        {
+            "r_type": {
+                "r_type_id": "referenced_by"
+            },
+            "r_source": {
+                "object_id": {
+                    "alias" : "EE-2244_ArrayExperiment_Expression_B_cells", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "ArrayExperiment"
+            },
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAZ00001051423"
+                },
+                "object_type": "analysis"
+            }
+        }
+    ],
+    "array_experiment_protocols": [
+        {
+            "protocol_name": " (1) Isolation of circulating peripheral immune cells and RNA preparation",
+            "protocol_type": "Sample collection", 
+            "protocol_description": "A venous blood sample of up to 110 ml was collected into EDTA-coated blood collection tubes (Becton Dickinson), from each participant between 7:30 am and 11:00 am, to minimize the influence of circadian variation. For isolation of PBMCs, B cells, and CD4 and CD8 T cells, up to 70 ml of blood was diluted twofold with PBS (dPBS, 2 mM EDTA, and 2% FCS) and slowly layered on to 15 ml Histopaque-1077 in 50-ml tubes (Sigma-Aldrich). The samples were centrifuged at 400g (brakes off) for 30 min at room temperature and then the PBMC layer was removed using a glass pipette. The cells were washed twice with PBS solution, counted, and incubated with human CD19, and CD8 microbeads for on-column (LS) positive selection of B cells and CD8 T cells, respectively, according to the manufacturers’ instructions (Miltenyi Biotech). The negative fractions from the CD8 cell separation were used to isolate CD4 T cells by magnetic cell sorting using CD4 microbeads (Miltenyi Biotech), according to the manufacturer’s instructions. For isolation of monocytes and NK cells, 40 ml of blood was centrifuged at 400g (brakes off) for 15 min at room temperature, and the buffy coat layer was removed using a glass pipette. The buffy coat was then divided into two portions for incubation with RosetteSep human monocyte and NK cell enrichment cocktails (Stemcell Technologies), respectively. Each portion was then layered on to 5 ml Histopaque in 15-ml tubes, centrifuged at 1,200g (brakes off), and the enriched cell layers were removed using a glass pipette. The cells were washed, counted, and labelled with human CD14 (monocytes) or CD56 (NK cells) microbeads for positive cell selection using an autoMACS Pro separator (Miltenyi Biotech). After isolation, purity was checked using standard flow cytometry protocols on a Cyan Flow cytometer (Beckman Coulter), and only samples that were >90% pure were included."
+        },
+        {
+            "protocol_name": "(2) RNA extraction",
+            "protocol_type": "Nucleic acid extraction", 
+            "protocol_description": "We isolated immune cell type RNA using RNeasy mini kits (QIAGEN), and the RNA yield was quantified spectrophotometrically on a NanoDropND-1000. Using 100 ng of RNA/sample in the following steps."
+        },
+        {
+            "protocol_name": "(3) RNA labeling",
+            "protocol_type": "Nucleic acid labeling", 
+            "protocol_description": "WT Expression kit (Life Technologies) and WT Terminal Labelling and Controls Kit (Affymetrix - https://www.thermofisher.com/order/catalog/product/901524) were used"
+        },
+        {
+            "protocol_name": "(4) RNA hybridization protocol",
+            "protocol_type": "Nucleic acid hybridization to array", 
+            "protocol_description": "Expression microarray hybridizations were performed using Affymetrix Human Gene_1.0ST arrays, which contain 764,885 distinct probes. "
+        },
+        {
+            "protocol_name": "(5) Array scanning",
+            "protocol_type": "Array scanning and feature extraction", 
+            "protocol_description": "The probed arrays were washed and stained using the GeneChip Hybridization Wash and Stain Kit (Affymetrix) and scanned using the GeneChip Scanner 3000. Images (.dat files) were processed using GeneChip Command Console (Affymetrix) and CEL files imported into Partek Genomics Suite 6.6 (Partek SG) for further quality control checks."
+        }
+    ]
+}
