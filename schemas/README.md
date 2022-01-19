@@ -7,7 +7,7 @@ In this directory you will find EGA's **metadata standards** or **_schemas_**: a
 The current schemas are written in JavaScript Object Notation (**JSON**), providing both human- and machine-readable documentation. For further details regarding JSON-schemas visit [JSON-schema](https://json-schema.org/) and [Getting started](https://json-schema.org/learn/getting-started-step-by-step) (for an overview), or [Understanding JSON schema](https://json-schema.org/understanding-json-schema/) (for a detailed explanation). 
 
 ## Validation
-There is an additional folder, ``validation_tests``, in which there are several ``json`` files which serve as **examples that are supposed to pass validation** (if their name contains ``valid``) or **throw validation errors**. The current approach taken to validate JSON documents against their schemas is through **AJV command line interface** version ([AJV CLI](https://github.com/ajv-validator/ajv-cli#ajv-cli)). An validation example through the CLI is the following:
+There is an additional folder, ``validation_tests``, in which there are several ``json`` files which serve as **examples that are supposed to pass validation** (if their name contains ``valid``) or **throw validation errors**. The current approach taken to validate JSON documents against their schemas is through **AJV command line interface** version ([AJV CLI](https://github.com/ajv-validator/ajv-cli#ajv-cli)). A validation example through the CLI is the following:
 
 ````bash
 schema_name="object-set"
@@ -15,9 +15,10 @@ json_doc="object-set-valid-1.json"
 ajv --strict=false --spec=draft2019 -s schemas/EGA.$schema_name.json -d schemas/validation_tests/$json_doc -r "schemas/EGA.!($schema_name).json"
 ````
 Things to notice:
-* Given how we use custom keywords (e.g. ``meta:version``) we switch off the **strict mode** of AJV. One needs to be careful when editing the schemas to use another type of linter, to avoid malformed keywords not being considered during validation.
-* The **draft** we use for our schemas currently is the [**2019-09**](https://json-schema.org/draft/2019-09/release-notes.html).
-* While the basic JSON document is validated against a single schema, in the example ``schemas/EGA.object-set.json`` (defined by ``-s``), there are references within said schema to other files (e.g. ``schema_descriptor`` from the common definitions). For this references to be resolved AJV requires the file paths of all other schemas that may be used as references (defined by [``-r``](https://github.com/ajv-validator/ajv-cli#-r---referenced-schemas)). To give all other schemas, except the one being given as the main schema, we use [glob patterns](https://github.com/isaacs/node-glob#glob-primer): ``"schemas/EGA.!($schema_name).json"`` translates into anything but the schema containing ``$schema_name``. 
+* ``--strict=false``. Given how we use custom keywords (e.g. ``meta:version``) we switch off the **strict mode** of AJV. One needs to be careful when editing the schemas: to avoid malformed keywords (e.g. ``"reqired":``) not being considered during validation one should use another type of linter.
+* ``--spec=draft2019``. The **draft** we currently use for our schemas is [**2019-09**](https://json-schema.org/draft/2019-09/release-notes.html).
+* ``-s schemas/EGA.$schema_name.json``. This specifies the **basic JSON schema** (e.g. ``EGA.object-set.json``) to validate the document against. In other words, the validator will firstly compare the document against this schema.
+* ``-r "schemas/EGA.!($schema_name).json"``. The basic JSON schema may contain references to other schemas (e.g. ``EGA.object-set.json`` using the entirety of ``EGA.sample.json`` or ``EGA.DAC.json`` using the ``schema_descriptor`` node from the common definitions). For these references to be resolved, AJV requires the file paths of all other schemas that may be used as references (defined by [``-r``](https://github.com/ajv-validator/ajv-cli#-r---referenced-schemas)). One could give the file paths one by one using ``-r`` repeatedly, but to simplify the command we give the full set of schemas except the basic JSON schema. To give all other schemas except the main one we use [glob patterns](https://github.com/isaacs/node-glob#glob-primer): ``"schemas/EGA.!($schema_name).json"`` translates into "any schema but the one containing ``$schema_name`` in its filename". 
 
 ## Planning to modify the schemas?
 In case these schemas need to be modified, in this section you will find listed some details about the current approach that may ease the process:
