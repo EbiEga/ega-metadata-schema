@@ -1,0 +1,44 @@
+{
+    "object_id": {
+        "alias" : "my-cancer-study_231", 
+        "center_name" : "EBI-TEST"
+    },
+    "object_title": "EBI test case-control study for cancer",
+    "object_description": "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+    "study_design": {
+        "study_type": "cancer genomics",
+        "additional_keywords_array": [ "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
+    },
+    "study_relationships": [
+        {
+            "r_type": {
+                "r_type_id": "referenced_by"
+            },
+            "r_source": {
+                "object_id": {
+                    "alias": "my-cancer-study_231",
+                    "center_name": "EBI-TEST"
+                },
+                "object_type": "study"                   
+            },
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAE00002043412"
+                },
+                "object_type": "ArrayExperiment"                             
+            }
+        }
+    ],
+    "study_attributes": [
+        {
+            "tag": "Associated project ID",
+            "value": "X33981-DGH"            
+        }
+    ],
+    "schema_descriptor": {
+        "object_type": "study",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
+}

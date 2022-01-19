@@ -4,10 +4,144 @@
     "type": "object",
     "title": "EGA study metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
-    "required": [""],
+    "description": "#!",
+    "required": ["object_id", "object_title", "study_design"],
     "additionalProperties": false,
     "properties": {
-      
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: a study (by using EGA-study-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that study EGA ID (EGAS) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-study-id-pattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the study",
+        "description": "Short free-form text that can be used to call out study records in searches or displays.",
+        "examples": [ "EBI test case-control study for cancer" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the study",
+        "description": "An in-depth description of the study, including its overall purpose, goals, scope or nature.",
+        "examples": [ "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls." ]
+      },
+
+      "study_design": {
+        "type": "object",
+        "title": "Study design",
+        "description": "Node to present a controlled vocabulary for expressing the overall purpose of the study with certain keywords.",
+        "required": ["study_type"],
+        "additionalProperties": false,
+        "properties": {
+          "study_type": {
+            "type": "string",
+            "title": "Preexisting study type",
+            "description": "A keyword, taken from a list of controlled vocabularies, that globally describes the type of the study. In case the study is not well defined by any term of the list, 'other' should be given, as well as the new proposed term in 'new_study_type'.",
+            "enum": ["whole genome sequencing", "metagenomics", "transcriptome analysis", "resequencing", "epigenetics", "synthetic genomics", "forensic", "paleo-genomics", "gene regulation", "cancer genomics", "population genomics", "RNASeq", "exome sequencing", "pooled clone sequencing", "other"],
+            "meta:enum": ["whole genome sequencing [topic:3673]: laboratory technique to sequence the complete DNA sequence of an organism's genome at a single time", "metagenomics [topic:3174]: The study of genetic material recovered from environmental samples, and associated environmental data", "transcriptome analysis [EFO:0009865]: sequencing and characterization of transcription elements", "resequencing [operation:3923]: Laboratory experiment to identify the differences between a specific genome (of an individual) and a reference genome (developed typically from many thousands of individuals). WGS re-sequencing is used as golden standard to detect variations compared to a given reference genome, including small variants (SNP and InDels) as well as larger genome re-organisations (CNVs, translocations, etc.). ows re-sequencing of complete genomes of any given organism with high resolution and high accuracy", "epigenetics [topic:3295]: study of heritable changes, for example in gene expression or phenotype, caused by mechanisms other than changes in the DNA sequence", "synthetic genomics: Sequencing of modified, synthetic, or transplanted genomes", "forensic [OMIT:0025593]: genetic samples to help identify crime victims, perpetrators, or family relationships", "paleo-genomics [topic:3943]: The reconstruction and analysis of genomic information in extinct species", "gene regulation [topic:0204]: The regulation of gene expression", "cancer genomics: study of cancer genomics", "population genomics [topic:3796]: Large-scale study (typically comparison) of DNA sequences of populations", "RNASeq [EFO:0008896]: a method that involves purifying RNA and making cDNA, followed by high-throughput sequencing", "exome sequencing [EFO:0005396]: exome sequencing, also known as whole exome sequencing (WES), is a genomic technique for sequencing all of the protein-coding regions of genes in a genome (known as the exome). Exons (the subset of DNA that encodes proteins) are selected, and the exonic DNA is then sequenced using any high-throughput DNA sequencing technology", "pooled clone sequencing [EFO:0003741]: An assay in which DNA is the input molecule derived from pooled clones (for example BACs and Fosmids) is sequenced using high throughput technology using shotgun methodology", "other [NCIT:C17649]: Study type not listed. Please, provide a new study type making use of the 'new_study_type' field."],
+            "examples": [ "transcriptome analysis" ]
+          },
+          "new_study_type": {
+            "type": "string",
+            "title": "New study type",
+            "description": "A user-defined free-form term that globally describes the type of the study. Use only when the 'study_type' controlled vocabulary does not contain it, providing 'other' as such.",
+            "pattern": ".+",
+            "examples": [ "extraterrestial biomaterial analysis" ]
+          },
+          "additional_keywords_array": {
+            "type": "array",
+            "title": "Array of additional keywords of the study",
+            "description": "An array consisting in user-defined keywords that are directly related to the overall purpose of the study, other than the main study type. Can be used to call out study records in searches or displays.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "items": { 
+              "type": ["string"],
+              "title": "Individual study keyword",
+              "description": "One individual keyword of the set.",
+              "examples": [ "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "title": "If the study_type is 'other'",
+              "required": ["study_type"],
+              "properties": {
+                "study_type": {
+                  "enum": ["other"]
+                }
+              }
+            },
+            "then": {
+              "title": "Then the new_study_type has to be present",
+              "required": ["new_study_type"]
+            }
+          },
+          {
+            "if": {
+              "title": "If the study_type is NOT 'other'",
+              "required": ["study_type"],
+              "properties": {
+                "study_type": {
+                  "not": {
+                    "enum": ["other"]
+                  }                  
+                }
+              }
+            },
+            "then": {
+              "title": "Then the new_study_type should NOT be present",
+              "properties": {
+                "new_study_type": false
+              }
+            }
+          }
+        ]
+      },
+
+      "study_relationships": {
+        "type": "array",
+        "title": "Study relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a study) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "study_attributes": {
+        "type": "array",
+        "title": "Study custom attributes",
+        "description": "Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }      
     }      
   }
