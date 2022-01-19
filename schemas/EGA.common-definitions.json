@@ -112,7 +112,7 @@
                 "type": "string",
                 "title": "Filetype ID",
                 "description": "The ID or name (e.g. FASTA or TSV) associated with the given filetype.",
-                "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM"],
+                "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT"],
                 "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
                 "examples": [ "TSV" ]
               },
@@ -299,7 +299,7 @@
         "type": "object",
           "title": "Repeatable array_label node",
           "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.",
-          "required": ["array_label_id", "array_label_curie"],
+          "required": ["array_label_id"],
           "additionalProperties": false,
           "properties": {
             "array_label_id": {
@@ -313,6 +313,15 @@
               "title": "Array label of the ArrayExperiment - CURIE",
               "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment.",
               "examples": [ "CHEBI:37987" ]
+            },
+            "label_description": {
+              "type": "string",
+              "title": "Array label of the ArrayExperiment - Description",
+              "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
+              "examples": [ 
+                "This label was use to dye the control samples",
+                "This newly discovered label (without ontology) consists in a compound of type X...",
+                "The label ID is unknown because we were given the RNA already dyed..." ]
             }
           }
       },
@@ -894,6 +903,17 @@
                 },
                 "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
             }
+          },
+          {
+            "title": "TXT Filename pattern-check",
+            "properties": {
+                "filetype": {
+                  "properties": {
+                      "filetype_id": { "enum": ["TXT"] }
+                  }
+                },
+                "filename": { "$ref": "#/definitions/txt-file-filename-pattern" }
+              }
           }
         ]        
     },
@@ -1004,7 +1024,7 @@
 
       "xlsx-file-filename-pattern": {
         "type": "string",
-        "title": "Filename pattern of a XLSX file",
+        "title": "Filename pattern of a  file",
         "description": "This object exists to hold the filename pattern that a 'XLSX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.xlsx(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.xlsx.tar.gpg" ]
@@ -1064,6 +1084,14 @@
         "description": "This object exists to hold the filename pattern that a 'FAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.fam(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
         "examples": [ "my_file1.fam.gz.gpg" ]
+      },
+
+      "txt-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a TXT file",
+        "description": "This object exists to hold the filename pattern that a 'TXT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(txt|TXT)(.gz|.zip|.rar|.arj|.tar|.7z)?(.gpg)?$",
+        "examples": [ "my_file1.txt.gz.gpg" ]
       },
 
       "object_external_accession": {
