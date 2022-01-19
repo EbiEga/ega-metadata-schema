@@ -1297,6 +1297,52 @@
         "description": "This object exists to hold the pattern that semantic versioning has, for it to be referenced elsewhere within this (or other) JSON schema. For further details about semantic versioning check 'https://semver.org/'",
         "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
         "examples": [ "2.5.1" ]
+      },
+
+      "contact_details": {
+        "type": "object",
+        "title": "Contact details",
+        "description": "An object to contain the required metadata to identify and reach an individual or institution. Used, for instance, to list who needs to be informed (1) in case of a erroneous submission (2) or in case access to a dataset is requested by a user.",
+        "additionalProperties": false,
+        "required": ["email_address"],
+        "properties": {
+          "individual_full_name": {
+            "type": "string",
+            "title": "Full name of an individual",
+            "description": "A full set of all personal names by which an individual is known and that can be recited as a word-group, with the understanding that, taken together, they all relate to that one individual. In case there are several, separate them with semicolons (;).",
+            "examples": [ "Wayne Jr., Bruce" ]
+          },
+          "institution_name": {
+            "type": "string",
+            "title": "Institution name",
+            "description": "The full name of an institution the contact belongs to. In case there are several, separate them with semicolons (;).",
+            "examples": [ "European Genome-phenome Archive (EGA)" ]
+          },
+          "email_address": {
+            "type": "string",
+            "title": "Email address",
+            "description": "Current email address that would be used in case the contact needs to be reached. Its expected format is of a local-part (e.g. 'myname'), followed by an 'at' sign (i.e. '@') and the domain of the address (e.g. 'gmail.com' or 'ebi.ac.uk').",
+            "pattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+            "examples": [ "myname@ebi.ac.uk" ]
+          },
+          "phone_number": {
+            "type": "string",
+            "title": "Phone number",
+            "description": "Current phone number that would be used in case the contact needs to be reached. Theoretically would only be used in case the email address was not provided, does not exist or is unresponsive.",
+            "pattern": "^\\+?\\(?[0-9]{1,4}\\)?[-\\s\\./0-9]+$",
+            "examples": [ "+44 7427512529" ]
+          }          
+        },
+        "anyOf": [
+          { 
+            "title": "Either the individual's name is required.",
+            "required": ["individual_full_name"]
+          },
+          {
+            "title": "Or the institution's name is required.",
+            "required": ["institution_name"]
+          }
+        ]        
       }
 
     }    
