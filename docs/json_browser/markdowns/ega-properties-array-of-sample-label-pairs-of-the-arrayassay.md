@@ -12,7 +12,7 @@ Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which
 
 ## sample_labels Type
 
-`object[]` ([Repeatable Sample-label node](ega-2-definitions-repeatable-sample-label-node.md))
+`object[]` ([Repeatable Sample-label node](ega-4-definitions-repeatable-sample-label-node.md))
 
 ## sample_labels Constraints
 

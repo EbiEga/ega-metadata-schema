@@ -12,7 +12,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 ## array_label Type
 
-`object[]` ([Repeatable array_label node](ega-2-definitions-repeatable-array_label-node.md))
+`object[]` ([Repeatable array_label node](ega-4-definitions-repeatable-array_label-node.md))
 
 ## array_label Constraints
 

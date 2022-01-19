@@ -1,0 +1,176 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+    "type": "object",
+    "title": "EGA object-set metadata schema",
+    "meta:version": "0.0.0",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum lenght of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schema_descriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_array"],
+    "additionalProperties": false,
+    "properties": {
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_array": {
+        "type": "array",
+        "title": "Array containing metadata objects",
+        "description": "The array per se containing the list of metadata objects to be validated. For each type of metadata object (e.g. 'sample') its corresponding schema (e.g. 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#') is applied conditionally based on the value of schema_descriptor[object_type] within each object. This way this array can contain any combination of metadata objects and each will be validated individually against the correct schemas. Notice how the 'schema_descriptor' is a required node for the object-set to be used.",
+        "minItems": 1,
+        "additionalitems": false,
+        "items": {
+          "title": "Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object.",
+          "description": "Based on the value found within 'object_type' (i.e. if it matches the 'enum' of each type), the corresponding schema (defined within '$ref') is evaluated.",
+          "anyOf": [
+            {
+              "title": "The object's 'schema_descriptor' defines it as an experiment",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["experiment"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an study",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["study"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an sample",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["sample"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an individual",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["individual"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an submission",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["submission"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an run",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["run"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.run.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an dataset",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["dataset"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an analysis",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["analysis"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an policy",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["policy"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an DAC",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["DAC"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an ArrayExperiment",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["ArrayExperiment"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as an ArrayAssay",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["ArrayAssay"]
+                  }
+                }
+              },
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#"
+            }
+          ]      
+        }
+      }
+    }
+  }

@@ -1285,7 +1285,7 @@
             "type": "string",
             "title": "Type of the object",
             "description": "Type of the object (e.g. 'sample') the JSON document describes.",
-            "enum": [ "experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay" ]
+            "enum": [ "experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "object-set" ]
           },
           "described_by_schema_uri": {
             "type": "string",
