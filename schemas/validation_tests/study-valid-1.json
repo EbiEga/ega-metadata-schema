@@ -7,7 +7,7 @@
     "object_description": "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
     "study_design": {
         "study_type": "cancer genomics",
-        "additional_keywords_array": [ "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
+        "additional_keywords_list": [ "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
     },
     "study_relationships": [
         {
