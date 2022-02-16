@@ -262,35 +262,145 @@
         "type": "object",
         "title": "EGA Protocols object",
         "description": "A protocol is an information entity which is a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
-        "required": ["protocol_type", "protocol_description"],
+        "required": ["protocol_step_index", "previous_protocol_step_index", "protocol_type_descriptor", "protocol_description"],
         "additionalProperties": false,
         "properties": {
           "protocol_name": {
             "type": "string",
             "title": "Name of the protocol [NCIT:C42614]",
             "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.",
-            "examples": [ "myProtocol-13" ]
+            "minLength": 1,
+            "examples": [ "myProtocol-13", "Treatment for leukemia patients C30", "Sample collection from infected patients" ]
           },
-          "protocol_type": {
-            "type": "string",
-            "title": "Type of protocol [OBI:0000272] ",
-            "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
-            "enum": ["Sample collection",  "Nucleic acid extraction",  "Nucleic acid labeling",  "Nucleic acid hybridization to array",  "Array scanning and feature extraction",  "Nucleic acid library construction",  "Growth",  "Dissociation", "Enrichment", "Treatment", "Conversion", "Clinical treatment", "Dissection", "Gene expression"],
-            "meta:enum": ["Sample collection__EFO:0005518", "Nucleic acid extraction__EFO:0002944", "Nucleic acid labeling__EFO:0003813", "Nucleic acid hybridization to array__EFO:0003815", "Array scanning and feature extraction__EFO:0003814", "Nucleic acid library construction__EFO:0004184", "Growth__EFO:0003789", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Treatment__EFO:0003969", "Conversion__EFO:0005520", "Clinical treatment__EFO:0000355", "Dissection__EFO:0005519", "Gene expression__EFO:0003788"],
-            "examples": [ "Sample collection" ]
+
+          "protocol_step_index": {
+            "type": "number",
+            "title": "Protocol step index",
+            "description": "Lexically ordered value (greater than 0) that allows for the protocol section to be sequentially ordered. The float primitive data type is used to allow for pipe sections to be inserted later on. In other words, adding a new intermediate step 1.1 between steps 1 and 2 afterwards. For example, in an experiment where we treated samples before its DNA extraction, the sample treatment protocol would have a lower 'protocol_step_index' than the DNA extraction.",
+            "min": 0,
+            "examples": [ 0.5, 1, 2.5, 2, 30 ]
           },
-          "protocol_curie": {
-            "type": "string",
-            "title": "Name of the protocol type [NCIT:C21270]",
-            "description": "Ontology term (e.g. 'EFO:0005518') of the Type of protocol.",
-            "enum": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788"],
-            "examples": [ "EFO:0005518" ]
+
+          "previous_protocol_step_index": {
+            "type": "number",
+            "title": "Previous protocol step index",
+            "description": "The 'protocol_step_index' of the previous protocol, if hierarchically ordered. Set to '0' if this protocol is the first step. In case several protocols are not sequential, both can share the same 'previous_protocol_step_index'.",
+            "minInclusive": 0,
+            "examples": [ 0, 0.5, 1, 2.5, 2, 30 ]
           },
+
+          "protocol_type_descriptor": {
+            "type": "object",
+            "title": "Protocol type descriptor",
+            "description": "Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type, and hence we highly recommend their usage.",
+            "required": ["protocol_type", "protocol_subtype_curie"],
+            "additionalProperties": false,
+            "properties": {
+              "protocol_type": {
+                "type": "string",
+                "title": "Type of protocol [OBI:0000272]",
+                "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary list (to be upgraded on demand).",
+                "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "sample collection", "single cell isolation", "treatment", "other"],
+                "meta:enum": ["High Content Screen (HCS)__EFO:0007570", "Conversion__EFO:0005520", "Delivery method_EFO:0000395", "Dissection__EFO:0005519", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Extraction__EFO:0002944", "Gene expression__EFO:0003788", "Growth__EFO:0003789", "Hybridization__EFO:0003815", "Hydrolysis collection__EFO:0010892", "Labelling__EFO:0003813", "Nucleic acid library construction__EFO:0004184", "Sample collection__EFO:0005518", "Single cell isolation__EFO:0010214", "Treatment__EFO:0003969", "The protocol type is not listed in the controlled vocabulary. If used, you shall provide your proposed new protocol type making use of the field 'new_protocol_type'."]
+              },
+
+              "new_protocol_type": {
+                "type": "string",
+                "title": "New proposed protocol type",
+                "description": "The proposed protocol type term that is not present within the Controlled Vocabullary of the 'protocol_type' list. Use exclusively when 'protocol_type' is 'other'.",
+                "minLength": 1,
+                "examples": [ "Patient recruitment" ]
+              },
+
+              "protocol_subtype": {
+                "type": "string",
+                "title": "Subtype of the protocol",
+                "description": "Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols within the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo).",
+                "examples": [ "clinical treatment", "array scanning and feature extraction" ]    
+              },
+
+              "protocol_subtype_curie": {
+                "type": "string",
+                "title": "Compact URI (CURIE) of the protocol subtype",
+                "description": "Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. This allows for a specific designation of the protocol within the overal general of the 'protocol_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').",
+                "allOf": [
+                  {
+                    "title": "General CURIE pattern",
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                  }
+                ],
+                "examples": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788", "EFO:0000395", "EFO:0010892", "EFO:0010214"]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "title": "If the 'protocol_type' is 'other'",
+                  "required": ["protocol_type"],
+                  "properties": {
+                    "protocol_type": {
+                      "enum": ["other"]
+                    }
+                  }
+                },
+                "then": {
+                  "title": "Then the 'new_protocol_type' has to be present",
+                  "required": ["new_protocol_type"]
+                }
+              }
+            ]
+          },
+
+          "ptotocol_performers": {
+            "type": "array",
+            "title": "Protocol performers array",
+            "description": "Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.",
+            "additionalProperties": false,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "",
+              "description": "Free form text to specify the institution, group, or individuals that performed the protocol.",
+              "minLength": 1,
+              "examples": ["EGA's Operational bioinformatics group", "Lab technician"]             
+            }
+          },
+
+          "protocol_instrument": {
+            "type": "array",
+            "title": "Protocol instrument array [EFO:0000548]",
+            "description": "Array of instruments used in the protocol.",
+            "additionalProperties": false,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Instrument used in the protocol [EFO:0000548]",
+              "description": "Free form text to specify the device, which provides a mechanical or electronic function, and was used by the performer of the protocol. We highly recommend the usage of ontologized terms from the [Experimental Factor Ontology (EFO)](http://www.ebi.ac.uk/efo/EFO_0000548).",
+              "minLength": 1,
+              "examples": ["Computer [OBI:0400107]", "Oligonucleotide synthesizer [OBI:0400113]", "Sonicator [OBI:0400114]"]             
+            }
+          },
+
+          "protocol_software": {
+            "type": "array",
+            "title": "Protocol software array [IAO:0000010]",
+            "description": "Array of software descriptions used in the protocol.",
+            "additionalProperties": false,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Software descriptions used in the protocol [IAO:0000010]",
+              "description": "Free form text to specify the programs and other operating information (including bespoken scripts) used by a computer that were used by the performer of the protocol. Include the version of the program, if applicable. We highly recommend the usage of ontologized terms from the [Software Ontology(SWO)](https://www.ebi.ac.uk/ols/ontologies/swo).",
+              "minLength": 1,
+              "examples": ["SAMtools v3.0.1 [SWO:1100143]", "MATLAB [SWO:0000005]"]         
+            }
+          },
+          
           "protocol_description": {
             "type": "string",
             "title": "Description of the protocol [NCIT:C25365]",
-            "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated by anyone who is granted access.",
-            "examples": [ "First tilt the cell culture flask... ...and finally let it still for 2 hours." ]
+            "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.",
+            "examples": [ "First tilt the cell culture flask... ...and finally let it still for 2 hours.", "Patients were given a ketogenic diet for 3 weeks at intervals consisting in..." ]
           }
         }
       },
