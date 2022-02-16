@@ -34,7 +34,7 @@
           "external_accessions": {
             "type": "array",
             "title": "External accessions array",
-            "description": "Custom attributes of an ArrayExperiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+            "description": "External accession node to reference objects in other archives (e.g. an already existing sample at BioSamples).",
             "minItems": 1,
             "additionalProperties": false,
             "items": {
@@ -76,7 +76,7 @@
             "type": ["string", "number"],
             "title": "Value of the custom attribute",
             "description": "The value of the attribute (e.g. '40').",
-            "examples": [ "40" ]
+            "examples": [ "smoker", 40 ]
           },
           "units": {
             "type": "string",
@@ -113,7 +113,7 @@
                 "title": "Filetype ID",
                 "description": "The ID or name (e.g. FASTA or TSV) associated with the given filetype.",
                 "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT"],
-                "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
+                "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a Run, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
                 "examples": [ "TSV" ]
               },
               "filetype_curie": {
@@ -261,7 +261,7 @@
       "protocols_object": {
         "type": "object",
         "title": "EGA Protocols object",
-        "description": "Object containing the base metadata attributes of a Protocol object in the EGA. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
+        "description": "A protocol is an information entity which is a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
         "required": ["protocol_type", "protocol_description"],
         "additionalProperties": false,
         "properties": {
@@ -1097,29 +1097,27 @@
       "object_external_accession": {
         "type": "object",
         "title": "Object of external accession of the object",
-        "description": "External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives, the name of the archive (e.g. biosample, ena, ensembl...) and an optional label.",
+        "description": "External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.",
         "additionalProperties": false,
-        "required": ["external_accession", "accession_archive"],
+        "required": ["external_accession_curie"],
         "properties": {
-          "external_accession": {
-            "type": ["string", "number"],
-            "title": "External accession of the object",
-            "description": "Unique identifier of the object (e.g. SAMEA7616999), assigned by other archives (e.g. biosample).",
-            "examples": [ "SAMEA7616999" ]
-          },
-          "accession_archive": {
+          "external_accession_curie": {
             "type": "string",
-            "title": "Name of the archive",
-            "description": "Name of the archive (e.g. biosample) from which the external accession is taken.",
-            "enum": ["ensembl", "ena", "pubmed", "protein", "nuccore", "ipg", "nucleotide", "structure", "genome", "annotinfo", "assembly", "bioproject", "biosample", "blastdbinfo", "books", "cdd", "clinvar", "gap", "gapplus", "grasp", "dbvar", "gene", "gds", "geoprofiles", "homologene", "medgen", "mesh", "ncbisearch", "nlmcatalog", "omim", "orgtrack", "pmc", "popset", "proteinclusters", "pcassay", "protfam", "biosystems", "pccompound", "pcsubstance", "seqannot", "snp", "sra", "taxonomy", "biocollections", "gtr"],
-            "meta:enum": ["ensembl__#! description TBD", "ena__#! description TBD", "pubmed__#! description TBD", "protein__#! description TBD", "nuccore__#! description TBD", "ipg__#! description TBD", "nucleotide__#! description TBD", "structure__#! description TBD", "genome__#! description TBD", "annotinfo__#! description TBD", "assembly__#! description TBD", "bioproject__#! description TBD", "biosample__#! description TBD", "blastdbinfo__#! description TBD", "books__#! description TBD", "cdd__#! description TBD", "clinvar__#! description TBD", "gap__#! description TBD", "gapplus__#! description TBD", "grasp__#! description TBD", "dbvar__#! description TBD", "gene__#! description TBD", "gds__#! description TBD", "geoprofiles__#! description TBD", "homologene__#! description TBD", "medgen__#! description TBD", "mesh__#! description TBD", "ncbisearch__#! description TBD", "nlmcatalog__#! description TBD", "omim__#! description TBD", "orgtrack__#! description TBD", "pmc__#! description TBD", "popset__#! description TBD", "proteinclusters__#! description TBD", "pcassay__#! description TBD", "protfam__#! description TBD", "biosystems__#! description TBD", "pccompound__#! description TBD", "pcsubstance__#! description TBD", "seqannot__#! description TBD", "snp__#! description TBD", "sra__#! description TBD", "taxonomy__#! description TBD", "biocollections__#! description TBD", "gtr__#! description TBD"],
-            "examples": [ "biosample" ]
+            "title": "CURIE of the external accession",
+            "description": "Unique identifier of an external, to EGA, object. It shall follow CURIE format (``prefix``:``accession``): prefix assigned to the archive (e.g. biosample - search for yours at identifiers.org) and the unique accession of the object (e.g. SAMEA7616999).",
+            "allOf": [
+              {
+                "title": "General pattern of a CURIE",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712"]
           },
           "accession_label": {
             "type": ["string", "number"],
             "title": "Label of the external accession",
             "description": "Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
-            "examples": [ "taken from biosample temporarily" ]
+            "examples": [ "taken from biosample temporarily", "Ensembl's part of the accessions", "first", 2 ]
           }
         }
       },
@@ -1285,7 +1283,7 @@
             "type": "string",
             "title": "Type of the object",
             "description": "Type of the object (e.g. 'sample') the JSON document describes.",
-            "enum": [ "experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "object-set" ]
+            "enum": [ "experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayAssay", "object-set" ]
           },
           "described_by_schema_uri": {
             "type": "string",
@@ -1325,7 +1323,403 @@
         "description": "This object exists to hold the pattern that semantic versioning has, for it to be referenced elsewhere within this (or other) JSON schema. For further details about semantic versioning check 'https://semver.org/'",
         "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
         "examples": [ "2.5.1" ]
-      }
+      },
 
+      "locus_identifier": {
+        "type": "object",
+        "title": "Locus identifier",
+        "description": "Node to unambiguously identify loci [OGI:0000022]: the unique chromosomal location defining the position of an individual gene or DNA sequence. This node shall be used to precisely define: (1) the organism of said locus; (2) the gene and other genomic feature references in other accessions; (3) the genomic sequence per se, including its assembly and position. These details, in different combinations, shall allow identification of any genomic feature, such as SNPs (e.g. coordinates of a variant) or genes (e.g. PT53).",
+        "required": ["organism_descriptor", "loci_descriptor"],
+        "additionalProperties": false,
+        "properties": {
+          "organism_descriptor": {
+            "title": "Organism descriptor",
+            "description": "Node to identify the specific organism the locus belongs to.",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor"
+          },
+          "loci_descriptor": {
+            "type": "array",
+            "title": "Loci context array",
+            "description": "Array of locus context items. Multiple loci can be described in the array if the organism remains the same.",
+            "additionalProperties": false,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "title": "Locus context item",
+              "description": "Node providing the context of the locus: its sequence, coordinates, encompassed genes...",
+              "properties": {
+                "gene_descriptor": {
+                  "title": "Gene descriptor",
+                  "description": "Node to identify the gene of the locus of interest.",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor"
+                },
+                "genomic_sequence_descriptor": {
+                  "title": "Genomic sequence descriptor",
+                  "description": "Node to describe the sequence per se, instead of referencing it.",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor"
+                },
+                "locus_external_reference": {
+                  "type": "string",
+                  "title": "External reference of the locus",
+                  "description": "If the locus is NOT a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accesible and persistent, one can reference it here instead of providing all their details. For example, transcript TAF1-204 already contains all its locus information within its persistent record at Ensembl, identified by 'ensembl:ENST00000423759.6'.",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession",
+                  "examples": ["ensembl:ENST00000423759.6"]
+                },
+                "locus_additional_description": {
+                  "type": "string",
+                  "title": "Additional description of the locus",
+                  "description": "Optional free-text description of the locus to add any additional context.",
+                  "minLength": 1,
+                  "examples": ["Targeted locus number 1 our of 3 possible loci that our experimental procedure aimed at.", "The locus corresponds to a variant version of the defined gene, only existing in patients with X disease."]
+                }
+              },
+              "anyOf": [
+                {
+                  "title": "Either the gene description is given",
+                  "required": ["gene_descriptor"]
+                },
+                {
+                  "title": "Or the genomic sequence context",
+                  "required": ["genomic_sequence_descriptor"]
+                },
+                {
+                  "title": "Or an external reference to the locus context",
+                  "required": ["locus_external_reference"]
+                }
+              ]
+            }            
+          }
+        }
+      },
+
+      "gene_descriptor": {
+        "type": "object",
+        "title": "Gene descriptor",
+        "description": "Node to uniquely identify a gene [SO:0000704]: a region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions. For human genes, the standard is to use nomenclature provided by the HUGO Gene Nomenclature Committee (HGNC).",
+        "required": ["gene_id_curie"],
+        "additionalProperties": false,
+        "properties": {
+          "gene_symbol": {
+            "type": "string",
+            "title": "Gene Symbol [data:1026]",
+            "description": "The official gene symbol. It is typically derived from the gene name. This optional field exists to provide a human readable identifier of the gene. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
+            "examples": ["TAF1", "TP53", "BRAF", "16S"]
+          },
+          "gene_id_curie": {
+            "type": "string",
+            "title": "Gene CURIE ID [data:2295]",
+            "description": "A unique (and typically persistent) identifier of a gene in a database, that is (typically) different to the gene name/symbol (e.g. HGNC:11535 for gene TAF1). The identifier has to follow CURIE format. Additionally, there are 2 types of allowed databases to reference: NCBIGene and HGNC. Other archives' accessions (e.g. ensembl:ENSDARG00000035330) can be cross referenced with NCBIGene to obtain its gene ID (e.g. ncbigene:555452).",            
+            "allOf": [
+              {
+                "title": "General pattern of a CURIE",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "oneOf": [
+              {
+                "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_ncbi_gene_identifier_pattern"
+              },
+              {
+                "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_hgnc_identifier_pattern"
+              }
+            ],
+            "examples": ["HGNC:11535", "hgnc:11998", "HGNC:1097", "ncbigene:100010", "ncbigene:6872"]
+          }
+        }
+      },
+
+      "ncbi_assembly_descriptor": {
+        "type": "object",
+        "title": "NCBI's Assembly descriptor [topic:0196]",
+        "description": "Node describing a sequence assembly referenced in [NCBI's Assembly database](https://www.ncbi.nlm.nih.gov/assembly). Assembly is a database providing information on the structure of assembled genomes, assembly names and other meta-data, statistical reports, and links to genomic sequence data. An assembly is defined as the set of chromosomes, unlocalized and unplaced (sometimes called 'random') and alternate sequences used to represent an organism's genome. Assemblies are constructed from 1 or more assembly units.",
+        "required": ["ncbi_assembly_accession"],
+        "additionalProperties": false,
+        "properties": {
+          "ncbi_assembly_accession": {
+            "type": "string",
+            "title": "NCBI Assembly accession",
+            "description": "Assembly's identifier (e.g. GCF_000001405.26) of the assembly. For example, the assembly accession for the GenBank version of the public human reference assembly (GRCh38.p14) is GCA_000001405.29. See further details here: https://www.ncbi.nlm.nih.gov/assembly/model/.",
+            "allOf": [
+              {
+                "title": "Assembly's CURIE pattern",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_ncbi_assembly_pattern"
+              }
+            ],
+            "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
+          },
+          "ncbi_assembly_unit_accession": {
+            "type": "string",
+            "title": "NCBI Assembly unit accession",
+            "description": "NCBI's identifier (e.g. ) of the assembly unit. An assembly unit is defined as the collection of sequences used to define discrete parts of an assembly. Commonly assembly units are entire chromosomes (e.g. Chromosome 1 of human genome), scaffolds or different types of sequences (e.g. Mitochondrial DNA). For example, GenBank's accession: (1) for the assembly unit of the human chromosome 1 is [NC_000001.11](https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11) (for the human reference assembly GRCh38.p14); (2) and for the complete mitochondrion genome of a human it is [NC_012920.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_012920.1). See further details here: https://www.ncbi.nlm.nih.gov/assembly/model/.",
+            "allOf": [
+              {
+                "title": "RefSeq accession CURIE",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern"
+              }
+            ],
+            "examples": ["refseq:NC_000001.11", "refseq:NC_012920.1"]
+          }
+        }
+        
+      },
+
+      "genomic_sequence_descriptor": {
+        "type": "object",
+        "title": "Genomic sequence descriptor [GENO:0000960]",
+        "description": "Node used to describe with sufficient detail a genomic sequence (e.g. Human Chromosome X: 71366222-71532374 forward strand), defined as a biological sequence that is of genomic origin (i.e. carries sequence from the genome of a cell or organism).",
+        "additionalProperties": false,
+        "properties": {
+          "assembly_descriptor": {
+            "title": "Assembly descriptor [topic:0196]",
+            "description": "Node to identify the assembly of the locus of interest.",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
+          },
+          "sequence_coordinates": {
+            "title": "DNA Sequence coordinates",
+            "description": "Node to define que specific sequence coordinates of the genomic feature within the assembly.",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates"
+          },
+          "dna_sequence_strand": {
+            "title": "DNA Sequence strand",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/dna_sequence_strand"
+          },
+          "nucleic_acid_sequence": {
+            "title": "Nucleic acid sequence of the locus",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/nucleic_acid_sequence"
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Either the full position context is given",
+            "required": ["assembly_descriptor", "sequence_coordinates", "dna_sequence_strand"]
+          },
+          {
+            "title": "Or at least the sequence itself is given",
+            "required": ["nucleic_acid_sequence"]
+          }
+        ]
+      },
+
+      "sequence_coordinates": {
+        "type": "object",
+        "title": "Sequence coordinates [data:2012]",
+        "description": "A position in a map (for example a genetic map), either a single position (e.g. 71366222) or a region interval (e.g. 71366222-71532374). Used to define coordinates within an assembly unit.",
+        "additionalProperties": false,
+        "properties": {
+          "single_position": {
+            "title": "Single position",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position"
+          },
+          "sequence_interval": {
+            "type": "object",
+            "title": "Sequence interval [GENO:0000902]",
+            "description": "The location of a sequence feature in a genome, defined by its start (e.g. 71366222) and end (e.g. 71532374) position on some reference genomic coordinate system. Positions are always represented by contiguous spans using interbase coordinates or coordinate ranges. Both coordinates are inclusive: the sequence bounds are included in the described genomic feature. In other words, if the sequence interval is 71366222-71532374, both 71366222 and 71532374 coordinates are included in the feature.",
+            "required": ["start", "end"],
+            "additionalProperties": false,
+            "properties": {
+              "start": {
+                "title": "Start position",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position"
+              },
+              "end": {
+                "title": "End position",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position"
+              }
+            }
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Either a single position is given",
+            "required": ["single_position"]
+          },
+          {
+            "title": "Or the whole sequence interval",
+            "required": ["sequence_interval"]
+          }
+        ]
+      },
+
+      "dna_sequence_strand": {
+        "type": "string",
+        "title": "DNA Sequence strand",
+        "description": "DNA sequence is double-stranded. By convention, for a reference chromosome, one whole strand is designated the 'forward strand' and the other the 'reverse strand'. This designation is arbitrary and sometimes the terms 'plus strand' and 'minus strand', respectively, are used instead. A genomic feature can live on a DNA strand in one of two orientations. For instance, a gene is said to have a coding strand (also known as its 'sense strand'), and a template strand (also known as its 'antisense strand'), which can be forward or reverse strands depending on which contain the nucleotide sequence the RNA polymerase reads to create its RNA product. Annotations such as Ensembl and UCSC are concerned with the coding sequences of genes, so when they say a gene is on the forward strand, it means the gene's coding sequence is on the forward strand. To follow through again, that means that during transcription of this forward-strand gene, the gene's template sequence is read from the reverse strand, producing an mRNA that matches the sequence on the forward strand.",
+        "enum": ["forward", "reverse"],
+        "meta:enum": ["Forward strand [ENSGLOSSARY:0000369]: DNA strand arbitrary defined as the strand with its 5' end at the tip of the short chromosome arm (p). If a gene is forward-stranded, its sense (sequence matching cDNA) is on the forward strand. Forward strand is reverse complementary to the reverse strand.", "Reverse strand [ENSGLOSSARY:0000370]: DNA strand arbitrary defined as the strand with its 5' end at the tip of the long chromosome arm (q). If a gene is reverse-stranded, its sense (sequence matching cDNA) is on the reverse strand. Reverse strand is reverse complementary to the forward strand."]
+      },
+
+      "nucleic_acid_sequence": {
+        "type": "string",
+        "title": "Nucleic acid sequence [data:2977]",
+        "description": "Sequence of characters representing a specific nucleic (i.e. molecular species - e.g. Adenine) or groupings of these (through ambiguity codes), using [one-letter IUPAC abbreviations](https://en.wikipedia.org/wiki/International_Union_of_Pure_and_Applied_Chemistry#Amino_acid_and_nucleotide_base_codes).",
+        "pattern": "^([\\.-]*[ACGTURYKMSWBDHVNX]+[\\.-]*)+$",
+        "examples": ["ACTGCCG", "CTGCGCGCGCT", "KM-AGT-X-N"]        
+      },
+
+      "single_sequence_position": {
+        "type": "number",
+        "title": "Single sequence position",
+        "description": "A single 1-based (first base of the assembly unit is 1, not 0) sequence coordinate, inclusive. It can be used to describe the start or end coordinates of a sequence interval, or directly a single coordinate within a sequence.",
+        "minInclusive": 1,
+        "examples": [71366222, 36592394, 1]
+      },
+
+      "curie_general_pattern": {
+        "type": "string",
+        "title": "Compact URI (CURIE) pattern",
+        "description": "A [W3C Compact URI](https://www.w3.org/TR/curie/) formatted string. A CURIE string has the structure ``prefix``:``reference``, as defined by the W3C syntax. Even though we do not restrict prefixes, we recommend that the term used as ``prefix`` is uniformely resolved. In other words, it is better to use prefixes (e.g. 'ensembl') from identifiers.org.",
+        "pattern": "^\\w[^:]*:.+$",
+        "examples": ["ensembl:ENSG00000139618", "HGNC:11535", "data:1026", "EFO:0003815"]
+      },
+
+      "curie_refseq_pattern": {
+        "type": "string",
+        "title": "RefSeq accessions' [data:1098] CURIE pattern",
+        "description": "The Reference Sequence (RefSeq) CURIEs take the structure of ``refseq``:``accession``. [RefSeq accessions](https://registry.identifiers.org/registry/refseq) [data:1098] have special prefixes (e.g. 'NM_' for protein-coding transcripts - mRNA) based on the category of the object. The accession can also have a version attached as a sufix (e.g. '.23'). Their records are integrated into [NCBI's resources](https://www.ncbi.nlm.nih.gov/refseq/) including the Nucleotide, Protein, and BLAST databases and can be easily identified by the keyword 'RefSeq' and by their distinct accession prefixes that define their type (see further details at [doi:10.1093/nar/gkv1189](https://academic.oup.com/nar/article/44/D1/D733/2502674).",
+        "pattern": "^(RefSeq|refseq):",
+        "allOf": [
+          {
+            "title": "General CURIE pattern",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+          }
+        ],        
+        "oneOf": [
+          {
+            "title": "NC - Molecule type: DNA",
+            "Description": "Use context: Chromosomes; Linkage Groups",
+            "pattern": "^[^:]+:NC_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "AC - Molecule type: DNA",
+            "Description": "Use context: Chromosomes; Linkage Groups",
+            "pattern": "^[^:]+:AC_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NZ - Molecule type: DNA",
+            "Description": "Use context: Chromosomes; Scaffolds; Used predominantly for prokaryotic genomes.",
+            "pattern": "^[^:]+:NZ_[A-Z]{2,4}\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NT - Molecule type: DNA",
+            "Description": "Use context: Scaffolds",
+            "pattern": "^[^:]+:NT_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NW - Molecule type: DNA",
+            "Description": "Use context: Scaffolds",
+            "pattern": "^[^:]+:NW_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NG - Molecule type: DNA",
+            "Description": "Use context: Genomic regions; A genomic region record may represent a single or multiple genetic loci (e.g. rRNA targeted locus, RefSeqGene, non-transcribed pseudogene)",
+            "pattern": "^[^:]+:NG_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NM - Molecule type: mRNA",
+            "Description": "Use context: protein-coding transcripts",
+            "pattern": "^[^:]+:NM_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "XM - Molecule type: mRNA",
+            "Description": "Use context: protein-coding transcripts",
+            "pattern": "^[^:]+:XM_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NR - Molecule type: RNA",
+            "Description": "Use context: non-protein-coding transcripts including lncRNAs, structural RNAs, transcribed pseudogenes, and transcripts with unlikely protein-coding potential from protein-coding genes",
+            "pattern": "^[^:]+:NR_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "XR - Molecule type: RNA",
+            "Description": "Use context: non-protein-coding transcripts, as above",
+            "pattern": "^[^:]+:XR_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "NP - Molecule type: protein",
+            "Description": "Use context: Proteins annotated on NM_ transcript accessions or annotated on genomic molecules without an instantiated transcript (e.g. some mitochondrial genomes, viral genomes, and reference bacterial genomes",
+            "pattern": "^[^:]+:NP_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "AP - Molecule type: protein",
+            "Description": "Use context: Proteins annotated on AC_ genomic accessions or annotated on genomic molecules without an instantiated transcript record",
+            "pattern": "^[^:]+:AP_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "XP - Molecule type: protein",
+            "Description": "Use context: Proteins annotated on XM_ transcript accessions or annotated on genomic molecules without an instantiated transcript record",
+            "pattern": "^[^:]+:XP_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "YP - Molecule type: protein",
+            "Description": "Use context: Proteins annotated on genomic molecules without an instantiated transcript record",
+            "pattern": "^[^:]+:YP_\\d+(\\.\\d+)?$"
+          },
+          {
+            "title": "WP - Molecule type: protein",
+            "Description": "Use context: Proteins that are non-redundant across multiple strains and species. A single protein of this type may be annotated on more than one prokaryotic genome",
+            "pattern": "^[^:]+:WP_\\d+(\\.\\d+)?$"
+          }
+        ],
+        "examples": ["NC_001502.1", "NZ_AP024564.1", "NG_046887.1", "NP_001006685.1", "NZ_AMGO01000001.1"]
+      },
+
+      "curie_hgnc_symbol_pattern": {
+        "type": "string",
+        "title": "HGNC symbol CURIE pattern",
+        "description": "The HGNC (HUGO Gene Nomenclature Committee) provides an approved gene name and symbol (short-form abbreviation) for each known human gene. All approved symbols are stored in the HGNC database, and each symbol is unique. This collection refers to records using the HGNC symbol. See further details here: https://registry.identifiers.org/registry/hgnc.symbol",
+        "pattern": "hgnc.symbol:[A-Za-z-0-9_]+(\\@)?$",
+        "allOf": [
+          {
+            "title": "General CURIE pattern",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+          }
+        ],
+        "examples": ["hgnc.symbol:DAPK1", "hgnc.symbol:TAF1"]
+      },
+
+      "curie_hgnc_identifier_pattern": {
+        "type": "string",
+        "title": "HGNC identifier CURIE pattern",
+        "description": "The HGNC (HUGO Gene Nomenclature Committee) provides an approved gene name and symbol (short-form abbreviation) for each known human gene. All approved symbols are stored in the HGNC database, and each symbol is unique. HGNC identifiers refer to records in the HGNC symbol database. See further details here: https://registry.identifiers.org/registry/hgnc",
+        "pattern": "^((HGNC|hgnc):)?\\d{1,5}$",
+        "allOf": [
+          {
+            "title": "General CURIE pattern",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+          }
+        ],
+        "examples": ["hgnc:2674", "HGNC:11535"]
+      },
+
+      "curie_ncbi_gene_identifier_pattern": {
+        "type": "string",
+        "title": "NCBI Gene identifier CURIE pattern",
+        "description": "Entrez Gene is the NCBI's database for gene-specific information, focusing on completely sequenced genomes, those with an active research community to contribute gene-specific information, or those that are scheduled for intense sequence analysis. See further details here: https://registry.identifiers.org/registry/ncbigene",
+        "pattern": "^ncbigene:\\d+$",
+        "allOf": [
+          {
+            "title": "General CURIE pattern",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+          }
+        ],
+        "examples": ["ncbigene:100010", "ncbigene:270627"]
+      },
+
+      "curie_ncbi_assembly_pattern": {
+        "type": "string",
+        "title": "NCBI Assembly CURIE pattern",
+        "description": "The assembly accession starts with a three letter prefix, GCA for GenBank assemblies and GCF for RefSeq assemblies. This is followed by an underscore and 9 digits (e.g. '_000001405'). A version (e.g. '.26') is then added to the accession. See further details here: https://registry.identifiers.org/registry/assembly",
+        "pattern": "^assembly:(GCF|GCA)_\\d+(\\.\\d+)?$",
+        "allOf": [
+          {
+            "title": "General CURIE pattern",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+          }
+        ],
+        "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
+      }     
+      
     }    
   }
