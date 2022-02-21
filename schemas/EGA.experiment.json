@@ -5,7 +5,7 @@
     "title": "EGA Experiment metadata schema",
     "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "technology", "array_label", "experimental_design", "array_type", "assayed_molecule", "#!"],
+    "required": ["object_id", "sample_number", "experiment_protocols", "assay_technology", "experimental_designs", "assay_type_descriptor", "assayed_molecule", "experiment_type_specifications"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -77,219 +77,185 @@
         }
       },
 
-      "technology": {
-        "type": "object",
-        "title": "Microarray technology of the experiment [EFO:0002698]",
-        "description": "Technology applicable for the experiment. It contains both the ID  (e.g. One-colour microarray) and the CURIE  (e.g. EFO:0010939) of the technology.",
-        "required": ["technology_id"],
-        "additionalProperties": false,
-        "properties": {
-          "technology_id": {
-            "type": "string",
-            "title": "Microarray technology of the experiment - ID",
-            "description": "The human readable ID (e.g. Two-colour microarray), chosen from a list of CVs, of the microarray technology used at the experiment.",
-            "enum": ["One-colour microarray", "Two-colour microarray", "Methylation microarray", "Protein microarray", "Metabolomic microarray", "Single Nucleotide Polymorphism Array", "Tissue Microarray", "other", "unknown"],
-            "meta:enum": ["One-colour microarray__EFO:0010939", "Two-colour microarray__NCIT:C116153", "Methylation microarray__NCIT:C165222", "Protein microarray__EFO:0002702", "Metabolomic microarray__", "Single Nucleotide Polymorphism Array__NCIT:C116151", "Tissue Microarray__NCIT:C19922", "The ID of the technology is not listed in the controlled vocabulary, and thus you may choose 'other' and propose a new term using the field 'technology_label'", "The ID of the technology is unknown. If possible, provide context of why using the field 'technology_label'"],
-            "examples": [ "One-colour microarray" ]
-          },
-          "technology_curie": {
-            "type": "string",
-            "title": "Microarray technology of the experiment - CURIE",
-            "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C116153), chosen from a list of CVs, of the microarray technology used at the experiment.",
-            "enum": ["EFO:0010939", "NCIT:C116153", "NCIT:C165222", "EFO:0002702", "NCIT:C116151", "NCIT:C19922"],
-            "examples": [ "EFO:0010939" ]
-          },
-          "technology_label": {
-            "type": "string",
-            "title": "Microarray technology of the experiment - Label",
-            "description": "A free-form label (e.g. 'new unlisted technology XYZ...') to add any extra information to the microarray technology used at the experiment. Specially useful when the technology_id is 'other', providing the proposed new technology term, or 'unknown', explaining the reasoning behind it.",
-            "examples": [ "new unlisted technology XYZ..." ]
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "title": "If the technology_id is 'other'",
-              "required": ["technology_id"],
-              "properties": {
-                "technology_id": {
-                  "enum": ["other"]
-                }
-              }
-            },
-            "then": {
-              "title": "Then the technology_label has to be present",
-              "required": ["technology_label"]
-            }
-          }
-        ]
+      "assay_technology": {
+        "title": "Technology used in the assay",
+        "description": "Technology used in the assay. This node allows for an easy filtering of the technology (e.g. a sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) in an assay.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor"
       },
 
-      "array_label": {
-        "type": "array",
-        "title": "Array label of the experiment [EFO:0000562]",
-        "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
+      "experimental_designs": {
+        "type": "object",
+        "title": "Experimental designs of the experiment [EFO:0001426]",
+        "description": "Array of experimental factors describing the method(s) of investigating particular types of research questions or solving particular types of problems. Each item of the array contain both the human readable ID (e.g. RNA stability design) and an optional label to qualify the term or provide additional context.",
         "additionalProperties": false,
-        "minItems": 1,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" 
+          "title": "Experimental design item",
+          "description": "One of the experimental designs of the experiment.",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_design"
         }
       },
 
-      "experimental_design": {
+      "assay_type_descriptor": {
         "type": "object",
-        "title": "Experimental design of the experiment [EFO:0001426]",
-        "description": "Experimental factor describing the method of investigating particular types of research questions or solving particular types of problems. It contains both the human readable ID (e.g. RNA stability design) and CURIE (e.g. EFO:0001783) of the experimental design.",
-        "required": ["experimental_design_id"],
+        "title": "Type of assay [OBI:0000070]",
+        "description": "Node defining the type of assay applicable to the experiment. Consists in an overall category (based on the purpose and technology of the instrument [EFO:0002773]) and its possible subtype. Both types and subtypes are taken from controlled vocabulary (CV) lists, stored in the controlled_vocabulary_schemas folder. For example, in a single cell RNA-seq assay the assay type would be 'assay by high throughput sequencer' [EFO:0002697] and its subtype 'RNA-seq of coding RNA from single cells' [EFO:0005684].",
         "additionalProperties": false,
+        "required": ["assay_type"],
         "properties": {
-          "experimental_design_id": {
+          "assay_type": {
             "type": "string",
-            "title": "Experimental design of the experiment - ID",
-            "description": "The human readable ID (e.g. RNA stability design), chosen from a list of CVs, of the experimental design defining the experiment.",
-            "enum": ["RNA stability design", "binding site identification design", "case control design", "cell component comparison design", "cell cycle design", "cell type comparison design", "cellular modification design", "clinical history design", "compound treatment design", "cross sectional design", "development or differentiation design", "disease state design", "dose response design", "twin design", "genetic modification design", "genotype design", "growth condition design", "imprinting design", "injury design", "innate behavior design", "organism part comparison design", "organism status design", "pathogenicity design", "population based design", "sex design", "species design", "stimulus or stress design", "strain or line design", "time series design", "other", "unknown"],
-            "meta:enum": ["RNA stability design__EFO:0001783", "binding site identification design__EFO:0004664", "case control design__EFO:0001427", "cell component comparison design__EFO:0001743", "cell cycle design__EFO:0001744", "cell type comparison design__EFO:0001745", "cellular modification design__EFO:0004666", "clinical history design__EFO:0001780", "compound treatment design__EFO:0001755", "cross sectional design__EFO:0001428", "development or differentiation design__EFO:0001746", "disease state design__EFO:0001756", "dose response design__EFO:0001757", "twin design__EFO:0001431", "genetic modification design__EFO:0001758", "genotype design__EFO:0001748", "growth condition design__EFO:0001759", "imprinting design__EFO:0001747", "injury design__EFO:0001760", "innate behavior design__EFO:0001749", "organism part comparison design__EFO:0001750", "organism status design__EFO:0001751", "pathogenicity design__EFO:0001761", "population based design__EFO:0001430", "sex design__EFO:0001752", "species design__EFO:0001753", "stimulus or stress design__EFO:0001762", "strain or line design__EFO:0001754", "time series design__EFO:0001779", "The ID of the experimental design is not listed in the controlled vocabulary, and thus you may choose 'other' and propose a new term using the field 'experimental_design_label'", "The ID of the experimental design is unknown. If possible, provide context of why using the field 'experimental_design_label'"],
-            "examples": [ "RNA stability design" ]
+            "title": "Type of the assay",
+            "description": "Overall type of the assay. Term chosen from a controlled vocabulary (CV) list. Search for yours either at (1) our GitHub repository ([array types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_array.json) and [sequencing types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_sequencer.json)) or (2) in the OLS service ([sequencing types](http://www.ebi.ac.uk/efo/EFO_0003740) and [array types](http://www.ebi.ac.uk/efo/EFO_0002696)).",
+            "anyOf": [
+              {
+                "title": "Array-assay type controlled vocabulary (CV) list",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_sequencer.json"
+              },
+              {
+                "title": "Sequencer-assay type controlled vocabulary (CV) list",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_array.json"
+              }
+            ],
+            "examples": [ "Hi-C", "amplicon sequencing", "assay by high throughput sequencer", "immune sequencing", "ChIP-chip by array", "transcription profiling by array", "microRNA profiling by array", "genotyping by array", "comparative genomic hybridization by array" ]
           },
-          "experimental_design_curie": {
+          "assay_subtype": {
             "type": "string",
-            "title": "Experimental design of the experiment - CURIE",
-            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0001783), chosen from a list of CVs, of the experimental design defining the experiment",
-            "enum": ["EFO:0001783", "EFO:0004664", "EFO:0001427", "EFO:0001743", "EFO:0001744", "EFO:0001745", "EFO:0004666", "EFO:0001780", "EFO:0001755", "EFO:0001428", "EFO:0001746", "EFO:0001756", "EFO:0001757", "EFO:0001431", "EFO:0001758", "EFO:0001748", "EFO:0001759", "EFO:0001747", "EFO:0001760", "EFO:0001749", "EFO:0001750", "EFO:0001751", "EFO:0001761", "EFO:0001430", "EFO:0001752", "EFO:0001753", "EFO:0001762", "EFO:0001754", "EFO:0001779"],
-            "examples": [ "EFO:0001783" ]
-          },
-          "experimental_design_label": {
-            "type": "string",
-            "title": "Experimental design of the experiment - Label",
-            "description": "A free-form label (e.g. 'new unlisted experimental design XYZ...') to add any extra information to the experimental design of the experiment. Specially useful when the experimental_design_id is 'other', providing the proposed new experimental design term, or 'unknown', explaining the reasoning behind it.",
-            "examples": [ "new unlisted experimental design XYZ..." ]
+            "title": "Subtype of the assay",
+            "description": "Subtype of the assay: any ontologized term hierarchically below the assay type. Term chosen from a controlled vocabulary (CV) list. Search for yours at our GitHub repository: [array subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_array.json), [sequencing subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_sequencer.json), [RNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_rna.json) and [DNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_dna.json))",
+            "examples": [ "MC-4C", "UMI-4C", "single nucleus RNA sequencing", "RNA-seq of coding RNA from single cells", "Quant-seq", "DNA-seq", "ATAC-seq", "DNase Hi-C", "scDNase-seq", "in situ HiC", "exome sequencing" ]
           }
         },
-        "allOf": [
+        "anyOf": [
           {
-            "if": {
-              "title": "If the experimental_design_id is 'other'",
-              "required": ["experimental_design_id"],
-              "properties": {
-                "experimental_design_id": {
-                  "enum": ["other"]
+            "title": "Assay subtypes match DNA/RNA assays",
+            "properties": {
+              "assay_subtype": {
+                "anyOf": [
+                  {
+                    "title": "DNA-Assay subtype controlled vocabulary (CV) list",
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_dna.json"
+                  },
+                  {
+                    "title": "RNA-Assay subtype controlled vocabulary (CV) list",
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_rna.json"
+                  }
+                ]                 
+              }
+            }
+          },
+          {
+            "title": "Assay subtypes match array/sequencer assays",
+            "oneOf": [
+              {
+                "title": "Assay type and subtype terms are from the array CV list",
+                "properties": {
+                  "assay_type": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_array.json" 
+                  },
+                  "assay_subtype": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_array.json" 
+                  }
+                }
+              },
+              {
+                "title": "Assay type and subtype terms are from the sequencer CV list",
+                "properties": {
+                  "assay_type": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_sequencer.json" 
+                  },
+                  "assay_subtype": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_sequencer.json" 
+                  }
                 }
               }
-            },
-            "then": {
-              "title": "Then the experimental_design_label has to be present",
-              "required": ["experimental_design_label"]
-            }
-          }
-        ]
-      },
-
-      "array_type": {
-        "type": "object",
-        "title": "Array type of the experiment [EFO:0002696]",
-        "description": "Type of array (not its purpose per se) providing a glimpse of the used technology. It contains both the human readable ID (e.g. Proteomic profiling by array) and CURIE (e.g. EFO:0002765) of the array type.",
-        "required": ["array_type_id"],
-        "additionalProperties": false,
-        "properties": {
-          "array_type_id": {
-            "type": "string",
-            "title": "Array type of the experiment - ID",
-            "description": "The human readable ID (e.g. Proteomic profiling by array), chosen from a list of CVs, of the array type used at the experiment.",
-            "enum": ["3C", "4C", "ChIP-chip by array", "ChIP-chip by SNP array", "ChIP-chip by tiling array", "RNAi profiling by array", "Comparative genomic hybridization by array", "Genotyping by array", "Methylation profiling by array", "microRNA profiling by RT-PCR", "microRNA profiling by array", "Proteomic profiling by array", "RIP-chip (RNP immunoprecipitation-chip) by array", "Tiling path by array", "Transcription profiling by array", "Transcription profiling by tiling array", "Translation profiling", "other", "unknown"],
-            "meta:enum": ["3C__EFO:0007689", "4C__EFO:0007690", "ChIP-chip by array__EFO:0002760", "ChIP-chip by SNP array__EFO:0002764", "ChIP-chip by tiling array__EFO:0002762", "RNAi profiling by array__EFO:0001030", "Comparative genomic hybridization by array__EFO:0000749", "Genotyping by array__EFO:0002767", "Methylation profiling by array__EFO:0002759", "microRNA profiling by RT-PCR__EFO:0007687", "microRNA profiling by array__EFO:0000753", "Proteomic profiling by array__EFO:0002765", "RIP-chip (RNP immunoprecipitation-chip) by array__EFO:0005517", "Tiling path by array__EFO:0001031", "Transcription profiling by array__EFO:0002768", "Transcription profiling by tiling array__EFO:0002769", "Translation profiling__EFO:0001033", "The ID of the array type is not listed in the controlled vocabulary, and thus you may choose 'other' and propose a new term using the field 'array_type_label'", "The ID of the array type is unknown. If possible, provide context of why using the field 'array_type_label'"], 
-            "examples": [ "ChIP-chip by SNP array" ]
-          },
-          "array_type_curie": {
-            "type": "string",
-            "title": "Array type of the experiment - CURIE",
-            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0002765), chosen from a list of CVs, of the array type used at the experiment.",
-            "enum": ["EFO:0007689", "EFO:0007690", "EFO:0002760", "EFO:0002764", "EFO:0002762", "EFO:0001030", "EFO:0000749", "EFO:0002767", "EFO:0002759", "EFO:0007687", "EFO:0000753", "EFO:0002765", "EFO:0005517", "EFO:0001031", "EFO:0002768", "EFO:0002769", "EFO:0001033"],
-            "examples": [ "EFO:0007689" ]
-          },
-          "array_type_label": {
-            "type": "string",
-            "title": "Array type of the experiment - Label",
-            "description": "A free-form label (e.g. 'new unlisted array type XYZ...') to add any extra information to the array type of the experiment. Specially useful when the array_type_id is 'other', providing the proposed new array type term, or 'unknown', explaining the reasoning behind it.",
-            "examples": [ "new unlisted array type XYZ..." ]
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "title": "If the array_type_id is 'other'",
-              "required": ["array_type_id"],
-              "properties": {
-                "array_type_id": {
-                  "enum": ["other"]
-                }
-              }
-            },
-            "then": {
-              "title": "Then the array_type_label has to be present",
-              "required": ["array_type_label"]
-            }
+            ]
           }
         ]
       },
 
       "assayed_molecule": {
+        "type": "string",
+        "title": "Assayed molecule of the experiment [EFO:0002772]",
+        "description": "The human readable ID (e.g. DNA assay), chosen from a list of controlled vocabulary (CV), of the assayed molecule. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "enum": ["DNA assay", "RNA assay", "Metabolomic profiling", "Protein assay"],
+        "meta:enum": ["DNA assay__EFO:0001456", "RNA assay__EFO:0001457", "Metabolomic profiling__EFO:0000752", "Protein assay__EFO:0001458"]
+      },
+
+      "type_of_data": {
+        "type": "string",
+        "title": "Type of data [IAO:0000100]",
+        "description": "Type of data the experiment encompasses, chosen from a list of controlled vocabulary (CV). Also known as 'library source'. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "enum": ["gene list", "genomic data", "metagenomic data", "metatranscriptomic data", "synthetic DNA data", "transcriptomic data", "viral RNA data"],
+        "meta:enum": ["gene list__OBI_0000118", "genomic data__EFO_0004600", "metagenomic data__EFO_0004602", "metatranscriptomic data__EFO_0004603", "synthetic DNA data__EFO_0004604", "transcriptomic data__EFO_0004601", "viral RNA data__EFO_0004605"]
+      },
+
+      "experiment_type_specifications": {
         "type": "object",
-        "title": "Assayed molecule in the experiment [EFO:0002772]",
-        "description": "Type of molecule assayed. It contains both the human readable ID (e.g. DNA assay) and CURIE (e.g. EFO:0001456) of the assayed molecule.",
-        "required": ["assayed_molecule_id"],
+        "title": "Experiment type specifications",
+        "description": "Node containing different sets of fields that depend on the specific experiment type. The main categories of experiment types follow a similar pattern as the assay technology: either array experiments (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its Array Design Format (ADF) will be expected. Having this modular experiment type-related node allows for easy additions of new technology-specific requirements.",
         "additionalProperties": false,
         "properties": {
-          "assayed_molecule_id": {
-            "type": "string",
-            "title": "Assayed molecule of the experiment - ID",
-            "description": "The human readable ID (e.g. DNA assay), chosen from a list of CVs, of the assayed molecule.",
-            "enum": ["DNA assay", "RNA assay", "Metabolomic profiling", "Protein assay", "other", "unknown"],
-            "meta:enum": ["DNA assay__EFO:0001456", "RNA assay__EFO:0001457", "Metabolomic profiling__EFO:0000752", "Protein assay__EFO:0001458", "The ID of the assayed molecule is not listed in the controlled vocabulary, and thus you may choose 'other' and propose a new term using the field 'assayed_molecule_label'", "The ID of the assayed molecule is unknown. If possible, provide context of why using the field 'assayed_molecule_label'"],
-            "examples": [ "DNA assay" ]
-          },
-          "assayed_molecule_curie": {
-            "type": "string",
-            "title": "Assayed molecule of the experiment - CURIE",
-            "description": "The CURIE (i.e. ontologized term - e.g. EFO:0001456), chosen from a list of CVs, of the assayed molecule.",
-            "enum": ["EFO:0001456", "EFO:0001457", "EFO:0000752", "EFO:0001458"],
-            "examples": [ "EFO:0001456" ]
-          },
-          "assayed_molecule_label": {
-            "type": "string",
-            "title": "Assayed molecule of the experiment - Label",
-            "description": "A free-form label (e.g. 'new unlisted assayed molecule XYZ...') to add any extra information to the assayed molecule of the experiment. Specially useful when the assayed_molecule_id is 'other', providing the proposed new assayed molecule term, or 'unknown', explaining the reasoning behind it.",
-            "examples": [ "new unlisted assayed molecule XYZ..." ]
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "title": "If the assayed_molecule_id is 'other'",
-              "required": ["assayed_molecule_id"],
-              "properties": {
-                "assayed_molecule_id": {
-                  "enum": ["other"]
+          "array_experiment": {
+            "type": "object",
+            "title": "Specifications of an array experiment",
+            "description": "Node containing the set of fields specific to an experiment of array-type (i.e. an array was used to obtain the raw data).",
+            "additionalProperties": false,
+            "required": ["array_label", "adf_files"],
+            "properties": {
+              "array_label": {
+                "type": "array",
+                "title": "Array label of the experiment [EFO:0000562]",
+                "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
+                "additionalProperties": false,
+                "minItems": 1,
+                "items": {
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" 
+                }
+              },
+              
+              "adf_files": {
+                "type": "array",
+                "title": "Array Design Format (ADF) [NCIT:C172213] file block",
+                "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. For example, see ADF for [arrayexpress:E-MTAB-3050](https://www.ebi.ac.uk/arrayexpress/files/A-GEOD-28079/A-GEOD-28079.adf.txt) or [arrayexpress:E-MEXP-1712](https://www.ebi.ac.uk/arrayexpress/files/A-AFFY-125/A-AFFY-125.adf.txt). This node is an array of file nodes in case the ADF is given in several formats (e.g. tsv, xlsx, csv...).",
+                "minItems": 1,
+                "additionalProperties": false,
+                "items": {
+                  "title": "ADF File object",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" 
                 }
               }
-            },
-            "then": {
-              "title": "Then the assayed_molecule_label has to be present",
-              "required": ["assayed_molecule_label"]
             }
+          },
+          "sequencing_experiment": {
+            "type": "object",
+            "title": "Specifications of an sequencing experiment",
+            "description": "Node containing the set of fields specific to an experiment of sequencing-type (i.e. a sequencer was used to obtain the raw data).",
+            "additionalProperties": false,
+            "required": ["library_layout"],
+            "properties": {
+              "library_layout": {
+                "title": "Library layout of the sequencing experiment",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/library_layout"
+              },
+              "spot_descriptor": {
+                "title": "Spot descriptor of the sequencing experiment",
+                "description": "Adapted from current ENA's XSDs without improvements. #! Expected to be investigated.",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/spot_descriptor"
+              }
+            }
+          }
+        },
+        "oneOf": [
+          {
+            "title": "The sequencing experiment descriptors are required",
+            "required": ["sequencing_experiment"]
+          },
+          {
+            "title": "The array experiment descriptors are required",
+            "required": ["array_experiment"]
           }
         ]
       },
-      
-      "adf_files": {
-        "type": "array",
-        "title": "Array Design Format (ADF) [NCIT:C172213] file block",
-        "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. This object shall only be used if the EGA is the one storing such file. Otherwise, the Relationships object shall be used to point from the experiment to the ADF submitted elsewhere.",
-        "minItems": 1,
-        "additionalProperties": false,
-        "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" 
-        }
-      },      
 
       "experiment_relationships": {
         "type": "array",
@@ -305,14 +271,46 @@
       "experiment_attributes": {
         "type": "array",
         "title": "experiment custom attributes",
-        "description": "Custom attributes of an experiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+        "description": "Custom attributes of an experiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'additional description' and its Value 'this experiment is a re-do of another 3 experiments due to...') with optional units. Its properties are inherited from the common-definitions.json schema.",
         "additionalProperties": false,
         "minItems": 1,
         "items": {
           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
         }
-      }      
-
-    }
+      }
+    },
+    
+    "oneOf": [
+      {
+        "title": "If the assay technology is a sequencer, the experiment type has to match",
+        "properties": {
+          "assay_technology": {
+            "properties": {
+              "assay_instrument": {
+                "enum": "sequencer"
+              }
+            }
+          },
+          "experiment_type_specifications": {
+            "required": ["sequencing_experiment"]
+          }
+        }
+      },
+      {
+        "title": "If the assay technology is an array, the experiment type has to match",
+        "properties": {
+          "assay_technology": {
+            "properties": {
+              "assay_instrument": {
+                "enum": "array"
+              }
+            }
+          },
+          "experiment_type_specifications": {
+            "required": ["array_experiment"]
+          }
+        }
+      }
+    ]
       
   }
