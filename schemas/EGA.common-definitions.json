@@ -111,27 +111,12 @@
             "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a Run, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"]
           },
           "checksum_method": {
-            "type": "object",
-            "title": "Checksum method [ChecksumAlgorithm]",
-            "description": "Node containing both the ID (MD5 or SHA-256) and the CURIE (NCIT:C171276 or NCIT:C80226), describing the method which yields the checksum from a data input for the purpose of detecting errors.",
+            "type": "string",
+            "title": "Checksum method ID [ChecksumAlgorithm]",
+            "description": "Node containing both the ID (MD5 or SHA-256), describing the method which yields the checksum from a data input for the purpose of detecting errors.",
             "additionalProperties": false,
-            "properties": {
-              "checksum_method_id": {
-                "type": "string",
-                "title": "Checksum method ID",
-                "description": "The ID or name (MD5 or SHA-256) associated with the used checksum method.",
-                "enum": ["MD5", "SHA-256"],
-                "meta:enum": ["MD5__NCIT:C171276", "SHA-256__NCIT:C80226"],
-                "examples": [ "MD5" ]
-              },
-              "checksum_method_curie": {
-                "type": "string",
-                "title": "Checksum method CURIE",
-                "description": "The CURIE (i.e. ontologized term - NCIT:C171276 or NCIT:C80226) associated with the used checksum method.",
-                "enum": ["NCIT:C171276", "NCIT:C80226"],
-                "examples": [ "NCIT:C171276" ]
-              }
-            }
+            "enum": ["MD5", "SHA-256"],
+            "meta:enum": ["MD5__NCIT:C171276", "SHA-256__NCIT:C80226"]
           },
           "unencrypted_checksum": {
             "type": "string",
@@ -608,12 +593,8 @@
             "title": "Checksum pattern check - MD5",
             "description": "A check that ensures that, if MD5 is given as a checksum_method_id, the checksums per se (e.g. unencrypted_checksum) follow MD5 patterns (md5-checksum-pattern).",
               "properties": {
-                "checksum_method": { 
-                  "properties": {
-                    "checksum_method_id": {
+                "checksum_method": {
                       "enum": ["MD5"]
-                    } 
-                  }
                 },
                 "unencrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern" },
                 "encrypted_checksum": { "$ref": "#/definitions/md5-checksum-pattern" }
@@ -623,12 +604,8 @@
             "title": "Checksum pattern check - SHA-256",
             "description": "A check that ensures that, if SHA-256 is given as a checksum_method_id, the checksums per se (e.g. unencrypted_checksum) follow SHA-256 patterns (sha-256-checksum-pattern).",
               "properties": {
-                "checksum_method": { 
-                  "properties": {
-                    "checksum_method_id": {
+                "checksum_method": {
                       "enum": ["SHA-256"]
-                    } 
-                  }
                 },
                 "unencrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern" },
                 "encrypted_checksum": { "$ref": "#/definitions/SHA-256-checksum-pattern" }
