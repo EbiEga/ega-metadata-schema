@@ -84,7 +84,7 @@
       },
 
       "experimental_designs": {
-        "type": "object",
+        "type": "array",
         "title": "Experimental designs of the experiment [EFO:0001426]",
         "description": "Array of experimental factors describing the method(s) of investigating particular types of research questions or solving particular types of problems. Each item of the array contain both the human readable ID (e.g. RNA stability design) and an optional label to qualify the term or provide additional context.",
         "additionalProperties": false,
@@ -105,15 +105,15 @@
           "assay_type": {
             "type": "string",
             "title": "Type of the assay",
-            "description": "Overall type of the assay. Term chosen from a controlled vocabulary (CV) list. Search for yours either at (1) our GitHub repository ([array types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_array.json) and [sequencing types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_sequencer.json)) or (2) in the OLS service ([sequencing types](http://www.ebi.ac.uk/efo/EFO_0003740) and [array types](http://www.ebi.ac.uk/efo/EFO_0002696)).",
+            "description": "Overall type of the assay. Term chosen from a controlled vocabulary (CV) list. Search for yours either at (1) our GitHub repository ([array types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json) and [sequencing types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json)) or (2) in the OLS service ([sequencing types](http://www.ebi.ac.uk/efo/EFO_0003740) and [array types](http://www.ebi.ac.uk/efo/EFO_0002696)).",
             "anyOf": [
               {
                 "title": "Array-assay type controlled vocabulary (CV) list",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_sequencer.json"
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json"
               },
               {
                 "title": "Sequencer-assay type controlled vocabulary (CV) list",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_array.json"
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json"
               }
             ],
             "examples": [ "Hi-C", "amplicon sequencing", "assay by high throughput sequencer", "immune sequencing", "ChIP-chip by array", "transcription profiling by array", "microRNA profiling by array", "genotyping by array", "comparative genomic hybridization by array" ]
@@ -121,7 +121,7 @@
           "assay_subtype": {
             "type": "string",
             "title": "Subtype of the assay",
-            "description": "Subtype of the assay: any ontologized term hierarchically below the assay type. Term chosen from a controlled vocabulary (CV) list. Search for yours at our GitHub repository: [array subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_array.json), [sequencing subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_sequencer.json), [RNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_rna.json) and [DNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_dna.json))",
+            "description": "Subtype of the assay: any ontologized term hierarchically below the assay type. Term chosen from a controlled vocabulary (CV) list. Search for yours at our GitHub repository: [array subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json), [sequencing subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json), [RNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json) and [DNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json))",
             "examples": [ "MC-4C", "UMI-4C", "single nucleus RNA sequencing", "RNA-seq of coding RNA from single cells", "Quant-seq", "DNA-seq", "ATAC-seq", "DNase Hi-C", "scDNase-seq", "in situ HiC", "exome sequencing" ]
           }
         },
@@ -133,11 +133,11 @@
                 "anyOf": [
                   {
                     "title": "DNA-Assay subtype controlled vocabulary (CV) list",
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_dna.json"
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json"
                   },
                   {
                     "title": "RNA-Assay subtype controlled vocabulary (CV) list",
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_rna.json"
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json"
                   }
                 ]                 
               }
@@ -150,10 +150,10 @@
                 "title": "Assay type and subtype terms are from the array CV list",
                 "properties": {
                   "assay_type": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_array.json" 
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json" 
                   },
                   "assay_subtype": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_array.json" 
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json" 
                   }
                 }
               },
@@ -161,10 +161,10 @@
                 "title": "Assay type and subtype terms are from the sequencer CV list",
                 "properties": {
                   "assay_type": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_type_by_sequencer.json" 
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json" 
                   },
                   "assay_subtype": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.cv.assay_subtype_by_sequencer.json" 
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json" 
                   }
                 }
               }
@@ -235,12 +235,12 @@
             "properties": {
               "library_layout": {
                 "title": "Library layout of the sequencing experiment",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/library_layout"
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/library_layout"
               },
               "spot_descriptor": {
                 "title": "Spot descriptor of the sequencing experiment",
                 "description": "Adapted from current ENA's XSDs without improvements. #! Expected to be investigated.",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/spot_descriptor"
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor"
               }
             }
           }
@@ -287,7 +287,7 @@
           "assay_technology": {
             "properties": {
               "assay_instrument": {
-                "enum": "sequencer"
+                "enum": ["sequencer"]
               }
             }
           },
@@ -302,7 +302,7 @@
           "assay_technology": {
             "properties": {
               "assay_instrument": {
-                "enum": "array"
+                "enum": ["array"]
               }
             }
           },

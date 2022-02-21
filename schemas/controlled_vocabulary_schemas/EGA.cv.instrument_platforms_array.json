@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "string",
-    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.array_instrument_platforms.json",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json",
     "title": "EGA Controlled Vocabulary (CV) for array instrument platforms",
     "meta:version": "0.0.0",
     "title": "Array instrument platform CV list",

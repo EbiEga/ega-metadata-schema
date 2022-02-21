@@ -270,8 +270,8 @@
                 "type": "string",
                 "title": "Type of protocol [OBI:0000272]",
                 "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
-                "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "nucleic acid sequencing", "sample collection", "single cell isolation", "treatment"],
-                "meta:enum": ["High Content Screen (HCS)__EFO:0007570", "Conversion__EFO:0005520", "Delivery method_EFO:0000395", "Dissection__EFO:0005519", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Extraction__EFO:0002944", "Gene expression__EFO:0003788", "Growth__EFO:0003789", "Hybridization__EFO:0003815", "Hydrolysis collection__EFO:0010892", "Labelling__EFO:0003813", "Nucleic acid library construction__EFO:0004184", "Nucleic acid sequencing__EFO:0004170", "Sample collection__EFO:0005518", "Single cell isolation__EFO:0010214", "Treatment__EFO:0003969"]
+                "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "nucleic acid sequencing", "sample collection", "single cell isolation", "treatment", "data transformation"],
+                "meta:enum": ["High Content Screen (HCS)__EFO:0007570", "Conversion__EFO:0005520", "Delivery method_EFO:0000395", "Dissection__EFO:0005519", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Extraction__EFO:0002944", "Gene expression__EFO:0003788", "Growth__EFO:0003789", "Hybridization__EFO:0003815", "Hydrolysis collection__EFO:0010892", "Labelling__EFO:0003813", "Nucleic acid library construction__EFO:0004184", "Nucleic acid sequencing__EFO:0004170", "Sample collection__EFO:0005518", "Single cell isolation__EFO:0010214", "Treatment__EFO:0003969", "Data transformation__OBI:0200000"]
               },
 
               "protocol_subtype": {
@@ -296,7 +296,7 @@
             }
           },
 
-          "ptotocol_performers": {
+          "protocol_performers": {
             "type": "array",
             "title": "Protocol performers array",
             "description": "Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.",
@@ -1749,32 +1749,32 @@
             "title": "Assay instrument label",
             "description": "The human readable label (e.g. 'Illumina HiSeq 2500'), chosen from a list of controlled vocabulary (CV), of the microarray technology used at the experiment. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "examples": ["Illumina HiSeq 2500", "[HuGene-1_1-st] Affymetrix Human Gene 1.1 ST Array [probe set (exon) version]", "DNBSEQ-G400 FAST"]
+          }
+        },
+        "oneOf": [
+          {
+            "title": "Asserting array technology controlled vocabulary (CV)",
+            "properties": {
+              "assay_instrument": {
+                "enum": [ "array" ]
+              },
+              "assay_instrument_platform": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json"
+              }
+            }              
           },
-          "oneOf": [
-            {
-              "title": "Asserting array technology controlled vocabulary (CV)",
-              "properties": {
-                "assay_instrument": {
-                  "enum": ["array"]
-                },
-                "assay_instrument_platform": {
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json"
-                }
-              }              
-            },
-            {
-              "title": "Asserting sequencer technology controlled vocabulary (CV)",
-              "properties": {
-                "assay_instrument": {
-                  "enum": ["sequencer"]
-                },
-                "assay_instrument_platform": {
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json"
-                }
-              }              
-            }
-          ]
-        }
+          {
+            "title": "Asserting sequencer technology controlled vocabulary (CV)",
+            "properties": {
+              "assay_instrument": {
+                "enum": [ "sequencer" ]
+              },
+              "assay_instrument_platform": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json"
+              }
+            }              
+          }
+        ]
       },
 
       "library_layout": {
@@ -1891,7 +1891,7 @@
                       "description": "Element's body contains a basecall, attribute provide description of this read meaning as well as matching rules.",
                       "minItems": 1,
                       "items": {
-                        "type": "",
+                        "type": "object",
                         "title": "Basecall",
                         "description": "",
                         "additionalProperties": false,
