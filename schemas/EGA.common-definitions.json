@@ -102,28 +102,13 @@
             "examples": [ "my-bam-file.bam.gpg" ]
           },
           "filetype": {
-            "type": "object",
+            "type": "string",
             "title": "Filetype [NCIT:C172272]",
-            "description": "The nature of the content stored in an electronic file. Contains up to two properties, the name (e.g. CEL or TSV) and the CURIE (e.g. EFO:0005630 or NCIT:C164049), chosen from a list of CVs.",
+            "description": "The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "required": ["filetype_id"],
             "additionalProperties": false,
-            "properties": {
-              "filetype_id": {
-                "type": "string",
-                "title": "Filetype ID",
-                "description": "The ID or name (e.g. FASTA or TSV) associated with the given filetype.",
-                "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT"],
-                "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a Run, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"],
-                "examples": [ "TSV" ]
-              },
-              "filetype_curie": {
-                "type": "string",
-                "title": "Filetype CURIE",
-                "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C47845 or NCIT:C164049) associated with the given filetype.",
-                "enum": ["EFO:0005630", "NCIT:C164049", "NCIT:C172213", "EFO:0004155", "NCIT:C47845", "NCIT:C172211", "NCIT:C172212", "NCIT:C172216", "format:3698", "EFO:0004154", "EFO:0004156", "EFO:0004157", "format:3462", "format:3620", "format:3752", "format:3003", "format:3578", "format:3285", "format:3286"],
-                "examples": [ "NCIT:C164049" ]
-              }
-            }
+            "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT"],
+            "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a Run, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__"]
           },
           "checksum_method": {
             "type": "object",
@@ -768,229 +753,187 @@
             "title": "CEL Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["CEL"] }
-                  }
+                   "enum": ["CEL"] 
                 },
                 "filename": { "$ref": "#/definitions/cel-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "TSV Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["TSV"] }
-                  }
+                   "enum": ["TSV"] 
                 },
                 "filename": { "$ref": "#/definitions/tsv-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "ADF Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["ADF"] }
-                  }
+                   "enum": ["ADF"] 
                 },
                 "filename": { "$ref": "#/definitions/adf-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "FASTQ Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["FASTQ"] }
-                  }
+                   "enum": ["FASTQ"] 
                 },
                 "filename": { "$ref": "#/definitions/fastq-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "FASTA Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["FASTA"] }
-                  }
+                   "enum": ["FASTA"] 
                 },
                 "filename": { "$ref": "#/definitions/fasta-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "SDRF Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["SDRF"] }
-                  }
+                   "enum": ["SDRF"] 
                 },
                 "filename": { "$ref": "#/definitions/sdrf-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "IDF Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["IDF"] }
-                  }
+                   "enum": ["IDF"] 
                 },
                 "filename": { "$ref": "#/definitions/idf-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "VCF Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["VCF"] }
-                  }
+                   "enum": ["VCF"] 
                 },
                 "filename": { "$ref": "#/definitions/vcf-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "SRA Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["SRA"] }
-                  }
+                   "enum": ["SRA"] 
                 },
                 "filename": { "$ref": "#/definitions/sra-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "SRF Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["SRF"] }
-                  }
+                   "enum": ["SRF"] 
                 },
                 "filename": { "$ref": "#/definitions/srf-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "SFF Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["SFF"] }
-                  }
+                   "enum": ["SFF"] 
                 },
                 "filename": { "$ref": "#/definitions/sff-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "BAM Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["BAM"] }
-                  }
+                   "enum": ["BAM"] 
                 },
                 "filename": { "$ref": "#/definitions/bam-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "CRAM Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["CRAM"] }
-                  }
+                   "enum": ["CRAM"] 
                 },
                 "filename": { "$ref": "#/definitions/cram-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "XLSX Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["XLSX"] }
-                  }
+                   "enum": ["XLSX"] 
                 },
                 "filename": { "$ref": "#/definitions/xlsx-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "CSV Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["CSV"] }
-                  }
+                   "enum": ["CSV"] 
                 },
                 "filename": { "$ref": "#/definitions/csv-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "BED Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["BED"] }
-                  }
+                   "enum": ["BED"] 
                 },
                 "filename": { "$ref": "#/definitions/bed-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "IDAT Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["IDAT"] }
-                  }
+                   "enum": ["IDAT"] 
                 },
                 "filename": { "$ref": "#/definitions/idat-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "MAP Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["MAP"] }
-                  }
+                   "enum": ["MAP"] 
                 },
                 "filename": { "$ref": "#/definitions/map-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "PED Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["PED"] }
-                  }
+                   "enum": ["PED"] 
                 },
                 "filename": { "$ref": "#/definitions/ped-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "BIM Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["BIM"] }
-                  }
+                   "enum": ["BIM"] 
                 },
                 "filename": { "$ref": "#/definitions/bim-file-filename-pattern" }
-              }
+            }
           },                
           {
             "title": "FAM Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["FAM"] }
-                  }
+                   "enum": ["FAM"] 
                 },
                 "filename": { "$ref": "#/definitions/fam-file-filename-pattern" }
             }
@@ -999,15 +942,13 @@
             "title": "TXT Filename pattern-check",
             "properties": {
                 "filetype": {
-                  "properties": {
-                      "filetype_id": { "enum": ["TXT"] }
-                  }
+                   "enum": ["TXT"] 
                 },
                 "filename": { "$ref": "#/definitions/txt-file-filename-pattern" }
-              }
+            }
           }
         ]        
-    },
+      },
 
       "cel-file-filename-pattern": {
         "type": "string",
@@ -1941,7 +1882,7 @@
                       "description": "Specify the read index that follows this read.",
                       "minInclusive": 0
                     }
-                  }
+                  }                    
                 },
                 "base_coord": {
                   "type": "integer",
@@ -2037,7 +1978,6 @@
             "examples": [ "The experimental design is a new subtype of a dose response design, in which a case group is..." ]
           }
         }
-      }
-      
+      }   
     }    
-  }
+}
