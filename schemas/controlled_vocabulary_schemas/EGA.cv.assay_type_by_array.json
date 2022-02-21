@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "string",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json",
+    "title": "EGA Controlled Vocabulary (CV) for assay types by array [EFO:0002696]",
+    "meta:version": "0.0.0",
+    "description": "Controlled Vocabulary (CV) list for assay types by array [EFO:0002696]: an assay that exploits an array as the instrument to find results.",
+    "enum": [ "3C", "4C", "ChIP-chip by SNP array", "ChIP-chip by array", "ChIP-chip by tiling array", "RNAi profiling by array", "comparative genomic hybridization by array", "genotyping by array", "methylation profiling by array", "microRNA profiling by RT-PCR", "microRNA profiling by array", "proteomic profiling by array", "tiling path by array", "transcription profiling by array", "transcription profiling by tiling array", "translation profiling" ],
+    "meta:enum": [ "3C__EFO:0007689", "4C__EFO:0007690", "ChIP-chip by SNP array__EFO:0002764", "ChIP-chip by array__EFO:0002760", "ChIP-chip by tiling array__EFO:0002762", "RNAi profiling by array__EFO:0001030", "comparative genomic hybridization by array__EFO:0000749", "genotyping by array__EFO:0002767", "methylation profiling by array__EFO:0002759", "microRNA profiling by RT-PCR__EFO:0007687", "microRNA profiling by array__EFO:0000753", "proteomic profiling by array__EFO:0002765", "tiling path by array__EFO:0001031", "transcription profiling by array__EFO:0002768", "transcription profiling by tiling array__EFO:0002769", "translation profiling__EFO:0001033" ]
+}

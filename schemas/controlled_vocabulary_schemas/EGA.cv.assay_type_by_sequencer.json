@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "string",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json",
+    "title": "EGA Controlled Vocabulary (CV) for assay types by sequencer [EFO:0003740]",
+    "meta:version": "0.0.0",
+    "description": "Controlled Vocabulary (CV) list for assay types by sequencer [EFO:0003740]: an assay that exploits a sequencer as the instrument to find results.",
+    "enum": [ "454 Sequencing", "5C", "Bisulfite-seq", "CTS (Concatenated Tag Sequencing)", "Capture-C", "DNase-hypersensitivity seq", "EST sequencing", "FAIRE-seq", "FL-cDNA", "GRO-seq", "Helicos sequencing", "Hi-C", "MNase-seq", "MRE-seq", "Ribo-seq", "Solexa sequencing assay", "amplicon sequencing", "assay by high throughput sequencer", "assay by long read sequencer", "clone by clone sequencing", "clone end sequencing", "finishing sequencing assay", "immune sequencing", "random chromosome sequencing", "random exon sequencing", "whole genome shotgun sequencing" ],
+    "meta:enum": [ "454 Sequencing__EFO:0005016", "5C__EFO:0007692", "Bisulfite-seq__EFO:0003753", "CTS (Concatenated Tag Sequencing)__EFO:0004162", "Capture-C__EFO:0007691", "DNase-hypersensitivity seq__EFO:0003752", "EST sequencing__EFO:0003754", "FAIRE-seq__EFO:0004428", "FL-cDNA__EFO:0003755", "GRO-seq__EFO:0005227", "Helicos sequencing__OBI:0000697", "Hi-C__EFO:0007693", "MNase-seq__EFO:0003751", "MRE-seq__EFO:0003748", "Ribo-seq__EFO:0008891", "Solexa sequencing assay__OBI:0000724", "amplicon sequencing__EFO:0003747", "assay by high throughput sequencer__EFO:0002697", "assay by long read sequencer__EFO:0009966", "clone by clone sequencing__EFO:0003742", "clone end sequencing__EFO:0003743", "finishing sequencing assay__EFO:0004161", "immune sequencing__EFO:0030006", "random chromosome sequencing__EFO:0003745", "random exon sequencing__EFO:0003746", "whole genome shotgun sequencing__EFO:0003744" ]
+}
