@@ -1,0 +1,60 @@
+{
+    "object_id": {
+        "alias" : "my_DAC_X10", 
+        "center_name" : "EBI-TEST",
+        "ega_accession": "EGAC00000000001"
+    },
+    "object_title": "EBI test DAC",
+    "object_description": "A example DAC used exclusively for testing.",
+    "dac_contacts": {
+        "main_contact": {
+            "individual_full_name": "Wayne Jr., Bruce",
+            "institution_name": "European Bioinformatics Institute (EBI)",
+            "email_address": "myname@ebi.ac.uk",
+            "phone_number": "+44 7427512529"
+        },
+        "additional_contacts": [
+            {
+                "individual_full_name": "Todd, Jason",
+                "email_address": "myname2@ebi.ac.uk"
+            },
+            {
+                "institution_name": "BAT-CAVE",
+                "email_address": "myname3@ebi.ac.uk"
+            }
+        ]
+    },
+    "dac_relationships": [
+        {
+            "r_type": {
+                "r_type_id": "referenced_by"
+            },
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAP00002045411"
+                },
+                "object_type": "policy"                 
+            },
+            "r_target": {
+                
+                "object_id": {
+                    "alias": "my_DAC_X10",
+                    "center_name": "EBI-TEST"
+                },
+                "object_type": "DAC"               
+            }
+        }
+    ],
+    "dac_attributes": [
+        {
+            "tag": "Associated project ID",
+            "value": "X33981-DGH"            
+        }
+    ],
+    "schema_descriptor": {
+        "object_type": "DAC",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
+}
