@@ -214,8 +214,7 @@
             "value": 20500,
             "units": "GBP"
         }
-        ],
-    
+    ],    
     "schema_descriptor": {
         "object_type": "experiment",
         "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",

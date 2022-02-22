@@ -17,12 +17,14 @@
             "type": "string",
             "title": "Alias of an object",
             "description": "Submitter designated name (e.g. 'my_sample_J13') for the object (e.g. Sample). The name must be unique within the submission account (e.g. 'ega-box-79'), since the aliases and submission accounts are concatenated within our database to obtain the unique alias (e.g. 'ega-box-79::my_sample_J13').",
+            "minLength": 1,
             "examples": [ "my_sample_J13" ]
           },
           "center_name": {
             "type": "string",
             "title": "Center name of the submitter",
             "description": "Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is the acronym of the submitter's account (provided by the HelpDesk team).",
+            "minLength": 1,
             "examples": [ "EBI-TEST" ]
           },
           "ega_accession": {
@@ -70,6 +72,7 @@
             "type": "string",
             "title": "Tag of the custom attribute",
             "description": "The name of the attribute (e.g. 'Age').",
+            "minLength": 1,
             "examples": [ "age" ]
           },
           "value": {
@@ -82,6 +85,7 @@
             "type": "string",
             "title": "Units of the custom attribute",
             "description": "The optional units of the attribute (e.g. 'years').",
+            "minLength": 1,
             "examples": [ "years" ]
           }
         }        
@@ -166,47 +170,22 @@
       "relationship_object": {
         "type": "object",
         "title": "EGA Relationships object",
-        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. Ontologies of each type of connection are stored the meta:enum field, and details of each in its corresponding record within the ontologies.",
+        "description": "Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source and Target) of a directional association between two entities. For example: (1) a sample being referenced in an experiment; (2) an study being the same as another study at a different archive (e.g. in BioStudies); (3) an individual being the parent of another individual; (4) hundreds of samples being grouped with each other for broad reasons.",
         "required": ["r_type", "r_source", "r_target"],
         "additionalProperties": false,
         "properties": {
           "r_type": {
-            "type": "object",
-            "title": "Type of the relationship",
-            "description": "The Type of the relationship, containing both its ID (e.g. same_as and the CURIE (e.g. NCIT:C64637), that summarises its purpose. #! The list of CV shall be agreed on, improved and enlarged.",
-            "anyOf": [
-              { 
-                "title": "Check that r_type is present",
-                "required": ["r_type_id"] 
-              },
-              { 
-                "title": "Check that r_type_curie is present", 
-                "required": ["r_type_curie"] 
-              }
-            ],
-            "additionalProperties": false,
-            "properties": {
-              "r_type_id": {
-                "type": "string",
-                "title": "Type of the relationship - ID",
-                "description": "The human readable ID (e.g. same_as), chosen from a list of CVs, of the type of the relationship.",
-                "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "parent_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
-                "meta:enum": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "parent_of__GSSO:001986", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
-                "examples": [ "referenced_by" ]
-              },
-              "r_type_curie": {
-                "type": "string",
-                "title": "Type of the relationship - CURIE",
-                "description": "The CURIE (i.e. ontologized term - e.g. NCIT:C64637), chosen from a list of CVs, of the type of the relationship.",
-                "enum": ["SIO:000252", "RO:0002202", "NCIT:C64637", "RO:0002350", "EFO:0004424", "GSSO:000728", "GSSO:001986", "SIO:000211", "EFO:0001796", "NCIT:C25695", "NCIT:C25461"],
-                "examples": [ "RO:0002202" ]
-              }
-            }
+            "type": "string",
+            "title": "Relationship type",
+            "description": "The human readable ID (e.g. same_as) of the type of the relationship. To be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+            "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "parent_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
+            "meta:enum": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "parent_of__GSSO:001986", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
+            "examples": [ "referenced_by" ]
           },
           "r_source": {
             "type": "object",
             "title": "Source of the relationship",
-            "description": "Object reference of the relationship’s source. In other words, the starting point of the relationship: in 'sample_A develops_from sample_B' the source is 'sample_A'.",
+            "description": "Object reference of the relationship's source. In other words, the starting point of the relationship: in 'sample_A develops_from sample_B' the source is 'sample_A'.",
             "allOf": [
               {
                 "title": "Inherited one-relationship-end object", 
@@ -217,7 +196,7 @@
           "r_target": {
             "type": "object",
             "title": "Target of the relationship",
-            "description": "Object reference of the relationship’s target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.",
+            "description": "Object reference of the relationship's target. In other words, the ending point of the relationship: in 'sample_A develops_from sample_B' the target is 'sample_B'.",
             "allOf": [
               {
                 "title": "Inherited one-relationship-end object", 
@@ -1181,7 +1160,7 @@
           "object_type": {
             "type": "string",
             "title": "Type of the relationship's object",
-            "description": "Type of the relationship's object, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA’s object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
+            "description": "Type of the relationship's object, chosen from a list of CV (e.g. arrayExperiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA's object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'.",
             "enum": ["experiment", "study", "sample", "individual", "submission", "run", "dataset", "analysis", "policy", "DAC", "ArrayExperiment", "ArrayAssay", "external_accession", "external_URL"],
             "meta:enum": ["Contains information about the experimental design of the sequencing", "Information about the study", "Information about the used samples", "Information about the submission actions", "Contains information about the specific sequencing runs from the experiment", "Contains the collection of runs/analysis/ArrayAssay data files to be subject to controlled access", "Contains the analysis metadata and data files", "Contains information related to the Data Access Agreement (DAA) the dataset is subject to", "Contains information about the Data Access Committee (DAC)", "Contains information about the experimental design of the Array", "Contains information about the probed assay from the array", "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)", "An external URL resource, of any type"],
             "examples": [ "sample" ]
@@ -1248,6 +1227,7 @@
         "title": "Organism [OBI:0100026] descriptor block",
         "description": "This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
         "additionalProperties": false,
+        "required": ["taxon_id"],
         "properties": {
           "taxon_id": {
             "type": "string",
@@ -1268,17 +1248,7 @@
             "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
             "examples": [ "human" ]
           }
-        },
-        "anyOf": [
-          {
-            "title": "Either the taxon ID is provided", 
-            "required": ["taxon_id"] 
-          },
-          {
-            "title": "Or the scientific name is provided", 
-            "required": ["scientific_name"] 
-          }          
-        ]
+        }
       },
 
       "schema_descriptor": {
@@ -1368,7 +1338,6 @@
                   "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor"
                 },
                 "locus_external_reference": {
-                  "type": "string",
                   "title": "External reference of the locus",
                   "description": "If the locus is NOT a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accesible and persistent, one can reference it here instead of providing all their details. For example, transcript TAF1-204 already contains all its locus information within its persistent record at Ensembl, identified by 'ensembl:ENST00000423759.6'.",
                   "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession",
@@ -1379,7 +1348,7 @@
                   "title": "Additional description of the locus",
                   "description": "Optional free-text description of the locus to add any additional context.",
                   "minLength": 1,
-                  "examples": ["Targeted locus number 1 our of 3 possible loci that our experimental procedure aimed at.", "The locus corresponds to a variant version of the defined gene, only existing in patients with X disease."]
+                  "examples": ["Targeted locus number 1 out of 3 possible loci that our experimental procedure aimed at.", "The locus corresponds to a variant version of the defined gene, only existing in patients with X disease."]
                 }
               },
               "anyOf": [
@@ -1443,9 +1412,15 @@
         "type": "object",
         "title": "NCBI's Assembly descriptor [topic:0196]",
         "description": "Node describing a sequence assembly referenced in [NCBI's Assembly database](https://www.ncbi.nlm.nih.gov/assembly). Assembly is a database providing information on the structure of assembled genomes, assembly names and other meta-data, statistical reports, and links to genomic sequence data. An assembly is defined as the set of chromosomes, unlocalized and unplaced (sometimes called 'random') and alternate sequences used to represent an organism's genome. Assemblies are constructed from 1 or more assembly units.",
-        "required": ["ncbi_assembly_accession"],
         "additionalProperties": false,
         "properties": {
+          "assembly_name": {
+            "type": "string",
+            "title": "Assembly common name [OBI:0001948]",
+            "description": "A free-text common name (e.g. 'GRCh38') that is used to denote the sequence assembly.",
+            "minLength": 1,
+            "examples": [ "GRCh38.p14", "GRCh38", "GRCh37.p13", "GRCh37" ]
+          },
           "ncbi_assembly_accession": {
             "type": "string",
             "title": "NCBI Assembly accession",
@@ -1457,6 +1432,13 @@
               }
             ],
             "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
+          },
+          "assembly_unit_name": {
+            "type": "string",
+            "title": "Assembly unit common name [OBI:0001948]",
+            "description": "A free-text common name (e.g. 'chr17') that is used to denote the sequence assembly unit.",
+            "minLength": 1,
+            "examples": [ "Chromosome 2", "MT", "chr17", "chr20", "18" ]
           },
           "ncbi_assembly_unit_accession": {
             "type": "string",
@@ -1470,7 +1452,17 @@
             ],
             "examples": ["refseq:NC_000001.11", "refseq:NC_012920.1"]
           }
-        }
+        },
+        "anyOf": [
+          {
+            "title": "Or the Assembly accession is required",
+            "required": ["ncbi_assembly_accession"]
+          },
+          {
+            "title": "Or the Assembly unit accession is required",
+            "required": ["ncbi_assembly_unit_accession"]
+          }
+        ]
         
       },
 
@@ -1952,6 +1944,7 @@
             "type": "string",
             "title": "Experimental design of the experiment - Label",
             "description": "A free-form label (e.g. 'The experimental design is a new subtype of a dose response design, in which a case group is...') to add any extra information to the experimental design of the experiment.",
+            "minLength": 1,
             "examples": [ "The experimental design is a new subtype of a dose response design, in which a case group is..." ]
           }
         }

@@ -200,9 +200,9 @@
             "title": "Specifications of an array experiment",
             "description": "Node containing the set of fields specific to an experiment of array-type (i.e. an array was used to obtain the raw data).",
             "additionalProperties": false,
-            "required": ["array_label", "adf_files"],
+            "required": ["array_labels", "adf_files"],
             "properties": {
-              "array_label": {
+              "array_labels": {
                 "type": "array",
                 "title": "Array label of the experiment [EFO:0000562]",
                 "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
