@@ -4,10 +4,121 @@
     "type": "object",
     "title": "EGA run metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
-    "required": [""],
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Run metadata object. This object is intended to contain metadata about the collection of raw reads (sequenced material - e.g. CRAM or FastQ files) generated for a particular experiment. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "run_files"],
     "additionalProperties": false,
     "properties": {
-      
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an Run (by using EGA-run-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that run EGA ID (EGAR) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-run-id-pattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the run",
+        "description": "An informative run title that should serve as an overview of the run and differentiate it from others. This short text can be used to call out run records in searches or in displays.",
+        "examples": [ "Ilumina Run 3409 - Cancer genomics" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the run",
+        "description": "An in-depth description (e.g. usded technology, sample groups, purpose...) of the run. ",
+        "examples": [ "Run number 3409 of 4000. Sequenced through Illumina MiSeq to find SNPs of colorrectal cancer samples." ]
+      },
+
+      "run_center": {
+        "type": "string",
+        "title": "Centername that performed the run",
+        "description": "The name of the center (e.g. 'EBI-TEST') responsible for sequencing run, if applicable (in case it's different from the center submitting metadata).",
+        "examples": [ "EBI-TEST" ]
+      },
+
+      "run_date": {
+        "type": "string",
+        "title": "Date of the run",
+        "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sequencing run took place. If the protocols are long enough, the date shall be the day the run concluded.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
+      },
+
+      "sample_number": {
+        "type": "integer",
+        "title": "Number of samples of the run",
+        "description": "Number of samples included in the run (i.e. pooled into one single sequencing run, labelled differently). For example, if 3 buccal swabs from different people were mixed and then sequenced, we may specify the sample number as 3. One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
+        "examples": [ 30 ]
+      },
+
+      "run_relationships": {
+        "type": "array",
+        "title": "Run relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an run being linked to a Sample) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "run_files": {
+        "type": "array",
+        "title": "Sequencing files from an run",
+        "description": "This property contains the specific files (e.g. raw CRAM files) derived from performing sequencing over the sampled material.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "allOf": [
+            {
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object"
+            },
+            {
+              "title": "Filetype constraints for Runs",
+              "description": "These are the filetypes that we expect for raw sequencing data that is referenced in Runs.",
+              "properties": {
+                "filetype": {
+                  "properties": {
+                    "filetype_id": {
+                      "type": "string",
+                      "enum": [ "FASTQ", "FASTA", "SRA", "SRF", "SFF", "BAM", "CRAM" ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+          
+        }
+      },
+
+      "run_attributes": {
+        "type": "array",
+        "title": "Run custom attributes",
+        "description": "Custom attributes of a run: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
     }      
   }

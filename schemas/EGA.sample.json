@@ -1,4 +1,4 @@
-{
+  {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
     "type": "object",
@@ -44,7 +44,7 @@
       "object_description": {
         "type": "string",
         "title": "Description of the sample",
-        "description": "An informative sample descripotion that describes the sample and differentiates it from others.",
+        "description": "An informative sample description that describes the sample and differentiates it from others.",
         "examples": [ "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to..." ]
       },
 
