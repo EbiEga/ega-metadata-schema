@@ -228,7 +228,7 @@
           },
           "sequencing_experiment": {
             "type": "object",
-            "title": "Specifications of an sequencing experiment",
+            "title": "Specifications of a sequencing experiment",
             "description": "Node containing the set of fields specific to an experiment of sequencing-type (i.e. a sequencer was used to obtain the raw data).",
             "additionalProperties": false,
             "required": ["library_layout"],
