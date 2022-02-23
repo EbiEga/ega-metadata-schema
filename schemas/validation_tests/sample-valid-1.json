@@ -27,9 +27,7 @@
     },
     "sample_relationships": [
         {
-            "r_type": {
-                "r_type_id": "develops_from"
-            },
+            "r_type": "develops_from",
             "r_source": {
                 "object_id": {
                     "alias": "My_10samples_X_from_NM305004",
@@ -45,15 +43,12 @@
             }
         },
         {
-            "r_type": {
-                "r_type_id": "same_as"
-            },
+            "r_type": "same_as",
             "r_source": {
                 "object_id": {
                     "external_accessions": [
                         {
-                            "external_accession": "SAMEA7616999",
-                            "accession_archive": "biosample",
+                            "external_accession_curie": "biosample:SAMEA7616999",
                             "accession_label": "test relationship"
                         }
                     ]

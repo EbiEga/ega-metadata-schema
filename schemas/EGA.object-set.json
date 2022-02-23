@@ -86,18 +86,6 @@
               "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#"
             },
             {
-              "title": "The object's 'schema_descriptor' defines it as an run",
-              "required": ["schema_descriptor"],
-              "properties": {
-                "schema_descriptor": { 
-                  "object_type": {
-                    "enum": ["run"]
-                  }
-                }
-              },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.run.json#"
-            },
-            {
               "title": "The object's 'schema_descriptor' defines it as an dataset",
               "required": ["schema_descriptor"],
               "properties": {
@@ -146,28 +134,16 @@
               "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#"
             },
             {
-              "title": "The object's 'schema_descriptor' defines it as an ArrayExperiment",
+              "title": "The object's 'schema_descriptor' defines it as an assay",
               "required": ["schema_descriptor"],
               "properties": {
                 "schema_descriptor": { 
                   "object_type": {
-                    "enum": ["ArrayExperiment"]
+                    "enum": ["assay"]
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#"
-            },
-            {
-              "title": "The object's 'schema_descriptor' defines it as an ArrayAssay",
-              "required": ["schema_descriptor"],
-              "properties": {
-                "schema_descriptor": { 
-                  "object_type": {
-                    "enum": ["ArrayAssay"]
-                  }
-                }
-              },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#"
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#"
             }
           ]      
         }
