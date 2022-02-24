@@ -5,9 +5,190 @@
     "title": "EGA analysis metadata schema",
     "meta:version": "0.0.0",
     "description": "Empty for the moment.",
-    "required": [""],
+    "required": ["object_id", "sample_number", "analysis_protocols", "experimental_designs", "analysis_type_specifications" ],
     "additionalProperties": false,
     "properties": {
-      
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions.", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that analysis EGA ID (EGAZ) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-analysis-id-pattern"
+              }
+            }
+          }
+        ]
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the analysis",
+        "description": "An informative analysis title that should serve as an overview of the analysis, including: performed analysis, samples, purpose... (e.g. 'Variant calling analysis of tumor repressed cells'). This short text can be used to call out analyses records in searches or in displays.",
+        "examples": [ "Variant calling analysis of tumor repressed cells" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the analysis",
+        "description": "An in-depth description of the biological relevance and intent of the analysis, including its workflow.",
+        "examples": [ "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
+      },
+
+      "sample_number": {
+        "type": "integer",
+        "title": "Number of samples of the analysis",
+        "description": "Number of samples included in the analysis (i.e. analysed together). One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
+        "examples": [ 30 ]
+      },
+
+      "analysis_protocols": {
+        "type": "array",
+        "title": "Protocols related to an analysis",
+          "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an analysis. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object" 
+        }
+      },
+
+      "targeted_loci": {
+        "type": "array",
+        "title": "Loci of the targeted genomic feature",
+        "description": "Array of items that unambiguosly define the loci of targeted genomic geatures in the analysis. For example, if the aim of the analysis was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.",
+        "minItems": 1,
+        "uniqueItems": true,
+        "additionalProperties": false,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier" 
+        }
+      },
+
+      "experimental_designs": {
+        "type": "array",
+        "title": "Experimental designs of the analysis [EFO:0001426]",
+        "description": "Array of experimental factors describing the method(s) of investigating particular types of research questions or solving particular types of problems. Each item of the array contain both the human readable ID (e.g. RNA stability design) and an optional label to qualify the term or provide additional context.",
+        "uniqueItems": true,
+        "additionalProperties": false,
+        "items": {
+          "title": "Experimental design item",
+          "description": "One of the experimental designs of the analysis.",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_design"
+        }
+      },
+
+      "types_of_data": {
+        "type": "array",
+        "title": "Type of data [IAO:0000100]",
+        "description": "Type of raw data the analysis uses to obtain the processed files.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/types_of_raw_data"
+        }
+      },
+
+      "analysis_type_specifications": {
+        "type": "object",
+        "title": "Analysis type specifications",
+        "description": "Node containing different sets of fields that depend on the specific analysis type. Depending on the analysis types different metadata will be required.",
+        "additionalProperties": false,
+        "required": ["analysis_types"],
+        "properties": {
+          "analysis_types": {
+            "type": "array",
+            "title": "List of analysis types",
+            "description": "Array of all analysis types applicable to this analysis. Details on how the analysis was performed (instruments, software, procedure...) shall be included in the 'analysis_protocols' field, not here. For example, if the analysis includes sequence variation files (e.g. VCF) that were obtained by a sequencing assay (i.e. from the sequenced reads), at least the analysis types 'sequence variation' and 'processed sequencing data' would be expected. Furthermore, depending on the types of analysis, different details may be required (e.g. reference sequence details in a 'sequence alignment' type).",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Type of analysis",
+              "description": "Overall type of the analysis. Term chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+              "enum": [ "sequence variation", "sequence alignment", "phenotype characterization", "processed sequencing data", "processed array data", "sequence annotation", "sequence assembly" ],
+              "meta:enum": [ "sequence variation__ERO:0100211 - Analysis of variations at specific loci in the genomes of organisms (mutation and polymorphism) across or within a species, population, or individual (e.g healthy vs diseased tissue).", "sequence alignment__ERO:0100032 - objective to display graphically how the sequences of two or more macromolecules align along a linear axis.", "phenotype characterization__ERO:0000923 - The result of an organismal assay that involves characterization of a phenotype; any observable characteristic or trait of an organism: such as its morphology, development, biochemical or physiological properties, behavior, and products of behavior (such as a bird's nest). Phenotypes result from the expression of an organism's genes as well as the influence of environmental factors and the interactions between the two.", "processed sequencing data__ - Analysis in which raw sequencing data (e.g. FastQ files) were processed in any way (e.g. normalization, noise reduction, alignment...) and transformed into processed genotype data files [EFO:0004663].", "processed array data__ - Analysis in which raw array data (e.g. CEL files) were processed in any way (e.g. normalization, noise reduction...) and transformed into processed array data files [EFO:0004096].", "sequence annotation__ - For submitting sequence annotation files, which are usually 'tab' files. Examples include gene count and OTU tables from metagenomic studies.", "sequence assembly__topic:0196 - The assembly of fragments of a DNA sequence to reconstruct the original sequence." ]            }
+          },
+          "reference_alignment_details": {
+            "type": "array",
+            "title": "Reference assembly and sequence details",
+            "description": "Node containing details of the reference sequence used in the alignment of raw sequences.",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details"
+          }
+        },
+        "allOf": [
+          {
+            "title": "If the analysis type includes a sequence comparison, the reference is expected",
+            "if": {
+              "required": ["analysis_types"],
+              "properties": {
+                "analysis_types": {
+                  "type": "array",
+                  "minItems": 1,
+                  "contains": {
+                    "type": "string",
+                    "enum": [ "sequence variation", "sequence alignment"]
+                  }
+                }
+              }
+            },
+            "then": {
+              "required": ["reference_alignment_details"]
+            }
+          }
+        ]
+      },
+
+      "analysis_files": {
+        "type": "array",
+        "title": "Files of the analysis",
+        "description": "This property contains the files derived from performing any processing or analysis over raw data (e.g. VCF, aligned BAM...) and those that add context to it (e.g. CSV, TXT...).",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object"
+        }
+      },
+
+      "analysis_relationships": {
+        "type": "array",
+        "title": "Analysis relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an analysis being linked to a Sample) the EGA.",
+        "minItems": 1,
+        "uniqueItems": true,
+        "additionalProperties": false,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "analysis_attributes": {
+        "type": "array",
+        "title": "Analysis custom attributes",
+        "description": "Custom attributes of an analysis: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal tag' and its Value 'this analysis is corresponds to internal tag XYZ') with optional units. Its properties are inherited from the common-definitions.json schema.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
     }      
   }

@@ -24,7 +24,9 @@
                 }
             ],
             "assayed_molecule": "DNA assay",
-            "type_of_data": "genomic data",
+            "types_of_data": [
+                "genomic data"
+            ],
             "assay_technology": {
                 "assay_instrument": "array",
                 "assay_instrument_platform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"

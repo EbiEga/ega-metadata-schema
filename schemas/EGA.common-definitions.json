@@ -39,6 +39,7 @@
             "description": "External accession node to reference objects in other archives (e.g. an already existing sample at BioSamples).",
             "minItems": 1,
             "additionalProperties": false,
+            "uniqueItems": true,
             "items": {
               "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession"
             }
@@ -111,8 +112,8 @@
             "description": "The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "required": ["filetype_id"],
             "additionalProperties": false,
-            "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR"],
-            "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__", "EXP__format:1631", "GPR__format:3829"]
+            "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR", "PY", "SH"],
+            "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__", "EXP__format:1631", "GPR__format:3829", "PY__format:3996", "SH__ - Bash scripts"]
           },
           "checksum_method": {
             "type": "string",
@@ -256,8 +257,8 @@
               "protocol_subtype": {
                 "type": "string",
                 "title": "Subtype of the protocol",
-                "description": "Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols within the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo).",
-                "examples": [ "clinical treatment", "array scanning and feature extraction" ]    
+                "description": "Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo). For example, if the protocol corresponds to a data transformation of a genome, you may find your subtype at [genome analysis](http://edamontology.org/operation_3918); while treating a patient with a drug would correspond to a [clinical treatment](http://www.ebi.ac.uk/efo/EFO_0007056).",
+                "examples": [ "clinical treatment", "array scanning and feature extraction", "Genome alignment", "Genome annotation", "Genome assembly", "Genome comparison", "Genome feature comparison", "Genome indexing", "Genome visualisation", "Whole genome methylation analysis" ]    
               },
 
               "protocol_subtype_curie": {
@@ -280,6 +281,7 @@
             "title": "Protocol performers array",
             "description": "Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.",
             "additionalProperties": false,
+            "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "string",
@@ -295,6 +297,7 @@
             "title": "Protocol instrument array [EFO:0000548]",
             "description": "Array of instruments used in the protocol.",
             "additionalProperties": false,
+            "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "string",
@@ -310,6 +313,7 @@
             "title": "Protocol software array [IAO:0000010]",
             "description": "Array of software descriptions used in the protocol.",
             "additionalProperties": false,
+            "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "string",
@@ -860,7 +864,43 @@
                 },
                 "filename": { "$ref": "#/definitions/txt-file-filename-pattern" }
             }
-          }
+          },
+          {
+            "title": "EXP Filename pattern-check",
+            "properties": {
+                "filetype": {
+                   "enum": ["EXP"] 
+                },
+                "filename": { "$ref": "#/definitions/exp-file-filename-pattern" }
+            }
+          },
+          {
+            "title": "GPR Filename pattern-check",
+            "properties": {
+                "filetype": {
+                   "enum": ["GPR"] 
+                },
+                "filename": { "$ref": "#/definitions/gpr-file-filename-pattern" }
+            }
+          },
+          {
+            "title": "PY Filename pattern-check",
+            "properties": {
+                "filetype": {
+                   "enum": ["PY"] 
+                },
+                "filename": { "$ref": "#/definitions/py-file-filename-pattern" }
+            }
+          },
+          {
+            "title": "SH Filename pattern-check",
+            "properties": {
+                "filetype": {
+                   "enum": ["SH"] 
+                },
+                "filename": { "$ref": "#/definitions/sh-file-filename-pattern" }
+            }
+          }          
         ]        
       },
 
@@ -1038,6 +1078,38 @@
         "description": "This object exists to hold the filename pattern that a 'TXT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(txt|TXT)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.txt.gz.gpg" ]
+      },
+
+      "exp-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a EXP file",
+        "description": "This object exists to hold the filename pattern that a 'EXP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(exp|EXP)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.exp.gz.gpg" ]
+      },
+
+      "gpr-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a GPR file",
+        "description": "This object exists to hold the filename pattern that a 'GPR' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(gpr|GPR)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.gpr.gz.gpg" ]
+      },
+
+      "py-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a PY file",
+        "description": "This object exists to hold the filename pattern that a 'PY' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(py|PY)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.py.gz.gpg" ]
+      },
+
+      "sh-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SH file",
+        "description": "This object exists to hold the filename pattern that a 'SH' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(sh|SH)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.sh.gz.gpg" ]
       },
 
       "object_external_accession": {
@@ -1282,6 +1354,7 @@
             "title": "Loci context array",
             "description": "Array of locus context items. Multiple loci can be described in the array if the organism remains the same.",
             "additionalProperties": false,
+            "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "object",
@@ -1909,6 +1982,27 @@
             "examples": [ "The experimental design is a new subtype of a dose response design, in which a case group is..." ]
           }
         }
-      }   
+      },
+      
+      "types_of_raw_data": {
+        "type": "string",
+        "title": "Type of data [IAO:0000100]",
+        "description": "Type of raw data an experiment generats or an analysis uses, chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "enum": ["gene list", "genomic data", "metagenomic data", "metatranscriptomic data", "synthetic DNA data", "transcriptomic data", "viral RNA data"],
+        "meta:enum": ["gene list__OBI_0000118", "genomic data__EFO_0004600", "metagenomic data__EFO_0004602", "metatranscriptomic data__EFO_0004603", "synthetic DNA data__EFO_0004604", "transcriptomic data__EFO_0004601", "viral RNA data__EFO_0004605"]
+      },
+
+      "reference_alignment_details": {
+        "type": "array",
+        "title": "Reference assembly and sequence details",
+        "description": "Node containing the information of the reference assembly that was used to obtain the sequence alignment. For example, processing raw sequence FastQ files aligning it to a reference sequence (e.g. human Chromosome X of GRCh38's assembly), obtaining aligned sequences (e.g. BAM format). In this array one can list the used assembly (e.g. GRCh38.p14), the used assembly units (e.g. refseq:NC_000001.11), or a combination of both. In order to ease the interpretation of the data, it is important to notice that the field 'assembly_unit_name' shall correspond to how the Reference Sequence is labeled in submission file(s) (e.g. '1' for chromosome 1). This name is equivalent to the SQ label (the reference sequence dictionary) in BAM (see [documentation for v1](https://samtools.github.io/hts-specs/SAMv1.pdf)) and optional when submitted file uses INSDC accession.version",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "title": "One item containing metadata of the assembly or assembly unit.",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
+        }
+      }
     }    
 }
