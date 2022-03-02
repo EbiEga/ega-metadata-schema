@@ -4,10 +4,116 @@
     "type": "object",
     "title": "EGA policy metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
-    "required": [""],
+    "description": "A policy, also known as Data Access Agreement (DAA), is a contract made between Data User and Data Access Committee. The policy object is expected to contain metadata about such agreement, which should be drafted by the DAC and includes, but is not limited to, details of data use, publication embargoes and storage. Completion of a DAA by the applicant/s should form part of the application process to the DAC. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/submission/dac/documentation)",
+    "required": ["object_id", "object_title", "policy_descriptor"],
     "additionalProperties": false,
     "properties": {
-      
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an policy (by using EGA-policy-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that policy EGA ID (EGAP) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-policy-id-pattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the policy",
+        "description": "Free-form title of the policy. Can be used to call out policy records in searches or displays.",
+        "examples": [ "EBI colon cancer policy" ]
+      },
+    
+      "policy_descriptor":{
+        "type": "object",
+        "title": "Policy descriptor",
+        "description": "Node containing the full description of the policy, whether it is hosted at some public resourced and referenced here; or directly written here.",
+        "additionalProperties": false,
+        "properties": {
+          "policy_reference": {
+            "type": "string",
+            "title": "Reference to the policy",
+            "description": "A publicly accessible reference to the policy, where the updated text of the policy is hosted.",
+            "pattern": "^(http(s)?:\\/\\/.)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)$",
+            "examples": [ 
+              "https://github.com/EbiEga/ega-metadata-schema/blob/main/schemas/EGA.policy.json",
+              "https://ega-archive.org/submission/dac/documentation" 
+            ]
+          },
+          "policy_text": {
+            "type": "string",
+            "title": "Policy text",
+            "description": "Text describing in detail the Data Access Agreement (DAA) of the policy.",
+            "examples": [
+              "The data is fully available upon request with the data-access committee of this study.",
+              "Access to data generated is available by emailing application to the Data Access Committee and will be granted to qualified investigators for appropriate use.\\nThe following two documents may be required by the Data Access Committee.\\n1) DATA ACCESS AGREEMENT\\nIn signing this agreement, You are agreeing to be bound by the terms and conditions of access set out in this agreement.\\nDefinitions:\\n- Data means all and any human genetic data obtained related to the 'Study on the proliferation history of lung adenomas'.\\n- User means a researcher whose User Institution has previously completed this Data Access Agreement and has received acknowledgment of its acceptance.\\n- User Institution means the organization at which the User is employed, affiliated or enrolled.\\nYou agree to use the Data only for the advancement of medical research, according to the consent obtained from sample donors.\\n- Publications means, without limitation, articles published in print journals, electronic journals, reviews, books, posters and other written and verbal presentations of research.\\nYou agree not to use the data for the creation of products for sale or for any commercial purpose.\\nYou agree to preserve, at all times, the confidentiality of any information related to Data and to not transfer or disclose the Data.\\nYou agree to use the data for the approved purpose and project described in your Application.\\nYou agree to acknowledge in any work based in whole or part on the Data, the published paper from which the Data derives.\\nFor and on behalf of User:\\n Report the name of Applicants, Signature of Applicants and Date.\\nFor and on behalf of User Institution:\\nReport the name of Institutional Authority, his/her and Date.\\n\\n2) DATA ACCESS APPLICATION FORM:\\nApplications for access to data can be submitted at any time. The Data Access Committee will consider applications on a rolling basis and aim to provide a decision within one months of receipt. The Application must include:\\n- A full postal and email address for each Applicant. PhD student applicants must include their supervisors as a co-applicant and provide their full contact details.\\n- Title of the project.\\n- A clear description of the project and its specific aims, including specific details of what You plan to do with the data and including key references.\\n- Signature, name and date of each Applicant.\\n- Data Access Agreement dated and signed."
+            ]
+          }          
+        },
+        "anyOf": [
+          {
+            "title": "Either the policy reference is given",
+            "required": ["policy_reference"]
+          },
+          {
+            "title": "Or the policy text is given",
+            "required": ["policy_text"]
+          }
+        ]
+      },
+
+      "duo_codes_curies": {
+        "type": "array",
+        "title": "Data Use Ontology (DUO) codes' curies",
+        "description": "Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) format. These allow to semantically tag datasets (bound by policies) with restriction about their usage, making them discoverable automatically based on the authorization level of users, or intended usage. See more info at https://obofoundry.org/ontology/duo.html and search for DUO codes at https://www.ebi.ac.uk/ols/ontologies/duo",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": {
+          "type": "string",
+          "title": "Data Use Ontology (DUO) code",
+          "description": "Single Data Use Ontology (DUO) code in Shorter Compact URI (CURIE) format.",
+          "pattern": "^[^<>;,?\"*|/ ]+$",
+          "examples": [ "DUO:0000046", "DUO:0000028", "IAO:0000620" ]
+        }
+      },
+
+      "policy_relationships": {
+        "type": "array",
+        "title": "Policy relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a policy) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "policy_attributes": {
+        "type": "array",
+        "title": "Policy custom attributes",
+        "description": "Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
     }      
   }

@@ -4,10 +4,139 @@
     "type": "object",
     "title": "EGA study metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
-    "required": [""],
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Study metadata object. This object is intended to contain metadata about the compilation of examinations, analyses or critical inspection of a particular subject. In other words, a Study is a container of experiments and analyses of any nature (including Array data) grouped by a common goal or investigation. They often draw together data from a range of datasets and are represented in publication. For instance, an example would be a case-control study on cancer patients and healthy individuals. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/studies)",
+    "required": ["object_id", "object_title", "study_design"],
     "additionalProperties": false,
     "properties": {
-      
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: a study (by using EGA-study-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that study EGA ID (EGAS) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-study-id-pattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the study",
+        "description": "Short free-form text that can be used to call out study records in searches or displays.",
+        "examples": [ "EBI test case-control study for cancer" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the study",
+        "description": "An in-depth description of the study, including its overall purpose, goals, scope or nature.",
+        "examples": [ "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls." ]
+      },
+
+      "study_design": {
+        "type": "object",
+        "title": "Study design",
+        "description": "Node to present a controlled vocabulary for expressing the overall purpose of the study with certain keywords.",
+        "required": ["study_type"],
+        "additionalProperties": false,
+        "properties": {
+          "study_type": { 
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/study-or-dataset-type-list" 
+          },
+          "new_study_type": {
+            "type": "string",
+            "title": "New study type",
+            "description": "A user-defined free-form term that globally describes the type of the study. Use only when the 'study_type' controlled vocabulary does not contain it, providing 'other' as such.",
+            "pattern": ".+",
+            "examples": [ "extraterrestial biomaterial analysis" ]
+          },
+          "additional_keywords_list": {
+            "type": "array",
+            "title": "List of additional keywords of the study",
+            "description": "A list consisting in user-defined keywords that are directly related to the overall purpose of the study, other than the main study type. Can be used to call out study records in searches or displays.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "items": { 
+              "type": ["string"],
+              "title": "Individual study keyword",
+              "description": "One individual keyword of the set.",
+              "examples": [ "whole genome sequencing", "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "title": "If the study_type is 'other'",
+              "required": ["study_type"],
+              "properties": {
+                "study_type": {
+                  "enum": ["other"]
+                }
+              }
+            },
+            "then": {
+              "title": "Then the new_study_type has to be present",
+              "required": ["new_study_type"]
+            }
+          },
+          {
+            "if": {
+              "title": "If the study_type is NOT 'other'",
+              "required": ["study_type"],
+              "properties": {
+                "study_type": {
+                  "not": {
+                    "enum": ["other"]
+                  }                  
+                }
+              }
+            },
+            "then": {
+              "title": "Then the new_study_type should NOT be present",
+              "properties": {
+                "new_study_type": false
+              }
+            }
+          }
+        ]
+      },
+
+      "study_relationships": {
+        "type": "array",
+        "title": "Study relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a study) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "study_attributes": {
+        "type": "array",
+        "title": "Study custom attributes",
+        "description": "Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }      
     }      
   }
