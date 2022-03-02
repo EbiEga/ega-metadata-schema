@@ -264,7 +264,7 @@
               "protocol_subtype_curie": {
                 "type": "string",
                 "title": "Compact URI (CURIE) of the protocol subtype",
-                "description": "Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overal general of the 'protocol_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').",
+                "description": "Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocol_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').",
                 "allOf": [
                   {
                     "title": "General CURIE pattern",
@@ -1210,7 +1210,7 @@
       "subject_id": {
         "type": "string",
         "title": "Subject ID",
-        "description": "A unique identifir (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance.",
+        "description": "A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance.",
         "examples": [ "Donor-10031", "ID001", "9001", "AX_Dli" ]
       },
 
@@ -1373,7 +1373,7 @@
                 },
                 "locus_external_reference": {
                   "title": "External reference of the locus",
-                  "description": "If the locus is NOT a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accesible and persistent, one can reference it here instead of providing all their details. For example, transcript TAF1-204 already contains all its locus information within its persistent record at Ensembl, identified by 'ensembl:ENST00000423759.6'.",
+                  "description": "If the locus is NOT a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. For example, transcript TAF1-204 already contains all its locus information within its persistent record at Ensembl, identified by 'ensembl:ENST00000423759.6'.",
                   "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession",
                   "examples": ["ensembl:ENST00000423759.6"]
                 },
@@ -1612,7 +1612,7 @@
       "curie_refseq_pattern": {
         "type": "string",
         "title": "RefSeq accessions' [data:1098] CURIE pattern",
-        "description": "The Reference Sequence (RefSeq) CURIEs take the structure of ``refseq``:``accession``. [RefSeq accessions](https://registry.identifiers.org/registry/refseq) [data:1098] have special prefixes (e.g. 'NM_' for protein-coding transcripts - mRNA) based on the category of the object. The accession can also have a version attached as a sufix (e.g. '.23'). Their records are integrated into [NCBI's resources](https://www.ncbi.nlm.nih.gov/refseq/) including the Nucleotide, Protein, and BLAST databases and can be easily identified by the keyword 'RefSeq' and by their distinct accession prefixes that define their type (see further details at [doi:10.1093/nar/gkv1189](https://academic.oup.com/nar/article/44/D1/D733/2502674).",
+        "description": "The Reference Sequence (RefSeq) CURIEs take the structure of ``refseq``:``accession``. [RefSeq accessions](https://registry.identifiers.org/registry/refseq) [data:1098] have special prefixes (e.g. 'NM_' for protein-coding transcripts - mRNA) based on the category of the object. The accession can also have a version attached as a suffix (e.g. '.23'). Their records are integrated into [NCBI's resources](https://www.ncbi.nlm.nih.gov/refseq/) including the Nucleotide, Protein, and BLAST databases and can be easily identified by the keyword 'RefSeq' and by their distinct accession prefixes that define their type (see further details at [doi:10.1093/nar/gkv1189](https://academic.oup.com/nar/article/44/D1/D733/2502674).",
         "pattern": "^(RefSeq|refseq):",
         "allOf": [
           {
@@ -1987,7 +1987,7 @@
       "types_of_raw_data": {
         "type": "string",
         "title": "Type of data [IAO:0000100]",
-        "description": "Type of raw data an experiment generats or an analysis uses, chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "description": "Type of raw data an experiment generates or an analysis uses, chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
         "enum": ["gene list", "genomic data", "metagenomic data", "metatranscriptomic data", "synthetic DNA data", "transcriptomic data", "viral RNA data"],
         "meta:enum": ["gene list__OBI_0000118", "genomic data__EFO_0004600", "metagenomic data__EFO_0004602", "metatranscriptomic data__EFO_0004603", "synthetic DNA data__EFO_0004604", "transcriptomic data__EFO_0004601", "viral RNA data__EFO_0004605"]
       },
@@ -1995,7 +1995,7 @@
       "reference_alignment_details": {
         "type": "array",
         "title": "Reference assembly and sequence details",
-        "description": "Node containing the information of the reference assembly that was used to obtain the sequence alignment. For example, processing raw sequence FastQ files aligning it to a reference sequence (e.g. human Chromosome X of GRCh38's assembly), obtaining aligned sequences (e.g. BAM format). In this array one can list the used assembly (e.g. GRCh38.p14), the used assembly units (e.g. refseq:NC_000001.11), or a combination of both. In order to ease the interpretation of the data, it is important to notice that the field 'assembly_unit_name' shall correspond to how the Reference Sequence is labeled in submission file(s) (e.g. '1' for chromosome 1). This name is equivalent to the SQ label (the reference sequence dictionary) in BAM (see [documentation for v1](https://samtools.github.io/hts-specs/SAMv1.pdf)) and optional when submitted file uses INSDC accession.version",
+        "description": "Node containing the information of the reference assembly that was used to obtain the sequence alignment. For example, processing raw sequence FastQ files aligning it to a reference sequence (e.g. human Chromosome X of GRCh38's assembly), obtaining aligned sequences (e.g. BAM format). In this array one can list the used assembly (e.g. GRCh38.p14), the used assembly units (e.g. refseq:NC_000001.11), or a combination of both. In order to ease the interpretation of the data, it is important to notice that the field 'assembly_unit_name' shall correspond to how the Reference Sequence is labelled in submission file(s) (e.g. '1' for chromosome 1). This name is equivalent to the SQ label (the reference sequence dictionary) in BAM (see [documentation for v1](https://samtools.github.io/hts-specs/SAMv1.pdf)) and optional when submitted file uses INSDC accession.version",
         "additionalProperties": false,
         "uniqueItems": true,
         "minItems": 1,
