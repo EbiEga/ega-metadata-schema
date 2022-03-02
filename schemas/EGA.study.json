@@ -63,7 +63,7 @@
             "title": "New study type",
             "description": "A user-defined free-form term that globally describes the type of the study. Use only when the 'study_type' controlled vocabulary does not contain it, providing 'other' as such.",
             "pattern": ".+",
-            "examples": [ "extraterrestial biomaterial analysis" ]
+            "examples": [ "extra-terrestrial biomaterial analysis" ]
           },
           "additional_keywords_list": {
             "type": "array",

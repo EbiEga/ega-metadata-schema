@@ -45,9 +45,9 @@
       "object_description": {
         "type": "string",
         "title": "Description of the assay",
-        "description": "An in-depth description (e.g. usded technology, sample groups, purpose...) of the assay. ",
+        "description": "An in-depth description (e.g. used technology, sample groups, purpose...) of the assay. ",
         "minLength": 1,
-        "examples": [ "Sequencing assay number 3409 of 4000. Sequenced through Illumina MiSeq to find SNPs of colorrectal cancer samples..." ]
+        "examples": [ "Sequencing assay number 3409 of 4000. Sequenced through Illumina MiSeq to find SNPs of colorectal cancer samples..." ]
       },
 
       "assay_center": {

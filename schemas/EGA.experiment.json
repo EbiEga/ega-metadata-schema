@@ -70,7 +70,7 @@
       "targeted_loci": {
         "type": "array",
         "title": "Loci of the targeted genomic feature",
-        "description": "Array of items that unambiguosly define the loci of targeted genomic geatures in the experiment. For example, if the experiment aim was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.",
+        "description": "Array of items that unambiguously define the loci of targeted genomic features in the experiment. For example, if the experiment aim was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.",
         "minItems": 1,
         "additionalProperties": false,
         "uniqueItems": true,
