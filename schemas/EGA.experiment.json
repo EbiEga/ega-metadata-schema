@@ -5,7 +5,7 @@
     "title": "EGA Experiment metadata schema",
     "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "sample_number", "experiment_protocols", "assay_technology", "experimental_designs", "assay_type_descriptor", "assayed_molecule", "experiment_type_specifications"],
+    "required": ["object_id", "experiment_protocols", "assay_technology", "experimental_designs", "assay_type_descriptor", "assayed_molecule", "experiment_type_specifications"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -179,7 +179,8 @@
       "assayed_molecule": {
         "type": "string",
         "title": "Assayed molecule of the experiment [EFO:0002772]",
-        "description": "The human readable ID (e.g. DNA assay), chosen from a list of controlled vocabulary (CV), of the assayed molecule. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "description": "The biomolecule type assayed in the experiment. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "examples": ["genomic DNA", "messenger RNA"],
         "enum": ["DNA assay", "RNA assay", "Metabolomic profiling", "Protein assay"],
         "meta:enum": ["DNA assay__EFO:0001456", "RNA assay__EFO:0001457", "Metabolomic profiling__EFO:0000752", "Protein assay__EFO:0001458"]
       },
@@ -187,7 +188,7 @@
       "types_of_data": {
         "type": "array",
         "title": "Types of data [IAO:0000100]",
-        "description": "Types of data the experiment encompasses.",
+        "description": "Types of data the experiment generates.",
         "uniqueItems": true,
         "items": {
           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/types_of_raw_data"
@@ -197,7 +198,7 @@
       "experiment_type_specifications": {
         "type": "object",
         "title": "Experiment type specifications",
-        "description": "Node containing different sets of fields that depend on the specific experiment type. The main categories of experiment types follow a similar pattern as the assay technology: either array experiments (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its Array Design Format (ADF) will be expected. Having this modular experiment type-related node allows for easy additions of new technology-specific requirements.",
+        "description": "Node containing additional attributes to describe the experiment, either array experiments (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). For example, if an array was used, its Array Design Format (ADF) will be expected.",
         "additionalProperties": false,
         "properties": {
           "array_experiment": {
