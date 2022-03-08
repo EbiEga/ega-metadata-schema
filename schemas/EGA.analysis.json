@@ -5,7 +5,7 @@
     "title": "EGA analysis metadata schema",
     "meta:version": "0.0.0",
     "description": "Empty for the moment.",
-    "required": ["object_id", "sample_number", "analysis_protocols", "experimental_designs", "analysis_type_specifications" ],
+    "required": ["object_id", "analysis_protocols", "analysis_type_specifications" ],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -48,17 +48,10 @@
         "examples": [ "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 
-      "sample_number": {
-        "type": "integer",
-        "title": "Number of samples of the analysis",
-        "description": "Number of samples included in the analysis (i.e. analysed together). One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
-        "examples": [ 30 ]
-      },
-
       "analysis_protocols": {
         "type": "array",
         "title": "Protocols related to an analysis",
-          "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an analysis. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
+        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an analysis. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
         "minItems": 1,
         "additionalProperties": false,
         "uniqueItems": true,
@@ -79,28 +72,27 @@
         }
       },
 
-      "experimental_designs": {
+      "types_of_input_data": {
         "type": "array",
-        "title": "Experimental designs of the analysis [EFO:0001426]",
-        "description": "Array of experimental factors describing the method(s) of investigating particular types of research questions or solving particular types of problems. Each item of the array contain both the human readable ID (e.g. RNA stability design) and an optional label to qualify the term or provide additional context.",
-        "uniqueItems": true,
-        "additionalProperties": false,
-        "items": {
-          "title": "Experimental design item",
-          "description": "One of the experimental designs of the analysis.",
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_design"
-        }
-      },
-
-      "types_of_data": {
-        "type": "array",
-        "title": "Type of data [IAO:0000100]",
-        "description": "Type of raw data the analysis uses to obtain the processed files.",
+        "title": "Types of input data",
+        "description": "Types of input data the analysis uses to obtain the processed files.",
         "additionalProperties": false,
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/types_of_raw_data"
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
+        }
+      },
+
+      "types_of_output_data": {
+        "type": "array",
+        "title": "Types of output data",
+        "description": "Types of output data the analysis uses to obtain the processed files.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
         }
       },
 
@@ -114,7 +106,7 @@
           "analysis_types": {
             "type": "array",
             "title": "List of analysis types",
-            "description": "Array of all analysis types applicable to this analysis. Details on how the analysis was performed (instruments, software, procedure...) shall be included in the 'analysis_protocols' field, not here. For example, if the analysis includes sequence variation files (e.g. VCF) that were obtained by a sequencing assay (i.e. from the sequenced reads), at least the analysis types 'sequence variation' and 'processed sequencing data' would be expected. Furthermore, depending on the types of analysis, different details may be required (e.g. reference sequence details in a 'sequence alignment' type).",
+            "description": "Array of all analysis types applicable to this analysis. Details on how the analysis was performed (instruments, software, procedure...) shall be included in the 'analysis_protocols' field, not here. For example, if the analysis includes sequence variation files (e.g. VCF) that were obtained by a sequencing assay (i.e. from the sequenced reads), at least the analysis type 'sequence variation' would be expected. Furthermore, depending on the types of analysis, different details may be required (e.g. reference sequence details in a 'sequence alignment' type).",
             "additionalProperties": false,
             "uniqueItems": true,
             "minItems": 1,
@@ -122,8 +114,9 @@
               "type": "string",
               "title": "Type of analysis",
               "description": "Overall type of the analysis. Term chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
-              "enum": [ "sequence variation", "sequence alignment", "phenotype characterization", "processed sequencing data", "processed array data", "sequence annotation", "sequence assembly" ],
-              "meta:enum": [ "sequence variation__ERO:0100211 - Analysis of variations at specific loci in the genomes of organisms (mutation and polymorphism) across or within a species, population, or individual (e.g healthy vs diseased tissue).", "sequence alignment__ERO:0100032 - objective to display graphically how the sequences of two or more macromolecules align along a linear axis.", "phenotype characterization__ERO:0000923 - The result of an organismal assay that involves characterization of a phenotype; any observable characteristic or trait of an organism: such as its morphology, development, biochemical or physiological properties, behavior, and products of behavior (such as a bird's nest). Phenotypes result from the expression of an organism's genes as well as the influence of environmental factors and the interactions between the two.", "processed sequencing data__ - Analysis in which raw sequencing data (e.g. FastQ files) were processed in any way (e.g. normalization, noise reduction, alignment...) and transformed into processed genotype data files [EFO:0004663].", "processed array data__ - Analysis in which raw array data (e.g. CEL files) were processed in any way (e.g. normalization, noise reduction...) and transformed into processed array data files [EFO:0004096].", "sequence annotation__ - For submitting sequence annotation files, which are usually 'tab' files. Examples include gene count and OTU tables from metagenomic studies.", "sequence assembly__topic:0196 - The assembly of fragments of a DNA sequence to reconstruct the original sequence." ]            }
+              "enum": [ "sequence variation", "sequence alignment", "phenotype characterization", "sequence annotation", "sequence assembly", "gene expression" ],
+              "meta:enum": [ "sequence variation__ERO:0100211: Analysis of variations at specific loci in the genomes of organisms (mutation and polymorphism) across or within a species, population, or individual (e.g healthy vs diseased tissue).", "sequence alignment__ERO:0100032: objective to display graphically how the sequences of two or more macromolecules align along a linear axis.", "phenotype characterization__ERO:0000923: The result of an organismal assay that involves characterization of a phenotype; any observable characteristic or trait of an organism: such as its morphology, development, biochemical or physiological properties, behavior, and products of behavior (such as a bird's nest). Phenotypes result from the expression of an organism's genes as well as the influence of environmental factors and the interactions between the two.", "sequence annotation__operation:0361: Analysis where molecular sequence records are annotated with terms from a controlled vocabulary. For submitting sequence annotation files, which are usually 'tab' files. Examples include gene count and OTU tables from metagenomic studies.", "sequence assembly__topic:0196: The assembly of fragments of a DNA sequence to reconstruct the original sequence.", "gene expression__topic:0203: The analysis of levels and patterns of synthesis of gene products (proteins and functional RNA) including interpretation in functional terms of gene expression data." ]
+            }
           },
           "reference_alignment_details": {
             "type": "array",

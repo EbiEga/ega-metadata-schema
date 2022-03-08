@@ -5,24 +5,14 @@
     },
     "object_title": "Example VCF analysis",
     "object_description": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned against the human referenced and then extracted sequence variation... ...VCF files were compared along patients' clinical histories.",
-    "sample_number": 120,
-    "experimental_designs": [
-        {
-            "experimental_design_id": "case control design",
-            "experimental_design_label": "The design included 41 cases and 79 controls..."
-        },
-        {
-            "experimental_design_id": "clinical history design"
-        },
-        {
-            "experimental_design_id": "genotype design"
-        }
-    ],
-    "types_of_data": [
+    "types_of_input_data": [
         "genomic data"
     ],
+    "types_of_output_data": [
+        "processed sequencing data"
+    ],
     "analysis_type_specifications": {
-        "analysis_types": [ "sequence variation", "phenotype characterization", "processed sequencing data" ],
+        "analysis_types": [ "sequence variation", "phenotype characterization" ],
         "reference_alignment_details": [
             {
                 "assembly_name": "GRCh38.p14",

@@ -6,7 +6,6 @@
     "object_title": "Breast cancer array assay M3051057",
     "assay_center": "EBI-TEST",
     "assay_date": "2022-02-13",
-    "sample_number": 2,
     "assay_type_specifications": {
         "assay_type": "array",
         "array_assay_specifications": {

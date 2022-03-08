@@ -5,7 +5,7 @@
     "title": "EGA assay metadata schema",
     "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its assay metadata object. This object is intended to contain metadata about the raw qualitative or quantitative test performed to determine any kind of biological property of a biological sample. It can be of different types: (1) sequencing assay [EFO:0003740] (e.g. sequence CRAM or FastQ files); and an (2) array assay [EFO:0002696] (e.g. intensity CEL files). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "sample_number", "assay_type_specifications", "assay_files"],
+    "required": ["object_id", "assay_type_specifications", "assay_files"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -65,14 +65,6 @@
         "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
       },
 
-      "sample_number": {
-        "type": "integer",
-        "title": "Number of samples of the assay",
-        "description": "Number of samples included in this specific assay (e.g. pooled into one single sequencing assay, labelled differently). For example, if 3 buccal swabs from different people were mixed and the sequenced data corresponds to this exclusive assay, we may specify the sample number as 3. One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation). The number of samples is specific to this assay, and should not be altered by the content of other assays: if different assays contain data derived from the same samples, these shall be counted individually, whether they are shared or not.",
-        "minInclusive": 0,
-        "examples": [ 30, 2, 1 ]
-      },
-
       "assay_type_specifications": {
         "type": "object",
         "title": "Assay type specifications",
@@ -83,7 +75,7 @@
           "assay_type": {
             "type": "string",
             "title": "Assay type",
-            "description": "The general categories, either sequencing or array, in which assays are categorized based on the used instruments",
+            "description": "The general categories, either sequencing or array, in which assays are categorized based on the used instruments. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "enum": ["array", "sequencing"],
             "meta:enum": ["An assay in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used.", "An assay in which a [sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used."]
           },
@@ -97,7 +89,7 @@
               "n_labels_per_array": {
                 "type": "number",
                 "title": "Number of labels per array",
-                "description": "A single array can be prepared with biological materials labelled differently for them to be compared in parallel. Here one shall specify the number of labels used in the single array (e.g. 2 for a Two-colour cDNA microarray).",
+                "description": "A single array can be prepared with biological materials labelled differently for them to be compared in parallel. Here one shall specify the number of labels used in the single array (e.g. 2 for a Two-colour cDNA microarray). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
                 "enum": [1, 2, 3, 4],
                 "meta:enum": ["1: One single label was used for a single array", "2: two labels were used for a single array. The node 'array_sample_labels' specifying which samples were labelled by which compounds will be expected."]
               },
@@ -217,7 +209,7 @@
 
       "assay_files": {
         "type": "array",
-        "title": "Sequencing files from an assay",
+        "title": "Data files produced from an assay",
         "description": "This property contains the specific files (e.g. raw CRAM files) derived from performing the sequencing or hybridization and scanning with the sampled material.",
         "minItems": 1,
         "additionalProperties": false,

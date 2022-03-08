@@ -5,18 +5,12 @@
     },
     "object_title": "Example array experiment title",
     "object_description": "Example array experiment's description of my experiment N13.",
-    "sample_number": 30,
-    "experimental_designs": [
-        {
-            "experimental_design_id": "case control design",
-            "experimental_design_label": "The design included 18 cases and 12 controls..."
-        },
-        {
-            "experimental_design_id": "binding site identification design"
-        }
-    ],
-    "assayed_molecule": "DNA assay",
-    "types_of_data": [
+    "assayed_molecule_descriptor": {
+        "assayed_molecule_type": "DNA",
+        "assayed_molecule_subtype": "genomic DNA",
+        "assayed_molecule_subtype_curie": "EFO:0008479"
+    },
+    "types_of_output_data": [
         "genomic data"
     ],
     "assay_technology": {

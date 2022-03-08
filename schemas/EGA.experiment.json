@@ -5,7 +5,7 @@
     "title": "EGA Experiment metadata schema",
     "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "sample_number", "experiment_protocols", "assay_technology", "experimental_designs", "assay_type_descriptor", "assayed_molecule", "experiment_type_specifications"],
+    "required": ["object_id", "experiment_protocols", "assay_technology", "assay_type_descriptor", "assayed_molecule_descriptor", "experiment_type_specifications"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -48,13 +48,6 @@
         "examples": [ "The experiment was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 
-      "sample_number": {
-        "type": "integer",
-        "title": "Number of samples of the experiment",
-        "description": "Number of samples included in the Assay (i.e. pooled into one single microarray, labelled differently). One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://www.ebi.ac.uk/seqdb/confluence/pages/viewpage.action?spaceKey=EGA&title=Sample+Representation).",
-        "examples": [ 30 ]
-      },
-
       "experiment_protocols": {
         "type": "array",
         "title": "Protocols related to an experiment",
@@ -83,19 +76,6 @@
         "title": "Technology used in the assay",
         "description": "Technology used in the assay. This node allows for an easy filtering of the technology (e.g. a sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) in an assay.",
         "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor"
-      },
-
-      "experimental_designs": {
-        "type": "array",
-        "title": "Experimental designs of the experiment [EFO:0001426]",
-        "description": "Array of experimental factors describing the method(s) of investigating particular types of research questions or solving particular types of problems. Each item of the array contain both the human readable ID (e.g. RNA stability design) and an optional label to qualify the term or provide additional context.",
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "items": {
-          "title": "Experimental design item",
-          "description": "One of the experimental designs of the experiment.",
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_design"
-        }
       },
 
       "assay_type_descriptor": {
@@ -176,21 +156,48 @@
         ]
       },
 
-      "assayed_molecule": {
-        "type": "string",
-        "title": "Assayed molecule of the experiment [EFO:0002772]",
-        "description": "The human readable ID (e.g. DNA assay), chosen from a list of controlled vocabulary (CV), of the assayed molecule. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
-        "enum": ["DNA assay", "RNA assay", "Metabolomic profiling", "Protein assay"],
-        "meta:enum": ["DNA assay__EFO:0001456", "RNA assay__EFO:0001457", "Metabolomic profiling__EFO:0000752", "Protein assay__EFO:0001458"]
+      "assayed_molecule_descriptor": {
+        "type": "object",
+        "title": "Descriptor of the assayed molecule",
+        "description": "Node containing information about the assayed molecule: the material entity (e.g. DNA) that was used to generate the data.",
+        "additionalProperties": false,
+        "required": ["assayed_molecule_type"],
+        "properties": {
+          "assayed_molecule_type": {
+            "type": "string",
+            "title": "Type of the assayed molecule of the experiment",
+            "description": "The assayed molecule (e.g. DNA), chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+            "enum": ["DNA", "RNA", "metabolie", "protein"],
+            "meta:enum": ["DNA__CHEBI:16991", "RNA__CHEBI:33697", "metabolite__EFO:0004727", "protein__CHEBI:36080"]
+          },
+          "assayed_molecule_subtype": {
+            "type": "string",
+            "title": "Subtype of the assayed molecule of the experiment",
+            "description": "Name of the assayed molecule subtype. We highly recommend the usage of names given to ontologized molecule subtypes, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo).",
+            "examples": ["cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "insulin", "serum albumin" ]
+          },
+          "assayed_molecule_subtype_curie": {
+            "type": "string",
+            "title": "CURIE of the assayed molecule subtype",
+            "description": "Ontology term in CURIE format (e.g. 'PR:000003918') of the assayed molecule subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
+            "examples": ["PR:000003918", "EFO:0008481", "EFO:0008479", "EFO:0008480", "CHEBI:33699"],
+            "allOf": [
+              {
+                "title": "General pattern of a CURIE",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ]
+          }
+        }
       },
 
-      "types_of_data": {
+      "types_of_output_data": {
         "type": "array",
-        "title": "Types of data [IAO:0000100]",
-        "description": "Types of data the experiment encompasses.",
+        "title": "Types of output data [IAO:0000100]",
+        "description": "Types of data the experiment produces.",
         "uniqueItems": true,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/types_of_raw_data"
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
         }
       },
 

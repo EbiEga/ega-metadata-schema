@@ -20,7 +20,11 @@
             "experimental_condition_description": "Treated with cisplatin, being part of the 'case' group."
         }
     },
-    "sample_collection_date": "2021-12-20",
+    "sample_collection": {
+        "sample_collection_date": "2021-12-20",
+        "sample_collection_site": "oral cavity",
+        "sample_collection_site_curie": "UBERON:0000167"
+    },
     "sample_grouping": {
         "sample_group_boolean": true,
         "sample_number": 10

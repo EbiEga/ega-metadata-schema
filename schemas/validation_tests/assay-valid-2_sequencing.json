@@ -6,7 +6,6 @@
     "object_title": "Breast cancer sequencing assay M305004",
     "assay_center": "EBI-TEST",
     "assay_date": "2022-02-13",
-    "sample_number": 3,
     "assay_type_specifications": {
         "assay_type": "sequencing",
         "sequencing_assay_specifications": {

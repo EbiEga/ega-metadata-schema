@@ -5,7 +5,7 @@
     "title": "EGA study metadata schema",
     "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Study metadata object. This object is intended to contain metadata about the compilation of examinations, analyses or critical inspection of a particular subject. In other words, a Study is a container of experiments and analyses of any nature (including Array data) grouped by a common goal or investigation. They often draw together data from a range of datasets and are represented in publication. For instance, an example would be a case-control study on cancer patients and healthy individuals. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/studies)",
-    "required": ["object_id", "object_title", "study_design"],
+    "required": ["object_id", "object_title", "study_type", "study_designs"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -48,73 +48,26 @@
         "examples": [ "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls." ]
       },
 
-      "study_design": {
-        "type": "object",
-        "title": "Study design",
-        "description": "Node to present a controlled vocabulary for expressing the overall purpose of the study with certain keywords.",
-        "required": ["study_type"],
+      "study_type": {
+        "type": "string",
+        "title": "Study type",
+        "description": "Type of the study, expressing the overall purpose of the study. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition. The CV was inherited from ENA's study types.",
+        "enum": ["whole genome sequencing", "metagenomics", "transcriptome analysis", "resequencing", "epigenetics", "synthetic genomics", "forensic", "paleo-genomics", "gene regulation", "cancer genomics", "population genomics", "RNASeq", "exome sequencing", "pooled clone sequencing"],
+        "meta:enum": ["whole genome sequencing__topic:3673: laboratory technique to sequence the complete DNA sequence of an organism's genome at a single time", "metagenomics__topic:3174: The study of genetic material recovered from environmental samples, and associated environmental data", "transcriptome analysis__EFO:0009865: sequencing and characterization of transcription elements", "resequencing__operation:3923: Laboratory experiment to identify the differences between a specific genome (of an individual) and a reference genome (developed typically from many thousands of individuals). WGS re-sequencing is used as golden standard to detect variations compared to a given reference genome, including small variants (SNP and InDels) as well as larger genome re-organisations (CNVs, translocations, etc.). ows re-sequencing of complete genomes of any given organism with high resolution and high accuracy", "epigenetics__topic:3295: study of heritable changes, for example in gene expression or phenotype, caused by mechanisms other than changes in the DNA sequence", "synthetic genomics: Sequencing of modified, synthetic, or transplanted genomes", "forensic__OMIT:0025593: genetic samples to help identify crime victims, perpetrators, or family relationships", "paleo-genomics__topic:3943: The reconstruction and analysis of genomic information in extinct species", "gene regulation__topic:0204: The regulation of gene expression", "cancer genomics: study of cancer genomics", "population genomics__topic:3796: Large-scale study (typically comparison) of DNA sequences of populations", "RNASeq__EFO:0008896: a method that involves purifying RNA and making cDNA, followed by high-throughput sequencing", "exome sequencing__EFO:0005396: exome sequencing, also known as whole exome sequencing (WES), is a genomic technique for sequencing all of the protein-coding regions of genes in a genome (known as the exome). Exons (the subset of DNA that encodes proteins) are selected, and the exonic DNA is then sequenced using any high-throughput DNA sequencing technology", "pooled clone sequencing__EFO:0003741: An assay in which DNA is the input molecule derived from pooled clones (for example BACs and Fosmids) is sequenced using high throughput technology using shotgun methodology"],
+        "examples": [ "transcriptome analysis" ]
+      },
+
+      "study_designs": {
+        "type": "array",
+        "title": "Study-designs array",
+        "description": "List of study designs (a.k.a. experimental designs). Contains specific keywords (e.g. 'RNA stability design') as items that can be associated to the study, providing an overall view of the method of investigating particular types of research questions or solving particular types of problems.",
         "additionalProperties": false,
-        "properties": {
-          "study_type": { 
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/study-or-dataset-type-list" 
-          },
-          "new_study_type": {
-            "type": "string",
-            "title": "New study type",
-            "description": "A user-defined free-form term that globally describes the type of the study. Use only when the 'study_type' controlled vocabulary does not contain it, providing 'other' as such.",
-            "pattern": ".+",
-            "examples": [ "extra-terrestrial biomaterial analysis" ]
-          },
-          "additional_keywords_list": {
-            "type": "array",
-            "title": "List of additional keywords of the study",
-            "description": "A list consisting in user-defined keywords that are directly related to the overall purpose of the study, other than the main study type. Can be used to call out study records in searches or displays.",
-            "minItems": 1,
-            "additionalProperties": false,
-            "items": { 
-              "type": ["string"],
-              "title": "Individual study keyword",
-              "description": "One individual keyword of the set.",
-              "examples": [ "whole genome sequencing", "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
-            }
-          }
-        },
-        "allOf": [
-          {
-            "if": {
-              "title": "If the study_type is 'other'",
-              "required": ["study_type"],
-              "properties": {
-                "study_type": {
-                  "enum": ["other"]
-                }
-              }
-            },
-            "then": {
-              "title": "Then the new_study_type has to be present",
-              "required": ["new_study_type"]
-            }
-          },
-          {
-            "if": {
-              "title": "If the study_type is NOT 'other'",
-              "required": ["study_type"],
-              "properties": {
-                "study_type": {
-                  "not": {
-                    "enum": ["other"]
-                  }                  
-                }
-              }
-            },
-            "then": {
-              "title": "Then the new_study_type should NOT be present",
-              "properties": {
-                "new_study_type": false
-              }
-            }
-          }
-        ]
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "title": "One study design",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/study-design-keywords"
+        }
       },
 
       "study_relationships": {
