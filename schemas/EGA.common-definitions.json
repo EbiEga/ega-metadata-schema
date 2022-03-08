@@ -101,14 +101,16 @@
         "properties": {
           "filename": {
             "type": "string",
-            "title": "Filename [data:1050]",
+            "title": "Filename",
+            "meta:property_curie": "data:1050",
             "description": "The full name of a file, including all of their file extensions (e.g. .gpg, .md5...), that identifies the file (e.g. 'my-bam-file.bam.gpg').",
             "pattern": "^[^<>:;,?\"*|]+$",
             "examples": [ "my-bam-file.bam.gpg" ]
           },
           "filetype": {
             "type": "string",
-            "title": "Filetype [NCIT:C172272]",
+            "title": "Filetype",
+            "meta:property_curie": "NCIT:C172272",
             "description": "The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "required": ["filetype_id"],
             "additionalProperties": false,
@@ -117,7 +119,8 @@
           },
           "checksum_method": {
             "type": "string",
-            "title": "Checksum method ID [ChecksumAlgorithm]",
+            "title": "Checksum method ID",
+            "meta:property_curie": "REPR:ChecksumAlgorithm",
             "description": "Node containing both the ID (MD5 or SHA-256), describing the method which yields the checksum from a data input for the purpose of detecting errors. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "additionalProperties": false,
             "enum": ["MD5", "SHA-256"],
@@ -217,7 +220,8 @@
         "properties": {
           "protocol_name": {
             "type": "string",
-            "title": "Name of the protocol [NCIT:C42614]",
+            "title": "Name of the protocol",
+            "meta:property_curie": "NCIT:C42614",
             "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.",
             "minLength": 1,
             "examples": [ "myProtocol-13", "Treatment for leukemia patients C30", "Sample collection from infected patients" ]
@@ -248,7 +252,8 @@
             "properties": {
               "protocol_type": {
                 "type": "string",
-                "title": "Type of protocol [OBI:0000272]",
+                "title": "Type of protocol",
+                "meta:property_curie": "OBI:0000272",
                 "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
                 "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "nucleic acid sequencing", "sample collection", "single cell isolation", "treatment", "data transformation"],
                 "meta:enum": ["High Content Screen (HCS)__EFO:0007570", "Conversion__EFO:0005520", "Delivery method_EFO:0000395", "Dissection__EFO:0005519", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Extraction__EFO:0002944", "Gene expression__EFO:0003788", "Growth__EFO:0003789", "Hybridization__EFO:0003815", "Hydrolysis collection__EFO:0010892", "Labelling__EFO:0003813", "Nucleic acid library construction__EFO:0004184", "Nucleic acid sequencing__EFO:0004170", "Sample collection__EFO:0005518", "Single cell isolation__EFO:0010214", "Treatment__EFO:0003969", "Data transformation__OBI:0200000"]
@@ -294,14 +299,16 @@
 
           "protocol_instrument": {
             "type": "array",
-            "title": "Protocol instrument array [EFO:0000548]",
+            "title": "Protocol instrument array",
+            "meta:property_curie": "EFO:0000548",
             "description": "Array of instruments used in the protocol.",
             "additionalProperties": false,
             "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "string",
-              "title": "Instrument used in the protocol [EFO:0000548]",
+              "title": "Instrument used in the protocol",
+              "meta:property_curie": "EFO:0000548",
               "description": "Free form text to specify the device, which provides a mechanical or electronic function, and was used by the performer of the protocol. We highly recommend the usage of ontologized terms (e.g. 'Oligonucleotide synthesizer') from the [Experimental Factor Ontology (EFO)](http://www.ebi.ac.uk/efo/EFO_0000548) along their CURIEs between square brackets (e.g. '[OBI:0400113]').",
               "minLength": 1,
               "examples": ["Computer [OBI:0400107]", "Oligonucleotide synthesizer [OBI:0400113]", "Sonicator [OBI:0400114]"]             
@@ -310,14 +317,16 @@
 
           "protocol_software": {
             "type": "array",
-            "title": "Protocol software array [IAO:0000010]",
+            "title": "Protocol software array",
+            "meta:property_curie": "IAO:0000010",
             "description": "Array of software descriptions used in the protocol.",
             "additionalProperties": false,
             "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "string",
-              "title": "Software descriptions used in the protocol [IAO:0000010]",
+              "title": "Software descriptions used in the protocol",
+              "meta:property_curie": "IAO:0000010",
               "description": "Free form text to specify the programs and other operating information (including bespoken scripts) used by a computer that were used by the performer of the protocol. Include the version of the program, if applicable. We highly recommend the usage of ontologized terms (e.g. 'SAMtools') from the [Software Ontology (SWO)](https://www.ebi.ac.uk/ols/ontologies/swo) along their versions (e.g. 'v3.0.1') and CURIEs between square brackets (e.g. '[SWO:1100143]').",
               "minLength": 1,
               "examples": ["SAMtools v3.0.1 [SWO:1100143]", "MATLAB [SWO:0000005]"]         
@@ -326,7 +335,8 @@
           
           "protocol_description": {
             "type": "string",
-            "title": "Description of the protocol [NCIT:C25365]",
+            "title": "Description of the protocol",
+            "meta:property_curie": "NCIT:C25365",
             "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.",
             "examples": [ "First tilt the cell culture flask... ...and finally let it still for 2 hours.", "Patients were given a ketogenic diet for 3 weeks at intervals consisting in..." ]
           }
@@ -1216,7 +1226,8 @@
 
       "biological_sex": {
         "type": "string",
-        "title": "Biological sex of the individual [PATO:0000047]",
+        "title": "Biological sex of the individual",
+        "meta:property_curie": "PATO:0000047",
         "description": "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
         "enum": [ "male", "female", "hermaphrodite", "unknown" ],
         "meta:enum": [ "male__PATO:0000384: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.", "female__PATO:0000383: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.", "hermaphrodite__PATO:0001340: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.", "unknown__: The biological sex is unknown." ],
@@ -1225,7 +1236,8 @@
 
       "experimental_condition_descriptor": {
         "type": "object",
-        "title": "Experimental condition [XCO:0000000]",
+        "title": "Experimental condition",
+        "meta:property_curie": "XCO:0000000",
         "description": "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment. We highly recommend the usage of ontologies to describe experimental conditions (search at 'https://www.ebi.ac.uk/ols/ontologies/efo').",
         "additionalProperties": false,
         "required": ["experimental_condition_term"],
@@ -1270,20 +1282,23 @@
         "properties": {
           "taxon_id": {
             "type": "string",
-            "title": "Taxon identifier [APOLLO_SV:00000203]",
+            "title": "Taxon identifier",
+            "meta:property_curie": "APOLLO_SV:00000203",
             "description": "Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: https://www.ncbi.nlm.nih.gov/taxonomy). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
             "pattern": "^[0-9]{1,7}$",
             "examples": [ "9606" ]
           },
           "scientific_name": {
             "type": "string",
-            "title": "Biologic entity classification scientific name [NCIT:C43459]",
+            "title": "Biologic entity classification scientific name",
+            "meta:property_curie": "NCIT:C43459",
             "description": "The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').",
             "examples": [ "homo sapiens" ]
           },
           "common_name": {
             "type": "string",
-            "title": "Biologic entity classification common name [NCIT:C164690]",
+            "title": "Biologic entity classification common name",
+            "meta:property_curie": "NCIT:C164690",
             "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
             "examples": [ "human" ]
           }
@@ -1391,7 +1406,8 @@
 
       "study-design-keywords": {
         "type": "string",
-        "title": "Enumeration of design keywords [EFO:0001426]",
+        "title": "Enumeration of design keywords",
+        "meta:property_curie": "EFO:0001426",
         "description": "An object containing the enumeration of multiple study-design keywords, to be inherited at their respective nodes. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
         "enum": ["RNA stability design", "binding site identification design", "case control design", "cell component comparison design", "cell cycle design", "cell type comparison design", "cellular modification design", "clinical history design", "compound treatment design", "cross sectional design", "development or differentiation design", "disease state design", "dose response design", "twin design", "genetic modification design", "genotype design", "growth condition design", "imprinting design", "injury design", "innate behavior design", "organism part comparison design", "organism status design", "pathogenicity design", "population based design", "sex design", "species design", "stimulus or stress design", "strain or line design", "time series design"],
         "meta:enum": ["RNA stability design__EFO:0001783", "binding site identification design__EFO:0004664", "case control design__EFO:0001427", "cell component comparison design__EFO:0001743", "cell cycle design__EFO:0001744", "cell type comparison design__EFO:0001745", "cellular modification design__EFO:0004666", "clinical history design__EFO:0001780", "compound treatment design__EFO:0001755", "cross sectional design__EFO:0001428", "development or differentiation design__EFO:0001746", "disease state design__EFO:0001756", "dose response design__EFO:0001757", "twin design__EFO:0001431", "genetic modification design__EFO:0001758", "genotype design__EFO:0001748", "growth condition design__EFO:0001759", "imprinting design__EFO:0001747", "injury design__EFO:0001760", "innate behavior design__EFO:0001749", "organism part comparison design__EFO:0001750", "organism status design__EFO:0001751", "pathogenicity design__EFO:0001761", "population based design__EFO:0001430", "sex design__EFO:0001752", "species design__EFO:0001753", "stimulus or stress design__EFO:0001762", "strain or line design__EFO:0001754", "time series design__EFO:0001779"],
@@ -1474,13 +1490,15 @@
         "properties": {
           "gene_symbol": {
             "type": "string",
-            "title": "Gene Symbol [data:1026]",
+            "title": "Gene Symbol",
+            "meta:property_curie": "data:1026",
             "description": "The official gene symbol. It is typically derived from the gene name. This optional field exists to provide the common identifier of the gene. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
             "examples": ["TAF1", "TP53", "BRAF", "16S"]
           },
           "gene_id_curie": {
             "type": "string",
-            "title": "Gene CURIE ID [data:2295]",
+            "title": "Gene CURIE ID",
+            "meta:property_curie": "data:2295",
             "description": "A unique (and typically persistent) identifier of a gene in a database, that is (typically) different to the gene name/symbol (e.g. HGNC:11535 for gene TAF1). The identifier has to follow CURIE format. Additionally, there are 2 types of allowed databases to reference: NCBIGene and HGNC. Other archives' accessions (e.g. ensembl:ENSDARG00000035330) can be cross referenced with NCBIGene to obtain its gene ID (e.g. ncbigene:555452).",            
             "allOf": [
               {
@@ -1505,13 +1523,15 @@
 
       "ncbi_assembly_descriptor": {
         "type": "object",
-        "title": "NCBI's Assembly descriptor [topic:0196]",
+        "title": "NCBI's Assembly descriptor",
+        "meta:property_curie": "topic:0196",
         "description": "Node describing a sequence assembly referenced in [NCBI's Assembly database](https://www.ncbi.nlm.nih.gov/assembly). Assembly is a database providing information on the structure of assembled genomes, assembly names and other meta-data, statistical reports, and links to genomic sequence data. An assembly is defined as the set of chromosomes, unlocalized and unplaced (sometimes called 'random') and alternate sequences used to represent an organism's genome. Assemblies are constructed from 1 or more assembly units.",
         "additionalProperties": false,
         "properties": {
           "assembly_name": {
             "type": "string",
-            "title": "Assembly common name [OBI:0001948]",
+            "title": "Assembly common name",
+            "meta:property_curie": "OBI:0001948",
             "description": "A free-text common name (e.g. 'GRCh38') that is used to denote the sequence assembly.",
             "minLength": 1,
             "examples": [ "GRCh38.p14", "GRCh38", "GRCh37.p13", "GRCh37" ]
@@ -1530,7 +1550,8 @@
           },
           "assembly_unit_name": {
             "type": "string",
-            "title": "Assembly unit common name [OBI:0001948]",
+            "title": "Assembly unit common name",
+            "meta:property_curie": "OBI:0001948",
             "description": "A free-text common name (e.g. 'chr17') that is used to denote the sequence assembly unit.",
             "minLength": 1,
             "examples": [ "Chromosome 2", "MT", "chr17", "chr20", "18" ]
@@ -1563,12 +1584,14 @@
 
       "genomic_sequence_descriptor": {
         "type": "object",
-        "title": "Genomic sequence descriptor [GENO:0000960]",
+        "title": "Genomic sequence descriptor",
+        "meta:property_curie": "GENO:0000960",
         "description": "Node used to describe with sufficient detail a genomic sequence (e.g. Human Chromosome X: 71366222-71532374 forward strand), defined as a biological sequence that is of genomic origin (i.e. carries sequence from the genome of a cell or organism).",
         "additionalProperties": false,
         "properties": {
           "assembly_descriptor": {
-            "title": "Assembly descriptor [topic:0196]",
+            "title": "Assembly descriptor",
+            "meta:property_curie": "topic:0196",
             "description": "Node to identify the assembly of the locus of interest.",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
           },
@@ -1600,7 +1623,8 @@
 
       "sequence_coordinates": {
         "type": "object",
-        "title": "Sequence coordinates [data:2012]",
+        "title": "Sequence coordinates",
+        "meta:property_curie": "data:2012",
         "description": "A position in a map (for example a genetic map), either a single position (e.g. 71366222) or a region interval (e.g. 71366222-71532374). Used to define coordinates within an assembly unit.",
         "additionalProperties": false,
         "properties": {
@@ -1610,7 +1634,8 @@
           },
           "sequence_interval": {
             "type": "object",
-            "title": "Sequence interval [GENO:0000902]",
+            "title": "Sequence interval",
+            "meta:property_curie": "GENO:0000902",
             "description": "The location of a sequence feature in a genome, defined by its start (e.g. 71366222) and end (e.g. 71532374) position on some reference genomic coordinate system. Positions are always represented by contiguous spans using interbase coordinates or coordinate ranges. Both coordinates are inclusive: the sequence bounds are included in the described genomic feature. In other words, if the sequence interval is 71366222-71532374, both 71366222 and 71532374 coordinates are included in the feature.",
             "required": ["start", "end"],
             "additionalProperties": false,
@@ -1648,7 +1673,8 @@
 
       "nucleic_acid_sequence": {
         "type": "string",
-        "title": "Nucleic acid sequence [data:2977]",
+        "title": "Nucleic acid sequence",
+        "meta:property_curie": "data:2977",
         "description": "Sequence of characters representing a specific nucleic (i.e. molecular species - e.g. Adenine) or groupings of these (through ambiguity codes), using [one-letter IUPAC abbreviations](https://en.wikipedia.org/wiki/International_Union_of_Pure_and_Applied_Chemistry#Amino_acid_and_nucleotide_base_codes).",
         "pattern": "^([\\.-]*[ACGTURYKMSWBDHVNX]+[\\.-]*)+$",
         "examples": ["ACTGCCG", "CTGCGCGCGCT", "KM-AGT-X-N"]        
@@ -1819,14 +1845,16 @@
 
       "assay_technology_descriptor": {
         "type": "object",
-        "title": "Assay technology [EFO:0000548]",
+        "title": "Assay technology",
+        "meta:property_curie": "EFO:0000548",
         "description": "Metadata of the assay instrument (e.g. sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) of an assay.",
         "required": ["assay_instrument", "assay_instrument_platform"],
         "additionalProperties": false,
         "properties": {
           "assay_instrument": {
             "type": "string",
-            "title": "Assay's instrument category [EFO:0002773]",
+            "title": "Assay's instrument category",
+            "meta:property_curie": "EFO:0002773",
             "description": "The general categories (e.g. sequencers) in which assay instruments are categorized. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "enum": [ "array", "sequencer" ],
             "meta:enum": ["[Array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698), an instrument which consists of nucleic acid or protein molecules bound to a substrate", "[Sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739), an instrument that determines the order of nucleic acids in their sequences."]
@@ -1880,7 +1908,7 @@
         "additionalProperties": false,
         "items": {
           "type": "object",
-          "title": "Spot decode spec [spot_decode_spec]",
+          "title": "Spot decode spec",
           "description": "",
           "additionalProperties": false,
           "required": ["read_specs"],
@@ -2022,7 +2050,8 @@
       
       "type_of_data": {
         "type": "string",
-        "title": "Type of data [IAO:0000100]",
+        "title": "Type of data",
+        "meta:property_curie": "IAO:0000100",
         "description": "Type of data an experiment or analysis can produce (i.e. output), or an analysis can use as input. For example, in a sequencing experiment the output data would be 'genomic data', while that same type of data could be the input type of data for an analysis, which would then output 'processed sequencing data'. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
         "enum": ["gene list", "genomic data", "metagenomic data", "metatranscriptomic data", "synthetic DNA data", "transcriptomic data", "viral RNA data", "processed sequencing data", "processed array data"],
         "meta:enum": ["gene list__OBI_0000118", "genomic data__EFO_0004600", "metagenomic data__EFO_0004602", "metatranscriptomic data__EFO_0004603", "synthetic DNA data__EFO_0004604", "transcriptomic data__EFO_0004601", "viral RNA data__EFO_0004605", "processed sequencing data__EFO:0004663: raw sequencing data (e.g. FastQ files) were processed in any way (e.g. normalization, noise reduction, alignment...) and transformed into processed genotype data files [EFO:0004663].", "processed array data__EFO:0004096: raw array data (e.g. CEL files) were processed in any way (e.g. normalization, noise reduction...) and transformed into processed array data files [EFO:0004096]."]
@@ -2043,7 +2072,8 @@
 
       "uberon-anatomical-entity": {
         "type": "string",
-        "title": "UBERON's Anatomical entity [UBERON:0001062]",
+        "title": "UBERON's Anatomical entity",
+        "meta:property_curie": "UBERON:0001062",
         "description": "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species. Term shall be one of UBERON's ontologized terms beneath anatomical entity [UBERON:0001062]. Search for yours at: http://purl.obolibrary.org/obo/UBERON_0001062. It can be used to describe a sampling site or the morphological site of a disease, for example. #! To be used as an ontology validation node in the future.",
         "examples": ["liver", "gut wall", "nasal cavity" ]
       }

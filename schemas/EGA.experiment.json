@@ -80,7 +80,8 @@
 
       "assay_type_descriptor": {
         "type": "object",
-        "title": "Type of assay [OBI:0000070]",
+        "title": "Type of assay",
+        "meta:property_curie": "OBI:0000070",
         "description": "Node defining the type of assay applicable to the experiment. Consists in an overall category (based on the purpose and technology of the instrument [EFO:0002773]) and its possible subtype. Both types and subtypes are taken from controlled vocabulary (CV) lists, stored in the controlled_vocabulary_schemas folder. For example, in a single cell RNA-seq assay the assay type would be 'assay by high throughput sequencer' [EFO:0002697] and its subtype 'RNA-seq of coding RNA from single cells' [EFO:0005684].",
         "additionalProperties": false,
         "required": ["assay_type"],
@@ -193,7 +194,8 @@
 
       "types_of_output_data": {
         "type": "array",
-        "title": "Types of output data [IAO:0000100]",
+        "title": "Types of output data",
+        "meta:property_curie": "IAO:0000100",
         "description": "Types of data the experiment produces.",
         "uniqueItems": true,
         "items": {
@@ -216,7 +218,8 @@
             "properties": {
               "array_labels": {
                 "type": "array",
-                "title": "Array label of the experiment [EFO:0000562]",
+                "title": "Array label of the experiment",
+                "meta:property_curie": "EFO:0000562",
                 "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
                 "additionalProperties": false,
                 "uniqueItems": true,

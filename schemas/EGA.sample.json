@@ -73,26 +73,30 @@
 
       "sample_collection": {
         "type": "object",
-        "title": "Sample collection descriptor [OBI:0000659]",
+        "title": "Sample collection descriptor",
+        "meta:property_curie": "OBI:0000659",
         "description": "Node containing the provenance details (when and where) of the sample. This information does not include the whole sample collection protocol (expected at experiment's protocols), only the sampling date (when the sample was taken from the individual) and site (where was it taken within the individual).",
         "additionalProperties": false,
         "properties": {
           "sample_collection_date": {
             "type": "string",
-            "title": "Date of the sample collection [EFO:0000689]",
+            "title": "Date of the sample collection",
+            "meta:property_curie": "EFO:0000689",
             "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. If the protocols are long enough, the date shall be the day the collection concluded.",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
           },
           "sample_collection_site": {
             "type": "string",
-            "title": "Sampling site [EFO:0000688]",
+            "title": "Sampling site",
+            "meta:property_curie": "EFO:0000688",
             "description": "A site from which a sample, i.e. a statistically representative of the whole, is extracted from the whole. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your sample collection site at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/uberon-anatomical-entity",
             "examples": ["nasal cavity", "liver", "gut wall", "oral cavity" ]
           },
           "sample_collection_site_curie": {
             "type": "string",
-            "title": "CURIE of the sampling site [EFO:0000688]",
+            "title": "CURIE of the sampling site",
+            "meta:property_curie": "EFO:0000688",
             "description": "Ontology term in CURIE format (e.g. 'UBERON:0000167') of the sampling site. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your ontologized term at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'UBERON:0001707'; in a liver biopsy it would be 'UBERON:0002107'.",
             "examples": [ "UBERON:0000167", "UBERON:0001707", "UBERON:0000328", "UBERON:0002107" ],
             "allOf": [
