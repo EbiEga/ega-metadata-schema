@@ -5,7 +5,7 @@
     "title": "EGA analysis metadata schema",
     "meta:version": "0.0.0",
     "description": "Empty for the moment.",
-    "required": ["object_id", "analysis_protocols", "analysis_type_specifications" ],
+    "required": ["object_id", "analysis_type_specifications" ],
     "additionalProperties": false,
     "properties": {
       "object_id": {

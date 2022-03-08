@@ -204,7 +204,7 @@
       "experiment_type_specifications": {
         "type": "object",
         "title": "Experiment type specifications",
-        "description": "Node containing different sets of fields that depend on the specific experiment type. The main categories of experiment types follow a similar pattern as the assay technology: either array experiments (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its Array Design Format (ADF) will be expected. Having this modular experiment type-related node allows for easy additions of new technology-specific requirements.",
+        "description": "Node containing additional attributes to describe the experiment, either array experiments (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). For example, if an array was used, its Array Design Format (ADF) will be expected.",
         "additionalProperties": false,
         "properties": {
           "array_experiment": {
