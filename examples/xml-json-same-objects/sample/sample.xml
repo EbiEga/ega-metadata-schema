@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<SAMPLE_SET>
+  <SAMPLE alias="LivEBI2" broker_name="EGA" center_name="EBI">
+    <TITLE>LivEBI2</TITLE>
+    <SAMPLE_NAME>
+      <TAXON_ID>9606</TAXON_ID>
+      <SCIENTIFIC_NAME>Homo sapiens</SCIENTIFIC_NAME>
+      <COMMON_NAME>human</COMMON_NAME>
+    </SAMPLE_NAME>
+    <DESCRIPTION>Dissected liver sample</DESCRIPTION>
+    <SAMPLE_ATTRIBUTES>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>subject_id</TAG>
+        <VALUE>65</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>case_or_control</TAG>
+        <VALUE>case</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>gender</TAG>
+        <VALUE>female</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>organism_part</TAG>
+        <VALUE>lung</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>cell_line</TAG>
+        <VALUE>not applicable</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>region</TAG>
+        <VALUE>ZAF</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>phenotype</TAG>
+        <VALUE>Liver metastasis</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>bio_sample_id</TAG>
+        <VALUE>5</VALUE>
+      </SAMPLE_ATTRIBUTE>
+      <SAMPLE_ATTRIBUTE>
+        <TAG>ENA-CHECKLIST</TAG>
+        <VALUE>ERC000026</VALUE>
+      </SAMPLE_ATTRIBUTE>
+    </SAMPLE_ATTRIBUTES>
+  </SAMPLE>
+</SAMPLE_SET>

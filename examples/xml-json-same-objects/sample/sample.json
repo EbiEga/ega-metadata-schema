@@ -1,0 +1,45 @@
+{
+    "object_id": {
+        "alias" : "LivEBI2", 
+        "center_name" : "EBI"
+    },
+    "object_title": "LivEBI2",
+    "object_description": "Dissected liver sample",
+    "organism_descriptor": {
+        "taxon_id": "9606",
+        "scientific_name": "homo sapiens",
+        "common_name": "human"
+    },
+    "minimal_public_attributes": {
+        "subject_id": "65",
+        "biological_sex": "female",
+        "experimental_condition": {
+            "experimental_condition_term": "Liver metastasis"
+        }
+    },
+    "sample_collection": {
+        "sample_collection_site": "lung"
+    },
+    "sample_attributes": [
+        {
+            "tag": "case_or_control",
+            "value": "case"
+        },
+        {
+            "tag": "cell_line",
+            "value": "not applicable"
+        },
+        {
+            "tag": "region",
+            "value": "ZAF"
+        },
+        {
+            "tag": "bio_sample_id",
+            "value": "5"
+        },
+        {
+            "tag": "ENA-CHECKLIST",
+            "value": "ERC000026"
+        }
+    ]
+}
