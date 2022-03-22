@@ -1,20 +1,24 @@
-# EGA analysis metadata schema Schema
+# EGA Controlled Vocabulary (CV) for assay subtypes by array \[EFO:0002696] Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json
 ```
 
-Empty for the moment.
+Controlled Vocabulary (CV) list for assay subtypes by array: any ontologized term for a subtype (i.e. child ontology) of an array assay \[EFO:0002696].
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.analysis.json](../out/EGA.analysis.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.cv.assay_subtype_by_array.json](../out/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json "open original schema") |
 
-## EGA analysis metadata schema Type
+## EGA Controlled Vocabulary (CV) for assay subtypes by array \[EFO:0002696] Type
 
-`object` ([EGA analysis metadata schema](ega-3.md))
+`string` ([EGA Controlled Vocabulary (CV) for assay subtypes by array \[EFO:0002696\]](ega-3.md))
 
-# EGA analysis metadata schema Properties
+## EGA Controlled Vocabulary (CV) for assay subtypes by array \[EFO:0002696] Constraints
 
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value      | Explanation |
+| :--------- | :---------- |
+| `"MC-4C"`  |             |
+| `"UMI-4C"` |             |

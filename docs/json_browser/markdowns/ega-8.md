@@ -1,25 +1,60 @@
-# EGA object-set metadata schema Schema
+# EGA DAC metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum lenght of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schema_descriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Data Access Committee (DAC) metadata object. This object is intended to contain metadata about the body of one or more named individuals who are responsible for data release to external requestors based on consent and/or National Research Ethics terms. A DAC is typically formed, but not necessarily, from the same organization that collected the samples and generated any associated files/analyses. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/submission/data_access_committee>)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.object-set.json](../out/EGA.object-set.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                 |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.DAC.json](../out/EGA.DAC.json "open original schema") |
 
-## EGA object-set metadata schema Type
+## EGA DAC metadata schema Type
 
-`object` ([EGA object-set metadata schema](ega-8.md))
+`object` ([EGA DAC metadata schema](ega-8.md))
 
-# EGA object-set metadata schema Properties
+# EGA DAC metadata schema Properties
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                             |
-| :-------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [schema_descriptor](#schema_descriptor) | `object` | Optional | cannot be null | [EGA object-set metadata schema](ega-4-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json#/properties/schema_descriptor")           |
-| [object_array](#object_array)           | `array`  | Required | cannot be null | [EGA object-set metadata schema](ega-8-properties-array-containing-metadata-objects.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json#/properties/object_array") |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                          |
+| :---------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object_id](#object_id)                   | Merged   | Required | cannot be null | [EGA DAC metadata schema](ega-8-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_id")               |
+| [schema_descriptor](#schema_descriptor)   | `object` | Optional | cannot be null | [EGA DAC metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/schema_descriptor")     |
+| [object_title](#object_title)             | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-title-of-the-dac.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_title")             |
+| [object_description](#object_description) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-description-of-the-dac.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_description") |
+| [dac_contacts](#dac_contacts)             | `object` | Required | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-contacts-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts")         |
+| [dac_relationships](#dac_relationships)   | `array`  | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_relationships")       |
+| [dac_attributes](#dac_attributes)         | `array`  | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_attributes")      |
+
+## object_id
+
+Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an DAC (by using EGA-DAC-id-pattern)
+
+`object_id`
+
+*   is required
+
+*   Type: `object` ([Object's IDs block](ega-8-properties-objects-ids-block.md))
+
+*   cannot be null
+
+*   defined in: [EGA DAC metadata schema](ega-8-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_id")
+
+### object_id Type
+
+`object` ([Object's IDs block](ega-8-properties-objects-ids-block.md))
+
+all of
+
+*   any of
+
+    *   [Check core IDs: combination of Alias and Center name](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+
+    *   [Check core IDs: EGA accession ID](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+
+    *   [Check core IDs: external accessions](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+
+*   [Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct.md "check type definition")
 
 ## schema_descriptor
 
@@ -29,34 +64,122 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-4-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json#/properties/schema_descriptor")
+*   defined in: [EGA DAC metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/schema_descriptor")
 
 ### schema_descriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
-## object_array
+## object_title
 
-The array per se containing the list of metadata objects to be validated. For each type of metadata object (e.g. 'sample') its corresponding schema (e.g. '<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#>') is applied conditionally based on the value of schema_descriptor\[object_type] within each object. This way this array can contain any combination of metadata objects and each will be validated individually against the correct schemas. Notice how the 'schema_descriptor' is a required node for the object-set to be used.
+Short free-form text that can be used to call out DAC records in searches or displays.
 
-`object_array`
+`object_title`
 
-*   is required
+*   is optional
 
-*   Type: an array of merged types ([Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object.](ega-8-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object.md))
+*   Type: `string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
 
 *   cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-8-properties-array-containing-metadata-objects.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json#/properties/object_array")
+*   defined in: [EGA DAC metadata schema](ega-8-properties-title-of-the-dac.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_title")
 
-### object_array Type
+### object_title Type
 
-an array of merged types ([Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object.](ega-8-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object.md))
+`string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
 
-### object_array Constraints
+### object_title Examples
+
+```json
+"EBI Consortium Data Access Committee"
+```
+
+## object_description
+
+An in-depth description of the DAC, including its overall purpose or nature of studies it governs.
+
+`object_description`
+
+*   is optional
+
+*   Type: `string` ([Description of the DAC](ega-8-properties-description-of-the-dac.md))
+
+*   cannot be null
+
+*   defined in: [EGA DAC metadata schema](ega-8-properties-description-of-the-dac.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_description")
+
+### object_description Type
+
+`string` ([Description of the DAC](ega-8-properties-description-of-the-dac.md))
+
+### object_description Examples
+
+```json
+"EBI DAC governing data from projects related to human microbiome with data provenance..."
+```
+
+## dac_contacts
+
+Object containing the main contact's and optional additional contact's details.
+
+`dac_contacts`
+
+*   is required
+
+*   Type: `object` ([DAC contacts' details](ega-8-properties-dac-contacts-details.md))
+
+*   cannot be null
+
+*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-contacts-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts")
+
+### dac_contacts Type
+
+`object` ([DAC contacts' details](ega-8-properties-dac-contacts-details.md))
+
+## dac_relationships
+
+Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a DAC) the EGA.
+
+`dac_relationships`
+
+*   is optional
+
+*   Type: `object[]` ([EGA Relationships object](ega-12-definitions-ega-relationships-object.md))
+
+*   cannot be null
+
+*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_relationships")
+
+### dac_relationships Type
+
+`object[]` ([EGA Relationships object](ega-12-definitions-ega-relationships-object.md))
+
+### dac_relationships Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+## dac_attributes
+
+Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
+
+`dac_attributes`
+
+*   is optional
+
+*   Type: `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+
+*   cannot be null
+
+*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_attributes")
+
+### dac_attributes Type
+
+`object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+
+### dac_attributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
