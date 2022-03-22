@@ -8,320 +8,203 @@
     "object_array": [
         {
             "object_id": {
-                "alias" : "My_10samples_X_from_NM305004", 
-                "center_name" : "EBI-TEST",
-                "ega_accession": "EGAN00000000001"
-            },
-            "object_title": "Buccal swab from COVID+ patient NM305004",
-            "object_description": "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to our labs in California",
-            "organism_descriptor": {
-                "taxon_id": "9606",
-                "scientific_name": "homo sapiens",
-                "common_name": "human"
-            },
-            "minimal_public_attributes": {
-                "subject_id": "donor-NM305004",
-                "biological_sex": "male",
-                "experimental_condition": {
-                    "experimental_condition_term": "treated with cisplatin",
-                    "experimental_condition_curie": "XCO:0000398",
-                    "experimental_condition_description": "Treated with cisplatin, being part of the 'case' group."
-                }
-            },
-            "sample_collection_date": "2021-12-20",
-            "sample_grouping": {
-                "sample_group_boolean": true,
-                "sample_number": 10
-            },
-            "sample_relationships": [
-                {
-                    "r_type": {
-                        "r_type_id": "develops_from"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "alias": "My_10samples_X_from_NM305004",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "sample"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "ega_accession": "EGAI00002045411"
-                        },
-                        "object_type": "individual"                
-                    }
-                },
-                {
-                    "r_type": {
-                        "r_type_id": "same_as"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "external_accessions": [
-                                {
-                                    "external_accession": "SAMEA7616999",
-                                    "accession_archive": "biosample",
-                                    "accession_label": "test relationship"
-                                }
-                            ]
-                        },
-                        "object_type": "external_accession"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias": "My_10samples_X_from_NM305004",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "sample"
-                    }
-                }
-            ],
-            "sample_attributes": [
-                {
-                    "tag": "age at sample collection",
-                    "value": "25",
-                    "units": "years"
-                },
-                {
-                    "units": "ml",
-                    "tag": "blood volume",
-                    "value": "30"
-                }
-            ],
-            "schema_descriptor": {
-                "object_type": "sample",
-                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
-                "object_schema_version": "0.0.0",
-                "common_schema_version": "0.0.0"
-            }
-        },
-        {
-            "object_id": {
-                "alias" : "MyArrayAssay", 
-                "center_name" : "EBI-TEST",
-                "ega_accession": "EGAA00000000001"
-            },
-            "array_assay_center": "EBI-TEST",
-            "array_assay_date": "2021-06-24",
-            "sample_number": 2,
-            "sample_labels": [
-                {
-                    "label": {
-                        "array_label_id": "Biotin",
-                        "array_label_curie": "CHEBI:15956"
-                        },
-                    "object_id": {
-                        "ega_accession": "EGAN00000000001"
-                    }
-                },
-                {
-                    "label": {
-                        "array_label_id": "Cy3",
-                        "array_label_curie": "CHEBI:37987"
-                        },
-                    "object_id": {
-                        "alias": "MySample_23",
-                        "center_name": "EBI-TEST"
-                    }
-                }
-            ],
-            "array_assay_relationships": [
-                {
-                    "r_type": {
-                        "r_type_id": "referenced_by"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "ega_accession": "EGAA00002045411"
-                        },
-                        "object_type": "ArrayAssay"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias": "my-array-experiment-23",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "ArrayExperiment"
-                    }
-                },
-                {
-                    "r_type": {
-                        "r_type_id": "referenced_by"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "external_accessions": [
-                                {
-                                    "external_accession": "SAMEA7616999",
-                                    "accession_archive": "biosample",
-                                    "accession_label": "test relationship"
-                                }
-                            ]
-                        },
-                        "object_type": "external_accession"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "ega_accession": "EGAA00002045411"
-                        },
-                        "object_type": "ArrayAssay"
-                    }
-                }
-            ],
-            "assay_files": [
-                {
-                    "filename": "myfile1.cel",
-                    "filetype": {
-                        "filetype_id": "CEL",
-                        "filetype_curie": "EFO:0005630"
-                    },
-                    "checksum_method": {
-                        "checksum_method_id": "MD5",
-                        "checksum_method_curie": "NCIT:C171276"                
-                    },
-                    "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
-                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
-                },
-                {
-                    "filename": "myfile2.fasta",
-                    "filetype": {
-                        "filetype_id": "FASTA",
-                        "filetype_curie": "NCIT:C47845"
-                    },
-                    "checksum_method": {
-                        "checksum_method_id": "SHA-256",
-                        "checksum_method_curie": "NCIT:C80226"                
-                    },
-                    "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b",
-                    "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
-                }
-            ],
-            "array_assay_attributes": [
-                {
-                    "tag": "weather_outside",
-                    "value": "chilly and cloudy"
-                    },
-                {
-                    "units": "time_spent",
-                    "tag": "14",
-                    "value": "hours"
-                    },
-                {
-                    "units": "GBP",
-                    "tag": "assay_price",
-                    "value": "800"
-                    }
-            ],
-            "schema_descriptor": {
-                "object_type": "ArrayAssay",
-                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json",
-                "object_schema_version": "0.0.0",
-                "common_schema_version": "0.0.0"
-            }
-        },
-        {
-            "object_id": {
-                "alias" : "NM305004", 
-                "center_name" : "EBI-TEST",
-                "ega_accession": "EGAI00000000001"
-            },
-            "organism_descriptor": {
-                "taxon_id": "9606",
-                "scientific_name": "homo sapiens",
-                "common_name": "human"
-            },
-            "minimal_public_attributes": {
-                "subject_id": "donor-NM305004",
-                "biological_sex": "male",
-                "phenotype": {
-                    "experimental_condition_term": "fibroadenoma",
-                    "experimental_condition_curie": "EFO:1000254"
-                }
-            },
-            "individual_relationships": [
-                {
-                    "r_type": {
-                        "r_type_id": "develops_from"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "ega_accession": "EGAN00000000001"
-                        },
-                        "object_type": "sample"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias": "NM305004",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "individual"               
-                    }
-                }
-            ],
-            "individual_attributes": [
-                {
-                    "tag": "haircolor",
-                    "value": "red"
-                }
-            ],
-            "schema_descriptor": {
-                "object_type": "individual",
-                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
-                "object_schema_version": "0.0.0",
-                "common_schema_version": "0.0.0"
-            }
-        },
-        {
-            "object_id": {
-                "alias" : "MyArrayExperiment_13", 
+                "alias" : "My_ChIP_array_experiment_13", 
                 "center_name" : "EBI-TEST"
             },
-            "object_title": "Testing ArrayExperiment title",
-            "object_description": "Broad description of the testing ArrayExperiment",
-            "technology": {
-                "technology_id": "One-colour microarray",
-                "technology_curie": "EFO:0010939"
+            "object_title": "Example array experiment title",
+            "object_description": "Example array experiment's description of my experiment N13.",
+            "assayed_molecule_type": "DNA",
+            "types_of_output_data": [
+                "genomic data"
+            ],
+            "assay_technology": {
+                "assay_instrument": "array",
+                "assay_instrument_platform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
             },
-            "array_label": [
+            "assay_type_descriptor": {
+                "assay_type": "ChIP-chip by SNP array"
+            },
+            "experiment_type_specifications": {
+                "array_experiment": {
+                    "array_labels": [
+                        {
+                            "array_label_id": "Cy3 dye",
+                            "array_label_curie": "CHEBI:37987",
+                            "label_description": "This label was use to dye the control samples"
+                        },
+                        {
+                            "array_label_id": "Biotin",
+                            "array_label_curie": "CHEBI:15956"
+                        }
+                    ],
+                    "adf_files": [
+                        {
+                            "filename": "myADF-file.xlsx",
+                            "filetype": "XLSX",
+                            "checksum_method": "MD5",
+                            "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
+                            "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
+                        }
+                    ]
+                }
+            },
+            "targeted_loci": [
                 {
-                    "array_label_id": "Cy3 dye",
-                    "array_label_curie": "CHEBI:37987"
+                    "organism_descriptor": {
+                        "taxon_id": "9606",
+                        "scientific_name": "homo sapiens"
+                    },
+                    "loci_descriptor": [
+                        {
+                            "gene_descriptor": {
+                                "gene_symbol": "TP53",
+                                "gene_id_curie": "HGNC:11998"
+                            },
+                            "locus_additional_description": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
+                        },
+                        {
+                            "genomic_sequence_descriptor": { 
+                                "assembly_descriptor": {
+                                    "assembly_name": "GRCh38.p14",
+                                    "ncbi_assembly_accession": "assembly:GCA_000001405.29",
+                                    "assembly_unit_name": "Chromosome 17",
+                                    "ncbi_assembly_unit_accession": "refseq:NC_000017.11"
+                                },
+                                "sequence_coordinates": {
+                                    "sequence_interval": {
+                                        "start": 7669450,
+                                        "end": 7669460
+                                    }
+                                },
+                                "dna_sequence_strand": "forward",
+                                "nucleic_acid_sequence": "CTTGTTCAGTG"
+                            }
+                        },
+                        {
+                            "locus_external_reference": {
+                                "external_accession_curie": "nucleotide:T35715.1",
+                                "accession_label": "EST89992 Human Small intestine Homo sapiens cDNA 5' end"
+                            },
+                            "locus_additional_description": "Additional locus that was placed in the array for SNP scanning for the purpose of individuals identification as tags..."
+                        }
+                    ]
+                }
+            ],
+            "experiment_protocols": [
+                {
+                    "protocol_name": "Patient's blood collection protocol",
+                    "protocol_step_index": 1,
+                    "previous_protocol_step_index": 0,
+                    "protocol_type_descriptor": {
+                        "protocol_type": "sample collection",
+                        "protocol_subtype_curie": "EFO:0005518"
+                    },
+                    "protocol_performers": [ "Addenbrooke's Hospital nurse"],
+                    "protocol_instrument": [ "Syringe [OBI:0000422]", "PAXgene Blood DNA Tube [NCIT:C126393]" ],
+                    "protocol_description": "Total PBMC were collected from blood of HIV-1 patients. H1N1, H3N2, and B mean the influenza virus subtypes (influenza virus H1N1, influenza virus H3N2, and influenza virus B subtypes). HIV+ subjects were stratified as immune responders and immune non-responders post-vaccination (“responders”≥ 4-fold increase of neutralization antibody at Day28/Day0; “non-responders” < 4-fold increase of neutralization antibody at Day28/Day0) to each influenza subtypes. RNA was isolated from the fresh isolated PBMCs on Day0 and Day7 in each responder and non-responder. So, the 0w means at day 0, 1w means at day 7."
                 },
                 {
-                    "array_label_id": "Biotin",
-                    "array_label_curie": "CHEBI:15956"
-                }
-            ],
-            "experimental_design": {
-                "experimental_design_id": "dose response design",
-                "experimental_design_curie": "EFO:0001757"
-            },
-            "array_type": {
-                "array_type_id": "ChIP-chip by array",
-                "array_type_curie": "EFO:0002760"
-            },
-            "assayed_molecule": {
-                "assayed_molecule_id": "DNA assay",
-                "assayed_molecule_curie": "EFO:0001456"
-            },
-            "sample_number": 12,
-            "adf_files": [
+                    "protocol_name": "Extraction of the RNA",
+                    "protocol_step_index": 2,
+                    "previous_protocol_step_index": 1,
+                    "protocol_type_descriptor": {
+                        "protocol_type": "extraction",
+                        "protocol_subtype": "RNA extraction protocol",
+                        "protocol_subtype_curie": "EFO:0010959"
+                    },
+                    "protocol_performers": [ "EGA's Lab Technician group", "Technician N41394"],
+                    "protocol_instrument": [ "QIAGEN RNeasy plus isolation kit" ],
+                    "protocol_description": "QIAGEN RNeasy plus isolation kit was used to isolate RNA from blood."
+                },
                 {
-                    "filename": "myADF-file.xlsx",
-                    "filetype": {
-                        "filetype_id": "XLSX",
-                        "filetype_curie": "format:3620"
+                    "protocol_name": "Protocol to label extracted RNA",
+                    "protocol_step_index": 3,
+                    "previous_protocol_step_index": 2,
+                    "protocol_type_descriptor": {
+                        "protocol_type": "labelling",
+                        "protocol_subtype": "nucleic acid labeling protocol",
+                        "protocol_subtype_curie": "EFO:0003813"
                     },
-                    "checksum_method": {
-                        "checksum_method_id": "MD5",
-                        "checksum_method_curie": "NCIT:C171276"                
+                    "protocol_performers": [ "EGA's Lab Technician group", "Technician N41394" ],
+                    "protocol_instrument": [ "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]" ],
+                    "protocol_description": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA labeling according to the manufacturer's protocol (Affymetrix)."
+                },
+                {
+                    "protocol_name": "Hibridization of the RNA to the array",
+                    "protocol_step_index": 4,
+                    "previous_protocol_step_index": 3,
+                    "protocol_type_descriptor": {
+                        "protocol_type": "hybridization",
+                        "protocol_subtype": "Nucleic acid hybridization to array",
+                        "protocol_subtype_curie": "EFO:0003815"
                     },
-                    "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
-                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
+                    "protocol_performers": [ "EGA's Lab Technician group", "Technician N41394" ],
+                    "protocol_instrument": [ "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]" ],
+                    "protocol_description": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA hybridization according to the manufacturer's protocol (Affymetrix)."
+                },
+                {
+                    "protocol_name": "Scanning of the array",
+                    "protocol_step_index": 5,
+                    "previous_protocol_step_index": 4,
+                    "protocol_type_descriptor": {
+                        "protocol_type": "gene expression",
+                        "protocol_subtype": "array scanning and feature extraction",
+                        "protocol_subtype_curie": "EFO:0003814"
+                    },
+                    "protocol_performers": [ "EGA's bioinformatician group"],
+                    "protocol_software": [ "Affymetrix GCOS v1.2 [SWO:1100020]" ],
+                    "protocol_description": "The scanned images and probe signals were analyzed by GCOS (Affymetrix)"
+                },
+                {
+                    "protocol_name": "Normalization of the data",
+                    "protocol_step_index": 6,
+                    "previous_protocol_step_index": 5,
+                    "protocol_type_descriptor": {
+                        "protocol_type": "data transformation",
+                        "protocol_subtype": "normalization data transformation",
+                        "protocol_subtype_curie": "EFO:0003816"
+                    },
+                    "protocol_performers": [ "EGA's bioinformatician group"],
+                    "protocol_instrument": [ "Computer [OBI:0400107]" ],
+                    "protocol_software": [ "RMA++ [SWO:0000342]" ],
+                    "protocol_description": "Normalization was performed with RMA algorithm which included background adjustment and quantile normalization"
                 }
             ],
-            "array_experiment_attributes": [
+            "experiment_relationships": [
+                {
+                    "r_type": "referenced_by",
+                    "r_source": {
+                        "object_id": {
+                            "ega_accession": "EGAS00002045411"
+                        },
+                        "object_type": "study"
+                    },
+                    "r_target": {
+                        "object_id": {
+                            "alias" : "My_ChIP_array_experiment_13", 
+                            "center_name" : "EBI-TEST"
+                        },
+                        "object_type": "experiment"
+                    }
+                },
+                {
+                    "r_type": "referenced_by",
+                    "r_source": {
+                        "object_id": {
+                            "alias" : "My_ChIP_array_experiment_13", 
+                            "center_name" : "EBI-TEST"
+                        },
+                        "object_type": "experiment"
+                    },
+                    "r_target": {
+                        "object_id": {
+                            "ega_accession": "EGAZ00001051423"
+                        },
+                        "object_type": "analysis"
+                    }
+                }
+            ],
+            "experiment_attributes": [
                 {            
                     "tag": "sub_project",
                     "value": "CB4-1UD"
@@ -331,189 +214,176 @@
                     "value": 20500,
                     "units": "GBP"
                 }
-                ],
-            "array_experiment_relationships": [
-                {
-                    "r_type": {
-                        "r_type_id": "referenced_by"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "ega_accession": "EGAN00002045411"
-                        },
-                        "object_type": "sample"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias": "my-array-experiment-23",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "ArrayExperiment"
-                    }
-                },
-                {
-                    "r_type": {
-                        "r_type_curie": "NCIT:C64637"
-                    },
-                    "r_source": {
-                        "object_id": {
-                            "ega_accession": "EGAE00000000001"
-                        },
-                        "object_type": "ArrayExperiment"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "external_accessions": [
-                                {
-                                    "external_accession": "PRJEB47028",
-                                    "accession_archive": "bioproject",
-                                    "accession_label": "RNA-Seq of native and FusionRed-transfected canine tumor cell lines after 3 hours C-CPE treatment"
-                                }
-                            ]
-                        },
-                        "object_type": "ArrayExperiment"
-                    }
-                }
-            ],
-            "array_experiment_protocols": [
-                {
-                    "protocol_name": "ADN_hybridization_13.06.2040",
-                    "protocol_type": "Nucleic acid hybridization to array", 
-                    "protocol_curie": "EFO:0003815", 
-                    "protocol_description": "Hybridization of radioactive or non-radioactive probes was performed overnight, at 65°C in a rotating tube (Hybaid hybridization oven, Thermo Scientific) in 250 mM sodium phosphate buffer (pH 7.4), 7% SDS, 1 mM EDTA. Two washes were performed in 20 mM sodium phosphate buffer (pH 7.4), 1% SDS, 1 mM EDTA. When using the commercial protocol with DIG-labeled probes, the membrane was hybridized and washed as recommended by the manufacturer (Roche DIG Easy Hyb 11 796 895 001). Membranes hybridized with radioactive probes were exposed 4 or 20 h on a phosphor screen before quantification. Membranes hybridized with non-radioactive probes were subsequently treated with an anti-DIG antibody"
-                }
-            ],
+            ],    
             "schema_descriptor": {
-                "object_type": "ArrayExperiment",
-                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json",
+                "object_type": "experiment",
+                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
                 "object_schema_version": "0.0.0",
                 "common_schema_version": "0.0.0"
             }
         },
         {
             "object_id": {
-                "alias" : "MyArrayAssay", 
-                "center_name" : "EBI-TEST",
-                "ega_accession": "EGAA00000000001"
+                "alias" : "My_sequencing_assay_M305004", 
+                "center_name" : "EBI-TEST"
             },
-            "array_assay_center": "EBI-TEST",
-            "array_assay_date": "2021-06-24",
-            "sample_number": 2,
-            "sample_labels": [
-                {
-                    "label": {
-                        "array_label_id": "Biotin",
-                        "array_label_curie": "CHEBI:15956"
+            "object_title": "Breast cancer sequencing assay M305004",
+            "assay_center": "EBI-TEST",
+            "assay_date": "2022-02-13",
+            "assay_type_specifications": {
+                "assay_type": "sequencing",
+                "sequencing_assay_specifications": {
+                    "reference_alignment_details": [
+                        {
+                            "assembly_name": "GRCh38.p14",
+                            "ncbi_assembly_accession": "assembly:GCF_000001405.26",
+                            "assembly_unit_name": "1",
+                            "ncbi_assembly_unit_accession": "refseq:NC_000001.11"
                         },
-                    "object_id": {
-                        "external_accessions": [
-                            {
-                                "external_accession": "SAMEA7616999",
-                                "accession_archive": "biosample",
-                                "accession_label": "test external accession"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "label": {
-                        "array_label_id": "Cy3",
-                        "array_label_curie": "CHEBI:37987"
-                        },
-                    "object_id": {
-                        "alias": "MySample_23",
-                        "center_name": "EBI-TEST"
-                    }
+                        {
+                            "assembly_unit_name": "2",
+                            "ncbi_assembly_unit_accession": "refseq:NC_000002.12"
+                        }
+                    ]
                 }
-            ],
-            "array_assay_relationships": [
-                    {
-                        "r_type": {
-                            "r_type_id": "referenced_by"
-                        },
-                        "r_source": {
-                            "object_id": {
-                                "ega_accession": "EGAA00002045411"
-                            },
-                            "object_type": "ArrayAssay"
-                        },
-                        "r_target": {
-                            "object_id": {
-                                "alias": "my-array-experiment-23",
-                                "center_name": "EBI-TEST"
-                            },
-                            "object_type": "ArrayExperiment"
-                        }
-                    },
-                    {
-                        "r_type": {
-                            "r_type_id": "same_as",
-                            "r_type_curie": "NCIT:C64637"
-                        },
-                        "r_source": {
-                            "object_id": {
-                                "ega_accession": "EGAA00000000001"
-                            },
-                            "object_type": "ArrayAssay"
-                        },
-                        "r_target": {
-                            "object_id": {
-                                "ega_accession": "EGAA00000000002"
-                            },
-                            "object_type": "ArrayAssay"
-                        }
-                    }       
-            ],
+            },
             "assay_files": [
                 {
-                    "filename": "myfile1.cel",
-                    "filetype": {
-                        "filetype_id": "CEL",
-                        "filetype_curie": "EFO:0005630"
-                    },
-                    "checksum_method": {
-                        "checksum_method_id": "MD5",
-                        "checksum_method_curie": "NCIT:C171276"                
-                    },
-                    "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
-                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
+                    "filename": "myfile1_NM305004_50000reads.cram.gpg",
+                    "filetype": "CRAM",
+                    "checksum_method": "MD5",
+                    "unencrypted_checksum": "9a4249e4b0538b9789c5d7f25d6342f0",
+                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67fa4415"
                 },
                 {
-                    "filename": "myfile2.fasta",
-                    "filetype": {
-                        "filetype_id": "FASTA",
-                        "filetype_curie": "NCIT:C47845"
-                    },
-                    "checksum_method": {
-                        "checksum_method_id": "SHA-256",
-                        "checksum_method_curie": "NCIT:C80226"                
-                    },
-                    "unencrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b",
-                    "encrypted_checksum": "c01b39c7a35ccc3b081a3e83d2c71fa9a767ebfeb45c69f08e17dfe3ef375a7b"
+                    "filename": "myfile2_NM305004_50000reads.cram.gpg",
+                    "filetype": "CRAM",
+                    "checksum_method": "MD5",
+                    "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
+                    "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
                 }
             ],
-            "array_assay_attributes": [
+            "assay_relationships": [
                 {
-                    "tag": "weather_outside",
-                    "value": "chilly and cloudy"
+                    "r_type": "referenced_by",
+                    "r_source": {
+                        "object_id": {
+                            "ega_accession": "EGAX00002094401"
+                        },
+                        "object_type": "experiment"
                     },
-                {
-                    "units": "time_spent",
-                    "tag": "14",
-                    "value": "hours"
-                    },
-                {
-                    "units": "GBP",
-                    "tag": "assay_price",
-                    "value": "800"
+                    "r_target": {
+                        "object_id": {
+                            "alias": "My_sequencing_assay_M305004",
+                            "center_name": "EBI-TEST"
+                        },
+                        "object_type": "assay"
                     }
-            ],
+                }
+            ],    
+            "assay_attributes": [
+                {
+                    "tag": "weather",
+                    "value": "When the assay was executed it was raining outside"
+                },
+                {
+                    "tag": "assay price",
+                    "value": 350,
+                    "units": "euros"
+                }
+            ],    
             "schema_descriptor": {
-                "object_type": "ArrayAssay",
-                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json",
+                "object_type": "assay",
+                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
                 "object_schema_version": "0.0.0",
                 "common_schema_version": "0.0.0"
             }
-        }
+        },
+        {
+            "object_id": {
+                "alias" : "My_array_assay_M3051057", 
+                "center_name" : "EBI-TEST"
+            },
+            "object_title": "Breast cancer array assay M3051057",
+            "assay_center": "EBI-TEST",
+            "assay_date": "2022-02-13",
+            "assay_type_specifications": {
+                "assay_type": "array",
+                "array_assay_specifications": {
+                    "n_labels_per_array": 2,
+                    "array_sample_labels": [
+                        {
+                            "label": {
+                                "array_label_id": "Cy3",
+                                "array_label_curie": "CHEBI:37987"
+                            },
+                            "object_id": {
+                                "ega_accession": "EGAN00002094401"
+                            }
+                        },
+                        {
+                            "label": {
+                                "array_label_id": "Cy5",
+                                "array_label_curie": "CHEBI:37989"
+                            },
+                            "object_id": {
+                                "ega_accession": "EGAN00002094453"
+                            }
+                        }
+                    ]
+                }
+            },
+            "assay_files": [
+                {
+                    "filename": "myfile1_M3051057.cel.gpg",
+                    "filetype": "CEL",
+                    "checksum_method": "MD5",
+                    "unencrypted_checksum": "9a4249e4b0538b9789c5d7f25d6342f0",
+                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67fa4415"
+                },
+                {
+                    "filename": "myfile2_M3051057.cel.gpg",
+                    "filetype": "CEL",
+                    "checksum_method": "MD5",
+                    "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
+                    "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
+                }
+            ],
+            "assay_relationships": [
+                {
+                    "r_type": "referenced_by",
+                    "r_source": {
+                        "object_id": {
+                            "ega_accession": "EGAX00002094401"
+                        },
+                        "object_type": "experiment"
+                    },
+                    "r_target": {
+                        "object_id": {
+                            "alias": "My_array_assay_M3051057",
+                            "center_name": "EBI-TEST"
+                        },
+                        "object_type": "assay"
+                    }
+                }
+            ],    
+            "assay_attributes": [
+                {
+                    "tag": "weather",
+                    "value": "When the assay was executed it was sunny outside"
+                },
+                {
+                    "tag": "assay price",
+                    "value": 200,
+                    "units": "euros"
+                }
+            ],    
+            "schema_descriptor": {
+                "object_type": "assay",
+                "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                "object_schema_version": "0.0.0",
+                "common_schema_version": "0.0.0"
+            }
+        }        
     ]
 }

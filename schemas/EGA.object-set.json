@@ -4,7 +4,7 @@
     "type": "object",
     "title": "EGA object-set metadata schema",
     "meta:version": "0.0.0",
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum lenght of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schema_descriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum length of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schema_descriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_array"],
     "additionalProperties": false,
     "properties": {
@@ -86,18 +86,6 @@
               "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#"
             },
             {
-              "title": "The object's 'schema_descriptor' defines it as an run",
-              "required": ["schema_descriptor"],
-              "properties": {
-                "schema_descriptor": { 
-                  "object_type": {
-                    "enum": ["run"]
-                  }
-                }
-              },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.run.json#"
-            },
-            {
               "title": "The object's 'schema_descriptor' defines it as an dataset",
               "required": ["schema_descriptor"],
               "properties": {
@@ -146,28 +134,16 @@
               "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#"
             },
             {
-              "title": "The object's 'schema_descriptor' defines it as an ArrayExperiment",
+              "title": "The object's 'schema_descriptor' defines it as an assay",
               "required": ["schema_descriptor"],
               "properties": {
                 "schema_descriptor": { 
                   "object_type": {
-                    "enum": ["ArrayExperiment"]
+                    "enum": ["assay"]
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayExperiment.json#"
-            },
-            {
-              "title": "The object's 'schema_descriptor' defines it as an ArrayAssay",
-              "required": ["schema_descriptor"],
-              "properties": {
-                "schema_descriptor": { 
-                  "object_type": {
-                    "enum": ["ArrayAssay"]
-                  }
-                }
-              },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.ArrayAssay.json#"
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#"
             }
           ]      
         }

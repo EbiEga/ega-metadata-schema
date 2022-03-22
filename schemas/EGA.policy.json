@@ -89,8 +89,13 @@
           "type": "string",
           "title": "Data Use Ontology (DUO) code",
           "description": "Single Data Use Ontology (DUO) code in Shorter Compact URI (CURIE) format.",
-          "pattern": "^[^<>;,?\"*|/ ]+$",
-          "examples": [ "DUO:0000046", "DUO:0000028", "IAO:0000620" ]
+          "examples": [ "DUO:0000046", "DUO:0000028", "IAO:0000620" ],
+          "allOf": [
+            {
+              "title": "General pattern of a CURIE",
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+            }
+          ]
         }
       },
 

@@ -1,0 +1,159 @@
+{
+    "object_id": {
+        "alias" : "Sequencing_analysis_13", 
+        "center_name" : "EBI-TEST"
+    },
+    "object_title": "Example VCF analysis",
+    "object_description": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned against the human referenced and then extracted sequence variation... ...VCF files were compared along patients' clinical histories.",
+    "types_of_input_data": [
+        "genomic data"
+    ],
+    "types_of_output_data": [
+        "processed sequencing data"
+    ],
+    "analysis_type_specifications": {
+        "analysis_types": [ "sequence variation", "phenotype characterization" ],
+        "reference_alignment_details": [
+            {
+                "assembly_name": "GRCh38.p14",
+                "ncbi_assembly_accession": "assembly:GCA_000001405.29"
+            }
+        ]
+    },
+    "targeted_loci": [
+        {
+            "organism_descriptor": {
+                "taxon_id": "9606",
+                "scientific_name": "homo sapiens"
+            },
+            "loci_descriptor": [
+                {
+                    "gene_descriptor": {
+                        "gene_symbol": "TP53",
+                        "gene_id_curie": "HGNC:11998"
+                    },
+                    "locus_additional_description": "Variation within the VCF corresponds to TP53 variation among patients."
+                }
+            ]
+        }
+    ],
+    "analysis_protocols": [
+        {
+            "protocol_name": "Genome indexing protocol",
+            "protocol_step_index": 1,
+            "previous_protocol_step_index": 0,
+            "protocol_type_descriptor": {
+                "protocol_type": "data transformation",
+                "protocol_subtype": "genome indexing",
+                "protocol_subtype_curie": "operation:3211"
+            },
+            "protocol_performers": [ "EGA's testing bioinformaticians"],
+            "protocol_software": [ "FastQC v1.1.0 [SWO:1100144]", "SAMtools [SWO:1100143]" ],
+            "protocol_description": "Index the reads in the run. You can use as input a FASTA file (preferred) or a FASTQ. The file can also be compressed with gzip, having a .gz extension. The script will uncompress the file and pass it to FASTA format if it's a FASTQ file. Run ``./index.sh your_run_id /mnt/c/your_run.fastq.gz``."
+        },
+        {
+            "protocol_name": "Read mapping protocol",
+            "protocol_step_index": 2,
+            "previous_protocol_step_index": 1,
+            "protocol_type_descriptor": {
+                "protocol_type": "data transformation",
+                "protocol_subtype": "read mapping",
+                "protocol_subtype_curie": "operation:3198"
+            },
+            "protocol_performers": [ "EGA's testing bioinformaticians"],
+            "protocol_software": [ "s-aligner", "BWA", "SAMtools [SWO:1100143]" ],
+            "protocol_description": "Map your reads to a reference genome to see what's going wrong. Run ``./map.sh your-run-id sequences/your-run-id/sra_data.part-71.fa reference.fa 4000 > results/map-your-run-id.fa``."
+        },
+        {
+            "protocol_name": "Variant calling protocol",
+            "protocol_step_index": 3,
+            "previous_protocol_step_index": 2,
+            "protocol_type_descriptor": {
+                "protocol_type": "data transformation",
+                "protocol_subtype": "variant calling",
+                "protocol_subtype_curie": "operation:3227"
+            },
+            "protocol_performers": [ "EGA's testing bioinformaticians"],
+            "protocol_software": [ "s-aligner", "BWA", "SAMtools [SWO:1100143]", "freebayes" ],
+            "protocol_description": "Call variants.sh to find variants. The script will call BWA, samtools, varscan and freebayes to generate a VCF file with the resulting variants. Run ``./scripts/variants.sh RUN-ID ./results/RUN-ID-xxxx.fa PATH_TO_SARS_COV_2_REFERENCE_FASTA``."
+        }
+    ],
+    "analysis_files": [
+        {
+            "filename": "sequence_variation.vcf.gpg",
+            "filetype": "VCF",
+            "checksum_method": "MD5",
+            "unencrypted_checksum": "9a4249e4b0538b9789c5d7f25d6342f0",
+            "encrypted_checksum": "c6779ec2960296ed9a04f08d67fa4415"
+        },
+        {
+            "filename": "analysis_script.py.gpg",
+            "filetype": "PY",
+            "checksum_method": "MD5",
+            "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
+            "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
+        }
+    ],
+    "analysis_relationships": [
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAS00002045411"
+                },
+                "object_type": "study"
+            },
+            "r_target": {
+                "object_id": {
+                    "alias" : "My_ChIP_array_analysis_13", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "analysis"
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
+                    "alias" : "My_ChIP_array_analysis_13", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "analysis"
+            },
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAZ00001051423"
+                },
+                "object_type": "analysis"
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
+                    "alias" : "My_ChIP_array_analysis_13", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "analysis"
+            },
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAX00001051423"
+                },
+                "object_type": "experiment"
+            }
+        }
+    ],
+    "analysis_attributes": [
+        {            
+            "tag": "sub_project",
+            "value": "CB4-1UD"
+        }
+    ],    
+    "schema_descriptor": {
+        "object_type": "analysis",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
+}

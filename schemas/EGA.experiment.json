@@ -2,12 +2,307 @@
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
     "type": "object",
-    "title": "EGA experiment metadata schema",
+    "title": "EGA Experiment metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
-    "required": [""],
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "experiment_protocols", "assay_technology", "assay_type_descriptor", "assayed_molecule_descriptor", "experiment_type_specifications"],
     "additionalProperties": false,
     "properties": {
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions.", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that experiment EGA ID (EGAX) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-experiment-id-pattern"
+              }
+            }
+          }
+        ]
+      },  
       
-    }      
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the experiment",
+        "description": "An informative experiment title that should serve as an overview of the experiment, including: used technology, samples, purpose... (e.g. 'Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls'). This short text can be used to call out experiment records in searches or in displays.",
+        "examples": [ "Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the experiment",
+        "description": "An in-depth description of the biological relevance and intent of the experiment, including the experimental workflow.",
+        "examples": [ "The experiment was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
+      },
+
+      "experiment_protocols": {
+        "type": "array",
+        "title": "Protocols related to an experiment",
+          "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an experiment. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object" 
+        }
+      },
+
+      "targeted_loci": {
+        "type": "array",
+        "title": "Loci of the targeted genomic feature",
+        "description": "Array of items that unambiguously define the loci of targeted genomic features in the experiment. For example, if the experiment aim was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier" 
+        }
+      },
+
+      "assay_technology": {
+        "title": "Technology used in the assay",
+        "description": "Technology used in the assay. This node allows for an easy filtering of the technology (e.g. a sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) in an assay.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor"
+      },
+
+      "assay_type_descriptor": {
+        "type": "object",
+        "title": "Type of assay",
+        "meta:property_curie": "OBI:0000070",
+        "description": "Node defining the type of assay applicable to the experiment. Consists in an overall category (based on the purpose and technology of the instrument [EFO:0002773]) and its possible subtype. Both types and subtypes are taken from controlled vocabulary (CV) lists, stored in the controlled_vocabulary_schemas folder. For example, in a single cell RNA-seq assay the assay type would be 'assay by high throughput sequencer' [EFO:0002697] and its subtype 'RNA-seq of coding RNA from single cells' [EFO:0005684].",
+        "additionalProperties": false,
+        "required": ["assay_type"],
+        "properties": {
+          "assay_type": {
+            "type": "string",
+            "title": "Type of the assay",
+            "description": "Overall type of the assay. Term chosen from a controlled vocabulary (CV) list. Search for yours either at (1) our GitHub repository ([array types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json) and [sequencing types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json)) or (2) in the OLS service ([sequencing types](http://www.ebi.ac.uk/efo/EFO_0003740) and [array types](http://www.ebi.ac.uk/efo/EFO_0002696)).",
+            "anyOf": [
+              {
+                "title": "Array-assay type controlled vocabulary (CV) list",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json"
+              },
+              {
+                "title": "Sequencer-assay type controlled vocabulary (CV) list",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json"
+              }
+            ],
+            "examples": [ "Hi-C", "amplicon sequencing", "assay by high throughput sequencer", "immune sequencing", "ChIP-chip by array", "transcription profiling by array", "microRNA profiling by array", "genotyping by array", "comparative genomic hybridization by array" ]
+          },
+          "assay_subtype": {
+            "type": "string",
+            "title": "Subtype of the assay",
+            "description": "Subtype of the assay: any ontologized term hierarchically below the assay type. Term chosen from a controlled vocabulary (CV) list. Search for yours at our GitHub repository: [array subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json), [sequencing subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json), [RNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json) and [DNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json))",
+            "examples": [ "MC-4C", "UMI-4C", "single nucleus RNA sequencing", "RNA-seq of coding RNA from single cells", "Quant-seq", "DNA-seq", "ATAC-seq", "DNase Hi-C", "scDNase-seq", "in situ HiC", "exome sequencing" ]
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Assay subtypes match DNA/RNA assays",
+            "properties": {
+              "assay_subtype": {
+                "anyOf": [
+                  {
+                    "title": "DNA-Assay subtype controlled vocabulary (CV) list",
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json"
+                  },
+                  {
+                    "title": "RNA-Assay subtype controlled vocabulary (CV) list",
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json"
+                  }
+                ]                 
+              }
+            }
+          },
+          {
+            "title": "Assay subtypes match array/sequencer assays",
+            "oneOf": [
+              {
+                "title": "Assay type and subtype terms are from the array CV list",
+                "properties": {
+                  "assay_type": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json" 
+                  },
+                  "assay_subtype": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json" 
+                  }
+                }
+              },
+              {
+                "title": "Assay type and subtype terms are from the sequencer CV list",
+                "properties": {
+                  "assay_type": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json" 
+                  },
+                  "assay_subtype": {
+                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json" 
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+
+      "assayed_molecule_type": {
+        "type": "string",
+        "title": "Type of the assayed molecule of the experiment",
+        "description": "Node containing information about the assayed molecule: the material entity (e.g. DNA) that was used to generate the data. Choose the specific terms if possible (e.g. if the assayed molecule is cDNA, pick 'cDNA' instead of just 'DNA'). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "enum": [ "DNA", "RNA", "metabolite", "protein", "cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "non polyA RNA", "long non polyA RNA", "nuclear RNA", "polyA RNA", "long polyA RNA", "snRNA", "total RNA" ],
+        "meta:enum": [ "DNA__CHEBI:16991", "RNA__CHEBI:33697", "metabolite__EFO:0004727", "protein__CHEBI:36080", "cDNA__EFO:0008481", "genomic DNA__EFO:0008479", "mitochondrial DNA__EFO:0008480",  "messenger RNA__CHEBI:33699", "ncRNA__SO:0000655", "non polyA RNA__EFO:0005017", "long non polyA RNA__EFO:0005018", "nuclear RNA__EFO:0030052", "polyA RNA__OBI:0000869", "long polyA RNA__EFO:0005019", "snRNA__SO:0000274", "total RNA__EFO:0004964" ]
+      },
+
+      "types_of_output_data": {
+        "type": "array",
+        "title": "Types of output data",
+        "meta:property_curie": "IAO:0000100",
+        "description": "Types of data the experiment produces.",
+        "uniqueItems": true,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
+        }
+      },
+
+      "experiment_type_specifications": {
+        "type": "object",
+        "title": "Experiment type specifications",
+        "description": "Node containing additional attributes to describe the experiment, either array experiments (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). For example, if an array was used, its Array Design Format (ADF) will be expected.",
+        "additionalProperties": false,
+        "properties": {
+          "array_experiment": {
+            "type": "object",
+            "title": "Specifications of an array experiment",
+            "description": "Node containing the set of fields specific to an experiment of array-type (i.e. an array was used to obtain the raw data).",
+            "additionalProperties": false,
+            "required": ["array_labels", "adf_files"],
+            "properties": {
+              "array_labels": {
+                "type": "array",
+                "title": "Array label of the experiment",
+                "meta:property_curie": "EFO:0000562",
+                "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.",
+                "additionalProperties": false,
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" 
+                }
+              },
+              
+              "adf_files": {
+                "type": "array",
+                "title": "Array Design Format (ADF) [NCIT:C172213] file block",
+                "description": "The array design format (ADF) [NCIT:C172213] is the unique set of probes (with their coordinates) found on the microarray chip. They can be standard (sold by a company) or custom. Its format is of a spreadsheet-like tab-delimited text file with metadata header rows, followed by a multi-column table of probe information. For example, see ADF for [arrayexpress:E-MTAB-3050](https://www.ebi.ac.uk/arrayexpress/files/A-GEOD-28079/A-GEOD-28079.adf.txt) or [arrayexpress:E-MEXP-1712](https://www.ebi.ac.uk/arrayexpress/files/A-AFFY-125/A-AFFY-125.adf.txt). This node is an array of file nodes in case the ADF is given in several formats (e.g. tsv, xlsx, csv...).",
+                "minItems": 1,
+                "additionalProperties": false,
+                "uniqueItems": true,
+                "items": {
+                  "title": "ADF File object",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" 
+                }
+              }
+            }
+          },
+          "sequencing_experiment": {
+            "type": "object",
+            "title": "Specifications of a sequencing experiment",
+            "description": "Node containing the set of fields specific to an experiment of sequencing-type (i.e. a sequencer was used to obtain the raw data).",
+            "additionalProperties": false,
+            "required": ["library_layout"],
+            "properties": {
+              "library_layout": {
+                "title": "Library layout of the sequencing experiment",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/library_layout"
+              },
+              "spot_descriptor": {
+                "title": "Spot descriptor of the sequencing experiment",
+                "description": "Adapted from current ENA's XSDs without improvements. #! Expected to be investigated.",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor"
+              }
+            }
+          }
+        },
+        "oneOf": [
+          {
+            "title": "The sequencing experiment descriptors are required",
+            "required": ["sequencing_experiment"]
+          },
+          {
+            "title": "The array experiment descriptors are required",
+            "required": ["array_experiment"]
+          }
+        ]
+      },
+
+      "experiment_relationships": {
+        "type": "array",
+        "title": "Experiment relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an experiment being linked to a Sample) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "experiment_attributes": {
+        "type": "array",
+        "title": "Experiment custom attributes",
+        "description": "Custom attributes of an experiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'additional description' and its Value 'this experiment is a re-do of another 3 experiments due to...') with optional units. Its properties are inherited from the common-definitions.json schema.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
+    },
+    
+    "oneOf": [
+      {
+        "title": "If the assay technology is a sequencer, the experiment type has to match",
+        "properties": {
+          "assay_technology": {
+            "properties": {
+              "assay_instrument": {
+                "enum": ["sequencer"]
+              }
+            }
+          },
+          "experiment_type_specifications": {
+            "required": ["sequencing_experiment"]
+          }
+        }
+      },
+      {
+        "title": "If the assay technology is an array, the experiment type has to match",
+        "properties": {
+          "assay_technology": {
+            "properties": {
+              "assay_instrument": {
+                "enum": ["array"]
+              }
+            }
+          },
+          "experiment_type_specifications": {
+            "required": ["array_experiment"]
+          }
+        }
+      }
+    ]
+      
   }

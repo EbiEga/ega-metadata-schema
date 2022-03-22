@@ -1,0 +1,10 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "string",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json",
+    "title": "EGA Controlled Vocabulary (CV) for assay subtypes by array [EFO:0002696]",
+    "meta:version": "0.0.0",
+    "description": "Controlled Vocabulary (CV) list for assay subtypes by array: any ontologized term for a subtype (i.e. child ontology) of an array assay [EFO:0002696].",
+    "enum": [ "MC-4C", "UMI-4C" ],
+    "meta:enum": [ "MC-4C__EFO:0009983", "UMI-4C__EFO:0009995" ]
+}

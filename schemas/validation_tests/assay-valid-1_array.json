@@ -1,0 +1,86 @@
+{
+    "object_id": {
+        "alias" : "My_array_assay_M3051057", 
+        "center_name" : "EBI-TEST"
+    },
+    "object_title": "Breast cancer array assay M3051057",
+    "assay_center": "EBI-TEST",
+    "assay_date": "2022-02-13",
+    "assay_type_specifications": {
+        "assay_type": "array",
+        "array_assay_specifications": {
+            "n_labels_per_array": 2,
+            "array_sample_labels": [
+                {
+                    "label": {
+                        "array_label_id": "Cy3",
+                        "array_label_curie": "CHEBI:37987"
+                    },
+                    "object_id": {
+                        "ega_accession": "EGAN00002094401"
+                    }
+                },
+                {
+                    "label": {
+                        "array_label_id": "Cy5",
+                        "array_label_curie": "CHEBI:37989"
+                    },
+                    "object_id": {
+                        "ega_accession": "EGAN00002094453"
+                    }
+                }
+            ]
+        }
+    },
+    "assay_files": [
+        {
+            "filename": "myfile1_M3051057.cel.gpg",
+            "filetype": "CEL",
+            "checksum_method": "MD5",
+            "unencrypted_checksum": "9a4249e4b0538b9789c5d7f25d6342f0",
+            "encrypted_checksum": "c6779ec2960296ed9a04f08d67fa4415"
+        },
+        {
+            "filename": "myfile2_M3051057.cel.gpg",
+            "filetype": "CEL",
+            "checksum_method": "MD5",
+            "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
+            "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
+        }
+    ],
+    "assay_relationships": [
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAX00002094401"
+                },
+                "object_type": "experiment"
+            },
+            "r_target": {
+                "object_id": {
+                    "alias": "My_array_assay_M3051057",
+                    "center_name": "EBI-TEST"
+                },
+                "object_type": "assay"
+            }
+        }
+    ],    
+    "assay_attributes": [
+        {
+            "tag": "weather",
+            "value": "When the assay was executed it was sunny outside"
+        },
+        {
+            "tag": "assay price",
+            "value": 200,
+            "units": "euros"
+        }
+    ],    
+    "schema_descriptor": {
+        "object_type": "assay",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
+}

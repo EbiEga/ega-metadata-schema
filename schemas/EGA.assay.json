@@ -1,0 +1,319 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+    "type": "object",
+    "title": "EGA assay metadata schema",
+    "meta:version": "0.0.0",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its assay metadata object. This object is intended to contain metadata about the raw qualitative or quantitative test performed to determine any kind of biological property of a biological sample. It can be of different types: (1) sequencing assay [EFO:0003740] (e.g. sequence CRAM or FastQ files); and an (2) array assay [EFO:0002696] (e.g. intensity CEL files). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "assay_type_specifications", "assay_files"],
+    "additionalProperties": false,
+    "properties": {
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an assay (by using EGA-assay-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that assay's EGA ID (EGAR) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-assay-id-pattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the assay",
+        "description": "An informative assay title that should serve as an overview of the assay and differentiate it from others. This short text can be used to call out assay records in searches or in displays.",
+        "minLength": 1,
+        "examples": [ "Ilumina sequencing assay 3409 - Cancer genomics" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the assay",
+        "description": "An in-depth description (e.g. used technology, sample groups, purpose...) of the assay. ",
+        "minLength": 1,
+        "examples": [ "Sequencing assay number 3409 of 4000. Sequenced through Illumina MiSeq to find SNPs of colorectal cancer samples..." ]
+      },
+
+      "assay_center": {
+        "type": "string",
+        "title": "Centername that performed the assay",
+        "description": "The name of the center (e.g. 'EBI-TEST') responsible for performing assay, if applicable, in case it's different from the center submitting metadata).",
+        "minLength": 1,
+        "examples": [ "EBI-TEST" ]
+      },
+
+      "assay_date": {
+        "type": "string",
+        "title": "Date of the assay",
+        "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sequencing assay took place. If the protocols are long enough, the date shall be the day the assay concluded.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
+      },
+
+      "assay_type_specifications": {
+        "type": "object",
+        "title": "Assay type specifications",
+        "description": "Node containing different sets of fields that depend on the specific assay type. The main categories of assay types follow a similar pattern as the used technology: either array assays (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing assays (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its sample_array_labels will be expected. Having this modular assay type-related node allows for easy additions of new technology-specific requirements.",
+        "additionalProperties": false,
+        "required": ["assay_type"],
+        "properties": {
+          "assay_type": {
+            "type": "string",
+            "title": "Assay type",
+            "description": "The general categories, either sequencing or array, in which assays are categorized based on the used instruments. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+            "enum": ["array", "sequencing"],
+            "meta:enum": ["An assay in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used.", "An assay in which a [sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used."]
+          },
+          "array_assay_specifications": {
+            "type": "object",
+            "title": "Specifications of an array assay",
+            "description": "Node containing the set of fields specific to an assay of type 'array' (i.e. an array was used to obtain the raw data).",
+            "additionalProperties": false,
+            "required": ["n_labels_per_array"],
+            "properties": {
+              "n_labels_per_array": {
+                "type": "number",
+                "title": "Number of labels per array",
+                "description": "A single array can be prepared with biological materials labelled differently for them to be compared in parallel. Here one shall specify the number of labels used in the single array (e.g. 2 for a Two-colour cDNA microarray). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+                "enum": [1, 2, 3, 4],
+                "meta:enum": ["1: One single label was used for a single array", "2: two labels were used for a single array. The node 'array_sample_labels' specifying which samples were labelled by which compounds will be expected."]
+              },
+              "array_sample_labels": {
+                "type": "array",
+                "title": "Array of sample-label pairs of the array assay",
+                "description": "Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which samples used in this assay are labelled by which chemicals. Can be omitted if the array is of one single label/colour.",
+                "minItems": 1,
+                "additionalProperties": false,
+                "uniqueItems": true,
+                "items": { 
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association"
+                }
+              }
+            },
+            "anyOf": [
+              {
+                "title": "2 labels per array check",
+                "description": "If two labels were used per array, the sample-label specifications will be expected and at least 2 items (one for each label)",
+                "if": {
+                  "required": [ "n_labels_per_array" ],
+                  "properties": {
+                    "prueba": { "const": 2 }
+                  }
+                },
+                "then": { 
+                  "required": [ "array_sample_labels" ],
+                  "properties": {
+                    "array_sample_labels": {
+                      "minItems": 2
+                    }
+                  }
+                }
+              },
+              {
+                "title": "3 labels per array check",
+                "description": "If three labels were used per array, the sample-label specifications will be expected and at least 3 items (one for each label)",
+                "if": {
+                  "required": [ "n_labels_per_array" ],
+                  "properties": {
+                    "prueba": { "const": 3 }
+                  }
+                },
+                "then": { 
+                  "required": [ "array_sample_labels" ],
+                  "properties": {
+                    "array_sample_labels": {
+                      "minItems": 3
+                    }
+                  }
+                }
+              },
+              {
+                "title": "4 labels per array check",
+                "description": "If four labels were used per array, the sample-label specifications will be expected and at least 4 items (one for each label)",
+                "if": {
+                  "required": [ "n_labels_per_array" ],
+                  "properties": {
+                    "prueba": { "const": 4 }
+                  }
+                },
+                "then": { 
+                  "required": [ "array_sample_labels" ],
+                  "properties": {
+                    "array_sample_labels": {
+                      "minItems": 4
+                    }
+                  }
+                }
+              }              
+            ]
+          },
+          "sequencing_assay_specifications": {
+            "type": "object",
+            "title": "Specifications of a sequencing assay",
+            "description": "Node containing the set of fields specific to an assay of type 'sequencing' (i.e. a sequencer was used to obtain the raw data).",
+            "additionalProperties": false,
+            "properties": {
+              "reference_alignment_details": {
+                "type": "array",
+                "title": "Reference assembly and sequence details",
+                "description": "Node containing details of the reference sequence used in the alignment.",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details"
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "title": "If the assay is of type array its specifications will be expected",
+            "if": {
+              "required": ["assay_type"],
+              "properties": {
+                "assay_type": {
+                      "enum": ["array"]
+                }
+              }
+            },
+            "then": {
+              "required": ["array_assay_specifications"]
+            }
+          }
+        ]
+      },
+
+      "assay_relationships": {
+        "type": "array",
+        "title": "Assay relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities, one of which shall be the current assay.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        }
+      },
+
+      "assay_files": {
+        "type": "array",
+        "title": "Data files produced from an assay",
+        "description": "This property contains the specific files (e.g. raw CRAM files) derived from performing the sequencing or hybridization and scanning with the sampled material.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object"
+        }
+      },
+
+      "assay_attributes": {
+        "type": "array",
+        "title": "Assay custom attributes",
+        "description": "Custom attributes of an assay: reusable attributes to encode tag-value pairs (e.g. Tag being 'additional context' and its Value 'this specific assay was stored mistakenly for longer periods of time, so its data could be misleading...') with optional units. Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
+
+    },
+    "allOf": [
+      {
+        "title": "If the files are aligned reads, the reference alignment details are expected",
+        "if": {
+          "properties": {
+            "assay_files": {
+              "items": {
+                "properties": {
+                  "filetype": {
+                    "enum": [ "BAM", "CRAM" ]
+                  }
+                } 
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "assay_type_specifications": {
+              "required": ["sequencing_assay_specifications"],
+              "properties": {
+                "sequencing_assay_specifications": {
+                  "required": ["reference_alignment_details"]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "title": "Allowed filetypes for a sequencing assay",
+        "if": {
+          "properties": {
+            "assay_type_specifications": {
+              "properties": {
+                "assay_type": {
+                  "const": "sequencing"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "assay_files": {
+              "items": {
+                "properties": {
+                  "filetype": {
+                    "enum": [ "FASTQ", "FASTA", "SRA", "SRF", "SFF", "BAM", "CRAM" ]
+                  }
+                } 
+              }
+            }
+          }
+        }
+      },
+      {
+        "title": "Allowed filetypes for an array assay",
+        "if": {
+          "properties": {
+            "assay_type_specifications": {
+              "properties": {
+                "assay_type": {
+                  "const": "array"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "assay_files": {
+              "items": {
+                "properties": {
+                  "filetype": {
+                    "enum": ["CEL", "TSV", "XLSX", "CSV", "IDAT", "TXT", "EXP", "GPR"]
+                  }
+                } 
+              }
+            }
+          }
+        }
+      }
+    ]
+  }

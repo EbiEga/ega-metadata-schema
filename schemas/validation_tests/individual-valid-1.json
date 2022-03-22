@@ -19,9 +19,7 @@
     },
     "individual_relationships": [
         {
-            "r_type": {
-                "r_type_id": "develops_from"
-            },
+            "r_type": "develops_from",
             "r_source": {
                 "object_id": {
                     "ega_accession": "EGAN00000000001"

@@ -11,9 +11,7 @@
     "duo_codes_curies": [ "DUO:0000046", "DUO:0000028", "IAO:0000620" ],
     "policy_relationships": [
         {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
+            "r_type": "referenced_by",
             "r_source": {                
                 "object_id": {
                     "alias": "my-cancer-policy",
@@ -29,9 +27,7 @@
             }
         },
         {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
+            "r_type": "referenced_by",
             "r_source": {                
                 "object_id": {
                     "alias": "my-cancer-policy",

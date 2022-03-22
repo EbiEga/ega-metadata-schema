@@ -5,31 +5,15 @@
     },
     "object_title": "EBI test case-control dataset for cancer",
     "object_description": "EBI genome-wide case-control association dataset for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
-    "dataset_design": {
-        "dataset_types": [
-            {
-                "dataset_type": "cancer genomics"
-            },
-            {
-                "dataset_type": "phenotype information"
-            },
-            {
-                "dataset_type": "other",
-                "new_dataset_type": "<My new dataset type>"
-            }
-        ],
-        "additional_keywords_list": [ "autoimmune pancreatitis", "cancer", "IgG4-related disease" ]
-    },
+    "dataset_type": "phenotype information",
     "dataset_relationships": [
         {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
+            "r_type": "referenced_by",
             "r_source": {                
                 "object_id": {
-                    "ega_accession": "EGAA00002043412"
+                    "ega_accession": "EGAR00002043412"
                 },
-                "object_type": "ArrayAssay"                                    
+                "object_type": "assay"                                    
             },
             "r_target": {
                 "object_id": {
@@ -40,14 +24,12 @@
             }
         },
         {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
+            "r_type": "referenced_by",
             "r_source": {                
                 "object_id": {
                     "ega_accession": "EGAR00004343122"
                 },
-                "object_type": "run"                                    
+                "object_type": "assay"                                    
             },
             "r_target": {
                 "object_id": {
@@ -58,9 +40,7 @@
             }
         },
         {
-            "r_type": {
-                "r_type_id": "referenced_by"
-            },
+            "r_type": "referenced_by",
             "r_source": {                
                 "object_id": {
                     "ega_accession": "EGAZ00004343122"
