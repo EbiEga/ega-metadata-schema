@@ -32,7 +32,7 @@
         {
             "r_type": "referenced_by",
             "r_source": {
-                "external_accession": "ena.embl:EGAX00002094401"
+                "external_accession": "ena.embl:ERX3801613"
             },
             "r_target": {
                 "object_id": {

@@ -40,6 +40,23 @@ User Institution: The Institution that has requested access to the Data, i.e. le
 2. The User Institution agrees to only use these Data solely for the purpose of the Project and only for Research Purposes. The User Institution further agrees that it will only use these Data for Research Purposes which are within the limitations (if any) set out in Appendix 1. 
 
 ...
-</POLICY_TEXT>
+    </POLICY_TEXT>  
+    <DATA_USES>
+      <DATA_USE code="0000042" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000042</URL>
+      </DATA_USE>
+      <DATA_USE code="0000028" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000028</URL>
+      </DATA_USE>
+      <DATA_USE code="0000019" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000019</URL>
+      </DATA_USE>
+      <DATA_USE code="0000026" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000026</URL>
+      </DATA_USE>
+      <DATA_USE code="0000027" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000027</URL>
+      </DATA_USE>
+    </DATA_USES>
   </POLICY>
 </POLICY_SET>
