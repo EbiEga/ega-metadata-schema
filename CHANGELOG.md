@@ -22,6 +22,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated markdown documentation of the schemas (see [README](docs/json_browser/markdowns/README.md)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 - Updated JSON schemas ([``common definitions``](schemas/EGA.common-definitions.json), [``ArrayAssay``](schemas/EGA.ArrayAssay.json) and [``ArrayExperiment``](schemas/EGA.ArrayExperiment.json)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 - Removed Jupyter-notebook for validation and added instructions in [README.md](schemas/README.md) to validate through AJV [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)].
+- Replaced [``ArrayAssay``](schemas/EGA.ArrayAssay.json) with [``Assay``](schemas/EGA.assay.json), fusing "Run" object (from previous model) and Array Assays [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Added the [``Experiment``](schemas/EGA.experiment.json) object, and fused ArrayExperiment with it, removing the latter [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Added the [``Analysis``](schemas/EGA.analysis.json) object [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Added loci descriptor node to common definitions (inherited by other objects) [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Updated protocols object [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Added folder ``controlled_vocabulary_schemas`` with JSON documents containing controlled vocabulary for specific fields. These are inherited in the common definitions mainly [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- All external accessions are now required to follow a CURIE format (e.g. ``ncbigene:100010``) [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Updated JSON markdowns [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
 
 ## [0.0.0] - 2021-04-26
 ### Added
