@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated markdown documentation of the schemas (see [README](docs/json_browser/markdowns/README.md)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 - Updated JSON schemas ([``common definitions``](schemas/EGA.common-definitions.json), [``ArrayAssay``](schemas/EGA.ArrayAssay.json) and [``ArrayExperiment``](schemas/EGA.ArrayExperiment.json)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 - Removed Jupyter-notebook for validation and added instructions in [README.md](schemas/README.md) to validate through AJV [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)].
+- Added example XML to JSON documents (see [README.md](examples/xml-json-same-objects/README.md)) [[PR#35](https://github.com/EbiEga/ega-metadata-schema/pull/35)].
 
 ## [0.0.0] - 2021-04-26
 ### Added
