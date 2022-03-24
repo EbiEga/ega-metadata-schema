@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<POLICY_SET>
+  <POLICY alias="example-policy" broker_name="EGA" center_name="EBI">
+    <TITLE>Data Access Agreement: JOpE1 clonal evolution project</TITLE>
+    <DAC_REF accession="EGAC00001002097"/>
+    <POLICY_TEXT>DATA ACCESS AGREEMENT
+
+These terms and conditions govern access to the managed access datasets (details of which are set out in Appendix 1) to which the User Institution has requested access. The User Institution agrees to be bound by these terms and conditions. 
+
+Definitions
+
+Authorised Personnel: The individuals at the User Institution to whom Provider Institution grants access to the Data. This includes the User, the individuals listed in Appendix 2 and any other individuals for whom the User Institution subsequently requests access to the Data. Details of the initial Authorized Personnel are set out in Appendix 2.
+
+Agreement: this Data Access Agreement.
+
+Data: The managed access datasets to which the User Institution has requested access described in Appendix 1. 
+
+Data Producers: Provider Institution and the collaborators listed in Appendix 1 responsible for the collection, development, organization, and oversight of these Data.
+
+External Collaborator: A collaborator of the User, working for an institution other than the User Institution.
+
+Project: The research project for which the User Institution has requested access to these Data. A description of the Project is set out in Appendix 2.
+
+Provider Institution: General Hospital (a public healthcare establishment administered by EBI) 
+
+Publications: Includes, without limitation, articles published in print journals, electronic journals, reviews, books, posters, and other written and verbal presentations of research.
+
+Research Participant: An individual whose data form part of these Data.
+
+Research Purposes: Shall mean research that is seeking to advance the understanding of genetics and genomics, including the treatment of disorders, and work on statistical methods that may be applied to such research.
+
+User: The principal investigator for the Project.
+
+User Institution: The Institution that has requested access to the Data, i.e. legal name of the institution
+
+
+ 
+1. The User Institution certifies that it will comply with all applicable laws and regulations applicable to the User Institution's use, handling, disposal or destruction and storage of the Data. Further, the User Institution certifies that it has obtained all relevant authorizations and approvals, including, as applicable, approval from a competent Research Ethics Board to receive, use and store the Data for the Project and shall act in compliance with such authorizations and approvals.
+
+2. The User Institution agrees to only use these Data solely for the purpose of the Project and only for Research Purposes. The User Institution further agrees that it will only use these Data for Research Purposes which are within the limitations (if any) set out in Appendix 1. 
+
+...
+    </POLICY_TEXT>  
+    <DATA_USES>
+      <DATA_USE code="0000042" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000042</URL>
+      </DATA_USE>
+      <DATA_USE code="0000028" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000028</URL>
+      </DATA_USE>
+      <DATA_USE code="0000019" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000019</URL>
+      </DATA_USE>
+      <DATA_USE code="0000026" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000026</URL>
+      </DATA_USE>
+      <DATA_USE code="0000027" ontology="DUO" version="2021-02-23">
+        <URL>http://purl.obolibrary.org/obo/DUO_0000027</URL>
+      </DATA_USE>
+    </DATA_USES>
+  </POLICY>
+</POLICY_SET>

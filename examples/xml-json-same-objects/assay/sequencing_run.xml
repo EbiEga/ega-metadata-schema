@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<RUN_SET>
+  <RUN alias="run_1" broker_name="EGA" center_name="EBI">
+    <EXPERIMENT_REF accession="ERX3801613"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE checksum="978985abdf96dbc67edce46c8eb3c02c" checksum_method="MD5" filename="RUN-8729.N1.51-RG41.s_1.r_1.fq.gz" filetype="fastq" quality_scoring_system="phred" unencrypted_checksum="e06998d991051d781e363934bb8484c5"/>
+        <FILE checksum="ae00c3b081ec6b75a5fb7a2e356de4d3" checksum_method="MD5" filename="RUN-8729.N1.51-RG41.s_1.r_2.fq.gz" filetype="fastq" quality_scoring_system="phred" unencrypted_checksum="7b66518e7f719ea6ce2652d184a39b24"/>
+      </FILES>
+    </DATA_BLOCK>
+  </RUN>
+</RUN_SET>

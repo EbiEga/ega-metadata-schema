@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added folder ``controlled_vocabulary_schemas`` with JSON documents containing controlled vocabulary for specific fields. These are inherited in the common definitions mainly [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
 - All external accessions are now required to follow a CURIE format (e.g. ``ncbigene:100010``) [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
 - Updated JSON markdowns [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
+- Added example XML to JSON documents (see [README.md](examples/xml-json-same-objects/README.md)) [[PR#35](https://github.com/EbiEga/ega-metadata-schema/pull/35)].
 
 ## [0.0.0] - 2021-04-26
 ### Added
