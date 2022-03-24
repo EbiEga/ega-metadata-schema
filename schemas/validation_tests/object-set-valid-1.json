@@ -13,11 +13,7 @@
             },
             "object_title": "Example array experiment title",
             "object_description": "Example array experiment's description of my experiment N13.",
-            "assayed_molecule_descriptor": {
-                "assayed_molecule_type": "DNA",
-                "assayed_molecule_subtype": "genomic DNA",
-                "assayed_molecule_subtype_curie": "EFO:0008479"
-            },
+            "assayed_molecule_type": "DNA",
             "types_of_output_data": [
                 "genomic data"
             ],

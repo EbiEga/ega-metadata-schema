@@ -157,39 +157,12 @@
         ]
       },
 
-      "assayed_molecule_descriptor": {
-        "type": "object",
-        "title": "Descriptor of the assayed molecule",
-        "description": "Node containing information about the assayed molecule: the material entity (e.g. DNA) that was used to generate the data.",
-        "additionalProperties": false,
-        "required": ["assayed_molecule_type"],
-        "properties": {
-          "assayed_molecule_type": {
-            "type": "string",
-            "title": "Type of the assayed molecule of the experiment",
-            "description": "The assayed molecule (e.g. DNA), chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
-            "enum": ["DNA", "RNA", "metabolie", "protein"],
-            "meta:enum": ["DNA__CHEBI:16991", "RNA__CHEBI:33697", "metabolite__EFO:0004727", "protein__CHEBI:36080"]
-          },
-          "assayed_molecule_subtype": {
-            "type": "string",
-            "title": "Subtype of the assayed molecule of the experiment",
-            "description": "Name of the assayed molecule subtype. We highly recommend the usage of names given to ontologized molecule subtypes, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo).",
-            "examples": ["cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "insulin", "serum albumin" ]
-          },
-          "assayed_molecule_subtype_curie": {
-            "type": "string",
-            "title": "CURIE of the assayed molecule subtype",
-            "description": "Ontology term in CURIE format (e.g. 'PR:000003918') of the assayed molecule subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
-            "examples": ["PR:000003918", "EFO:0008481", "EFO:0008479", "EFO:0008480", "CHEBI:33699"],
-            "allOf": [
-              {
-                "title": "General pattern of a CURIE",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
-              }
-            ]
-          }
-        }
+      "assayed_molecule_type": {
+        "type": "string",
+        "title": "Type of the assayed molecule of the experiment",
+        "description": "Node containing information about the assayed molecule: the material entity (e.g. DNA) that was used to generate the data. Choose the specific terms if possible (e.g. if the assayed molecule is cDNA, pick 'cDNA' instead of just 'DNA'). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+        "enum": [ "DNA", "RNA", "metabolite", "protein", "cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "non polyA RNA", "long non polyA RNA", "nuclear RNA", "polyA RNA", "long polyA RNA", "snRNA", "total RNA" ],
+        "meta:enum": [ "DNA__CHEBI:16991", "RNA__CHEBI:33697", "metabolite__EFO:0004727", "protein__CHEBI:36080", "cDNA__EFO:0008481", "genomic DNA__EFO:0008479", "mitochondrial DNA__EFO:0008480",  "messenger RNA__CHEBI:33699", "ncRNA__SO:0000655", "non polyA RNA__EFO:0005017", "long non polyA RNA__EFO:0005018", "nuclear RNA__EFO:0030052", "polyA RNA__OBI:0000869", "long polyA RNA__EFO:0005019", "snRNA__SO:0000274", "total RNA__EFO:0004964" ]
       },
 
       "types_of_output_data": {
