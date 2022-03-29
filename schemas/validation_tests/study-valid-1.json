@@ -15,13 +15,6 @@
     "study_relationships": [
         {
             "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "alias": "my-covid19-study_231",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "study"                   
-            },
             "r_target": {
                 "object_id": {
                     "ega_accession": "EGAX00002043412"

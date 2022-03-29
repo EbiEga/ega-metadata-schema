@@ -34,13 +34,6 @@
             "r_type": "develops_from",
             "r_source": {
                 "object_id": {
-                    "alias": "My_10samples_X_from_NM305004",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "sample"
-            },
-            "r_target": {
-                "object_id": {
                     "ega_accession": "EGAI00002045411"
                 },
                 "object_type": "individual"                
@@ -58,13 +51,6 @@
                     ]
                 },
                 "object_type": "external_accession"
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "My_10samples_X_from_NM305004",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "sample"
             }
         }
     ],

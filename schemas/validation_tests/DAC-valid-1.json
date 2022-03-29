@@ -27,19 +27,11 @@
     "dac_relationships": [
         {
             "r_type": "referenced_by",
-            "r_source": {
+            "r_target": {
                 "object_id": {
                     "ega_accession": "EGAP00002045411"
                 },
                 "object_type": "policy"                 
-            },
-            "r_target": {
-                
-                "object_id": {
-                    "alias": "my_DAC_X10",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "DAC"               
             }
         }
     ],

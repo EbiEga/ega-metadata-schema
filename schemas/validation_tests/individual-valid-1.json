@@ -25,13 +25,6 @@
                     "ega_accession": "EGAN00000000001"
                 },
                 "object_type": "sample"
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "NM305004",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "individual"               
             }
         }
     ],
