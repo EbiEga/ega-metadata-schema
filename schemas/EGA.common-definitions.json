@@ -1271,7 +1271,8 @@
       "subject_id": {
         "type": "string",
         "title": "Subject ID",
-        "description": "A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance.",
+        "description": "A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance. It **shall not** contain personal sensitive data, since it will be publicly displayed for queries and searches.",
+        "minLength": 1,
         "examples": [ "Donor-10031", "ID001", "9001", "AX_Dli" ]
       },
 
@@ -2127,6 +2128,465 @@
         "meta:property_curie": "UBERON:0001062",
         "description": "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species. Term shall be one of UBERON's ontologized terms beneath anatomical entity [UBERON:0001062]. Search for yours at: http://purl.obolibrary.org/obo/UBERON_0001062. It can be used to describe a sampling site or the morphological site of a disease, for example. #! To be used as an ontology validation node in the future.",
         "examples": ["liver", "gut wall", "nasal cavity" ]
+      },
+
+      "r-type-referenced_by": {
+        "type": "object",
+        "title": "Relationship type: referenced_by",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "referenced_by"
+          } 
+        }
+      },
+
+      "r-type-grouped_with": {
+        "type": "object",
+        "title": "Relationship type: grouped_with",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "grouped_with"
+          } 
+        }
+      },
+
+      "r-type-member_of": {
+        "type": "object",
+        "title": "Relationship type: member_of",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "member_of"
+          } 
+        }
+      },
+
+      "r-type-is_after": {
+        "type": "object",
+        "title": "Relationship type: is_after",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "is_after"
+          } 
+        }
+      },
+
+      "r-type-child_of": {
+        "type": "object",
+        "title": "Relationship type: child_of",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "child_of"
+          } 
+        }
+      },
+
+      "r-type-develops_from": {
+        "type": "object",
+        "title": "Relationship type: develops_from",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "develops_from"
+          } 
+        }
+      },
+
+      "r-type-family_relationship_with": {
+        "type": "object",
+        "title": "Relationship type: family_relationship_with",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "family_relationship_with"
+          } 
+        }
+      },
+
+      "r-type-parent_of": {
+        "type": "object",
+        "title": "Relationship type: parent_of",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "parent_of"
+          } 
+        }
+      },
+
+      "r-type-same_as": {
+        "type": "object",
+        "title": "Relationship type: same_as",
+        "description": "Node to be used as a relationship type for relationship contraints.",
+        "properties": {
+          "r_type": {
+            "const": "same_as"
+          } 
+        }
+      },
+
+      "r-target-policy": {
+        "type": "object",
+        "title": "Relationship target: Policy",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "policy" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-policy": {
+        "type": "object",
+        "title": "Relationship source: Policy",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "policy" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-DAC": {
+        "type": "object",
+        "title": "Relationship target: DAC",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "DAC" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-DAC": {
+        "type": "object",
+        "title": "Relationship source: DAC",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "DAC" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-dataset": {
+        "type": "object",
+        "title": "Relationship target: dataset",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "dataset" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-dataset": {
+        "type": "object",
+        "title": "Relationship source: dataset",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "dataset" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-analysis": {
+        "type": "object",
+        "title": "Relationship target: analysis",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "analysis" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-analysis": {
+        "type": "object",
+        "title": "Relationship source: analysis",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "analysis" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-sample": {
+        "type": "object",
+        "title": "Relationship target: sample",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "sample" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-sample": {
+        "type": "object",
+        "title": "Relationship source: sample",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "sample" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-experiment": {
+        "type": "object",
+        "title": "Relationship target: experiment",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "experiment" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-experiment": {
+        "type": "object",
+        "title": "Relationship source: experiment",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "experiment" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-individual": {
+        "type": "object",
+        "title": "Relationship source: individual",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "individual" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-individual": {
+        "type": "object",
+        "title": "Relationship target: individual",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "individual" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-submission": {
+        "type": "object",
+        "title": "Relationship source: submission",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "submission" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-submission": {
+        "type": "object",
+        "title": "Relationship target: submission",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "submission" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-external_accession": {
+        "type": "object",
+        "title": "Relationship source: external_accession",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "external_accession" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-external_accession": {
+        "type": "object",
+        "title": "Relationship target: external_accession",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "external_accession" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-external_URL": {
+        "type": "object",
+        "title": "Relationship source: external_URL",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "external_URL" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-external_URL": {
+        "type": "object",
+        "title": "Relationship target: external_URL",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "external_URL" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-study": {
+        "type": "object",
+        "title": "Relationship source: study",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "study" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-study": {
+        "type": "object",
+        "title": "Relationship target: study",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "study" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-assay": {
+        "type": "object",
+        "title": "Relationship target: assay",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "assay" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-source-assay": {
+        "type": "object",
+        "title": "Relationship source: assay",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "assay" 
+              }
+            }
+          } 
+        }
       }
-    }    
+    }
 }

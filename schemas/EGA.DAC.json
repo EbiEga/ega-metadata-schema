@@ -79,8 +79,62 @@
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a DAC) the EGA.",
         "minItems": 1,
         "additionalProperties": false,
-        "items": { 
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+        "items": {
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+            },
+            {
+              "title": "Relationship constraints for a DAC",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a DAC.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-policy"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type same_as, grouped_with and member_of (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-member_of"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-DAC"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-DAC"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]          
         }
       },
 

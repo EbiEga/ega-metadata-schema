@@ -203,7 +203,70 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": { 
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+            },
+            {
+              "title": "Relationship constraints for an assay",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a XXXXX.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-dataset"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-analysis"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-sample"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-experiment"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type grouped_with, is_after, same_as (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-assay"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-assay"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
         }
       },
 

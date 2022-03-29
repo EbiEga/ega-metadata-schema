@@ -33,6 +33,15 @@
                 },
                 "object_type": "policy"                 
             }
+        },
+        {
+            "r_type": "same_as",
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAC00002344532"
+                },
+                "object_type": "DAC"                 
+            }
         }
     ],
     "dac_attributes": [

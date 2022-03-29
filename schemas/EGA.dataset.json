@@ -82,7 +82,67 @@
         "minItems": 1,
         "additionalProperties": false,
         "items": { 
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+            },
+            {
+              "title": "Relationship constraints for a dataset",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a dataset.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-policy"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-assay"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-analysis"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type grouped_with, is_after, same_as (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-dataset"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-dataset"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
         }
       },
 

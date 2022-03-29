@@ -64,7 +64,67 @@
         "minItems": 1,
         "additionalProperties": false,
         "items": { 
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object" 
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+            },
+            {
+              "title": "Relationship constraints for an individual",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a individual.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-sample"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type child_of, family_relationship_with, grouped_with, parent_of, same_as (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-child_of"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-parent_of"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-individual"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
         }
       },
 
