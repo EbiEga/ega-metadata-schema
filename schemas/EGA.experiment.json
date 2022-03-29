@@ -5,7 +5,7 @@
     "title": "EGA Experiment metadata schema",
     "meta:version": "0.0.0",
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "experiment_protocols", "assay_technology", "assay_type_descriptor", "assayed_molecule_descriptor", "experiment_type_specifications"],
+    "required": ["object_id", "experiment_protocols", "assay_technology", "assay_type_descriptor", "assayed_molecule_type", "experiment_type_specifications"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
