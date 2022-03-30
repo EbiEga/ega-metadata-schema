@@ -4,7 +4,7 @@
     "type": "object",
     "title": "EGA analysis metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its analysis metadata object. This object is intended to contain metadata about a detailed examination of data (mainly data processing protocols) in order to come to some conclusion. It can be of different types (e.g. sequence variation, sequence alignment, phenotype characterization, gene expression, etc.) that will mainly differ in the protocols used to achieve the processed data of the analysis. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_id", "analysis_type_specifications" ],
     "additionalProperties": false,
     "properties": {
