@@ -1,0 +1,71 @@
+name: New Controlled Vocabulary (CV) term
+description: A form to request a new CV term to be added to a specific set of terms in the [EGA metadata schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
+title: "[New CV]: "
+labels: ["enhancement", "documentation", "new_cv_term"]
+assignees:
+  - M-casado
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form serves as a template for new additions of controlled vocabularies (CV). It can be used to add, for example, a new assay technology term to the CV of an experiment's technology list. We highly recommend for proposed terms to be ontologised. 
+        Thank you for contributing to the metadata of the European Genome-phenome Archive (EGA)!
+  - type: dropdown
+    id: metadata-object
+    attributes:
+      label: Metadata object(s)
+      description: What metadata object(s) does the new term correspond to? Take a look at the metadata diagram [here](https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/metadata_model).
+      multiple: true
+      options:
+        - DAC
+        - Policy
+        - Dataset
+        - Analysis
+        - Study
+        - Experiment
+        - Assay
+        - Sample
+        - Individual
+        - Submission
+    validations:
+      required: true
+  - type: textarea
+    id: schema-fields
+    attributes:
+      label: Schema fields
+      description: What is the field(s) to which the proposed term should be added? You can find the set of schemas [here](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and its rendered markdown [here](https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/json_browser).
+      placeholder: e.g. assay_technology
+    validations:
+      required: true
+  - type: input
+    id: term-name
+    attributes:
+      label: Term name
+      description: What is the name of the proposed term?
+      placeholder: e.g. RNA-Seq
+    validations:
+      required: true
+  - type: input
+    id: term-curie
+    attributes:
+      label: Term CURIE
+      description: What is the CURIE (Compact URI) of the proposed term? You can find the CURIE of your term by searching by name at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). A CURIE consists in an ontology preffix followed by a colon (e.g. EFO:) and an accession of the term within the ontology (e.g. 0008896).
+      placeholder: e.g. EFO:0008896
+    validations:
+      required: false
+  - type: input
+    id: term-url
+    attributes:
+      label: Term URL
+      description: What is the ontology record URL of the proposed term?
+      placeholder: e.g. http://www.ebi.ac.uk/efo/EFO_0008896
+    validations:
+      required: false
+  - type: textarea
+    id: term-description
+    attributes:
+      label: Term description
+      description: What is the description of the proposed term? It can be copied from the ontology record. 
+      placeholder: e.g. RNA-seq is a method that involves purifying RNA and making cDNA, followed by high-throughput sequencing.
+    validations:
+      required: true
