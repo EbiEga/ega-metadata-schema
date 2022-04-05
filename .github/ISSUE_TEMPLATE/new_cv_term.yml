@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        This form serves as a template for new additions of controlled vocabularies (CV). It can be used to add, for example, a new assay technology term to the CV of an experiment's technology list. We highly recommend for proposed terms to be ontologised. 
+        This form serves as a template for **new additions of controlled vocabularies** (CV). It can be used to add, for example, a new assay technology term to the CV of an experiment's technology list. We highly recommend for proposed terms to be ontologised. 
         Thank you for contributing to the metadata of the European Genome-phenome Archive (EGA)!
   - type: dropdown
     id: metadata-object
