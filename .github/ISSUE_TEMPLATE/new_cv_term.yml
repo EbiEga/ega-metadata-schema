@@ -1,7 +1,7 @@
 name: New Controlled Vocabulary (CV) term
 description: A form to request a new CV term to be added to a specific set of terms in the [EGA metadata schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
 title: "[New CV]: "
-labels: ["enhancement", "documentation", "new_cv_term"]
+labels: ["enhancement", "documentation", "new CV term"]
 assignees:
   - M-casado
 body:
