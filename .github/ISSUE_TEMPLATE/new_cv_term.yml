@@ -69,3 +69,11 @@ body:
       placeholder: e.g. RNA-seq is a method that involves purifying RNA and making cDNA, followed by high-throughput sequencing.
     validations:
       required: true
+  - type: textarea
+    id: additional-comments
+    attributes:
+      label: Additional comments
+      description: Add here any additional comments that you would want to add to this issue.
+      placeholder: e.g. I believe this term would depend on the experiment type of... 
+    validations:
+      required: true
