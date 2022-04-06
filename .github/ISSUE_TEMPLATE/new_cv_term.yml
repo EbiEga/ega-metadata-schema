@@ -17,16 +17,17 @@ body:
       description: What metadata object(s) does the new term correspond to? Take a look at the metadata diagram [here](https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/metadata_model).
       multiple: true
       options:
-        - DAC
-        - Policy
-        - Dataset
         - Analysis
-        - Study
         - Experiment
         - Assay
         - Sample
         - Individual
+        - DAC
+        - Policy
+        - Dataset
+        - Study
         - Submission
+        - Other
     validations:
       required: true
   - type: textarea
