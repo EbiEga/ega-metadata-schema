@@ -17,8 +17,10 @@ To make a suggestion you shall create an issue in this same GitHub repository, m
 ). In these templates you will find forms requesting information for us to consider your contribution based on its type: 
 * **``new_cv_term``**: use this template to suggest new Controlled Vocabulary (CV) terms (e.g. addition of ``RNA-seq`` to the assay technology CV list).
 * **``new_field``**: use this template to suggest new fields (e.g. addition of ``assay_technology`` to an experiment)
-* **``other_suggestions``**: use this template to suggest any other changes, from documentation to broad changes in the metadata model.
 
 ## Reporting bugs
 To report any incorrect or unexpected result regarding our metadata standards, of any type (e.g. JSON schemas, documentation, issue templates...), please make use of the **``bug_report``** issue template that you will find in the [**set of issue templates**](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose
 ). The form will guide you over the process of reporting a bug.
+
+## Other suggestions
+Please open blank issues for any other type of contributions, providing as many details as possible in a structured manner.
