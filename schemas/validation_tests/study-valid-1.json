@@ -21,6 +21,20 @@
                 },
                 "object_type": "experiment"                             
             }
+        },
+        {
+            "r_type": "same_as",
+            "r_target": {
+                "object_id": {
+                    "external_accessions": [
+                        {
+                            "external_accession_curie": "biostudies:S-EPMC3314381",
+                            "accession_label": "The same study was submitted to the two archives due to a deadline approaching."
+                        }
+                    ]
+                },
+                "object_type": "external_accession"                                                             
+            }
         }
     ],
     "study_attributes": [

@@ -212,8 +212,8 @@
             "type": "string",
             "title": "Relationship type",
             "description": "ID (e.g. same_as) of the type of the relationship. To be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
-            "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "parent_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
-            "meta:enum": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "parent_of__GSSO:001986", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
+            "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
+            "meta:enum": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
             "examples": [ "referenced_by" ]
           },
           "r_source": {
@@ -1190,7 +1190,7 @@
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ],
-            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712"]
+            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381"]
           },
           "accession_label": {
             "type": ["string", "number"],
@@ -1254,7 +1254,7 @@
           "object_type": {
             "type": "string",
             "title": "Type of the relationship's object",
-            "description": "Type of the relationship's object, chosen from a list of CV (e.g. experiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA's object (e.g. file, sample…); (2) an 'external_accession'; (3) or an 'external_URL'. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+            "description": "Type of the relationship's object, chosen from a list of CV (e.g. experiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA's object (e.g. file, sample...); (2) an 'external_accession'; (3) or an 'external_URL'. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "enum": ["experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "external_accession", "external_URL"],
             "meta:enum": ["Contains information about the experimental design of the sequencing", "Information about the study", "Information about the used samples", "Information about the participants (i.e. humans) of the study", "Information about the submission actions", "Contains information about the specific assays (either sequencing or array assays) from the experiment", "Contains the collection of assay/analysis data files to be subject to controlled access", "Contains the analysis metadata and data files", "Contains information related to the Data Access Agreement (DAA) the dataset is subject to", "Contains information about the Data Access Committee (DAC)", "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)", "An external URL resource, of any type"],
             "examples": [ "sample" ]
@@ -2203,17 +2203,6 @@
         "properties": {
           "r_type": {
             "const": "family_relationship_with"
-          } 
-        }
-      },
-
-      "r-type-parent_of": {
-        "type": "object",
-        "title": "Relationship type: parent_of",
-        "description": "Node to be used as a relationship type for relationship contraints.",
-        "properties": {
-          "r_type": {
-            "const": "parent_of"
           } 
         }
       },
