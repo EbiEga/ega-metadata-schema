@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added [``sample``](schemas/EGA.sample.json) and [``individual``](schemas/EGA.individual.json) JSON schemas [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 - Added [``object-set``](schemas/EGA.object-set.json) schema to contain grouped objects in sets [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)]. 
 - Added remaining schemas (some empty for the moment) [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)].
+
 ### Modified
 - [star2xml](https://github.com/EGA-archive/star2xml) - Moved tool star2xml to its own repository: https://github.com/EGA-archive/star2xml. 
 - [JSON schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) - improved drafted JSON schemas for AF (Array Format) Array and Experiment metadata.
@@ -31,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All external accessions are now required to follow a CURIE format (e.g. ``ncbigene:100010``) [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
 - Updated JSON markdowns [[PR#34](https://github.com/EbiEga/ega-metadata-schema/pull/34)]
 - Added example XML to JSON documents (see [README.md](examples/xml-json-same-objects/README.md)) [[PR#35](https://github.com/EbiEga/ega-metadata-schema/pull/35)].
+- Modified relationship nodes so that only one end of the relationship is allowed [[PR#39](https://github.com/EbiEga/ega-metadata-schema/pull/39)].
+- Modified relationship nodes to accept only specific combinations per object [[PR#39](https://github.com/EbiEga/ega-metadata-schema/pull/39)].
 
 ## [0.0.0] - 2021-04-26
 ### Added
