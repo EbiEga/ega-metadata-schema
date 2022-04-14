@@ -1,8 +1,7 @@
-## Purpose
-_Describe the problem or feature_
+## Ticket reference
 
-## Approach
-_How does this change address the problem or feature?_
+## Overall changes
+- [ ]
 
-### PR sanity checks
-- [ ] This change breaks compatibility.
+## Future TO-DOs
+- [ ]
