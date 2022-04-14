@@ -75,7 +75,7 @@
           "assay_type": {
             "type": "string",
             "title": "Assay type",
-            "description": "The general categories, either sequencing or array, in which assays are categorized based on the used instruments. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+            "description": "The general categories, either sequencing or array, in which assays are categorized based on the used instruments. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
             "enum": ["array", "sequencing"],
             "meta:enum": ["An assay in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used.", "An assay in which a [sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used."]
           },
@@ -89,7 +89,7 @@
               "n_labels_per_array": {
                 "type": "number",
                 "title": "Number of labels per array",
-                "description": "A single array can be prepared with biological materials labelled differently for them to be compared in parallel. Here one shall specify the number of labels used in the single array (e.g. 2 for a Two-colour cDNA microarray). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
+                "description": "A single array can be prepared with biological materials labelled differently for them to be compared in parallel. Here one shall specify the number of labels used in the single array (e.g. 2 for a Two-colour cDNA microarray). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
                 "enum": [1, 2, 3, 4],
                 "meta:enum": ["1: One single label was used for a single array", "2: two labels were used for a single array. The node 'array_sample_labels' specifying which samples were labelled by which compounds will be expected."]
               },
