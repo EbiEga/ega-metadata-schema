@@ -1,0 +1,65 @@
+name: Report a bug
+description: Form to report bugs metadata-related.
+title: "[BUG]: "
+labels: ["bug"]
+assignees:
+  - M-casado
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form serves as a template for **reporting metadata-related bugs** (e.g. metadata validation issues, wrong identifiers, typos, etc.). For any other types of bugs (e.g. download client, ega-archive website, etc.) please contact ``helpdesk [at] ega-archive.org``. 
+        Thank you for your support to the European Genome-phenome Archive (EGA)!
+  - type: input
+    id: bug-title
+    attributes:
+      label: Bug summary
+      description: Please provide a summary or title for the bug. 
+      placeholder: e.g. Typo in the metadata documentation for experiments
+    validations:
+      required: true
+  - type: textarea
+    id: schema-version
+    attributes:
+      label: Versions
+      description: If the bug is related to the JSON schemas or any tool (e.g. AJV) was used to reproduce the error, plase provide the versions of each here.
+      placeholder:  |
+          * Analysis schema v1.2.2
+          * Common definitions schema v2.0.0
+          * AJV v3.2.0
+    validations:
+      required: false
+  - type: textarea
+    id: to-reproduce
+    attributes:
+      label: To reproduce
+      description: Please explain in detail what lead you to observe the bug to help us reproduce it while we try to fix it.
+      placeholder:  |
+          e.g. Steps to reproduce:
+                  1. Go to the analysis JSON schema of the EGA metadata GH repository
+                  2. Observe a typo in the ``description`` field of the ``analysis_protocols`` property.
+    validations:
+      required: true
+  - type: textarea
+    id: observed-behaviour
+    attributes:
+      label: Observed behaviour
+      description: Please explain what you observed as a bug.
+      placeholder: e.g. The description says "Comprises __metadta__..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Expected behaviour
+      description: Please explain what you expected to happen if there was no bug.
+      placeholder: e.g. The description says "Comprises __metadata__..."
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Use this section to add any context, including error messages or screenshots, that could aid in the fixing of the bug.
+    validations:
+      required: false

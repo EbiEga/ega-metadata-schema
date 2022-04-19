@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added [``sample``](schemas/EGA.sample.json) and [``individual``](schemas/EGA.individual.json) JSON schemas [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
 - Added [``object-set``](schemas/EGA.object-set.json) schema to contain grouped objects in sets [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)]. 
 - Added remaining schemas (some empty for the moment) [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)].
+- Added [contributing documentation](./docs/contributing.md)
+- Added PR and issue templates [[PR#40](https://github.com/EbiEga/ega-metadata-schema/pull/40)].
 - Added example XML to JSON documents (see [README.md](examples/xml-json-same-objects/README.md)) [[PR#35](https://github.com/EbiEga/ega-metadata-schema/pull/35)].
 - Added GH [workflow](./.github/workflows/super_linter.yml) to lint code and documentation of the repo [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
 - Added GH [workflow](./.github/workflows/json_validation.yml) to validate JSON examples automatically on PRs [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
