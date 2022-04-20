@@ -19,19 +19,12 @@
     },
     "individual_relationships": [
         {
-            "r_type": "develops_from",
+            "r_type": "referenced_by",
             "r_source": {
                 "object_id": {
                     "ega_accession": "EGAN00000000001"
                 },
                 "object_type": "sample"
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "NM305004",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "individual"               
             }
         }
     ],

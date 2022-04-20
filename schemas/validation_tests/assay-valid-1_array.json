@@ -56,13 +56,6 @@
                     "ega_accession": "EGAX00002094401"
                 },
                 "object_type": "experiment"
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "My_array_assay_M3051057",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "assay"
             }
         }
     ],    

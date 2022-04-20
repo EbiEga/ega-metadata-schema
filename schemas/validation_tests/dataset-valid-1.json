@@ -14,13 +14,6 @@
                     "ega_accession": "EGAR00002043412"
                 },
                 "object_type": "assay"                                    
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "my-cancer-dataset_231",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "dataset"                            
             }
         },
         {
@@ -30,13 +23,6 @@
                     "ega_accession": "EGAR00004343122"
                 },
                 "object_type": "assay"                                    
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "my-cancer-dataset_231",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "dataset"                            
             }
         },
         {
@@ -46,13 +32,6 @@
                     "ega_accession": "EGAZ00004343122"
                 },
                 "object_type": "analysis"                                    
-            },
-            "r_target": {
-                "object_id": {
-                    "alias": "my-cancer-dataset_231",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "dataset"                            
             }
         }
     ],
