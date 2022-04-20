@@ -162,7 +162,23 @@
         "title": "Type of the assayed molecule of the experiment",
         "description": "Node containing information about the assayed molecule: the material entity (e.g. DNA) that was used to generate the data. Choose the specific terms if possible (e.g. if the assayed molecule is cDNA, pick 'cDNA' instead of just 'DNA'). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
         "enum": [ "DNA", "RNA", "metabolite", "protein", "cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "non polyA RNA", "long non polyA RNA", "nuclear RNA", "polyA RNA", "long polyA RNA", "snRNA", "total RNA" ],
-        "meta:enum": [ "DNA__CHEBI:16991", "RNA__CHEBI:33697", "metabolite__EFO:0004727", "protein__CHEBI:36080", "cDNA__EFO:0008481", "genomic DNA__EFO:0008479", "mitochondrial DNA__EFO:0008480",  "messenger RNA__CHEBI:33699", "ncRNA__SO:0000655", "non polyA RNA__EFO:0005017", "long non polyA RNA__EFO:0005018", "nuclear RNA__EFO:0030052", "polyA RNA__OBI:0000869", "long polyA RNA__EFO:0005019", "snRNA__SO:0000274", "total RNA__EFO:0004964" ]
+        "meta:enum": {
+          "DNA": "[CHEBI:16991]",
+          "RNA": "[CHEBI:33697]",
+          "metabolite": "[EFO:0004727]",
+          "protein": "[CHEBI:36080]",
+          "cDNA": "[EFO:0008481]",
+          "genomic DNA": "[EFO:0008479]",
+          "mitochondrial DNA": "[EFO:0008480]",  
+          "messenger RNA": "[CHEBI:33699]",
+          "ncRNA": "[SO:0000655]",
+          "non polyA RNA": "[EFO:0005017]",
+          "long non polyA RNA": "[EFO:0005018]",
+          "nuclear RNA": "[EFO:0030052]",
+          "polyA RNA": "[OBI:0000869]",
+          "long polyA RNA": "[EFO:0005019]",
+          "snRNA": "[SO:0000274]",
+          "total RNA": "[EFO:0004964]" }
       },
 
       "types_of_output_data": {
