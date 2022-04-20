@@ -1,3 +1,4 @@
+---
 # This workflow executes several linters on changed files whenever
 # a pull request is openned (or new code pushed to it) in the "main" branch
 #
@@ -16,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          # Full git history is needed to get a proper list of changed files 
+          # Full git history is needed to get a proper list of changed files
           #   within `super-linter`
           fetch-depth: 0
 
@@ -25,5 +26,7 @@ jobs:
         uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_MARKDOWN: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

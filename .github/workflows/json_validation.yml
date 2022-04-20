@@ -1,3 +1,4 @@
+---
 # This workflow validates JSON documents against EGA's JSON schemas.
 # This is to ensure that any change to the JSON schemas works as intended,
 # and that the JSON examples are up to date with the schema standards.

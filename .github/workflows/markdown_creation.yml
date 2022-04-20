@@ -1,3 +1,4 @@
+---
 # This workflow executes bash commands to automatically create the
 # markdown documentation of our JSON browser based on EGA's JSON schemas.
 # It is executed when changes are pushed to the "main" branch (e.g. when
