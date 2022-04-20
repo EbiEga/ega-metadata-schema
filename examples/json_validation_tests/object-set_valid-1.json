@@ -178,24 +178,10 @@
                             "ega_accession": "EGAS00002045411"
                         },
                         "object_type": "study"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias" : "My_ChIP_array_experiment_13", 
-                            "center_name" : "EBI-TEST"
-                        },
-                        "object_type": "experiment"
                     }
                 },
                 {
                     "r_type": "referenced_by",
-                    "r_source": {
-                        "object_id": {
-                            "alias" : "My_ChIP_array_experiment_13", 
-                            "center_name" : "EBI-TEST"
-                        },
-                        "object_type": "experiment"
-                    },
                     "r_target": {
                         "object_id": {
                             "ega_accession": "EGAZ00001051423"
@@ -271,13 +257,6 @@
                             "ega_accession": "EGAX00002094401"
                         },
                         "object_type": "experiment"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias": "My_sequencing_assay_M305004",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "assay"
                     }
                 }
             ],    
@@ -357,13 +336,6 @@
                             "ega_accession": "EGAX00002094401"
                         },
                         "object_type": "experiment"
-                    },
-                    "r_target": {
-                        "object_id": {
-                            "alias": "My_array_assay_M3051057",
-                            "center_name": "EBI-TEST"
-                        },
-                        "object_type": "assay"
                     }
                 }
             ],    

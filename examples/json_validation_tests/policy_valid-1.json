@@ -12,13 +12,6 @@
     "policy_relationships": [
         {
             "r_type": "referenced_by",
-            "r_source": {                
-                "object_id": {
-                    "alias": "my-cancer-policy",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "policy"                                    
-            },
             "r_target": {
                 "object_id": {
                     "ega_accession": "EGAD00002043982"
@@ -28,16 +21,9 @@
         },
         {
             "r_type": "referenced_by",
-            "r_source": {                
-                "object_id": {
-                    "alias": "my-cancer-policy",
-                    "center_name": "EBI-TEST"
-                },
-                "object_type": "policy"                                    
-            },
             "r_target": {
                 "object_id": {
-                    "ega_accession": "EGAD00004543982"
+                    "ega_accession": "EGAD00004543981"
                 },
                 "object_type": "dataset"
             }

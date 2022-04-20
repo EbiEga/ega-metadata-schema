@@ -102,24 +102,10 @@
                     "ega_accession": "EGAS00002045411"
                 },
                 "object_type": "study"
-            },
-            "r_target": {
-                "object_id": {
-                    "alias" : "My_ChIP_array_analysis_13", 
-                    "center_name" : "EBI-TEST"
-                },
-                "object_type": "analysis"
             }
         },
         {
             "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "alias" : "My_ChIP_array_analysis_13", 
-                    "center_name" : "EBI-TEST"
-                },
-                "object_type": "analysis"
-            },
             "r_target": {
                 "object_id": {
                     "ega_accession": "EGAZ00001051423"
@@ -130,13 +116,6 @@
         {
             "r_type": "referenced_by",
             "r_source": {
-                "object_id": {
-                    "alias" : "My_ChIP_array_analysis_13", 
-                    "center_name" : "EBI-TEST"
-                },
-                "object_type": "analysis"
-            },
-            "r_target": {
                 "object_id": {
                     "ega_accession": "EGAX00001051423"
                 },
