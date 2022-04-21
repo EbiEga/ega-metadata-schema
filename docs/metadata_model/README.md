@@ -12,4 +12,5 @@ Having the upper basic diagram in mind, we can get into the details of each of t
 * **Object attributes**. Contains custom attributes for submitters to provide.
 
 Besides these common fields, each has their own bespoken attributes (denoted with a ``+``), visible in the following entity diagram:
+
 ![2022.03.28 - EGA Metadata Model 2](diagrams/20220328_EGA_Metadata_Model2.drawio.svg)
