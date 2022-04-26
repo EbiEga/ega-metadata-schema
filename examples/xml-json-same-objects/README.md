@@ -1,6 +1,7 @@
 ## XML and JSON documents for the same objects
 ___
-In this folder you will find **examples of XML and JSON documents that correspond to the same objects**. Each format is validated against their respective schemas: [XSDs](https://github.com/enasequence/schema/tree/master/src/main/resources/uk/ac/ebi/ena/sra/schema) in the case of XMLs and [JSON Schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) in the case of JSONs. The aim of this folder is exclusively for you to see how XMLs and JSONs can be used to describe similar sets of data. For example, you will find files [``sample.json``](sample/sample.json) and [``sample.xml``](sample/sample.xml) that both contain the exact same information, but differently formatted. 
+In this folder you will find **examples of XML and JSON documents that correspond to the same objects**. Each format is validated against their respective schemas: [XSDs](https://github.com/enasequence/schema/tree/master/src/main/resources/uk/ac/ebi/ena/sra/schema) in the case of XMLs and [JSON Schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) in the case of JSONs. The aim 
+of this folder is exclusively for you to see how XMLs and JSONs can be used to describe similar sets of data. For example, you will find files [``sample.json``](sample/sample.json) and [``sample.xml``](sample/sample.xml) that both contain the exact same information, but differently formatted. 
 
 These documents are not representations of _good practice_ metadata standards. The metadata they contain is a modified version of XML files once submitted to EGA.
 

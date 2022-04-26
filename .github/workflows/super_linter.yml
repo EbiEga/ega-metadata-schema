@@ -1,0 +1,32 @@
+---
+# This workflow executes several linters on changed files whenever
+# a pull request is openned (or new code pushed to it) in the "main" branch
+#
+# For more information, check:
+#   https://github.com/github/super-linter
+name: Super-linter (super_linter.yml)
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  run-upser-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Full git history is needed to get a proper list of changed files
+          #   within `super-linter`
+          fetch-depth: 0
+
+      - name: Lint code
+        # Checks the code against linters of different formats and languages
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_MARKDOWN: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

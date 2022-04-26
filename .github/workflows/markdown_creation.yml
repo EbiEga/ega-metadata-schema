@@ -1,0 +1,65 @@
+---
+# This workflow executes bash commands to automatically create the
+# markdown documentation of our JSON browser based on EGA's JSON schemas.
+# It is executed when changes are pushed to the "main" branch (e.g. when
+# a PR is closed).
+
+# For more information, check:
+#   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/json_browser
+#   https://docs.github.com/en/enterprise-server@3.3/actions/using-workflows/
+#     events-that-trigger-workflows#running-your-workflow-when-a-pull-
+#     request-merges
+#   https://lannonbr.com/blog/2019-12-09-git-commit-in-actions
+name: JSON Schemas to Markdown (markdown_creation.yml)
+on:
+  # A closed PR will imply a push to "main". After that push, this action
+  #   executes, using as input the JSON schemas from "main".
+  push:
+    branches: [main]
+
+jobs:
+  markdown-generation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          # Full git history
+          fetch-depth: 0
+
+      - name: Install jsonschema2md
+        run: npm install -g @adobe/jsonschema2md
+
+      - name: Check and clean MD folders
+        run: |
+          markdown_dir="./docs/json_browser/markdowns"
+          mkdir -p "$markdown_dir"
+
+          # Only if it exists and it has content, we empty it
+          if [ -d "$markdown_dir" ] && [ -n "$(ls -A "$markdown_dir")" ]; then
+            rm -vf $markdown_dir/*.md
+          fi
+
+      - name: Generate markdown
+        run: |
+          markdown_dir="./docs/json_browser/markdowns"
+          schemas_dir="./schemas"
+          if [ -d "$schemas_dir" ]; then
+            jsonschema2md -d $schemas_dir -o $markdown_dir -e "json" -x -
+          else
+            exit 1
+          fi
+
+      - name: Setup git config
+        run: |
+          # Setup the username and email. No email by default
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: Add, commit and push to main
+        run: |
+          markdown_dir="./docs/json_browser/markdowns"
+          today=$(date +%F)
+          git add $markdown_dir/*
+          git commit -m "JSON Schemas to Markdown - $today"
+          git push origin main

@@ -115,7 +115,33 @@
             "required": ["filetype_id"],
             "additionalProperties": false,
             "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR", "PY", "SH"],
-            "meta:enum": ["CEL__EFO:0005630: ", "TSV__NCIT:C164049. Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type.", "ADF__NCIT:C172213", "FASTQ__EFO:0004155", "FASTA__NCIT:C47845", "SDRF__NCIT:C172211", "IDF__NCIT:C172212", "VCF__NCIT:C172216", "SRA__format:3698", "SRF__EFO:0004154", "SFF__EFO:0004156", "BAM__EFO:0004157", "CRAM__format:3462", "XLSX__format:3620", "CSV__format:3752", "BED__format:3003", "IDAT__format:3578", "MAP__format:3285", "PED__format:3286", "BIM__", "FAM__", "EXP__format:1631", "GPR__format:3829", "PY__format:3996", "SH__ - Bash scripts"]
+            "meta:enum": {
+              "CEL": "[EFO:0005630]",
+              "TSV": "[NCIT:C164049]: Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type.",
+              "ADF": "[NCIT:C172213]",
+              "FASTQ": "[EFO:0004155]",
+              "FASTA": "[NCIT:C47845]",
+              "SDRF": "[NCIT:C172211]",
+              "IDF": "[NCIT:C172212]",
+              "VCF": "[NCIT:C172216]",
+              "SRA": "[format:3698]",
+              "SRF": "[EFO:0004154]",
+              "SFF": "[EFO:0004156]",
+              "BAM": "[EFO:0004157]",
+              "CRAM": "[format:3462]",
+              "XLSX": "[format:3620]",
+              "CSV": "[format:3752]",
+              "BED": "[format:3003]",
+              "IDAT": "[format:3578]",
+              "MAP": "[format:3285]",
+              "PED": "[format:3286]",
+              "BIM": "",
+              "FAM": "",
+              "EXP": "[format:1631]",
+              "GPR": "[format:3829]",
+              "PY": "[format:3996]",
+              "SH": "Bash scripts"
+            }
           },
           "checksum_method": {
             "type": "string",
@@ -124,7 +150,10 @@
             "description": "Node containing both the ID (MD5 or SHA-256), describing the method which yields the checksum from a data input for the purpose of detecting errors. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
             "additionalProperties": false,
             "enum": ["MD5", "SHA-256"],
-            "meta:enum": ["MD5__NCIT:C171276", "SHA-256__NCIT:C80226"]
+            "meta:enum": {
+              "MD5": "[NCIT:C171276]",
+              "SHA-256": "[NCIT:C80226]"
+            }
           },
           "unencrypted_checksum": {
             "type": "string",
@@ -170,21 +199,31 @@
                 "title": "Quality scoring system",
                 "description": "How the quality score was computed for the data.",
                 "enum": ["phred", "log-odds"],
-                "meta:enum": [ "phred: The quality score is expressed as a probability of error in log form: -10 log(1/p) where p is the probability of error, with value range 0..63 (0 meaning no base call).", "log-odds: The quality score is expressed as the ratio of error to non-error in log form: -10 log(p/(1-p)) where p is the of error, with value range -40..40. The SRA will convert these into phred scale during loadtime." ]
+                "meta:enum": { 
+                  "phred": "The quality score is expressed as a probability of error in log form: -10 log(1/p) where p is the probability of error, with value range 0..63 (0 meaning no base call).",
+                  "log-odds": "The quality score is expressed as the ratio of error to non-error in log form: -10 log(p/(1-p)) where p is the of error, with value range -40..40. The SRA will convert these into phred scale during loadtime." 
+                }
               },
               "quality_encoding": {
                 "type": "string",
                 "title": "Quality encoding format",
                 "description": "Encoding system used to represent the quality score.",
                 "enum": ["ascii", "decimal", "hexadecimal"],
-                "meta:enum": ["ascii: ASCII character based encoding.", "decimal: Single decimal value per quality score.", "hexadecimal: Single hexadecimal value per quality score."]
+                "meta:enum": {
+                  "ascii": "ASCII character based encoding.",
+                  "decimal": "Single decimal value per quality score.",
+                  "hexadecimal": "Single hexadecimal value per quality score."
+                }
               },
               "ascii_offset": {
                 "type": "string",
                 "title": "ASCII offset",
                 "description": "Character used in representing the minimum quality value.  Helps specify how to decode text rendering of quality data.",
                 "enum": ["!", "@"],
-                "meta:enum": ["!: ASCII value 33.  Typically used for range 0..63.", "@: ASCII value 64.  Typically used for range 0..60."]
+                "meta:enum": {
+                  "!": "ASCII value 33.  Typically used for range 0..63.",
+                  "@": "ASCII value 64.  Typically used for range 0..60." 
+                }
               }
             }
           }
@@ -213,7 +252,20 @@
             "title": "Relationship type",
             "description": "ID (e.g. same_as) of the type of the relationship. To be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "enum": ["referenced_by", "develops_from", "same_as", "member_of", "grouped_with", "family_relationship_with", "child_of", "is_after", "published_in", "submitted_by", "contact_of", "main_contact_of"],
-            "meta:enum": ["referenced_by__SIO:000252", "develops_from__RO:0002202", "same_as__NCIT:C64637", "member_of__RO:0002350", "grouped_with__", "family_relationship_with__EFO:0004424", "child_of__GSSO:000728", "is_after__SIO:000211", "published_in__EFO:0001796", "submitted_by__NCIT:C25695", "contact_of__NCIT:C25461", "main_contact_of__"],
+            "meta:enum": {
+              "referenced_by": "[SIO:000252]",
+              "develops_from": "[RO:0002202]",
+              "same_as": "[NCIT:C64637]",
+              "member_of": "[RO:0002350]",
+              "grouped_with": "",
+              "family_relationship_with": "[EFO:0004424]",
+              "child_of": "[GSSO:000728]",
+              "is_after": "[SIO:000211]",
+              "published_in": "[EFO:0001796]",
+              "submitted_by": "[NCIT:C25695]",
+              "contact_of": "[NCIT:C25461]",
+              "main_contact_of": "" 
+            },
             "examples": [ "referenced_by" ]
           },
           "r_source": {
@@ -307,7 +359,26 @@
                 "meta:property_curie": "OBI:0000272",
                 "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
                 "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "nucleic acid sequencing", "sample collection", "single cell isolation", "treatment", "data transformation"],
-                "meta:enum": ["High Content Screen (HCS)__EFO:0007570", "Conversion__EFO:0005520", "Delivery method_EFO:0000395", "Dissection__EFO:0005519", "Dissociation__EFO:0009088", "Enrichment__EFO:0009089", "Extraction__EFO:0002944", "Gene expression__EFO:0003788", "Growth__EFO:0003789", "Hybridization__EFO:0003815", "Hydrolysis collection__EFO:0010892", "Labelling__EFO:0003813", "Nucleic acid library construction__EFO:0004184", "Nucleic acid sequencing__EFO:0004170", "Sample collection__EFO:0005518", "Single cell isolation__EFO:0010214", "Treatment__EFO:0003969", "Data transformation__OBI:0200000"]
+                "meta:enum": {
+                  "High Content Screen (HCS)": "[EFO:0007570]",
+                  "Conversion": "[EFO:0005520]",
+                  "Delivery method": "[EFO:0000395]",
+                  "Dissection": "[EFO:0005519]",
+                  "Dissociation": "[EFO:0009088]",
+                  "Enrichment": "[EFO:0009089]",
+                  "Extraction": "[EFO:0002944]",
+                  "Gene expression": "[EFO:0003788]",
+                  "Growth": "[EFO:0003789]",
+                  "Hybridization": "[EFO:0003815]",
+                  "Hydrolysis collection": "[EFO:0010892]",
+                  "Labelling": "[EFO:0003813]",
+                  "Nucleic acid library construction": "[EFO:0004184]",
+                  "Nucleic acid sequencing": "[EFO:0004170]",
+                  "Sample collection": "[EFO:0005518]",
+                  "Single cell isolation": "[EFO:0010214]",
+                  "Treatment": "[EFO:0003969]",
+                  "Data transformation": "[OBI:0200000]" 
+                }
               },
 
               "protocol_subtype": {
@@ -1256,7 +1327,20 @@
             "title": "Type of the relationship's object",
             "description": "Type of the relationship's object, chosen from a list of CV (e.g. experiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA's object (e.g. file, sample...); (2) an 'external_accession'; (3) or an 'external_URL'. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
             "enum": ["experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "external_accession", "external_URL"],
-            "meta:enum": ["Contains information about the experimental design of the sequencing", "Information about the study", "Information about the used samples", "Information about the participants (i.e. humans) of the study", "Information about the submission actions", "Contains information about the specific assays (either sequencing or array assays) from the experiment", "Contains the collection of assay/analysis data files to be subject to controlled access", "Contains the analysis metadata and data files", "Contains information related to the Data Access Agreement (DAA) the dataset is subject to", "Contains information about the Data Access Committee (DAC)", "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)", "An external URL resource, of any type"],
+            "meta:enum": {
+              "experiment": "Contains information about the experimental design of the sequencing",
+              "study": "Information about the study",
+              "sample": "Information about the used samples",
+              "individual": "Information about the participants (i.e. humans) of the study",
+              "submission": "Information about the submission actions",
+              "assay": "Contains information about the specific assays (either sequencing or array assays) from the experiment",
+              "dataset": "Contains the collection of assay/analysis data files to be subject to controlled access",
+              "analysis": "Contains the analysis metadata and data files",
+              "policy": "Contains information related to the Data Access Agreement (DAA) the dataset is subject to",
+              "DAC": "Contains information about the Data Access Committee (DAC)",
+              "external_accession": "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)",
+              "external_URL": "An external URL resource, of any type"
+            },
             "examples": [ "sample" ]
           }
         },
@@ -1282,7 +1366,12 @@
         "meta:property_curie": "PATO:0000047",
         "description": "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
         "enum": [ "male", "female", "hermaphrodite", "unknown" ],
-        "meta:enum": [ "male__PATO:0000384: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.", "female__PATO:0000383: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.", "hermaphrodite__PATO:0001340: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.", "unknown__: The biological sex is unknown." ],
+        "meta:enum": { 
+          "male": "[PATO:0000384]: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.",
+          "female": "[PATO:0000383]: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.",
+          "hermaphrodite": "[PATO:0001340]: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.",
+          "unknown": "The biological sex is unknown." 
+        },
         "examples": [ "male" ]
       },
 
@@ -1462,7 +1551,54 @@
         "meta:property_curie": "EFO:0001426",
         "description": "An object containing the enumeration of multiple study-design keywords, to be inherited at their respective nodes. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
         "enum": ["RNA stability design", "binding site identification design", "case control design", "cell component comparison design", "cell cycle design", "cell type comparison design", "cellular modification design", "clinical history design", "compound treatment design", "cross sectional design", "development or differentiation design", "disease state design", "dose response design", "twin design", "genetic modification design", "genotype design", "growth condition design", "imprinting design", "injury design", "innate behavior design", "organism part comparison design", "organism status design", "pathogenicity design", "population based design", "sex design", "species design", "stimulus or stress design", "strain or line design", "time series design", "family based design", "genotyping design", "mobile element identification design", "operon identification design", "secreted protein identification design", "translational bias design", "transposable element identification design", "hardware variation design", "normalization testing design", "operator variation design", "optimization design", "quality control testing design", "reference design", "replicate design", "software variation design", "validation by real time PCR design", "validation by reverse transcription PCR design"],
-        "meta:enum": ["RNA stability design__EFO:0001783", "binding site identification design__EFO:0004664", "case control design__EFO:0001427", "cell component comparison design__EFO:0001743", "cell cycle design__EFO:0001744", "cell type comparison design__EFO:0001745", "cellular modification design__EFO:0004666", "clinical history design__EFO:0001780", "compound treatment design__EFO:0001755", "cross sectional design__EFO:0001428", "development or differentiation design__EFO:0001746", "disease state design__EFO:0001756", "dose response design__EFO:0001757", "twin design__EFO:0001431", "genetic modification design__EFO:0001758", "genotype design__EFO:0001748", "growth condition design__EFO:0001759", "imprinting design__EFO:0001747", "injury design__EFO:0001760", "innate behavior design__EFO:0001749", "organism part comparison design__EFO:0001750", "organism status design__EFO:0001751", "pathogenicity design__EFO:0001761", "population based design__EFO:0001430", "sex design__EFO:0001752", "species design__EFO:0001753", "stimulus or stress design__EFO:0001762", "strain or line design__EFO:0001754", "time series design__EFO:0001779", "family based design__EFO_0001429", "genotyping design__EFO_0001784", "mobile element identification design__EFO_0005693", "operon identification design__EFO_0001785", "secreted protein identification design__EFO_0001786", "translational bias design__EFO_0001787", "transposable element identification design__EFO_0005692", "hardware variation design__EFO_0001767", "normalization testing design__EFO_0001771", "operator variation design__EFO_0001772", "optimization design__EFO_0001773", "quality control testing design__EFO_0001774", "reference design__EFO_0001775", "replicate design__EFO_0001776", "software variation design__EFO_0001778", "validation by real time PCR design__OBI_0001166", "validation by reverse transcription PCR design__OBI_0001162"],
+        "meta:enum": {
+          "RNA stability design": "[EFO:0001783]",
+          "binding site identification design": "[EFO:0004664]",
+          "case control design": "[EFO:0001427]",
+          "cell component comparison design": "[EFO:0001743]",
+          "cell cycle design": "[EFO:0001744]",
+          "cell type comparison design": "[EFO:0001745]",
+          "cellular modification design": "[EFO:0004666]",
+          "clinical history design": "[EFO:0001780]",
+          "compound treatment design": "[EFO:0001755]",
+          "cross sectional design": "[EFO:0001428]",
+          "development or differentiation design": "[EFO:0001746]",
+          "disease state design": "[EFO:0001756]",
+          "dose response design": "[EFO:0001757]",
+          "twin design": "[EFO:0001431]",
+          "genetic modification design": "[EFO:0001758]",
+          "genotype design": "[EFO:0001748]",
+          "growth condition design": "[EFO:0001759]",
+          "imprinting design": "[EFO:0001747]",
+          "injury design": "[EFO:0001760]",
+          "innate behavior design": "[EFO:0001749]",
+          "organism part comparison design": "[EFO:0001750]",
+          "organism status design": "[EFO:0001751]",
+          "pathogenicity design": "[EFO:0001761]",
+          "population based design": "[EFO:0001430]",
+          "sex design": "[EFO:0001752]",
+          "species design": "[EFO:0001753]",
+          "stimulus or stress design": "[EFO:0001762]",
+          "strain or line design": "[EFO:0001754]",
+          "time series design": "[EFO:0001779]",
+          "family based design": "[EFO:0001429]",
+          "genotyping design": "[EFO:0001784]",
+          "mobile element identification design": "[EFO:0005693]",
+          "operon identification design": "[EFO:0001785]",
+          "secreted protein identification design": "[EFO:0001786]",
+          "translational bias design": "[EFO:0001787]",
+          "transposable element identification design": "[EFO:0005692]",
+          "hardware variation design": "[EFO:0001767]",
+          "normalization testing design": "[EFO:0001771]",
+          "operator variation design": "[EFO:0001772]",
+          "optimization design": "[EFO:0001773]",
+          "quality control testing design": "[EFO:0001774]",
+          "reference design": "[EFO:0001775]",
+          "replicate design": "[EFO:0001776]",
+          "software variation design": "[EFO:0001778]",
+          "validation by real time PCR design": "[OBI:0001166]",
+          "validation by reverse transcription PCR design": "[OBI:0001162]" 
+        },
         "examples": [ "RNA stability design" ]
       },
 
@@ -1720,7 +1856,10 @@
         "title": "DNA Sequence strand",
         "description": "DNA sequence is double-stranded. By convention, for a reference chromosome, one whole strand is designated the 'forward strand' and the other the 'reverse strand'. This designation is arbitrary and sometimes the terms 'plus strand' and 'minus strand', respectively, are used instead. A genomic feature can live on a DNA strand in one of two orientations. For instance, a gene is said to have a coding strand (also known as its 'sense strand'), and a template strand (also known as its 'antisense strand'), which can be forward or reverse strands depending on which contain the nucleotide sequence the RNA polymerase reads to create its RNA product. Annotations such as Ensembl and UCSC are concerned with the coding sequences of genes, so when they say a gene is on the forward strand, it means the gene's coding sequence is on the forward strand. To follow through again, that means that during transcription of this forward-strand gene, the gene's template sequence is read from the reverse strand, producing an mRNA that matches the sequence on the forward strand. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
         "enum": ["forward", "reverse"],
-        "meta:enum": ["Forward strand [ENSGLOSSARY:0000369]: DNA strand arbitrary defined as the strand with its 5' end at the tip of the short chromosome arm (p). If a gene is forward-stranded, its sense (sequence matching cDNA) is on the forward strand. Forward strand is reverse complementary to the reverse strand.", "Reverse strand [ENSGLOSSARY:0000370]: DNA strand arbitrary defined as the strand with its 5' end at the tip of the long chromosome arm (q). If a gene is reverse-stranded, its sense (sequence matching cDNA) is on the reverse strand. Reverse strand is reverse complementary to the forward strand."]
+        "meta:enum": {
+          "forward": "Forward strand [ENSGLOSSARY:0000369]: DNA strand arbitrary defined as the strand with its 5' end at the tip of the short chromosome arm (p). If a gene is forward-stranded, its sense (sequence matching cDNA) is on the forward strand. Forward strand is reverse complementary to the reverse strand.",
+          "reverse": "Reverse strand [ENSGLOSSARY:0000370]: DNA strand arbitrary defined as the strand with its 5' end at the tip of the long chromosome arm (q). If a gene is reverse-stranded, its sense (sequence matching cDNA) is on the reverse strand. Reverse strand is reverse complementary to the forward strand." 
+        }
       },
 
       "nucleic_acid_sequence": {
@@ -1909,7 +2048,10 @@
             "meta:property_curie": "EFO:0002773",
             "description": "The general categories (e.g. sequencers) in which assay instruments are categorized. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
             "enum": [ "array", "sequencer" ],
-            "meta:enum": ["[Array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698), an instrument which consists of nucleic acid or protein molecules bound to a substrate", "[Sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739), an instrument that determines the order of nucleic acids in their sequences."]
+            "meta:enum": {
+              "array": "[EFO:0002698][Array instrument](http://www.ebi.ac.uk/efo/EFO_0002698), an instrument which consists of nucleic acid or protein molecules bound to a substrate",
+              "sequencer": "[EFO:0003739][Sequencer instrument](http://www.ebi.ac.uk/efo/EFO_0003739), an instrument that determines the order of nucleic acids in their sequences." 
+            }
           },
           "assay_instrument_platform": {
             "type": "string",
@@ -1949,7 +2091,10 @@
         "title": "Sequencing library layout",
         "description": "Whether the sequenced reads are paired or single. In other words, if the sequencing assay is paired- (OBI:0001850) or single-end (OBI:0002485). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
         "enum": ["paired-end", "single-end"],
-        "meta:enum": ["Paired-end [OBI:0001850]: A transcription profiling assay that determines transcripts, gene structures, and gene expressions using Paired-End Tags and sequencing technology. Allows to sequence both ends of a fragment and generate high-quality, alignable sequence data. Paired-end sequencing facilitates detection of genomic rearrangements and repetitive sequence elements, as well as gene fusions and novel transcripts.", "Single-end [OBI:0002485]: A sequencing assay that incorporates single-end reads and sequencing technology to determine transcripts, gene structures, and gene expressions. Single-read sequencing involves sequencing DNA from only one end."]
+        "meta:enum": {
+          "paired-end": "[OBI:0001850]: A transcription profiling assay that determines transcripts, gene structures, and gene expressions using Paired-End Tags and sequencing technology. Allows to sequence both ends of a fragment and generate high-quality, alignable sequence data. Paired-end sequencing facilitates detection of genomic rearrangements and repetitive sequence elements, as well as gene fusions and novel transcripts.",
+          "single-end": "[OBI:0002485]: A sequencing assay that incorporates single-end reads and sequencing technology to determine transcripts, gene structures, and gene expressions. Single-read sequencing involves sequencing DNA from only one end." 
+        }
       },
 
       "spot_descriptor": {
@@ -1998,14 +2143,25 @@
                   "title": "Read class",
                   "description": "",
                   "enum": ["Application Read", "Technical Read" ],
-                  "meta:enum": ["", ""]
+                  "meta:enum": {
+                    "Application Read": "",
+                    "Technical Read": ""
+                  }
                 },
                 "read_type": {
                   "type": "string",
                   "title": "Read type",
                   "description": "",
                   "enum": ["Forward", "Reverse", "Adapter", "Primer", "Linker", "BarCode", "Other"],
-                  "meta:enum": ["", "", "", "", "", "", ""]
+                  "meta:enum": {
+                    "Forward": "",
+                    "Reverse": "",
+                    "Adapter": "",
+                    "Primer": "",
+                    "Linker": "",
+                    "BarCode": "",
+                    "Other": "" 
+                  }
                 },
                 "relative_order": {
                   "type": "object",
@@ -2086,7 +2242,11 @@
                             "title": "Match edge",
                             "description": "Where the match should occur. Changes the rules on how min_match and max_mismatch are counted.",
                             "enum": ["full", "start", "end"],
-                            "meta:enum": ["Only @max_mismatch influences matching process", "Both matches and mismatches are counted. When @max_mismatch is exceeded - it is not a match. When @min_match is reached - match is declared.", "Both matches and mismatches are counted. When @max_mismatch is exceeded - it is not a match. When @min_match is reached - match is declared."]   
+                            "meta:enum": {
+                              "full": "Only @max_mismatch influences matching process", 
+                              "start": "Both matches and mismatches are counted. When @max_mismatch is exceeded - it is not a match. When @min_match is reached - match is declared.", 
+                              "end": "Both matches and mismatches are counted. When @max_mismatch is exceeded - it is not a match. When @min_match is reached - match is declared." 
+                            }
                           }
                         }    
                       }
@@ -2106,7 +2266,17 @@
         "meta:property_curie": "IAO:0000100",
         "description": "Type of data an experiment or analysis can produce (i.e. output), or an analysis can use as input. For example, in a sequencing experiment the output data would be 'genomic data', while that same type of data could be the input type of data for an analysis, which would then output 'processed sequencing data'. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
         "enum": ["gene list", "genomic data", "metagenomic data", "metatranscriptomic data", "synthetic DNA data", "transcriptomic data", "viral RNA data", "processed sequencing data", "processed array data"],
-        "meta:enum": ["gene list__OBI_0000118", "genomic data__EFO_0004600", "metagenomic data__EFO_0004602", "metatranscriptomic data__EFO_0004603", "synthetic DNA data__EFO_0004604", "transcriptomic data__EFO_0004601", "viral RNA data__EFO_0004605", "processed sequencing data__EFO:0004663: raw sequencing data (e.g. FastQ files) were processed in any way (e.g. normalization, noise reduction, alignment...) and transformed into processed genotype data files [EFO:0004663].", "processed array data__EFO:0004096: raw array data (e.g. CEL files) were processed in any way (e.g. normalization, noise reduction...) and transformed into processed array data files [EFO:0004096]."]
+        "meta:enum": {
+          "gene list": "[OBI:0000118]",
+          "genomic data": "[EFO:0004600]",
+          "metagenomic data": "[EFO:0004602]",
+          "metatranscriptomic data": "[EFO:0004603]",
+          "synthetic DNA data": "[EFO:0004604]",
+          "transcriptomic data": "[EFO:0004601]",
+          "viral RNA data": "[EFO:0004605]",
+          "processed sequencing data": "[EFO:0004663]: raw sequencing data (e.g. FastQ files) were processed in any way (e.g. normalization, noise reduction, alignment...) and transformed into processed genotype data files [EFO:0004663].",
+          "processed array data": "[EFO:0004096]: raw array data (e.g. CEL files) were processed in any way (e.g. normalization, noise reduction...) and transformed into processed array data files [EFO:0004096]." 
+        }
       },
 
       "reference_alignment_details": {

@@ -1,0 +1,49 @@
+---
+# This workflow validates JSON documents against EGA's JSON schemas.
+# This is to ensure that any change to the JSON schemas works as intended,
+# and that the JSON examples are up to date with the schema standards.
+#
+# It uses AJV-CLI as the JSON document validator.
+# For more information, check:
+#   https://github.com/ajv-validator/ajv-cli
+name: JSON docs validation (json_validation.yml)
+
+on:
+  # Executes on any commit to a PR to the "main" branch
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-json-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Full git history
+          fetch-depth: 0
+
+      - name: Install AJV-CLI
+        # See https://github.com/ajv-validator/ajv-cli#installation
+        run: npm install -g ajv-cli
+
+      - name: Validate JSON docs
+        # Validate all JSON documents against their corresponding schemas
+        run: |
+          schemas_dir="./schemas"
+          cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
+          json_ex_dir="./examples/json_validation_tests"
+
+
+          # Loop through the examples, extract schema name, validate the example
+          for json_filepath in "$json_ex_dir"/*.json; do 
+                  json_filename=$( basename "$json_filepath" )
+                  # Remove everything beyond the first "_"
+                  schema_name=${json_filename//_*/}
+                  ajv validate \
+                    --strict=false --spec=draft2019 \
+                    -s "$schemas_dir/EGA.$schema_name.json" \
+                    -d "$json_filepath" \
+                    -r "$schemas_dir/EGA.!($schema_name).json" \
+                    -r "$cv_schemas_dir/*.json"
+          done

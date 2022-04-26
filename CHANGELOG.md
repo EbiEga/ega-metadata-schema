@@ -13,13 +13,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added ``titles`` and ``descriptions`` to several constraints within the schemas (for the markdowns to have a better explanation) [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 - Added ``examples`` and ``meta:enum`` keywords within the schemas for them to appear in the markdowns. [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 - Added [``sample``](schemas/EGA.sample.json) and [``individual``](schemas/EGA.individual.json) JSON schemas [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
-- Added [``object-set``](schemas/EGA.object-set.json) schema to contain grouped objects in sets [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)]. 
+- Added [``object-set``](schemas/EGA.object-set.json) schema to contain grouped objects in sets [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)].
 - Added remaining schemas (some empty for the moment) [[PR#30](https://github.com/EbiEga/ega-metadata-schema/pull/30)].
 - Added PR and issue templates [[PR#40](https://github.com/EbiEga/ega-metadata-schema/pull/40)].
+- Added example XML to JSON documents (see [README.md](examples/xml-json-same-objects/README.md)) [[PR#35](https://github.com/EbiEga/ega-metadata-schema/pull/35)].
 - Added [contributing documentation](./docs/contributing.md) [[PR#41](https://github.com/EbiEga/ega-metadata-schema/pull/41)]
+- Added GH [workflow](./.github/workflows/super_linter.yml) to lint code and documentation of the repository [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
+- Added GH [workflow](./.github/workflows/json_validation.yml) to validate JSON examples automatically on PRs [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
+- Added GH [workflow](./.github/workflows/markdown_creation.yml) to generate automatically the JSON browser's markdown documentation when changes are pushed to "main" (a PR is closed) [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
+- Added GH [workflow diagram](./docs/gh_workflows/) [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
 
 ### Modified
-- [star2xml](https://github.com/EGA-archive/star2xml) - Moved tool star2xml to its own repository: https://github.com/EGA-archive/star2xml. 
+- [star2xml](https://github.com/EGA-archive/star2xml) - Moved tool star2xml to its own repository: "https://github.com/EGA-archive/star2xml".
 - [JSON schemas](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) - improved drafted JSON schemas for AF (Array Format) Array and Experiment metadata.
 - Modified the relationships node so that the target and source are of type ``object_core_id`` (being able to reference non-registered objects). [[PR#26](https://github.com/EbiEga/ega-metadata-schema/pull/26)]
 - Updated markdown documentation of the schemas (see [README](docs/json_browser/markdowns/README.md)) [[PR#27](https://github.com/EbiEga/ega-metadata-schema/pull/27)]
@@ -36,9 +41,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added example XML to JSON documents (see [README.md](examples/xml-json-same-objects/README.md)) [[PR#35](https://github.com/EbiEga/ega-metadata-schema/pull/35)].
 - Modified relationship nodes so that only one end of the relationship is allowed [[PR#39](https://github.com/EbiEga/ega-metadata-schema/pull/39)].
 - Modified relationship nodes to accept only specific combinations per object [[PR#39](https://github.com/EbiEga/ega-metadata-schema/pull/39)].
+- Moved and renamed the validation examples from [schemas/validation_tests](./schemas/validation_tests) to [examples/json_validation_tests](./examples/json_validation_tests/) [[PR#42](https://github.com/EbiEga/ega-metadata-schema/pull/42)].
 
 ## [0.0.0] - 2021-04-26
-### Added
+### Added [2021-04-26]
 - [ega-metadata-schema/README.md](README.md) - Main README of the project with all its related information.
 - LICENSE - License applied to the [ega-metadata-schema](https://github.com/EbiEga/ega-metadata-schema) project.
 - [Descriptive XMLs](examples/sequence-based-metadata/XML/XMLs_examples-descriptive) - Folder containing (at least) one descriptive XML (with instructions on what information corresponds to which nodes of the XML) for each metadata object.
