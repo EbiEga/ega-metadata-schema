@@ -4,11 +4,11 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype
 ```
 
-The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.
+The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## filetype Type
 
@@ -18,31 +18,31 @@ The nature of the content stored in an electronic file. The string corresponds t
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value     | Explanation |
-| :-------- | :---------- |
-| `"CEL"`   |             |
-| `"TSV"`   |             |
-| `"ADF"`   |             |
-| `"FASTQ"` |             |
-| `"FASTA"` |             |
-| `"SDRF"`  |             |
-| `"IDF"`   |             |
-| `"VCF"`   |             |
-| `"SRA"`   |             |
-| `"SRF"`   |             |
-| `"SFF"`   |             |
-| `"BAM"`   |             |
-| `"CRAM"`  |             |
-| `"XLSX"`  |             |
-| `"CSV"`   |             |
-| `"BED"`   |             |
-| `"IDAT"`  |             |
-| `"MAP"`   |             |
-| `"PED"`   |             |
-| `"BIM"`   |             |
-| `"FAM"`   |             |
-| `"TXT"`   |             |
-| `"EXP"`   |             |
-| `"GPR"`   |             |
-| `"PY"`    |             |
-| `"SH"`    |             |
+| Value     | Explanation                                                                                                                                                                                                                                                                                                                                       |
+| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `"CEL"`   | \[EFO:0005630]                                                                                                                                                                                                                                                                                                                                    |
+| `"TSV"`   | \[NCIT:C164049]: Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type. |
+| `"ADF"`   | \[NCIT:C172213]                                                                                                                                                                                                                                                                                                                                   |
+| `"FASTQ"` | \[EFO:0004155]                                                                                                                                                                                                                                                                                                                                    |
+| `"FASTA"` | \[NCIT:C47845]                                                                                                                                                                                                                                                                                                                                    |
+| `"SDRF"`  | \[NCIT:C172211]                                                                                                                                                                                                                                                                                                                                   |
+| `"IDF"`   | \[NCIT:C172212]                                                                                                                                                                                                                                                                                                                                   |
+| `"VCF"`   | \[NCIT:C172216]                                                                                                                                                                                                                                                                                                                                   |
+| `"SRA"`   | \[format:3698]                                                                                                                                                                                                                                                                                                                                    |
+| `"SRF"`   | \[EFO:0004154]                                                                                                                                                                                                                                                                                                                                    |
+| `"SFF"`   | \[EFO:0004156]                                                                                                                                                                                                                                                                                                                                    |
+| `"BAM"`   | \[EFO:0004157]                                                                                                                                                                                                                                                                                                                                    |
+| `"CRAM"`  | \[format:3462]                                                                                                                                                                                                                                                                                                                                    |
+| `"XLSX"`  | \[format:3620]                                                                                                                                                                                                                                                                                                                                    |
+| `"CSV"`   | \[format:3752]                                                                                                                                                                                                                                                                                                                                    |
+| `"BED"`   | \[format:3003]                                                                                                                                                                                                                                                                                                                                    |
+| `"IDAT"`  | \[format:3578]                                                                                                                                                                                                                                                                                                                                    |
+| `"MAP"`   | \[format:3285]                                                                                                                                                                                                                                                                                                                                    |
+| `"PED"`   | \[format:3286]                                                                                                                                                                                                                                                                                                                                    |
+| `"BIM"`   |                                                                                                                                                                                                                                                                                                                                                   |
+| `"FAM"`   |                                                                                                                                                                                                                                                                                                                                                   |
+| `"TXT"`   |                                                                                                                                                                                                                                                                                                                                                   |
+| `"EXP"`   | \[format:1631]                                                                                                                                                                                                                                                                                                                                    |
+| `"GPR"`   | \[format:3829]                                                                                                                                                                                                                                                                                                                                    |
+| `"PY"`    | \[format:3996]                                                                                                                                                                                                                                                                                                                                    |
+| `"SH"`    | Bash scripts                                                                                                                                                                                                                                                                                                                                      |

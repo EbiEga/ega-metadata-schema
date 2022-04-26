@@ -6,21 +6,21 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.j
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.experiment.json*](../out/EGA.experiment.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.experiment.json\*](../../../schemas/EGA.experiment.json "open original schema") |
 
-## assay_technology Type
+## assay\_technology Type
 
 unknown
 
-# assay_technology Properties
+# assay\_technology Properties
 
-| Property                              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                              |
-| :------------------------------------ | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay_instrument](#assay_instrument) | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument") |
+| Property                               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                              |
+| :------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assay\_instrument](#assay_instrument) | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument") |
 
-## assay_instrument
+## assay\_instrument
 
 
 
@@ -34,11 +34,11 @@ unknown
 
 *   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument")
 
-### assay_instrument Type
+### assay\_instrument Type
 
 unknown
 
-### assay_instrument Constraints
+### assay\_instrument Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

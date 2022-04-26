@@ -6,9 +6,9 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.j
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.experiment.json*](../out/EGA.experiment.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.experiment.json\*](../../../schemas/EGA.experiment.json "open original schema") |
 
 ## 0 Type
 
@@ -16,11 +16,11 @@ unknown ([Assay subtypes match DNA/RNA assays](ega-9-properties-type-of-assay-an
 
 # 0 Properties
 
-| Property                        | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                     |
-| :------------------------------ | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay_subtype](#assay_subtype) | Merged | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype") |
+| Property                         | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                     |
+| :------------------------------- | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assay\_subtype](#assay_subtype) | Merged | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype") |
 
-## assay_subtype
+## assay\_subtype
 
 
 
@@ -34,7 +34,7 @@ unknown ([Assay subtypes match DNA/RNA assays](ega-9-properties-type-of-assay-an
 
 *   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype")
 
-### assay_subtype Type
+### assay\_subtype Type
 
 merged type ([Details](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md))
 

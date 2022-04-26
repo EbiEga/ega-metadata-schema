@@ -4,11 +4,11 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/allOf/1
 ```
 
-This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype_id shall be 'BAM' and not 'XLSX')
+This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype\_id shall be 'BAM' and not 'XLSX')
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## 1 Type
 

@@ -1,4 +1,4 @@
-# Or the sample_group_boolean is 'false', hence an individual sample with sample_number being '1' or no sample_number Schema
+# Or the sample\_group\_boolean is 'false', hence an individual sample with sample\_number being '1' or no sample\_number Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1
@@ -6,22 +6,22 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                        |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.sample.json*](../out/EGA.sample.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
 ## 1 Type
 
-unknown ([Or the sample_group_boolean is 'false', hence an individual sample with sample_number being '1' or no sample_number](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number.md))
+unknown ([Or the sample\_group\_boolean is 'false', hence an individual sample with sample\_number being '1' or no sample\_number](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number.md))
 
 # 1 Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                            |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [sample_group_boolean](#sample_group_boolean) | Not specified | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1/properties/sample_group_boolean") |
-| [sample_number](#sample_number)               | Not specified | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1/properties/sample_number")               |
+| Property                                        | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                            |
+| :---------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [sample\_group\_boolean](#sample_group_boolean) | Not specified | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1/properties/sample_group_boolean") |
+| [sample\_number](#sample_number)                | Not specified | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1/properties/sample_number")               |
 
-## sample_group_boolean
+## sample\_group\_boolean
 
 
 
@@ -35,11 +35,11 @@ unknown ([Or the sample_group_boolean is 'false', hence an individual sample wit
 
 *   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number-properties-sample_group_boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1/properties/sample_group_boolean")
 
-### sample_group_boolean Type
+### sample\_group\_boolean Type
 
 unknown
 
-### sample_group_boolean Constraints
+### sample\_group\_boolean Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -47,7 +47,7 @@ unknown
 | :------ | :---------- |
 | `false` |             |
 
-## sample_number
+## sample\_number
 
 
 
@@ -61,11 +61,11 @@ unknown
 
 *   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number-properties-sample_number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/oneOf/1/properties/sample_number")
 
-### sample_number Type
+### sample\_number Type
 
 unknown
 
-### sample_number Constraints
+### sample\_number Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

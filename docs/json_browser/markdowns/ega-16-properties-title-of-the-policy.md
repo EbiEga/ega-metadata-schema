@@ -6,15 +6,15 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#
 
 Free-form title of the policy. Can be used to call out policy records in searches or displays.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                        |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.policy.json*](../out/EGA.policy.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.policy.json\*](../../../schemas/EGA.policy.json "open original schema") |
 
-## object_title Type
+## object\_title Type
 
 `string` ([Title of the policy](ega-16-properties-title-of-the-policy.md))
 
-## object_title Examples
+## object\_title Examples
 
 ```json
 "EBI colon cancer policy"

@@ -1,18 +1,18 @@
-# Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object. Schema
+# Schemas being conditionally applied based on value of 'object\_type' from 'schema\_descriptor' in each object. Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json#/properties/object_array/items
 ```
 
-Based on the value found within 'object_type' (i.e. if it matches the 'enum' of each type), the corresponding schema (defined within '$ref') is evaluated.
+Based on the value found within 'object\_type' (i.e. if it matches the 'enum' of each type), the corresponding schema (defined within '$ref') is evaluated.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.object-set.json*](../out/EGA.object-set.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.object-set.json\*](../../../schemas/EGA.object-set.json "open original schema") |
 
 ## items Type
 
-merged type ([Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object.](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object.md))
+merged type ([Schemas being conditionally applied based on value of 'object\_type' from 'schema\_descriptor' in each object.](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object.md))
 
 any of
 

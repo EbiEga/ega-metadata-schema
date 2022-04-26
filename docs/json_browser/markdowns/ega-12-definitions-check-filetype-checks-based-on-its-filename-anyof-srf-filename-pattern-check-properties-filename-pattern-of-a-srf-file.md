@@ -4,11 +4,11 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/9/properties/filename
 ```
 
-This object exists to hold the filename pattern that a 'SRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
+This object exists to hold the filename pattern that a 'SRF' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## filename Type
 
@@ -16,7 +16,7 @@ This object exists to hold the filename pattern that a 'SRF' filetype_id would h
 
 ## filename Constraints
 
-**pattern**: the string must match the following regular expression: 
+**pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
 ^.+\.srf(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$

@@ -1,20 +1,20 @@
-# Array instrument platform CV list Schema
+# EGA Controlled Vocabulary (CV) for array instrument platforms Schema
 
 ```txt
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json
 ```
 
-Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus. Commonly consisting in the manufacturers name (e.g. Affymetrix) and the instrument model (e.g. Human CentXbaAv2 SNP Array). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.
+Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus. Commonly consisting in the manufacturers name (e.g. Affymetrix) and the instrument model (e.g. Human CentXbaAv2 SNP Array). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                   |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.cv.instrument_platforms_array.json](../out/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                               |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.cv.instrument\_platforms\_array.json](../../../schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json "open original schema") |
 
-## Array instrument platform CV list Type
+## EGA Controlled Vocabulary (CV) for array instrument platforms Type
 
-`string` ([Array instrument platform CV list](ega.md))
+`string` ([EGA Controlled Vocabulary (CV) for array instrument platforms](ega.md))
 
-## Array instrument platform CV list Constraints
+## EGA Controlled Vocabulary (CV) for array instrument platforms Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

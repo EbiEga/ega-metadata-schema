@@ -6,9 +6,9 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-defin
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## 0 Type
 
@@ -16,12 +16,12 @@ unknown ([Asserting array technology controlled vocabulary (CV)](ega-12-definiti
 
 # 0 Properties
 
-| Property                                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                    |
-| :------------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [assay_instrument](#assay_instrument)                   | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument")                                                                    |
-| [assay_instrument_platform](#assay_instrument_platform) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-array-instrument-platform-cv-list.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument_platform") |
+| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| :-------------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assay\_instrument](#assay_instrument)                    | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument")                                                                                              |
+| [assay\_instrument\_platform](#assay_instrument_platform) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-ega-controlled-vocabulary-cv-for-array-instrument-platforms.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument_platform") |
 
-## assay_instrument
+## assay\_instrument
 
 
 
@@ -35,11 +35,11 @@ unknown ([Asserting array technology controlled vocabulary (CV)](ega-12-definiti
 
 *   defined in: [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument")
 
-### assay_instrument Type
+### assay\_instrument Type
 
 unknown
 
-### assay_instrument Constraints
+### assay\_instrument Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -47,25 +47,25 @@ unknown
 | :-------- | :---------- |
 | `"array"` |             |
 
-## assay_instrument_platform
+## assay\_instrument\_platform
 
-Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus. Commonly consisting in the manufacturers name (e.g. Affymetrix) and the instrument model (e.g. Human CentXbaAv2 SNP Array). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.
+Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus. Commonly consisting in the manufacturers name (e.g. Affymetrix) and the instrument model (e.g. Human CentXbaAv2 SNP Array). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
 
 `assay_instrument_platform`
 
 *   is optional
 
-*   Type: `string` ([Array instrument platform CV list](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-array-instrument-platform-cv-list.md))
+*   Type: `string` ([EGA Controlled Vocabulary (CV) for array instrument platforms](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-ega-controlled-vocabulary-cv-for-array-instrument-platforms.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-array-instrument-platform-cv-list.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument_platform")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-ega-controlled-vocabulary-cv-for-array-instrument-platforms.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json#/definitions/assay_technology_descriptor/oneOf/0/properties/assay_instrument_platform")
 
-### assay_instrument_platform Type
+### assay\_instrument\_platform Type
 
-`string` ([Array instrument platform CV list](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-array-instrument-platform-cv-list.md))
+`string` ([EGA Controlled Vocabulary (CV) for array instrument platforms](ega-12-definitions-assay-technology-oneof-asserting-array-technology-controlled-vocabulary-cv-properties-ega-controlled-vocabulary-cv-for-array-instrument-platforms.md))
 
-### assay_instrument_platform Constraints
+### assay\_instrument\_platform Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

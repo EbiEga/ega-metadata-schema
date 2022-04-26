@@ -2,7 +2,7 @@
 
 ## Top-level Schemas
 
-*   [Array instrument platform CV list](./ega.md "Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json`
+*   [EGA Controlled Vocabulary (CV) for array instrument platforms](./ega.md "Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json`
 
 *   [EGA Controlled Vocabulary (CV) for assay subtypes by DNA \[EFO:0001456\]](./ega-1.md "Controlled Vocabulary (CV) list for assay subtypes by the assayed molecule being DNA: any ontologized term for a subtype (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json`
 
@@ -22,7 +22,7 @@
 
 *   [EGA Experiment metadata schema](./ega-9.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json`
 
-*   [EGA analysis metadata schema](./ega-10.md "Empty for the moment") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json`
+*   [EGA analysis metadata schema](./ega-10.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its analysis metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json`
 
 *   [EGA assay metadata schema](./ega-11.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its assay metadata object") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json`
 
@@ -56,7 +56,7 @@
 
 *   [Basecall](./ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall.md) – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor/items/properties/read_specs/items/properties/expected_basecall_table/properties/basecalls/items`
 
-*   [Check that the object_id's accession pattern and object_type match](./ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match.md "This object exists with the only purpose of being a reference as a pattern check of a given object_id and object_type") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check`
+*   [Check that the object\_id's accession pattern and object\_type match](./ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match.md "This object exists with the only purpose of being a reference as a pattern check of a given object_id and object_type") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check`
 
 *   [Check: checksum checks based on its method](./ega-12-definitions-check-checksum-checks-based-on-its-method.md "This object exists with the only purpose of being a reference of pattern checks of the given checksum (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check`
 
@@ -150,6 +150,70 @@
 
 *   [Read spec](./ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec.md) – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor/items/properties/read_specs/items`
 
+*   [Relationship source: DAC](./ega-12-definitions-relationship-source-dac.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-DAC`
+
+*   [Relationship source: Policy](./ega-12-definitions-relationship-source-policy.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-policy`
+
+*   [Relationship source: analysis](./ega-12-definitions-relationship-source-analysis.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-analysis`
+
+*   [Relationship source: assay](./ega-12-definitions-relationship-source-assay.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-assay`
+
+*   [Relationship source: dataset](./ega-12-definitions-relationship-source-dataset.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-dataset`
+
+*   [Relationship source: experiment](./ega-12-definitions-relationship-source-experiment.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-experiment`
+
+*   [Relationship source: external\_URL](./ega-12-definitions-relationship-source-external_url.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL`
+
+*   [Relationship source: external\_accession](./ega-12-definitions-relationship-source-external_accession.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_accession`
+
+*   [Relationship source: individual](./ega-12-definitions-relationship-source-individual.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-individual`
+
+*   [Relationship source: sample](./ega-12-definitions-relationship-source-sample.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-sample`
+
+*   [Relationship source: study](./ega-12-definitions-relationship-source-study.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-study`
+
+*   [Relationship source: submission](./ega-12-definitions-relationship-source-submission.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission`
+
+*   [Relationship target: DAC](./ega-12-definitions-relationship-target-dac.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-DAC`
+
+*   [Relationship target: Policy](./ega-12-definitions-relationship-target-policy.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-policy`
+
+*   [Relationship target: analysis](./ega-12-definitions-relationship-target-analysis.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-analysis`
+
+*   [Relationship target: assay](./ega-12-definitions-relationship-target-assay.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-assay`
+
+*   [Relationship target: dataset](./ega-12-definitions-relationship-target-dataset.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-dataset`
+
+*   [Relationship target: experiment](./ega-12-definitions-relationship-target-experiment.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-experiment`
+
+*   [Relationship target: external\_URL](./ega-12-definitions-relationship-target-external_url.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_URL`
+
+*   [Relationship target: external\_accession](./ega-12-definitions-relationship-target-external_accession.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_accession`
+
+*   [Relationship target: individual](./ega-12-definitions-relationship-target-individual.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual`
+
+*   [Relationship target: sample](./ega-12-definitions-relationship-target-sample.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-sample`
+
+*   [Relationship target: study](./ega-12-definitions-relationship-target-study.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-study`
+
+*   [Relationship target: submission](./ega-12-definitions-relationship-target-submission.md "Node to be used as an object type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-submission`
+
+*   [Relationship type: child\_of](./ega-12-definitions-relationship-type-child_of.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-child_of`
+
+*   [Relationship type: develops\_from](./ega-12-definitions-relationship-type-develops_from.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-develops_from`
+
+*   [Relationship type: family\_relationship\_with](./ega-12-definitions-relationship-type-family_relationship_with.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with`
+
+*   [Relationship type: grouped\_with](./ega-12-definitions-relationship-type-grouped_with.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with`
+
+*   [Relationship type: is\_after](./ega-12-definitions-relationship-type-is_after.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after`
+
+*   [Relationship type: member\_of](./ega-12-definitions-relationship-type-member_of.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-member_of`
+
+*   [Relationship type: referenced\_by](./ega-12-definitions-relationship-type-referenced_by.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by`
+
+*   [Relationship type: same\_as](./ega-12-definitions-relationship-type-same_as.md "Node to be used as a relationship type for relationship contraints") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as`
+
 *   [Relationship's object (either source or target)](./ega-12-definitions-relationships-object-either-source-or-target.md "Node containing metadata (identifiers and the type of reference) of one of the ends of the relationship, whether it is the source or the target of the relationship") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end`
 
 *   [Relationship's object's IDs block](./ega-12-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "Node containing the main identifiers of the relationship's object (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/properties/object_id`
@@ -212,7 +276,7 @@
 
 *   [Repeatable Sample-label node](./ega-12-definitions-repeatable-sample-label-node.md "The base node of a label-sample association") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association`
 
-*   [Repeatable array_label node](./ega-12-definitions-repeatable-array_label-node.md "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label`
+*   [Repeatable array\_label node](./ega-12-definitions-repeatable-array_label-node.md "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label`
 
 *   [Sample collection descriptor](./ega-17-properties-sample-collection-descriptor.md "Node containing the provenance details (when and where) of the sample") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection`
 
@@ -235,6 +299,14 @@
 *   [Sequence interval](./ega-12-definitions-sequence-coordinates-properties-sequence-interval.md "The location of a sequence feature in a genome, defined by its start (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval`
 
 *   [Sequence interval](./ega-12-definitions-sequence-coordinates-properties-sequence-interval.md "The location of a sequence feature in a genome, defined by its start (e") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval`
+
+*   [Sequence quality details](./ega-12-definitions-ega-file-object-properties-sequence-quality-details.md "Sequencing quality scores measure the probability that a base is called (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details`
+
+*   [Sequence quality details](./ega-12-definitions-ega-file-object-properties-sequence-quality-details.md "Sequencing quality scores measure the probability that a base is called (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details`
+
+*   [Sequence quality details](./ega-12-definitions-ega-file-object-properties-sequence-quality-details.md "Sequencing quality scores measure the probability that a base is called (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details`
+
+*   [Sequence quality details](./ega-12-definitions-ega-file-object-properties-sequence-quality-details.md "Sequencing quality scores measure the probability that a base is called (i") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details`
 
 *   [Source of the relationship](./ega-12-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship's source") – `https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source`
 

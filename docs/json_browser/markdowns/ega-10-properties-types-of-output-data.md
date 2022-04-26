@@ -6,15 +6,15 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.jso
 
 Types of output data the analysis uses to obtain the processed files.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                            |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.analysis.json*](../out/EGA.analysis.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.analysis.json\*](../../../schemas/EGA.analysis.json "open original schema") |
 
-## types_of_output_data Type
+## types\_of\_output\_data Type
 
-`string[]` ([Type of data](ega-10-properties-types-of-output-data-type-of-data.md))
+`string[]` ([Type of data](ega-12-definitions-type-of-data.md))
 
-## types_of_output_data Constraints
+## types\_of\_output\_data Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

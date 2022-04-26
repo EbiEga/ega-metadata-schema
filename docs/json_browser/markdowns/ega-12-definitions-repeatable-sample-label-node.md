@@ -4,11 +4,11 @@
 https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association
 ```
 
-The base node of a label-sample association. One form of basic identification of the sample (inherited from object_core_id - e.g. either the center name and alias or the accession) is required, as well as the label per se.
+The base node of a label-sample association. One form of basic identification of the sample (inherited from object\_core\_id - e.g. either the center name and alias or the accession) is required, as well as the label per se.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json*](../out/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## sample-label-association Type
 
@@ -16,10 +16,10 @@ The base node of a label-sample association. One form of basic identification of
 
 # sample-label-association Properties
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
-| :---------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [label](#label)         | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
-| [object_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
+| Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
+| :----------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [label](#label)          | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
+| [object\_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
 
 ## label
 
@@ -29,7 +29,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   is required
 
-*   Type: `object` ([Repeatable array_label node](ega-12-definitions-repeatable-array_label-node.md))
+*   Type: `object` ([Repeatable array\_label node](ega-12-definitions-repeatable-array_label-node.md))
 
 *   cannot be null
 
@@ -37,9 +37,9 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 ### label Type
 
-`object` ([Repeatable array_label node](ega-12-definitions-repeatable-array_label-node.md))
+`object` ([Repeatable array\_label node](ega-12-definitions-repeatable-array_label-node.md))
 
-## object_id
+## object\_id
 
 
 
@@ -53,7 +53,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
 
-### object_id Type
+### object\_id Type
 
 `object` ([Object's IDs block](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md))
 

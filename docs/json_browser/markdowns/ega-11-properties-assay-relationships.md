@@ -6,15 +6,15 @@ https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities, one of which shall be the current assay.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                      |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.assay.json*](../out/EGA.assay.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.assay.json\*](../../../schemas/EGA.assay.json "open original schema") |
 
-## assay_relationships Type
+## assay\_relationships Type
 
-`object[]` ([EGA Relationships object](ega-12-definitions-ega-relationships-object.md))
+an array of merged types ([Details](ega-11-properties-assay-relationships-items.md))
 
-## assay_relationships Constraints
+## assay\_relationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
