@@ -1510,12 +1510,14 @@
             "type": "string",
             "title": "Full name of an individual",
             "description": "A full set of all personal names by which an individual is known and that can be recited as a word-group, with the understanding that, taken together, they all relate to that one individual. In case there are several, separate them with semicolons (;).",
+            "minLength": 1,
             "examples": [ "Wayne Jr., Bruce" ]
           },
           "institution_name": {
             "type": "string",
             "title": "Institution name",
             "description": "The full name of an institution the contact belongs to. In case there are several, separate them with semicolons (;).",
+            "minLength": 1,
             "examples": [ "European Genome-phenome Archive (EGA)" ]
           },
           "email_address": {
@@ -1681,6 +1683,7 @@
             "title": "Gene Symbol",
             "meta:property_curie": "data:1026",
             "description": "The official gene symbol. It is typically derived from the gene name. This optional field exists to provide the common identifier of the gene. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
+            "minLength": 1,
             "examples": ["TAF1", "TP53", "BRAF", "16S"]
           },
           "gene_id_curie": {
@@ -2057,6 +2060,7 @@
             "type": "string",
             "title": "Assay instrument label",
             "description": "Label (e.g. 'Illumina HiSeq 2500'), chosen from a list of controlled vocabulary (CV), of the technology used at the experiment. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
+            "minLength": 1,
             "examples": ["Illumina HiSeq 2500", "[HuGene-1_1-st] Affymetrix Human Gene 1.1 ST Array [probe set (exon) version]", "DNBSEQ-G400 FAST"]
           }
         },
@@ -2131,12 +2135,14 @@
                   "read_index": {
                     "type": "string",
                     "title": "Read index",
-                    "description": "READ_INDEX starts at 0 and is incrementally increased for each sequential READ_SPEC within a SPOT_DECODE_SPEC."      
+                    "description": "READ_INDEX starts at 0 and is incrementally increased for each sequential READ_SPEC within a SPOT_DECODE_SPEC.",
+                    "minLength": 1
                   },
                 "read_label": {
                   "type": "string",
                   "title": "Read label",
-                  "description": "READ_LABEL is a name for this tag, and can be used to on output to determine read name, for example F or R."    
+                  "description": "READ_LABEL is a name for this tag, and can be used to on output to determine read name, for example F or R.",
+                  "minLength": 1
                 },
                 "read_class": {
                   "type": "string",
@@ -2223,7 +2229,8 @@
                           "read_group_tag": {
                             "type": "string",
                             "title": "Read group tag",
-                            "description": "When match occurs, the read will be tagged with this group membership."              
+                            "description": "When match occurs, the read will be tagged with this group membership.",
+                            "minLength": 1  
                           },
                           "min_match": {
                             "type": "integer",
@@ -2297,6 +2304,7 @@
         "title": "UBERON's Anatomical entity",
         "meta:property_curie": "UBERON:0001062",
         "description": "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species. Term shall be one of UBERON's ontologized terms beneath anatomical entity [UBERON:0001062]. Search for yours at: http://purl.obolibrary.org/obo/UBERON_0001062. It can be used to describe a sampling site or the morphological site of a disease, for example. #! To be used as an ontology validation node in the future.",
+        "minLength": 1,
         "examples": ["liver", "gut wall", "nasal cavity" ]
       },
 
