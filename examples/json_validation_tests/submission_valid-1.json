@@ -9,7 +9,7 @@
         {
             "collaborator_rights": "read_and_write",
             "collaborator_contact_details": {
-                "institution_name": "European Bioinformatics Institute (EBI)",
+                "institution_name": "EMBL European Bioinformatics Institute (EBI)",
                 "email_address": "example@gmail.com"
             }
         },
