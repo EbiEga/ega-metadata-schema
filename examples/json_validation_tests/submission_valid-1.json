@@ -10,7 +10,7 @@
             "collaborator_rights": "read_and_write",
             "collaborator_contact_details": {
                 "institution_name": "European Bioinformatics Institute (EBI)",
-                "email_address": "example@gmail.com"
+                "email_address": "example@ebi.ac.uk"
             }
         },
         {
@@ -18,7 +18,7 @@
             "collaborator_contact_details": {
                 "individual_full_name": "Isaac Asimov",
                 "institution_name": "Boston University",
-                "email_address": "example@gmail.com"
+                "email_address": "example@ebi.ac.uk"
             }
         }
     ],
