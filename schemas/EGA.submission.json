@@ -52,7 +52,7 @@
 
       "additional_collaborators": {
         "type": "array",
-        "title": "Submission ownership details",
+        "title": "Submission collaborator details",
         "description": "Object containing optional collaborators of the submission project, who shall have different capabilities granted by the owner: 'read' or 'read and write' rights.",
         "minItems": 1,
         "additionalProperties": false,
