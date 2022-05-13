@@ -1,7 +1,7 @@
 # Relationship source: individual Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships/items/allOf/1/anyOf/0/allOf/1/anyOf/3
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships/items/allOf/1/anyOf/0/allOf/1/anyOf/4
 ```
 
 Node to be used as an object type for relationship contraints.
@@ -10,11 +10,11 @@ Node to be used as an object type for relationship contraints.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## 3 Type
+## 4 Type
 
 `object` ([Relationship source: individual](ega-12-definitions-relationship-source-individual.md))
 
-# 3 Properties
+# 4 Properties
 
 | Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
 | :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -92,6 +92,10 @@ Short free-form text that can be used to call out DAC records in searches or dis
 
 `string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
 
+### object\_title Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ### object\_title Examples
 
 ```json
@@ -115,6 +119,10 @@ An in-depth description of the DAC, including its overall purpose or nature of s
 ### object\_description Type
 
 `string` ([Description of the DAC](ega-8-properties-description-of-the-dac.md))
+
+### object\_description Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ### object\_description Examples
 
@@ -162,6 +170,8 @@ an array of merged types ([Details](ega-8-properties-dac-relationships-items.md)
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
 ## dac\_attributes
 
 Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
@@ -183,3 +193,5 @@ Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. 
 ### dac\_attributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

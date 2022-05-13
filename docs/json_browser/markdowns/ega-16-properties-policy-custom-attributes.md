@@ -17,3 +17,5 @@ Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.
 ## policy\_attributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

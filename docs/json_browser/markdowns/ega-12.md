@@ -2082,6 +2082,10 @@ A full set of all personal names by which an individual is known and that can be
 
 `string` ([Full name of an individual](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md))
 
+#### individual\_full\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 #### individual\_full\_name Examples
 
 ```json
@@ -2105,6 +2109,10 @@ The full name of an institution the contact belongs to. In case there are severa
 #### institution\_name Type
 
 `string` ([Institution name](ega-12-definitions-contact-details-properties-institution-name.md))
+
+#### institution\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 #### institution\_name Examples
 
@@ -2276,6 +2284,10 @@ The official gene symbol. It is typically derived from the gene name. This optio
 #### gene\_symbol Type
 
 `string` ([Gene Symbol](ega-12-definitions-gene-descriptor-properties-gene-symbol.md))
+
+#### gene\_symbol Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 #### gene\_symbol Examples
 
@@ -2895,6 +2907,10 @@ Label (e.g. 'Illumina HiSeq 2500'), chosen from a list of controlled vocabulary 
 #### assay\_instrument\_platform Type
 
 `string` ([Assay instrument label](ega-12-definitions-assay-technology-properties-assay-instrument-label.md))
+
+#### assay\_instrument\_platform Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 #### assay\_instrument\_platform Examples
 
@@ -3988,3 +4004,14 @@ Reference this group by using
 #### r\_source Type
 
 unknown
+
+## Definitions group r-constraint-one-sourced-submission
+
+Reference this group by using
+
+```json
+{"$ref":"https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |

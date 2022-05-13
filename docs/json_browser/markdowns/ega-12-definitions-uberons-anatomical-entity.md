@@ -14,6 +14,10 @@ Biological entity that is either an individual member of a biological species or
 
 `string` ([UBERON's Anatomical entity](ega-12-definitions-uberons-anatomical-entity.md))
 
+## sample\_collection\_site Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## sample\_collection\_site Examples
 
 ```json

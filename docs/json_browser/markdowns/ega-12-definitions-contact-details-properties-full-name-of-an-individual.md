@@ -14,6 +14,10 @@ A full set of all personal names by which an individual is known and that can be
 
 `string` ([Full name of an individual](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md))
 
+## individual\_full\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## individual\_full\_name Examples
 
 ```json

@@ -14,6 +14,10 @@ Label (e.g. 'Illumina HiSeq 2500'), chosen from a list of controlled vocabulary 
 
 `string` ([Assay instrument label](ega-12-definitions-assay-technology-properties-assay-instrument-label.md))
 
+## assay\_instrument\_platform Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## assay\_instrument\_platform Examples
 
 ```json

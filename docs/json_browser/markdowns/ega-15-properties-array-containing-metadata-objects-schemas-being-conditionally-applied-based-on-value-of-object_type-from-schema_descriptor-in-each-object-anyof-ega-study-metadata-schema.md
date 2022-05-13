@@ -193,6 +193,8 @@ an array of merged types ([Details](ega-18-properties-study-relationships-items.
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
 ## study\_attributes
 
 Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
@@ -214,3 +216,5 @@ Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g
 ### study\_attributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

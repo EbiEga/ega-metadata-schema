@@ -14,6 +14,10 @@ Short free-form text that can be used to call out DAC records in searches or dis
 
 `string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
 
+## object\_title Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## object\_title Examples
 
 ```json

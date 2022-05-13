@@ -60,3 +60,5 @@ Number of base/color calls, cycles, or flows per spot (raw sequence length or fl
 ### read\_specs Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

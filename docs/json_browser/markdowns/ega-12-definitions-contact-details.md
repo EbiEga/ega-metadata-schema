@@ -1,16 +1,16 @@
 # Contact details Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details
 ```
 
 An object to contain the required metadata to identify and reach an individual or institution. Used, for instance, to list who needs to be informed (1) in case of a erroneous submission (2) or in case access to a dataset is requested by a user.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.submission.json\*](../../../schemas/EGA.submission.json "open original schema") |
 
-## contact\_details Type
+## collaborator\_contact\_details Type
 
 `object` ([Contact details](ega-12-definitions-contact-details.md))
 
@@ -20,7 +20,7 @@ any of
 
 *   [Or the institution's name is required.](ega-12-definitions-contact-details-anyof-or-the-institutions-name-is-required.md "check type definition")
 
-# contact\_details Properties
+# collaborator\_contact\_details Properties
 
 | Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
 | :---------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -47,6 +47,10 @@ A full set of all personal names by which an individual is known and that can be
 
 `string` ([Full name of an individual](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md))
 
+### individual\_full\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ### individual\_full\_name Examples
 
 ```json
@@ -70,6 +74,10 @@ The full name of an institution the contact belongs to. In case there are severa
 ### institution\_name Type
 
 `string` ([Institution name](ega-12-definitions-contact-details-properties-institution-name.md))
+
+### institution\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ### institution\_name Examples
 

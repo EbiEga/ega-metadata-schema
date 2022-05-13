@@ -13,3 +13,7 @@ READ\_INDEX starts at 0 and is incrementally increased for each sequential READ\
 ## read\_index Type
 
 `string` ([Read index](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-index.md))
+
+## read\_index Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`

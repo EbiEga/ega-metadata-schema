@@ -14,6 +14,10 @@ The official gene symbol. It is typically derived from the gene name. This optio
 
 `string` ([Gene Symbol](ega-12-definitions-gene-descriptor-properties-gene-symbol.md))
 
+## gene\_symbol Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## gene\_symbol Examples
 
 ```json

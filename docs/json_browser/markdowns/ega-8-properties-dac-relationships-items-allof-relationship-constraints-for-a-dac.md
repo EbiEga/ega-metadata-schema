@@ -24,6 +24,8 @@ any of
 
         *   [Relationship target: Policy](ega-12-definitions-relationship-target-policy.md "check type definition")
 
+        *   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")
+
 *   all of
 
     *   any of

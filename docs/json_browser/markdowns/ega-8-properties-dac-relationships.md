@@ -17,3 +17,5 @@ an array of merged types ([Details](ega-8-properties-dac-relationships-items.md)
 ## dac\_relationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

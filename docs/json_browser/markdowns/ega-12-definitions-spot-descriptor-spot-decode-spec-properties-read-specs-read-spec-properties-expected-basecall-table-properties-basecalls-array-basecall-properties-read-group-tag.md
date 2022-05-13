@@ -13,3 +13,7 @@ When match occurs, the read will be tagged with this group membership.
 ## read\_group\_tag Type
 
 `string` ([Read group tag](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-read-group-tag.md))
+
+## read\_group\_tag Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`

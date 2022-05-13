@@ -1,14 +1,14 @@
 # EGA Relationships object Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_relationships/items/allOf/0
+https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/0
 ```
 
 Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source or Target) of a directional association between two entities. One of the entitis **needs** to be the current instance. For instance, a study JSON document should not contain relationships between a sample and an individual. Therefore, only one end of the relationship is given: if the source is present, the target is inferred to be the current instance; if the target is given, then it's the source the one inferred as the current instance. Examples of common relationships: (1) a sample being referenced in an experiment; (2) an study being the same as another study at a different archive (e.g. in BioStudies); (3) an individual being the parent of another individual; (4) hundreds of samples being grouped with each other for broad reasons.
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.study.json\*](../../../schemas/EGA.study.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.submission.json\*](../../../schemas/EGA.submission.json "open original schema") |
 
 ## 0 Type
 

@@ -13,3 +13,7 @@ READ\_LABEL is a name for this tag, and can be used to on output to determine re
 ## read\_label Type
 
 `string` ([Read label](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-label.md))
+
+## read\_label Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`

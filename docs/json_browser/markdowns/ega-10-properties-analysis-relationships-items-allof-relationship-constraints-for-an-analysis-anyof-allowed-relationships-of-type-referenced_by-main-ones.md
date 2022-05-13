@@ -30,4 +30,6 @@ all of
 
     *   [Relationship target: dataset](ega-12-definitions-relationship-target-dataset.md "check type definition")
 
+    *   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")
+
     *   [Relationship target: analysis](ega-12-definitions-relationship-target-analysis.md "check type definition")

@@ -21,3 +21,5 @@ all of
 *   any of
 
     *   [Relationship target: sample](ega-12-definitions-relationship-target-sample.md "check type definition")
+
+    *   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")

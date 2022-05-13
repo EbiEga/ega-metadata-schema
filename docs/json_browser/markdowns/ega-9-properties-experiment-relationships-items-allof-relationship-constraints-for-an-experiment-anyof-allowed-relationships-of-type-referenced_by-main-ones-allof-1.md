@@ -22,6 +22,8 @@ any of
 
 *   [Relationship target: analysis](ega-12-definitions-relationship-target-analysis.md "check type definition")
 
+*   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")
+
 *   [Relationship target: experiment](ega-12-definitions-relationship-target-experiment.md "check type definition")
 
 *   [Relationship source: experiment](ega-12-definitions-relationship-source-experiment.md "check type definition")

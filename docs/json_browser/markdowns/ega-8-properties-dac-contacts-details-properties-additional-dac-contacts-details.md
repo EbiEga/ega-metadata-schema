@@ -17,3 +17,5 @@ An array compromising additional contact details to use when in need to reach th
 ## additional\_contacts Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

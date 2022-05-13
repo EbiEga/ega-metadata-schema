@@ -14,6 +14,10 @@ An in-depth description of the DAC, including its overall purpose or nature of s
 
 `string` ([Description of the DAC](ega-8-properties-description-of-the-dac.md))
 
+## object\_description Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## object\_description Examples
 
 ```json

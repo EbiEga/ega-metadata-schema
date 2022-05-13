@@ -14,6 +14,10 @@ The full name of an institution the contact belongs to. In case there are severa
 
 `string` ([Institution name](ega-12-definitions-contact-details-properties-institution-name.md))
 
+## institution\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## institution\_name Examples
 
 ```json
