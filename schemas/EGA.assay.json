@@ -177,7 +177,6 @@
             "additionalProperties": false,
             "properties": {
               "reference_alignment_details": {
-                "type": "array",
                 "title": "Reference assembly and sequence details",
                 "description": "Node containing details of the reference sequence used in the alignment.",
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details"
@@ -239,6 +238,9 @@
                         },
                         {
                           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-experiment"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
                         }
                       ]
                     }
@@ -325,6 +327,10 @@
               ]
             }
           ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
         }
       },
 

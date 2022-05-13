@@ -4,10 +4,191 @@
     "type": "object",
     "title": "EGA submission metadata schema",
     "meta:version": "0.0.0",
-    "description": "Empty for the moment.",
-    "required": [""],
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Submission (also known as submission project) metadata object. This object is intended to be an object that others can reference, grouping them by submission details. An EGA user can submit metadata comprising thousands of objects, or just a few that suffice the bare minimum of a comprehensive submission: at least one dataset, with its proper links to other objects. A submission JSON document hold little details, mainly the basic descriptive fields and collaborators array, but its main use is for other objects to reference it. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).",
+    "required": ["object_id"],
     "additionalProperties": false,
     "properties": {
-      
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: a submission (by using EGA-submission-id-pattern)", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that Submission EGA ID (EGAB) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-submission-id-pattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Title of the submission project",
+        "description": "Short free-form text that can be used to call out submission project records in searches or displays.",
+        "minLength": 1,
+        "examples": [ "Submission XF40" ]
+      },
+
+      "object_description": {
+        "type": "string",
+        "title": "Description of the submissions project",
+        "description": "An in-depth description of the submission, including its overall purpose or nature of studies it governs.",
+        "minLength": 1,
+        "examples": [ "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs" ]
+      },
+
+      "additional_collaborators": {
+        "type": "array",
+        "title": "Submission collaborator details",
+        "description": "Object containing optional collaborators of the submission project, who shall have different capabilities granted by the owner: 'read' or 'read and write' rights.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "type": "object",
+          "title": "Collaborator",
+          "description": "Collaborator item comprising both the collaborator's contact details and rights.",
+          "additionalProperties": false,
+          "required": ["collaborator_rights", "collaborator_contact_details"],      
+          "properties": {
+            "collaborator_rights": {
+              "type": "string",
+              "title": "Collaborator rights",
+              "description": "Property defining the rights of the specified collaborator. Either read-only or read and write rights.",
+              "enum": [ "read_only", "read_and_write" ],
+              "meta:enum": {
+                "read_only": "Collaborator will only be capable of reading the details of the submission.",
+                "read_and_write": "Collaborator will be able to not only read, but modify or add changes to the submission."
+              }
+            },
+            "collaborator_contact_details": {
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details"
+            }
+          }
+        }
+      },
+
+      "submission_relationships": {
+        "type": "array",
+        "title": "Submission relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a submission) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": {
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+            },
+            {
+              "title": "Relationship constraints for a submission",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a submission. Bare in mind that 'submissions' are referenced_by other objects, hence the relationship shall exist in their respective JSON documents.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type same_as, grouped_with and member_of (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-submission"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Relationships of external accessions and URLs (optional ones)",
+                  "description": "Almost any relationship is imaginable with external accessions and URLs.",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-child_of"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-develops_from"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-member_of"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_accession"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_accession"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_URL"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]          
+        }
+      },
+
+      "submission_attributes": {
+        "type": "array",
+        "title": "Submission custom attributes",
+        "description": "Custom attributes of a submission: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal identifier' and its Value 'XF40') with optional units. Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
     }      
   }

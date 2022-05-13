@@ -42,6 +42,15 @@
                 },
                 "object_type": "DAC"                 
             }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAB00002045411"
+                },
+                "object_type": "submission"                
+            }
         }
     ],
     "dac_attributes": [

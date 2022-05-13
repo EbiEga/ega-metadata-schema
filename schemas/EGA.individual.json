@@ -63,6 +63,7 @@
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to an individual) the EGA.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": { 
           "allOf": [
             {
@@ -83,6 +84,9 @@
                       "anyOf": [
                         {
                           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-sample"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
                         }
                       ]
                     }
@@ -172,6 +176,10 @@
               ]
             }
           ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
         }
       },
 
@@ -181,6 +189,7 @@
         "description": "Custom attributes of an individual: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": { 
           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
         }

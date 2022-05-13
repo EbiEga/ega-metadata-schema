@@ -26,6 +26,15 @@
                 },
                 "object_type": "sample"
             }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAB00002045411"
+                },
+                "object_type": "submission"                
+            }
         }
     ],
     "individual_attributes": [

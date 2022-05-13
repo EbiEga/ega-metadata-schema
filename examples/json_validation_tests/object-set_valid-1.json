@@ -188,6 +188,15 @@
                         },
                         "object_type": "analysis"
                     }
+                },
+                {
+                    "r_type": "referenced_by",
+                    "r_target": {
+                        "object_id": {
+                            "ega_accession": "EGAB00002045411"
+                        },
+                        "object_type": "submission"                
+                    }
                 }
             ],
             "experiment_attributes": [
@@ -257,6 +266,15 @@
                             "ega_accession": "EGAX00002094401"
                         },
                         "object_type": "experiment"
+                    }
+                },
+                {
+                    "r_type": "referenced_by",
+                    "r_target": {
+                        "object_id": {
+                            "ega_accession": "EGAB00002045411"
+                        },
+                        "object_type": "submission"                
                     }
                 }
             ],    
@@ -336,6 +354,15 @@
                             "ega_accession": "EGAX00002094401"
                         },
                         "object_type": "experiment"
+                    }
+                },
+                {
+                    "r_type": "referenced_by",
+                    "r_target": {
+                        "object_id": {
+                            "ega_accession": "EGAB00002045311"
+                        },
+                        "object_type": "submission"                
                     }
                 }
             ],    

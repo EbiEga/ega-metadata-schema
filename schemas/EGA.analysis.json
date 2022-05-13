@@ -119,7 +119,6 @@
             }
           },
           "reference_alignment_details": {
-            "type": "array",
             "title": "Reference assembly and sequence details",
             "description": "Node containing details of the reference sequence used in the alignment of raw sequences.",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details"
@@ -178,6 +177,9 @@
                         },
                         {
                           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-dataset"
+                        },
+                        {
+                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
                         },
                         {
                           "title": "Optional one, added here to simplify",
@@ -268,6 +270,10 @@
               ]
             }
           ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
         }
       },
 

@@ -21,6 +21,7 @@
         "description": "The array per se containing the list of metadata objects to be validated. For each type of metadata object (e.g. 'sample') its corresponding schema (e.g. 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#') is applied conditionally based on the value of schema_descriptor[object_type] within each object. This way this array can contain any combination of metadata objects and each will be validated individually against the correct schemas. Notice how the 'schema_descriptor' is a required node for the object-set to be used.",
         "minItems": 1,
         "additionalitems": false,
+        "uniqueItems": true,
         "items": {
           "title": "Schemas being conditionally applied based on value of 'object_type' from 'schema_descriptor' in each object.",
           "description": "Based on the value found within 'object_type' (i.e. if it matches the 'enum' of each type), the corresponding schema (defined within '$ref') is evaluated.",
