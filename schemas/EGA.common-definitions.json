@@ -2757,6 +2757,19 @@
             }
           } 
         }
+      },
+
+      "r-constraint-one-sourced-submission": {
+        "title": "Relationship constraint of 1 submission as source",
+        "description": "This node defines a relationship item containing a 'submission' as a source and of type 'referenced_by'. This node can be used with the keyword 'contains' at each relationship array of all objects (but submission), in order to assert that all objects have a submission object (EGAB...) linked to them.",
+        "allOf": [
+          {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+          },
+          {
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
+          }
+        ]
       }
     }
 }

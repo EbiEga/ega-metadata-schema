@@ -212,6 +212,10 @@
               ]
             }
           ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
         }
       },
 
