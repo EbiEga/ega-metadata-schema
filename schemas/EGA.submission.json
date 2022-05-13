@@ -4,7 +4,7 @@
     "type": "object",
     "title": "EGA submission metadata schema",
     "meta:version": "0.0.0",
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Submission (also known as submission project) metadata object. This object is intended to be an object that others can reference, grouping them by submission details. An EGA user can submit metadata comprising thousands of objects, or just a few that suffice the bare minimum of a comprehensive submission: at least one dataset, with its proper links to other objects. Once a submission is finished, EGA's HelpDesk team will review it and, possibly, accept it. A submission JSON document hold little details, mainly the basic descriptive fields and collaborators array, but its main use is for other objects to reference it. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/submission/data_access_committee)",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Submission (also known as submission project) metadata object. This object is intended to be an object that others can reference, grouping them by submission details. An EGA user can submit metadata comprising thousands of objects, or just a few that suffice the bare minimum of a comprehensive submission: at least one dataset, with its proper links to other objects. A submission JSON document hold little details, mainly the basic descriptive fields and collaborators array, but its main use is for other objects to reference it. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).",
     "required": ["object_id"],
     "additionalProperties": false,
     "properties": {
@@ -52,7 +52,7 @@
 
       "additional_collaborators": {
         "type": "array",
-        "title": "Submission ownership details",
+        "title": "Submission collaborator details",
         "description": "Object containing optional collaborators of the submission project, who shall have different capabilities granted by the owner: 'read' or 'read and write' rights.",
         "minItems": 1,
         "additionalProperties": false,
