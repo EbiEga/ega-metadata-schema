@@ -68,6 +68,7 @@
             "description": "An array compromising additional contact details to use when in need to reach the DAC yet the main contact is unresponsive or does not exist.",
             "minItems": 1,
             "additionalProperties": false,
+            "uniqueItems": true,
             "items": { 
               "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details" 
             }
@@ -81,6 +82,7 @@
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a DAC) the EGA.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": {
           "allOf": [
             {
@@ -199,6 +201,7 @@
         "description": "Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": { 
           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
         }

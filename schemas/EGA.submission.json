@@ -56,6 +56,7 @@
         "description": "Object containing optional collaborators of the submission project, who shall have different capabilities granted by the owner: 'read' or 'read and write' rights.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": { 
           "type": "object",
           "title": "Collaborator",
@@ -86,6 +87,7 @@
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a submission) the EGA.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": {
           "allOf": [
             {
@@ -183,6 +185,7 @@
         "description": "Custom attributes of a submission: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal identifier' and its Value 'XF40') with optional units. Its properties are inherited from the common-definitions.json schema.",
         "minItems": 1,
         "additionalProperties": false,
+        "uniqueItems": true,
         "items": { 
           "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
         }

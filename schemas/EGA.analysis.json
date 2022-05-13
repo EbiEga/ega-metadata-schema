@@ -119,7 +119,6 @@
             }
           },
           "reference_alignment_details": {
-            "type": "array",
             "title": "Reference assembly and sequence details",
             "description": "Node containing details of the reference sequence used in the alignment of raw sequences.",
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details"
