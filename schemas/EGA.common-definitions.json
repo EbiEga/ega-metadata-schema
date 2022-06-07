@@ -787,11 +787,20 @@
         "examples": [ "EGAI00001159712" ]
       },
 
-      "EGA-ISO-date-YYYY-MM-DD-pattern": {
+      "EGA-ISO8601-date-pattern": {
         "type": "string",
-        "title": "Pattern of an EGA ISO date (YYYY-MM-DD)",
-        "pattern": "^[0-9]{4}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$",
-        "examples": [ "2021-04-30" ]
+        "title": "Pattern of EGA ISO 8601 date",
+        "description": "Regular expression to check the syntax of a date following 'ISO 8601 date' format. Notice that the Time (denoted by 'T...') is optional. So is the time zone, specified at the end of the string (e.g. 'Z', '+01:00'...). See more detail at 'https://regexpattern.com/iso-8601-dates-times/'.",
+        "pattern": "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])(T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?)?$",
+        "examples": [ "2021-04-30", "2020-12-29T19:30:45.123Z", "2020-12-29", "2020-12-29T19:30:45", "2021-10-13T04:13:00+01:00", "2021-10-13T12:13:00-08:00", "2021-10-13T12:13:00" ]
+      },
+
+      "EGA-ISO8601-duration-pattern": {
+        "type": "string",
+        "title": "Pattern of a partial EGA ISO 8601 duration",
+        "description": "Pattern of ISO 8601 durations. It can be used to define time intervals (e.g. 'P3Y6M4DT12H30M5S' represents a duration of three years, six months, four days, twelve hours, thirty minutes, and five seconds). See more at https://en.wikipedia.org/wiki/ISO_8601#Durations.",
+        "pattern": "^P(?!$)(\\d+(?:(\\.|\\,)\\d+)?Y)?(\\d+(?:(\\.|\\,)\\d+)?M)?(\\d+(?:(\\.|\\,)\\d+)?W)?(\\d+(?:(\\.|\\,)\\d+)?D)?(T(?=\\d)(\\d+(?:(\\.|\\,)\\d+)?H)?(\\d+(?:(\\.|\\,)\\d+)?M)?(\\d+(?:(\\.|\\,)\\d+)?S)?)?$",
+        "examples": [ "P3Y6M4DT12H30M5S", "P23DT23H", "PT0S", "P0D", "P0,5Y", "P0.5Y"]
       },
 
       "filename-filetype-pattern-check": {
@@ -1249,7 +1258,6 @@
         "title": "Object of external accession of the object",
         "description": "External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.",
         "additionalProperties": false,
-        "required": ["external_accession_curie"],
         "properties": {
           "external_accession_curie": {
             "type": "string",
@@ -1261,15 +1269,37 @@
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ],
-            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381"]
+            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381", "pubmed:30962759"]
+          },
+          "accession_reference": {
+            "type": "string",
+            "title": "Reference of the external accession",
+            "description": "Full or partial URL/URI of the external accession, for systems to resolve it.",
+            "allOf": [
+              {
+                "title": "General pattern of a URL/URI",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/url-uri-pattern"
+              }
+            ],
+            "examples": [ "https://www.ebi.ac.uk/biosamples/samples/SAMN11716999", "https://pubmed.ncbi.nlm.nih.gov/19491253", "https://identifiers.org/arrayexpress:E-MEXP-1712", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/" ]
           },
           "accession_label": {
             "type": ["string", "number"],
             "title": "Label of the external accession",
-            "description": "Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
-            "examples": [ "taken from biosample temporarily", "Ensembl's part of the accessions", "first", 2 ]
+            "description": "Label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
+            "examples": [ "taken from biosample temporarily", "Ensembl's part of the accessions", "first", 2, "Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation" ]
           }
-        }
+        },
+        "anyOf": [
+          {
+            "title": "Either the CURIE is needed",
+            "required": ["external_accession_curie"]
+          },
+          {
+            "title": "Or the reference is needed",
+            "required": ["accession_reference"]
+          }
+        ]
       },
 
       "sample-label-association": {
@@ -1362,15 +1392,16 @@
 
       "biological_sex": {
         "type": "string",
-        "title": "Biological sex of the individual",
+        "title": "Biological sex of the individual #!   CAMBIAR A PHENO Y GENO",
         "meta:property_curie": "PATO:0000047",
         "description": "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-        "enum": [ "male", "female", "hermaphrodite", "unknown" ],
+        "enum": [ "male", "female", "hermaphrodite", "pseudohermaphrodite","unknown" ],
         "meta:enum": { 
           "male": "[PATO:0000384]: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.",
           "female": "[PATO:0000383]: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.",
           "hermaphrodite": "[PATO:0001340]: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.",
-          "unknown": "The biological sex is unknown." 
+          "pseudohermaphrodite": "[PATO:0001827]: A biological sex quality inhering in an individual or a population by virtue of having internal reproductive organs of one sex and external sexual characteristics of the other sex.",
+          "unknown": "[NCIT:C17998]: The biological sex is unknown, not assesed or not available." 
         },
         "examples": [ "male" ]
       },
@@ -1640,9 +1671,8 @@
                 },
                 "locus_external_reference": {
                   "title": "External reference of the locus",
-                  "description": "If the locus is NOT a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. For example, transcript TAF1-204 already contains all its locus information within its persistent record at Ensembl, identified by 'ensembl:ENST00000423759.6'.",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession",
-                  "examples": ["ensembl:ENST00000423759.6"]
+                  "description": "If the locus can not be identified by a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. In other words, one can reference here ways to access the locus information that is accessible else where. For example miRNA 'MI0039740' (mirbase:MI0039740) that lacks a gene descriptor.",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession"
                 },
                 "locus_additional_description": {
                   "type": "string",
@@ -1703,11 +1733,73 @@
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_ncbi_gene_identifier_pattern"
               },
               {
-                "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
+                "title": "HUGO Gene pattern (e.g. 'HGNC:1097')",
                 "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_hgnc_identifier_pattern"
               }
             ],
             "examples": ["HGNC:11535", "hgnc:11998", "HGNC:1097", "ncbigene:100010", "ncbigene:6872"]
+          },
+          "gene_description": {
+            "type": "string",
+            "title": "Description of the gene",
+            "description": "Free-text description of the gene, only to be used to provide additional context that would otherwise be impossible to add encoded in the schema. In other words, kindly refrain from providing alternative gene symbols in the description if they are not added likewise in the 'alternate_gene_symbols' property.",
+            "minLength": 1,
+            "examples": [ "In the used cells, locus of gene ... was modified at positions +23, where thymine was transitioned to cytosine (T-C)..." ]
+          },
+          "alternate_gene_ids": {
+            "type": "array",
+            "title": "Alternate gene IDs",
+            "description": "Array of alternate identifiers for this gene. For example, Ensemble identifiers for genes and its transcripts.",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Alternate gene ID",
+              "meta:property_curie": "data:2295",
+              "allOf": [
+                {
+                  "title": "General pattern of a CURIE",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                }
+              ],
+              "examples": ["OMIM:600296", "ensembl:ENST00000423759.6", "ucsc:uc003ldc.6"]
+            }
+          },
+          "alternate_gene_symbols": {
+            "type": "array",
+            "title": "Alternate gene symbols",
+            "description": "Array of alternate gene sumbols. This field can be used to provide any other alternate gene symbol to refer to the gene, including previously approved gene symbols. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Alternate gene symbol",
+              "meta:property_curie": "data:1026",
+              "minLength": 1,
+              "examples": ["SUP45L1", "eRF1", "RF1", "ERF1"]
+            }
+          },
+          "gene_external_references": {
+            "type": "array",
+            "title": "Related (not equivalent) gene IDs",
+            "description": "Array of related identifiers. This field can be used to provide identifiers to alternative resources representing related, but not equivalent concepts, for example gene paralog, analog or ortholog IDs.",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Related gene ID",
+              "meta:property_curie": "data:2295",
+              "allOf": [
+                {
+                  "title": "General pattern of a CURIE",
+                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                }
+              ],
+              "examples": ["VGNC:97422", "MGI:2385071", "RGD:1305712"]
+            }
           }
         }
       },
@@ -2770,6 +2862,42 @@
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
           }
         ]
+      },
+
+      "url-uri-pattern": {
+        "type": "string",
+        "title": "URL/URI pattern",
+        "description": "This object exists to hold the pattern that a URL or URI should have. For it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^((http|https):\\/\\/)(www.)?[a-zA-Z0-9@:%._\\+~#?&\/\/=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&\\/\\/=]*)$",
+        "examples": [ "https://phenopacket-schema.readthedocs.io/en/latest/externalreference.html", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/", "https://www.geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/" ]
+      },
+
+      "time_element": {
+        "#!": ""
+      },
+
+      "gestational_age": {
+        "type": "object",
+        "title": "Gestational age (menstrual age)",
+        "description": "Gestational age (or menstrual age) is the time elapsed between the first day of the last normal menstrual period and the day of delivery. It is intended to describe prenatal clinical data (i.e. the age of a human in development before birth).\nThe first day of the last menstrual period occurs approximately 2 weeks before ovulation and approximately 3 weeks before implantation of the blastocyst. Because most women know when their last period began but not when ovulation occurred, this definition traditionally has been used when estimating the expected date of delivery. In contrast, chronological age (or postnatal age) is the time elapsed after birth. \nGestational age is conventionally expressed as completed weeks. Therefore, a 25-week, 5-day fetus is considered a 25-week fetus. Gestational age is often reported as W+D. For instance, 33 weeks and 2 days could be reported as 33+2. \nField inspired by Phenopacket's attribute '[GestationalAge](https://phenopacket-schema.readthedocs.io/en/latest/gestational-age.html)'.",
+        "required": ["weeks"],
+        "additionalProperties": false,
+        "properties": {
+          "weeks": {
+            "type": "integer",
+            "title": "Weeks of gestational age",
+            "minInclusive": 0,
+            "examples": [30]
+          },
+          "days": {
+            "type": "integer",
+            "title": "Days of gestational age",
+            "maximum": 6,
+            "minInclusive": 0,
+            "examples": [4]
+          }
+        }
       }
+
     }
 }

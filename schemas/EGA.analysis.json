@@ -38,6 +38,7 @@
         "type": "string",
         "title": "Title of the analysis",
         "description": "An informative analysis title that should serve as an overview of the analysis, including: performed analysis, samples, purpose... (e.g. 'Variant calling analysis of tumor repressed cells'). This short text can be used to call out analyses records in searches or in displays.",
+        "minLength": 1,
         "examples": [ "Variant calling analysis of tumor repressed cells" ]
       },
 
@@ -45,6 +46,7 @@
         "type": "string",
         "title": "Description of the analysis",
         "description": "An in-depth description of the biological relevance and intent of the analysis, including its workflow.",
+        "minLength": 1,
         "examples": [ "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 

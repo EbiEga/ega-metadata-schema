@@ -82,20 +82,25 @@
             "type": "string",
             "title": "Date of the sample collection",
             "meta:property_curie": "EFO:0000689",
-            "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. If the protocols are long enough, the date shall be the day the collection concluded.",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
+            "description": "Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the collection concluded.",
+            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO8601-date-pattern"
           },
-          "sample_collection_site": {
+          "sampled_anatomical_entity": {
             "type": "string",
-            "title": "Sampling site",
+            "title": "Sampled anatomical entity (organ, tissue...)",
             "meta:property_curie": "EFO:0000688",
-            "description": "A site from which a sample, i.e. a statistically representative of the whole, is extracted from the whole. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your sample collection site at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/uberon-anatomical-entity",
-            "examples": ["nasal cavity", "liver", "gut wall", "oral cavity" ]
+            "description": "A site or entity from which a sample, i.e. a statistically representative of the whole, is extracted from the whole. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your sample collection site at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.",
+            "examples": ["nasal cavity", "liver", "gut wall", "oral cavity" ],
+            "allOf": [
+              {
+                "title": "#! Restricted ontology to be used",
+                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/uberon-anatomical-entity"
+              }
+            ]
           },
-          "sample_collection_site_curie": {
+          "sampled_anatomical_entity_curie": {
             "type": "string",
-            "title": "CURIE of the sampling site",
+            "title": "CURIE of the sampled anatomical entity",
             "meta:property_curie": "EFO:0000688",
             "description": "Ontology term in CURIE format (e.g. 'UBERON:0000167') of the sampling site. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your ontologized term at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'UBERON:0001707'; in a liver biopsy it would be 'UBERON:0002107'.",
             "examples": [ "UBERON:0000167", "UBERON:0001707", "UBERON:0000328", "UBERON:0002107" ],
@@ -171,6 +176,40 @@
             }
           }
         ]
+      },
+
+      "sample_type": {
+        "type": "array",
+        "title": "Array of sample types",
+        "description": "Array of sample types. Use this property as tags that befit your sample, picking as many as needed. Add as much granularity as possible: for example, if the sample is of type cDNA, pick 'cDNA' besides just 'DNA'.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "string",   
+          "title": "Type of sample",
+          "description": "Sample type item. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",   
+          "enum": [ "DNA", "RNA", "metabolite", "protein", "cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "non polyA RNA", "long non polyA RNA", "nuclear RNA", "polyA RNA", "long polyA RNA", "snRNA", "total RNA", "cultured cells" ],
+          "meta:enum": {
+            "DNA": "[CHEBI:16991]",
+            "RNA": "[CHEBI:33697]",
+            "metabolite": "[EFO:0004727]",
+            "protein": "[CHEBI:36080]",
+            "cDNA": "[EFO:0008481]",
+            "genomic DNA": "[EFO:0008479]",
+            "mitochondrial DNA": "[EFO:0008480]",  
+            "messenger RNA": "[CHEBI:33699]",
+            "ncRNA": "[SO:0000655]",
+            "non polyA RNA": "[EFO:0005017]",
+            "long non polyA RNA": "[EFO:0005018]",
+            "nuclear RNA": "[EFO:0030052]",
+            "polyA RNA": "[OBI:0000869]",
+            "long polyA RNA": "[EFO:0005019]",
+            "snRNA": "[SO:0000274]",
+            "total RNA": "[EFO:0004964]",
+            "cultured cells": "[CL:0000010]", 
+            "biopsy": "[EFO:0009120]" }
+        }        
       },
 
       "sample_relationships": {
