@@ -247,15 +247,15 @@
                     "filename": "myfile1_NM305004_50000reads.cram.gpg",
                     "filetype": "CRAM",
                     "checksum_method": "MD5",
-                    "unencrypted_checksum": "9a4249e4b0538b9789c5d7f25d6342f0",
-                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67fa4415"
+                    "unencrypted_checksum": "66526ffc57804187654eba000bc3905c",
+                    "encrypted_checksum": "fdbfd70466017e8387bc55c65b553b2b"
                 },
                 {
                     "filename": "myfile2_NM305004_50000reads.cram.gpg",
                     "filetype": "CRAM",
                     "checksum_method": "MD5",
-                    "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
-                    "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
+                    "unencrypted_checksum": "dc2f2f3aa81f299944e23aacf5a40b2c",
+                    "encrypted_checksum": "db75a499836cd430cc9d25b5f89ea4c3"
                 }
             ],
             "assay_relationships": [
