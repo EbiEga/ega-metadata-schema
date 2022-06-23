@@ -41,9 +41,9 @@
       "minimal_public_attributes":{
         "type": "object",
         "title": "Minimal public attributes describing an individual",
-        "description": "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.",
+        "description": "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' [NCIT:C94232].",
         "additionalProperties": false,
-        "required": ["subject_id", "biological_sex", "phenotype"],
+        "required": ["subject_id", "biological_sex"],
         "properties": {
           "subject_id": {
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/subject_id"
@@ -51,10 +51,37 @@
           "biological_sex": {
             "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/biological_sex"
           },
-          "phenotype": {
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor"
+          "phenotypes": {
+            "type": "array",
+            "title": "Array of phenotypic abnormalities",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "./EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor"
+            }
+          },
+          "diseases": {
+            "type": "array",
+            "title": "Array of diseases",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "./EGA.common-definitions.json#/definitions/disease-descriptor"
+            }
           }
-        }
+        },
+        "anyOf": [
+          {
+            "title": "Either the phenotypes array is given",
+            "required": ["phenotypes"]
+          },
+          {
+            "title": "Or the diseases array is given",
+            "required": ["diseases"]
+          }
+        ]
       },
 
       "individual_relationships": {
