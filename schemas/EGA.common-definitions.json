@@ -2892,7 +2892,7 @@
         "type": "string",
         "title": "URL/URI pattern",
         "description": "This object exists to hold the pattern that a URL or URI should have. For it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^((http|https):\\/\\/)(www.)?[a-zA-Z0-9@:%._\\+~#?&\/\/=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&\\/\\/=]*)$",
+        "pattern": "^((http|https):\/\/)(www.)?[a-zA-Z0-9@:%._\\+~#?&\/\/=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&\/\/=]*)$",
         "examples": [ "https://phenopacket-schema.readthedocs.io/en/latest/externalreference.html", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/", "https://www.geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/" ]
       },
 
