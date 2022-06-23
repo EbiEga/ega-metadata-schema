@@ -1,33 +1,53 @@
 {
     "object_id": {
-        "alias" : "My_10samples_X_from_NM305004", 
+        "alias" : "My_sample_X_from_NM305004", 
         "center_name" : "EBI-TEST",
         "ega_accession": "EGAN00000000001"
     },
-    "object_title": "Buccal swab from COVID+ patient NM305004",
-    "object_description": "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to our labs in California",
+    "object_title": "Skin biopsy from COVID+ patient NM305004",
+    "object_description": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
     "organism_descriptor": {
-        "taxon_id": "9606",
+        "taxon_id_curie": "NCBITaxon:9606",
         "scientific_name": "homo sapiens",
         "common_name": "human"
     },
-    "minimal_public_attributes": {
-        "subject_id": "donor-NM305004",
-        "biological_sex": "male",
-        "experimental_condition": {
-            "experimental_condition_term": "treated with cisplatin",
-            "experimental_condition_curie": "XCO:0000398",
-            "experimental_condition_description": "Treated with cisplatin, being part of the 'case' group."
+    "sample_types": [ "tissue culture" ],
+    "cell_types": [ 
+        {
+            "cell_type_id": "CL:0000066",
+            "cell_type_label": "epithelial cell",
+            "inferred_cell_type": "not inferred"
+        },
+        {
+            "cell_type_id": "CL:0000097",
+            "cell_type_label": "mast cell",
+            "inferred_cell_type": "not inferred"
         }
-    },
+     ],
+     "sample_status": [
+        {
+            "case_vs_control": "case",
+            "condition_under_study": {
+                "cus_curie": "XCO:0000398",
+                "cus_label": "treated with cisplatin"
+            }
+        }
+     ],
     "sample_collection": {
         "sample_collection_date": "2021-12-20",
-        "sample_collection_site": "oral cavity",
-        "sample_collection_site_curie": "UBERON:0000167"
+        "age_at_collection": {
+            "age_range": {
+                "start": "P5Y",
+                "end": "P10Y"
+            }
+        },
+        "sampling_site": {
+            "sampled_organism_part": "axilla skin",
+            "sampled_organism_part_curie": "UBERON:0015474"
+        }
     },
     "sample_grouping": {
-        "sample_group_boolean": true,
-        "sample_number": 10
+        "sample_group_boolean": false
     },
     "sample_relationships": [
         {
@@ -65,13 +85,8 @@
     ],
     "sample_attributes": [
         {
-            "tag": "age at sample collection",
-            "value": "25",
-            "units": "years"
-        },
-        {
             "units": "ml",
-            "tag": "blood volume",
+            "tag": "biopsy volume",
             "value": "30"
         }
     ],
