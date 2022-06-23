@@ -263,7 +263,7 @@
                     "r_type": "referenced_by",
                     "r_source": {
                         "object_id": {
-                            "ega_accession": "EGAX00002094401"
+                            "ega_accession": "EGAX00002095401"
                         },
                         "object_type": "experiment"
                     }
@@ -369,7 +369,7 @@
             "assay_attributes": [
                 {
                     "tag": "weather",
-                    "value": "When the assay was executed it was sunny outside"
+                    "value": "When the assay was executed it was rainy outside"
                 },
                 {
                     "tag": "assay price",
