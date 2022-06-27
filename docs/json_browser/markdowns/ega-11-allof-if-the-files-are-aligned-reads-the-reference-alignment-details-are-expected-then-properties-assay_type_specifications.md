@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # assay\_type\_specifications Properties
 
-| Property                                                              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                   |
-| :-------------------------------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sequencing\_assay\_specifications](#sequencing_assay_specifications) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications-properties-sequencing_assay_specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications/properties/sequencing_assay_specifications") |
+| Property                                                              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                             |
+| :-------------------------------------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sequencing\_assay\_specifications](#sequencing_assay_specifications) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications-properties-sequencing_assay_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications/properties/sequencing_assay_specifications") |
 
 ## sequencing\_assay\_specifications
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications-properties-sequencing_assay_specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications/properties/sequencing_assay_specifications")
+*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications-properties-sequencing_assay_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications/properties/sequencing_assay_specifications")
 
 ### sequencing\_assay\_specifications Type
 

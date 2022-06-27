@@ -1,7 +1,7 @@
 # EGA Controlled Vocabulary (CV) for array instrument platforms Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json
 ```
 
 Controlled Vocabulary (CV) list for the array instrument platforms, derived from Array Express and Gene Expression Omnibus. Commonly consisting in the manufacturers name (e.g. Affymetrix) and the instrument model (e.g. Human CentXbaAv2 SNP Array). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.

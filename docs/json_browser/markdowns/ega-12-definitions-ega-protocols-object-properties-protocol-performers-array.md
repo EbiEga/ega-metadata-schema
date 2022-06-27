@@ -1,7 +1,7 @@
 # Protocol performers array Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers
 ```
 
 Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.

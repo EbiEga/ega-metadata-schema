@@ -1,7 +1,7 @@
 # Label of the external accession Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label
 ```
 
 Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.

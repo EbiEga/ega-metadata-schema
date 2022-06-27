@@ -1,7 +1,7 @@
 # EGA policy metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json
 ```
 
 A policy, also known as Data Access Agreement (DAA), is a contract made between Data User and Data Access Committee. The policy object is expected to contain metadata about such agreement, which should be drafted by the DAC and includes, but is not limited to, details of data use, publication embargoes and storage. Completion of a DAA by the applicant/s should form part of the application process to the DAC. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/submission/dac/documentation>)
@@ -16,15 +16,15 @@ A policy, also known as Data Access Agreement (DAA), is a contract made between 
 
 # EGA policy metadata schema Properties
 
-| Property                                       | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
-| :--------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_id")                         |
-| [schema\_descriptor](#schema_descriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/schema_descriptor")                |
-| [object\_title](#object_title)                 | `string` | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-title-of-the-policy.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_title")                    |
-| [policy\_descriptor](#policy_descriptor)       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor")                 |
-| [duo\_codes\_curies](#duo_codes_curies)        | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes-curies.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/duo_codes_curies") |
-| [policy\_relationships](#policy_relationships) | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_relationships")           |
-| [policy\_attributes](#policy_attributes)       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_attributes")          |
+| Property                                       | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                     |
+| :--------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_id")                         |
+| [schema\_descriptor](#schema_descriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schema_descriptor")                |
+| [object\_title](#object_title)                 | `string` | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_title")                    |
+| [policy\_descriptor](#policy_descriptor)       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor")                 |
+| [duo\_codes\_curies](#duo_codes_curies)        | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes-curies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duo_codes_curies") |
+| [policy\_relationships](#policy_relationships) | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_relationships")           |
+| [policy\_attributes](#policy_attributes)       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_attributes")          |
 
 ## object\_id
 
@@ -38,7 +38,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_id")
+*   defined in: [EGA policy metadata schema](ega-16-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -68,7 +68,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/schema_descriptor")
+*   defined in: [EGA policy metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -86,7 +86,7 @@ Free-form title of the policy. Can be used to call out policy records in searche
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-title-of-the-policy.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_title")
+*   defined in: [EGA policy metadata schema](ega-16-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_title")
 
 ### object\_title Type
 
@@ -110,7 +110,7 @@ Node containing the full description of the policy, whether it is hosted at some
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-policy-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor")
+*   defined in: [EGA policy metadata schema](ega-16-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor")
 
 ### policy\_descriptor Type
 
@@ -134,7 +134,7 @@ Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) forma
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes-curies.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/duo_codes_curies")
+*   defined in: [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes-curies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duo_codes_curies")
 
 ### duo\_codes\_curies Type
 
@@ -158,7 +158,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-policy-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_relationships")
+*   defined in: [EGA policy metadata schema](ega-16-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_relationships")
 
 ### policy\_relationships Type
 
@@ -182,7 +182,7 @@ Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-policy-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_attributes")
+*   defined in: [EGA policy metadata schema](ega-16-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_attributes")
 
 ### policy\_attributes Type
 

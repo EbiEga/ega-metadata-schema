@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1/then
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1/then
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # then Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                          |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [array\_sample\_labels](#array_sample_labels) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check-then-properties-array_sample_labels.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1/then/properties/array_sample_labels") |
+| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [array\_sample\_labels](#array_sample_labels) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check-then-properties-array_sample_labels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1/then/properties/array_sample_labels") |
 
 ## array\_sample\_labels
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check-then-properties-array_sample_labels.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1/then/properties/array_sample_labels")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check-then-properties-array_sample_labels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1/then/properties/array_sample_labels")
 
 ### array\_sample\_labels Type
 

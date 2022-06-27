@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission/properties/r_source
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission/properties/r_source
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # r\_source Properties
 
-| Property                     | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                   |
-| :--------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_type](#object_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-source-submission-properties-r_source-properties-object_type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission/properties/r_source/properties/object_type") |
+| Property                     | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                             |
+| :--------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_type](#object_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-source-submission-properties-r_source-properties-object_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission/properties/r_source/properties/object_type") |
 
 ## object\_type
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-source-submission-properties-r_source-properties-object_type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission/properties/r_source/properties/object_type")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-source-submission-properties-r_source-properties-object_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission/properties/r_source/properties/object_type")
 
 ### object\_type Type
 

@@ -1,7 +1,7 @@
 # Check core IDs: external accessions Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/anyOf/2
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/anyOf/2
 ```
 
 

@@ -1,7 +1,7 @@
 # Locus identifier Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/targeted_loci/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targeted_loci/items
 ```
 
 Node to unambiguously identify loci \[OGI:0000022]: the unique chromosomal location defining the position of an individual gene or DNA sequence. This node shall be used to precisely define: (1) the organism of said locus; (2) the gene and other genomic feature references in other accessions; (3) the genomic sequence per se, including its assembly and position. These details, in different combinations, shall allow identification of any genomic feature, such as SNPs (e.g. coordinates of a variant) or genes (e.g. PT53).
@@ -16,10 +16,10 @@ Node to unambiguously identify loci \[OGI:0000022]: the unique chromosomal locat
 
 # items Properties
 
-| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [organism\_descriptor](#organism_descriptor) | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/organism_descriptor")       |
-| [loci\_descriptor](#loci_descriptor)         | `array`  | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor") |
+| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                               |
+| :------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [organism\_descriptor](#organism_descriptor) | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/organism_descriptor")       |
+| [loci\_descriptor](#loci_descriptor)         | `array`  | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor") |
 
 ## organism\_descriptor
 
@@ -33,7 +33,7 @@ This node describes the material entity the sample consists in. That is, an indi
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/organism_descriptor")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/organism_descriptor")
 
 ### organism\_descriptor Type
 
@@ -51,7 +51,7 @@ Array of locus context items. Multiple loci can be described in the array if the
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor")
 
 ### loci\_descriptor Type
 

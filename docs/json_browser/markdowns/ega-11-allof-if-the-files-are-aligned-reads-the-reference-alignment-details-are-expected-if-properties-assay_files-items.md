@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files/items
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # items Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                 |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assay_files-items-properties-filetype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files/items/properties/filetype") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                           |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assay_files-items-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files/items/properties/filetype") |
 
 ## filetype
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assay_files-items-properties-filetype.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files/items/properties/filetype")
+*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assay_files-items-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files/items/properties/filetype")
 
 ### filetype Type
 

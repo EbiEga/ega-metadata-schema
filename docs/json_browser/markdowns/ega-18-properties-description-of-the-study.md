@@ -1,7 +1,7 @@
 # Description of the study Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description
 ```
 
 An in-depth description of the study, including its overall purpose, goals, scope or nature.

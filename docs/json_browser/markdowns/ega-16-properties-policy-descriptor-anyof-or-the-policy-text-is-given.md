@@ -1,7 +1,7 @@
 # Or the policy text is given Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/anyOf/1
 ```
 
 

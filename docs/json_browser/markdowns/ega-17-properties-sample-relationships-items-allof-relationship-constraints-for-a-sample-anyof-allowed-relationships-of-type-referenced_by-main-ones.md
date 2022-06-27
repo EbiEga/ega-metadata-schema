@@ -1,7 +1,7 @@
 # Allowed relationships of type referenced\_by (main ones) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships/items/allOf/1/anyOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_relationships/items/allOf/1/anyOf/0
 ```
 
 

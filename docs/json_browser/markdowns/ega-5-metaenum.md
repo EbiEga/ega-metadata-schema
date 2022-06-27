@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Controlled Vocabulary (CV) for assay types by array \[EFO:0002696] Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json#/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json#/meta:enum
 ```
 
 

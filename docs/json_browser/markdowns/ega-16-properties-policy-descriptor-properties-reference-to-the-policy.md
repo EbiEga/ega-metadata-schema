@@ -1,7 +1,7 @@
 # Reference to the policy Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_reference
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_reference
 ```
 
 A publicly accessible reference to the policy, where the updated text of the policy is hosted.

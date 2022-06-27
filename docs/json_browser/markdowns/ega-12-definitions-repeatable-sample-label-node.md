@@ -1,7 +1,7 @@
 # Repeatable Sample-label node Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association
 ```
 
 The base node of a label-sample association. One form of basic identification of the sample (inherited from object\_core\_id - e.g. either the center name and alias or the accession) is required, as well as the label per se.
@@ -16,10 +16,10 @@ The base node of a label-sample association. One form of basic identification of
 
 # sample-label-association Properties
 
-| Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
-| :----------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [label](#label)          | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
-| [object\_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
+| Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
+| :----------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [label](#label)          | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-array_label-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")                                   |
+| [object\_id](#object_id) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id") |
 
 ## label
 
@@ -33,7 +33,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-array_label-node.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-array_label-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/label")
 
 ### label Type
 
@@ -51,7 +51,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id")
 
 ### object\_id Type
 

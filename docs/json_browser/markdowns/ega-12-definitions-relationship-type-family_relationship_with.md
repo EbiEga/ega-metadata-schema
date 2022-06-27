@@ -1,7 +1,7 @@
 # Relationship type: family\_relationship\_with Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_relationships/items/allOf/1/anyOf/2/allOf/0/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships/items/allOf/1/anyOf/2/allOf/0/anyOf/1
 ```
 
 Node to be used as a relationship type for relationship contraints.
@@ -16,9 +16,9 @@ Node to be used as a relationship type for relationship contraints.
 
 # 1 Properties
 
-| Property           | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
-| :----------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r\_type](#r_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-type-family_relationship_with-properties-r_type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with/properties/r_type") |
+| Property           | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
+| :----------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [r\_type](#r_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-type-family_relationship_with-properties-r_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with/properties/r_type") |
 
 ## r\_type
 
@@ -32,7 +32,7 @@ Node to be used as a relationship type for relationship contraints.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-type-family_relationship_with-properties-r_type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with/properties/r_type")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-type-family_relationship_with-properties-r_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with/properties/r_type")
 
 ### r\_type Type
 

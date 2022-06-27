@@ -1,7 +1,7 @@
 # Pattern of an EGA ISO date (YYYY-MM-DD) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date
 ```
 
 ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. If the protocols are long enough, the date shall be the day the collection concluded.

@@ -1,7 +1,7 @@
 # Array of sample-label pairs of the array assay Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/array_sample_labels
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/array_sample_labels
 ```
 
 Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which samples used in this assay are labelled by which chemicals. Can be omitted if the array is of one single label/colour.

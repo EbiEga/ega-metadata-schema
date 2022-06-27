@@ -1,7 +1,7 @@
 # Name of the protocol Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name
 ```
 
 Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.

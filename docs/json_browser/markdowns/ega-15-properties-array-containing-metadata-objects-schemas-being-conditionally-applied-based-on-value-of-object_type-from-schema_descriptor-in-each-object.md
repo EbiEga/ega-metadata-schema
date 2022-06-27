@@ -1,7 +1,7 @@
 # Schemas being conditionally applied based on value of 'object\_type' from 'schema\_descriptor' in each object. Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json#/properties/object_array/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/object_array/items
 ```
 
 Based on the value found within 'object\_type' (i.e. if it matches the 'enum' of each type), the corresponding schema (defined within '$ref') is evaluated.
@@ -22,21 +22,21 @@ any of
 
     *   [If the assay technology is an array, the experiment type has to match](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match.md "check type definition")
 
-*   [EGA study metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-study-metadata-schema.md "check type definition")
+*   [EGA study metadata schema](ega-18.md "check type definition")
 
-*   [EGA sample metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-sample-metadata-schema.md "check type definition")
+*   [EGA sample metadata schema](ega-17.md "check type definition")
 
-*   [EGA individual metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-individual-metadata-schema.md "check type definition")
+*   [EGA individual metadata schema](ega-14.md "check type definition")
 
-*   [EGA submission metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-submission-metadata-schema.md "check type definition")
+*   [EGA submission metadata schema](ega-19.md "check type definition")
 
-*   [EGA dataset metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-dataset-metadata-schema.md "check type definition")
+*   [EGA dataset metadata schema](ega-13.md "check type definition")
 
-*   [EGA analysis metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-analysis-metadata-schema.md "check type definition")
+*   [EGA analysis metadata schema](ega-10.md "check type definition")
 
-*   [EGA policy metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-policy-metadata-schema.md "check type definition")
+*   [EGA policy metadata schema](ega-16.md "check type definition")
 
-*   [EGA DAC metadata schema](ega-15-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-object_type-from-schema_descriptor-in-each-object-anyof-ega-dac-metadata-schema.md "check type definition")
+*   [EGA DAC metadata schema](ega-8.md "check type definition")
 
 *   all of
 

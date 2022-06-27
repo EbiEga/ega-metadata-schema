@@ -1,7 +1,7 @@
 # EGA Protocols object Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_protocols/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_protocols/items
 ```
 
 A protocol is an information entity which is a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.
@@ -16,16 +16,16 @@ A protocol is an information entity which is a set of instructions that describe
 
 # items Properties
 
-| Property                                                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                |
-| :--------------------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [protocol\_name](#protocol_name)                                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-name-of-the-protocol.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")                        |
-| [protocol\_step\_index](#protocol_step_index)                    | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-step-index.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_step_index")                   |
-| [previous\_protocol\_step\_index](#previous_protocol_step_index) | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-previous-protocol-step-index.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/previous_protocol_step_index") |
-| [protocol\_type\_descriptor](#protocol_type_descriptor)          | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-type-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type_descriptor")         |
-| [protocol\_performers](#protocol_performers)                     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-performers-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers")             |
-| [protocol\_instrument](#protocol_instrument)                     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-instrument-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_instrument")             |
-| [protocol\_software](#protocol_software)                         | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-software-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_software")                 |
-| [protocol\_description](#protocol_description)                   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-description-of-the-protocol.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")          |
+| Property                                                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                          |
+| :--------------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [protocol\_name](#protocol_name)                                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")                        |
+| [protocol\_step\_index](#protocol_step_index)                    | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-step-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_step_index")                   |
+| [previous\_protocol\_step\_index](#previous_protocol_step_index) | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-previous-protocol-step-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/previous_protocol_step_index") |
+| [protocol\_type\_descriptor](#protocol_type_descriptor)          | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type_descriptor")         |
+| [protocol\_performers](#protocol_performers)                     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers")             |
+| [protocol\_instrument](#protocol_instrument)                     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_instrument")             |
+| [protocol\_software](#protocol_software)                         | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_software")                 |
+| [protocol\_description](#protocol_description)                   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")          |
 
 ## protocol\_name
 
@@ -39,7 +39,7 @@ Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-name-of-the-protocol.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_name")
 
 ### protocol\_name Type
 
@@ -75,7 +75,7 @@ Lexically ordered value (greater than 0) that allows for the protocol section to
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-step-index.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_step_index")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-step-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_step_index")
 
 ### protocol\_step\_index Type
 
@@ -115,7 +115,7 @@ The 'protocol\_step\_index' of the previous protocol, if hierarchically ordered.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-previous-protocol-step-index.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/previous_protocol_step_index")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-previous-protocol-step-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/previous_protocol_step_index")
 
 ### previous\_protocol\_step\_index Type
 
@@ -159,7 +159,7 @@ Node to contain the information about the type and subtype of the protocol. Refe
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-type-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type_descriptor")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_type_descriptor")
 
 ### protocol\_type\_descriptor Type
 
@@ -177,7 +177,7 @@ Array of performers' descriptions of those individuals, groups, or institutions 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-performers-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers")
 
 ### protocol\_performers Type
 
@@ -201,7 +201,7 @@ Array of instruments used in the protocol.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-instrument-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_instrument")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_instrument")
 
 ### protocol\_instrument Type
 
@@ -225,7 +225,7 @@ Array of software descriptions used in the protocol.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-software-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_software")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_software")
 
 ### protocol\_software Type
 
@@ -249,7 +249,7 @@ Description of the protocol (e.g. 'First tilt the cell culture flask... ...and f
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-description-of-the-protocol.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-protocols-object-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_description")
 
 ### protocol\_description Type
 

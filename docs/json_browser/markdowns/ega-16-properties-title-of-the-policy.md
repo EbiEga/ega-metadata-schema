@@ -1,7 +1,7 @@
 # Title of the policy Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_title
 ```
 
 Free-form title of the policy. Can be used to call out policy records in searches or displays.

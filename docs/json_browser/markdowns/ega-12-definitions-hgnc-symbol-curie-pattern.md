@@ -1,7 +1,7 @@
 # HGNC symbol CURIE pattern Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_hgnc_symbol_pattern
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curie_hgnc_symbol_pattern
 ```
 
 The HGNC (HUGO Gene Nomenclature Committee) provides an approved gene name and symbol (short-form abbreviation) for each known human gene. All approved symbols are stored in the HGNC database, and each symbol is unique. This collection refers to records using the HGNC symbol. See further details here: <https://registry.identifiers.org/registry/hgnc.symbol>

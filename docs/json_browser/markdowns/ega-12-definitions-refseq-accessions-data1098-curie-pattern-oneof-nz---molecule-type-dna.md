@@ -1,7 +1,7 @@
 # NZ - Molecule type: DNA Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern/oneOf/2
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern/oneOf/2
 ```
 
 

@@ -1,7 +1,7 @@
 # Assay relationships Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_relationships
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_relationships
 ```
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities, one of which shall be the current assay.

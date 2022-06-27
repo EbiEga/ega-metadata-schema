@@ -1,7 +1,7 @@
 # Target of the relationship Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target
 ```
 
 Object reference of the relationship's target. In other words, the ending point of the relationship: in 'sample\_A develops\_from sample\_B' the target is 'sample\_B'.

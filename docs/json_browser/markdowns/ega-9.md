@@ -1,7 +1,7 @@
 # EGA Experiment metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json
 ```
 
 Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
@@ -22,21 +22,21 @@ one (and only one) of
 
 # EGA Experiment metadata schema Properties
 
-| Property                                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                   |
-| :------------------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                                            | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_id")                                          |
-| [schema\_descriptor](#schema_descriptor)                            | `object` | Optional | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/schema_descriptor")                                |
-| [object\_title](#object_title)                                      | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_title")                                 |
-| [object\_description](#object_description)                          | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_description")                     |
-| [experiment\_protocols](#experiment_protocols)                      | `array`  | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-protocols-related-to-an-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_protocols")              |
-| [targeted\_loci](#targeted_loci)                                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/targeted_loci")                   |
-| [assay\_technology](#assay_technology)                              | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_technology")                                  |
-| [assay\_type\_descriptor](#assay_type_descriptor)                   | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor")                                  |
-| [assayed\_molecule\_type](#assayed_molecule_type)                   | `string` | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-the-assayed-molecule-of-the-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assayed_molecule_type") |
-| [types\_of\_output\_data](#types_of_output_data)                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-types-of-output-data.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/types_of_output_data")                            |
-| [experiment\_type\_specifications](#experiment_type_specifications) | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-type-specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_type_specifications")        |
-| [experiment\_relationships](#experiment_relationships)              | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_relationships")                    |
-| [experiment\_attributes](#experiment_attributes)                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_attributes")                   |
+| Property                                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                             |
+| :------------------------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                                            | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_id")                                          |
+| [schema\_descriptor](#schema_descriptor)                            | `object` | Optional | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schema_descriptor")                                |
+| [object\_title](#object_title)                                      | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_title")                                 |
+| [object\_description](#object_description)                          | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_description")                     |
+| [experiment\_protocols](#experiment_protocols)                      | `array`  | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-protocols-related-to-an-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_protocols")              |
+| [targeted\_loci](#targeted_loci)                                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targeted_loci")                   |
+| [assay\_technology](#assay_technology)                              | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_technology")                                  |
+| [assay\_type\_descriptor](#assay_type_descriptor)                   | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor")                                  |
+| [assayed\_molecule\_type](#assayed_molecule_type)                   | `string` | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-the-assayed-molecule-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayed_molecule_type") |
+| [types\_of\_output\_data](#types_of_output_data)                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/types_of_output_data")                            |
+| [experiment\_type\_specifications](#experiment_type_specifications) | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_type_specifications")        |
+| [experiment\_relationships](#experiment_relationships)              | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_relationships")                    |
+| [experiment\_attributes](#experiment_attributes)                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_attributes")                   |
 
 ## object\_id
 
@@ -50,7 +50,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_id")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -80,7 +80,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/schema_descriptor")
+*   defined in: [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -98,7 +98,7 @@ An informative experiment title that should serve as an overview of the experime
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_title")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_title")
 
 ### object\_title Type
 
@@ -122,7 +122,7 @@ An in-depth description of the biological relevance and intent of the experiment
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_description")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_description")
 
 ### object\_description Type
 
@@ -146,7 +146,7 @@ Comprises metadata (e.g. Type of protocol) of a plan specification executed duri
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-protocols-related-to-an-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_protocols")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-protocols-related-to-an-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_protocols")
 
 ### experiment\_protocols Type
 
@@ -170,7 +170,7 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/targeted_loci")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targeted_loci")
 
 ### targeted\_loci Type
 
@@ -194,7 +194,7 @@ Metadata of the assay instrument (e.g. sequencer Illumina NextSeq 500) used to o
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_technology")
+*   defined in: [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_technology")
 
 ### assay\_technology Type
 
@@ -218,7 +218,7 @@ Node defining the type of assay applicable to the experiment. Consists in an ove
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor")
 
 ### assay\_type\_descriptor Type
 
@@ -246,7 +246,7 @@ Node containing information about the assayed molecule: the material entity (e.g
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-the-assayed-molecule-of-the-experiment.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assayed_molecule_type")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-the-assayed-molecule-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayed_molecule_type")
 
 ### assayed\_molecule\_type Type
 
@@ -287,7 +287,7 @@ Types of data the experiment produces.
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-types-of-output-data.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/types_of_output_data")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/types_of_output_data")
 
 ### types\_of\_output\_data Type
 
@@ -309,7 +309,7 @@ Node containing additional attributes to describe the experiment, either array e
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-type-specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_type_specifications")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_type_specifications")
 
 ### experiment\_type\_specifications Type
 
@@ -333,7 +333,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_relationships")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_relationships")
 
 ### experiment\_relationships Type
 
@@ -357,7 +357,7 @@ Custom attributes of an experiment: reusable attributes to encode tag-value pair
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_attributes")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_attributes")
 
 ### experiment\_attributes Type
 

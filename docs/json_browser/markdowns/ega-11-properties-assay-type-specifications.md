@@ -1,7 +1,7 @@
 # Assay type specifications Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications
 ```
 
 Node containing different sets of fields that depend on the specific assay type. The main categories of assay types follow a similar pattern as the used technology: either array assays (those in which an [array instrument \[EFO:0002698\]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing assays (those in which a [sequencing instrument \[EFO:0003739\]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its sample\_array\_labels will be expected. Having this modular assay type-related node allows for easy additions of new technology-specific requirements.
@@ -20,11 +20,11 @@ all of
 
 # assay\_type\_specifications Properties
 
-| Property                                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                    |
-| :-------------------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_type](#assay_type)                                            | `string` | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-assay-type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/assay_type")                                                |
-| [array\_assay\_specifications](#array_assay_specifications)           | Merged   | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications")          |
-| [sequencing\_assay\_specifications](#sequencing_assay_specifications) | `object` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications") |
+| Property                                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                              |
+| :-------------------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [assay\_type](#assay_type)                                            | `string` | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-assay-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/assay_type")                                                |
+| [array\_assay\_specifications](#array_assay_specifications)           | Merged   | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications")          |
+| [sequencing\_assay\_specifications](#sequencing_assay_specifications) | `object` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications") |
 
 ## assay\_type
 
@@ -38,7 +38,7 @@ The general categories, either sequencing or array, in which assays are categori
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-assay-type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/assay_type")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-assay-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/assay_type")
 
 ### assay\_type Type
 
@@ -65,7 +65,7 @@ Node containing the set of fields specific to an assay of type 'array' (i.e. an 
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications")
 
 ### array\_assay\_specifications Type
 
@@ -91,7 +91,7 @@ Node containing the set of fields specific to an assay of type 'sequencing' (i.e
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications")
 
 ### sequencing\_assay\_specifications Type
 

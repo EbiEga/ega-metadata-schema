@@ -1,7 +1,7 @@
 # ASCII offset Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/ascii_offset
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/ascii_offset
 ```
 
 Character used in representing the minimum quality value.  Helps specify how to decode text rendering of quality data.

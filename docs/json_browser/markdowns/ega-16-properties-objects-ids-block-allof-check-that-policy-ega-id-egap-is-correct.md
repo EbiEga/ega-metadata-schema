@@ -1,7 +1,7 @@
 # Check that policy EGA ID (EGAP) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that policy EGA ID (EGAP) is correct](ega-16-properties-objects-
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                     |
-| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-12-definitions-pattern-of-an-ega-policys-id-egap.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-12-definitions-pattern-of-an-ega-policys-id-egap.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that policy EGA ID (EGAP) is correct](ega-16-properties-objects-
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-12-definitions-pattern-of-an-ega-policys-id-egap.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA policy metadata schema](ega-12-definitions-pattern-of-an-ega-policys-id-egap.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

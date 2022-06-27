@@ -1,7 +1,7 @@
 # Custom label of the relationship Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label
 ```
 
 Custom free-form label of the relationship, used to add extra details of the relationship if needed.

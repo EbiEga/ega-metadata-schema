@@ -1,7 +1,7 @@
 # Check that dataset EGA ID (EGAD) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that dataset EGA ID (EGAD) is correct](ega-13-properties-objects
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
-| :------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA dataset metadata schema](ega-12-definitions-pattern-of-an-ega-datasets-id-egad.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                  |
+| :------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA dataset metadata schema](ega-12-definitions-pattern-of-an-ega-datasets-id-egad.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that dataset EGA ID (EGAD) is correct](ega-13-properties-objects
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-12-definitions-pattern-of-an-ega-datasets-id-egad.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA dataset metadata schema](ega-12-definitions-pattern-of-an-ega-datasets-id-egad.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

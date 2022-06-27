@@ -1,7 +1,7 @@
 # Allowed filetypes for an array assay Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/2
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/2
 ```
 
 

@@ -1,7 +1,7 @@
 # Assay subtypes match array/sequencer assays Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/1
 ```
 
 

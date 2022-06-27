@@ -1,7 +1,7 @@
 # Title of the submission project Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_title
 ```
 
 Short free-form text that can be used to call out submission project records in searches or displays.

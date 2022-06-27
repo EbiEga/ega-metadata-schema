@@ -1,7 +1,7 @@
 # EGA Controlled Vocabulary (CV) for assay types by sequencer \[EFO:0003740] Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json
 ```
 
 Controlled Vocabulary (CV) list for assay types by sequencer \[EFO:0003740]: an assay that exploits a sequencer as the instrument to find results. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.

@@ -1,7 +1,7 @@
 # EGA study metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json
 ```
 
 Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Study metadata object. This object is intended to contain metadata about the compilation of examinations, analyses or critical inspection of a particular subject. In other words, a Study is a container of experiments and analyses of any nature (including Array data) grouped by a common goal or investigation. They often draw together data from a range of datasets and are represented in publication. For instance, an example would be a case-control study on cancer patients and healthy individuals. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/studies>)
@@ -16,16 +16,16 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA study metadata schema Properties
 
-| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                 |
-| :------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                     | Merged   | Required | cannot be null | [EGA study metadata schema](ega-18-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_id")                 |
-| [schema\_descriptor](#schema_descriptor)     | `object` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/schema_descriptor")        |
-| [object\_title](#object_title)               | `string` | Required | cannot be null | [EGA study metadata schema](ega-18-properties-title-of-the-study.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_title")             |
-| [object\_description](#object_description)   | `string` | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-description-of-the-study.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_description") |
-| [study\_types](#study_types)                 | `array`  | Required | cannot be null | [EGA study metadata schema](ega-18-properties-study-types-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_types")               |
-| [study\_designs](#study_designs)             | `array`  | Required | cannot be null | [EGA study metadata schema](ega-18-properties-study-designs-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_designs")           |
-| [study\_relationships](#study_relationships) | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-study-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_relationships")     |
-| [study\_attributes](#study_attributes)       | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-study-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_attributes")    |
+| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
+| :------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                     | Merged   | Required | cannot be null | [EGA study metadata schema](ega-18-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id")                 |
+| [schema\_descriptor](#schema_descriptor)     | `object` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schema_descriptor")        |
+| [object\_title](#object_title)               | `string` | Required | cannot be null | [EGA study metadata schema](ega-18-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title")             |
+| [object\_description](#object_description)   | `string` | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description") |
+| [study\_types](#study_types)                 | `array`  | Required | cannot be null | [EGA study metadata schema](ega-18-properties-study-types-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_types")               |
+| [study\_designs](#study_designs)             | `array`  | Required | cannot be null | [EGA study metadata schema](ega-18-properties-study-designs-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_designs")           |
+| [study\_relationships](#study_relationships) | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships")     |
+| [study\_attributes](#study_attributes)       | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_attributes")    |
 
 ## object\_id
 
@@ -39,7 +39,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_id")
+*   defined in: [EGA study metadata schema](ega-18-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -69,7 +69,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/schema_descriptor")
+*   defined in: [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -87,7 +87,7 @@ Short free-form text that can be used to call out study records in searches or d
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-title-of-the-study.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_title")
+*   defined in: [EGA study metadata schema](ega-18-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title")
 
 ### object\_title Type
 
@@ -111,7 +111,7 @@ An in-depth description of the study, including its overall purpose, goals, scop
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-description-of-the-study.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_description")
+*   defined in: [EGA study metadata schema](ega-18-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description")
 
 ### object\_description Type
 
@@ -135,7 +135,7 @@ List of study types. Contains specific keywords (e.g. 'COVID-19') as items that 
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-types-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_types")
+*   defined in: [EGA study metadata schema](ega-18-properties-study-types-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_types")
 
 ### study\_types Type
 
@@ -159,7 +159,7 @@ List of study designs (a.k.a. experimental designs). Contains specific keywords 
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-designs-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_designs")
+*   defined in: [EGA study metadata schema](ega-18-properties-study-designs-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_designs")
 
 ### study\_designs Type
 
@@ -183,7 +183,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_relationships")
+*   defined in: [EGA study metadata schema](ega-18-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships")
 
 ### study\_relationships Type
 
@@ -207,7 +207,7 @@ Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/study_attributes")
+*   defined in: [EGA study metadata schema](ega-18-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_attributes")
 
 ### study\_attributes Type
 

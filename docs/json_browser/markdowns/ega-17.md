@@ -1,7 +1,7 @@
 # EGA sample metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json
 ```
 
 Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json>). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
@@ -16,18 +16,18 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA sample metadata schema Properties
 
-| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                               |
-| :-------------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-17-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id")                                             |
-| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/schema_descriptor")                                    |
-| [object\_title](#object_title)                            | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-title-of-the-sample.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_title")                                        |
-| [object\_description](#object_description)                | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-description-of-the-sample.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_description")                            |
-| [organism\_descriptor](#organism_descriptor)              | `object` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/organism_descriptor")               |
-| [minimal\_public\_attributes](#minimal_public_attributes) | `object` | Required | cannot be null | [EGA sample metadata schema](ega-17-properties-minimal-public-attributes-describing-a-sample.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes") |
-| [sample\_collection](#sample_collection)                  | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection")                          |
-| [sample\_grouping](#sample_grouping)                      | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping")                                 |
-| [sample\_relationships](#sample_relationships)            | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships")                               |
-| [sample\_attributes](#sample_attributes)                  | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_attributes")                              |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                         |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-17-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id")                                             |
+| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schema_descriptor")                                    |
+| [object\_title](#object_title)                            | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_title")                                        |
+| [object\_description](#object_description)                | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_description")                            |
+| [organism\_descriptor](#organism_descriptor)              | `object` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organism_descriptor")               |
+| [minimal\_public\_attributes](#minimal_public_attributes) | `object` | Required | cannot be null | [EGA sample metadata schema](ega-17-properties-minimal-public-attributes-describing-a-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes") |
+| [sample\_collection](#sample_collection)                  | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection")                          |
+| [sample\_grouping](#sample_grouping)                      | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping")                                 |
+| [sample\_relationships](#sample_relationships)            | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_relationships")                               |
+| [sample\_attributes](#sample_attributes)                  | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_attributes")                              |
 
 ## object\_id
 
@@ -41,7 +41,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id")
+*   defined in: [EGA sample metadata schema](ega-17-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -71,7 +71,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/schema_descriptor")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -89,7 +89,7 @@ An informative sample title that should serve as an overview (e.g. sample tag, p
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-title-of-the-sample.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_title")
+*   defined in: [EGA sample metadata schema](ega-17-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_title")
 
 ### object\_title Type
 
@@ -113,7 +113,7 @@ An informative sample description that describes the sample and differentiates i
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-description-of-the-sample.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_description")
+*   defined in: [EGA sample metadata schema](ega-17-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_description")
 
 ### object\_description Type
 
@@ -137,7 +137,7 @@ This node describes the material entity the sample consists in. That is, an indi
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/organism_descriptor")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organism_descriptor")
 
 ### organism\_descriptor Type
 
@@ -155,7 +155,7 @@ Among all fields describing a sample, some may contain identifiable metadata and
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-minimal-public-attributes-describing-a-sample.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes")
+*   defined in: [EGA sample metadata schema](ega-17-properties-minimal-public-attributes-describing-a-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes")
 
 ### minimal\_public\_attributes Type
 
@@ -173,7 +173,7 @@ Node containing the provenance details (when and where) of the sample. This info
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection")
 
 ### sample\_collection Type
 
@@ -197,7 +197,7 @@ Node describing whether the sample object is: (1) a single physical sample (a si
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping")
 
 ### sample\_grouping Type
 
@@ -221,7 +221,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_relationships")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_relationships")
 
 ### sample\_relationships Type
 
@@ -245,7 +245,7 @@ Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_attributes")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_attributes")
 
 ### sample\_attributes Type
 

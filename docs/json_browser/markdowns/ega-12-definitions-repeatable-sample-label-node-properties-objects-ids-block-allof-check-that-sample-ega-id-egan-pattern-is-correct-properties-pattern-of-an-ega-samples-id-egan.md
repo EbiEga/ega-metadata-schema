@@ -1,7 +1,7 @@
 # Pattern of an EGA sample's ID (EGAN...) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id/allOf/1/properties/ega_accession
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sample-label-association/properties/object_id/allOf/1/properties/ega_accession
 ```
 
 

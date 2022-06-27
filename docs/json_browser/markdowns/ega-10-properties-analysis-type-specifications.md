@@ -1,7 +1,7 @@
 # Analysis type specifications Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications
 ```
 
 Node containing different sets of fields that depend on the specific analysis type. Depending on the analysis types different metadata will be required.
@@ -16,10 +16,10 @@ Node containing different sets of fields that depend on the specific analysis ty
 
 # analysis\_type\_specifications Properties
 
-| Property                                                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
-| :------------------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [analysis\_types](#analysis_types)                            | `array` | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/analysis_types") |
-| [reference\_alignment\_details](#reference_alignment_details) | `array` | Optional | cannot be null | [EGA analysis metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/reference_alignment_details")          |
+| Property                                                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                           |
+| :------------------------------------------------------------ | :------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [analysis\_types](#analysis_types)                            | `array` | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/analysis_types") |
+| [reference\_alignment\_details](#reference_alignment_details) | `array` | Optional | cannot be null | [EGA analysis metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/reference_alignment_details")          |
 
 ## analysis\_types
 
@@ -33,7 +33,7 @@ Array of all analysis types applicable to this analysis. Details on how the anal
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/analysis_types")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/analysis_types")
 
 ### analysis\_types Type
 
@@ -57,7 +57,7 @@ Node containing the information of the reference assembly that was used to obtai
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/reference_alignment_details")
+*   defined in: [EGA analysis metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications/properties/reference_alignment_details")
 
 ### reference\_alignment\_details Type
 

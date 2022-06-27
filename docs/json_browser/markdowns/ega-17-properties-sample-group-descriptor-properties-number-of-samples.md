@@ -1,7 +1,7 @@
 # Number of samples Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_number
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_number
 ```
 
 Number of individual samples (e.g. 300) encompassed by the sample group

@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Experiment metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # assay\_technology Properties
 
-| Property                               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                              |
-| :------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_instrument](#assay_instrument) | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument") |
+| Property                               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                        |
+| :------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [assay\_instrument](#assay_instrument) | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument") |
 
 ## assay\_instrument
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument")
+*   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assay_technology-properties-assay_instrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument")
 
 ### assay\_instrument Type
 

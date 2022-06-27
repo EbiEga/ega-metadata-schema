@@ -1,7 +1,7 @@
 # EGA individual metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json
 ```
 
 Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object. This object is intended to contain metadata about the individual, also known as the sample donor or subject of study. An individual is defined as a person that participates in an experiment or from which a material sample was derived. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
@@ -16,14 +16,14 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA individual metadata schema Properties
 
-| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
-| :-------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id")                                                  |
-| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA individual metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/schema_descriptor")                                         |
-| [organism\_descriptor](#organism_descriptor)              | `object` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/organism_descriptor")                    |
-| [minimal\_public\_attributes](#minimal_public_attributes) | `object` | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes") |
-| [individual\_relationships](#individual_relationships)    | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-individual-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_relationships")                            |
-| [individual\_attributes](#individual_attributes)          | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-individual-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_attributes")                           |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                      |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/object_id")                                                  |
+| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA individual metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schema_descriptor")                                         |
+| [organism\_descriptor](#organism_descriptor)              | `object` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organism_descriptor")                    |
+| [minimal\_public\_attributes](#minimal_public_attributes) | `object` | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes") |
+| [individual\_relationships](#individual_relationships)    | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-individual-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_relationships")                            |
+| [individual\_attributes](#individual_attributes)          | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-individual-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_attributes")                           |
 
 ## object\_id
 
@@ -37,7 +37,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-14-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/object_id")
+*   defined in: [EGA individual metadata schema](ega-14-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -67,7 +67,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/schema_descriptor")
+*   defined in: [EGA individual metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -85,7 +85,7 @@ This node describes the material entity the sample consists in. That is, an indi
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/organism_descriptor")
+*   defined in: [EGA individual metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organism_descriptor")
 
 ### organism\_descriptor Type
 
@@ -103,7 +103,7 @@ Among all attributes describing an individual, some may contain identifiable met
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/minimal_public_attributes")
+*   defined in: [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes")
 
 ### minimal\_public\_attributes Type
 
@@ -121,7 +121,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-14-properties-individual-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_relationships")
+*   defined in: [EGA individual metadata schema](ega-14-properties-individual-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_relationships")
 
 ### individual\_relationships Type
 
@@ -145,7 +145,7 @@ Custom attributes of an individual: reusable attributes to encode tag-value pair
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-14-properties-individual-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_attributes")
+*   defined in: [EGA individual metadata schema](ega-14-properties-individual-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_attributes")
 
 ### individual\_attributes Type
 

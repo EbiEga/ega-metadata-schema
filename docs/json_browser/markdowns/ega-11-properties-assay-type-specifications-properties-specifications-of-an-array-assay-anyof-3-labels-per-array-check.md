@@ -1,7 +1,7 @@
 # 3 labels per array check Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/1
 ```
 
 If three labels were used per array, the sample-label specifications will be expected and at least 3 items (one for each label)

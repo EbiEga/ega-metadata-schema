@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-sample/properties/r_source/properties
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-sample/properties/r_source/properties
 ```
 
 

@@ -1,7 +1,7 @@
 # Allowed relationships of type child\_of, family\_relationship\_with, grouped\_with, same\_as (optional ones) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_relationships/items/allOf/1/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_relationships/items/allOf/1/anyOf/1
 ```
 
 

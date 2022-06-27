@@ -1,7 +1,7 @@
 # NCBI Assembly CURIE pattern Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_accession/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_accession/allOf/0
 ```
 
 The assembly accession starts with a three letter prefix, GCA for GenBank assemblies and GCF for RefSeq assemblies. This is followed by an underscore and 9 digits (e.g. '\_000001405'). A version (e.g. '.26') is then added to the accession. See further details here: <https://registry.identifiers.org/registry/assembly>

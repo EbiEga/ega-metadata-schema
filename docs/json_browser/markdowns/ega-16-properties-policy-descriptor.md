@@ -1,7 +1,7 @@
 # Policy descriptor Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor
 ```
 
 Node containing the full description of the policy, whether it is hosted at some public resourced and referenced here; or directly written here.
@@ -22,10 +22,10 @@ any of
 
 # policy\_descriptor Properties
 
-| Property                               | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                          |
-| :------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [policy\_reference](#policy_reference) | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-reference-to-the-policy.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_reference") |
-| [policy\_text](#policy_text)           | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-policy-text.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text")                  |
+| Property                               | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
+| :------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [policy\_reference](#policy_reference) | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-reference-to-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_reference") |
+| [policy\_text](#policy_text)           | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-policy-text.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text")                  |
 
 ## policy\_reference
 
@@ -39,7 +39,7 @@ A publicly accessible reference to the policy, where the updated text of the pol
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-reference-to-the-policy.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_reference")
+*   defined in: [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-reference-to-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_reference")
 
 ### policy\_reference Type
 
@@ -77,7 +77,7 @@ Text describing in detail the Data Access Agreement (DAA) of the policy.
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-policy-text.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text")
+*   defined in: [EGA policy metadata schema](ega-16-properties-policy-descriptor-properties-policy-text.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text")
 
 ### policy\_text Type
 

@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Controlled Vocabulary (CV) for assay subtypes by sequencer \[EFO:0003740] Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json#/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json#/meta:enum
 ```
 
 

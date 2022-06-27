@@ -1,7 +1,7 @@
 # Check that assay's EGA ID (EGAR) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that assay's EGA ID (EGAR) is correct](ega-11-properties-objects
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
-| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-objects-ids-block-allof-check-that-assays-ega-id-egar-is-correct-properties-pattern-of-an-ega-assays-id-egar.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
+| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-objects-ids-block-allof-check-that-assays-ega-id-egar-is-correct-properties-pattern-of-an-ega-assays-id-egar.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that assay's EGA ID (EGAR) is correct](ega-11-properties-objects
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-objects-ids-block-allof-check-that-assays-ega-id-egar-is-correct-properties-pattern-of-an-ega-assays-id-egar.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA assay metadata schema](ega-11-properties-objects-ids-block-allof-check-that-assays-ega-id-egar-is-correct-properties-pattern-of-an-ega-assays-id-egar.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

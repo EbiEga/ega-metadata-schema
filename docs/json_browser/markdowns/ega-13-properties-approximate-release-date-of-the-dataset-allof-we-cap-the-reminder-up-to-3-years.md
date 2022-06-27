@@ -1,7 +1,7 @@
 # We cap the reminder up to 3 years Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#/properties/approximate_release_date/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximate_release_date/allOf/1
 ```
 
 

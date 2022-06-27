@@ -1,7 +1,7 @@
 # Description of the analysis Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_description
 ```
 
 An in-depth description of the biological relevance and intent of the analysis, including its workflow.

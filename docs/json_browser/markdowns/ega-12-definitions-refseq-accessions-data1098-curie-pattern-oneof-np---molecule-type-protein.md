@@ -1,7 +1,7 @@
 # NP - Molecule type: protein Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern/oneOf/10
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern/oneOf/10
 ```
 
 

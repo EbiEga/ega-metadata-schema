@@ -1,7 +1,7 @@
 # Description of the experiment Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_description
 ```
 
 An in-depth description of the biological relevance and intent of the experiment, including the experimental workflow.

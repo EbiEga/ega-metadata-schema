@@ -1,7 +1,7 @@
 # Allowed relationships of type same\_as, grouped\_with and member\_of (optional ones) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/1/anyOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/1/anyOf/0
 ```
 
 

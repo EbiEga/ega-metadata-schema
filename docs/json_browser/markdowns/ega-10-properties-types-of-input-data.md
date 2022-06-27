@@ -1,7 +1,7 @@
 # Types of input data Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/types_of_input_data
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_input_data
 ```
 
 Types of input data the analysis uses to obtain the processed files.

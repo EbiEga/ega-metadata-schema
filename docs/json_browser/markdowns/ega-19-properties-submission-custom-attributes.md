@@ -1,7 +1,7 @@
 # Submission custom attributes Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/submission_attributes
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_attributes
 ```
 
 Custom attributes of a submission: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal identifier' and its Value 'XF40') with optional units. Its properties are inherited from the common-definitions.json schema.

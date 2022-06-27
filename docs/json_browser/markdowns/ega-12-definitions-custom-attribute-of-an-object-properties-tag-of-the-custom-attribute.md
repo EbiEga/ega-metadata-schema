@@ -1,7 +1,7 @@
 # Tag of the custom attribute Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/tag
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/tag
 ```
 
 The name of the attribute (e.g. 'Age').

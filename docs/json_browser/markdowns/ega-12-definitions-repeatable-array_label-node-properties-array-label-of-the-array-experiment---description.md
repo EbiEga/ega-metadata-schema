@@ -1,7 +1,7 @@
 # Array label of the array experiment - Description Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/label_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/label_description
 ```
 
 Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.

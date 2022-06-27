@@ -1,7 +1,7 @@
 # Data Use Ontology (DUO) codes' curies Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/duo_codes_curies
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duo_codes_curies
 ```
 
 Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) format. These allow to semantically tag datasets (bound by policies) with restriction about their usage, making them discoverable automatically based on the authorization level of users, or intended usage. See more info at <https://obofoundry.org/ontology/duo.html> and search for DUO codes at <https://www.ebi.ac.uk/ols/ontologies/duo>

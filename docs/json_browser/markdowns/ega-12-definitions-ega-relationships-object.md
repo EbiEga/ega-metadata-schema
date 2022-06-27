@@ -1,7 +1,7 @@
 # EGA Relationships object Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/0
 ```
 
 Object containing the base metadata attributes of a relationship object in the EGA. Comprises metadata (e.g. Source or Target) of a directional association between two entities. One of the entitis **needs** to be the current instance. For instance, a study JSON document should not contain relationships between a sample and an individual. Therefore, only one end of the relationship is given: if the source is present, the target is inferred to be the current instance; if the target is given, then it's the source the one inferred as the current instance. Examples of common relationships: (1) a sample being referenced in an experiment; (2) an study being the same as another study at a different archive (e.g. in BioStudies); (3) an individual being the parent of another individual; (4) hundreds of samples being grouped with each other for broad reasons.
@@ -22,12 +22,12 @@ one (and only one) of
 
 # 0 Properties
 
-| Property               | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                      |
-| :--------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [r\_type](#r_type)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-relationship-type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")                 |
-| [r\_source](#r_source) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")      |
-| [r\_target](#r_target) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")      |
-| [r\_label](#r_label)   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label") |
+| Property               | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                |
+| :--------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [r\_type](#r_type)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-relationship-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")                 |
+| [r\_source](#r_source) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")      |
+| [r\_target](#r_target) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")      |
+| [r\_label](#r_label)   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label") |
 
 ## r\_type
 
@@ -41,7 +41,7 @@ ID (e.g. same\_as) of the type of the relationship. To be chosen from a controll
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-relationship-type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-relationship-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_type")
 
 ### r\_type Type
 
@@ -84,7 +84,7 @@ Object reference of the relationship's source. In other words, the starting poin
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_source")
 
 ### r\_source Type
 
@@ -132,7 +132,7 @@ Object reference of the relationship's target. In other words, the ending point 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target")
 
 ### r\_target Type
 
@@ -180,7 +180,7 @@ Custom free-form label of the relationship, used to add extra details of the rel
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label")
 
 ### r\_label Type
 

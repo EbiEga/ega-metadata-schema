@@ -1,7 +1,7 @@
 # Specifications of a sequencing assay Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications
 ```
 
 Node containing the set of fields specific to an assay of type 'sequencing' (i.e. a sequencer was used to obtain the raw data).
@@ -16,9 +16,9 @@ Node containing the set of fields specific to an assay of type 'sequencing' (i.e
 
 # sequencing\_assay\_specifications Properties
 
-| Property                                                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                          |
-| :------------------------------------------------------------ | :------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [reference\_alignment\_details](#reference_alignment_details) | `array` | Optional | cannot be null | [EGA assay metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications/properties/reference_alignment_details") |
+| Property                                                      | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                    |
+| :------------------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [reference\_alignment\_details](#reference_alignment_details) | `array` | Optional | cannot be null | [EGA assay metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications/properties/reference_alignment_details") |
 
 ## reference\_alignment\_details
 
@@ -32,7 +32,7 @@ Node containing the information of the reference assembly that was used to obtai
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications/properties/reference_alignment_details")
+*   defined in: [EGA assay metadata schema](ega-12-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/sequencing_assay_specifications/properties/reference_alignment_details")
 
 ### reference\_alignment\_details Type
 

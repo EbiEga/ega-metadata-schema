@@ -1,7 +1,7 @@
 # Check that analysis EGA ID (EGAZ) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that analysis EGA ID (EGAZ) is correct](ega-10-properties-object
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                        |
-| :------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                  |
+| :------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that analysis EGA ID (EGAZ) is correct](ega-10-properties-object
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

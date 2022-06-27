@@ -1,7 +1,7 @@
 # Pattern of an EGA assay's ID (EGAR...) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_id/allOf/1/properties/ega_accession
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_id/allOf/1/properties/ega_accession
 ```
 
 

@@ -1,7 +1,7 @@
 # If the files are aligned reads, the reference alignment details are expected Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0
 ```
 
 

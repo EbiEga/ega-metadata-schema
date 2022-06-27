@@ -1,7 +1,7 @@
 # Specifications of an array assay Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications
 ```
 
 Node containing the set of fields specific to an assay of type 'array' (i.e. an array was used to obtain the raw data).
@@ -24,10 +24,10 @@ any of
 
 # array\_assay\_specifications Properties
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                    |
-| :-------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [n\_labels\_per\_array](#n_labels_per_array)  | `number` | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/n_labels_per_array")                      |
-| [array\_sample\_labels](#array_sample_labels) | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-array-of-sample-label-pairs-of-the-array-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/array_sample_labels") |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                              |
+| :-------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [n\_labels\_per\_array](#n_labels_per_array)  | `number` | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/n_labels_per_array")                      |
+| [array\_sample\_labels](#array_sample_labels) | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-array-of-sample-label-pairs-of-the-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/array_sample_labels") |
 
 ## n\_labels\_per\_array
 
@@ -41,7 +41,7 @@ A single array can be prepared with biological materials labelled differently fo
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/n_labels_per_array")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/n_labels_per_array")
 
 ### n\_labels\_per\_array Type
 
@@ -70,7 +70,7 @@ Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-array-of-sample-label-pairs-of-the-array-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/array_sample_labels")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-array-of-sample-label-pairs-of-the-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/properties/array_sample_labels")
 
 ### array\_sample\_labels Type
 

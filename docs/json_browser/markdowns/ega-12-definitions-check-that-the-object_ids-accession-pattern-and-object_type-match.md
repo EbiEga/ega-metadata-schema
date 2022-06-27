@@ -1,7 +1,7 @@
 # Check that the object\_id's accession pattern and object\_type match Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/allOf/0
 ```
 
 This object exists with the only purpose of being a reference as a pattern check of a given object\_id and object\_type. The constraint consists in asserting that, if the object identifier is an EGA accession, its pattern matches the object type (e.g. if object\_type is 'sample', its EGA accession needs to match '^EGAN\[0-9]{11}$')

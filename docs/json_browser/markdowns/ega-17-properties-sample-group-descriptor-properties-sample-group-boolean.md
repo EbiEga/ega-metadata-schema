@@ -1,7 +1,7 @@
 # Sample group boolean Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean
 ```
 
 Boolean flag on whether the sample object is a group or an individual sample. Please note that boolean values (true or false) cannot be quoted, nor in uppercase.

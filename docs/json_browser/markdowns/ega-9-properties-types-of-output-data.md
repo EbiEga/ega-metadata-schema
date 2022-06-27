@@ -1,7 +1,7 @@
 # Types of output data Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/types_of_output_data
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/types_of_output_data
 ```
 
 Types of data the experiment produces.

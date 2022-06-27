@@ -1,7 +1,7 @@
 # Protocols related to an experiment Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/experiment_protocols
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_protocols
 ```
 
 Comprises metadata (e.g. Type of protocol) of a plan specification executed during an experiment. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.

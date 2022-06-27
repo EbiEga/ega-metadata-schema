@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual/properties/r_target
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual/properties/r_target
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # r\_target Properties
 
-| Property                     | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                   |
-| :--------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_type](#object_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-target-individual-properties-r_target-properties-object_type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual/properties/r_target/properties/object_type") |
+| Property                     | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                             |
+| :--------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_type](#object_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-target-individual-properties-r_target-properties-object_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual/properties/r_target/properties/object_type") |
 
 ## object\_type
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-target-individual-properties-r_target-properties-object_type.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual/properties/r_target/properties/object_type")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-target-individual-properties-r_target-properties-object_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-individual/properties/r_target/properties/object_type")
 
 ### object\_type Type
 

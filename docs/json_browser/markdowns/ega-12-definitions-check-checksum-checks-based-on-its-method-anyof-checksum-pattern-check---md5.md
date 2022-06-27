@@ -1,7 +1,7 @@
 # Checksum pattern check - MD5 Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0
 ```
 
 A check that ensures that, if MD5 is given as a checksum\_method\_id, the checksums per se (e.g. unencrypted\_checksum) follow MD5 patterns (md5-checksum-pattern).
@@ -16,11 +16,11 @@ unknown ([Checksum pattern check - MD5](ega-12-definitions-check-checksum-checks
 
 # 0 Properties
 
-| Property                                       | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                            |
-| :--------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [checksum\_method](#checksum_method)           | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum_method.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/checksum_method") |
-| [unencrypted\_checksum](#unencrypted_checksum) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/unencrypted_checksum")                                                                   |
-| [encrypted\_checksum](#encrypted_checksum)     | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/encrypted_checksum")                                                                     |
+| Property                                       | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                      |
+| :--------------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [checksum\_method](#checksum_method)           | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum_method.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/checksum_method") |
+| [unencrypted\_checksum](#unencrypted_checksum) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/unencrypted_checksum")                                                                   |
+| [encrypted\_checksum](#encrypted_checksum)     | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/encrypted_checksum")                                                                     |
 
 ## checksum\_method
 
@@ -34,7 +34,7 @@ unknown ([Checksum pattern check - MD5](ega-12-definitions-check-checksum-checks
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum_method.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/checksum_method")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum_method.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/checksum_method")
 
 ### checksum\_method Type
 
@@ -60,7 +60,7 @@ This object exists to hold the pattern that a checksum would have if it was obta
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/unencrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/unencrypted_checksum")
 
 ### unencrypted\_checksum Type
 
@@ -94,7 +94,7 @@ This object exists to hold the pattern that a checksum would have if it was obta
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/encrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-md5.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/0/properties/encrypted_checksum")
 
 ### encrypted\_checksum Type
 

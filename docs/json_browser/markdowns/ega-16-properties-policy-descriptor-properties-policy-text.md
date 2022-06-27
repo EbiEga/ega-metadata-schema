@@ -1,7 +1,7 @@
 # Policy text Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text
 ```
 
 Text describing in detail the Data Access Agreement (DAA) of the policy.

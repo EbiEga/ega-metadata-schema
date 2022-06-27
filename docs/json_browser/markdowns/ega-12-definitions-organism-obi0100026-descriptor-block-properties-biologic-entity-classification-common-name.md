@@ -1,7 +1,7 @@
 # Biologic entity classification common name Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/common_name
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/common_name
 ```
 
 Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.
