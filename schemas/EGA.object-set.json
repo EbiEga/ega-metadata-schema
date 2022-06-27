@@ -12,7 +12,7 @@
       "schema_descriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
       },
 
       "object_array": {
@@ -36,7 +36,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#"
+              "$ref": "./EGA.experiment.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an study",
@@ -48,7 +48,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#"
+              "$ref": "./EGA.study.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an sample",
@@ -60,7 +60,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#"
+              "$ref": "./EGA.sample.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an individual",
@@ -72,7 +72,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#"
+              "$ref": "./EGA.individual.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an submission",
@@ -84,7 +84,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#"
+              "$ref": "./EGA.submission.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an dataset",
@@ -96,7 +96,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#"
+              "$ref": "./EGA.dataset.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an analysis",
@@ -108,7 +108,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json#"
+              "$ref": "./EGA.analysis.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an policy",
@@ -120,7 +120,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#"
+              "$ref": "./EGA.policy.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an DAC",
@@ -132,7 +132,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#"
+              "$ref": "./EGA.DAC.json#"
             },
             {
               "title": "The object's 'schema_descriptor' defines it as an assay",
@@ -144,7 +144,7 @@
                   }
                 }
               },
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#"
+              "$ref": "./EGA.assay.json#"
             }
           ]      
         }
