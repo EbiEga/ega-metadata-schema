@@ -2270,7 +2270,7 @@
         "type": "object",
         "title": "Relationship type: same_as",
         "description": "Node to be used as a relationship type for relationship contraints.",
-        "required": [ "r_source" ],
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "same_as"

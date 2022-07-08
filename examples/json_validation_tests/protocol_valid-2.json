@@ -14,7 +14,7 @@
     "protocol_relationships": [
         {
             "r_type": "referenced_by",
-            "r_source": {
+            "r_target": {
                 "object_id": {
                     "ega_accession": "EGAN00002045411"
                 },
@@ -33,7 +33,7 @@
         },
         {
             "r_type": "referenced_by",
-            "r_target": {
+            "r_source": {
                 "object_id": {
                     "ega_accession": "EGAB00002045411"
                 },
