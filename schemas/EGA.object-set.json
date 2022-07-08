@@ -145,6 +145,18 @@
                 }
               },
               "$ref": "./EGA.assay.json#"
+            },
+            {
+              "title": "The object's 'schema_descriptor' defines it as a protocol",
+              "required": ["schema_descriptor"],
+              "properties": {
+                "schema_descriptor": { 
+                  "object_type": {
+                    "enum": ["protocol"]
+                  }
+                }
+              },
+              "$ref": "./EGA.protocol.json#"
             }
           ]      
         }
