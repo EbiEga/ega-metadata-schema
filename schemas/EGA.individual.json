@@ -87,6 +87,10 @@
                         },
                         {
                           "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
                         }
                       ]
                     }

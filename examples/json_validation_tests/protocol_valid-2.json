@@ -1,0 +1,61 @@
+{
+    "object_id": {
+        "alias" : "sample_collection_protocol", 
+        "center_name" : "EBI-TEST"
+    },
+    "object_title": "Patient's blood collection protocol",
+    "protocol_type_descriptor": {
+        "protocol_type": "sample collection",
+        "protocol_subtype_curie": "EFO:0005518"
+    },
+    "protocol_performers": [ "Addenbrooke's Hospital nurse" ],
+    "protocol_instrument": [ "Syringe [OBI:0000422]", "PAXgene Blood DNA Tube [NCIT:C126393]" ],
+    "protocol_description": "Total PBMC were collected from blood of HIV-1 patients. H1N1, H3N2, and B mean the influenza virus subtypes (influenza virus H1N1, influenza virus H3N2, and influenza virus B subtypes). HIV+ subjects were stratified as immune responders and immune non-responders post-vaccination (“responders”≥ 4-fold increase of neutralization antibody at Day28/Day0; “non-responders” < 4-fold increase of neutralization antibody at Day28/Day0) to each influenza subtypes. RNA was isolated from the fresh isolated PBMCs on Day0 and Day7 in each responder and non-responder. So, the 0w means at day 0, 1w means at day 7.",
+    "protocol_relationships": [
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAN00002045411"
+                },
+                "object_type": "sample"
+            }
+        },
+        {
+            "r_type": "is_after",
+            "r_source": {
+                "object_id": {
+                    "alias" : "RNA_hybridization_protocol", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "protocol"
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAB00002045411"
+                },
+                "object_type": "submission"                
+            }
+        }
+    ],
+    "protocol_attributes": [
+        {            
+            "tag": "step_index",
+            "value": "1"
+        },
+        {            
+            "tag": "instrument_cost",
+            "value": 15,
+            "units": "GBP"
+        }
+    ],    
+    "schema_descriptor": {
+        "object_type": "protocol",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
+}

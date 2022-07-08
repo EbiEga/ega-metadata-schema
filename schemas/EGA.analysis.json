@@ -48,18 +48,6 @@
         "examples": [ "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 
-      "analysis_protocols": {
-        "type": "array",
-        "title": "Protocols related to an analysis",
-        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an analysis. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
-        "minItems": 1,
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/protocols_object" 
-        }
-      },
-
       "targeted_loci": {
         "type": "array",
         "title": "Loci of the targeted genomic feature",
@@ -180,6 +168,9 @@
                         },
                         {
                           "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
                         },
                         {
                           "title": "Optional one, added here to simplify",

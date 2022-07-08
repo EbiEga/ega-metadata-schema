@@ -1,0 +1,71 @@
+{
+    "object_id": {
+        "alias" : "RNA_hybridization_protocol", 
+        "center_name" : "EBI-TEST"
+    },
+    "object_title": "Hibridization of the RNA to the array",
+    "protocol_type_descriptor": {
+        "protocol_type": "hybridization",
+        "protocol_subtype": "Nucleic acid hybridization to array",
+        "protocol_subtype_curie": "EFO:0003815"
+    },
+    "protocol_performers": [ "EGA's Lab Technician group", "Technician N41394" ],
+    "protocol_instrument": [ "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]" ],
+    "protocol_description": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA hybridization according to the manufacturer's protocol (Affymetrix).",
+    "protocol_relationships": [
+        {
+            "r_type": "referenced_by",
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAX00002045411"
+                },
+                "object_type": "experiment"
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_target": {
+                "object_id": {
+                    "ega_accession": "EGAX00002045412"
+                },
+                "object_type": "experiment"
+            }
+        },
+        {
+            "r_type": "is_after",
+            "r_target": {
+                "object_id": {
+                    "alias" : "sample_collection_protocol", 
+                    "center_name" : "EBI-TEST"
+                },
+                "object_type": "protocol"
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAB00002045411"
+                },
+                "object_type": "submission"                
+            }
+        }
+    ],
+    "protocol_attributes": [
+        {            
+            "tag": "step_index",
+            "value": "2"
+        },
+        {            
+            "tag": "instrument_cost",
+            "value": 2500,
+            "units": "GBP"
+        }
+    ],    
+    "schema_descriptor": {
+        "object_type": "protocol",
+        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+        "object_schema_version": "0.0.0",
+        "common_schema_version": "0.0.0"
+    }
+}

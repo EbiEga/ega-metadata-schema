@@ -207,6 +207,9 @@
                         {
                           "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
                         },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
+                        },
                         { 
                           "title": "Optional one, added here to simplify",
                           "$ref": "./EGA.common-definitions.json#/definitions/r-target-experiment"
