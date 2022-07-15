@@ -236,7 +236,7 @@
                     "filetype": "CRAM",
                     "checksum_method": "MD5",
                     "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
-                    "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
+                    "encrypted_checksum": "d8b82b59fe8266ad4bef3e266fd163cd"
                 }
             ],
             "assay_relationships": [
@@ -317,13 +317,13 @@
                     "filetype": "CEL",
                     "checksum_method": "MD5",
                     "unencrypted_checksum": "9a4249e4b0538b9789c5d7f25d6342f0",
-                    "encrypted_checksum": "c6779ec2960296ed9a04f08d67fa4415"
+                    "encrypted_checksum": "0beca40a04c283069df9c484ef7e2c68"
                 },
                 {
                     "filename": "myfile2_M3051057.cel.gpg",
                     "filetype": "CEL",
                     "checksum_method": "MD5",
-                    "unencrypted_checksum": "e8c111e482c9ca49967497fecd988fe9",
+                    "unencrypted_checksum": "7cfc795b42d428697ca8e33bf1fb8228",
                     "encrypted_checksum": "d92463599ed4548cfa4fff55c1b48d7e"
                 }
             ],
