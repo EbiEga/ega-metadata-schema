@@ -157,7 +157,7 @@
         }
       },
 
-      "protocol_instrument": {
+      "protocol_instruments": {
         "type": "array",
         "title": "Protocol instrument array",
         "meta:property_curie": "EFO:0000548",

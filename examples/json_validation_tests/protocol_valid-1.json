@@ -10,7 +10,7 @@
         "protocol_subtype_curie": "EFO:0003815"
     },
     "protocol_performers": [ "EGA's Lab Technician group", "Technician N41394" ],
-    "protocol_instrument": [ "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]" ],
+    "protocol_instruments": [ "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]" ],
     "protocol_description": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA hybridization according to the manufacturer's protocol (Affymetrix).",
     "protocol_relationships": [
         {

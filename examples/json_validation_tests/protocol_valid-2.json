@@ -9,7 +9,7 @@
         "protocol_subtype_curie": "EFO:0005518"
     },
     "protocol_performers": [ "Addenbrooke's Hospital nurse" ],
-    "protocol_instrument": [ "Syringe [OBI:0000422]", "PAXgene Blood DNA Tube [NCIT:C126393]" ],
+    "protocol_instruments": [ "Syringe [OBI:0000422]", "PAXgene Blood DNA Tube [NCIT:C126393]" ],
     "protocol_description": "Total PBMC were collected from blood of HIV-1 patients. H1N1, H3N2, and B mean the influenza virus subtypes (influenza virus H1N1, influenza virus H3N2, and influenza virus B subtypes). HIV+ subjects were stratified as immune responders and immune non-responders post-vaccination (“responders”≥ 4-fold increase of neutralization antibody at Day28/Day0; “non-responders” < 4-fold increase of neutralization antibody at Day28/Day0) to each influenza subtypes. RNA was isolated from the fresh isolated PBMCs on Day0 and Day7 in each responder and non-responder. So, the 0w means at day 0, 1w means at day 7.",
     "protocol_relationships": [
         {
