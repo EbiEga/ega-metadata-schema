@@ -4,6 +4,7 @@
     "type": "object",
     "title": "EGA protocol metadata schema",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its protocol metadata object. A protocol is an information entity of a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents (i.e. researchers). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": [ "object_id", "protocol_type_descriptor", "protocol_description", "protocol_relationships" ],
     "additionalProperties": false,

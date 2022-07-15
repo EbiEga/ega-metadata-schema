@@ -4,6 +4,7 @@
     "type": "object",
     "title": "EGA sample metadata schema",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_id", "organism_descriptor", "minimal_public_attributes"],
     "additionalProperties": false,

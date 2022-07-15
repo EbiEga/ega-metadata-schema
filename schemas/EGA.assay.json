@@ -4,6 +4,7 @@
     "type": "object",
     "title": "EGA assay metadata schema",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its assay metadata object. This object is intended to contain metadata about the raw qualitative or quantitative test performed to determine any kind of biological property of a biological sample. It can be of different types: (1) sequencing assay [EFO:0003740] (e.g. sequence CRAM or FastQ files); and an (2) array assay [EFO:0002696] (e.g. intensity CEL files). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_id", "assay_type_specifications", "assay_files"],
     "additionalProperties": false,

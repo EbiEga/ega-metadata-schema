@@ -4,6 +4,7 @@
     "type": "object",
     "title": "EGA policy metadata schema",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "A policy, also known as Data Access Agreement (DAA), is a contract made between Data User and Data Access Committee. The policy object is expected to contain metadata about such agreement, which should be drafted by the DAC and includes, but is not limited to, details of data use, publication embargoes and storage. Completion of a DAA by the applicant/s should form part of the application process to the DAC. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/submission/dac/documentation)",
     "required": ["object_id", "object_title", "policy_descriptor"],
     "additionalProperties": false,
