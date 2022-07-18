@@ -53,6 +53,15 @@
             "r_type": "referenced_by",
             "r_source": {
                 "object_id": {
+                    "ega_accession": "EGAZ00002024153"
+                },
+                "object_type": "analysis"
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_source": {
+                "object_id": {
                     "ega_accession": "EGAB00002045411"
                 },
                 "object_type": "submission"                
