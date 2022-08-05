@@ -1,0 +1,346 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json",
+    "type": "object",
+    "title": "EGA protocol metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its protocol metadata object. A protocol is an information entity of a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents (i.e. researchers). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": [ "object_id", "protocol_type_descriptor", "protocol_description", "protocol_relationships" ],
+    "additionalProperties": false,
+    "properties": {
+      "object_id": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions.", 
+        "allOf": [
+          {
+            "title": "Inherited object_core_id object",
+            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
+          },
+          {
+            "title": "Check that protocol EGA ID (EGAO) is correct",
+            "properties": {
+              "ega_accession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGA-protocol-id-pattern"
+              }
+            }
+          }
+        ]
+      },
+
+      "schema_descriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
+      },
+
+      "object_title": {
+        "type": "string",
+        "title": "Name of the protocol",
+        "meta:property_curie": "NCIT:C42614",
+        "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.",
+        "minLength": 1,
+        "examples": [ "myProtocol-13", "Treatment for leukemia patients C30", "Sample collection from infected patients" ]
+      },
+
+      "protocol_type_descriptor": {
+        "type": "object",
+        "title": "Protocol type descriptor",
+        "description": "Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type.",
+        "required": ["protocol_type", "protocol_subtype_curie"],
+        "additionalProperties": false,
+        "properties": {
+          "protocol_type": {
+            "type": "string",
+            "title": "Type of protocol",
+            "meta:property_curie": "OBI:0000272",
+            "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
+            "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "nucleic acid sequencing", "sample collection", "single cell isolation", "treatment", "data transformation"],
+            "meta:enum": {
+              "high Content Screen (HCS)": "[EFO:0007570]",
+              "conversion": "[EFO:0005520]",
+              "delivery method": "[EFO:0000395]",
+              "cissection": "[EFO:0005519]",
+              "cissociation": "[EFO:0009088]",
+              "enrichment": "[EFO:0009089]",
+              "extraction": "[EFO:0002944]",
+              "gene expression": "[EFO:0003788]",
+              "growth": "[EFO:0003789]",
+              "hybridization": "[EFO:0003815]",
+              "hydrolysis collection": "[EFO:0010892]",
+              "labelling": "[EFO:0003813]",
+              "nucleic acid library construction": "[EFO:0004184]",
+              "nucleic acid sequencing": "[EFO:0004170]",
+              "sample collection": "[EFO:0005518]",
+              "single cell isolation": "[EFO:0010214]",
+              "treatment": "[EFO:0003969]",
+              "data transformation": "[OBI:0200000]" 
+            }
+          },
+
+          "protocol_subtype": {
+            "type": "string",
+            "title": "Subtype of the protocol",
+            "description": "Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo). For example, if the protocol corresponds to a data transformation of a genome, you may find your subtype at [genome analysis](http://edamontology.org/operation_3918); while treating a patient with a drug would correspond to a [clinical treatment](http://www.ebi.ac.uk/efo/EFO_0007056).",
+            "minLength": 1,
+            "examples": [ "clinical treatment", "array scanning and feature extraction", "Genome alignment", "Genome annotation", "Genome assembly", "Genome comparison", "Genome feature comparison", "Genome indexing", "Genome visualisation", "Whole genome methylation analysis" ]    
+          },
+
+          "protocol_subtype_curie": {
+            "type": "string",
+            "title": "Compact URI (CURIE) of the protocol subtype",
+            "description": "Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocol_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').",
+            "allOf": [
+              {
+                "title": "General CURIE pattern",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              },
+              {
+                "title": "Ontology validation of it being part of EFO's protocol [OBI:0000272] or planned process [EFO:0004542], or EDAM's Analysis [operation:2945]",
+                "anyOf": [
+                  {
+                    "graph_restriction":  {
+                      "ontologies" : ["obo:efo"],
+                      "classes": ["OBI:0000272"],
+                      "relations": ["rdfs:subClassOf"],
+                      "direct": false,
+                      "include_self": false
+                    }
+                  },
+                  {
+                    "graph_restriction":  {
+                      "ontologies" : ["obo:efo"],
+                      "classes": ["EFO:0004542"],
+                      "relations": ["rdfs:subClassOf"],
+                      "direct": false,
+                      "include_self": false
+                    }
+                  },
+                  {
+                    "graph_restriction":  {
+                      "ontologies" : ["obo:edam"],
+                      "classes": ["operation:2945"],
+                      "relations": ["rdfs:subClassOf"],
+                      "direct": false,
+                      "include_self": false
+                    }
+                  }
+                ]
+              }              
+            ],
+            "examples": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788", "EFO:0000395", "EFO:0010892", "EFO:0010214", "EFO:0000494", "operation:3223"]
+          }
+        }
+      },
+
+      "protocol_description": {
+        "type": "string",
+        "title": "Description of the protocol",
+        "meta:property_curie": "NCIT:C25365",
+        "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.",
+        "examples": [ "First tilt the cell culture flask... ...and finally let it still for 2 hours.", "Patients were given a ketogenic diet for 3 weeks at intervals consisting in..." ]
+      },
+
+      "protocol_performers": {
+        "type": "array",
+        "title": "Protocol performers array",
+        "description": "Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "title": "Performer of the protocol",
+          "description": "Free form text to specify the institution, group, or individuals that performed the protocol.",
+          "minLength": 1,
+          "examples": ["EGA's Operational bioinformatics group", "Lab technician"]             
+        }
+      },
+
+      "protocol_instruments": {
+        "type": "array",
+        "title": "Protocol instrument array",
+        "meta:property_curie": "EFO:0000548",
+        "description": "Array of instruments used in the protocol. It is not indispensable to provide each and every piece of instruments used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "title": "Instrument used in the protocol",
+          "meta:property_curie": "EFO:0000548",
+          "description": "Free form text to specify the device, which provides a mechanical or electronic function, and was used by the performer of the protocol. We highly recommend the usage of ontologized terms (e.g. 'Oligonucleotide synthesizer') from the [Experimental Factor Ontology (EFO)](http://www.ebi.ac.uk/efo/EFO_0000548) along their CURIEs between square brackets (e.g. '[OBI:0400113]').",
+          "minLength": 1,
+          "examples": ["Computer [OBI:0400107]", "Oligonucleotide synthesizer [OBI:0400113]", "Sonicator [OBI:0400114]"]
+        }
+      },
+
+      "protocol_software": {
+        "type": "array",
+        "title": "Protocol software array",
+        "meta:property_curie": "IAO:0000010",
+        "description": "Array of software descriptions used in the protocol. It is not indispensable to provide each and every piece of software used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "title": "Software descriptions used in the protocol",
+          "meta:property_curie": "IAO:0000010",
+          "description": "Free form text to specify the programs and other operating information (including bespoken scripts) used by a computer that were used by the performer of the protocol. We highly recommend the usage of ontologized terms (e.g. 'SAMtools') from the [Software Ontology (SWO)](https://www.ebi.ac.uk/ols/ontologies/swo) along their versions (e.g. 'v3.0.1'), if applicable, and CURIEs between square brackets (e.g. '[SWO:1100143]').",
+          "minLength": 1,
+          "examples": ["SAMtools v3.0.1 [SWO:1100143]", "MATLAB [SWO:0000005]"]         
+        }
+      },
+
+      "protocol_relationships": {
+        "type": "array",
+        "title": "Protocol relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a protocol being linked to an experiment) the EGA.",
+        "minItems": 1,
+        "uniqueItems": true,
+        "additionalProperties": false,
+        "items": {
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
+            },
+            {
+              "title": "Relationship constraints for a protocol",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a protocol.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-sample"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-experiment"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-study"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-individual"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type grouped_with, is_after, same_as, member_of (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-protocol"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Relationships of external accessions and URLs (optional ones)",
+                  "description": "Almost any relationship is imaginable with external accessions and URLs.",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+        }
+      },
+
+      "protocol_attributes": {
+        "type": "array",
+        "title": "Protocol custom attributes",
+        "description": "Custom attributes of a protocol: reusable attributes to encode tag-value pairs (e.g. Tag being 'step index' and its Value '2') with optional units. Its properties are inherited from the common-definitions.json schema.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
+        }
+      }
+    }      
+  }

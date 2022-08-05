@@ -31,7 +31,7 @@
     },
     "sample_relationships": [
         {
-            "r_type": "develops_from",
+            "r_type": "referenced_by",
             "r_source": {
                 "object_id": {
                     "ega_accession": "EGAI00002045411"
@@ -55,7 +55,16 @@
         },
         {
             "r_type": "referenced_by",
-            "r_target": {
+            "r_source": {
+                "object_id": {
+                    "ega_accession": "EGAO00002045411"
+                },
+                "object_type": "protocol"                
+            }
+        },
+        {
+            "r_type": "referenced_by",
+            "r_source": {
                 "object_id": {
                     "ega_accession": "EGAB00002045411"
                 },
