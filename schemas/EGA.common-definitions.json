@@ -1147,7 +1147,7 @@
             "allOf": [
               {
                 "title": "General pattern of a URL/URI",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/url-uri-pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/url-uri-pattern"
               }
             ],
             "examples": [ "https://www.ebi.ac.uk/biosamples/samples/SAMN11716999", "https://pubmed.ncbi.nlm.nih.gov/19491253", "https://identifiers.org/arrayexpress:E-MEXP-1712", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/" ]
@@ -1643,7 +1643,7 @@
               "allOf": [
                 {
                   "title": "General pattern of a CURIE",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
                 }
               ],
               "examples": ["OMIM:600296", "ensembl:ENST00000423759.6", "ucsc:uc003ldc.6"]
@@ -1678,7 +1678,7 @@
               "allOf": [
                 {
                   "title": "General pattern of a CURIE",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
                 }
               ],
               "examples": ["VGNC:97422", "MGI:2385071", "RGD:1305712"]
