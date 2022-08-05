@@ -7,7 +7,6 @@
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "definitions": {
-
       "object_core_id": {
         "type": "object",
         "title": "Core identifiers of an object",
@@ -322,32 +321,31 @@
         "additionalProperties": false,
         "properties": {
           "array_label_id": {
+          "type": "string",
+          "title": "Array label of the array experiment - ID",
+          "description": "ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
+          "examples": [ "Cy3 dye" ]
+          },
+          "array_label_curie": {
             "type": "string",
-            "title": "Array label of the array experiment - ID",
-            "description": "ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
-            "examples": [ "Cy3 dye" ]
-            },
-            "array_label_curie": {
-              "type": "string",
-              "title": "Array label of the array experiment - CURIE",
-              "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
-              "allOf": [
-                {
-                  "title": "General pattern of a CURIE",
-                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
-                }
-              ],
-              "examples": [ "CHEBI:37987" ]
-            },
-            "label_description": {
-              "type": "string",
-              "title": "Array label of the array experiment - Description",
-              "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
-              "examples": [ 
-                "This label was use to dye the control samples",
-                "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
-                "The label ID is unknown because we were given the RNA already dyed..." ]
-            }
+            "title": "Array label of the array experiment - CURIE",
+            "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
+            "allOf": [
+              {
+                "title": "General pattern of a CURIE",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "examples": [ "CHEBI:37987" ]
+          },
+          "label_description": {
+            "type": "string",
+            "title": "Array label of the array experiment - Description",
+            "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
+            "examples": [ 
+              "This label was use to dye the control samples",
+              "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
+              "The label ID is unknown because we were given the RNA already dyed..." ]
           }
         }
       },
@@ -1557,7 +1555,7 @@
                 "locus_external_reference": {
                   "title": "External reference of the locus",
                   "description": "If the locus can not be identified by a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. In other words, one can reference here ways to access the locus information that is accessible elsewhere. For example miRNA 'MI0039740' (mirbase:MI0039740) that lacks a gene descriptor.",
-                  "$ref": "./EGA.common-definitions.json#/definitions/object_external_accession",
+                  "$ref": "./EGA.common-definitions.json#/definitions/object_external_accession"
                 },
                 "locus_additional_description": {
                   "type": "string",
@@ -2968,6 +2966,5 @@
           }
         }
       }
-
     }
 }
