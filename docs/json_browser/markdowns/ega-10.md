@@ -96,6 +96,10 @@ An informative analysis title that should serve as an overview of the analysis, 
 
 `string` ([Title of the analysis](ega-10-properties-title-of-the-analysis.md))
 
+### object\_title Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ### object\_title Examples
 
 ```json
@@ -119,6 +123,10 @@ An in-depth description of the biological relevance and intent of the analysis, 
 ### object\_description Type
 
 `string` ([Description of the analysis](ega-10-properties-description-of-the-analysis.md))
+
+### object\_description Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ### object\_description Examples
 

@@ -14,6 +14,10 @@ An in-depth description of the biological relevance and intent of the analysis, 
 
 `string` ([Description of the analysis](ega-10-properties-description-of-the-analysis.md))
 
+## object\_description Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## object\_description Examples
 
 ```json

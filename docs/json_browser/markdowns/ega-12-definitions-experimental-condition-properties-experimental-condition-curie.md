@@ -16,7 +16,7 @@ Curie (i.e. ontologised term - e.g. 'EFO:0001461') of the experimental condition
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-12-definitions-experimental-condition-properties-experimental-condition-curie-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## experimental\_condition\_curie Examples
 

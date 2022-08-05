@@ -14,6 +14,10 @@ An informative analysis title that should serve as an overview of the analysis, 
 
 `string` ([Title of the analysis](ega-10-properties-title-of-the-analysis.md))
 
+## object\_title Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## object\_title Examples
 
 ```json

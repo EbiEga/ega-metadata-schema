@@ -14,8 +14,24 @@ The name applied to a plant, animal, or other organism, according to the Codes o
 
 `string` ([Biologic entity classification scientific name](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name.md))
 
+## scientific\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## scientific\_name Examples
 
 ```json
 "homo sapiens"
+```
+
+```json
+"uncultured organism"
+```
+
+```json
+"human gut metagenome"
+```
+
+```json
+"human oral metagenome"
 ```

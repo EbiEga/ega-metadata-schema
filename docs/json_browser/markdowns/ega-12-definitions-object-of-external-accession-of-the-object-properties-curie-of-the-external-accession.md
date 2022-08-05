@@ -31,3 +31,7 @@ all of
 ```json
 "biostudies:S-EPMC3314381"
 ```
+
+```json
+"pubmed:30962759"
+```

@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes
 ```
 
-Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.
+Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' \[NCIT:C94232].
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
@@ -14,13 +14,20 @@ Among all attributes describing an individual, some may contain identifiable met
 
 `object` ([Minimal public attributes describing an individual](ega-14-properties-minimal-public-attributes-describing-an-individual.md))
 
+any of
+
+*   [Either the phenotypes array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-either-the-phenotypes-array-is-given.md "check type definition")
+
+*   [Or the diseases array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-or-the-diseases-array-is-given.md "check type definition")
+
 # minimal\_public\_attributes Properties
 
-| Property                           | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
-| :--------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [subject\_id](#subject_id)         | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id")                           |
-| [biological\_sex](#biological_sex) | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex") |
-| [phenotype](#phenotype)            | `object` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-experimental-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotype")                |
+| Property                           | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                         |
+| :--------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [subject\_id](#subject_id)         | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id")                                                                                     |
+| [biological\_sex](#biological_sex) | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex")                                                           |
+| [phenotypes](#phenotypes)          | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotypes") |
+| [diseases](#diseases)              | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/diseases")                   |
 
 ## subject\_id
 
@@ -84,12 +91,13 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value             | Explanation                                                                                                                                                                                                             |
-| :---------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `"male"`          | \[PATO:0000384]: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.                                                                                         |
-| `"female"`        | \[PATO:0000383]: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.                                                                  |
-| `"hermaphrodite"` | \[PATO:0001340]: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual. |
-| `"unknown"`       | The biological sex is unknown.                                                                                                                                                                                          |
+| Value                   | Explanation                                                                                                                                                                                                             |
+| :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `"male"`                | \[PATO:0000384]: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.                                                                                         |
+| `"female"`              | \[PATO:0000383]: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.                                                                  |
+| `"hermaphrodite"`       | \[PATO:0001340]: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual. |
+| `"pseudohermaphrodite"` | \[PATO:0001827]: A biological sex quality inhering in an individual or a population by virtue of having internal reproductive organs of one sex and external sexual characteristics of the other sex.                   |
+| `"unknown"`             | \[NCIT:C17998]: The biological sex is unknown, not assesed or not available.                                                                                                                                            |
 
 ### biological\_sex Examples
 
@@ -97,20 +105,50 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 "male"
 ```
 
-## phenotype
+## phenotypes
 
-A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment. We highly recommend the usage of ontologies to describe experimental conditions (search at '<https://www.ebi.ac.uk/ols/ontologies/efo>').
 
-`phenotype`
 
-*   is required
+`phenotypes`
 
-*   Type: `object` ([Experimental condition](ega-12-definitions-experimental-condition.md))
+*   is optional
+
+*   Type: `object[]` ([Phenotypic abnormality](ega-12-definitions-phenotypic-abnormality.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-12-definitions-experimental-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotype")
+*   defined in: [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotypes")
 
-### phenotype Type
+### phenotypes Type
 
-`object` ([Experimental condition](ega-12-definitions-experimental-condition.md))
+`object[]` ([Phenotypic abnormality](ega-12-definitions-phenotypic-abnormality.md))
+
+### phenotypes Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## diseases
+
+
+
+`diseases`
+
+*   is optional
+
+*   Type: `object[]` ([Disease](ega-12-definitions-disease.md))
+
+*   cannot be null
+
+*   defined in: [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/diseases")
+
+### diseases Type
+
+`object[]` ([Disease](ega-12-definitions-disease.md))
+
+### diseases Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

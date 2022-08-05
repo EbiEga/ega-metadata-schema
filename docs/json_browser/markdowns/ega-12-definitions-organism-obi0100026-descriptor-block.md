@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organism_descriptor
 ```
 
-This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
+This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
@@ -18,42 +18,48 @@ This node describes the material entity the sample consists in. That is, an indi
 
 | Property                             | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                  |
 | :----------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [taxon\_id](#taxon_id)               | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id")                                      |
+| [taxon\_id\_curie](#taxon_id_curie)  | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id_curie")                           |
 | [scientific\_name](#scientific_name) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/scientific_name") |
 | [common\_name](#common_name)         | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/common_name")         |
 
-## taxon\_id
+## taxon\_id\_curie
 
-Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: <https://www.ncbi.nlm.nih.gov/taxonomy>). You can find further details at '<https://www.uniprot.org/help/taxonomic_identifier>'. This is appropriate for individual organisms and some environmental samples.
+Taxonomy Identifier (e.g. 'NCBITaxon:9606' for humans) curated by the NCBI Taxonomy (search for organisms here: <https://www.ncbi.nlm.nih.gov/taxonomy>; or use the OLS: <https://www.ebi.ac.uk/ols/ontologies/ncbitaxon>). You can find further details at '<https://www.uniprot.org/help/taxonomic_identifier>'. This is appropriate for individual organisms and some environmental samples.
 
-`taxon_id`
+`taxon_id_curie`
 
 *   is required
 
-*   Type: `string` ([Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md))
+*   Type: `string` ([NCBI Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id_curie")
 
-### taxon\_id Type
+### taxon\_id\_curie Type
 
-`string` ([Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md))
+`string` ([NCBI Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md))
 
-### taxon\_id Constraints
+all of
 
-**pattern**: the string must match the following regular expression:&#x20;
+*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
 
-```regexp
-^[0-9]{1,7}$
-```
-
-[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B1%2C7%7D%24 "try regular expression with regexr.com")
-
-### taxon\_id Examples
+### taxon\_id\_curie Examples
 
 ```json
-"9606"
+"NCBITaxon:9606"
+```
+
+```json
+"NCBITaxon:155900"
+```
+
+```json
+"NCBITaxon:408170"
+```
+
+```json
+"NCBITaxon:447426"
 ```
 
 ## scientific\_name
@@ -74,10 +80,26 @@ The name applied to a plant, animal, or other organism, according to the Codes o
 
 `string` ([Biologic entity classification scientific name](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name.md))
 
+### scientific\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ### scientific\_name Examples
 
 ```json
 "homo sapiens"
+```
+
+```json
+"uncultured organism"
+```
+
+```json
+"human gut metagenome"
+```
+
+```json
+"human oral metagenome"
 ```
 
 ## common\_name

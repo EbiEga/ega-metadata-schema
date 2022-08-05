@@ -21,7 +21,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/object_id")                                                  |
 | [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA individual metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schema_descriptor")                                         |
 | [organism\_descriptor](#organism_descriptor)              | `object` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organism_descriptor")                    |
-| [minimal\_public\_attributes](#minimal_public_attributes) | `object` | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes") |
+| [minimal\_public\_attributes](#minimal_public_attributes) | Merged   | Required | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes") |
 | [individual\_relationships](#individual_relationships)    | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-individual-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_relationships")                            |
 | [individual\_attributes](#individual_attributes)          | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-individual-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_attributes")                           |
 
@@ -75,7 +75,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 ## organism\_descriptor
 
-This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
+This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
 
 `organism_descriptor`
 
@@ -93,7 +93,7 @@ This node describes the material entity the sample consists in. That is, an indi
 
 ## minimal\_public\_attributes
 
-Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable.
+Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' \[NCIT:C94232].
 
 `minimal_public_attributes`
 
@@ -108,6 +108,12 @@ Among all attributes describing an individual, some may contain identifiable met
 ### minimal\_public\_attributes Type
 
 `object` ([Minimal public attributes describing an individual](ega-14-properties-minimal-public-attributes-describing-an-individual.md))
+
+any of
+
+*   [Either the phenotypes array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-either-the-phenotypes-array-is-given.md "check type definition")
+
+*   [Or the diseases array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-or-the-diseases-array-is-given.md "check type definition")
 
 ## individual\_relationships
 

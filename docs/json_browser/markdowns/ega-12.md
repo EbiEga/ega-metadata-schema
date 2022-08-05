@@ -897,12 +897,23 @@ Reference this group by using
 | Property | Type | Required | Nullable | Defined by |
 | :------- | :--- | :------- | :------- | :--------- |
 
-## Definitions group EGA-ISO-date-YYYY-MM-DD-pattern
+## Definitions group EGA-ISO8601-date-pattern
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO8601-date-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group EGA-ISO8601-duration-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGA-ISO8601-duration-pattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1215,7 +1226,8 @@ Reference this group by using
 
 | Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                        |
 | :------------------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [external\_accession\_curie](#external_accession_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession_curie") |
+| [external\_accession\_curie](#external_accession_curie) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession_curie") |
+| [accession\_reference](#accession_reference)            | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_reference")  |
 | [accession\_label](#accession_label)                    | Multiple | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")          |
 
 ### external\_accession\_curie
@@ -1224,7 +1236,7 @@ Unique identifier of an external, to EGA, object. It shall follow CURIE format (
 
 `external_accession_curie`
 
-*   is required
+*   is optional
 
 *   Type: `string` ([CURIE of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession.md))
 
@@ -1254,9 +1266,53 @@ all of
 "biostudies:S-EPMC3314381"
 ```
 
+```json
+"pubmed:30962759"
+```
+
+### accession\_reference
+
+Full or partial URL/URI of the external accession, for systems to resolve it.
+
+`accession_reference`
+
+*   is optional
+
+*   Type: `string` ([Reference of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_reference")
+
+#### accession\_reference Type
+
+`string` ([Reference of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md))
+
+all of
+
+*   [URL/URI pattern](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession-allof-urluri-pattern.md "check type definition")
+
+#### accession\_reference Examples
+
+```json
+"https://www.ebi.ac.uk/biosamples/samples/SAMN11716999"
+```
+
+```json
+"https://pubmed.ncbi.nlm.nih.gov/19491253"
+```
+
+```json
+"https://identifiers.org/arrayexpress:E-MEXP-1712"
+```
+
+```json
+"https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/"
+```
+
 ### accession\_label
 
-Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.
+Label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.
 
 `accession_label`
 
@@ -1288,6 +1344,10 @@ any of the folllowing: `string` or `number` ([Label of the external accession](e
 
 ```json
 2
+```
+
+```json
+"Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation"
 ```
 
 ## Definitions group sample-label-association
@@ -1582,42 +1642,48 @@ Reference this group by using
 
 | Property                             | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                  |
 | :----------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [taxon\_id](#taxon_id)               | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id")                                      |
+| [taxon\_id\_curie](#taxon_id_curie)  | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id_curie")                           |
 | [scientific\_name](#scientific_name) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/scientific_name") |
 | [common\_name](#common_name)         | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/common_name")         |
 
-### taxon\_id
+### taxon\_id\_curie
 
-Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: <https://www.ncbi.nlm.nih.gov/taxonomy>). You can find further details at '<https://www.uniprot.org/help/taxonomic_identifier>'. This is appropriate for individual organisms and some environmental samples.
+Taxonomy Identifier (e.g. 'NCBITaxon:9606' for humans) curated by the NCBI Taxonomy (search for organisms here: <https://www.ncbi.nlm.nih.gov/taxonomy>; or use the OLS: <https://www.ebi.ac.uk/ols/ontologies/ncbitaxon>). You can find further details at '<https://www.uniprot.org/help/taxonomic_identifier>'. This is appropriate for individual organisms and some environmental samples.
 
-`taxon_id`
+`taxon_id_curie`
 
 *   is required
 
-*   Type: `string` ([Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md))
+*   Type: `string` ([NCBI Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id_curie")
 
-#### taxon\_id Type
+#### taxon\_id\_curie Type
 
-`string` ([Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-taxon-identifier.md))
+`string` ([NCBI Taxon identifier](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier.md))
 
-#### taxon\_id Constraints
+all of
 
-**pattern**: the string must match the following regular expression:&#x20;
+*   [Compact URI (CURIE) pattern](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier-allof-compact-uri-curie-pattern.md "check type definition")
 
-```regexp
-^[0-9]{1,7}$
-```
-
-[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B1%2C7%7D%24 "try regular expression with regexr.com")
-
-#### taxon\_id Examples
+#### taxon\_id\_curie Examples
 
 ```json
-"9606"
+"NCBITaxon:9606"
+```
+
+```json
+"NCBITaxon:155900"
+```
+
+```json
+"NCBITaxon:408170"
+```
+
+```json
+"NCBITaxon:447426"
 ```
 
 ### scientific\_name
@@ -1638,10 +1704,26 @@ The name applied to a plant, animal, or other organism, according to the Codes o
 
 `string` ([Biologic entity classification scientific name](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-scientific-name.md))
 
+#### scientific\_name Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 #### scientific\_name Examples
 
 ```json
 "homo sapiens"
+```
+
+```json
+"uncultured organism"
+```
+
+```json
+"human gut metagenome"
+```
+
+```json
+"human oral metagenome"
 ```
 
 ### common\_name
@@ -1974,7 +2056,7 @@ Reference this group by using
 
 ### organism\_descriptor
 
-This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
+This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
 
 `organism_descriptor`
 
@@ -2022,10 +2104,14 @@ Reference this group by using
 {"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor"}
 ```
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :-------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [gene\_symbol](#gene_symbol)      | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-symbol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_symbol")     |
-| [gene\_id\_curie](#gene_id_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-curie-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_id_curie") |
+| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
+| :------------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [gene\_symbol](#gene_symbol)                            | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-symbol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_symbol")                                  |
+| [gene\_id\_curie](#gene_id_curie)                       | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-curie-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_id_curie")                              |
+| [gene\_description](#gene_description)                  | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_description")                 |
+| [alternate\_gene\_ids](#alternate_gene_ids)             | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_ids")                    |
+| [alternate\_gene\_symbols](#alternate_gene_symbols)     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_symbols")            |
+| [gene\_external\_references](#gene_external_references) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_external_references") |
 
 ### gene\_symbol
 
@@ -2116,6 +2202,106 @@ one (and only one) of
 ```json
 "ncbigene:6872"
 ```
+
+### gene\_description
+
+Free-text description of the gene, only to be used to provide additional context that would otherwise be impossible to add encoded in the schema. In other words, kindly refrain from providing alternative gene symbols in the description if they are not added likewise in the 'alternate\_gene\_symbols' property.
+
+`gene_description`
+
+*   is optional
+
+*   Type: `string` ([Description of the gene](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_description")
+
+#### gene\_description Type
+
+`string` ([Description of the gene](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md))
+
+#### gene\_description Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+#### gene\_description Examples
+
+```json
+"In the used cells, locus of gene ... was modified at positions +23, where thymine was transitioned to cytosine (T-C)..."
+```
+
+### alternate\_gene\_ids
+
+Array of alternate identifiers for this gene. For example, Ensemble identifiers for genes and its transcripts.
+
+`alternate_gene_ids`
+
+*   is optional
+
+*   Type: `string[]` ([Alternate gene ID](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids-alternate-gene-id.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_ids")
+
+#### alternate\_gene\_ids Type
+
+`string[]` ([Alternate gene ID](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids-alternate-gene-id.md))
+
+#### alternate\_gene\_ids Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+### alternate\_gene\_symbols
+
+Array of alternate gene sumbols. This field can be used to provide any other alternate gene symbol to refer to the gene, including previously approved gene symbols. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).
+
+`alternate_gene_symbols`
+
+*   is optional
+
+*   Type: `string[]` ([Alternate gene symbol](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols-alternate-gene-symbol.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_symbols")
+
+#### alternate\_gene\_symbols Type
+
+`string[]` ([Alternate gene symbol](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols-alternate-gene-symbol.md))
+
+#### alternate\_gene\_symbols Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+### gene\_external\_references
+
+Array of related identifiers. This field can be used to provide identifiers to alternative resources representing related, but not equivalent concepts, for example gene paralog, analog or ortholog IDs.
+
+`gene_external_references`
+
+*   is optional
+
+*   Type: `string[]` ([Related gene ID](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids-related-gene-id.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_external_references")
+
+#### gene\_external\_references Type
+
+`string[]` ([Related gene ID](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids-related-gene-id.md))
+
+#### gene\_external\_references Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
 
 ## Definitions group ncbi\_assembly\_descriptor
 
@@ -2730,12 +2916,12 @@ Reference this group by using
 | Property | Type | Required | Nullable | Defined by |
 | :------- | :--- | :------- | :------- | :--------- |
 
-## Definitions group uberon-anatomical-entity
+## Definitions group organism-part-entity
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/uberon-anatomical-entity"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism-part-entity"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3835,3 +4021,294 @@ Reference this group by using
 
 | Property | Type | Required | Nullable | Defined by |
 | :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group url-uri-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/url-uri-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group individual-age
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/individual-age"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group cell-type-descriptor
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor"}
+```
+
+| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
+| :------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [cell\_type\_curie](#cell_type_curie) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_curie") |
+| [cell\_type\_label](#cell_type_label) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_label")             |
+
+### cell\_type\_curie
+
+
+
+`cell_type_curie`
+
+*   is optional
+
+*   Type: `string` ([Compact URI (CURIE) of the cell type](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_curie")
+
+#### cell\_type\_curie Type
+
+`string` ([Compact URI (CURIE) of the cell type](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md))
+
+all of
+
+*   [Compact URI (CURIE) pattern](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type-allof-compact-uri-curie-pattern.md "check type definition")
+
+### cell\_type\_label
+
+
+
+`cell_type_label`
+
+*   is optional
+
+*   Type: `string` ([Label of the cell type](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_label")
+
+#### cell\_type\_label Type
+
+`string` ([Label of the cell type](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md))
+
+#### cell\_type\_label Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+#### cell\_type\_label Examples
+
+```json
+"musculo-skeletal system cell"
+```
+
+```json
+"neoplastic cell"
+```
+
+```json
+"nervous system cell"
+```
+
+## Definitions group phenotypic-abnormality-descriptor
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor"}
+```
+
+| Property                                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                |
+| :-------------------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [phenotypic\_abnormality\_curie](#phenotypic_abnormality_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_curie") |
+| [phenotypic\_abnormality\_label](#phenotypic_abnormality_label) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_label")             |
+
+### phenotypic\_abnormality\_curie
+
+
+
+`phenotypic_abnormality_curie`
+
+*   is required
+
+*   Type: `string` ([Compact URI (CURIE) of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_curie")
+
+#### phenotypic\_abnormality\_curie Type
+
+`string` ([Compact URI (CURIE) of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md))
+
+any of
+
+*   [Ontology validation of phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
+
+*   [In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
+
+#### phenotypic\_abnormality\_curie Examples
+
+```json
+"HP:0003003"
+```
+
+```json
+"HP:0010442"
+```
+
+```json
+"HP:0002515"
+```
+
+```json
+"NCIT:C17998"
+```
+
+```json
+"NCIT:C94232"
+```
+
+### phenotypic\_abnormality\_label
+
+
+
+`phenotypic_abnormality_label`
+
+*   is optional
+
+*   Type: `string` ([Label of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_label")
+
+#### phenotypic\_abnormality\_label Type
+
+`string` ([Label of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md))
+
+#### phenotypic\_abnormality\_label Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+#### phenotypic\_abnormality\_label Examples
+
+```json
+"Colon cancer"
+```
+
+```json
+"Polydactyly"
+```
+
+```json
+"Waddling gait"
+```
+
+```json
+"Unknown"
+```
+
+```json
+"Unaffected"
+```
+
+## Definitions group disease-descriptor
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor"}
+```
+
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                    |
+| :------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [disease\_curie](#disease_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_curie") |
+| [disease\_label](#disease_label) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_label")             |
+
+### disease\_curie
+
+
+
+`disease_curie`
+
+*   is required
+
+*   Type: `string` ([Compact URI (CURIE) of the disease](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_curie")
+
+#### disease\_curie Type
+
+`string` ([Compact URI (CURIE) of the disease](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md))
+
+one (and only one) of
+
+*   [Ontology validation of dieases](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease-oneof-ontology-validation-of-dieases.md "check type definition")
+
+*   [In case whether the individual has a disease is unknown or there is none](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease-oneof-in-case-whether-the-individual-has-a-disease-is-unknown-or-there-is-none.md "check type definition")
+
+#### disease\_curie Examples
+
+```json
+"MONDO:0100096"
+```
+
+```json
+"EFO:0003101"
+```
+
+```json
+"NCIT:C17998"
+```
+
+```json
+"NCIT:C94232"
+```
+
+### disease\_label
+
+
+
+`disease_label`
+
+*   is optional
+
+*   Type: `string` ([Label of the disease](ega-12-definitions-disease-properties-label-of-the-disease.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_label")
+
+#### disease\_label Type
+
+`string` ([Label of the disease](ega-12-definitions-disease-properties-label-of-the-disease.md))
+
+#### disease\_label Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+#### disease\_label Examples
+
+```json
+"COVID-19"
+```
+
+```json
+"testicular seminoma"
+```
+
+```json
+"Unknown"
+```
+
+```json
+"Unaffected"
+```

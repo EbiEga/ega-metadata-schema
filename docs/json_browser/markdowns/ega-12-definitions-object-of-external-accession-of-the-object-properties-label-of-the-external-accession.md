@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label
 ```
 
-Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.
+Label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
@@ -30,4 +30,8 @@ any of the folllowing: `string` or `number` ([Label of the external accession](e
 
 ```json
 2
+```
+
+```json
+"Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation"
 ```

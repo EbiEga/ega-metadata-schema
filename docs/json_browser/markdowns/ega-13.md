@@ -188,7 +188,7 @@ An approximate date of the desired release of the dataset. Bare in mind that thi
 
 all of
 
-*   [Pattern of an EGA ISO date (YYYY-MM-DD)](ega-12-definitions-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "check type definition")
+*   [Pattern of EGA ISO 8601 date](ega-12-definitions-pattern-of-ega-iso-8601-date.md "check type definition")
 
 *   [We cap the reminder up to 3 years](ega-13-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
 

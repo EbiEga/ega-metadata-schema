@@ -14,11 +14,18 @@ External accession node containing the object accession (i.e. unique identifier 
 
 `object` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
 
+any of
+
+*   [Either the CURIE is needed](ega-12-definitions-object-of-external-accession-of-the-object-anyof-either-the-curie-is-needed.md "check type definition")
+
+*   [Or the reference is needed](ega-12-definitions-object-of-external-accession-of-the-object-anyof-or-the-reference-is-needed.md "check type definition")
+
 # items Properties
 
 | Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                        |
 | :------------------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [external\_accession\_curie](#external_accession_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession_curie") |
+| [external\_accession\_curie](#external_accession_curie) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/external_accession_curie") |
+| [accession\_reference](#accession_reference)            | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_reference")  |
 | [accession\_label](#accession_label)                    | Multiple | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-label-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_label")          |
 
 ## external\_accession\_curie
@@ -27,7 +34,7 @@ Unique identifier of an external, to EGA, object. It shall follow CURIE format (
 
 `external_accession_curie`
 
-*   is required
+*   is optional
 
 *   Type: `string` ([CURIE of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession.md))
 
@@ -57,9 +64,53 @@ all of
 "biostudies:S-EPMC3314381"
 ```
 
+```json
+"pubmed:30962759"
+```
+
+## accession\_reference
+
+Full or partial URL/URI of the external accession, for systems to resolve it.
+
+`accession_reference`
+
+*   is optional
+
+*   Type: `string` ([Reference of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_reference")
+
+### accession\_reference Type
+
+`string` ([Reference of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md))
+
+all of
+
+*   [URL/URI pattern](ega-12-definitions-urluri-pattern.md "check type definition")
+
+### accession\_reference Examples
+
+```json
+"https://www.ebi.ac.uk/biosamples/samples/SAMN11716999"
+```
+
+```json
+"https://pubmed.ncbi.nlm.nih.gov/19491253"
+```
+
+```json
+"https://identifiers.org/arrayexpress:E-MEXP-1712"
+```
+
+```json
+"https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/"
+```
+
 ## accession\_label
 
-Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.
+Label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.
 
 `accession_label`
 
@@ -91,4 +142,8 @@ any of the folllowing: `string` or `number` ([Label of the external accession](e
 
 ```json
 2
+```
+
+```json
+"Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation"
 ```

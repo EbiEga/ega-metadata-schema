@@ -16,10 +16,14 @@ Node to uniquely identify a gene \[SO:0000704]: a region (or regions) that inclu
 
 # gene\_descriptor Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :-------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [gene\_symbol](#gene_symbol)      | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-symbol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_symbol")     |
-| [gene\_id\_curie](#gene_id_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-curie-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_id_curie") |
+| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
+| :------------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [gene\_symbol](#gene_symbol)                            | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-symbol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_symbol")                                  |
+| [gene\_id\_curie](#gene_id_curie)                       | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-gene-curie-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_id_curie")                              |
+| [gene\_description](#gene_description)                  | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_description")                 |
+| [alternate\_gene\_ids](#alternate_gene_ids)             | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_ids")                    |
+| [alternate\_gene\_symbols](#alternate_gene_symbols)     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_symbols")            |
+| [gene\_external\_references](#gene_external_references) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_external_references") |
 
 ## gene\_symbol
 
@@ -110,3 +114,103 @@ one (and only one) of
 ```json
 "ncbigene:6872"
 ```
+
+## gene\_description
+
+Free-text description of the gene, only to be used to provide additional context that would otherwise be impossible to add encoded in the schema. In other words, kindly refrain from providing alternative gene symbols in the description if they are not added likewise in the 'alternate\_gene\_symbols' property.
+
+`gene_description`
+
+*   is optional
+
+*   Type: `string` ([Description of the gene](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_description")
+
+### gene\_description Type
+
+`string` ([Description of the gene](ega-12-definitions-gene-descriptor-properties-description-of-the-gene.md))
+
+### gene\_description Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+### gene\_description Examples
+
+```json
+"In the used cells, locus of gene ... was modified at positions +23, where thymine was transitioned to cytosine (T-C)..."
+```
+
+## alternate\_gene\_ids
+
+Array of alternate identifiers for this gene. For example, Ensemble identifiers for genes and its transcripts.
+
+`alternate_gene_ids`
+
+*   is optional
+
+*   Type: `string[]` ([Alternate gene ID](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids-alternate-gene-id.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_ids")
+
+### alternate\_gene\_ids Type
+
+`string[]` ([Alternate gene ID](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids-alternate-gene-id.md))
+
+### alternate\_gene\_ids Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## alternate\_gene\_symbols
+
+Array of alternate gene sumbols. This field can be used to provide any other alternate gene symbol to refer to the gene, including previously approved gene symbols. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).
+
+`alternate_gene_symbols`
+
+*   is optional
+
+*   Type: `string[]` ([Alternate gene symbol](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols-alternate-gene-symbol.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_symbols")
+
+### alternate\_gene\_symbols Type
+
+`string[]` ([Alternate gene symbol](ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols-alternate-gene-symbol.md))
+
+### alternate\_gene\_symbols Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## gene\_external\_references
+
+Array of related identifiers. This field can be used to provide identifiers to alternative resources representing related, but not equivalent concepts, for example gene paralog, analog or ortholog IDs.
+
+`gene_external_references`
+
+*   is optional
+
+*   Type: `string[]` ([Related gene ID](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids-related-gene-id.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_external_references")
+
+### gene\_external\_references Type
+
+`string[]` ([Related gene ID](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids-related-gene-id.md))
+
+### gene\_external\_references Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
