@@ -18,7 +18,7 @@ Node to be used as an object type for relationship contraints.
 
 | Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
 | :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r\_target](#r_target) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-target-study-properties-r_target.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-study/properties/r_target") |
+| [r\_target](#r_target) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-target-study-properties-r_target.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-study/properties/r_target") |
 
 ## r\_target
 
@@ -26,7 +26,7 @@ Node to be used as an object type for relationship contraints.
 
 `r_target`
 
-*   is optional
+*   is required
 
 *   Type: unknown
 

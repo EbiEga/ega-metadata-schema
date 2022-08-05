@@ -28,6 +28,8 @@ all of
 
     *   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")
 
+    *   [Relationship source: protocol](ega-12-definitions-relationship-source-protocol.md "check type definition")
+
     *   [Relationship target: experiment](ega-12-definitions-relationship-target-experiment.md "check type definition")
 
     *   [Relationship source: experiment](ega-12-definitions-relationship-source-experiment.md "check type definition")

@@ -30,6 +30,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. experiment, da
 | `"analysis"`           | Contains the analysis metadata and data files                                                                                                                       |
 | `"policy"`             | Contains information related to the Data Access Agreement (DAA) the dataset is subject to                                                                           |
 | `"DAC"`                | Contains information about the Data Access Committee (DAC)                                                                                                          |
+| `"protocol"`           | Contains information about a planned process.                                                                                                                       |
 | `"external_accession"` | An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https\://www\.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?) |
 | `"external_URL"`       | An external URL resource, of any type                                                                                                                               |
 

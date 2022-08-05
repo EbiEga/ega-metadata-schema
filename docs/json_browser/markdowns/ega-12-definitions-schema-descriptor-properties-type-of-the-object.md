@@ -30,4 +30,5 @@ Type of the object (e.g. 'sample') the JSON document describes.
 | `"analysis"`   |             |
 | `"policy"`     |             |
 | `"DAC"`        |             |
+| `"protocol"`   |             |
 | `"object-set"` |             |

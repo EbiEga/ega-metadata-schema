@@ -22,7 +22,6 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | [schema\_descriptor](#schema_descriptor)                        | `object` | Optional | cannot be null | [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schema_descriptor")                      |
 | [object\_title](#object_title)                                  | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_title")                        |
 | [object\_description](#object_description)                      | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_description")            |
-| [analysis\_protocols](#analysis_protocols)                      | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-protocols-related-to-an-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_protocols")       |
 | [targeted\_loci](#targeted_loci)                                | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targeted_loci")        |
 | [types\_of\_input\_data](#types_of_input_data)                  | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_input_data")                   |
 | [types\_of\_output\_data](#types_of_output_data)                | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_output_data")                 |
@@ -126,30 +125,6 @@ An in-depth description of the biological relevance and intent of the analysis, 
 ```json
 "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..."
 ```
-
-## analysis\_protocols
-
-Comprises metadata (e.g. Type of protocol) of a plan specification executed during an analysis. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.
-
-`analysis_protocols`
-
-*   is optional
-
-*   Type: `object[]` ([EGA Protocols object](ega-12-definitions-ega-protocols-object.md))
-
-*   cannot be null
-
-*   defined in: [EGA analysis metadata schema](ega-10-properties-protocols-related-to-an-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_protocols")
-
-### analysis\_protocols Type
-
-`object[]` ([EGA Protocols object](ega-12-definitions-ega-protocols-object.md))
-
-### analysis\_protocols Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
 
 ## targeted\_loci
 

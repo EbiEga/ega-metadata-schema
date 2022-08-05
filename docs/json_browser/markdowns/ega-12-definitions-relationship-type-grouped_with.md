@@ -18,7 +18,7 @@ Node to be used as a relationship type for relationship contraints.
 
 | Property           | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                           |
 | :----------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r\_type](#r_type) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-type-grouped_with-properties-r_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with/properties/r_type") |
+| [r\_type](#r_type) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-type-grouped_with-properties-r_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with/properties/r_type") |
 
 ## r\_type
 
@@ -26,7 +26,7 @@ Node to be used as a relationship type for relationship contraints.
 
 `r_type`
 
-*   is optional
+*   is required
 
 *   Type: unknown
 

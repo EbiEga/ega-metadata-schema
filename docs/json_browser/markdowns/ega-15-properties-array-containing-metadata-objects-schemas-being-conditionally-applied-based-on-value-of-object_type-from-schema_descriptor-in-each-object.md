@@ -22,13 +22,13 @@ any of
 
     *   [If the assay technology is an array, the experiment type has to match](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match.md "check type definition")
 
-*   [EGA study metadata schema](ega-18.md "check type definition")
+*   [EGA study metadata schema](ega-19.md "check type definition")
 
-*   [EGA sample metadata schema](ega-17.md "check type definition")
+*   [EGA sample metadata schema](ega-18.md "check type definition")
 
 *   [EGA individual metadata schema](ega-14.md "check type definition")
 
-*   [EGA submission metadata schema](ega-19.md "check type definition")
+*   [EGA submission metadata schema](ega-20.md "check type definition")
 
 *   [EGA dataset metadata schema](ega-13.md "check type definition")
 
@@ -45,3 +45,5 @@ any of
     *   [Allowed filetypes for a sequencing assay](ega-11-allof-allowed-filetypes-for-a-sequencing-assay.md "check type definition")
 
     *   [Allowed filetypes for an array assay](ega-11-allof-allowed-filetypes-for-an-array-assay.md "check type definition")
+
+*   [EGA protocol metadata schema](ega-17.md "check type definition")

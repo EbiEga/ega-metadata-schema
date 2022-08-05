@@ -28,7 +28,6 @@ one (and only one) of
 | [schema\_descriptor](#schema_descriptor)                            | `object` | Optional | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schema_descriptor")                                |
 | [object\_title](#object_title)                                      | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_title")                                 |
 | [object\_description](#object_description)                          | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_description")                     |
-| [experiment\_protocols](#experiment_protocols)                      | `array`  | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-protocols-related-to-an-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_protocols")              |
 | [targeted\_loci](#targeted_loci)                                    | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targeted_loci")                   |
 | [assay\_technology](#assay_technology)                              | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_technology")                                  |
 | [assay\_type\_descriptor](#assay_type_descriptor)                   | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor")                                  |
@@ -133,30 +132,6 @@ An in-depth description of the biological relevance and intent of the experiment
 ```json
 "The experiment was conducted with the objective of... ...and for that purpose we compared untreated controls against..."
 ```
-
-## experiment\_protocols
-
-Comprises metadata (e.g. Type of protocol) of a plan specification executed during an experiment. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.
-
-`experiment_protocols`
-
-*   is required
-
-*   Type: `object[]` ([EGA Protocols object](ega-12-definitions-ega-protocols-object.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-protocols-related-to-an-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_protocols")
-
-### experiment\_protocols Type
-
-`object[]` ([EGA Protocols object](ega-12-definitions-ega-protocols-object.md))
-
-### experiment\_protocols Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
 
 ## targeted\_loci
 

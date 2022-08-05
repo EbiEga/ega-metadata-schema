@@ -1,35 +1,37 @@
-# EGA study metadata schema Schema
+# EGA sample metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Study metadata object. This object is intended to contain metadata about the compilation of examinations, analyses or critical inspection of a particular subject. In other words, a Study is a container of experiments and analyses of any nature (including Array data) grouped by a common goal or investigation. They often draw together data from a range of datasets and are represented in publication. For instance, an example would be a case-control study on cancer patients and healthy individuals. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/studies>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json>). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                               |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.study.json](../../../schemas/EGA.study.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json](../../../schemas/EGA.sample.json "open original schema") |
 
-## EGA study metadata schema Type
+## EGA sample metadata schema Type
 
-`object` ([EGA study metadata schema](ega-18.md))
+`object` ([EGA sample metadata schema](ega-18.md))
 
-# EGA study metadata schema Properties
+# EGA sample metadata schema Properties
 
-| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
-| :------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                     | Merged   | Required | cannot be null | [EGA study metadata schema](ega-18-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id")                 |
-| [schema\_descriptor](#schema_descriptor)     | `object` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schema_descriptor")        |
-| [object\_title](#object_title)               | `string` | Required | cannot be null | [EGA study metadata schema](ega-18-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title")             |
-| [object\_description](#object_description)   | `string` | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description") |
-| [study\_types](#study_types)                 | `array`  | Required | cannot be null | [EGA study metadata schema](ega-18-properties-study-types-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_types")               |
-| [study\_designs](#study_designs)             | `array`  | Required | cannot be null | [EGA study metadata schema](ega-18-properties-study-designs-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_designs")           |
-| [study\_relationships](#study_relationships) | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships")     |
-| [study\_attributes](#study_attributes)       | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-18-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_attributes")    |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                         |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id")                                             |
+| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schema_descriptor")                                    |
+| [object\_title](#object_title)                            | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_title")                                        |
+| [object\_description](#object_description)                | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_description")                            |
+| [organism\_descriptor](#organism_descriptor)              | `object` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organism_descriptor")               |
+| [minimal\_public\_attributes](#minimal_public_attributes) | `object` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-minimal-public-attributes-describing-a-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes") |
+| [sample\_collection](#sample_collection)                  | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection")                          |
+| [sample\_grouping](#sample_grouping)                      | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping")                                 |
+| [sample\_relationships](#sample_relationships)            | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_relationships")                               |
+| [sample\_attributes](#sample_attributes)                  | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_attributes")                              |
 
 ## object\_id
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions. #! We extend the core object (object\_core\_id) by adding a pattern check based on this schema's nature: a study (by using EGA-study-id-pattern)
+Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions. #! We extend the core object (object\_core\_id) by adding a pattern check based on this schema's nature: a sample (by using EGA-sample-id-pattern)
 
 `object_id`
 
@@ -39,7 +41,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id")
+*   defined in: [EGA sample metadata schema](ega-18-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -55,7 +57,7 @@ all of
 
     *   [Check core IDs: external accessions](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that study EGA ID (EGAS) is correct](ega-18-properties-objects-ids-block-allof-check-that-study-ega-id-egas-is-correct.md "check type definition")
+*   [Check that sample EGA ID (EGAN) is correct](ega-18-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-is-correct.md "check type definition")
 
 ## schema\_descriptor
 
@@ -69,7 +71,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schema_descriptor")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -77,129 +79,165 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 ## object\_title
 
-Short free-form text that can be used to call out study records in searches or displays.
+An informative sample title that should serve as an overview (e.g. sample tag, pseudonyms, sample type, sample groups, purpose...) of the sample and differentiate it from others. This short text can be used to call out sample records in searches or in displays.
 
 `object_title`
 
-*   is required
+*   is optional
 
-*   Type: `string` ([Title of the study](ega-18-properties-title-of-the-study.md))
+*   Type: `string` ([Title of the sample](ega-18-properties-title-of-the-sample.md))
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title")
+*   defined in: [EGA sample metadata schema](ega-18-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_title")
 
 ### object\_title Type
 
-`string` ([Title of the study](ega-18-properties-title-of-the-study.md))
+`string` ([Title of the sample](ega-18-properties-title-of-the-sample.md))
 
 ### object\_title Examples
 
 ```json
-"EBI test case-control study for cancer"
+"Buccal swab from COVID+ patient NM305004"
 ```
 
 ## object\_description
 
-An in-depth description of the study, including its overall purpose, goals, scope or nature.
+An informative sample description that describes the sample and differentiates it from others.
 
 `object_description`
 
 *   is optional
 
-*   Type: `string` ([Description of the study](ega-18-properties-description-of-the-study.md))
+*   Type: `string` ([Description of the sample](ega-18-properties-description-of-the-sample.md))
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description")
+*   defined in: [EGA sample metadata schema](ega-18-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_description")
 
 ### object\_description Type
 
-`string` ([Description of the study](ega-18-properties-description-of-the-study.md))
+`string` ([Description of the sample](ega-18-properties-description-of-the-sample.md))
 
 ### object\_description Examples
 
 ```json
-"EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls."
+"Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to..."
 ```
 
-## study\_types
+## organism\_descriptor
 
-List of study types. Contains specific keywords (e.g. 'COVID-19') as items that can be associated to the study, providing an overall view of its purpose.
+This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.
 
-`study_types`
-
-*   is required
-
-*   Type: `string[]` ([Study type](ega-18-properties-study-types-array-study-type.md))
-
-*   cannot be null
-
-*   defined in: [EGA study metadata schema](ega-18-properties-study-types-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_types")
-
-### study\_types Type
-
-`string[]` ([Study type](ega-18-properties-study-types-array-study-type.md))
-
-### study\_types Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
-
-## study\_designs
-
-List of study designs (a.k.a. experimental designs). Contains specific keywords (e.g. 'RNA stability design') as items that can be associated to the study, providing an overall view of the method of investigating particular types of research questions or solving particular types of problems.
-
-`study_designs`
+`organism_descriptor`
 
 *   is required
 
-*   Type: `string[]` ([Enumeration of design keywords](ega-12-definitions-enumeration-of-design-keywords.md))
+*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-12-definitions-organism-obi0100026-descriptor-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-designs-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_designs")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organism_descriptor")
 
-### study\_designs Type
+### organism\_descriptor Type
 
-`string[]` ([Enumeration of design keywords](ega-12-definitions-enumeration-of-design-keywords.md))
+`object` ([Organism \[OBI:0100026\] descriptor block](ega-12-definitions-organism-obi0100026-descriptor-block.md))
 
-### study\_designs Constraints
+## minimal\_public\_attributes
 
-**minimum number of items**: the minimum number of items for this array is: `1`
+Among all fields describing a sample, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every sample should contain (even if they are unknown): subject id (sample donor id), biological sex and phenotype. These shall be displayed and queryable.
 
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
+`minimal_public_attributes`
 
-## study\_relationships
+*   is required
 
-Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a study) the EGA.
+*   Type: `object` ([Minimal public attributes describing a sample](ega-18-properties-minimal-public-attributes-describing-a-sample.md))
 
-`study_relationships`
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-18-properties-minimal-public-attributes-describing-a-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes")
+
+### minimal\_public\_attributes Type
+
+`object` ([Minimal public attributes describing a sample](ega-18-properties-minimal-public-attributes-describing-a-sample.md))
+
+## sample\_collection
+
+Node containing the provenance details (when and where) of the sample. This information does not include the whole sample collection protocol (expected at experiment's protocols), only the sampling date (when the sample was taken from the individual) and site (where was it taken within the individual).
+
+`sample_collection`
 
 *   is optional
 
-*   Type: an array of merged types ([Details](ega-18-properties-study-relationships-items.md))
+*   Type: `object` ([Sample collection descriptor](ega-18-properties-sample-collection-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships")
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection")
 
-### study\_relationships Type
+### sample\_collection Type
 
-an array of merged types ([Details](ega-18-properties-study-relationships-items.md))
+`object` ([Sample collection descriptor](ega-18-properties-sample-collection-descriptor.md))
 
-### study\_relationships Constraints
+any of
+
+*   [Either the collection date is required](ega-18-properties-sample-collection-descriptor-anyof-either-the-collection-date-is-required.md "check type definition")
+
+*   [Or the collection site is required](ega-18-properties-sample-collection-descriptor-anyof-or-the-collection-site-is-required.md "check type definition")
+
+## sample\_grouping
+
+Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e.g. blood samples from different donors) physically or during the experimentation and analysis. One sample corresponds to one biological replicate \[EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates \[EFO:0002090] being used several times (see <https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/miscellaneous/sample_replicate.jpg>).
+
+`sample_grouping`
+
+*   is optional
+
+*   Type: `object` ([Sample group descriptor](ega-18-properties-sample-group-descriptor.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping")
+
+### sample\_grouping Type
+
+`object` ([Sample group descriptor](ega-18-properties-sample-group-descriptor.md))
+
+one (and only one) of
+
+*   [Either the sample_number is present and above 1](ega-18-properties-sample-group-descriptor-oneof-either-the-sample_number-is-present-and-above-1.md "check type definition")
+
+*   [Or the sample_group_boolean is 'false', hence an individual sample with sample_number being '1' or no sample_number](ega-18-properties-sample-group-descriptor-oneof-or-the-sample_group_boolean-is-false-hence-an-individual-sample-with-sample_number-being-1-or-no-sample_number.md "check type definition")
+
+## sample\_relationships
+
+Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to a sequencing run) the EGA.
+
+`sample_relationships`
+
+*   is optional
+
+*   Type: an array of merged types ([Details](ega-18-properties-sample-relationships-items.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_relationships")
+
+### sample\_relationships Type
+
+an array of merged types ([Details](ega-18-properties-sample-relationships-items.md))
+
+### sample\_relationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## study\_attributes
+## sample\_attributes
 
-Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
+Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.
 
-`study_attributes`
+`sample_attributes`
 
 *   is optional
 
@@ -207,13 +245,13 @@ Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-18-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_attributes")
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_attributes")
 
-### study\_attributes Type
+### sample\_attributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-### study\_attributes Constraints
+### sample\_attributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
