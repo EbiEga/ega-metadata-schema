@@ -4,9 +4,9 @@
     "type": "object",
     "title": "EGA sample metadata schema",
     "meta:version": "0.0.0",
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample [OBI:0000747] used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. It is a material which is collected with the intention of being representative of a greater whole. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["object_id", "organism_descriptor"],
     "$async": true,
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "organism_descriptor", "minimal_public_attributes"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -53,25 +53,6 @@
         "$ref": "./EGA.common-definitions.json#/definitions/organism_descriptor"
       },
       
-      "minimal_public_attributes":{
-        "type": "object",
-        "title": "Minimal public attributes describing a sample",
-        "description": "Among all fields describing a sample, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every sample should contain (even if they are unknown): subject id (sample donor id), biological sex and phenotype. These shall be displayed and queryable.",
-        "additionalProperties": false,
-        "required": ["subject_id", "biological_sex", "experimental_condition"],
-        "properties": {
-          "subject_id": {
-            "$ref": "./EGA.common-definitions.json#/definitions/subject_id"
-          },
-          "biological_sex": {
-            "$ref": "./EGA.common-definitions.json#/definitions/biological_sex"
-          },
-          "experimental_condition": {
-            "$ref": "./EGA.common-definitions.json#/definitions/experimental_condition_descriptor"
-          }
-        }
-      },
-
       "sample_collection": {
         "type": "object",
         "title": "Sample collection descriptor",
@@ -83,30 +64,72 @@
             "type": "string",
             "title": "Date of the sample collection",
             "meta:property_curie": "EFO:0000689",
-            "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. If the protocols are long enough, the date shall be the day the collection concluded.",
-            "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
-          },
-          "sample_collection_site": {
-            "type": "string",
-            "title": "Sampling site",
-            "meta:property_curie": "EFO:0000688",
-            "description": "A site from which a sample, i.e. a statistically representative of the whole, is extracted from the whole. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your sample collection site at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.",
-            "$ref": "./EGA.common-definitions.json#/definitions/uberon-anatomical-entity",
-            "examples": ["nasal cavity", "liver", "gut wall", "oral cavity" ]
-          },
-          "sample_collection_site_curie": {
-            "type": "string",
-            "title": "CURIE of the sampling site",
-            "meta:property_curie": "EFO:0000688",
-            "description": "Ontology term in CURIE format (e.g. 'UBERON:0000167') of the sampling site. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your ontologized term at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'UBERON:0001707'; in a liver biopsy it would be 'UBERON:0002107'.",
-            "examples": [ "UBERON:0000167", "UBERON:0001707", "UBERON:0000328", "UBERON:0002107" ],
+            "description": "Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the collection concluded.",
             "allOf": [
               {
-                "title": "General pattern of a CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+                "title": "ISO8601 Date pattern",
+                "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO8601-date-pattern"
               }
             ]
-          }          
+          },
+          "age_at_collection": {
+            "type": "object",
+            "title": "Individual's age at sample collection",
+            "description": "Property describing the individual's age at sample collection. Can either be the precise age an age range.",
+            "additionalProperties": false,
+            "properties": {
+              "age": {
+                "title": "Individual's age at sample collection",
+                "$ref": "./EGA.common-definitions.json#/definitions/individual-age"                
+              },
+              "age_range": {
+                "type": "object",
+                "title": "Individual's age range at sample collection",
+                "description": "Age range of the individual when the sample was collected. Composed of two (start and end) age points.",
+                "additionalProperties": false,
+                "properties": {
+                  "start": {
+                    "title": "Start of the individual's age range",
+                    "$ref": "./EGA.common-definitions.json#/definitions/individual-age"
+                  },
+                  "end": {
+                    "title": "End of the individual's age range",
+                    "$ref": "./EGA.common-definitions.json#/definitions/individual-age"
+                  }
+                }
+              }
+            },
+            "anyOf": [
+              {
+                "title": "Either the age is needed",
+                "required": ["age"]
+              },
+              {
+                "title": "Or the age-range is needed",
+                "required": ["age_range"]
+              }
+            ]
+          },
+          "sampling_site": {
+            "type": "object",
+            "title": "Sampling site",
+            "description": "A site from which a sample, i.e. a statistically representative of the whole, is extracted from the whole.",
+            "meta:property_curie": "EFO:0000688",
+            "additionalProperties": false,
+            "properties": {
+              "sampled_organism_part": {
+                "type": "string",
+                "title": "Sampled anatomical entity (organ, tissue...)",
+                "meta:property_curie": "EFO:0000688",
+                "description": "A site or entity from which a sample, i.e. a statistically representative of the whole, is extracted from the whole. The ontology to use is UBERON's anatomical entity [UBERON:0001062]. Search for your sample collection site at http://purl.obolibrary.org/obo/UBERON_0001062. For example, in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.",
+                "examples": ["nasal cavity", "liver", "gut wall", "oral cavity" ]
+              },
+              "sampled_organism_part_curie": {
+                "title": "Compact URI (CURIE) of the UBERON's organism part",
+                "$ref": "./EGA.common-definitions.json#/definitions/organism-part-entity"
+              }
+            }
+          }
         },
         "anyOf": [
           {
@@ -114,8 +137,12 @@
             "required": ["sample_collection_date"]
           },
           {
-            "title": "Or the collection site is required",
-            "required": ["sample_collection_site"]
+            "title": "Or the age at collection is required",
+            "required": ["age_at_collection"]
+          },
+          {
+            "title": "Or the sampling site is required",
+            "required": ["sampling_site"]
           }
         ]
       },
@@ -172,6 +199,144 @@
             }
           }
         ]
+      },
+
+      "sample_types": {
+        "type": "array",
+        "title": "Array of sample types",
+        "description": "Array of sample types: the material entity (e.g. DNA) that is this sample. Use this property as tags that befit your sample, picking as many as needed. Choose the specific terms if possible (e.g. if the assayed molecule is cDNA, add 'cDNA' instead of just 'DNA'). This property should not be confused with the sample collection protocols: regardless of the procedure to collect the sample, this property specifies what this sample is representing.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "title": "Type of sample",
+          "description": "Sample type item. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",   
+          "enum": [ "DNA", "RNA", "metabolite", "protein", "cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "non polyA RNA", "long non polyA RNA", "nuclear RNA", "polyA RNA", "long polyA RNA", "snRNA", "total RNA", "cell culture", "biofilm", "tissue culture" ],
+          "meta:enum": {
+            "DNA": "[CHEBI:16991]",
+            "RNA": "[CHEBI:33697]",
+            "metabolite": "[EFO:0004727]",
+            "protein": "[CHEBI:36080]",
+            "cDNA": "[EFO:0008481]",
+            "genomic DNA": "[EFO:0008479]",
+            "mitochondrial DNA": "[EFO:0008480]",  
+            "messenger RNA": "[CHEBI:33699]",
+            "ncRNA": "[SO:0000655]",
+            "non polyA RNA": "[EFO:0005017]",
+            "long non polyA RNA": "[EFO:0005018]",
+            "nuclear RNA": "[EFO:0030052]",
+            "polyA RNA": "[OBI:0000869]",
+            "long polyA RNA": "[EFO:0005019]",
+            "snRNA": "[SO:0000274]",
+            "total RNA": "[EFO:0004964]", 
+            "cell culture": "[BTO:0000214]: Cells taken from a living organism and grown under controlled conditions (in culture).", 
+            "biofilm": "[BTO:0002690]",
+            "tissue culture": "[BTO:0001384]: Fragments of tissue from an animal transferred to an artificial environment to continue its survival and function."
+          }
+        }        
+      },
+
+      "cell_types": {
+        "type": "array",
+        "title": "Array of cell types",
+        "description": "Array of cell types, in case the sample is composed of cells (e.g. cell culture) or the cells from which the genetic material derived are known (e.g. extract DNA from astrocytes). Use this property as tags that befit your sample, picking as many cell types as your sample contains or may contain.",
+        "meta:property_curie": "EFO:0000324",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "title": "Cell type",
+          "description": "One of the cell types that can be found in your sample or from which the genetic content was derived.",
+          "required": [ "cell_type_id", "inferred_cell_type" ],
+          "additionalProperties": false,
+          "properties": {
+            "cell_type_id": {
+              "type": "string",
+              "title": "Compact URI (CURIE) of the cell type",
+              "graph_restriction":  {
+                "ontologies" : ["obo:efo"],
+                "classes": ["EFO:0000324"],
+                "relations": ["rdfs:subClassOf"],
+                "direct": false,
+                "include_self": false
+              },
+              "examples": [ "CL:0002092", "CL:0000127", "CL:0000128" ]
+            },
+            "cell_type_label": {
+              "type": "string",
+              "title": "Cell type label",
+              "minLength": 1,
+              "examples": [ "bone marrow cell", "astrocyte", "oligodendrocyte" ]
+            },
+            "inferred_cell_type": {
+              "type": "string",
+              "title": "Cell type label",
+              "description": "A flag to specify whether the cell type classification was determined though single-cell analysis (e.g. cell clustering or trajectory analysis) or not (i.e. was visually observed or it is expected).",
+              "meta:property_curie": "EFO:0010196",
+              "enum": [ "inferred", "not inferred" ],
+              "meta:enum": {
+                "inferred": "The cell type was inferred through single-cell analysis.",
+                "not inferred": "The cell type was not inferred through single-cell analysis."
+              }
+            }
+          }          
+        }
+      },
+
+      "sample_status": {
+        "type": "array",
+        "title": "Array of sample statuses",
+        "description": "Array of statuses of the sample. Used to specify the condition(s) under study **if** the diagnosis of the individual is not enough to describe the status of the sample. In other words, if the differenciation between affected and unaffected groups is done at the sample level and not at the individual level. This differentiation exists when the study design is of case-control [[EFO:0001427](http://www.ebi.ac.uk/efo/EFO_0001427)]. \nFor example, if two samples derive from an individual with 'renal cell carcinoma', one deriving from the affected tissue and the other from an unaffected tissue, this node can be used to specify whether the sample belongs to the unaffected group (i.e. control) or the affected one (i.e. case). On the other hand, if two samples derived from different probands each, one person being affected and the other unaffected by the condition under study, this node **is not** required. \nSame could be applied, for instance, for treated or untreated samples, but not for treated or untreated individuals.",
+        "meta:property_curie": "EFO:0000324",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "title": "Sample status item",
+          "description": "One individual sample status of the array.",
+          "additionalProperties": false,
+          "required": [ "case_vs_control", "condition_under_study" ],
+          "properties": {
+            "case_vs_control": {
+              "type": "string",
+              "title": "Case vs control",
+              "description": "Property that specifies whether the sample is subject to the (usually altered) condition under study (i.e. case), or part of reference group (i.e. control). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
+              "enum": ["case", "control"],
+              "meta:enum": {
+                "case": "[PATO:0000460]: Abnormal - A quality inhering in a bearer by virtue of the bearer's deviation from normal or average.",
+                "control": "[PATO:0000461]: Normal - A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average.",
+                "not pplicable": "[NCIT:C48660]: Determination of a case or control is not relevant for this condition under study."
+              }
+            },
+
+            "condition_under_study": {
+              "type": "object",
+              "title": "Sample condition",
+              "description": "One of the primary conditions under study (CUS). Notice that the sample may or may not be affected by this condition under study, belonging to the case or control groups respectively.",
+              "meta:property_curie": "NCIT:C161319",
+              "additionalProperties": false,
+              "required": ["cus_curie"],
+              "properties": {
+                "cus_curie": {
+                  "type": "string",
+                  "title": "Compact URI (CURIE) of the condition under study",
+                  "description": "The term needs to exist within the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/search?q=&groupField=iri&start=0&ontology=hp&ontology=efo&ontology=ordo&ontology=mondo) (OLS). We highly recommend the usage of the following ontologies: Experimental Factor Ontology (EFO), Human Phenotype Ontology (HP), Mondo Disease Ontology (MONDO) and Orphanet Rare Disease Ontology (ORDO).",
+                  "isValidTerm": true,
+                  "examples": [ "MONDO:0021354", "EFO:1002024", "MAXO:0000647", "MONDO:0005081", "MONDO:0100096" ]
+                },
+                "cus_label": {
+                  "type": "string",
+                  "title": "Label of the condition under study",
+                  "minLength": 1,
+                  "examples": [ "tumor of adipose tissue", "streptococcal pharyngitis", "chemotherapy", "preeclampsia", "COVID-19" ]
+                }
+              }
+            }
+          }
+        }
       },
 
       "sample_relationships": {

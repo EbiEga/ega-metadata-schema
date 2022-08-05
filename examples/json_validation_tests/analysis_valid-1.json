@@ -23,7 +23,7 @@
     "targeted_loci": [
         {
             "organism_descriptor": {
-                "taxon_id": "9606",
+                "taxon_id_curie": "NCBITaxon:9606",
                 "scientific_name": "homo sapiens"
             },
             "loci_descriptor": [

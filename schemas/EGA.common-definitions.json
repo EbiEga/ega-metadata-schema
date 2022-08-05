@@ -7,7 +7,6 @@
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "definitions": {
-
       "object_core_id": {
         "type": "object",
         "title": "Core identifiers of an object",
@@ -149,7 +148,6 @@
             "title": "Checksum method ID",
             "meta:property_curie": "REPR:ChecksumAlgorithm",
             "description": "Node containing both the ID (MD5 or SHA-256), describing the method which yields the checksum from a data input for the purpose of detecting errors. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-            "additionalProperties": false,
             "enum": ["MD5", "SHA-256"],
             "meta:enum": {
               "MD5": "[NCIT:C171276]",
@@ -317,39 +315,39 @@
 
       "array_label": {
         "type": "object",
-          "title": "Repeatable array_label node",
-          "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.",
-          "required": ["array_label_id"],
-          "additionalProperties": false,
-          "properties": {
-            "array_label_id": {
-              "type": "string",
-              "title": "Array label of the array experiment - ID",
-              "description": "ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
-              "examples": [ "Cy3 dye" ]
-            },
-            "array_label_curie": {
-              "type": "string",
-              "title": "Array label of the array experiment - CURIE",
-              "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
-              "allOf": [
-                {
-                  "title": "General pattern of a CURIE",
-                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
-                }
-              ],
-              "examples": [ "CHEBI:37987" ]
-            },
-            "label_description": {
-              "type": "string",
-              "title": "Array label of the array experiment - Description",
-              "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
-              "examples": [ 
-                "This label was use to dye the control samples",
-                "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
-                "The label ID is unknown because we were given the RNA already dyed..." ]
-            }
+        "title": "Repeatable array_label node",
+        "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.",
+        "required": ["array_label_id"],
+        "additionalProperties": false,
+        "properties": {
+          "array_label_id": {
+          "type": "string",
+          "title": "Array label of the array experiment - ID",
+          "description": "ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
+          "examples": [ "Cy3 dye" ]
+          },
+          "array_label_curie": {
+            "type": "string",
+            "title": "Array label of the array experiment - CURIE",
+            "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
+            "allOf": [
+              {
+                "title": "General pattern of a CURIE",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "examples": [ "CHEBI:37987" ]
+          },
+          "label_description": {
+            "type": "string",
+            "title": "Array label of the array experiment - Description",
+            "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
+            "examples": [ 
+              "This label was use to dye the control samples",
+              "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
+              "The label ID is unknown because we were given the RNA already dyed..." ]
           }
+        }
       },
 
       "object-id-and-object-type-check": {
@@ -657,12 +655,21 @@
         "pattern": "^EGAO[0-9]{11}$",
         "examples": [ "EGAO00001159483" ]
       },
-
-      "EGA-ISO-date-YYYY-MM-DD-pattern": {
+      
+      "EGA-ISO8601-date-pattern": {
         "type": "string",
-        "title": "Pattern of an EGA ISO date (YYYY-MM-DD)",
-        "pattern": "^[0-9]{4}-(0[0-9]|1[0-2])-([012][0-9]|3[01])$",
-        "examples": [ "2021-04-30" ]
+        "title": "Pattern of EGA ISO 8601 date",
+        "description": "Regular expression to check the syntax of a date following 'ISO 8601 date' format. Notice that the Time (denoted by 'T...') is optional. So is the time zone, specified at the end of the string (e.g. 'Z', '+01:00'...). See more detail at 'https://regexpattern.com/iso-8601-dates-times/'.",
+        "pattern": "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])(T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?)?$",
+        "examples": [ "2021-04-30", "2020-12-29T19:30:45.123Z", "2020-12-29", "2020-12-29T19:30:45", "2021-10-13T04:13:00+01:00", "2021-10-13T12:13:00-08:00", "2021-10-13T12:13:00" ]
+      },
+
+      "EGA-ISO8601-duration-pattern": {
+        "type": "string",
+        "title": "Pattern of a partial EGA ISO 8601 duration",
+        "description": "Pattern of ISO 8601 durations. It can be used to define time intervals (e.g. 'P3Y6M4DT12H30M5S' represents a duration of three years, six months, four days, twelve hours, thirty minutes, and five seconds). See more at https://en.wikipedia.org/wiki/ISO_8601#Durations.",
+        "pattern": "^[-+]?P(?!$)(([-+]?\\d+Y)|([-+]?\\d+\\.\\d+Y$))?(([-+]?\\d+M)|([-+]?\\d+\\.\\d+M$))?(([-+]?\\d+W)|([-+]?\\d+\\.\\d+W$))?(([-+]?\\d+D)|([-+]?\\d+\\.\\d+D$))?(T(?=[\\d+-])(([-+]?\\d+H)|([-+]?\\d+\\.\\d+H$))?(([-+]?\\d+M)|([-+]?\\d+\\.\\d+M$))?([-+]?\\d+(\\.\\d+)?S)?)??$",
+        "examples": [ "P3Y6M4DT12H30M5S", "P23DT23H", "PT0S", "P0D", "P0,5Y", "P0.5Y"]
       },
 
       "filename-filetype-pattern-check": {
@@ -1120,7 +1127,6 @@
         "title": "Object of external accession of the object",
         "description": "External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.",
         "additionalProperties": false,
-        "required": ["external_accession_curie"],
         "properties": {
           "external_accession_curie": {
             "type": "string",
@@ -1132,15 +1138,37 @@
                 "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ],
-            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381"]
+            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381", "pubmed:30962759"]
+          },
+          "accession_reference": {
+            "type": "string",
+            "title": "Reference of the external accession",
+            "description": "Full or partial URL/URI of the external accession, for systems to resolve it.",
+            "allOf": [
+              {
+                "title": "General pattern of a URL/URI",
+                "$ref": "./EGA.common-definitions.json#/definitions/url-uri-pattern"
+              }
+            ],
+            "examples": [ "https://www.ebi.ac.uk/biosamples/samples/SAMN11716999", "https://pubmed.ncbi.nlm.nih.gov/19491253", "https://identifiers.org/arrayexpress:E-MEXP-1712", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/" ]
           },
           "accession_label": {
             "type": ["string", "number"],
             "title": "Label of the external accession",
-            "description": "Optional label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
-            "examples": [ "taken from biosample temporarily", "Ensembl's part of the accessions", "first", 2 ]
+            "description": "Label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
+            "examples": [ "taken from biosample temporarily", "Ensembl's part of the accessions", "first", 2, "Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation" ]
           }
-        }
+        },
+        "anyOf": [
+          {
+            "title": "Either the CURIE is needed",
+            "required": ["external_accession_curie"]
+          },
+          {
+            "title": "Or the reference is needed",
+            "required": ["accession_reference"]
+          }
+        ]
       },
 
       "sample-label-association": {
@@ -1237,12 +1265,13 @@
         "title": "Biological sex of the individual",
         "meta:property_curie": "PATO:0000047",
         "description": "An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-        "enum": [ "male", "female", "hermaphrodite", "unknown" ],
+        "enum": [ "male", "female", "hermaphrodite", "pseudohermaphrodite","unknown" ],
         "meta:enum": { 
           "male": "[PATO:0000384]: A biological sex quality inhering in an individual or a population whose sex organs contain only male gametes.",
           "female": "[PATO:0000383]: A biological sex quality inhering in an individual or a population that only produces gametes that can be fertilised by male gametes.",
           "hermaphrodite": "[PATO:0001340]: An organism having both male and female sexual characteristics and organs. A biological sex quality inhering in an organism or a population with both male and female sexual organs in one individual.",
-          "unknown": "The biological sex is unknown." 
+          "pseudohermaphrodite": "[PATO:0001827]: A biological sex quality inhering in an individual or a population by virtue of having internal reproductive organs of one sex and external sexual characteristics of the other sex.",
+          "unknown": "[NCIT:C17998]: The biological sex is unknown, not assesed or not available." 
         },
         "examples": [ "male" ]
       },
@@ -1289,31 +1318,44 @@
       "organism_descriptor": {
         "type": "object",
         "title": "Organism [OBI:0100026] descriptor block",
-        "description": "This node describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
+        "description": "This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
         "additionalProperties": false,
-        "required": ["taxon_id"],
+        "required": ["taxon_id_curie"],
         "properties": {
-          "taxon_id": {
+          "taxon_id_curie": {
             "type": "string",
-            "title": "Taxon identifier",
+            "title": "NCBI Taxon identifier",
             "meta:property_curie": "APOLLO_SV:00000203",
-            "description": "Taxonomy Identifier (e.g. '9606' for humans) curated by the NCBI Taxonomy (search for your sample's here: https://www.ncbi.nlm.nih.gov/taxonomy). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
-            "pattern": "^[0-9]{1,7}$",
-            "examples": [ "9606" ]
+            "description": "Taxonomy Identifier (e.g. 'NCBITaxon:9606' for humans) curated by the NCBI Taxonomy (search for organisms here: https://www.ncbi.nlm.nih.gov/taxonomy; or use the OLS: https://www.ebi.ac.uk/ols/ontologies/ncbitaxon). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
+            "allOf": [
+              {
+                "title": "General pattern of a CURIE",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "graph_restriction":  {
+              "ontologies" : ["obo:NCBITAXON"],
+              "classes": ["NCBITaxon:1"],
+              "relations": ["rdfs:subClassOf"],
+              "direct": false,
+              "include_self": false
+            },
+            "examples": [ "NCBITaxon:9606", "NCBITaxon:155900", "NCBITaxon:408170", "NCBITaxon:447426" ]
           },
           "scientific_name": {
             "type": "string",
             "title": "Biologic entity classification scientific name",
             "meta:property_curie": "NCIT:C43459",
             "description": "The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').",
-            "examples": [ "homo sapiens" ]
+            "minLength": 1,
+            "examples": [ "homo sapiens", "uncultured organism", "human gut metagenome", "human oral metagenome" ]
           },
           "common_name": {
             "type": "string",
             "title": "Biologic entity classification common name",
             "meta:property_curie": "NCIT:C164690",
             "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
-            "examples": [ "human" ]
+            "examples": [ "human"]
           }
         }
       },
@@ -1512,9 +1554,8 @@
                 },
                 "locus_external_reference": {
                   "title": "External reference of the locus",
-                  "description": "If the locus is NOT a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. For example, transcript TAF1-204 already contains all its locus information within its persistent record at Ensembl, identified by 'ensembl:ENST00000423759.6'.",
-                  "$ref": "./EGA.common-definitions.json#/definitions/object_external_accession",
-                  "examples": ["ensembl:ENST00000423759.6"]
+                  "description": "If the locus can not be identified by a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. In other words, one can reference here ways to access the locus information that is accessible elsewhere. For example miRNA 'MI0039740' (mirbase:MI0039740) that lacks a gene descriptor.",
+                  "$ref": "./EGA.common-definitions.json#/definitions/object_external_accession"
                 },
                 "locus_additional_description": {
                   "type": "string",
@@ -1580,6 +1621,68 @@
               }
             ],
             "examples": ["HGNC:11535", "hgnc:11998", "HGNC:1097", "ncbigene:100010", "ncbigene:6872"]
+          },
+          "gene_description": {
+            "type": "string",
+            "title": "Description of the gene",
+            "description": "Free-text description of the gene, only to be used to provide additional context that would otherwise be impossible to add encoded in the schema. In other words, kindly refrain from providing alternative gene symbols in the description if they are not added likewise in the 'alternate_gene_symbols' property.",
+            "minLength": 1,
+            "examples": [ "In the used cells, locus of gene ... was modified at positions +23, where thymine was transitioned to cytosine (T-C)..." ]
+          },
+          "alternate_gene_ids": {
+            "type": "array",
+            "title": "Alternate gene IDs",
+            "description": "Array of alternate identifiers for this gene. For example, Ensemble identifiers for genes and its transcripts.",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Alternate gene ID",
+              "meta:property_curie": "data:2295",
+              "allOf": [
+                {
+                  "title": "General pattern of a CURIE",
+                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+                }
+              ],
+              "examples": ["OMIM:600296", "ensembl:ENST00000423759.6", "ucsc:uc003ldc.6"]
+            }
+          },
+          "alternate_gene_symbols": {
+            "type": "array",
+            "title": "Alternate gene symbols",
+            "description": "Array of alternate gene sumbols. This field can be used to provide any other alternate gene symbol to refer to the gene, including previously approved gene symbols. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Alternate gene symbol",
+              "meta:property_curie": "data:1026",
+              "minLength": 1,
+              "examples": ["SUP45L1", "eRF1", "RF1", "ERF1"]
+            }
+          },
+          "gene_external_references": {
+            "type": "array",
+            "title": "Related (not equivalent) gene IDs",
+            "description": "Array of related identifiers. This field can be used to provide identifiers to alternative resources representing related, but not equivalent concepts, for example gene paralog, analog or ortholog IDs.",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "title": "Related gene ID",
+              "meta:property_curie": "data:2295",
+              "allOf": [
+                {
+                  "title": "General pattern of a CURIE",
+                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+                }
+              ],
+              "examples": ["VGNC:97422", "MGI:2385071", "RGD:1305712"]
+            }
           }
         }
       },
@@ -2174,13 +2277,25 @@
         }
       },
 
-      "uberon-anatomical-entity": {
+      "organism-part-entity": {
         "type": "string",
-        "title": "UBERON's Anatomical entity",
-        "meta:property_curie": "UBERON:0001062",
-        "description": "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species. Term shall be one of UBERON's ontologized terms beneath anatomical entity [UBERON:0001062]. Search for yours at: http://purl.obolibrary.org/obo/UBERON_0001062. It can be used to describe a sampling site or the morphological site of a disease, for example. #! To be used as an ontology validation node in the future.",
-        "minLength": 1,
-        "examples": ["liver", "gut wall", "nasal cavity" ]
+        "title": "Compact URI (CURIE) of the UBERON's organism part",
+        "meta:property_curie": "EFO:0000635",
+        "description": "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells. E.g. tissue, organ, system, sperm, blood or body location (arm). Search for yours at: http://www.ebi.ac.uk/efo/EFO_0000635. This property can be used to describe a sampling site or the morphological site of a disease, for example.",
+        "allOf": [
+          {
+            "title": "General CURIE pattern",
+            "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+          }
+        ],
+        "graph_restriction":  {
+          "ontologies" : ["obo:efo"],
+          "classes": ["EFO:0000635"],
+          "relations": ["rdfs:subClassOf"],
+          "direct": false,
+          "include_self": false
+        },
+        "examples": [ "UBERON:0000956", "UBERON:0006530" ]
       },
 
       "r-type-referenced_by": {
@@ -2706,6 +2821,150 @@
             "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
           }
         ]
+      },
+
+      "url-uri-pattern": {
+        "type": "string",
+        "title": "URL/URI pattern",
+        "description": "This object exists to hold the pattern that a URL or URI should have. For it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^((http|https)://)(www.)?[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)$",
+        "examples": [ "https://phenopacket-schema.readthedocs.io/en/latest/externalreference.html", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/", "https://www.geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/" ]
+      },
+
+      "individual-age": {
+        "type": "string",
+        "title": "Individual's age",
+        "meta:property_curie": "EFO:0000246",
+        "description": "Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represents a duration of three years, six months and four days.",
+        "allOf": [
+          {
+            "title": "ISO8601 Date pattern",
+            "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO8601-duration-pattern"
+          }
+        ],
+        "examples": [ "P3Y6M4D", "P23DT23H", "P4Y" ]
+      },
+
+      "cell-type-descriptor": {
+        "type": "object",
+        "title": "Cell type",
+        "description": "Property to describe a cell type: a distinct morphological or functional form of cell.",
+        "meta:property_curie": "EFO:0000324",
+        "additionalProperties": false,
+        "required": [ "cell_type_id" ],
+        "properties": {          
+          "cell_type_curie": {
+            "type": "string",
+            "title": "Compact URI (CURIE) of the cell type",
+            "graph_restriction":  {
+              "ontologies" : ["obo:efo"],
+              "classes": ["EFO:0000324"],
+              "relations": ["rdfs:subClassOf"],
+              "direct": false,
+              "include_self": false
+            },
+            "allOf": [
+              {
+                "title": "General CURIE pattern",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ]
+          },
+          "cell_type_label": {
+            "type": "string",
+            "title": "Label of the cell type",
+            "minLength": 1,
+            "examples": [ "musculo-skeletal system cell", "neoplastic cell", "nervous system cell" ]
+          }
+        }
+      },
+
+      "phenotypic-abnormality-descriptor": {
+        "type": "object",
+        "title": "Phenotypic abnormality",
+        "description": "Property to describe any abnormal (i.e. deviation from normal or average) phenotype (i.e. detectable outward manifestations of a specific genotype).",
+        "meta:property_curie": "HP:0000118",
+        "additionalProperties": false,
+        "required": [ "phenotypic_abnormality_curie" ],
+        "properties": {          
+          "phenotypic_abnormality_curie": {
+            "type": "string",
+            "title": "Compact URI (CURIE) of the phenotypic abnormality",
+            "anyOf": [
+              {
+                "title": "Ontology validation of phenotypic abnormality",
+                "graph_restriction":  {
+                  "ontologies" : ["obo:hp"],
+                  "classes": ["HP:0000118"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": false,
+                  "include_self": false
+                }
+              },
+              { 
+                "title": "In case the phenotypic abnormality is unknown or there is none",
+                "enum": ["NCIT:C17998", "NCIT:C94232"]
+              }
+            ],            
+            "allOf": [
+              {
+                "title": "General CURIE pattern",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "examples": [ "HP:0003003", "HP:0010442", "HP:0002515", "NCIT:C17998", "NCIT:C94232" ]
+          },
+          "phenotypic_abnormality_label": {
+            "type": "string",
+            "title": "Label of the phenotypic abnormality",
+            "minLength": 1,
+            "examples": [ "Colon cancer", "Polydactyly", "Waddling gait", "Unknown", "Unaffected" ]
+          }
+        }
+      },
+
+      "disease-descriptor": {
+        "type": "object",
+        "title": "Disease",
+        "description": "Property to describe a disease (i.e. a disposition to undergo pathological processes because of one or more disorders).",
+        "meta:property_curie": "EFO:0000408",
+        "additionalProperties": false,
+        "required": [ "disease_curie" ],
+        "properties": {          
+          "disease_curie": {
+            "type": "string",
+            "title": "Compact URI (CURIE) of the disease",
+            "oneOf": [
+              {
+                "title": "Ontology validation of dieases",
+                "graph_restriction":  {
+                  "ontologies" : ["obo:efo"],
+                  "classes": ["EFO:0000408"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": false,
+                  "include_self": false
+                }
+              },
+              {
+                "title": "In case whether the individual has a disease is unknown or there is none",
+                "enum": ["NCIT:C17998", "NCIT:C94232"]
+              }
+            ],          
+            "allOf": [
+              {
+                "title": "General CURIE pattern",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              }
+            ],
+            "examples": [ "MONDO:0100096", "EFO:0003101", "NCIT:C17998", "NCIT:C94232" ]
+          },
+          "disease_label": {
+            "type": "string",
+            "title": "Label of the disease",
+            "minLength": 1,
+            "examples": [ "COVID-19", "testicular seminoma", "Unknown", "Unaffected" ]
+          }
+        }
       }
     }
 }

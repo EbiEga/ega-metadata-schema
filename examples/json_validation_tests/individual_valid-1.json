@@ -5,17 +5,29 @@
         "ega_accession": "EGAI00000000001"
     },
     "organism_descriptor": {
-        "taxon_id": "9606",
+        "taxon_id_curie": "NCBITaxon:9606",
         "scientific_name": "homo sapiens",
         "common_name": "human"
     },
     "minimal_public_attributes": {
         "subject_id": "donor-NM305004",
         "biological_sex": "male",
-        "phenotype": {
-            "experimental_condition_term": "fibroadenoma",
-            "experimental_condition_curie": "EFO:1000254"
-        }
+        "phenotypes": [
+            {
+                "phenotypic_abnormality_curie": "NCIT:C17998",
+                "phenotypic_abnormality_label": "unknown"
+            }
+        ],
+        "diseases": [
+            {
+                "disease_curie": "EFO:0003101",
+                "disease_label": "testicular seminoma"
+            },
+            {
+                "disease_curie": "EFO:1000254",
+                "disease_label": "fibroadenoma"
+            }
+        ]
     },
     "individual_relationships": [
         {

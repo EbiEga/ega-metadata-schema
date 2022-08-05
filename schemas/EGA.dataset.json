@@ -81,11 +81,11 @@
         "allOf": [
           {
             "title": "The date has to match the common date pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO8601-date-pattern"
           },
           {
             "title": "We cap the reminder up to 3 years",
-            "Description": "It's our policy to, at some point, release all the data we hold to improve findability. Therefore, we cap the reminder date to 3 years so that we avoid submitters setting a reminder too far in the future, sometimes intentionally.",
+            "Description": "We cap the reminder date to 3 years so that we avoid submitters setting a reminder too far in the future, sometimes intentionally.",
             "pattern": "^202[2-5]?.+$"
           }
         ]

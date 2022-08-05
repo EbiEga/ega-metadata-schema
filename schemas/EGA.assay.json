@@ -62,8 +62,8 @@
       "assay_date": {
         "type": "string",
         "title": "Date of the assay",
-        "description": "ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sequencing assay took place. If the protocols are long enough, the date shall be the day the assay concluded.",
-        "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO-date-YYYY-MM-DD-pattern"
+        "description": "Date when the sequencing assay took place (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the assay concluded.",
+        "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO8601-date-pattern"
       },
 
       "assay_type_specifications": {
