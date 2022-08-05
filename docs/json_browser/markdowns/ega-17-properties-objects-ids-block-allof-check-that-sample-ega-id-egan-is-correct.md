@@ -1,7 +1,7 @@
 # Check that sample EGA ID (EGAN) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that sample EGA ID (EGAN) is correct](ega-17-properties-objects-
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                     |
-| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-samples-id-egan.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that sample EGA ID (EGAN) is correct](ega-17-properties-objects-
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-samples-id-egan.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

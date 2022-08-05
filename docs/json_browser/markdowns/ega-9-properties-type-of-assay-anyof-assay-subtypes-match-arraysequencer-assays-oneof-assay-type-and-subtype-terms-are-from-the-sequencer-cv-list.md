@@ -1,7 +1,7 @@
 # Assay type and subtype terms are from the sequencer CV list Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1
 ```
 
 
@@ -16,10 +16,10 @@ unknown ([Assay type and subtype terms are from the sequencer CV list](ega-9-pro
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| :------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [assay\_type](#assay_type)       | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay-properties-type-of-the-assay-anyof-ega-controlled-vocabulary-cv-for-assay-types-by-sequencer-efo0003740.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_type")                                                                                                     |
-| [assay\_subtype](#assay_subtype) | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-arraysequencer-assays-oneof-assay-type-and-subtype-terms-are-from-the-sequencer-cv-list-properties-ega-controlled-vocabulary-cv-for-assay-subtypes-by-sequencer-efo0003740.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_subtype") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
+| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assay\_type](#assay_type)       | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-6.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_type")       |
+| [assay\_subtype](#assay_subtype) | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-4.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_subtype") |
 
 ## assay\_type
 
@@ -29,15 +29,15 @@ Controlled Vocabulary (CV) list for assay types by sequencer \[EFO:0003740]: an 
 
 *   is optional
 
-*   Type: `string` ([EGA Controlled Vocabulary (CV) for assay types by sequencer \[EFO:0003740\]](ega-9-properties-type-of-assay-properties-type-of-the-assay-anyof-ega-controlled-vocabulary-cv-for-assay-types-by-sequencer-efo0003740.md))
+*   Type: `string` ([EGA Controlled Vocabulary (CV) for assay types by sequencer \[EFO:0003740\]](ega-6.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay-properties-type-of-the-assay-anyof-ega-controlled-vocabulary-cv-for-assay-types-by-sequencer-efo0003740.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_type")
+*   defined in: [EGA Experiment metadata schema](ega-6.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_type")
 
 ### assay\_type Type
 
-`string` ([EGA Controlled Vocabulary (CV) for assay types by sequencer \[EFO:0003740\]](ega-9-properties-type-of-assay-properties-type-of-the-assay-anyof-ega-controlled-vocabulary-cv-for-assay-types-by-sequencer-efo0003740.md))
+`string` ([EGA Controlled Vocabulary (CV) for assay types by sequencer \[EFO:0003740\]](ega-6.md))
 
 ### assay\_type Constraints
 
@@ -80,15 +80,15 @@ Controlled Vocabulary (CV) list for assay subtypes by sequencer: any ontologized
 
 *   is optional
 
-*   Type: `string` ([EGA Controlled Vocabulary (CV) for assay subtypes by sequencer \[EFO:0003740\]](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-arraysequencer-assays-oneof-assay-type-and-subtype-terms-are-from-the-sequencer-cv-list-properties-ega-controlled-vocabulary-cv-for-assay-subtypes-by-sequencer-efo0003740.md))
+*   Type: `string` ([EGA Controlled Vocabulary (CV) for assay subtypes by sequencer \[EFO:0003740\]](ega-4.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-arraysequencer-assays-oneof-assay-type-and-subtype-terms-are-from-the-sequencer-cv-list-properties-ega-controlled-vocabulary-cv-for-assay-subtypes-by-sequencer-efo0003740.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_subtype")
+*   defined in: [EGA Experiment metadata schema](ega-4.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json#/properties/assay_type_descriptor/anyOf/1/oneOf/1/properties/assay_subtype")
 
 ### assay\_subtype Type
 
-`string` ([EGA Controlled Vocabulary (CV) for assay subtypes by sequencer \[EFO:0003740\]](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-arraysequencer-assays-oneof-assay-type-and-subtype-terms-are-from-the-sequencer-cv-list-properties-ega-controlled-vocabulary-cv-for-assay-subtypes-by-sequencer-efo0003740.md))
+`string` ([EGA Controlled Vocabulary (CV) for assay subtypes by sequencer \[EFO:0003740\]](ega-4.md))
 
 ### assay\_subtype Constraints
 

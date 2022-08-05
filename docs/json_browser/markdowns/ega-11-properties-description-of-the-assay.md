@@ -1,7 +1,7 @@
 # Description of the assay Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_description
 ```
 
 An in-depth description (e.g. used technology, sample groups, purpose...) of the assay.

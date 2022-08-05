@@ -1,7 +1,7 @@
 # Relationships of external accessions and URLs (optional ones) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/1/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/1/anyOf/1
 ```
 
 Almost any relationship is imaginable with external accessions and URLs.

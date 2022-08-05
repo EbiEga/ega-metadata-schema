@@ -1,7 +1,7 @@
 # Collaborator Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items
 ```
 
 Collaborator item comprising both the collaborator's contact details and rights.
@@ -16,10 +16,10 @@ Collaborator item comprising both the collaborator's contact details and rights.
 
 # items Properties
 
-| Property                                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                         |
-| :-------------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [collaborator\_rights](#collaborator_rights)                    | `string` | Required | cannot be null | [EGA submission metadata schema](ega-19-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights") |
-| [collaborator\_contact\_details](#collaborator_contact_details) | Merged   | Required | cannot be null | [EGA submission metadata schema](ega-12-definitions-contact-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details")                                                   |
+| Property                                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                   |
+| :-------------------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [collaborator\_rights](#collaborator_rights)                    | `string` | Required | cannot be null | [EGA submission metadata schema](ega-19-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights") |
+| [collaborator\_contact\_details](#collaborator_contact_details) | Merged   | Required | cannot be null | [EGA submission metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details")                                                   |
 
 ## collaborator\_rights
 
@@ -33,7 +33,7 @@ Property defining the rights of the specified collaborator. Either read-only or 
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-19-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights")
+*   defined in: [EGA submission metadata schema](ega-19-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights")
 
 ### collaborator\_rights Type
 
@@ -60,7 +60,7 @@ An object to contain the required metadata to identify and reach an individual o
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-definitions-contact-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details")
+*   defined in: [EGA submission metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details")
 
 ### collaborator\_contact\_details Type
 

@@ -1,7 +1,7 @@
 # DAC contacts' details Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts
 ```
 
 Object containing the main contact's and optional additional contact's details.
@@ -16,10 +16,10 @@ Object containing the main contact's and optional additional contact's details.
 
 # dac\_contacts Properties
 
-| Property                                     | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
-| :------------------------------------------- | :------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [main\_contact](#main_contact)               | Merged  | Required | cannot be null | [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/main_contact")                                                      |
-| [additional\_contacts](#additional_contacts) | `array` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts") |
+| Property                                     | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
+| :------------------------------------------- | :------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [main\_contact](#main_contact)               | Merged  | Required | cannot be null | [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/main_contact")                                                      |
+| [additional\_contacts](#additional_contacts) | `array` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts") |
 
 ## main\_contact
 
@@ -33,7 +33,7 @@ An object to contain the required metadata to identify and reach an individual o
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/main_contact")
+*   defined in: [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/main_contact")
 
 ### main\_contact Type
 
@@ -57,7 +57,7 @@ An array compromising additional contact details to use when in need to reach th
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts")
+*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts")
 
 ### additional\_contacts Type
 

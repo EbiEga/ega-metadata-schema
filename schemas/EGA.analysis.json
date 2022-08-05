@@ -1,9 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json",
     "type": "object",
     "title": "EGA analysis metadata schema",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its analysis metadata object. This object is intended to contain metadata about a detailed examination of data (mainly data processing protocols) in order to come to some conclusion. It can be of different types (e.g. sequence variation, sequence alignment, phenotype characterization, gene expression, etc.) that will mainly differ in the protocols used to achieve the processed data of the analysis. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "required": ["object_id", "analysis_type_specifications" ],
     "additionalProperties": false,
@@ -15,13 +16,13 @@
         "allOf": [
           {
             "title": "Inherited object_core_id object",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
             "title": "Check that analysis EGA ID (EGAZ) is correct",
             "properties": {
               "ega_accession": {
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-analysis-id-pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/EGA-analysis-id-pattern"
               }
             }
           }
@@ -31,7 +32,7 @@
       "schema_descriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
       },
 
       "object_title": {
@@ -50,18 +51,6 @@
         "examples": [ "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 
-      "analysis_protocols": {
-        "type": "array",
-        "title": "Protocols related to an analysis",
-        "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an analysis. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
-        "minItems": 1,
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object" 
-        }
-      },
-
       "targeted_loci": {
         "type": "array",
         "title": "Loci of the targeted genomic feature",
@@ -70,7 +59,7 @@
         "uniqueItems": true,
         "additionalProperties": false,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier" 
+          "$ref": "./EGA.common-definitions.json#/definitions/locus_identifier" 
         }
       },
 
@@ -82,7 +71,7 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
+          "$ref": "./EGA.common-definitions.json#/definitions/type_of_data"
         }
       },
 
@@ -94,7 +83,7 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
+          "$ref": "./EGA.common-definitions.json#/definitions/type_of_data"
         }
       },
 
@@ -123,7 +112,7 @@
           "reference_alignment_details": {
             "title": "Reference assembly and sequence details",
             "description": "Node containing details of the reference sequence used in the alignment of raw sequences.",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details"
+            "$ref": "./EGA.common-definitions.json#/definitions/reference_alignment_details"
           }
         }
       },
@@ -136,7 +125,7 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": { 
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/file_object"
         }
       },
 
@@ -151,7 +140,7 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
             },
             {
               "title": "Relationship constraints for an analysis",
@@ -161,31 +150,34 @@
                   "title": "Allowed relationships of type referenced_by (main ones)",
                   "allOf": [
                     {
-                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-study"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-study"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-sample"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-sample"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-experiment"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-experiment"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-assay"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-assay"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-dataset"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-dataset"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
                         },
                         {
                           "title": "Optional one, added here to simplify",
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
                         }
                       ]
                     }
@@ -197,23 +189,23 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-analysis"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
                         }
                       ]
                     }
@@ -226,44 +218,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-child_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-child_of"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-develops_from"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-member_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
                         }
                       ]
                     }
@@ -275,7 +267,7 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
         }
       },
 
@@ -287,7 +279,7 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
         }
       }
     }      

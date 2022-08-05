@@ -1,7 +1,7 @@
 # RefSeq accessions' \[data:1098] CURIE pattern Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_unit_accession/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_unit_accession/allOf/0
 ```
 
 The Reference Sequence (RefSeq) CURIEs take the structure of `refseq`:`accession`. [RefSeq accessions](https://registry.identifiers.org/registry/refseq) \[data:1098] have special prefixes (e.g. 'NM\_' for protein-coding transcripts - mRNA) based on the category of the object. The accession can also have a version attached as a suffix (e.g. '.23'). Their records are integrated into [NCBI's resources](https://www.ncbi.nlm.nih.gov/refseq/) including the Nucleotide, Protein, and BLAST databases and can be easily identified by the keyword 'RefSeq' and by their distinct accession prefixes that define their type (see further details at [doi:10.1093/nar/gkv1189](https://academic.oup.com/nar/article/44/D1/D733/2502674).

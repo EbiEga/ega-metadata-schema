@@ -1,7 +1,7 @@
 # Check that DAC EGA ID (EGAC) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
-| :------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
+| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

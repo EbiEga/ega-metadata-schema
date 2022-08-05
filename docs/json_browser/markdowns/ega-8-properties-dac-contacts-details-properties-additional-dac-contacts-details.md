@@ -1,7 +1,7 @@
 # Additional DAC contacts' details Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts
 ```
 
 An array compromising additional contact details to use when in need to reach the DAC yet the main contact is unresponsive or does not exist.

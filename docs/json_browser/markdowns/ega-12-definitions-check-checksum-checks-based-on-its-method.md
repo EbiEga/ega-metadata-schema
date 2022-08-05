@@ -1,7 +1,7 @@
 # Check: checksum checks based on its method Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/allOf/0
 ```
 
 This object exists with the only purpose of being a reference of pattern checks of the given checksum (e.g. 'c6779ec2960296ed9a04f08d67f64423') of a file based on its corresponding method (e.g. if the given checksum method is 'MD5' the checksum shall fit into MD5's format of '^[0-9a-z](?:-?\[0-9a-z]){31}$')

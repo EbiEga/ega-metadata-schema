@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_relationships/items/allOf/1/anyOf/1/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_relationships/items/allOf/1/anyOf/1/allOf/1
 ```
 
 

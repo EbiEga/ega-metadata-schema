@@ -1,7 +1,7 @@
 # CURIE of the sampling site Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site_curie
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site_curie
 ```
 
 Ontology term in CURIE format (e.g. 'UBERON:0000167') of the sampling site. The ontology to use is UBERON's anatomical entity \[UBERON:0001062]. Search for your ontologized term at <http://purl.obolibrary.org/obo/UBERON_0001062>. For example, in the case of a nasal swab, it would be 'UBERON:0001707'; in a liver biopsy it would be 'UBERON:0002107'.

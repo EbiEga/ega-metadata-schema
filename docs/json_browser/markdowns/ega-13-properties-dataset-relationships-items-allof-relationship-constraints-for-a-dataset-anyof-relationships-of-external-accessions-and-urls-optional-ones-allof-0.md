@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA dataset metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json#/properties/dataset_relationships/items/allOf/1/anyOf/2/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_relationships/items/allOf/1/anyOf/2/allOf/0
 ```
 
 

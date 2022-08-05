@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Experiment metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype
 ```
 
 
@@ -16,6 +16,6 @@ merged type ([Details](ega-9-properties-type-of-assay-anyof-assay-subtypes-match
 
 any of
 
-*   [EGA Controlled Vocabulary (CV) for assay subtypes by DNA \[EFO:0001456\]](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype-anyof-ega-controlled-vocabulary-cv-for-assay-subtypes-by-dna-efo0001456.md "check type definition")
+*   [EGA Controlled Vocabulary (CV) for assay subtypes by DNA \[EFO:0001456\]](ega-1.md "check type definition")
 
-*   [EGA Controlled Vocabulary (CV) for assay subtypes by RNA \[EFO:0001457\]](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype-anyof-ega-controlled-vocabulary-cv-for-assay-subtypes-by-rna-efo0001457.md "check type definition")
+*   [EGA Controlled Vocabulary (CV) for assay subtypes by RNA \[EFO:0001457\]](ega-2.md "check type definition")

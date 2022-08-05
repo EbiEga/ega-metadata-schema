@@ -1,11 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json",
     "type": "object",
     "title": "EGA Experiment metadata schema",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "experiment_protocols", "assay_technology", "assay_type_descriptor", "assayed_molecule_type", "experiment_type_specifications"],
+    "required": ["object_id", "assay_technology", "assay_type_descriptor", "assayed_molecule_type", "experiment_type_specifications"],
     "additionalProperties": false,
     "properties": {
       "object_id": {
@@ -15,13 +16,13 @@
         "allOf": [
           {
             "title": "Inherited object_core_id object",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
           },
           {
             "title": "Check that experiment EGA ID (EGAX) is correct",
             "properties": {
               "ega_accession": {
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-experiment-id-pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/EGA-experiment-id-pattern"
               }
             }
           }
@@ -31,7 +32,7 @@
       "schema_descriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
       },
 
       "object_title": {
@@ -48,18 +49,6 @@
         "examples": [ "The experiment was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 
-      "experiment_protocols": {
-        "type": "array",
-        "title": "Protocols related to an experiment",
-          "description": "Comprises metadata (e.g. Type of protocol) of a plan specification executed during an experiment. It shall have a sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
-        "minItems": 1,
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object" 
-        }
-      },
-
       "targeted_loci": {
         "type": "array",
         "title": "Loci of the targeted genomic feature",
@@ -68,14 +57,14 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier" 
+          "$ref": "./EGA.common-definitions.json#/definitions/locus_identifier" 
         }
       },
 
       "assay_technology": {
         "title": "Technology used in the assay",
         "description": "Technology used in the assay. This node allows for an easy filtering of the technology (e.g. a sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) in an assay.",
-        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/assay_technology_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/assay_technology_descriptor"
       },
 
       "assay_type_descriptor": {
@@ -93,11 +82,11 @@
             "anyOf": [
               {
                 "title": "Array-assay type controlled vocabulary (CV) list",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json"
+                "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json"
               },
               {
                 "title": "Sequencer-assay type controlled vocabulary (CV) list",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json"
+                "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json"
               }
             ],
             "examples": [ "Hi-C", "amplicon sequencing", "assay by high throughput sequencer", "immune sequencing", "ChIP-chip by array", "transcription profiling by array", "microRNA profiling by array", "genotyping by array", "comparative genomic hybridization by array" ]
@@ -117,11 +106,11 @@
                 "anyOf": [
                   {
                     "title": "DNA-Assay subtype controlled vocabulary (CV) list",
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json"
+                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json"
                   },
                   {
                     "title": "RNA-Assay subtype controlled vocabulary (CV) list",
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json"
+                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json"
                   }
                 ]                 
               }
@@ -134,10 +123,10 @@
                 "title": "Assay type and subtype terms are from the array CV list",
                 "properties": {
                   "assay_type": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json" 
+                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json" 
                   },
                   "assay_subtype": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json" 
+                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json" 
                   }
                 }
               },
@@ -145,10 +134,10 @@
                 "title": "Assay type and subtype terms are from the sequencer CV list",
                 "properties": {
                   "assay_type": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json" 
+                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json" 
                   },
                   "assay_subtype": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json" 
+                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json" 
                   }
                 }
               }
@@ -188,7 +177,7 @@
         "description": "Types of data the experiment produces.",
         "uniqueItems": true,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/type_of_data"
+          "$ref": "./EGA.common-definitions.json#/definitions/type_of_data"
         }
       },
 
@@ -214,7 +203,7 @@
                 "uniqueItems": true,
                 "minItems": 1,
                 "items": {
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" 
+                  "$ref": "./EGA.common-definitions.json#/definitions/array_label" 
                 }
               },
               
@@ -227,7 +216,7 @@
                 "uniqueItems": true,
                 "items": {
                   "title": "ADF File object",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/file_object" 
+                  "$ref": "./EGA.common-definitions.json#/definitions/file_object" 
                 }
               }
             }
@@ -241,12 +230,12 @@
             "properties": {
               "library_layout": {
                 "title": "Library layout of the sequencing experiment",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/library_layout"
+                "$ref": "./EGA.common-definitions.json#/definitions/library_layout"
               },
               "spot_descriptor": {
                 "title": "Spot descriptor of the sequencing experiment",
                 "description": "Adapted from current ENA's XSDs without improvements. #! Expected to be investigated.",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor"
+                "$ref": "./EGA.common-definitions.json#/definitions/spot_descriptor"
               }
             }
           }
@@ -274,7 +263,7 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
             },
             {
               "title": "Relationship constraints for an experiment",
@@ -284,33 +273,36 @@
                   "title": "Allowed relationships of type referenced_by (main ones)",
                   "allOf": [
                     {
-                      "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-study"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-study"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-assay"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-assay"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
                         },
                         {
-                          "title": "Optional one, added here to simplify",
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-experiment"
-                        },
-                        {
-                          "title": "Optional one, added here to simplify",
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-experiment"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
                         },
                         {
                           "title": "Optional one, added here to simplify",
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-sample"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-experiment"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-experiment"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-sample"
                         }
                       ]
                     }
@@ -322,23 +314,23 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-experiment"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-experiment"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-experiment"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-experiment"
                         }
                       ]
                     }
@@ -351,44 +343,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-child_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-child_of"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-develops_from"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-member_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
                         },
                         {
-                          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-target-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
                         }
                       ]
                     }
@@ -400,7 +392,7 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
         }
       },
 
@@ -412,7 +404,7 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute" 
+          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
         }
       }
     },

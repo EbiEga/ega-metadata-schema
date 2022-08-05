@@ -1,7 +1,7 @@
 # Filename pattern of a  file Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/13/properties/filename
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/13/properties/filename
 ```
 
 This object exists to hold the filename pattern that a 'XLSX' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.

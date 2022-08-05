@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/then
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then
 ```
 
 
@@ -16,9 +16,9 @@ unknown
 
 # then Properties
 
-| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
-| :-------------------------------------------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_type\_specifications](#assay_type_specifications) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications") |
+| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
+| :-------------------------------------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assay\_type\_specifications](#assay_type_specifications) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications") |
 
 ## assay\_type\_specifications
 
@@ -32,7 +32,7 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications")
+*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assay_type_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assay_type_specifications")
 
 ### assay\_type\_specifications Type
 

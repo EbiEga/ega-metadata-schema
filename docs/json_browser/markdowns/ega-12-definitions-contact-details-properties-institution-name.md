@@ -1,7 +1,7 @@
 # Institution name Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name
 ```
 
 The full name of an institution the contact belongs to. In case there are several, separate them with semicolons (;).

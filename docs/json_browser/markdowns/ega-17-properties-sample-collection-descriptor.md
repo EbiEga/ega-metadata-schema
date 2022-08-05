@@ -1,7 +1,7 @@
 # Sample collection descriptor Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection
 ```
 
 Node containing the provenance details (when and where) of the sample. This information does not include the whole sample collection protocol (expected at experiment's protocols), only the sampling date (when the sample was taken from the individual) and site (where was it taken within the individual).
@@ -22,11 +22,11 @@ any of
 
 # sample\_collection Properties
 
-| Property                                                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                    |
-| :--------------------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sample\_collection\_date](#sample_collection_date)              | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date")                                   |
-| [sample\_collection\_site](#sample_collection_site)              | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-uberons-anatomical-entity.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site")                                               |
-| [sample\_collection\_site\_curie](#sample_collection_site_curie) | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor-properties-curie-of-the-sampling-site.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site_curie") |
+| Property                                                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                              |
+| :--------------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sample\_collection\_date](#sample_collection_date)              | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date")                                   |
+| [sample\_collection\_site](#sample_collection_site)              | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-uberons-anatomical-entity.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site")                                               |
+| [sample\_collection\_site\_curie](#sample_collection_site_curie) | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor-properties-curie-of-the-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site_curie") |
 
 ## sample\_collection\_date
 
@@ -40,7 +40,7 @@ ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sample was collected. 
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date")
 
 ### sample\_collection\_date Type
 
@@ -74,7 +74,7 @@ Biological entity that is either an individual member of a biological species or
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-uberons-anatomical-entity.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-uberons-anatomical-entity.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site")
 
 ### sample\_collection\_site Type
 
@@ -110,7 +110,7 @@ Ontology term in CURIE format (e.g. 'UBERON:0000167') of the sampling site. The 
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor-properties-curie-of-the-sampling-site.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site_curie")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-collection-descriptor-properties-curie-of-the-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_site_curie")
 
 ### sample\_collection\_site\_curie Type
 

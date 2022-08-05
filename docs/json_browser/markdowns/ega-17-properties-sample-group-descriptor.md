@@ -1,7 +1,7 @@
 # Sample group descriptor Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping
 ```
 
 Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e.g. blood samples from different donors) physically or during the experimentation and analysis. One sample corresponds to one biological replicate \[EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates \[EFO:0002090] being used several times (see <https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/miscellaneous/sample_replicate.jpg>).
@@ -22,11 +22,11 @@ one (and only one) of
 
 # sample\_grouping Properties
 
-| Property                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                        |
-| :------------------------------------------------ | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sample\_group\_boolean](#sample_group_boolean)   | `boolean` | Required | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-sample-group-boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean")          |
-| [sample\_number](#sample_number)                  | `integer` | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-number-of-samples.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_number")                    |
-| [sample\_grouping\_label](#sample_grouping_label) | `string`  | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label") |
+| Property                                          | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
+| :------------------------------------------------ | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sample\_group\_boolean](#sample_group_boolean)   | `boolean` | Required | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-sample-group-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean")          |
+| [sample\_number](#sample_number)                  | `integer` | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-number-of-samples.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_number")                    |
+| [sample\_grouping\_label](#sample_grouping_label) | `string`  | Optional | cannot be null | [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label") |
 
 ## sample\_group\_boolean
 
@@ -40,7 +40,7 @@ Boolean flag on whether the sample object is a group or an individual sample. Pl
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-sample-group-boolean.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-sample-group-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean")
 
 ### sample\_group\_boolean Type
 
@@ -64,7 +64,7 @@ Number of individual samples (e.g. 300) encompassed by the sample group
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-number-of-samples.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_number")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-number-of-samples.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_number")
 
 ### sample\_number Type
 
@@ -88,7 +88,7 @@ Optional label of the sample grouping, used to add context to the group.
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label")
+*   defined in: [EGA sample metadata schema](ega-17-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label")
 
 ### sample\_grouping\_label Type
 

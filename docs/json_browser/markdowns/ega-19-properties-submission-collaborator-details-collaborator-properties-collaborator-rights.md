@@ -1,7 +1,7 @@
 # Collaborator rights Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights
 ```
 
 Property defining the rights of the specified collaborator. Either read-only or read and write rights.

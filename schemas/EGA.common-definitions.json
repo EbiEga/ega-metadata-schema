@@ -1,9 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json",
     "type": "object",
-    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json",
     "title": "EGA common metadata definitions",
     "meta:version": "0.0.0",
+    "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
     "definitions": {
 
@@ -41,7 +42,7 @@
             "additionalProperties": false,
             "uniqueItems": true,
             "items": {
-              "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession"
+              "$ref": "./EGA.common-definitions.json#/definitions/object_external_accession"
             }
           }
 
@@ -274,7 +275,7 @@
             "allOf": [
               {
                 "title": "Inherited one-relationship-end object", 
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" 
+                "$ref": "./EGA.common-definitions.json#/definitions/one-relationship-end" 
               }
             ]
           },
@@ -285,7 +286,7 @@
             "allOf": [
               {
                 "title": "Inherited one-relationship-end object", 
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end" 
+                "$ref": "./EGA.common-definitions.json#/definitions/one-relationship-end" 
               }
             ]
           },
@@ -313,157 +314,6 @@
         ]       
       },
 
-      "protocols_object": {
-        "type": "object",
-        "title": "EGA Protocols object",
-        "description": "A protocol is an information entity which is a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents.",
-        "required": ["protocol_step_index", "previous_protocol_step_index", "protocol_type_descriptor", "protocol_description"],
-        "additionalProperties": false,
-        "properties": {
-          "protocol_name": {
-            "type": "string",
-            "title": "Name of the protocol",
-            "meta:property_curie": "NCIT:C42614",
-            "description": "Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.",
-            "minLength": 1,
-            "examples": [ "myProtocol-13", "Treatment for leukemia patients C30", "Sample collection from infected patients" ]
-          },
-
-          "protocol_step_index": {
-            "type": "number",
-            "title": "Protocol step index",
-            "description": "Lexically ordered value (greater than 0) that allows for the protocol section to be sequentially ordered. The float primitive data type is used to allow for pipe sections to be inserted later on. In other words, adding a new intermediate step 1.1 between steps 1 and 2 afterwards. For example, in an experiment where we treated samples before its DNA extraction, the sample treatment protocol would have a lower 'protocol_step_index' than the DNA extraction.",
-            "min": 0,
-            "examples": [ 0.5, 1, 2.5, 2, 30 ]
-          },
-
-          "previous_protocol_step_index": {
-            "type": "number",
-            "title": "Previous protocol step index",
-            "description": "The 'protocol_step_index' of the previous protocol, if hierarchically ordered. Set to '0' if this protocol is the first step. In case several protocols are not sequential, both can share the same 'previous_protocol_step_index'.",
-            "minInclusive": 0,
-            "examples": [ 0, 0.5, 1, 2.5, 2, 30 ]
-          },
-
-          "protocol_type_descriptor": {
-            "type": "object",
-            "title": "Protocol type descriptor",
-            "description": "Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type, and hence we highly recommend their usage.",
-            "required": ["protocol_type", "protocol_subtype_curie"],
-            "additionalProperties": false,
-            "properties": {
-              "protocol_type": {
-                "type": "string",
-                "title": "Type of protocol",
-                "meta:property_curie": "OBI:0000272",
-                "description": "Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-                "enum": ["high Content Screen (HCS)", "conversion", "delivery method", "dissection", "dissociation", "enrichment", "extraction", "gene expression", "growth", "hybridization", "hydrolysis collection", "labelling", "nucleic acid library construction", "nucleic acid sequencing", "sample collection", "single cell isolation", "treatment", "data transformation"],
-                "meta:enum": {
-                  "High Content Screen (HCS)": "[EFO:0007570]",
-                  "Conversion": "[EFO:0005520]",
-                  "Delivery method": "[EFO:0000395]",
-                  "Dissection": "[EFO:0005519]",
-                  "Dissociation": "[EFO:0009088]",
-                  "Enrichment": "[EFO:0009089]",
-                  "Extraction": "[EFO:0002944]",
-                  "Gene expression": "[EFO:0003788]",
-                  "Growth": "[EFO:0003789]",
-                  "Hybridization": "[EFO:0003815]",
-                  "Hydrolysis collection": "[EFO:0010892]",
-                  "Labelling": "[EFO:0003813]",
-                  "Nucleic acid library construction": "[EFO:0004184]",
-                  "Nucleic acid sequencing": "[EFO:0004170]",
-                  "Sample collection": "[EFO:0005518]",
-                  "Single cell isolation": "[EFO:0010214]",
-                  "Treatment": "[EFO:0003969]",
-                  "Data transformation": "[OBI:0200000]" 
-                }
-              },
-
-              "protocol_subtype": {
-                "type": "string",
-                "title": "Subtype of the protocol",
-                "description": "Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo). For example, if the protocol corresponds to a data transformation of a genome, you may find your subtype at [genome analysis](http://edamontology.org/operation_3918); while treating a patient with a drug would correspond to a [clinical treatment](http://www.ebi.ac.uk/efo/EFO_0007056).",
-                "examples": [ "clinical treatment", "array scanning and feature extraction", "Genome alignment", "Genome annotation", "Genome assembly", "Genome comparison", "Genome feature comparison", "Genome indexing", "Genome visualisation", "Whole genome methylation analysis" ]    
-              },
-
-              "protocol_subtype_curie": {
-                "type": "string",
-                "title": "Compact URI (CURIE) of the protocol subtype",
-                "description": "Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocol_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').",
-                "allOf": [
-                  {
-                    "title": "General CURIE pattern",
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
-                  }
-                ],
-                "examples": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788", "EFO:0000395", "EFO:0010892", "EFO:0010214"]
-              }
-            }
-          },
-
-          "protocol_performers": {
-            "type": "array",
-            "title": "Protocol performers array",
-            "description": "Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.",
-            "additionalProperties": false,
-            "uniqueItems": true,
-            "minItems": 1,
-            "items": {
-              "type": "string",
-              "title": "Performer of the protocol",
-              "description": "Free form text to specify the institution, group, or individuals that performed the protocol.",
-              "minLength": 1,
-              "examples": ["EGA's Operational bioinformatics group", "Lab technician"]             
-            }
-          },
-
-          "protocol_instrument": {
-            "type": "array",
-            "title": "Protocol instrument array",
-            "meta:property_curie": "EFO:0000548",
-            "description": "Array of instruments used in the protocol.",
-            "additionalProperties": false,
-            "uniqueItems": true,
-            "minItems": 1,
-            "items": {
-              "type": "string",
-              "title": "Instrument used in the protocol",
-              "meta:property_curie": "EFO:0000548",
-              "description": "Free form text to specify the device, which provides a mechanical or electronic function, and was used by the performer of the protocol. We highly recommend the usage of ontologized terms (e.g. 'Oligonucleotide synthesizer') from the [Experimental Factor Ontology (EFO)](http://www.ebi.ac.uk/efo/EFO_0000548) along their CURIEs between square brackets (e.g. '[OBI:0400113]').",
-              "minLength": 1,
-              "examples": ["Computer [OBI:0400107]", "Oligonucleotide synthesizer [OBI:0400113]", "Sonicator [OBI:0400114]"]             
-            }
-          },
-
-          "protocol_software": {
-            "type": "array",
-            "title": "Protocol software array",
-            "meta:property_curie": "IAO:0000010",
-            "description": "Array of software descriptions used in the protocol.",
-            "additionalProperties": false,
-            "uniqueItems": true,
-            "minItems": 1,
-            "items": {
-              "type": "string",
-              "title": "Software descriptions used in the protocol",
-              "meta:property_curie": "IAO:0000010",
-              "description": "Free form text to specify the programs and other operating information (including bespoken scripts) used by a computer that were used by the performer of the protocol. Include the version of the program, if applicable. We highly recommend the usage of ontologized terms (e.g. 'SAMtools') from the [Software Ontology (SWO)](https://www.ebi.ac.uk/ols/ontologies/swo) along their versions (e.g. 'v3.0.1') and CURIEs between square brackets (e.g. '[SWO:1100143]').",
-              "minLength": 1,
-              "examples": ["SAMtools v3.0.1 [SWO:1100143]", "MATLAB [SWO:0000005]"]         
-            }
-          },
-          
-          "protocol_description": {
-            "type": "string",
-            "title": "Description of the protocol",
-            "meta:property_curie": "NCIT:C25365",
-            "description": "Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.",
-            "examples": [ "First tilt the cell culture flask... ...and finally let it still for 2 hours.", "Patients were given a ketogenic diet for 3 weeks at intervals consisting in..." ]
-          }
-        }
-      },
-
       "array_label": {
         "type": "object",
         "title": "Repeatable array_label node",
@@ -476,27 +326,28 @@
             "title": "Array label of the array experiment - ID",
             "description": "ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
             "examples": [ "Cy3 dye" ]
-          },
-          "array_label_curie": {
-            "type": "string",
-            "title": "Array label of the array experiment - CURIE",
-            "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
-            "allOf": [
-              {
-                "title": "General pattern of a CURIE",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
-              }
-            ],
-            "examples": [ "CHEBI:37987" ]
-          },
-          "label_description": {
-            "type": "string",
-            "title": "Array label of the array experiment - Description",
-            "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
-            "examples": [ 
-              "This label was use to dye the control samples",
-              "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
-              "The label ID is unknown because we were given the RNA already dyed..." ]
+            },
+            "array_label_curie": {
+              "type": "string",
+              "title": "Array label of the array experiment - CURIE",
+              "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
+              "allOf": [
+                {
+                  "title": "General pattern of a CURIE",
+                  "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+                }
+              ],
+              "examples": [ "CHEBI:37987" ]
+            },
+            "label_description": {
+              "type": "string",
+              "title": "Array label of the array experiment - Description",
+              "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
+              "examples": [ 
+                "This label was use to dye the control samples",
+                "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
+                "The label ID is unknown because we were given the RNA already dyed..." ]
+            }
           }
         }
       },
@@ -666,6 +517,20 @@
                 "enum": ["individual"]
               }
             }
+          },
+          {
+            "title": "Protocol: object_id and object_type check",
+            "description": "A check that ensures that, if 'protocol' is given as the object_type and an EGA accession for it is given, it matches the corresponding EGA ID pattern.",
+            "properties": {
+              "object_id": { 
+                "properties": {
+                  "ega_accession": { "$ref": "#/definitions/EGA-protocol-id-pattern" }
+                }
+              },
+              "object_type": {
+                "enum": ["protocol"]
+              }
+            }
           }
         ]                      
       },
@@ -786,6 +651,13 @@
         "examples": [ "EGAI00001159712" ]
       },
 
+      "EGA-protocol-id-pattern": {
+        "type": "string",
+        "title": "Pattern of an EGA protocol's ID (EGAO...)",
+        "pattern": "^EGAO[0-9]{11}$",
+        "examples": [ "EGAO00001159483" ]
+      },
+      
       "EGA-ISO8601-date-pattern": {
         "type": "string",
         "title": "Pattern of EGA ISO 8601 date",
@@ -1265,7 +1137,7 @@
             "allOf": [
               {
                 "title": "General pattern of a CURIE",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ],
             "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381", "pubmed:30962759"]
@@ -1310,7 +1182,7 @@
         "properties": {
           "label": { 
             "title": "Labelling dye used with the sample",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label" 
+            "$ref": "./EGA.common-definitions.json#/definitions/array_label" 
           },
           "object_id": {
             "type": "object",
@@ -1318,13 +1190,13 @@
             "allOf": [
               {
                 "title": "Inherited object_core_id object",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id"
+                "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
               },
               {
                 "title": "Check that sample EGA ID (EGAN) pattern is correct",
                 "properties": {
                   "ega_accession": {
-                    "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
+                    "$ref": "./EGA.common-definitions.json#/definitions/EGA-sample-id-pattern"
                   }
                 }
               }
@@ -1347,7 +1219,7 @@
             "allOf": [
               { 
                 "title": "Inherited object_core_id object", 
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_core_id" 
+                "$ref": "./EGA.common-definitions.json#/definitions/object_core_id" 
               }
             ]
           },
@@ -1355,7 +1227,7 @@
             "type": "string",
             "title": "Type of the relationship's object",
             "description": "Type of the relationship's object, chosen from a list of CV (e.g. experiment, dataset, external_URL...). Both the source or target types can be: (1) the object tag of one of EGA's object (e.g. file, sample...); (2) an 'external_accession'; (3) or an 'external_URL'. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema) proposing its addition.",
-            "enum": ["experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "external_accession", "external_URL"],
+            "enum": ["experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "protocol", "external_accession", "external_URL"],
             "meta:enum": {
               "experiment": "Contains information about the experimental design of the sequencing",
               "study": "Information about the study",
@@ -1367,6 +1239,7 @@
               "analysis": "Contains the analysis metadata and data files",
               "policy": "Contains information related to the Data Access Agreement (DAA) the dataset is subject to",
               "DAC": "Contains information about the Data Access Committee (DAC)",
+              "protocol": "Contains information about a planned process.",
               "external_accession": "An external accession among the ones Entrez (NCBI's text search) contemplates (search for the terms here: https://www.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?)",
               "external_URL": "An external URL resource, of any type"
             },
@@ -1376,7 +1249,7 @@
         "allOf": [
           { 
             "title": "Check for object_id and object_type to match",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check" 
+            "$ref": "./EGA.common-definitions.json#/definitions/object-id-and-object-type-check" 
           }
         ]        
       },
@@ -1427,7 +1300,7 @@
             "allOf": [
               {
                 "title": "General pattern of a CURIE",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ]
           },
@@ -1500,7 +1373,7 @@
             "type": "string",
             "title": "Type of the object",
             "description": "Type of the object (e.g. 'sample') the JSON document describes.",
-            "enum": [ "experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "object-set" ]
+            "enum": [ "experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "protocol", "object-set" ]
           },
           "described_by_schema_uri": {
             "type": "string",
@@ -1516,7 +1389,7 @@
             "allOf": [
               {
                 "title": "Check semantic versioning pattern",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/semantic-versioning-pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/semantic-versioning-pattern"
               }
             ]
           },
@@ -1527,7 +1400,7 @@
             "allOf": [
               {
                 "title": "Check semantic versioning pattern",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/semantic-versioning-pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/semantic-versioning-pattern"
               }
             ]
           }
@@ -1657,7 +1530,7 @@
           "organism_descriptor": {
             "title": "Organism descriptor",
             "description": "Node to identify the specific organism the locus belongs to.",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor"
+            "$ref": "./EGA.common-definitions.json#/definitions/organism_descriptor"
           },
           "loci_descriptor": {
             "type": "array",
@@ -1674,17 +1547,17 @@
                 "gene_descriptor": {
                   "title": "Gene descriptor",
                   "description": "Node to identify the gene of the locus of interest.",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor"
+                  "$ref": "./EGA.common-definitions.json#/definitions/gene_descriptor"
                 },
                 "genomic_sequence_descriptor": {
                   "title": "Genomic sequence descriptor",
                   "description": "Node to describe the sequence per se, instead of referencing it.",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor"
+                  "$ref": "./EGA.common-definitions.json#/definitions/genomic_sequence_descriptor"
                 },
                 "locus_external_reference": {
                   "title": "External reference of the locus",
-                  "description": "If the locus can not be identified by a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. In other words, one can reference here ways to access the locus information that is accessible else where. For example miRNA 'MI0039740' (mirbase:MI0039740) that lacks a gene descriptor.",
-                  "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession"
+                  "description": "If the locus can not be identified by a gene (if so, use 'gene_descriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. In other words, one can reference here ways to access the locus information that is accessible elsewhere. For example miRNA 'MI0039740' (mirbase:MI0039740) that lacks a gene descriptor.",
+                  "$ref": "./EGA.common-definitions.json#/definitions/object_external_accession",
                 },
                 "locus_additional_description": {
                   "type": "string",
@@ -1736,17 +1609,17 @@
             "allOf": [
               {
                 "title": "General pattern of a CURIE",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ],
             "oneOf": [
               {
                 "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_ncbi_gene_identifier_pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_ncbi_gene_identifier_pattern"
               },
               {
-                "title": "HUGO Gene pattern (e.g. 'HGNC:1097')",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_hgnc_identifier_pattern"
+                "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_hgnc_identifier_pattern"
               }
             ],
             "examples": ["HGNC:11535", "hgnc:11998", "HGNC:1097", "ncbigene:100010", "ncbigene:6872"]
@@ -1838,7 +1711,7 @@
             "allOf": [
               {
                 "title": "Assembly's CURIE pattern",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_ncbi_assembly_pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_ncbi_assembly_pattern"
               }
             ],
             "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
@@ -1858,7 +1731,7 @@
             "allOf": [
               {
                 "title": "RefSeq accession CURIE",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern"
+                "$ref": "./EGA.common-definitions.json#/definitions/curie_refseq_pattern"
               }
             ],
             "examples": ["refseq:NC_000001.11", "refseq:NC_012920.1"]
@@ -1888,20 +1761,20 @@
             "title": "Assembly descriptor",
             "meta:property_curie": "topic:0196",
             "description": "Node to identify the assembly of the locus of interest.",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
+            "$ref": "./EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
           },
           "sequence_coordinates": {
             "title": "DNA Sequence coordinates",
             "description": "Node to define que specific sequence coordinates of the genomic feature within the assembly.",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates"
+            "$ref": "./EGA.common-definitions.json#/definitions/sequence_coordinates"
           },
           "dna_sequence_strand": {
             "title": "DNA Sequence strand",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/dna_sequence_strand"
+            "$ref": "./EGA.common-definitions.json#/definitions/dna_sequence_strand"
           },
           "nucleic_acid_sequence": {
             "title": "Nucleic acid sequence of the locus",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/nucleic_acid_sequence"
+            "$ref": "./EGA.common-definitions.json#/definitions/nucleic_acid_sequence"
           }
         },
         "anyOf": [
@@ -1925,7 +1798,7 @@
         "properties": {
           "single_position": {
             "title": "Single position",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position"
+            "$ref": "./EGA.common-definitions.json#/definitions/single_sequence_position"
           },
           "sequence_interval": {
             "type": "object",
@@ -1937,11 +1810,11 @@
             "properties": {
               "start": {
                 "title": "Start position",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position"
+                "$ref": "./EGA.common-definitions.json#/definitions/single_sequence_position"
               },
               "end": {
                 "title": "End position",
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position"
+                "$ref": "./EGA.common-definitions.json#/definitions/single_sequence_position"
               }
             }
           }
@@ -2002,7 +1875,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
           }
         ],        
         "oneOf": [
@@ -2093,7 +1966,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
           }
         ],
         "examples": ["hgnc.symbol:DAPK1", "hgnc.symbol:TAF1"]
@@ -2107,7 +1980,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
           }
         ],
         "examples": ["hgnc:2674", "HGNC:11535"]
@@ -2121,7 +1994,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
           }
         ],
         "examples": ["ncbigene:100010", "ncbigene:270627"]
@@ -2135,7 +2008,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/curie_general_pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
           }
         ],
         "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
@@ -2176,7 +2049,7 @@
                 "enum": [ "array" ]
               },
               "assay_instrument_platform": {
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json"
+                "$ref": "./controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json"
               }
             }              
           },
@@ -2187,7 +2060,7 @@
                 "enum": [ "sequencer" ]
               },
               "assay_instrument_platform": {
-                "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json"
+                "$ref": "./controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json"
               }
             }              
           }
@@ -2402,7 +2275,7 @@
         "minItems": 1,
         "items": {
           "title": "One item containing metadata of the assembly or assembly unit.",
-          "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
+          "$ref": "./EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor"
         }
       },
 
@@ -2431,6 +2304,7 @@
         "type": "object",
         "title": "Relationship type: referenced_by",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "referenced_by"
@@ -2442,6 +2316,7 @@
         "type": "object",
         "title": "Relationship type: grouped_with",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "grouped_with"
@@ -2453,6 +2328,7 @@
         "type": "object",
         "title": "Relationship type: member_of",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "member_of"
@@ -2464,6 +2340,7 @@
         "type": "object",
         "title": "Relationship type: is_after",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "is_after"
@@ -2475,6 +2352,7 @@
         "type": "object",
         "title": "Relationship type: child_of",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "child_of"
@@ -2486,6 +2364,7 @@
         "type": "object",
         "title": "Relationship type: develops_from",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "develops_from"
@@ -2497,6 +2376,7 @@
         "type": "object",
         "title": "Relationship type: family_relationship_with",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "family_relationship_with"
@@ -2508,6 +2388,7 @@
         "type": "object",
         "title": "Relationship type: same_as",
         "description": "Node to be used as a relationship type for relationship contraints.",
+        "required": [ "r_type" ],
         "properties": {
           "r_type": {
             "const": "same_as"
@@ -2519,6 +2400,7 @@
         "type": "object",
         "title": "Relationship target: Policy",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2534,6 +2416,7 @@
         "type": "object",
         "title": "Relationship source: Policy",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2549,6 +2432,7 @@
         "type": "object",
         "title": "Relationship target: DAC",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2564,6 +2448,7 @@
         "type": "object",
         "title": "Relationship source: DAC",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2579,6 +2464,7 @@
         "type": "object",
         "title": "Relationship target: dataset",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2594,6 +2480,7 @@
         "type": "object",
         "title": "Relationship source: dataset",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2609,6 +2496,7 @@
         "type": "object",
         "title": "Relationship target: analysis",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2624,6 +2512,7 @@
         "type": "object",
         "title": "Relationship source: analysis",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2639,6 +2528,7 @@
         "type": "object",
         "title": "Relationship target: sample",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2654,6 +2544,7 @@
         "type": "object",
         "title": "Relationship source: sample",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2669,6 +2560,7 @@
         "type": "object",
         "title": "Relationship target: experiment",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2684,6 +2576,7 @@
         "type": "object",
         "title": "Relationship source: experiment",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2699,6 +2592,7 @@
         "type": "object",
         "title": "Relationship source: individual",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2714,6 +2608,7 @@
         "type": "object",
         "title": "Relationship target: individual",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2725,10 +2620,43 @@
         }
       },
 
+      "r-source-protocol": {
+        "type": "object",
+        "title": "Relationship source: protocol",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
+        "properties": {
+          "r_source": {
+            "properties": {
+              "object_type": {
+                "const": "protocol" 
+              }
+            }
+          } 
+        }
+      },
+
+      "r-target-protocol": {
+        "type": "object",
+        "title": "Relationship target: protocol",
+        "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
+        "properties": {
+          "r_target": {
+            "properties": {
+              "object_type": {
+                "const": "protocol" 
+              }
+            }
+          } 
+        }
+      },
+
       "r-source-submission": {
         "type": "object",
         "title": "Relationship source: submission",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2744,6 +2672,7 @@
         "type": "object",
         "title": "Relationship target: submission",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2759,6 +2688,7 @@
         "type": "object",
         "title": "Relationship source: external_accession",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2774,6 +2704,7 @@
         "type": "object",
         "title": "Relationship target: external_accession",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2789,6 +2720,7 @@
         "type": "object",
         "title": "Relationship source: external_URL",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2804,6 +2736,7 @@
         "type": "object",
         "title": "Relationship target: external_URL",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2819,6 +2752,7 @@
         "type": "object",
         "title": "Relationship source: study",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2834,6 +2768,7 @@
         "type": "object",
         "title": "Relationship target: study",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2849,6 +2784,7 @@
         "type": "object",
         "title": "Relationship target: assay",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_target" ],
         "properties": {
           "r_target": {
             "properties": {
@@ -2864,6 +2800,7 @@
         "type": "object",
         "title": "Relationship source: assay",
         "description": "Node to be used as an object type for relationship contraints.",
+        "required": [ "r_source" ],
         "properties": {
           "r_source": {
             "properties": {
@@ -2880,10 +2817,10 @@
         "description": "This node defines a relationship item containing a 'submission' as a source and of type 'referenced_by'. This node can be used with the keyword 'contains' at each relationship array of all objects (but submission), in order to assert that all objects have a submission object (EGAB...) linked to them.",
         "allOf": [
           {
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-type-referenced_by"
+            "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
           },
           {
-            "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-submission"
+            "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
           }
         ]
       },

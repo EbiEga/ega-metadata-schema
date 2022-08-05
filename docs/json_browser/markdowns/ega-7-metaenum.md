@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Controlled Vocabulary (CV) for sequencing instrument platforms Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json#/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json#/meta:enum
 ```
 
 

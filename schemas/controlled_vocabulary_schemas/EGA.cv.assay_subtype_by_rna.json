@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "type": "string",
-    "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json",
     "title": "EGA Controlled Vocabulary (CV) for assay subtypes by RNA [EFO:0001457]",
     "meta:version": "0.0.0",
     "description": "Controlled Vocabulary (CV) list for assay subtypes by the assayed molecule being RNA: any ontologized term for a subtype (i.e. child ontology) of a RNA assay [EFO:0001457]. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",

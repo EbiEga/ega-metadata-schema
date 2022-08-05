@@ -1,7 +1,7 @@
 # Title of the DAC Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_title
 ```
 
 Short free-form text that can be used to call out DAC records in searches or displays.

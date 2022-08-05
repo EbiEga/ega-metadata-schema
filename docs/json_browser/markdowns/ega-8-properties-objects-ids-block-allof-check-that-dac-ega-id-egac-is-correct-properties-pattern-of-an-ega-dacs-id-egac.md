@@ -1,7 +1,7 @@
 # Pattern of an EGA DAC's ID (EGAC...) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession
 ```
 
 

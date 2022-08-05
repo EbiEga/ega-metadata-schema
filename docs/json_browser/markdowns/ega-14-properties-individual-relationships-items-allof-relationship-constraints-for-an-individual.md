@@ -1,7 +1,7 @@
 # Relationship constraints for an individual Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json#/properties/individual_relationships/items/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_relationships/items/allOf/1
 ```
 
 Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a individual.
@@ -25,6 +25,8 @@ any of
         *   [Relationship target: sample](ega-12-definitions-relationship-target-sample.md "check type definition")
 
         *   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")
+
+        *   [Relationship source: protocol](ega-12-definitions-relationship-source-protocol.md "check type definition")
 
 *   all of
 

@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Experiment metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/0/properties/assay_technology/properties/assay_instrument
 ```
 
 

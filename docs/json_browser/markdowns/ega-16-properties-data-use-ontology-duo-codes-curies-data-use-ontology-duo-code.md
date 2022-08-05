@@ -1,7 +1,7 @@
 # Data Use Ontology (DUO) code Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/duo_codes_curies/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duo_codes_curies/items
 ```
 
 Single Data Use Ontology (DUO) code in Shorter Compact URI (CURIE) format.

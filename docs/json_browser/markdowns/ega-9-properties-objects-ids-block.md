@@ -1,7 +1,7 @@
 # Object's IDs block Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#/properties/object_id
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_id
 ```
 
 Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions.

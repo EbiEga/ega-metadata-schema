@@ -1,7 +1,7 @@
 # Read label Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor/items/properties/read_specs/items/properties/read_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor/items/properties/read_specs/items/properties/read_label
 ```
 
 READ\_LABEL is a name for this tag, and can be used to on output to determine read name, for example F or R.

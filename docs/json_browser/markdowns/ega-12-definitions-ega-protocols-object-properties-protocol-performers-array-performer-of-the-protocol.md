@@ -1,7 +1,7 @@
 # Performer of the protocol Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/protocols_object/properties/protocol_performers/items
 ```
 
 Free form text to specify the institution, group, or individuals that performed the protocol.

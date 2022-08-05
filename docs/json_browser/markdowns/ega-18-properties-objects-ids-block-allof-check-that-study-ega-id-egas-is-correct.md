@@ -1,7 +1,7 @@
 # Check that study EGA ID (EGAS) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that study EGA ID (EGAS) is correct](ega-18-properties-objects-i
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                  |
-| :------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-pattern-of-an-ega-studys-id-egas.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
+| :------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that study EGA ID (EGAS) is correct](ega-18-properties-objects-i
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-12-definitions-pattern-of-an-ega-studys-id-egas.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA study metadata schema](ega-12-definitions-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

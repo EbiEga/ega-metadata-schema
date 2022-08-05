@@ -1,7 +1,7 @@
 # Array label of the array experiment - ID Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/array_label/properties/array_label_id
 ```
 
 ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.

@@ -1,7 +1,7 @@
 # Label of the sample grouping Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label
 ```
 
 Optional label of the sample grouping, used to add context to the group.

@@ -22,7 +22,7 @@ body:
     id: schema-version
     attributes:
       label: Versions
-      description: If the bug is related to the JSON schemas or any tool (e.g. AJV) was used to reproduce the error, plase provide the versions of each here.
+      description: If the bug is related to the JSON schemas or any tool (e.g. AJV) was used to reproduce the error, please provide the versions of each here.
       placeholder:  |
           * Analysis schema v1.2.2
           * Common definitions schema v2.0.0
@@ -44,7 +44,7 @@ body:
     id: observed-behaviour
     attributes:
       label: Observed behaviour
-      description: Please explain what you observed as a bug.
+      description: Please explain the behaviour you observed and considered a bug.
       placeholder: e.g. The description says "Comprises __metadta__..."
     validations:
       required: true

@@ -1,7 +1,7 @@
 # EGA Controlled Vocabulary (CV) for sequencing instrument platforms Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json
 ```
 
 Controlled Vocabulary (CV) list for the sequencing instrument platforms. Commonly consisting in the manufacturers name (e.g. Illumina) and the instrument model (e.g. HiSeq 2000). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.

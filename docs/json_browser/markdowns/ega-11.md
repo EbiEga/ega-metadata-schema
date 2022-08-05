@@ -1,7 +1,7 @@
 # EGA assay metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json
 ```
 
 Metadata schema used by the European Genome-phenome Archive (EGA) to validate its assay metadata object. This object is intended to contain metadata about the raw qualitative or quantitative test performed to determine any kind of biological property of a biological sample. It can be of different types: (1) sequencing assay \[EFO:0003740] (e.g. sequence CRAM or FastQ files); and an (2) array assay \[EFO:0002696] (e.g. intensity CEL files). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
@@ -24,18 +24,18 @@ all of
 
 # EGA assay metadata schema Properties
 
-| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                         |
-| :-------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_id")                         |
-| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA assay metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/schema_descriptor")                |
-| [object\_title](#object_title)                            | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-title-of-the-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_title")                     |
-| [object\_description](#object_description)                | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-description-of-the-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_description")         |
-| [assay\_center](#assay_center)                            | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-centername-that-performed-the-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_center")    |
-| [assay\_date](#assay_date)                                | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_date")    |
-| [assay\_type\_specifications](#assay_type_specifications) | Merged   | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications") |
-| [assay\_relationships](#assay_relationships)              | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_relationships")             |
-| [assay\_files](#assay_files)                              | `array`  | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-data-files-produced-from-an-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_files")       |
-| [assay\_attributes](#assay_attributes)                    | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_attributes")            |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                   |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [object\_id](#object_id)                                  | Merged   | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_id")                         |
+| [schema\_descriptor](#schema_descriptor)                  | `object` | Optional | cannot be null | [EGA assay metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/schema_descriptor")                |
+| [object\_title](#object_title)                            | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-title-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_title")                     |
+| [object\_description](#object_description)                | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-description-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_description")         |
+| [assay\_center](#assay_center)                            | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-centername-that-performed-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_center")    |
+| [assay\_date](#assay_date)                                | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_date")    |
+| [assay\_type\_specifications](#assay_type_specifications) | Merged   | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications") |
+| [assay\_relationships](#assay_relationships)              | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_relationships")             |
+| [assay\_files](#assay_files)                              | `array`  | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-data-files-produced-from-an-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_files")       |
+| [assay\_attributes](#assay_attributes)                    | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_attributes")            |
 
 ## object\_id
 
@@ -49,7 +49,7 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-objects-ids-block.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_id")
+*   defined in: [EGA assay metadata schema](ega-11-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_id")
 
 ### object\_id Type
 
@@ -79,7 +79,7 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-12-definitions-schema-descriptor.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/schema_descriptor")
+*   defined in: [EGA assay metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/schema_descriptor")
 
 ### schema\_descriptor Type
 
@@ -97,7 +97,7 @@ An informative assay title that should serve as an overview of the assay and dif
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-title-of-the-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_title")
+*   defined in: [EGA assay metadata schema](ega-11-properties-title-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_title")
 
 ### object\_title Type
 
@@ -125,7 +125,7 @@ An in-depth description (e.g. used technology, sample groups, purpose...) of the
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-description-of-the-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/object_description")
+*   defined in: [EGA assay metadata schema](ega-11-properties-description-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/object_description")
 
 ### object\_description Type
 
@@ -153,7 +153,7 @@ The name of the center (e.g. 'EBI-TEST') responsible for performing assay, if ap
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-centername-that-performed-the-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_center")
+*   defined in: [EGA assay metadata schema](ega-11-properties-centername-that-performed-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_center")
 
 ### assay\_center Type
 
@@ -181,7 +181,7 @@ ISO date (format YYYY-MM-DD - e.g. '2021-05-15') when the sequencing assay took 
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_date")
+*   defined in: [EGA assay metadata schema](ega-11-properties-pattern-of-an-ega-iso-date-yyyy-mm-dd.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_date")
 
 ### assay\_date Type
 
@@ -215,7 +215,7 @@ Node containing different sets of fields that depend on the specific assay type.
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_type_specifications")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications")
 
 ### assay\_type\_specifications Type
 
@@ -237,7 +237,7 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-relationships.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_relationships")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_relationships")
 
 ### assay\_relationships Type
 
@@ -261,7 +261,7 @@ This property contains the specific files (e.g. raw CRAM files) derived from per
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-data-files-produced-from-an-assay.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_files")
+*   defined in: [EGA assay metadata schema](ega-11-properties-data-files-produced-from-an-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_files")
 
 ### assay\_files Type
 
@@ -285,7 +285,7 @@ Custom attributes of an assay: reusable attributes to encode tag-value pairs (e.
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-custom-attributes.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_attributes")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_attributes")
 
 ### assay\_attributes Type
 

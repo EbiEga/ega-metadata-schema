@@ -1,7 +1,7 @@
 # Pattern of an EGA study's ID (EGAS...) Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/3/properties/object_id/properties/ega_accession
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/3/properties/object_id/properties/ega_accession
 ```
 
 

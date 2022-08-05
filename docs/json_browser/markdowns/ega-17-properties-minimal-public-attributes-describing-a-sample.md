@@ -1,7 +1,7 @@
 # Minimal public attributes describing a sample Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes
 ```
 
 Among all fields describing a sample, some may contain identifiable metadata and thus be private. Nevertheless, there are three basic attributes that every sample should contain (even if they are unknown): subject id (sample donor id), biological sex and phenotype. These shall be displayed and queryable.
@@ -16,11 +16,11 @@ Among all fields describing a sample, some may contain identifiable metadata and
 
 # minimal\_public\_attributes Properties
 
-| Property                                           | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                             |
-| :------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [subject\_id](#subject_id)                         | `string` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-subject-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/subject_id")                           |
-| [biological\_sex](#biological_sex)                 | `string` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/biological_sex") |
-| [experimental\_condition](#experimental_condition) | `object` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-experimental-condition.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/experimental_condition")   |
+| Property                                           | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [subject\_id](#subject_id)                         | `string` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/subject_id")                           |
+| [biological\_sex](#biological_sex)                 | `string` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/biological_sex") |
+| [experimental\_condition](#experimental_condition) | `object` | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-experimental-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/experimental_condition")   |
 
 ## subject\_id
 
@@ -34,7 +34,7 @@ A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-subject-id.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/subject_id")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/subject_id")
 
 ### subject\_id Type
 
@@ -74,7 +74,7 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/biological_sex")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/biological_sex")
 
 ### biological\_sex Type
 
@@ -109,7 +109,7 @@ A state of being, an external or environmental factor or a treatment observed or
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-experimental-condition.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/experimental_condition")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-experimental-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/minimal_public_attributes/properties/experimental_condition")
 
 ### experimental\_condition Type
 

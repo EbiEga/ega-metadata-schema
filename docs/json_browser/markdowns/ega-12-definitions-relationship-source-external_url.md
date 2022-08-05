@@ -1,7 +1,7 @@
 # Relationship source: external\_URL Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/1/anyOf/1/allOf/1/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships/items/allOf/1/anyOf/1/allOf/1/anyOf/1
 ```
 
 Node to be used as an object type for relationship contraints.
@@ -16,9 +16,9 @@ Node to be used as an object type for relationship contraints.
 
 # 1 Properties
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                         |
-| :--------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r\_source](#r_source) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-source-external_url-properties-r_source.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL/properties/r_source") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                   |
+| :--------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [r\_source](#r_source) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-source-external_url-properties-r_source.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL/properties/r_source") |
 
 ## r\_source
 
@@ -26,13 +26,13 @@ Node to be used as an object type for relationship contraints.
 
 `r_source`
 
-*   is optional
+*   is required
 
 *   Type: unknown
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-source-external_url-properties-r_source.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL/properties/r_source")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-source-external_url-properties-r_source.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-external_URL/properties/r_source")
 
 ### r\_source Type
 

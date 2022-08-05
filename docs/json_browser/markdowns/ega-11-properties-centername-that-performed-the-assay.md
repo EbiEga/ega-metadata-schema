@@ -1,7 +1,7 @@
 # Centername that performed the assay Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json#/properties/assay_center
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_center
 ```
 
 The name of the center (e.g. 'EBI-TEST') responsible for performing assay, if applicable, in case it's different from the center submitting metadata).

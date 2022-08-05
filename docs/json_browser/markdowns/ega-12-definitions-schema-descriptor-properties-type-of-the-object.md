@@ -1,7 +1,7 @@
 # Type of the object Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor/properties/object_type
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor/properties/object_type
 ```
 
 Type of the object (e.g. 'sample') the JSON document describes.
@@ -30,4 +30,5 @@ Type of the object (e.g. 'sample') the JSON document describes.
 | `"analysis"`   |             |
 | `"policy"`     |             |
 | `"DAC"`        |             |
+| `"protocol"`   |             |
 | `"object-set"` |             |

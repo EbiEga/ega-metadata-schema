@@ -1,7 +1,7 @@
 # EGA Controlled Vocabulary (CV) for assay subtypes by array \[EFO:0002696] Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json
 ```
 
 Controlled Vocabulary (CV) list for assay subtypes by array: any ontologized term for a subtype (i.e. child ontology) of an array assay \[EFO:0002696]. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.

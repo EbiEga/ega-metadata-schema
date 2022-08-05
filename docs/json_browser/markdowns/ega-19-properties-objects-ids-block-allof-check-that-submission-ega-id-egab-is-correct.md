@@ -1,7 +1,7 @@
 # Check that Submission EGA ID (EGAB) is correct Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_id/allOf/1
 ```
 
 
@@ -16,9 +16,9 @@ unknown ([Check that Submission EGA ID (EGAB) is correct](ega-19-properties-obje
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                 |
-| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-12-definitions-pattern-of-an-ega-submissions-id-egab.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
+| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-12-definitions-pattern-of-an-ega-submissions-id-egab.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_id/allOf/1/properties/ega_accession") |
 
 ## ega\_accession
 
@@ -32,7 +32,7 @@ unknown ([Check that Submission EGA ID (EGAB) is correct](ega-19-properties-obje
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-definitions-pattern-of-an-ega-submissions-id-egab.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA submission metadata schema](ega-12-definitions-pattern-of-an-ega-submissions-id-egab.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_id/allOf/1/properties/ega_accession")
 
 ### ega\_accession Type
 

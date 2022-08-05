@@ -1,7 +1,7 @@
 # Contact details Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_contact_details
 ```
 
 An object to contain the required metadata to identify and reach an individual or institution. Used, for instance, to list who needs to be informed (1) in case of a erroneous submission (2) or in case access to a dataset is requested by a user.
@@ -22,12 +22,12 @@ any of
 
 # collaborator\_contact\_details Properties
 
-| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
-| :---------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [individual\_full\_name](#individual_full_name) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/individual_full_name") |
-| [institution\_name](#institution_name)          | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-institution-name.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name")               |
-| [email\_address](#email_address)                | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-email-address.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/email_address")                     |
-| [phone\_number](#phone_number)                  | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-phone-number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/phone_number")                       |
+| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
+| :---------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [individual\_full\_name](#individual_full_name) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/individual_full_name") |
+| [institution\_name](#institution_name)          | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-institution-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name")               |
+| [email\_address](#email_address)                | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-email-address.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/email_address")                     |
+| [phone\_number](#phone_number)                  | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-contact-details-properties-phone-number.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/phone_number")                       |
 
 ## individual\_full\_name
 
@@ -41,7 +41,7 @@ A full set of all personal names by which an individual is known and that can be
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/individual_full_name")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/individual_full_name")
 
 ### individual\_full\_name Type
 
@@ -69,7 +69,7 @@ The full name of an institution the contact belongs to. In case there are severa
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-institution-name.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-institution-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name")
 
 ### institution\_name Type
 
@@ -97,7 +97,7 @@ Current email address that would be used in case the contact needs to be reached
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-email-address.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/email_address")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-email-address.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/email_address")
 
 ### email\_address Type
 
@@ -131,7 +131,7 @@ Current phone number that would be used in case the contact needs to be reached.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-phone-number.md "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/phone_number")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-contact-details-properties-phone-number.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/phone_number")
 
 ### phone\_number Type
 

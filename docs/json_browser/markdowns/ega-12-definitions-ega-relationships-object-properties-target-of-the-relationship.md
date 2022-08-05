@@ -1,7 +1,7 @@
 # Target of the relationship Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target
 ```
 
 Object reference of the relationship's target. In other words, the ending point of the relationship: in 'sample\_A develops\_from sample\_B' the target is 'sample\_B'.
@@ -43,3 +43,5 @@ all of
         *   [DAC: object_id and object_type check](ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-dac-object_id-and-object_type-check.md "check type definition")
 
         *   [Individual: object_id and object_type check](ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-individual-object_id-and-object_type-check.md "check type definition")
+
+        *   [Protocol: object_id and object_type check](ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-protocol-object_id-and-object_type-check.md "check type definition")

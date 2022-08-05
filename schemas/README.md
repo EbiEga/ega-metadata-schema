@@ -54,12 +54,15 @@ In case these schemas need to be modified, in this section you will find listed 
     { "$ref": "#/definitions/md5-checksum-pattern" }
     ````
 
-    2. **Different-file shared definitions**. The way these cross-file references are achieved is by using the IDs of the schemas (``$id`` within its first layer) and object's anchors (_e.g._ ``"EGA-sample-id-pattern``), which point to the objects within the files, turning them into references (``$ref`` wherever they are needed). See [Structuring a complex schema]
-    (https://json-schema.org/understanding-json-schema/structuring.html) for further details. As an **example**, take a look at how we defined ``object_coreIDs`` within ``definitions`` of the ``EGA.common-definitions.json`` and then referenced it within the ``experiment.json`` (notice how this time the JSON pointer contains the whole ``$id`` instead of being relative):
+    2. **Different-file shared definitions**. The way these cross-file references are achieved is by using the IDs of the schemas (``$id`` within its first layer) and object's anchors (_e.g._ ``"EGA-sample-id-pattern``), which point to the objects within the files, turning them into references (``$ref`` wherever they are needed). References are resolved against the absolute URL identifiers of the 
+    schemas. In other words, a relative reference ($ref; e.g. ``./EGA.common-definitions.json#...``) is put against the absolute identifier (``$id``; e.g. ``https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json``) of the referencing schema (in this example ``EGA.analysis.json``), transforming the relative reference into an absolute one (e.g. 
+    ``https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#...``). See 
+    [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html) for further details. As an **example**, take a look at how we defined ``object_coreIDs`` within ``definitions`` of the ``EGA.common-definitions.json`` and then referenced it within the ``experiment.json`` (notice how this time the JSON 
+    pointer contains the whole ``$id`` instead of being relative):
     ````
     # Simplified common schema
     {
-        "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json",
+        "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json",
         "definitions": {
             "object_coreIDs": {
                 ...
@@ -68,13 +71,13 @@ In case these schemas need to be modified, in this section you will find listed 
 
     # Simplified experiment schema with a reference to the object_coreIDs:
     {
-        "$id": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
+        "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json",
         "properties": {
             "object_ids": {
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/object_coreIDs"
+                        "$ref": "./EGA.common-definitions.json#/definitions/object_coreIDs"
                     }
                 ]
             }

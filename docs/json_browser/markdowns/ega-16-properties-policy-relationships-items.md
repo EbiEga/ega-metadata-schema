@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA policy metadata schema Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json#/properties/policy_relationships/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_relationships/items
 ```
 
 

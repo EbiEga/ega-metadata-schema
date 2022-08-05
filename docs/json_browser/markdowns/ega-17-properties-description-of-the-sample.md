@@ -1,7 +1,7 @@
 # Description of the sample Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_description
 ```
 
 An informative sample description that describes the sample and differentiates it from others.

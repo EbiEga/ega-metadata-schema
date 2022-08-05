@@ -1,7 +1,7 @@
 # Title of the study Schema
 
 ```txt
-https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title
 ```
 
 Short free-form text that can be used to call out study records in searches or displays.
