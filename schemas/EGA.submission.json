@@ -51,6 +51,50 @@
         "examples": [ "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs" ]
       },
 
+      "resources": {
+        "type": "array",
+        "title": "Resources (ontologies)",
+        "description": "An array containing metadata of all the ontologies used in the submission. Its only purpose is to enhance traceability of the used ontologies in the future. For example, if an individual's phenotype is diabetes mellitus (which corresponds to curie EFO:0000400), one of the used ontologies would be EFO. Now, if in the future the term EFO:0000400 is changed in a new release of EFO, it's imperative to keep track of what version of EFO the submitter was referring to when it was referenced. Since most submitters would normally use the latest version of the ontologies at the time of the submission, these resources are intended to be automatically populated at every submission (and thus are not required) to ease the process; nonetheless, if provided, they should not be overwritten by that process. Bear in mind that there is only one 'resources' array per submission, and the items need to be unique, which means that different versions of the same ontologies will not be allowed.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": {
+          "type": "object",
+          "title": "Resource",
+          "description": "Object defining one item of the array: an individual resource (i.e. ontology).",
+          "additionalProperties": false,
+          "required": [ "name", "namespace_prefix", "version" ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Resource name",
+              "description": "Formal (common) name of the resource.",
+              "minLength": 1,
+              "examples": [ "Human Phenotype Ontology", "Experimental Factor Ontology", "PubMed" ]
+            },
+            "namespace_prefix": {
+              "type": "string",
+              "title": "Resource namespace prefix",
+              "description": "Prefixes of namespaces are used to uniquely resolve the ambiguity between identically named elements or attributes. They can easily be checked at [**identifiers.org**](https://identifiers.org/) or [**OLS' list of ontologies**](https://www.ebi.ac.uk/ols/ontologies). For example, in our example of diabetes melitus, EFO:0000400, we need both parts of the CURIE: EFO (prefix) and 0000400 (local identifier). Without knowing the prefix, the local identifier alone is difficult to resolve.",
+              "minLength": 1,
+              "examples": [ "hp", "efo", "pubmed" ]
+            },
+            "version": {
+              "type": "string",
+              "title": "Resource version",
+              "description": "The version of the used resource. This is the main item of the object, since it's not included within the CURIEs and allows for traceability in the future. The version of an ontology varies in format and can be checked in multiple ways, the easiest being: (1) going straight to the source of the ontology, commonly a GitHub repository (e.g. [EFO's GH repo](https://github.com/EBISPOT/efo/releases)) and checking the latest release; (2) checking the latest version that the OLS service uses (e.g. 'version' field at [EFO's record](https://www.ebi.ac.uk/ols/ontologies/efo)).",
+              "minLength": 1,
+              "examples": [ "2022-06-11", "3.45.0" ]
+            },
+            "automatically_assigned": {
+              "type": "boolean",
+              "title": "Automatically assigned boolean",
+              "description": "Boolean switch to know if this specific resource was automatically assigned by EGA during the curation process ('true') or if it was manually given by the submitter ('false'). If this attribute is non-existent, it will also be considered to be 'false'."
+            }
+          }
+        }
+      },
+
       "additional_collaborators": {
         "type": "array",
         "title": "Submission collaborator details",
