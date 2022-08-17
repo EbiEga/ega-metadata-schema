@@ -13,5 +13,5 @@ Hence, take a look at the [markdown's summary](markdowns/README.md). There, you 
 (with their details, constraints, etc.)
 
 ## How they are created
-Markdown summaries constitute the JSON Browser, and are automatically generated though the usage of **GitHub actions** ([``markdown_generation``](../../.github/workflows/markdown_creation.yml)) and the [**jsonschema2md**](https://github.com/adobe/jsonschema2md) tool. Every pull request merged into the ``main`` branch of this repository will trigger the workflow to automatically generate updated
+Markdown summaries constitute the JSON Browser and are automatically generated through the usage of **GitHub actions** ([``markdown_generation``](../../.github/workflows/markdown_creation.yml)) and the [**jsonschema2md**](https://github.com/adobe/jsonschema2md) tool. Every pull request merged into the ``main`` branch of this repository will trigger the workflow to automatically generate updated
 documentation based on the JSON schemas. This workflow makes use of jsonschema2md, which parses the JSON schemas and creates markdown documentation based on them.
