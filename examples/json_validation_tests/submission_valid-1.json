@@ -22,6 +22,20 @@
             }
         }
     ],
+    "resources": [
+        {
+            "name": "Human Phenotype Ontology",
+            "namespace_prefix": "HP",
+            "version": "2022-06-11",
+            "automatically_assigned": false
+        },
+        {
+            "name": "Experimental Factor Ontology",
+            "namespace_prefix": "EFO",
+            "version": "3.45.0",
+            "automatically_assigned": false
+        }
+    ],
     "submission_relationships": [
         {
             "r_type": "is_after",
