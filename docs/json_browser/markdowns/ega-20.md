@@ -22,6 +22,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | [schema\_descriptor](#schema_descriptor)               | `object` | Optional | cannot be null | [EGA submission metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schema_descriptor")                      |
 | [object\_title](#object_title)                         | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_title")              |
 | [object\_description](#object_description)             | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_description") |
+| [resources](#resources)                                | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources")                            |
 | [additional\_collaborators](#additional_collaborators) | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators")  |
 | [submission\_relationships](#submission_relationships) | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships")         |
 | [submission\_attributes](#submission_attributes)       | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_attributes")        |
@@ -129,6 +130,30 @@ An in-depth description of the submission, including its overall purpose or natu
 ```json
 "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs"
 ```
+
+## resources
+
+An array containing metadata of all the ontologies used in the submission. Its only purpose is to enhance traceability of the used ontologies in the future. For example, if an individual's phenotype is diabetes mellitus (which corresponds to curie EFO:0000400), one of the used ontologies would be EFO. Now, if in the future the term EFO:0000400 is changed in a new release of EFO, it's imperative to keep track of what version of EFO the submitter was referring to when it was referenced. Since most submitters would normally use the latest version of the ontologies at the time of the submission, these resources are intended to be automatically populated at every submission (and thus are not required) to ease the process; nonetheless, if provided, they should not be overwritten by that process. Bear in mind that there is only one 'resources' array per submission, and the items need to be unique, which means that different versions of the same ontologies will not be allowed.
+
+`resources`
+
+*   is optional
+
+*   Type: `object[]` ([Resource](ega-20-properties-resources-ontologies-resource.md))
+
+*   cannot be null
+
+*   defined in: [EGA submission metadata schema](ega-20-properties-resources-ontologies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources")
+
+### resources Type
+
+`object[]` ([Resource](ega-20-properties-resources-ontologies-resource.md))
+
+### resources Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
 
 ## additional\_collaborators
 

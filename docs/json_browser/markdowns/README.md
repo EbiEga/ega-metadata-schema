@@ -322,6 +322,10 @@
 
 *   [Repeatable array\_label node](./ega-12-definitions-repeatable-array_label-node.md "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/array_label`
 
+*   [Resource](./ega-20-properties-resources-ontologies-resource.md "Object defining one item of the array: an individual resource (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items`
+
+*   [Resource](./ega-20-properties-resources-ontologies-resource.md "Object defining one item of the array: an individual resource (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items`
+
 *   [Sample collection descriptor](./ega-18-properties-sample-collection-descriptor.md "Node containing the provenance details (when and where) of the sample") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection`
 
 *   [Sample collection descriptor](./ega-18-properties-sample-collection-descriptor.md "Node containing the provenance details (when and where) of the sample") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection`
@@ -687,6 +691,10 @@
 *   [Related (not equivalent) gene IDs](./ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "Array of related identifiers") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_external_references`
 
 *   [Related (not equivalent) gene IDs](./ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "Array of related identifiers") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/gene_external_references`
+
+*   [Resources (ontologies)](./ega-20-properties-resources-ontologies.md "An array containing metadata of all the ontologies used in the submission") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources`
+
+*   [Resources (ontologies)](./ega-20-properties-resources-ontologies.md "An array containing metadata of all the ontologies used in the submission") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources`
 
 *   [Sample custom attributes](./ega-18-properties-sample-custom-attributes.md "Custom attributes of a sample: reusable attributes to encode tag-value pairs (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_attributes`
 
