@@ -255,7 +255,7 @@
             "cell_type_id": {
               "type": "string",
               "title": "Compact URI (CURIE) of the cell type",
-              "graph_restriction":  {
+              "graphRestriction":  {
                 "ontologies" : ["obo:efo"],
                 "classes": ["EFO:0000324"],
                 "relations": ["rdfs:subClassOf"],

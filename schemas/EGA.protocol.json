@@ -100,7 +100,7 @@
                 "title": "Ontology validation of it being part of EFO's protocol [OBI:0000272] or planned process [EFO:0004542], or EDAM's Analysis [operation:2945]",
                 "anyOf": [
                   {
-                    "graph_restriction":  {
+                    "graphRestriction":  {
                       "ontologies" : ["obo:efo"],
                       "classes": ["OBI:0000272"],
                       "relations": ["rdfs:subClassOf"],
@@ -109,7 +109,7 @@
                     }
                   },
                   {
-                    "graph_restriction":  {
+                    "graphRestriction":  {
                       "ontologies" : ["obo:efo"],
                       "classes": ["EFO:0004542"],
                       "relations": ["rdfs:subClassOf"],
@@ -118,7 +118,7 @@
                     }
                   },
                   {
-                    "graph_restriction":  {
+                    "graphRestriction":  {
                       "ontologies" : ["obo:edam"],
                       "classes": ["operation:2945"],
                       "relations": ["rdfs:subClassOf"],
