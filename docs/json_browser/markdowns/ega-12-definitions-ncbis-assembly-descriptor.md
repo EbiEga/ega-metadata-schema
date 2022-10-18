@@ -1,7 +1,7 @@
 # NCBI's Assembly descriptor Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/assembly_descriptor
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details/items
 ```
 
 Node describing a sequence assembly referenced in [NCBI's Assembly database](https://www.ncbi.nlm.nih.gov/assembly). Assembly is a database providing information on the structure of assembled genomes, assembly names and other meta-data, statistical reports, and links to genomic sequence data. An assembly is defined as the set of chromosomes, unlocalized and unplaced (sometimes called 'random') and alternate sequences used to represent an organism's genome. Assemblies are constructed from 1 or more assembly units.
@@ -10,7 +10,7 @@ Node describing a sequence assembly referenced in [NCBI's Assembly database](htt
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## assembly\_descriptor Type
+## items Type
 
 `object` ([NCBI's Assembly descriptor](ega-12-definitions-ncbis-assembly-descriptor.md))
 
@@ -20,7 +20,7 @@ any of
 
 *   [Or the Assembly unit accession is required](ega-12-definitions-ncbis-assembly-descriptor-anyof-or-the-assembly-unit-accession-is-required.md "check type definition")
 
-# assembly\_descriptor Properties
+# items Properties
 
 | Property                                                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
 | :--------------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

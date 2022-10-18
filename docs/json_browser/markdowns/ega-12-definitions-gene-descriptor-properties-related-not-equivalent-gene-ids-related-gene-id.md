@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids-related-gene-id-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## items Examples
 

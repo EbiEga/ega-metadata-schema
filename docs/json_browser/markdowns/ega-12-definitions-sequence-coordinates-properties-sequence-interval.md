@@ -16,10 +16,10 @@ The location of a sequence feature in a genome, defined by its start (e.g. 71366
 
 # sequence\_interval Properties
 
-| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
-| :-------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [start](#start) | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/start") |
-| [end](#end)     | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/end")   |
+| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                             |
+| :-------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [start](#start) | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/start") |
+| [end](#end)     | `number` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/end") |
 
 ## start
 
@@ -29,15 +29,15 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 *   is required
 
-*   Type: `number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
+*   Type: `number` ([Single sequence position](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/start")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/start")
 
 ### start Type
 
-`number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
+`number` ([Single sequence position](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md))
 
 ### start Examples
 
@@ -61,15 +61,15 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 *   is required
 
-*   Type: `number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
+*   Type: `number` ([Single sequence position](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/end")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/end")
 
 ### end Type
 
-`number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
+`number` ([Single sequence position](ega-12-definitions-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md))
 
 ### end Examples
 

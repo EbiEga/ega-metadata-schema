@@ -16,7 +16,7 @@ Full or partial URL/URI of the external accession, for systems to resolve it.
 
 all of
 
-*   [URL/URI pattern](ega-12-definitions-urluri-pattern.md "check type definition")
+*   [URL/URI pattern](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession-allof-urluri-pattern.md "check type definition")
 
 ## accession\_reference Examples
 

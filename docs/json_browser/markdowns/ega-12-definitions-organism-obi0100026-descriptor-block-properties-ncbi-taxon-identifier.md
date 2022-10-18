@@ -16,7 +16,7 @@ Taxonomy Identifier (e.g. 'NCBITaxon:9606' for humans) curated by the NCBI Taxon
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-identifier-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## taxon\_id\_curie Examples
 

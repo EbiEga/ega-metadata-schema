@@ -16,7 +16,7 @@ CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-12-definitions-repeatable-array_label-node-properties-array-label-of-the-array-experiment---curie-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## array\_label\_curie Examples
 
