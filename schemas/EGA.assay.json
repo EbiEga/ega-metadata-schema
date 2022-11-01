@@ -342,8 +342,17 @@
         "minItems": 1,
         "additionalProperties": false,
         "uniqueItems": true,
-        "items": { 
+        "items": {
+          "allOf": [
+            {
+              "title": "Basic file object",
               "$ref": "./EGA.common-definitions.json#/definitions/file_object"
+            },
+            {
+              "title": "Constraint of filetypes that are allowed for an assay",
+              "$ref": "./EGA.common-definitions.json#/definitions/assay-filetypes"
+            }
+          ]              
         }
       },
 
