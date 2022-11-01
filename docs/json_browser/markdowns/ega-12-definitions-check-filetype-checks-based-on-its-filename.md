@@ -1,7 +1,7 @@
 # Check: filetype checks based on its filename Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check
 ```
 
 This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype\_id shall be 'BAM' and not 'XLSX')
@@ -10,7 +10,7 @@ This object exists with the only purpose of being a reference of pattern checks 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## 1 Type
+## filename-filetype-pattern-check Type
 
 `object` ([Check: filetype checks based on its filename](ega-12-definitions-check-filetype-checks-based-on-its-filename.md))
 

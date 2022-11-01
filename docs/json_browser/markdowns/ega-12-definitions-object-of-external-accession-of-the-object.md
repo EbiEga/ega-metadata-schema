@@ -1,7 +1,7 @@
 # Object of external accession of the object Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession
 ```
 
 External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.
@@ -10,7 +10,7 @@ External accession node containing the object accession (i.e. unique identifier 
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## items Type
+## object\_external\_accession Type
 
 `object` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
 
@@ -20,7 +20,7 @@ any of
 
 *   [Or the reference is needed](ega-12-definitions-object-of-external-accession-of-the-object-anyof-or-the-reference-is-needed.md "check type definition")
 
-# items Properties
+# object\_external\_accession Properties
 
 | Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                        |
 | :------------------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ Unique identifier of an external, to EGA, object. It shall follow CURIE format (
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession-allof-compact-uri-curie-pattern.md "check type definition")
 
 ### external\_accession\_curie Examples
 
@@ -88,7 +88,7 @@ Full or partial URL/URI of the external accession, for systems to resolve it.
 
 all of
 
-*   [URL/URI pattern](ega-12-definitions-urluri-pattern.md "check type definition")
+*   [URL/URI pattern](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession-allof-urluri-pattern.md "check type definition")
 
 ### accession\_reference Examples
 

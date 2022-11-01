@@ -16,10 +16,10 @@ unknown ([CEL Filename pattern-check](ega-12-definitions-check-filetype-checks-b
 
 # 0 Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                 |
-| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-cel-filename-pattern-check-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/0/properties/filetype") |
-| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-filename-pattern-of-a-cel-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/0/properties/filename")                                                                   |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                       |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-cel-filename-pattern-check-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/0/properties/filetype")                       |
+| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-cel-filename-pattern-check-properties-filename-pattern-of-a-cel-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/0/properties/filename") |
 
 ## filetype
 
@@ -55,15 +55,15 @@ This object exists to hold the filename pattern that a 'CEL' filetype\_id would 
 
 *   is optional
 
-*   Type: `string` ([Filename pattern of a CEL file](ega-12-definitions-filename-pattern-of-a-cel-file.md))
+*   Type: `string` ([Filename pattern of a CEL file](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-cel-filename-pattern-check-properties-filename-pattern-of-a-cel-file.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-filename-pattern-of-a-cel-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/0/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-cel-filename-pattern-check-properties-filename-pattern-of-a-cel-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/0/properties/filename")
 
 ### filename Type
 
-`string` ([Filename pattern of a CEL file](ega-12-definitions-filename-pattern-of-a-cel-file.md))
+`string` ([Filename pattern of a CEL file](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-cel-filename-pattern-check-properties-filename-pattern-of-a-cel-file.md))
 
 ### filename Constraints
 

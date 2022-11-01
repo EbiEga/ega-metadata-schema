@@ -1,7 +1,7 @@
 # Single sequence position Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval/properties/end
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/single_sequence_position
 ```
 
 A single 1-based (first base of the assembly unit is 1, not 0) sequence coordinate, inclusive. It can be used to describe the start or end coordinates of a sequence interval, or directly a single coordinate within a sequence.
@@ -10,11 +10,11 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## end Type
+## single\_sequence\_position Type
 
 `number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
 
-## end Examples
+## single\_sequence\_position Examples
 
 ```json
 71366222

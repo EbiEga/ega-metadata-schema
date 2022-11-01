@@ -1,7 +1,7 @@
 # Filename pattern of a MAP file Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/17/properties/filename
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/map-file-filename-pattern
 ```
 
 This object exists to hold the filename pattern that a 'MAP' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
@@ -10,11 +10,11 @@ This object exists to hold the filename pattern that a 'MAP' filetype\_id would 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## filename Type
+## map-file-filename-pattern Type
 
 `string` ([Filename pattern of a MAP file](ega-12-definitions-filename-pattern-of-a-map-file.md))
 
-## filename Constraints
+## map-file-filename-pattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ This object exists to hold the filename pattern that a 'MAP' filetype\_id would 
 
 [try pattern](https://regexr.com/?expression=%5E.%2B%5C.map\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
-## filename Examples
+## map-file-filename-pattern Examples
 
 ```json
 "my_file1.map.gpg"

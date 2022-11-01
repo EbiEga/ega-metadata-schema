@@ -1,7 +1,7 @@
 # Genomic sequence descriptor Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/genomic_sequence_descriptor
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor
 ```
 
 Node used to describe with sufficient detail a genomic sequence (e.g. Human Chromosome X: 71366222-71532374 forward strand), defined as a biological sequence that is of genomic origin (i.e. carries sequence from the genome of a cell or organism).
@@ -22,12 +22,12 @@ any of
 
 # genomic\_sequence\_descriptor Properties
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                         |
-| :------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assembly\_descriptor](#assembly_descriptor)      | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/assembly_descriptor") |
-| [sequence\_coordinates](#sequence_coordinates)    | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/sequence_coordinates")     |
-| [dna\_sequence\_strand](#dna_sequence_strand)     | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/dna_sequence_strand")       |
-| [nucleic\_acid\_sequence](#nucleic_acid_sequence) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/nucleic_acid_sequence")   |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                              |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [assembly\_descriptor](#assembly_descriptor)      | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/assembly_descriptor")                                      |
+| [sequence\_coordinates](#sequence_coordinates)    | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/sequence_coordinates")                                          |
+| [dna\_sequence\_strand](#dna_sequence_strand)     | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/dna_sequence_strand")                                            |
+| [nucleic\_acid\_sequence](#nucleic_acid_sequence) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/nucleic_acid_sequence") |
 
 ## assembly\_descriptor
 
@@ -112,15 +112,15 @@ Sequence of characters representing a specific nucleic (i.e. molecular species -
 
 *   is optional
 
-*   Type: `string` ([Nucleic acid sequence](ega-12-definitions-nucleic-acid-sequence.md))
+*   Type: `string` ([Nucleic acid sequence](ega-12-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/nucleic_acid_sequence")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/nucleic_acid_sequence")
 
 ### nucleic\_acid\_sequence Type
 
-`string` ([Nucleic acid sequence](ega-12-definitions-nucleic-acid-sequence.md))
+`string` ([Nucleic acid sequence](ega-12-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
 
 ### nucleic\_acid\_sequence Constraints
 

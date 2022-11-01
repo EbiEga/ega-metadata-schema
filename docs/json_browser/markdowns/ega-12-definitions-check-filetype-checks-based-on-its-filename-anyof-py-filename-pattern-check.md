@@ -16,10 +16,10 @@ unknown ([PY Filename pattern-check](ega-12-definitions-check-filetype-checks-ba
 
 # 24 Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                 |
-| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/24/properties/filetype") |
-| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-filename-pattern-of-a-py-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/24/properties/filename")                                                                   |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                      |
+| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/24/properties/filetype")                      |
+| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check-properties-filename-pattern-of-a-py-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/24/properties/filename") |
 
 ## filetype
 
@@ -55,15 +55,15 @@ This object exists to hold the filename pattern that a 'PY' filetype\_id would h
 
 *   is optional
 
-*   Type: `string` ([Filename pattern of a PY file](ega-12-definitions-filename-pattern-of-a-py-file.md))
+*   Type: `string` ([Filename pattern of a PY file](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check-properties-filename-pattern-of-a-py-file.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-filename-pattern-of-a-py-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/24/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check-properties-filename-pattern-of-a-py-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/24/properties/filename")
 
 ### filename Type
 
-`string` ([Filename pattern of a PY file](ega-12-definitions-filename-pattern-of-a-py-file.md))
+`string` ([Filename pattern of a PY file](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check-properties-filename-pattern-of-a-py-file.md))
 
 ### filename Constraints
 

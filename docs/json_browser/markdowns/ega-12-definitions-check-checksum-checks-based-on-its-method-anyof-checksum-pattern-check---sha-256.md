@@ -16,11 +16,11 @@ unknown ([Checksum pattern check - SHA-256](ega-12-definitions-check-checksum-ch
 
 # 1 Properties
 
-| Property                                       | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                          |
-| :--------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [checksum\_method](#checksum_method)           | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum_method.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/checksum_method") |
-| [unencrypted\_checksum](#unencrypted_checksum) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/unencrypted_checksum")                                                                   |
-| [encrypted\_checksum](#encrypted_checksum)     | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/encrypted_checksum")                                                                     |
+| Property                                       | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                    |
+| :--------------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [checksum\_method](#checksum_method)           | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum_method.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/checksum_method")                           |
+| [unencrypted\_checksum](#unencrypted_checksum) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/unencrypted_checksum") |
+| [encrypted\_checksum](#encrypted_checksum)     | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/encrypted_checksum") |
 
 ## checksum\_method
 
@@ -56,15 +56,15 @@ This object exists to hold the pattern that a checksum would have if it was obta
 
 *   is optional
 
-*   Type: `string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md))
+*   Type: `string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/unencrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/unencrypted_checksum")
 
 ### unencrypted\_checksum Type
 
-`string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md))
+`string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256.md))
 
 ### unencrypted\_checksum Constraints
 
@@ -90,15 +90,15 @@ This object exists to hold the pattern that a checksum would have if it was obta
 
 *   is optional
 
-*   Type: `string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md))
+*   Type: `string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256-1.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/encrypted_checksum")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check/anyOf/1/properties/encrypted_checksum")
 
 ### encrypted\_checksum Type
 
-`string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-checksum-pattern-obtained-by-sha-256.md))
+`string` ([Checksum pattern obtained by SHA-256](ega-12-definitions-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256-properties-checksum-pattern-obtained-by-sha-256-1.md))
 
 ### encrypted\_checksum Constraints
 

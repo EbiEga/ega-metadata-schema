@@ -1,7 +1,7 @@
 # URL/URI pattern Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_reference/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/url-uri-pattern
 ```
 
 This object exists to hold the pattern that a URL or URI should have. For it to be referenced elsewhere within this (or other) JSON schema.
@@ -10,11 +10,11 @@ This object exists to hold the pattern that a URL or URI should have. For it to 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## 0 Type
+## url-uri-pattern Type
 
 `string` ([URL/URI pattern](ega-12-definitions-urluri-pattern.md))
 
-## 0 Constraints
+## url-uri-pattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ This object exists to hold the pattern that a URL or URI should have. For it to 
 
 [try pattern](https://regexr.com/?expression=%5E\(\(http%7Chttps\)%3A%2F%2F\)\(www.\)%3F%5Ba-zA-Z0-9%40%3A%25._%5C%2B\~%23%3F%26%2F%2F%3D%5D%7B2%2C256%7D%5C.%5Ba-z%5D%7B2%2C6%7D%5Cb\(%5B-a-zA-Z0-9%40%3A%25._%5C%2B\~%23%3F%26%2F%2F%3D%5D*\)%24 "try regular expression with regexr.com")
 
-## 0 Examples
+## url-uri-pattern Examples
 
 ```json
 "https://phenopacket-schema.readthedocs.io/en/latest/externalreference.html"

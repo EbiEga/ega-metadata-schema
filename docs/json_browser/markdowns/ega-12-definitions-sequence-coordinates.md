@@ -1,7 +1,7 @@
 # Sequence coordinates Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomic_sequence_descriptor/properties/sequence_coordinates
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates
 ```
 
 A position in a map (for example a genetic map), either a single position (e.g. 71366222) or a region interval (e.g. 71366222-71532374). Used to define coordinates within an assembly unit.
@@ -22,10 +22,10 @@ any of
 
 # sequence\_coordinates Properties
 
-| Property                                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :--------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [single\_position](#single_position)     | `number` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/single_position")                            |
-| [sequence\_interval](#sequence_interval) | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval") |
+| Property                                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                             |
+| :--------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [single\_position](#single_position)     | `number` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/single_position") |
+| [sequence\_interval](#sequence_interval) | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/sequence_interval")      |
 
 ## single\_position
 
@@ -35,15 +35,15 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 *   is optional
 
-*   Type: `number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
+*   Type: `number` ([Single sequence position](ega-12-definitions-sequence-coordinates-properties-single-sequence-position.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/single_position")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequence_coordinates/properties/single_position")
 
 ### single\_position Type
 
-`number` ([Single sequence position](ega-12-definitions-single-sequence-position.md))
+`number` ([Single sequence position](ega-12-definitions-sequence-coordinates-properties-single-sequence-position.md))
 
 ### single\_position Examples
 
