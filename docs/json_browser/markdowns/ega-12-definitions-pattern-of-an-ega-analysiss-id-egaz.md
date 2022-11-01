@@ -1,7 +1,7 @@
 # Pattern of an EGA analysis's ID (EGAZ...) Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check/anyOf/8/properties/object_id/properties/ega_accession
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGA-analysis-id-pattern
 ```
 
 
@@ -10,11 +10,11 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## ega\_accession Type
+## EGA-analysis-id-pattern Type
 
 `string` ([Pattern of an EGA analysis's ID (EGAZ...)](ega-12-definitions-pattern-of-an-ega-analysiss-id-egaz.md))
 
-## ega\_accession Constraints
+## EGA-analysis-id-pattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 
 [try pattern](https://regexr.com/?expression=%5EEGAZ%5B0-9%5D%7B11%7D%24 "try regular expression with regexr.com")
 
-## ega\_accession Examples
+## EGA-analysis-id-pattern Examples
 
 ```json
 "EGAZ00001004170"

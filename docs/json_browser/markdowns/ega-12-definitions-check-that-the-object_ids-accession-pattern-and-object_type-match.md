@@ -1,7 +1,7 @@
 # Check that the object\_id's accession pattern and object\_type match Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check
 ```
 
 This object exists with the only purpose of being a reference as a pattern check of a given object\_id and object\_type. The constraint consists in asserting that, if the object identifier is an EGA accession, its pattern matches the object type (e.g. if object\_type is 'sample', its EGA accession needs to match '^EGAN\[0-9]{11}$')
@@ -10,7 +10,7 @@ This object exists with the only purpose of being a reference as a pattern check
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## 0 Type
+## object-id-and-object-type-check Type
 
 `object` ([Check that the object\_id's accession pattern and object\_type match](ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match.md))
 

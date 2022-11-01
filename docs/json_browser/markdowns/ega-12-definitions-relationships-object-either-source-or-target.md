@@ -1,7 +1,7 @@
 # Relationship's object (either source or target) Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_target/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/one-relationship-end
 ```
 
 Node containing metadata (identifiers and the type of reference) of one of the ends of the relationship, whether it is the source or the target of the relationship.
@@ -10,7 +10,7 @@ Node containing metadata (identifiers and the type of reference) of one of the e
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## 0 Type
+## one-relationship-end Type
 
 `object` ([Relationship's object (either source or target)](ega-12-definitions-relationships-object-either-source-or-target.md))
 
@@ -44,7 +44,7 @@ all of
 
     *   [Protocol: object_id and object_type check](ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match-anyof-protocol-object_id-and-object_type-check.md "check type definition")
 
-# 0 Properties
+# one-relationship-end Properties
 
 | Property                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                         |
 | :--------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

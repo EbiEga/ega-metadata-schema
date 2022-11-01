@@ -2336,7 +2336,7 @@
                 "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
               }
             ],
-            "graphRestriction ":  {
+            "graphRestriction":  {
               "ontologies" : ["obo:NCBITAXON"],
               "classes": ["NCBITaxon:1"],
               "relations": ["rdfs:subClassOf"],
@@ -3291,7 +3291,7 @@
             "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
           }
         ],
-        "graphRestriction ":  {
+        "graphRestriction":  {
           "ontologies" : ["obo:efo"],
           "classes": ["EFO:0000635"],
           "relations": ["rdfs:subClassOf"],
@@ -3854,12 +3854,12 @@
         "description": "Property to describe a cell type: a distinct morphological or functional form of cell.",
         "meta:property_curie": "EFO:0000324",
         "additionalProperties": false,
-        "required": [ "cell_type_id" ],
+        "required": [ "cell_type_curie" ],
         "properties": {          
           "cell_type_curie": {
             "type": "string",
             "title": "Compact URI (CURIE) of the cell type",
-            "graphRestriction ":  {
+            "graphRestriction":  {
               "ontologies" : ["obo:efo"],
               "classes": ["EFO:0000324"],
               "relations": ["rdfs:subClassOf"],
@@ -3896,7 +3896,7 @@
             "anyOf": [
               {
                 "title": "Ontology validation of phenotypic abnormality",
-                "graphRestriction ":  {
+                "graphRestriction":  {
                   "ontologies" : ["obo:hp"],
                   "classes": ["HP:0000118"],
                   "relations": ["rdfs:subClassOf"],
@@ -3940,7 +3940,7 @@
             "oneOf": [
               {
                 "title": "Ontology validation of dieases",
-                "graphRestriction ":  {
+                "graphRestriction":  {
                   "ontologies" : ["obo:efo"],
                   "classes": ["EFO:0000408"],
                   "relations": ["rdfs:subClassOf"],

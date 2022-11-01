@@ -16,10 +16,10 @@ unknown ([SFF Filename pattern-check](ega-12-definitions-check-filetype-checks-b
 
 # 10 Properties
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                  |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sff-filename-pattern-check-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/10/properties/filetype") |
-| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-filename-pattern-of-a-sff-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/10/properties/filename")                                                                   |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                        |
+| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sff-filename-pattern-check-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/10/properties/filetype")                       |
+| [filename](#filename) | `string`      | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sff-filename-pattern-check-properties-filename-pattern-of-a-sff-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/10/properties/filename") |
 
 ## filetype
 
@@ -55,15 +55,15 @@ This object exists to hold the filename pattern that a 'SFF' filetype\_id would 
 
 *   is optional
 
-*   Type: `string` ([Filename pattern of a SFF file](ega-12-definitions-filename-pattern-of-a-sff-file.md))
+*   Type: `string` ([Filename pattern of a SFF file](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sff-filename-pattern-check-properties-filename-pattern-of-a-sff-file.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-filename-pattern-of-a-sff-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/10/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sff-filename-pattern-check-properties-filename-pattern-of-a-sff-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check/anyOf/10/properties/filename")
 
 ### filename Type
 
-`string` ([Filename pattern of a SFF file](ega-12-definitions-filename-pattern-of-a-sff-file.md))
+`string` ([Filename pattern of a SFF file](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sff-filename-pattern-check-properties-filename-pattern-of-a-sff-file.md))
 
 ### filename Constraints
 

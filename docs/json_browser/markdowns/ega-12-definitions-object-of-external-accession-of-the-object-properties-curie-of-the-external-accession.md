@@ -16,7 +16,7 @@ Unique identifier of an external, to EGA, object. It shall follow CURIE format (
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-12-definitions-object-of-external-accession-of-the-object-properties-curie-of-the-external-accession-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## external\_accession\_curie Examples
 
