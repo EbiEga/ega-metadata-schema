@@ -110,7 +110,7 @@
           "file_content": {
             "type": "array",
             "title": "File content array",
-            "description": "Array of file content items. This array exists to clarify what the purpose of a file, regardless of its content, may be. For example, a TXT formatted file could contain multiple types of data, from gene annotations to READMEs.",
+            "description": "Array of file content items. This array exists to clarify what the purpose of a file, regardless of its format, may be. For example, a TXT formatted file could contain multiple types of data, from gene annotations to READMEs. Therefore, select the items from the used ontology that best describe the content of your file.",
             "additionalProperties": false,
             "uniqueItems": true,
             "minItems": 1,
@@ -143,7 +143,7 @@
                 "type_of_data_term": {
                   "type": "string",
                   "title": "Term of the type of data",
-                  "description": "",
+                  "description": "Term that specifies the type of data content.",
                   "minLength": 1,            
                   "examples": [ "Sequence record format", "Data index format" ]
                 }
