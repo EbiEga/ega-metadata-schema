@@ -155,7 +155,7 @@
             "title": "Filetype",
             "meta:property_curie": "format:1915",
             "description": "The main format in which data is structured and represented in an electronic file. It is normally defined by the file extension of the file (e.g. FASTQ for a '.fastq' file). The string corresponds to the ID or name (e.g. FASTA, TSV...), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-            "enum": ["CEL", "TSV", "FASTQ", "FASTA", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR", "PY", "SH", "ADF", "SDRF", "IDF", "MD5", "HAP", "CSFASTA", "LOC", "TGZ", "ZIP", "HTML", "HIC", "MD", "MATLAB", "PERL", "TIF", "R", "TAR", "SNP", "XML", "SVG", "PNG", "JPG", "GTC", "HDF5", "FAST5", "PAIR", "TXT", "BGI", "BGEN", "GEN", "PXF", "LOOM", "BAX.H5", "BAS.H5", "ASM", "CSI", "TBI", "BCF", "qual454", "qualsolid", "FASTQ-illumina", "FASTQ-helicos", "FASTQ-sanger", "FASTQ-solexa", "SAM", "CRAI", "BAI", "MTX", "MEX ", "GMX", "GMT", "GRP"],
+            "enum": ["CEL", "TSV", "FASTQ", "FASTA", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR", "PY", "SH", "ADF", "SDRF", "IDF", "MD5", "HAP", "CSFASTA", "LOC", "HTML", "HIC", "MD", "MATLAB", "PERL", "TIF", "R", "SNP", "XML", "SVG", "PNG", "JPG", "GTC", "HDF5", "FAST5", "PAIR", "TXT", "BGI", "BGEN", "GEN", "PXF", "LOOM", "BAX.H5", "BAS.H5", "ASM", "CSI", "TBI", "BCF", "qual454", "qualsolid", "FASTQ-illumina", "FASTQ-helicos", "FASTQ-sanger", "FASTQ-solexa", "SAM", "CRAI", "BAI", "MTX", "MEX ", "GMX", "GMT", "GRP"],
             "meta:enum": {
               "CEL": "[format:1638]",
               "TSV": "[format:3475]",
@@ -186,8 +186,6 @@
               "HAP": "[]",
               "CSFASTA": "[]",
               "LOC": "[]",
-              "TGZ": "[]",
-              "ZIP": "[format:3987]",
               "HTML": "[format:2331]",
               "HIC": "[]",
               "MD": "[]",
@@ -195,7 +193,6 @@
               "PERL": "[format:3998]",
               "TIF": "[]",
               "R": "[format:3999]",
-              "TAR": "[format:3981]",
               "SNP": "[]",
               "XML": "[format:2332]",
               "SVG": "[format:3604]",
@@ -1038,24 +1035,6 @@
               }
           },
           {
-              "title": "TGZ Filename pattern-check",
-              "properties": {
-                  "filetype": {
-                      "enum": ["TGZ"]
-                  },
-                  "filename": { "$ref": "#/definitions/tgz-file-filename-pattern" }
-              }
-          },
-          {
-              "title": "ZIP Filename pattern-check",
-              "properties": {
-                  "filetype": {
-                      "enum": ["ZIP"]
-                  },
-                  "filename": { "$ref": "#/definitions/zip-file-filename-pattern" }
-              }
-          },
-          {
               "title": "HTML Filename pattern-check",
               "properties": {
                   "filetype": {
@@ -1116,15 +1095,6 @@
                       "enum": ["R"]
                   },
                   "filename": { "$ref": "#/definitions/r-file-filename-pattern" }
-              }
-          },
-          {
-              "title": "TAR Filename pattern-check",
-              "properties": {
-                  "filetype": {
-                      "enum": ["TAR"]
-                  },
-                  "filename": { "$ref": "#/definitions/tar-file-filename-pattern" }
               }
           },
           {
@@ -1453,7 +1423,7 @@
         "properties": {
           "filetype": {
             "type": "string",
-            "enum": [ "BAM", "CRAM", "SAM", "FASTA", "BAI", "CRAI", "CSI", "MD", "TXT", "XML", "TAR", "ZIP", "TGZ", "MD5", "FASTQ", "FASTQ-helicos", "FASTQ-illumina", "BAS.H5", "BAX.H5", "HDF5", "FASTQ-sanger", "FASTQ-solexa", "IDAT", "CEL", "qualsolid", "qual454", "SRA", "SRF", "SFF", "CSFASTA", "GPR", "ADF", "FAST5" ]
+            "enum": [ "BAM", "CRAM", "SAM", "FASTA", "BAI", "CRAI", "CSI", "MD", "TXT", "XML", "MD5", "FASTQ", "FASTQ-helicos", "FASTQ-illumina", "BAS.H5", "BAX.H5", "HDF5", "FASTQ-sanger", "FASTQ-solexa", "IDAT", "CEL", "qualsolid", "qual454", "SRA", "SRF", "SFF", "CSFASTA", "GPR", "ADF", "FAST5" ]
           }
         }
       }
