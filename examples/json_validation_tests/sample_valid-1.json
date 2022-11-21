@@ -1,108 +1,113 @@
 {
-    "object_id": {
-        "alias" : "My_sample_X_from_NM305004", 
-        "center_name" : "EBI-TEST",
-        "ega_accession": "EGAN00000000001"
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json"
     },
-    "object_title": "Skin biopsy from COVID+ patient NM305004",
-    "object_description": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
-    "organism_descriptor": {
-        "taxon_id_curie": "NCBITaxon:9606",
-        "scientific_name": "homo sapiens",
-        "common_name": "human"
-    },
-    "sample_types": [ "tissue culture" ],
-    "cell_types": [ 
-        {
-            "cell_type_id": "CL:0000066",
-            "cell_type_label": "epithelial cell",
-            "inferred_cell_type": "not inferred"
+    "data": {
+        "object_id": {
+            "alias" : "My_sample_X_from_NM305004", 
+            "center_name" : "EBI-TEST",
+            "ega_accession": "EGAN00000000001"
         },
-        {
-            "cell_type_id": "CL:0000097",
-            "cell_type_label": "mast cell",
-            "inferred_cell_type": "not inferred"
-        }
-     ],
-     "sample_status": [
-        {
-            "case_vs_control": "case",
-            "condition_under_study": {
-                "cus_curie": "XCO:0000398",
-                "cus_label": "treated with cisplatin"
-            }
-        }
-     ],
-    "sample_collection": {
-        "sample_collection_date": "2021-12-20",
-        "age_at_collection": {
-            "age_range": {
-                "start": "P5Y",
-                "end": "P10Y"
-            }
+        "object_title": "Skin biopsy from COVID+ patient NM305004",
+        "object_description": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
+        "organism_descriptor": {
+            "taxon_id_curie": "NCBITaxon:9606",
+            "scientific_name": "homo sapiens",
+            "common_name": "human"
         },
-        "sampling_site": {
-            "sampled_organism_part": "axilla skin",
-            "sampled_organism_part_curie": "UBERON:0015474"
-        }
-    },
-    "sample_grouping": {
-        "sample_group_boolean": false
-    },
-    "sample_relationships": [
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAI00002045411"
-                },
-                "object_type": "individual"                
+        "sample_types": [ "tissue culture" ],
+        "cell_types": [ 
+            {
+                "cell_type_id": "CL:0000066",
+                "cell_type_label": "epithelial cell",
+                "inferred_cell_type": "not inferred"
+            },
+            {
+                "cell_type_id": "CL:0000097",
+                "cell_type_label": "mast cell",
+                "inferred_cell_type": "not inferred"
+            }
+         ],
+         "sample_status": [
+            {
+                "case_vs_control": "case",
+                "condition_under_study": {
+                    "cus_curie": "XCO:0000398",
+                    "cus_label": "treated with cisplatin"
+                }
+            }
+         ],
+        "sample_collection": {
+            "sample_collection_date": "2021-12-20",
+            "age_at_collection": {
+                "age_range": {
+                    "start": "P5Y",
+                    "end": "P10Y"
+                }
+            },
+            "sampling_site": {
+                "sampled_organism_part": "axilla skin",
+                "sampled_organism_part_curie": "UBERON:0015474"
             }
         },
-        {
-            "r_type": "same_as",
-            "r_source": {
-                "object_id": {
-                    "external_accessions": [
-                        {
-                            "external_accession_curie": "biosample:SAMEA7616999",
-                            "accession_label": "test relationship"
-                        }
-                    ]
-                },
-                "object_type": "external_accession"
-            }
+        "sample_grouping": {
+            "sample_group_boolean": false
         },
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAO00002045411"
-                },
-                "object_type": "protocol"                
+        "sample_relationships": [
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAI00002045411"
+                    },
+                    "object_type": "individual"                
+                }
+            },
+            {
+                "r_type": "same_as",
+                "r_source": {
+                    "object_id": {
+                        "external_accessions": [
+                            {
+                                "external_accession_curie": "biosample:SAMEA7616999",
+                                "accession_label": "test relationship"
+                            }
+                        ]
+                    },
+                    "object_type": "external_accession"
+                }
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAO00002045411"
+                    },
+                    "object_type": "protocol"                
+                }
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAB00002045411"
+                    },
+                    "object_type": "submission"                
+                }
             }
-        },
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAB00002045411"
-                },
-                "object_type": "submission"                
+        ],
+        "sample_attributes": [
+            {
+                "units": "ml",
+                "tag": "biopsy volume",
+                "value": "30"
             }
+        ],
+        "schema_descriptor": {
+            "object_type": "sample",
+            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+            "object_schema_version": "0.0.0",
+            "common_schema_version": "0.0.0"
         }
-    ],
-    "sample_attributes": [
-        {
-            "units": "ml",
-            "tag": "biopsy volume",
-            "value": "30"
-        }
-    ],
-    "schema_descriptor": {
-        "object_type": "sample",
-        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
-        "object_schema_version": "0.0.0",
-        "common_schema_version": "0.0.0"
     }
 }

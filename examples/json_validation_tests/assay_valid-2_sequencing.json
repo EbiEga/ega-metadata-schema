@@ -1,88 +1,93 @@
 {
-    "object_id": {
-        "alias" : "My_sequencing_assay_M305004", 
-        "center_name" : "EBI-TEST"
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json"
     },
-    "object_title": "Breast cancer sequencing assay M305004",
-    "assay_center": "EBI-TEST",
-    "assay_date": "2022-02-13",
-    "assay_type_specifications": {
-        "assay_type": "sequencing",
-        "sequencing_assay_specifications": {
-            "reference_alignment_details": [
-                {
-                    "assembly_name": "GRCh38.p14",
-                    "ncbi_assembly_accession": "assembly:GCF_000001405.26",
-                    "assembly_unit_name": "1",
-                    "ncbi_assembly_unit_accession": "refseq:NC_000001.11"
-                },
-                {
-                    "assembly_unit_name": "2",
-                    "ncbi_assembly_unit_accession": "refseq:NC_000002.12"
+    "data": {
+        "object_id": {
+            "alias" : "My_sequencing_assay_M305004", 
+            "center_name" : "EBI-TEST"
+        },
+        "object_title": "Breast cancer sequencing assay M305004",
+        "assay_center": "EBI-TEST",
+        "assay_date": "2022-02-13",
+        "assay_type_specifications": {
+            "assay_type": "sequencing",
+            "sequencing_assay_specifications": {
+                "reference_alignment_details": [
+                    {
+                        "assembly_name": "GRCh38.p14",
+                        "ncbi_assembly_accession": "assembly:GCF_000001405.26",
+                        "assembly_unit_name": "1",
+                        "ncbi_assembly_unit_accession": "refseq:NC_000001.11"
+                    },
+                    {
+                        "assembly_unit_name": "2",
+                        "ncbi_assembly_unit_accession": "refseq:NC_000002.12"
+                    }
+                ]
+            }
+        },
+        "assay_files": [
+            {
+                "filename": "myfile1_NM305004_50000reads.cram.gpg",
+                "filetype": "CRAM",
+                "checksum_method": "MD5",
+                "unencrypted_checksum": "66526ffc57804187654eba000bc3905c",
+                "encrypted_checksum": "fdbfd70466017e8387bc55c65b553b2b"
+            },
+            {
+                "filename": "myfile2_NM305004_50000reads.cram.gpg",
+                "filetype": "CRAM",
+                "checksum_method": "MD5",
+                "unencrypted_checksum": "dc2f2f3aa81f299944e23aacf5a40b2c",
+                "encrypted_checksum": "db75a499836cd430cc9d25b5f89ea4c3"
+            }
+        ],
+        "assay_relationships": [
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAX00002094401"
+                    },
+                    "object_type": "experiment"
                 }
-            ]
-        }
-    },
-    "assay_files": [
-        {
-            "filename": "myfile1_NM305004_50000reads.cram.gpg",
-            "filetype": "CRAM",
-            "checksum_method": "MD5",
-            "unencrypted_checksum": "66526ffc57804187654eba000bc3905c",
-            "encrypted_checksum": "fdbfd70466017e8387bc55c65b553b2b"
-        },
-        {
-            "filename": "myfile2_NM305004_50000reads.cram.gpg",
-            "filetype": "CRAM",
-            "checksum_method": "MD5",
-            "unencrypted_checksum": "dc2f2f3aa81f299944e23aacf5a40b2c",
-            "encrypted_checksum": "db75a499836cd430cc9d25b5f89ea4c3"
-        }
-    ],
-    "assay_relationships": [
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAX00002094401"
-                },
-                "object_type": "experiment"
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAZ00002024153"
+                    },
+                    "object_type": "analysis"
+                }
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAB00002045411"
+                    },
+                    "object_type": "submission"                
+                }
             }
-        },
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAZ00002024153"
-                },
-                "object_type": "analysis"
+        ],    
+        "assay_attributes": [
+            {
+                "tag": "weather",
+                "value": "When the assay was executed it was raining outside"
+            },
+            {
+                "tag": "assay price",
+                "value": 350,
+                "units": "euros"
             }
-        },
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAB00002045411"
-                },
-                "object_type": "submission"                
-            }
+        ],    
+        "schema_descriptor": {
+            "object_type": "assay",
+            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+            "object_schema_version": "0.0.0",
+            "common_schema_version": "0.0.0"
         }
-    ],    
-    "assay_attributes": [
-        {
-            "tag": "weather",
-            "value": "When the assay was executed it was raining outside"
-        },
-        {
-            "tag": "assay price",
-            "value": 350,
-            "units": "euros"
-        }
-    ],    
-    "schema_descriptor": {
-        "object_type": "assay",
-        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
-        "object_schema_version": "0.0.0",
-        "common_schema_version": "0.0.0"
     }
 }

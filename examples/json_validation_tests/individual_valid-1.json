@@ -1,64 +1,69 @@
 {
-    "object_id": {
-        "alias" : "NM305004", 
-        "center_name" : "EBI-TEST",
-        "ega_accession": "EGAI00000000001"
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json"
     },
-    "organism_descriptor": {
-        "taxon_id_curie": "NCBITaxon:9606",
-        "scientific_name": "homo sapiens",
-        "common_name": "human"
-    },
-    "minimal_public_attributes": {
-        "subject_id": "donor-NM305004",
-        "biological_sex": "male",
-        "phenotypes": [
+    "data": {   
+        "object_id": {
+            "alias" : "NM305004", 
+            "center_name" : "EBI-TEST",
+            "ega_accession": "EGAI00000000001"
+        },
+        "organism_descriptor": {
+            "taxon_id_curie": "NCBITaxon:9606",
+            "scientific_name": "homo sapiens",
+            "common_name": "human"
+        },
+        "minimal_public_attributes": {
+            "subject_id": "donor-NM305004",
+            "biological_sex": "male",
+            "phenotypes": [
+                {
+                    "phenotypic_abnormality_curie": "HP:0033403",
+                    "phenotypic_abnormality_label": "Testicular ischemia"
+                }
+            ],
+            "diseases": [
+                {
+                    "disease_curie": "EFO:0003101",
+                    "disease_label": "testicular seminoma"
+                },
+                {
+                    "disease_curie": "EFO:1000254",
+                    "disease_label": "fibroadenoma"
+                }
+            ]
+        },
+        "individual_relationships": [
             {
-                "phenotypic_abnormality_curie": "NCIT:C17998",
-                "phenotypic_abnormality_label": "unknown"
-            }
-        ],
-        "diseases": [
-            {
-                "disease_curie": "EFO:0003101",
-                "disease_label": "testicular seminoma"
+                "r_type": "referenced_by",
+                "r_target": {
+                    "object_id": {
+                        "ega_accession": "EGAN00000000001"
+                    },
+                    "object_type": "sample"
+                }
             },
             {
-                "disease_curie": "EFO:1000254",
-                "disease_label": "fibroadenoma"
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAB00002045411"
+                    },
+                    "object_type": "submission"                
+                }
             }
-        ]
-    },
-    "individual_relationships": [
-        {
-            "r_type": "referenced_by",
-            "r_target": {
-                "object_id": {
-                    "ega_accession": "EGAN00000000001"
-                },
-                "object_type": "sample"
+        ],
+        "individual_attributes": [
+            {
+                "tag": "haircolor",
+                "value": "red"
             }
-        },
-        {
-            "r_type": "referenced_by",
-            "r_source": {
-                "object_id": {
-                    "ega_accession": "EGAB00002045411"
-                },
-                "object_type": "submission"                
-            }
+        ],
+        "schema_descriptor": {
+            "object_type": "individual",
+            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+            "object_schema_version": "0.0.0",
+            "common_schema_version": "0.0.0"
         }
-    ],
-    "individual_attributes": [
-        {
-            "tag": "haircolor",
-            "value": "red"
-        }
-    ],
-    "schema_descriptor": {
-        "object_type": "individual",
-        "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
-        "object_schema_version": "0.0.0",
-        "common_schema_version": "0.0.0"
     }
 }
