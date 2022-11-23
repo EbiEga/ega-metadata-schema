@@ -35,6 +35,8 @@ jobs:
           pwd
           cd biovalidator
           npm install
+        # We shouldn't need to audit the issues, but for now it is what it is
+          npm audit fix
 
       - name: Start Biovalidator server
         # We want to specify the JSON schemas and documents with the new changes
@@ -42,14 +44,7 @@ jobs:
         run: |
           schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
-
-          pwd
-          ls
-          echo
-          cd ..
-          pwd
           cd biovalidator
-          pwd
           
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json"
