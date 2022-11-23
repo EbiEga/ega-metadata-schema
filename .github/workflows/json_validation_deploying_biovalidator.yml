@@ -1,0 +1,61 @@
+---
+# This workflow validates JSON documents against EGA's JSON schemas.
+# This is to ensure that any change to the JSON schemas works as intended,
+# and that the JSON examples are up to date with the schema standards.
+#
+# It uses AJV-CLI as the JSON document validator.
+# For more information, check:
+#   https://github.com/ajv-validator/ajv-cli
+name: JSON docs validation using local Biovalidator (json_validation_deploying_biovalidator.yml)
+
+on:
+  # Executes on any commit to a PR to the "main" branch
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-json-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Full git history
+          fetch-depth: 0
+
+      - name: Clone Biovalidator
+        # See https://github.com/elixir-europe/biovalidator#installation
+        # We want to test the "main" branch of the project
+        run: git clone https://github.com/elixir-europe/biovalidator.git
+
+      - name: Install Biovalidator
+        # We want to test with the latest Node.js version, but if not, we could
+        #   make use of action: https://github.com/actions/setup-node
+        run: |
+          cd biovalidator
+          npm install
+
+      - name: Start Biovalidator server
+        # We want to specify the JSON schemas and documents with the new changes
+        #   Therefore we specify the schemas at deployment level (-r)
+        run: |
+          schemas_dir="./schemas"
+          cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
+
+          node src/biovalidator -r "$schemas_dir/*.json" \
+            -r "$cv_schemas_dir/*.json"
+        # Alternatively we may need to "run: sleep 5" so that we give time
+        #   for the server to start.
+
+      - name: Validate JSON docs
+        # Validate all JSON documents against the deployed server
+        run: |
+          json_ex_dir="./examples/json_validation_tests"
+
+          # Loop through the examples and validate each against the local server
+          for json_filepath in "$json_ex_dir"/*.json; do 
+                  json_filename=$( basename "$json_filepath" )
+                  curl --data @"$json_filename" \
+                    -H "Content-Type: application/json" \
+                    -X POST "http://localhost:3020/validate"
+          done

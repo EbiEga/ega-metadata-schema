@@ -36,5 +36,7 @@ jobs:
           # Loop through the examples and validate each against the API
           for json_filepath in "$json_ex_dir"/*.json; do 
                   json_filename=$( basename "$json_filepath" )
-                  curl --data @"$json_filename" -H "Content-Type: application/json" -X POST "biovalidator.ega.ebi.ac.uk/validate"
+                  curl --data @"$json_filename" \
+                    -H "Content-Type: application/json" \
+                    -X POST "biovalidator.ega.ebi.ac.uk/validate"
           done
