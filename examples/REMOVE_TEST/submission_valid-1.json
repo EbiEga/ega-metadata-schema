@@ -1,0 +1,67 @@
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json"
+    },
+    "data": {
+        "object_id": {
+            "alias" : "submission_XF40", 
+            "center_name" : "EBI-TEST"
+        },
+        "object_title": "Submission XF40",
+        "object_description": "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs",
+        "additional_collaborators": [
+            {
+                "collaborator_rights": "read_and_write",
+                "collaborator_contact_details": {
+                    "institution_name": "EMBL European Bioinformatics Institute (EBI)",
+                    "email_address": "example@gmail.com"
+                }
+            },
+            {
+                "collaborator_rights": "read_only",
+                "collaborator_contact_details": {
+                    "individual_full_name": "Isaac Asimov",
+                    "institution_name": "Boston University",
+                    "email_address": "example@ebi.ac.uk"
+                }
+            }
+        ],
+        "resources": [
+            {
+                "name": "Human Phenotype Ontology",
+                "namespace_prefix": "HP",
+                "version": "2022-06-11",
+                "automatically_assigned": false
+            },
+            {
+                "name": "Experimental Factor Ontology",
+                "namespace_prefix": "EFO",
+                "version": "3.45.0",
+                "automatically_assigned": false
+            }
+        ],
+        "submission_relationships": [
+            {
+                "r_type": "is_after",
+                "r_target": {
+                    "object_id": {
+                        "ega_accession": "EGAB00002543432"
+                    },
+                    "object_type": "submission"                             
+                }
+            }
+        ],
+        "submission_attributes": [
+            {
+                "tag": "internal submission identifier",
+                "value": "XF40"            
+            }
+        ],
+        "schema_descriptor": {
+            "object_type": "submission",
+            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json",
+            "object_schema_version": "0.0.0",
+            "common_schema_version": "0.0.0"
+        }
+    }
+}

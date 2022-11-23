@@ -1,0 +1,64 @@
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json"
+    },
+    "data": {
+        "object_id": {
+            "alias" : "my-cancer-dataset_231", 
+            "center_name" : "EBI-TEST"
+        },
+        "object_title": "EBI test case-control dataset for cancer",
+        "object_description": "EBI genome-wide case-control association dataset for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+        "dataset_type": "phenotype information",
+        "dataset_relationships": [
+            {
+                "r_type": "referenced_by",
+                "r_source": {                
+                    "object_id": {
+                        "ega_accession": "EGAR00002043412"
+                    },
+                    "object_type": "assay"                                    
+                }
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {                
+                    "object_id": {
+                        "ega_accession": "EGAR00004343122"
+                    },
+                    "object_type": "assay"                                    
+                }
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {                
+                    "object_id": {
+                        "ega_accession": "EGAZ00004343122"
+                    },
+                    "object_type": "analysis"                                    
+                }
+            },
+            {
+                "r_type": "referenced_by",
+                "r_source": {
+                    "object_id": {
+                        "ega_accession": "EGAB00002045411"
+                    },
+                    "object_type": "submission"                
+                }
+            }
+        ],
+        "dataset_attributes": [
+            {
+                "tag": "Associated project ID",
+                "value": "X33981-DGH"            
+            }
+        ],
+        "schema_descriptor": {
+            "object_type": "dataset",
+            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json",
+            "object_schema_version": "0.0.0",
+            "common_schema_version": "0.0.0"
+        }
+    }
+}
