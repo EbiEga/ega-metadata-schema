@@ -44,6 +44,8 @@ jobs:
           schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
           cd biovalidator
+
+          head "$schemas_dir/EGA.study.json"
           
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json" &
