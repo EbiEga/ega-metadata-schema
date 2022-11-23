@@ -33,6 +33,8 @@ jobs:
           # We'll use the latest version of python from major 3 release
           # This bit is needed for running the following python script
           python-version: '3.x'
+        
+      - name: Install "requests" module
         run: pip install requests
 
       - name: Validate JSON examples
@@ -44,5 +46,5 @@ jobs:
           #    REMOVE THE FOLLOWING AND REPLACE WITH THE PREVIOUS
           json_ex_dir="./examples/REMOVE_TEST"
           url="http://biovalidator.ega.ebi.ac.uk//validate"
-          
+
           python ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
