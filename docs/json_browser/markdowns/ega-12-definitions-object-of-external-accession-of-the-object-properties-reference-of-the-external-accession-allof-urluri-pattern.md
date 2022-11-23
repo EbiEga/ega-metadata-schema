@@ -22,7 +22,7 @@ This object exists to hold the pattern that a URL or URI should have. For it to 
 ^((http|https)://)(www.)?[a-zA-Z0-9@:%._\+~#?&//=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%._\+~#?&//=]*)$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(\(http%7Chttps\)%3A%2F%2F\)\(www.\)%3F%5Ba-zA-Z0-9%40%3A%25._%5C%2B\~%23%3F%26%2F%2F%3D%5D%7B2%2C256%7D%5C.%5Ba-z%5D%7B2%2C6%7D%5Cb\(%5B-a-zA-Z0-9%40%3A%25._%5C%2B\~%23%3F%26%2F%2F%3D%5D*\)%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E\(\(http%7Chttps\)%3A%2F%2F\)\(www.\)%3F%5Ba-zA-Z0-9%40%3A%25._%5C%2B~%23%3F%26%2F%2F%3D%5D%7B2%2C256%7D%5C.%5Ba-z%5D%7B2%2C6%7D%5Cb\(%5B-a-zA-Z0-9%40%3A%25._%5C%2B~%23%3F%26%2F%2F%3D%5D*\)%24 "try regular expression with regexr.com")
 
 ## 0 Examples
 
