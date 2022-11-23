@@ -28,7 +28,7 @@ def get_errors_response(response):
     """
         Function that, given a "requests.models.Response" object, will interpret it, asserting that the request
             was successful and no validation errors (i.e. empty list of errors) were found. If not, it will
-            exit with an error.
+            return the error.
     """
     assert type(response) == requests.models.Response
     assert response.status_code == 200
