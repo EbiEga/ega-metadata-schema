@@ -46,7 +46,7 @@ jobs:
           cd biovalidator
           
           node src/biovalidator -r "$schemas_dir/*.json" \
-            -r "$cv_schemas_dir/*.json"
+            -r "$cv_schemas_dir/*.json" &
           # Alternatively we may need to "run: sleep 5" so that we give time
           #   for the server to start.
 
