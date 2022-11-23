@@ -33,6 +33,7 @@ jobs:
           # We'll use the latest version of python from major 3 release
           # This bit is needed for running the following python script
           python-version: '3.x'
+        run: pip install requests
 
       - name: Validate JSON examples
         # Validate all JSON documents against their corresponding schemas

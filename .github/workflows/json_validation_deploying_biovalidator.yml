@@ -43,18 +43,13 @@ jobs:
           schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
 
-        #!
           pwd
           ls
-        #!
-
-        #!
           echo
           cd ..
           pwd
           cd biovalidator
           pwd
-        #!
           
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json"
