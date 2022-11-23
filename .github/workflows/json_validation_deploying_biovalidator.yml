@@ -51,14 +51,21 @@ jobs:
         # Alternatively we may need to "run: sleep 5" so that we give time
         #   for the server to start.
 
-      - name: Validate JSON docs
-        # Validate all JSON documents against the deployed server
-        run: |
-          json_ex_dir="~/examples/json_validation_tests"
+      - uses: actions/setup-python@v4
+        with:
+          # We'll use the latest version of python from major 3 release
+          # This bit is needed for running the following python script
+          python-version: '3.x'
+        run: pip install requests
 
-          # Loop through the examples and validate each against the local server
-          for json_filepath in "$json_ex_dir"/*.json; do 
-                  curl --data @"$json_filepath" \
-                    -H "Content-Type: application/json" \
-                    -X POST "http://localhost:3020/validate"
-          done
+      - name: Validate JSON examples
+          # Validate all JSON documents against their corresponding schemas
+          # Check https://github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
+        run: |
+          # json_ex_dir="./examples/json_validation_tests"
+          # ONCE https://github.com/elixir-europe/biovalidator/issues/53 is fixed
+          #    REMOVE THE FOLLOWING AND REPLACE WITH THE PREVIOUS
+          json_ex_dir="./examples/REMOVE_TEST"
+          url="http://localhost:3020/validate"
+
+          python ./.github/scripts/request_validation.py "$json_ex_dir" "$url"

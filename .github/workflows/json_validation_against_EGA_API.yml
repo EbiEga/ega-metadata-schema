@@ -36,9 +36,13 @@ jobs:
         run: pip install requests
 
       - name: Validate JSON examples
-        # Validate all JSON documents against their corresponding schemas
-        # Check https://github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
+          # Validate all JSON documents against their corresponding schemas
+          # Check https://github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
         run: |
-          json_ex_dir="./examples/json_validation_tests"
+          # json_ex_dir="./examples/json_validation_tests"
+          # ONCE https://github.com/elixir-europe/biovalidator/issues/53 is fixed
+          #    REMOVE THE FOLLOWING AND REPLACE WITH THE PREVIOUS
+          json_ex_dir="./examples/REMOVE_TEST"
           url="http://biovalidator.ega.ebi.ac.uk//validate"
+          
           python ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
