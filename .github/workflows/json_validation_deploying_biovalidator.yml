@@ -39,7 +39,7 @@ jobs:
         # We want to specify the JSON schemas and documents with the new changes
         #   Therefore we specify the schemas at deployment level (-r)
         run: |
-          schemas_dir="./schemas"
+          schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
 
           node src/biovalidator -r "$schemas_dir/*.json" \
@@ -50,7 +50,7 @@ jobs:
       - name: Validate JSON docs
         # Validate all JSON documents against the deployed server
         run: |
-          json_ex_dir="./examples/json_validation_tests"
+          json_ex_dir="~/examples/json_validation_tests"
 
           # Loop through the examples and validate each against the local server
           for json_filepath in "$json_ex_dir"/*.json; do 
