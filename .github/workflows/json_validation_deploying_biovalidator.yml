@@ -41,7 +41,7 @@ jobs:
           # We want to specify the JSON schemas and documents with the new changes
           #   Therefore we specify the schemas at deployment level (-r)
         run: |
-          schemas_dir="~/schemas"
+          schemas_dir="./schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
           cd biovalidator
 
