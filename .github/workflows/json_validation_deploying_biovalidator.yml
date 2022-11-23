@@ -32,6 +32,7 @@ jobs:
         # We want to test with the latest Node.js version, but if not, we could
         #   make use of action: https://github.com/actions/setup-node
         run: |
+          pwd
           cd biovalidator
           npm install
 
@@ -42,8 +43,18 @@ jobs:
           schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
 
+        #!
           pwd
-          ll
+          ls
+        #!
+
+        #!
+          echo
+          cd ..
+          pwd
+          cd biovalidator
+          pwd
+        #!
           
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json"
