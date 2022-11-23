@@ -44,10 +44,7 @@ jobs:
           # Validate all JSON documents against their corresponding schemas
           # Check https://github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
         run: |
-          # json_ex_dir="./examples/json_validation_tests"
-          # ONCE https://github.com/elixir-europe/biovalidator/issues/53 is fixed
-          #    REMOVE THE FOLLOWING AND REPLACE WITH THE PREVIOUS
-          json_ex_dir="./examples/REMOVE_TEST"
+          json_ex_dir="./examples/json_validation_tests"
           # The following URL points to EGA's server of Biovalidator
           url="http://biovalidator.ega.ebi.ac.uk/validate"
 
