@@ -45,6 +45,6 @@ jobs:
           # ONCE https://github.com/elixir-europe/biovalidator/issues/53 is fixed
           #    REMOVE THE FOLLOWING AND REPLACE WITH THE PREVIOUS
           json_ex_dir="./examples/REMOVE_TEST"
-          url="http://biovalidator.ega.ebi.ac.uk//validate"
+          url="http://biovalidator.ega.ebi.ac.uk/validate"
 
           python ./.github/scripts/request_validation.py "$json_ex_dir" "$url"

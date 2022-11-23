@@ -24,24 +24,22 @@ jobs:
           fetch-depth: 0
 
       - name: Clone Biovalidator
-        # See https://github.com/elixir-europe/biovalidator#installation
-        # We want to test the "main" branch of the project
+          # See https://github.com/elixir-europe/biovalidator#installation
+          # We want to test the "main" branch of the project
         run: git clone https://github.com/elixir-europe/biovalidator.git
-
-        
       - name: Install Biovalidator
-        # We want to test with the latest Node.js version, but if not, we could
-        #   make use of action: https://github.com/actions/setup-node
+          # We want to test with the latest Node.js version, but if not, we could
+          #   make use of action: https://github.com/actions/setup-node
         run: |
           pwd
           cd biovalidator
           npm install
-        # We shouldn't need to audit the issues, but for now it is what it is
+          # We shouldn't need to audit the issues, but for now it is what it is
           npm audit fix
 
       - name: Start Biovalidator server
-        # We want to specify the JSON schemas and documents with the new changes
-        #   Therefore we specify the schemas at deployment level (-r)
+          # We want to specify the JSON schemas and documents with the new changes
+          #   Therefore we specify the schemas at deployment level (-r)
         run: |
           schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
@@ -49,8 +47,8 @@ jobs:
           
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json"
-        # Alternatively we may need to "run: sleep 5" so that we give time
-        #   for the server to start.
+          # Alternatively we may need to "run: sleep 5" so that we give time
+          #   for the server to start.
 
       - uses: actions/setup-python@v4
         with:
