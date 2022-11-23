@@ -6,7 +6,7 @@
 # It uses AJV-CLI as the JSON document validator.
 # For more information, check:
 #   https://github.com/ajv-validator/ajv-cli
-name: JSON docs validation using local Biovalidator (json_validation_deploying_biovalidator.yml)
+name: JSON docs validation - Local Biovalidator (json_validation_deploying_biovalidator.yml)
 
 on:
   # Executes on any commit to a PR to the "main" branch
@@ -47,8 +47,9 @@ jobs:
           
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json" &
-          # Alternatively we may need to "run: sleep 5" so that we give time
-          #   for the server to start.
+          
+          # We stop for a few seconds to give the server time
+          sleep 3
 
       - uses: actions/setup-python@v4
         with:
