@@ -42,6 +42,9 @@ jobs:
           schemas_dir="~/schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
 
+          pwd
+          ll
+          
           node src/biovalidator -r "$schemas_dir/*.json" \
             -r "$cv_schemas_dir/*.json"
         # Alternatively we may need to "run: sleep 5" so that we give time
@@ -54,8 +57,7 @@ jobs:
 
           # Loop through the examples and validate each against the local server
           for json_filepath in "$json_ex_dir"/*.json; do 
-                  json_filename=$( basename "$json_filepath" )
-                  curl --data @"$json_filename" \
+                  curl --data @"$json_filepath" \
                     -H "Content-Type: application/json" \
                     -X POST "http://localhost:3020/validate"
           done

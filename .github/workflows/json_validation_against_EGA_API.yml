@@ -37,5 +37,5 @@ jobs:
           for json_filepath in "$json_ex_dir"/*.json; do 
                   curl --data @"$json_filepath" \
                     -H "Content-Type: application/json" \
-                    -X POST "http://localhost:3020/validate"
+                    -X POST "biovalidator.ega.ebi.ac.uk/validate"
           done
