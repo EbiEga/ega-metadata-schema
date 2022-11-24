@@ -3,26 +3,27 @@ import json
 import sys
 import os
 
-#---------#
+# --------- #
 # Handling arguments
-#---------#
+# --------- #
 dirname = sys.argv[1]
 curl_URL = sys.argv[2]
 extension = ".json"
 
-#---------#
+# --------- #
 # Function definition
-#---------#
-def request_validation(data_filepath, curl_URL, headers = {'Content-Type': 'application/json'}):
+# --------- #
+def request_validation(data_filepath, curl_URL, headers={'Content-Type': 'application/json'}):
     """
         Function that, given a fata_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
             and the HTTP headers, will do a post request and return the response
-    """ 
+    """
     with open(data_filepath) as f:
         data = f.read().replace('\n', '').replace('\r', '').encode('utf-8')
-        
-    response = requests.post(url = curl_URL, headers = headers, data = data)    
+    
+    response = requests.post(url=curl_URL, headers=headers, data=data)
     return response
+
 
 def get_errors_response(response):
     """
@@ -40,18 +41,19 @@ def get_errors_response(response):
     if not len(val_response_list) == 0:
         return val_response_list
 
-#---------#
+
+# --------- #
 # Running validations
-#---------#
+# --------- #
 error_dict = {}
 # We iterate over the JSON documents to validate
-for file in os.scandir(dirname): 
+for file in os.scandir(dirname):
     # Check if it's a JSON file
     if not file.path.endswith(extension):
         continue
 
-    request = request_validation(data_filepath = file,
-                                 curl_URL = curl_URL)
+    request = request_validation(data_filepath=file,
+                                 curl_URL=curl_URL)
     
     val_error = get_errors_response(request)
     # If there was a validation error, we add it to the dictionary

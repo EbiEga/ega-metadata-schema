@@ -2,26 +2,29 @@
 # This workflow validates the current JSON documents against EGA's JSON schemas
 # using EGA's API endpoint (http://biovalidator.ega.ebi.ac.uk/validate) of
 # the tool Biovalidator (https://github.com/elixir-europe/biovalidator) and the
-# up-to-date EGA JSON schemas (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
+# up-to-date EGA JSON schemas 
+# (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
 # The logic of this workflow is:
 #   - Details: EE-2575
 #   - Why: Allows us to check two things:
-#       1. Whether the current "main" branch of Biovalidator can be deployed as a server 
-#           instance.
-#       2. Whether the modified schemas-&-documents (the ones in the branch of the PR)
-#            are compliant (i.e. would pass validation) against an up to date 
-#            Biovalidator instance.
-#   - Would block the PR if failed? Requires interpretation depending on the step
-#       at which it failed.
+#       1. Whether the current "main" branch of Biovalidator can be deployed as 
+#           a server instance.
+#       2. Whether the modified schemas-&-documents (the ones in the branch of 
+#            the PR) are compliant (i.e. would pass validation) against an up to
+#            date Biovalidator instance.
+#   - Would block the PR if failed? Requires interpretation depending on the 
+#       step at which it failed.
 #   - How: (1) Clone current Biovalidator repository; (2) install dependencies 
-#       and project; (3) deploy Biovalidator local server, specifying (-r / --ref)
+#       and project; (3) deploy Biovalidator local server, specifying (-r/--ref)
 #       the schemas to be used during validation, which would be the ones within
 #       the branch; (4) execute script .github/scripts/request_validation.py
 #       specifying the localhost server and branch's JSON documents. 
 #
 # For more information, check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/gh_workflows
-name: JSON docs validation - Local Biovalidator (json_validation_deploying_biovalidator.yml)
+name: |
+  JSON docs validation - Local Biovalidator 
+  (json_validation_deploying_biovalidator.yml)
 
 on:
   # Executes on any commit to a PR to the "main" branch
@@ -43,8 +46,8 @@ jobs:
           # We want to test the "main" branch of the project
         run: git clone https://github.com/elixir-europe/biovalidator.git
       - name: Install Biovalidator
-          # We want to test with the latest Node.js version, but if not, we could
-          #   make use of action: https://github.com/actions/setup-node
+          # We want to test with the latest Node.js version, but if not, we 
+          # could make use of action: https://github.com/actions/setup-node
         run: |
           cd biovalidator
           npm install
@@ -52,8 +55,8 @@ jobs:
           npm audit fix
 
       - name: Start Biovalidator server
-          # We want to specify the JSON schemas and documents with the new changes
-          #   Therefore we specify the schemas at deployment level (-r)
+          # We want to specify the JSON schemas and documents with the new 
+          #   changes. Therefore we specify the schemas at deployment level (-r)
         run: |
           schemas_dir="./schemas"
           cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
@@ -71,15 +74,18 @@ jobs:
           python-version: '3.x'
 
       - name: Install "requests" module
-          # The requests module is required for the POST requests within the script
+          # The requests module is required for the POST requests within the 
+          #   script
         run: pip install requests
 
       - name: Validate JSON examples
           # Validate all JSON documents against their corresponding schemas
-          # Check https://github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
+          # Check:
+          #   github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
         run: |
           json_ex_dir="./examples/json_validation_tests"
-          # The following URL points to the locally deployed server of Biovalidator
+          # The following URL points to the locally deployed server of
+          #   Biovalidator
           url="http://localhost:3020/validate"
 
           python ./.github/scripts/request_validation.py "$json_ex_dir" "$url"

@@ -2,7 +2,8 @@
 # This workflow validates the current JSON documents against EGA's JSON schemas
 # using EGA's API endpoint (http://biovalidator.ega.ebi.ac.uk/validate) of
 # the tool Biovalidator (https://github.com/elixir-europe/biovalidator) and the
-# up-to-date EGA JSON schemas (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
+# up-to-date EGA JSON schemas \
+# (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
 # The logic of this workflow is:
 #   - Details: EE-2575
 #   - Why: It allows us to know if the changes introduced in the branch are
@@ -37,12 +38,14 @@ jobs:
           python-version: '3.x'
 
       - name: Install "requests" module
-          # The requests module is required for the POST requests within the script
+          # The requests module is required for the POST requests within the 
+          #   script
         run: pip install requests
 
       - name: Validate JSON examples
           # Validate all JSON documents against their corresponding schemas
-          # Check https://github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
+          # Check :
+          #   github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
         run: |
           json_ex_dir="./examples/json_validation_tests"
           # The following URL points to EGA's server of Biovalidator
