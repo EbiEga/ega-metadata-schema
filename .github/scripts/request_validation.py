@@ -30,8 +30,8 @@ def get_errors_response(response):
             was successful and no validation errors (i.e. empty list of errors) were found. If not, it will
             return the error.
     """
-    assert type(response) == requests.models.Response
-    assert response.status_code == 200
+    assert type(response) == requests.models.Response, "The POST response was not of the correct type"
+    assert response.status_code == 200, f"The POST response was not successful: instead of 200, the Status code was {response.status_code}"
     
     # We load the result of the validation
     val_response_list = json.loads(response.text)
