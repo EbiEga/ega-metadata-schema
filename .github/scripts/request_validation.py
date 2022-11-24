@@ -1,7 +1,7 @@
-import requests
 import json
-import sys
 import os
+import requests
+import sys
 
 # --------- #
 # Handling arguments
@@ -13,30 +13,38 @@ extension = ".json"
 # --------- #
 # Function definition
 # --------- #
-def request_validation(data_filepath, curl_URL, headers={'Content-Type': 'application/json'}):
+
+def request_validation(
+        data_filepath, curl_URL, headers={'Content-Type': 'application/json'}
+    ):
     """
-        Function that, given a fata_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
-            and the HTTP headers, will do a post request and return the response
+    Function that, given a fata_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
+        and the HTTP headers, will do a post request and return the response
     """
     with open(data_filepath) as f:
         data = f.read().replace('\n', '').replace('\r', '').encode('utf-8')
-    
+
     response = requests.post(url=curl_URL, headers=headers, data=data)
     return response
 
 
+
 def get_errors_response(response):
     """
-        Function that, given a "requests.models.Response" object, will interpret it, asserting that the request
-            was successful and no validation errors (i.e. empty list of errors) were found. If not, it will
-            return the error.
+    Function that, given a "requests.models.Response" object, will interpret it, asserting that the request
+        was successful and no validation errors (i.e. empty list of errors) were found. If not, it will
+        return the error.
     """
-    assert type(response) == requests.models.Response, "The POST response was not of the correct type"
-    assert response.status_code == 200, f"The POST response was not successful: instead of 200, the Status code was {response.status_code}"
+    assert (
+            type(response) == requests.models.Response
+    ), "The POST response was not of the correct type"
+    assert (
+            response.status_code == 200
+    ), f"The POST response was not successful: instead of 200, the Status code was {response.status_code}"
     
     # We load the result of the validation
     val_response_list = json.loads(response.text)
-    
+
     # If the list is empty "[]", the validation found no errors
     if not len(val_response_list) == 0:
         return val_response_list
@@ -54,7 +62,7 @@ for file in os.scandir(dirname):
 
     request = request_validation(data_filepath=file,
                                  curl_URL=curl_URL)
-    
+
     val_error = get_errors_response(request)
     # If there was a validation error, we add it to the dictionary
     if val_error:
