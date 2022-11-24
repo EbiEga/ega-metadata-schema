@@ -41,9 +41,9 @@ def get_errors_response(response):
     assert (
             type(response) == requests.models.Response
         ), "The POST response was not of the correct type"
-    assert (
-            response.status_code == 200
-        ), f"""The POST response was not successful: instead of 200, the status code was '{response.status_code}'
+    
+    if not response.status_code == 200:
+        return f"""The POST response was not successful: instead of 200, the status code was '{response.status_code}'
                 when validating file '{filename}'"""
 
     # We load the result of the validation
