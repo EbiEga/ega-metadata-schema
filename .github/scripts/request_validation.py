@@ -18,12 +18,15 @@ extension = ".json"
 
 def request_validation(data_filepath, 
                        curl_URL,
-                       headers={'Content-Type': 'application/json'}
+                       headers=None
                        ):
     """
     Function that, given a fata_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
         and the HTTP headers, will do a post request and return the response
     """
+    if headers is None:
+        headers = {'Content-Type': 'application/json'}
+        
     with open(data_filepath) as f:
         data = f.read().replace('\n', '').replace('\r', '').encode('utf-8')
 
