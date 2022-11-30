@@ -48,7 +48,6 @@ def get_errors_response(response: requests.models.Response) -> list:
         error_message = f"The POST response was not successful: instead of 200, the status code was '{response.status_code}' when validating file '{filename}'"
         return error_message
 
-    # We load the result of the validation
     val_response_list = response.json()
 
     # If the list is empty "[]", the validation found no errors
@@ -62,7 +61,6 @@ def get_errors_response(response: requests.models.Response) -> list:
 error_dict = {}
 # We iterate over the JSON documents to validate
 for file in os.scandir(dirname):
-    # Check if it's a JSON file
     if not file.path.endswith(extension):
         continue
 
@@ -70,7 +68,6 @@ for file in os.scandir(dirname):
                                  curl_URL=curl_URL)
 
     val_error = get_errors_response(request)
-    # If there was a validation error, we add it to the dictionary
     if val_error:
         error_dict[file.name] = val_error
 
