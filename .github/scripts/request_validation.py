@@ -46,7 +46,8 @@ def get_errors_response(response: requests.models.Response) -> list:
         ), "The POST response was not of the correct type"
     
     if not response.status_code == requests.codes.ok:
-        error_message = f"The POST response was not successful: instead of 200, the status code was '{response.status_code}' when validating file '{filename}'"
+        error_message = f"The POST response was not successful: instead of {requests.codes.ok}," + \
+                        f" the status code was '{response.status_code}' when validating file '{filename}'"
         return error_message
 
     val_response_list = response.json()
