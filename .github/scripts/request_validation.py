@@ -16,17 +16,17 @@ extension = ".json"
 # --------- #
 
 
-def request_validation(data_filepath, 
-                       curl_URL,
-                       headers=None
-                       ):
+def request_validation(data_filepath: str, 
+                       curl_URL: str,
+                       headers: dict=None
+                       ) -> requests.models.Response:
     """
-    Function that, given a fata_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
+    Function that, given a data_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
         and the HTTP headers, will do a post request and return the response
     """
     if headers is None:
         headers = {'Content-Type': 'application/json'}
-        
+
     with open(data_filepath) as f:
         data = f.read().replace('\n', '').replace('\r', '').encode('utf-8')
 
@@ -34,7 +34,7 @@ def request_validation(data_filepath,
     return response
 
 
-def get_errors_response(response):
+def get_errors_response(response: requests.models.Response) -> list:
     """
     Function that, given a "requests.models.Response" object, will interpret it, asserting that the request
         was successful and no validation errors (i.e. empty list of errors) were found. If not, it will
