@@ -107,27 +107,65 @@
             "pattern": "^[^<>:;,?\"*|]+$",
             "examples": [ "my-bam-file.bam.gpg" ]
           },
+          "file_content": {
+            "type": "array",
+            "title": "File content array",
+            "description": "Array of file content items. This array exists to clarify what the purpose of a file, regardless of its format, may be. For example, a TXT formatted file could contain multiple types of data, from gene annotations to READMEs. Therefore, select the items from the used ontology that best describe the content of your file.",
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "title": "File content item",
+              "description": "Item describing the type of data a file contains or represents.",
+              "meta:property_curie": "format:2350",
+              "required": ["type_of_data_curie"],
+              "additionalProperties": false,
+              "properties": {
+                "type_of_data_curie": {
+                  "type": "string",
+                  "title": "Compact URI (CURIE) of the type of data.",
+                  "allOf": [
+                    {
+                      "title": "General CURIE pattern",
+                      "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+                    }
+                  ],
+                  "graphRestriction ":  {
+                    "ontologies" : ["obo:edam"],
+                    "classes": ["format:2350"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": true,
+                    "include_self": false
+                  },
+                  "examples": [ "format:1919", "format:3326" ]
+                },
+                "type_of_data_term": {
+                  "type": "string",
+                  "title": "Term of the type of data",
+                  "description": "Term that specifies the type of data content.",
+                  "minLength": 1,            
+                  "examples": [ "Sequence record format", "Data index format" ]
+                }
+              }
+            }
+          },
           "filetype": {
             "type": "string",
             "title": "Filetype",
-            "meta:property_curie": "NCIT:C172272",
-            "description": "The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-            "required": ["filetype_id"],
-            "additionalProperties": false,
-            "enum": ["CEL", "TSV", "ADF", "FASTQ", "FASTA", "SDRF", "IDF", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR", "PY", "SH"],
+            "meta:property_curie": "format:1915",
+            "description": "The main format in which data is structured and represented in an electronic file. It is normally defined by the file extension of the file (e.g. FASTQ for a '.fastq' file). The string corresponds to the ID or name (e.g. FASTA, TSV...), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
+            "enum": ["CEL", "TSV", "FASTQ", "FASTA", "VCF", "SRA", "SRF", "SFF", "BAM", "CRAM", "XLSX", "CSV", "BED", "IDAT", "MAP", "PED", "BIM", "FAM", "TXT", "EXP", "GPR", "PY", "SH", "ADF", "SDRF", "IDF", "MD5", "HAP", "CSFASTA", "LOC", "HTML", "HIC", "MD", "MATLAB", "PERL", "TIF", "R", "SNP", "XML", "SVG", "PNG", "JPG", "GTC", "HDF5", "FAST5", "PAIR", "TXT", "BGI", "BGEN", "GEN", "PXF", "LOOM", "BAX.H5", "BAS.H5", "ASM", "CSI", "TBI", "BCF", "qual454", "qualsolid", "FASTQ-illumina", "FASTQ-helicos", "FASTQ-sanger", "FASTQ-solexa", "SAM", "CRAI", "BAI", "MTX", "MEX ", "GMX", "GMT", "GRP"],
             "meta:enum": {
-              "CEL": "[EFO:0005630]",
-              "TSV": "[NCIT:C164049]: Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type.",
-              "ADF": "[NCIT:C172213]",
-              "FASTQ": "[EFO:0004155]",
-              "FASTA": "[NCIT:C47845]",
-              "SDRF": "[NCIT:C172211]",
-              "IDF": "[NCIT:C172212]",
-              "VCF": "[NCIT:C172216]",
+              "CEL": "[format:1638]",
+              "TSV": "[format:3475]",
+              "FASTQ": "[format:1930]",
+              "FASTA": "[format:1929]",
+              "VCF": "[format:3016]",
               "SRA": "[format:3698]",
-              "SRF": "[EFO:0004154]",
-              "SFF": "[EFO:0004156]",
-              "BAM": "[EFO:0004157]",
+              "SRF": "[format:3698]",
+              "SFF": "[format:3284]",
+              "BAM": "[format:2572]",
               "CRAM": "[format:3462]",
               "XLSX": "[format:3620]",
               "CSV": "[format:3752]",
@@ -135,12 +173,61 @@
               "IDAT": "[format:3578]",
               "MAP": "[format:3285]",
               "PED": "[format:3286]",
-              "BIM": "",
-              "FAM": "",
+              "BIM": "[]",
+              "FAM": "[]",
               "EXP": "[format:1631]",
               "GPR": "[format:3829]",
               "PY": "[format:3996]",
-              "SH": "Bash scripts"
+              "SH": "[]",
+              "ADF": "[NCIT:C172213]",
+              "SDRF": "[NCIT:C172211]",
+              "IDF": "[NCIT:C172212]",
+              "MD5": "[data:2190]",
+              "HAP": "[]",
+              "CSFASTA": "[]",
+              "LOC": "[]",
+              "HTML": "[format:2331]",
+              "HIC": "[]",
+              "MD": "[]",
+              "MATLAB": "[format:4007]",
+              "PERL": "[format:3998]",
+              "TIF": "[]",
+              "R": "[format:3999]",
+              "SNP": "[]",
+              "XML": "[format:2332]",
+              "SVG": "[format:3604]",
+              "PNG": "[format:3603]",
+              "JPG": "[format:3579]",
+              "GTC": "[]: An Illumina-specific file containing called genotypes in AA/AB/BB format",
+              "HDF5": "[format:3590]",
+              "FAST5": "[]",
+              "PAIR": "[]",
+              "TXT": "[format:2330]",
+              "BGI": "[]: Index file of a BGEN file",
+              "BGEN": "[]: Binary version of a GEN file",
+              "GEN": "[format:3812]",
+              "PXF": "[]: A phenopacket. An open standard for sharing disease and phenotype information represented as PXF (Phenotype Exchange Format) files, which may be encoded in JSON or YAML.",
+              "LOOM": "[format:3913]",
+              "BAX.H5": "[]",
+              "BAS.H5": "[]",
+              "ASM": "[]: The files in the ASM directory describe and annotate the genome assembly with respect to the reference genome.",
+              "CSI": "[]",
+              "TBI": "[format:3700]",
+              "BCF": "[format:3020]",
+              "qual454": "[format:3611]",
+              "qualsolid": "[format:3610]",
+              "FASTQ-illumina": "[format:1931]",
+              "FASTQ-helicos": "[]",
+              "FASTQ-sanger": "[format:1932]",
+              "FASTQ-solexa": "[format:1933]",
+              "SAM": "[format:2573]",
+              "CRAI": "[]: CRAM indexing format",
+              "BAI": "[format:3327]",
+              "MTX": "[format:3916]",
+              "MEX ": "[]: Market Exchange Format (MEX) for sparse matrices. It  contains a matrix (MTX) file, and also gzipped TSV files with feature and barcode sequences corresponding to row and column indices respectively. Feature-barcode matrix",
+              "GMX": "[]",
+              "GMT": "[]",
+              "GRP": "[]"
             }
           },
           "checksum_method": {
@@ -675,7 +762,7 @@
       "filename-filetype-pattern-check": {
         "type": "object",
         "title": "Check: filetype checks based on its filename",
-        "description": "This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype_id shall be 'BAM' and not 'XLSX')",
+        "description": "This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gpg' its filetype_id shall be 'BAM' and not 'XLSX')",
         "anyOf": [
           {
             "title": "CEL Filename pattern-check",
@@ -910,13 +997,442 @@
                 },
                 "filename": { "$ref": "#/definitions/sh-file-filename-pattern" }
             }
-          }          
+          },
+          {
+            "title": "MD5 Filename pattern-check",
+            "properties": {
+                "filetype": {
+                    "enum": ["MD5"]
+                },
+                "filename": { "$ref": "#/definitions/md5-file-filename-pattern" }
+            }
+          },
+          {
+              "title": "HAP Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["HAP"]
+                  },
+                  "filename": { "$ref": "#/definitions/hap-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "CSFASTA Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["CSFASTA"]
+                  },
+                  "filename": { "$ref": "#/definitions/csfasta-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "LOC Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["LOC"]
+                  },
+                  "filename": { "$ref": "#/definitions/loc-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "HTML Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["HTML"]
+                  },
+                  "filename": { "$ref": "#/definitions/html-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "HIC Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["HIC"]
+                  },
+                  "filename": { "$ref": "#/definitions/hic-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "MD Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["MD"]
+                  },
+                  "filename": { "$ref": "#/definitions/md-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "MATLAB Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["MATLAB"]
+                  },
+                  "filename": { "$ref": "#/definitions/matlab-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "PERL Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["PERL"]
+                  },
+                  "filename": { "$ref": "#/definitions/perl-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "TIF Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["TIF"]
+                  },
+                  "filename": { "$ref": "#/definitions/tif-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "R Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["R"]
+                  },
+                  "filename": { "$ref": "#/definitions/r-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "SNP Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["SNP"]
+                  },
+                  "filename": { "$ref": "#/definitions/snp-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "XML Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["XML"]
+                  },
+                  "filename": { "$ref": "#/definitions/xml-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "SVG Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["SVG"]
+                  },
+                  "filename": { "$ref": "#/definitions/svg-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "PNG Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["PNG"]
+                  },
+                  "filename": { "$ref": "#/definitions/png-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "JPG Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["JPG"]
+                  },
+                  "filename": { "$ref": "#/definitions/jpg-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "GTC Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["GTC"]
+                  },
+                  "filename": { "$ref": "#/definitions/gtc-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "HDF5 Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["HDF5"]
+                  },
+                  "filename": { "$ref": "#/definitions/hdf5-file-filename-pattern" }
+              }
+          },
+          {
+            "title": "FAST5 Filename pattern-check",
+            "properties": {
+                "filetype": {
+                    "enum": ["FAST5"]
+                },
+                "filename": { "$ref": "#/definitions/fast5-file-filename-pattern" }
+            }
+          },
+          {
+              "title": "PAIR Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["PAIR"]
+                  },
+                  "filename": { "$ref": "#/definitions/pair-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "TXT Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["TXT"]
+                  },
+                  "filename": { "$ref": "#/definitions/txt-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "BGI Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["BGI"]
+                  },
+                  "filename": { "$ref": "#/definitions/bgi-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "BGEN Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["BGEN"]
+                  },
+                  "filename": { "$ref": "#/definitions/bgen-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "GEN Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["GEN"]
+                  },
+                  "filename": { "$ref": "#/definitions/gen-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "PXF Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["PXF"]
+                  },
+                  "filename": { "$ref": "#/definitions/pxf-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "LOOM Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["LOOM"]
+                  },
+                  "filename": { "$ref": "#/definitions/loom-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "BAX.H5 Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["BAX.H5"]
+                  },
+                  "filename": { "$ref": "#/definitions/bax.h5-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "BAS.H5 Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["BAS.H5"]
+                  },
+                  "filename": { "$ref": "#/definitions/bas.h5-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "ASM Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["ASM"]
+                  },
+                  "filename": { "$ref": "#/definitions/asm-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "CSI Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["CSI"]
+                  },
+                  "filename": { "$ref": "#/definitions/csi-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "TBI Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["TBI"]
+                  },
+                  "filename": { "$ref": "#/definitions/tbi-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "BCF Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["BCF"]
+                  },
+                  "filename": { "$ref": "#/definitions/bcf-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "qual454 Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["qual454"]
+                  },
+                  "filename": { "$ref": "#/definitions/qual454-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "qualsolid Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["qualsolid"]
+                  },
+                  "filename": { "$ref": "#/definitions/qualsolid-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "FASTQ-illumina Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["FASTQ-illumina"]
+                  },
+                  "filename": { "$ref": "#/definitions/fastq-illumina-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "FASTQ-helicos Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["FASTQ-helicos"]
+                  },
+                  "filename": { "$ref": "#/definitions/fastq-helicos-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "FASTQ-sanger Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["FASTQ-sanger"]
+                  },
+                  "filename": { "$ref": "#/definitions/fastq-sanger-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "FASTQ-solexa Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["FASTQ-solexa"]
+                  },
+                  "filename": { "$ref": "#/definitions/fastq-solexa-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "SAM Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["SAM"]
+                  },
+                  "filename": { "$ref": "#/definitions/sam-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "CRAI Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["CRAI"]
+                  },
+                  "filename": { "$ref": "#/definitions/crai-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "BAI Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["BAI"]
+                  },
+                  "filename": { "$ref": "#/definitions/bai-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "MTX Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["MTX"]
+                  },
+                  "filename": { "$ref": "#/definitions/mtx-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "MEX Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["MEX"]
+                  },
+                  "filename": { "$ref": "#/definitions/mex-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "GMX Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["GMX"]
+                  },
+                  "filename": { "$ref": "#/definitions/gmx-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "GMT Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["GMT"]
+                  },
+                  "filename": { "$ref": "#/definitions/gmt-file-filename-pattern" }
+              }
+          },
+          {
+              "title": "GRP Filename pattern-check",
+              "properties": {
+                  "filetype": {
+                      "enum": ["GRP"]
+                  },
+                  "filename": { "$ref": "#/definitions/grp-file-filename-pattern" }
+              }
+          }
         ]        
       },
+
+      "assay-filetypes": {
+        "type": "object",
+        "title": "Check: allowed filetypes for an assay",
+        "description": "This object exists with the only purpose of being a reference list of the allowed filetypes of an assay (e.g. if the filetype is 'PY', it should not be accepted as raw data). It imitates the 'filetype' property with a subset of the allowed filetypes.",
+        "required": ["filetype"],
+        "properties": {
+          "filetype": {
+            "type": "string",
+            "enum": [ "BAM", "CRAM", "SAM", "FASTA", "BAI", "CRAI", "CSI", "MD", "TXT", "XML", "MD5", "FASTQ", "FASTQ-helicos", "FASTQ-illumina", "BAS.H5", "BAX.H5", "HDF5", "FASTQ-sanger", "FASTQ-solexa", "IDAT", "CEL", "qualsolid", "qual454", "SRA", "SRF", "SFF", "CSFASTA", "GPR", "ADF", "FAST5" ]
+          }
+        }
+      }
+      ,
 
       "cel-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a CEL file",
+        "meta:property_curie": "format:1638",
         "description": "This object exists to hold the filename pattern that a 'CEL' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.cel(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.cel.gz.gpg" ]
@@ -925,22 +1441,16 @@
       "tsv-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a TSV file",
+        "meta:property_curie": "format:3475",
         "description": "This object exists to hold the filename pattern that a 'TSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.tsv(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.tsv.gz.gpg" ]
       },
 
-      "adf-file-filename-pattern": {
-        "type": "string",
-        "title": "Filename pattern of a ADF file",
-        "description": "This object exists to hold the filename pattern that a 'ADF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^.+\\.adf(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
-        "examples": [ "my_file1.adf.gz.gpg" ]
-      },
-
       "fastq-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a FASTQ file",
+        "meta:property_curie": "format:1930",
         "description": "This object exists to hold the filename pattern that a 'FASTQ' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.(fastq|fq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.fastq.gz.gpg" ]
@@ -949,30 +1459,34 @@
       "fasta-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a FASTA file",
+        "meta:property_curie": "format:1929",
         "description": "This object exists to hold the filename pattern that a 'FASTA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^.+\\.fasta(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "pattern": "^.+\\.(fasta|fa|frn|faa|ffn|fna|seq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.fasta.gz.gpg" ]
       },
 
       "sdrf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SDRF file",
+        "meta:property_curie": "NCIT:C172211",
         "description": "This object exists to hold the filename pattern that a 'SDRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^.+\\.sdrf(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "pattern": "^.+\\.(tsv|sdrf)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.sdrf.gz.gpg" ]
       },
 
       "idf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a IDF file",
+        "meta:property_curie": "NCIT:C172212",
         "description": "This object exists to hold the filename pattern that a 'IDF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^.+\\.idf(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "pattern": "^.+\\.(tsv|idf)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.idf.gz.gpg" ]
       },
 
       "vcf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a VCF file",
+        "meta:property_curie": "format:3016",
         "description": "This object exists to hold the filename pattern that a 'VCF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.vcf(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.vcf.gz.gpg" ]
@@ -981,6 +1495,7 @@
       "sra-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SRA file",
+        "meta:property_curie": "format:3698",
         "description": "This object exists to hold the filename pattern that a 'SRA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.sra(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.sra.gz" ]
@@ -989,6 +1504,7 @@
       "srf-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SRF file",
+        "meta:property_curie": "format:3017",
         "description": "This object exists to hold the filename pattern that a 'SRF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.srf(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.srf.gz.gpg" ]
@@ -997,6 +1513,7 @@
       "sff-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SFF file",
+        "meta:property_curie": "format:3284",
         "description": "This object exists to hold the filename pattern that a 'SFF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.sff(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.sff.gz.gpg" ]
@@ -1005,22 +1522,25 @@
       "bam-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a BAM file",
+        "meta:property_curie": "format:2572",
         "description": "This object exists to hold the filename pattern that a 'BAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.bam(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
-        "examples": [ "my_file1.bam.arj.gpg" ]
+        "examples": [ "my_file1.bam.gpg" ]
       },
 
       "cram-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a CRAM file",
+        "meta:property_curie": "format:3462",
         "description": "This object exists to hold the filename pattern that a 'CRAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.cram(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
-        "examples": [ "my_file1.cram.gz.gpg" ]
+        "examples": [ "my_file1.cram.gpg" ]
       },
 
       "xlsx-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a  file",
+        "meta:property_curie": "format:3620",
         "description": "This object exists to hold the filename pattern that a 'XLSX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.xlsx(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.xlsx.tar.gpg" ]
@@ -1029,6 +1549,7 @@
       "csv-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a CSV file",
+        "meta:property_curie": "format:3752",
         "description": "This object exists to hold the filename pattern that a 'CSV' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.csv(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.csv" ]
@@ -1037,14 +1558,16 @@
       "bed-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a BED file",
+        "meta:property_curie": "format:3003",
         "description": "This object exists to hold the filename pattern that a 'BED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.bed(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
-        "examples": [ "my_file1.bed.gz.gpg" ]
+        "examples": [ "my_file1.bed.gpg" ]
       },
 
       "idat-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a IDAT file",
+        "meta:property_curie": "format:3578",
         "description": "This object exists to hold the filename pattern that a 'IDAT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.idat(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.idat.zip" ]
@@ -1053,6 +1576,7 @@
       "map-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a MAP file",
+        "meta:property_curie": "format:3285",
         "description": "This object exists to hold the filename pattern that a 'MAP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.map(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.map.gpg" ]
@@ -1061,14 +1585,16 @@
       "ped-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a PED file",
+        "meta:property_curie": "format:3286",
         "description": "This object exists to hold the filename pattern that a 'PED' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^.+\\.ped(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "pattern": "^.+\\.(ped|tped)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.ped.gz.gpg" ]
       },
 
       "bim-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a BIM file",
+        "meta:property_curie": "",
         "description": "This object exists to hold the filename pattern that a 'BIM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.bim(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.bim.gz.gpg" ]
@@ -1077,15 +1603,17 @@
       "fam-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a FAM file",
+        "meta:property_curie": "",
         "description": "This object exists to hold the filename pattern that a 'FAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^.+\\.fam(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "pattern": "^.+\\.(fam|tfam)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.fam.gz.gpg" ]
       },
 
       "txt-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a TXT file",
-        "description": "This object exists to hold the filename pattern that a 'TXT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "meta:property_curie": "format:2330",
+        "description": "This object exists to hold the filename pattern that a 'TXT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema. It can represent multiple types of data (e.g. an ADF file or a README file)",
         "pattern": "^[^<>:;,?\"*|/]+\\.(txt|TXT)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.txt.gz.gpg" ]
       },
@@ -1093,6 +1621,7 @@
       "exp-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a EXP file",
+        "meta:property_curie": "format:1631",
         "description": "This object exists to hold the filename pattern that a 'EXP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(exp|EXP)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.exp.gz.gpg" ]
@@ -1101,6 +1630,7 @@
       "gpr-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a GPR file",
+        "meta:property_curie": "format:3829",
         "description": "This object exists to hold the filename pattern that a 'GPR' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(gpr|GPR)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.gpr.gz.gpg" ]
@@ -1109,17 +1639,460 @@
       "py-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a PY file",
+        "meta:property_curie": "format:3996",
         "description": "This object exists to hold the filename pattern that a 'PY' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
-        "pattern": "^[^<>:;,?\"*|/]+\\.(py|PY)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(py|PY|pyc|pyo|pyd|ipynb)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.py.gz.gpg" ]
       },
 
       "sh-file-filename-pattern": {
         "type": "string",
         "title": "Filename pattern of a SH file",
+        "meta:property_curie": "",
         "description": "This object exists to hold the filename pattern that a 'SH' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(sh|SH)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
-        "examples": [ "my_file1.sh.gz.gpg" ]
+        "examples": [ "my_file1.sh.gpg" ]
+      },
+
+      "adf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a ADF (Array Design Format) file",
+        "meta:property_curie": "NCIT:C172213",
+        "description": "This object exists to hold the filename pattern that a 'ADF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(adf)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.adf.gz.gpg" ]
+      },
+
+      "md5-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a MD5 file",
+        "meta:property_curie": "data:2190",
+        "description": "This object exists to hold the filename pattern that a 'MD5' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(md5|MD5)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.md5.gz.gpg" ]
+      },
+
+      "hap-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a HAP file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'HAP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(hap|HAP)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.hap.gz.gpg" ]
+      },
+
+      "csfasta-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a CSFASTA file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'CSFASTA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.csfasta(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.csfasta.gpg" ]
+      },
+
+      "loc-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a LOC file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'LOC' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(loc|tsv)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.loc.gpg" ]
+      },
+
+      "tgz-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a TGZ file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'TGZ' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.tgz(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.tgz.gpg" ]
+      },
+
+      "zip-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a ZIP file",
+        "meta:property_curie": "format:3987",
+        "description": "This object exists to hold the filename pattern that a 'ZIP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.zip(\\.gpg)?$",
+        "examples": [ "my_file1.zip.gpg" ]
+      },
+
+      "html-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a HTML file",
+        "meta:property_curie": "format:2331",
+        "description": "This object exists to hold the filename pattern that a 'HTML' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.html(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.html.gpg" ]
+      },
+
+      "hic-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a HIC file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'HIC' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.hic(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.hic.gpg" ]
+      },
+
+      "tif-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a TIF file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'TIF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.tif(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.tif.gpg" ]
+      },
+
+      "md-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a MD file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'MD' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(md|markdown)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.md.gpg" ]
+      },
+
+      "matlab-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a MATLAB file",
+        "meta:property_curie": "format:4007",
+        "description": "This object exists to hold the filename pattern that a 'MATLAB' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(M|m|MAT|mat)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.mat.gpg" ]
+      },
+
+      "perl-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a PERL file",
+        "meta:property_curie": "format:3998",
+        "description": "This object exists to hold the filename pattern that a 'PERL' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(pl|perl)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.pl.gpg" ]
+      },
+
+      "r-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a R file",
+        "meta:property_curie": "format:3999",
+        "description": "This object exists to hold the filename pattern that a 'R' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(r|R|rdata|rda)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.r.gpg" ]
+      },
+
+      "tar-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a TAR file",
+        "meta:property_curie": "format:3981",
+        "description": "This object exists to hold the filename pattern that a 'TAR' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.tar(\\.(gz|zip|rar|arj|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.tar.gz.gpg" ]
+      },
+
+      "snp-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SNP file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'SNP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.snp(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.snp.zip.gpg" ]
+      },
+
+      "xml-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a XML file",
+        "meta:property_curie": "format:2332",
+        "description": "This object exists to hold the filename pattern that a 'XML' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.xml(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.xml.gpg" ]
+      },
+
+      "svg-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SVG file",
+        "meta:property_curie": "format:3604",
+        "description": "This object exists to hold the filename pattern that a 'SVG' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.svg(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.svg.gpg" ]
+      },
+
+      "png-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a PNG file",
+        "meta:property_curie": "format:3603",
+        "description": "This object exists to hold the filename pattern that a 'PNG' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.png(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.png.gpg" ]
+      },
+
+      "jpg-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a JPG file",
+        "meta:property_curie": "format:3579",
+        "description": "This object exists to hold the filename pattern that a 'JPG' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.jpg(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.jpg.gpg" ]
+      },
+
+      "gtc-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a GTC file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'GTC' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.gtc(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.gtc.gpg" ]
+      },
+
+      "hdf5-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a HDF5 file",
+        "meta:property_curie": "format:3590",
+        "description": "This object exists to hold the filename pattern that a 'HDF5' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(h5|hdf5)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.h5.gpg" ]
+      },
+
+      "fast5-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FAST5 file",
+        "meta:property_curie": "format:3590",
+        "description": "This object exists to hold the filename pattern that a 'FAST5' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.fast5(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.fast5.gpg" ]
+      },
+
+      "pair-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a PAIR file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'PAIR' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.pair(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.pair.gpg" ]
+      },
+
+      "bgi-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BGI file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'BGI' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bgi(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.bgi.gpg" ]
+      },
+
+      "bgen-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BGEN file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'BGEN' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bgen(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.bgen.gpg" ]
+      },
+
+      "gen-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a GEN file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'GEN' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.gen(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.gen.gpg" ]
+      },
+
+      "pxf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a PXF file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'PXF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(json|yaml)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.json.gpg" ]
+      },
+
+      "loom-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a LOOM file",
+        "meta:property_curie": "format:3913",
+        "description": "This object exists to hold the filename pattern that a 'LOOM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.loom(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.loom.gpg" ]
+      },
+
+      "bax.h5-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BAX.H5 file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'BAX.H5' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(bax\\.h5|h5)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.bax.h5.gpg" ]
+      },
+
+      "bas.h5-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BAS.H5 file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'BAS.H5' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(bas\\.h5|h5)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.bas.h5.gpg" ]
+      },
+
+      "asm-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a ASM file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'ASM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.asm(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.asm.gpg" ]
+      },
+
+      "csi-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a CSI file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'CSI' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.csi(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.csi.gpg" ]
+      },
+
+      "tbi-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a TBI file",
+        "meta:property_curie": "format:3700",
+        "description": "This object exists to hold the filename pattern that a 'TBI' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.tbi(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.tbi.gpg" ]
+      },
+
+      "bcf-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BCF file",
+        "meta:property_curie": "format:3020",
+        "description": "This object exists to hold the filename pattern that a 'BCF' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bcf(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.bcf.gpg" ]
+      },
+
+      "qual454-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a QUAL454 file",
+        "meta:property_curie": "format:3611",
+        "description": "This object exists to hold the filename pattern that a 'QUAL454' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(qual454|qual)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.qual.gpg" ]
+      },
+
+      "qualsolid-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a QUALSOLID file",
+        "meta:property_curie": "format:3610",
+        "description": "This object exists to hold the filename pattern that a 'QUALSOLID' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(qualsolid|qual)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.qualsolid.gpg" ]
+      },
+
+      "fastq-illumina-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FASTQ-ILLUMINA file",
+        "meta:property_curie": "format:1931",
+        "description": "This object exists to hold the filename pattern that a 'FASTQ-ILLUMINA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(fastq|fq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.fastq.gpg" ]
+      },
+
+      "fastq-helicos-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FASTQ-HELICOS file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'FASTQ-HELICOS' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(fastq|fq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.fastq.gpg" ]
+      },
+
+      "fastq-sanger-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FASTQ-SANGER file",
+        "meta:property_curie": "format:1932",
+        "description": "This object exists to hold the filename pattern that a 'FASTQ-SANGER' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(fastq|fq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.fastq.gpg" ]
+      },
+
+      "fastq-solexa-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a FASTQ-SOLEXA file",
+        "meta:property_curie": "format:1933",
+        "description": "This object exists to hold the filename pattern that a 'FASTQ-SOLEXA' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.(fastq|fq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.fastq.gpg" ]
+      },
+
+      "sam-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a SAM file",
+        "meta:property_curie": "format:2573",
+        "description": "This object exists to hold the filename pattern that a 'SAM' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.sam(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.sam.gpg" ]
+      },
+
+      "crai-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a CRAI file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'CRAI' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.crai(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.crai.gpg" ]
+      },
+
+      "bai-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a BAI file",
+        "meta:property_curie": "format:3327",
+        "description": "This object exists to hold the filename pattern that a 'BAI' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.bai(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.bai.gpg" ]
+      },
+
+      "mtx-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a MTX file",
+        "meta:property_curie": "format:3916",
+        "description": "This object exists to hold the filename pattern that a 'MTX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.mtx(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.mtx.gpg" ]
+      },
+
+      "mex-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a MEX file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'MEX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.mex(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.mex.gpg" ]
+      },
+
+      "gmx-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a GMX file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'GMX' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.gmx(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.gmx.gpg" ]
+      },
+
+      "gmt-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a GMT file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'GMT' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.gmt(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.gmt.gpg" ]
+      },
+
+      "grp-file-filename-pattern": {
+        "type": "string",
+        "title": "Filename pattern of a GRP file",
+        "meta:property_curie": "",
+        "description": "This object exists to hold the filename pattern that a 'GRP' filetype_id would have, for it to be referenced elsewhere within this (or other) JSON schema.",
+        "pattern": "^[^<>:;,?\"*|/]+\\.grp(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
+        "examples": [ "my_file1.grp.gpg" ]
       },
 
       "object_external_accession": {
