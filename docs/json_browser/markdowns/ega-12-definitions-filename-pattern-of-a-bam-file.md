@@ -27,5 +27,5 @@ This object exists to hold the filename pattern that a 'BAM' filetype\_id would 
 ## bam-file-filename-pattern Examples
 
 ```json
-"my_file1.bam.arj.gpg"
+"my_file1.bam.gpg"
 ```

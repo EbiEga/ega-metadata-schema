@@ -27,5 +27,5 @@ This object exists to hold the filename pattern that a 'BED' filetype\_id would 
 ## bed-file-filename-pattern Examples
 
 ```json
-"my_file1.bed.gz.gpg"
+"my_file1.bed.gpg"
 ```

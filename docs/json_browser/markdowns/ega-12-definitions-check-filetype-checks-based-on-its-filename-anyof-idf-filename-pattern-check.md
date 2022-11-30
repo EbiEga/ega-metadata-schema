@@ -70,10 +70,10 @@ This object exists to hold the filename pattern that a 'IDF' filetype\_id would 
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
-^.+\.idf(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$
+^.+\.(tsv|idf)(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E.%2B%5C.idf\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E.%2B%5C.\(tsv%7Cidf\)\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
 ### filename Examples
 

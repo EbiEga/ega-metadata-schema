@@ -27,5 +27,5 @@ This object exists to hold the filename pattern that a 'SH' filetype\_id would h
 ## filename Examples
 
 ```json
-"my_file1.sh.gz.gpg"
+"my_file1.sh.gpg"
 ```

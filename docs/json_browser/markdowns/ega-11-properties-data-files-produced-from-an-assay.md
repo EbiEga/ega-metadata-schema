@@ -12,7 +12,7 @@ This property contains the specific files (e.g. raw CRAM files) derived from per
 
 ## assay\_files Type
 
-`object[]` ([EGA File object](ega-12-definitions-ega-file-object.md))
+an array of merged types ([Details](ega-11-properties-data-files-produced-from-an-assay-items.md))
 
 ## assay\_files Constraints
 

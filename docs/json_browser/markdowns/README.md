@@ -62,6 +62,8 @@
 
 *   [Check that the object\_id's accession pattern and object\_type match](./ega-12-definitions-check-that-the-object_ids-accession-pattern-and-object_type-match.md "This object exists with the only purpose of being a reference as a pattern check of a given object_id and object_type") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object-id-and-object-type-check`
 
+*   [Check: allowed filetypes for an assay](./ega-12-definitions-check-allowed-filetypes-for-an-assay.md "This object exists with the only purpose of being a reference list of the allowed filetypes of an assay (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes`
+
 *   [Check: checksum checks based on its method](./ega-12-definitions-check-checksum-checks-based-on-its-method.md "This object exists with the only purpose of being a reference of pattern checks of the given checksum (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksum-pattern-check`
 
 *   [Check: filetype checks based on its filename](./ega-12-definitions-check-filetype-checks-based-on-its-filename.md "This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check`
@@ -87,6 +89,8 @@
 *   [Experiment type specifications](./ega-9-properties-experiment-type-specifications.md "Node containing additional attributes to describe the experiment, either array experiments (those in which an array instrument \[EFO:0002698] was used) or sequencing experiments (those in which a sequencing instrument \[EFO:0003739] was used)") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_type_specifications`
 
 *   [Experimental condition](./ega-12-definitions-experimental-condition.md "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor`
+
+*   [File content item](./ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item.md "Item describing the type of data a file contains or represents") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items`
 
 *   [Gene descriptor](./ega-12-definitions-gene-descriptor.md "Node to uniquely identify a gene \[SO:0000704]: a region (or regions) that includes all of the sequence elements necessary to encode a functional transcript") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor`
 
@@ -307,6 +311,8 @@
 *   [Experiment relationships](./ega-9-properties-experiment-relationships.md "Comprises metadata (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_relationships`
 
 *   [External accessions array](./ega-12-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "External accession node to reference objects in other archives (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions`
+
+*   [File content array](./ega-12-definitions-ega-file-object-properties-file-content-array.md "Array of file content items") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content`
 
 *   [Files of the analysis](./ega-10-properties-files-of-the-analysis.md "This property contains the files derived from performing any processing or analysis over raw data (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_files`
 

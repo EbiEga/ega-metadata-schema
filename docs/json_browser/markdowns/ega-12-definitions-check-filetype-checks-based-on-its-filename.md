@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filename-filetype-pattern-check
 ```
 
-This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gz.gpg' its filetype\_id shall be 'BAM' and not 'XLSX')
+This object exists with the only purpose of being a reference of pattern checks of the given filetype of a file based on its corresponding filename (e.g. if the file is 'alignment.bam.gpg' its filetype\_id shall be 'BAM' and not 'XLSX')
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
@@ -67,3 +67,95 @@ any of
 *   [PY Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-py-filename-pattern-check.md "check type definition")
 
 *   [SH Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sh-filename-pattern-check.md "check type definition")
+
+*   [MD5 Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-md5-filename-pattern-check.md "check type definition")
+
+*   [HAP Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-hap-filename-pattern-check.md "check type definition")
+
+*   [CSFASTA Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-csfasta-filename-pattern-check.md "check type definition")
+
+*   [LOC Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-loc-filename-pattern-check.md "check type definition")
+
+*   [HTML Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-html-filename-pattern-check.md "check type definition")
+
+*   [HIC Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-hic-filename-pattern-check.md "check type definition")
+
+*   [MD Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-md-filename-pattern-check.md "check type definition")
+
+*   [MATLAB Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-matlab-filename-pattern-check.md "check type definition")
+
+*   [PERL Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-perl-filename-pattern-check.md "check type definition")
+
+*   [TIF Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-tif-filename-pattern-check.md "check type definition")
+
+*   [R Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-r-filename-pattern-check.md "check type definition")
+
+*   [SNP Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-snp-filename-pattern-check.md "check type definition")
+
+*   [XML Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-xml-filename-pattern-check.md "check type definition")
+
+*   [SVG Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-svg-filename-pattern-check.md "check type definition")
+
+*   [PNG Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-png-filename-pattern-check.md "check type definition")
+
+*   [JPG Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-jpg-filename-pattern-check.md "check type definition")
+
+*   [GTC Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-gtc-filename-pattern-check.md "check type definition")
+
+*   [HDF5 Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-hdf5-filename-pattern-check.md "check type definition")
+
+*   [FAST5 Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-fast5-filename-pattern-check.md "check type definition")
+
+*   [PAIR Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-pair-filename-pattern-check.md "check type definition")
+
+*   [TXT Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-txt-filename-pattern-check-1.md "check type definition")
+
+*   [BGI Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-bgi-filename-pattern-check.md "check type definition")
+
+*   [BGEN Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-bgen-filename-pattern-check.md "check type definition")
+
+*   [GEN Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-gen-filename-pattern-check.md "check type definition")
+
+*   [PXF Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-pxf-filename-pattern-check.md "check type definition")
+
+*   [LOOM Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-loom-filename-pattern-check.md "check type definition")
+
+*   [BAX.H5 Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-baxh5-filename-pattern-check.md "check type definition")
+
+*   [BAS.H5 Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-pattern-check.md "check type definition")
+
+*   [ASM Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-asm-filename-pattern-check.md "check type definition")
+
+*   [CSI Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-csi-filename-pattern-check.md "check type definition")
+
+*   [TBI Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-tbi-filename-pattern-check.md "check type definition")
+
+*   [BCF Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-bcf-filename-pattern-check.md "check type definition")
+
+*   [qual454 Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-pattern-check.md "check type definition")
+
+*   [qualsolid Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-qualsolid-filename-pattern-check.md "check type definition")
+
+*   [FASTQ-illumina Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-fastq-illumina-filename-pattern-check.md "check type definition")
+
+*   [FASTQ-helicos Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-fastq-helicos-filename-pattern-check.md "check type definition")
+
+*   [FASTQ-sanger Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-pattern-check.md "check type definition")
+
+*   [FASTQ-solexa Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-fastq-solexa-filename-pattern-check.md "check type definition")
+
+*   [SAM Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-sam-filename-pattern-check.md "check type definition")
+
+*   [CRAI Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-crai-filename-pattern-check.md "check type definition")
+
+*   [BAI Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-bai-filename-pattern-check.md "check type definition")
+
+*   [MTX Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-mtx-filename-pattern-check.md "check type definition")
+
+*   [MEX Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-mex-filename-pattern-check.md "check type definition")
+
+*   [GMX Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-gmx-filename-pattern-check.md "check type definition")
+
+*   [GMT Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-gmt-filename-pattern-check.md "check type definition")
+
+*   [GRP Filename pattern-check](ega-12-definitions-check-filetype-checks-based-on-its-filename-anyof-grp-filename-pattern-check.md "check type definition")

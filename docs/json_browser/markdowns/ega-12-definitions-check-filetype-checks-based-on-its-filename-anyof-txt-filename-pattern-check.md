@@ -49,7 +49,7 @@ unknown
 
 ## filename
 
-This object exists to hold the filename pattern that a 'TXT' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
+This object exists to hold the filename pattern that a 'TXT' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema. It can represent multiple types of data (e.g. an ADF file or a README file)
 
 `filename`
 

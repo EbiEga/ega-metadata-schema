@@ -70,10 +70,10 @@ This object exists to hold the filename pattern that a 'PY' filetype\_id would h
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
-^[^<>:;,?"*|/]+\.(py|PY)(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$
+^[^<>:;,?"*|/]+\.(py|PY|pyc|pyo|pyd|ipynb)(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5B%5E%3C%3E%3A%3B%2C%3F%22*%7C%2F%5D%2B%5C.\(py%7CPY\)\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5B%5E%3C%3E%3A%3B%2C%3F%22*%7C%2F%5D%2B%5C.\(py%7CPY%7Cpyc%7Cpyo%7Cpyd%7Cipynb\)\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
 ### filename Examples
 

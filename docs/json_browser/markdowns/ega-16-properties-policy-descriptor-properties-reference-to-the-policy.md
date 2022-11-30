@@ -22,7 +22,7 @@ A publicly accessible reference to the policy, where the updated text of the pol
 ^(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E\(http\(s\)%3F%3A%5C%2F%5C%2F.\)%3F\(www%5C.\)%3F%5B-a-zA-Z0-9%40%3A%25._%5C%2B\~%23%3D%5D%7B2%2C256%7D%5C.%5Ba-z%5D%7B2%2C6%7D%5Cb\(%5B-a-zA-Z0-9%40%3A%25_%5C%2B.\~%23%3F%26%2F%2F%3D%5D*\)%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E\(http\(s\)%3F%3A%5C%2F%5C%2F.\)%3F\(www%5C.\)%3F%5B-a-zA-Z0-9%40%3A%25._%5C%2B~%23%3D%5D%7B2%2C256%7D%5C.%5Ba-z%5D%7B2%2C6%7D%5Cb\(%5B-a-zA-Z0-9%40%3A%25_%5C%2B.~%23%3F%26%2F%2F%3D%5D*\)%24 "try regular expression with regexr.com")
 
 ## policy\_reference Examples
 

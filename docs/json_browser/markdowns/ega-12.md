@@ -244,6 +244,7 @@ Reference this group by using
 | Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
 | :------------------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [filename](#filename)                                   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-filename.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filename")                                                |
+| [file\_content](#file_content)                          | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content")                                  |
 | [filetype](#filetype)                                   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype")                                                |
 | [checksum\_method](#checksum_method)                    | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-checksum-method-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method")                               |
 | [unencrypted\_checksum](#unencrypted_checksum)          | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/unencrypted_checksum") |
@@ -284,9 +285,33 @@ The full name of a file, including all of their file extensions (e.g. .gpg, .md5
 "my-bam-file.bam.gpg"
 ```
 
+### file\_content
+
+Array of file content items. This array exists to clarify what the purpose of a file, regardless of its format, may be. For example, a TXT formatted file could contain multiple types of data, from gene annotations to READMEs. Therefore, select the items from the used ontology that best describe the content of your file.
+
+`file_content`
+
+*   is optional
+
+*   Type: `object[]` ([File content item](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item.md))
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content")
+
+#### file\_content Type
+
+`object[]` ([File content item](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item.md))
+
+#### file\_content Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
 ### filetype
 
-The nature of the content stored in an electronic file. The string corresponds to the ID or name (e.g. FASTA or TSV), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
+The main format in which data is structured and represented in an electronic file. It is normally defined by the file extension of the file (e.g. FASTQ for a '.fastq' file). The string corresponds to the ID or name (e.g. FASTA, TSV...), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
 
 `filetype`
 
@@ -306,34 +331,80 @@ The nature of the content stored in an electronic file. The string corresponds t
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value     | Explanation                                                                                                                                                                                                                                                                                                                                       |
-| :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `"CEL"`   | \[EFO:0005630]                                                                                                                                                                                                                                                                                                                                    |
-| `"TSV"`   | \[NCIT:C164049]: Tab delimited text file commonly used to deliver certain phenotype or auxiliary data along with sequencing submissions (only needed for certain use cases). The first line is normally devoted to column headers. When used along sequencing files in a sequencing assay, each column is dedicated to an INDSC data series type. |
-| `"ADF"`   | \[NCIT:C172213]                                                                                                                                                                                                                                                                                                                                   |
-| `"FASTQ"` | \[EFO:0004155]                                                                                                                                                                                                                                                                                                                                    |
-| `"FASTA"` | \[NCIT:C47845]                                                                                                                                                                                                                                                                                                                                    |
-| `"SDRF"`  | \[NCIT:C172211]                                                                                                                                                                                                                                                                                                                                   |
-| `"IDF"`   | \[NCIT:C172212]                                                                                                                                                                                                                                                                                                                                   |
-| `"VCF"`   | \[NCIT:C172216]                                                                                                                                                                                                                                                                                                                                   |
-| `"SRA"`   | \[format:3698]                                                                                                                                                                                                                                                                                                                                    |
-| `"SRF"`   | \[EFO:0004154]                                                                                                                                                                                                                                                                                                                                    |
-| `"SFF"`   | \[EFO:0004156]                                                                                                                                                                                                                                                                                                                                    |
-| `"BAM"`   | \[EFO:0004157]                                                                                                                                                                                                                                                                                                                                    |
-| `"CRAM"`  | \[format:3462]                                                                                                                                                                                                                                                                                                                                    |
-| `"XLSX"`  | \[format:3620]                                                                                                                                                                                                                                                                                                                                    |
-| `"CSV"`   | \[format:3752]                                                                                                                                                                                                                                                                                                                                    |
-| `"BED"`   | \[format:3003]                                                                                                                                                                                                                                                                                                                                    |
-| `"IDAT"`  | \[format:3578]                                                                                                                                                                                                                                                                                                                                    |
-| `"MAP"`   | \[format:3285]                                                                                                                                                                                                                                                                                                                                    |
-| `"PED"`   | \[format:3286]                                                                                                                                                                                                                                                                                                                                    |
-| `"BIM"`   |                                                                                                                                                                                                                                                                                                                                                   |
-| `"FAM"`   |                                                                                                                                                                                                                                                                                                                                                   |
-| `"TXT"`   |                                                                                                                                                                                                                                                                                                                                                   |
-| `"EXP"`   | \[format:1631]                                                                                                                                                                                                                                                                                                                                    |
-| `"GPR"`   | \[format:3829]                                                                                                                                                                                                                                                                                                                                    |
-| `"PY"`    | \[format:3996]                                                                                                                                                                                                                                                                                                                                    |
-| `"SH"`    | Bash scripts                                                                                                                                                                                                                                                                                                                                      |
+| Value              | Explanation                                                                                                                                                                                                                         |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `"CEL"`            | \[format:1638]                                                                                                                                                                                                                      |
+| `"TSV"`            | \[format:3475]                                                                                                                                                                                                                      |
+| `"FASTQ"`          | \[format:1930]                                                                                                                                                                                                                      |
+| `"FASTA"`          | \[format:1929]                                                                                                                                                                                                                      |
+| `"VCF"`            | \[format:3016]                                                                                                                                                                                                                      |
+| `"SRA"`            | \[format:3698]                                                                                                                                                                                                                      |
+| `"SRF"`            | \[format:3698]                                                                                                                                                                                                                      |
+| `"SFF"`            | \[format:3284]                                                                                                                                                                                                                      |
+| `"BAM"`            | \[format:2572]                                                                                                                                                                                                                      |
+| `"CRAM"`           | \[format:3462]                                                                                                                                                                                                                      |
+| `"XLSX"`           | \[format:3620]                                                                                                                                                                                                                      |
+| `"CSV"`            | \[format:3752]                                                                                                                                                                                                                      |
+| `"BED"`            | \[format:3003]                                                                                                                                                                                                                      |
+| `"IDAT"`           | \[format:3578]                                                                                                                                                                                                                      |
+| `"MAP"`            | \[format:3285]                                                                                                                                                                                                                      |
+| `"PED"`            | \[format:3286]                                                                                                                                                                                                                      |
+| `"BIM"`            | \[]                                                                                                                                                                                                                                 |
+| `"FAM"`            | \[]                                                                                                                                                                                                                                 |
+| `"TXT"`            | \[format:2330]                                                                                                                                                                                                                      |
+| `"EXP"`            | \[format:1631]                                                                                                                                                                                                                      |
+| `"GPR"`            | \[format:3829]                                                                                                                                                                                                                      |
+| `"PY"`             | \[format:3996]                                                                                                                                                                                                                      |
+| `"SH"`             | \[]                                                                                                                                                                                                                                 |
+| `"ADF"`            | \[NCIT:C172213]                                                                                                                                                                                                                     |
+| `"SDRF"`           | \[NCIT:C172211]                                                                                                                                                                                                                     |
+| `"IDF"`            | \[NCIT:C172212]                                                                                                                                                                                                                     |
+| `"MD5"`            | \[data:2190]                                                                                                                                                                                                                        |
+| `"HAP"`            | \[]                                                                                                                                                                                                                                 |
+| `"CSFASTA"`        | \[]                                                                                                                                                                                                                                 |
+| `"LOC"`            | \[]                                                                                                                                                                                                                                 |
+| `"HTML"`           | \[format:2331]                                                                                                                                                                                                                      |
+| `"HIC"`            | \[]                                                                                                                                                                                                                                 |
+| `"MD"`             | \[]                                                                                                                                                                                                                                 |
+| `"MATLAB"`         | \[format:4007]                                                                                                                                                                                                                      |
+| `"PERL"`           | \[format:3998]                                                                                                                                                                                                                      |
+| `"TIF"`            | \[]                                                                                                                                                                                                                                 |
+| `"R"`              | \[format:3999]                                                                                                                                                                                                                      |
+| `"SNP"`            | \[]                                                                                                                                                                                                                                 |
+| `"XML"`            | \[format:2332]                                                                                                                                                                                                                      |
+| `"SVG"`            | \[format:3604]                                                                                                                                                                                                                      |
+| `"PNG"`            | \[format:3603]                                                                                                                                                                                                                      |
+| `"JPG"`            | \[format:3579]                                                                                                                                                                                                                      |
+| `"GTC"`            | \[]: An Illumina-specific file containing called genotypes in AA/AB/BB format                                                                                                                                                       |
+| `"HDF5"`           | \[format:3590]                                                                                                                                                                                                                      |
+| `"FAST5"`          | \[]                                                                                                                                                                                                                                 |
+| `"PAIR"`           | \[]                                                                                                                                                                                                                                 |
+| `"TXT"`            | \[format:2330]                                                                                                                                                                                                                      |
+| `"BGI"`            | \[]: Index file of a BGEN file                                                                                                                                                                                                      |
+| `"BGEN"`           | \[]: Binary version of a GEN file                                                                                                                                                                                                   |
+| `"GEN"`            | \[format:3812]                                                                                                                                                                                                                      |
+| `"PXF"`            | \[]: A phenopacket. An open standard for sharing disease and phenotype information represented as PXF (Phenotype Exchange Format) files, which may be encoded in JSON or YAML.                                                      |
+| `"LOOM"`           | \[format:3913]                                                                                                                                                                                                                      |
+| `"BAX.H5"`         | \[]                                                                                                                                                                                                                                 |
+| `"BAS.H5"`         | \[]                                                                                                                                                                                                                                 |
+| `"ASM"`            | \[]: The files in the ASM directory describe and annotate the genome assembly with respect to the reference genome.                                                                                                                 |
+| `"CSI"`            | \[]                                                                                                                                                                                                                                 |
+| `"TBI"`            | \[format:3700]                                                                                                                                                                                                                      |
+| `"BCF"`            | \[format:3020]                                                                                                                                                                                                                      |
+| `"qual454"`        | \[format:3611]                                                                                                                                                                                                                      |
+| `"qualsolid"`      | \[format:3610]                                                                                                                                                                                                                      |
+| `"FASTQ-illumina"` | \[format:1931]                                                                                                                                                                                                                      |
+| `"FASTQ-helicos"`  | \[]                                                                                                                                                                                                                                 |
+| `"FASTQ-sanger"`   | \[format:1932]                                                                                                                                                                                                                      |
+| `"FASTQ-solexa"`   | \[format:1933]                                                                                                                                                                                                                      |
+| `"SAM"`            | \[format:2573]                                                                                                                                                                                                                      |
+| `"CRAI"`           | \[]: CRAM indexing format                                                                                                                                                                                                           |
+| `"BAI"`            | \[format:3327]                                                                                                                                                                                                                      |
+| `"MTX"`            | \[format:3916]                                                                                                                                                                                                                      |
+| `"MEX "`           | \[]: Market Exchange Format (MEX) for sparse matrices. It  contains a matrix (MTX) file, and also gzipped TSV files with feature and barcode sequences corresponding to row and column indices respectively. Feature-barcode matrix |
+| `"GMX"`            | \[]                                                                                                                                                                                                                                 |
+| `"GMT"`            | \[]                                                                                                                                                                                                                                 |
+| `"GRP"`            | \[]                                                                                                                                                                                                                                 |
 
 ### checksum\_method
 
@@ -930,6 +1001,73 @@ Reference this group by using
 | Property | Type | Required | Nullable | Defined by |
 | :------- | :--- | :------- | :------- | :--------- |
 
+## Definitions group assay-filetypes
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes"}
+```
+
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
+| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype-1) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes/properties/filetype") |
+
+### filetype
+
+
+
+`filetype`
+
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes/properties/filetype")
+
+#### filetype Type
+
+`string`
+
+#### filetype Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value              | Explanation |
+| :----------------- | :---------- |
+| `"BAM"`            |             |
+| `"CRAM"`           |             |
+| `"SAM"`            |             |
+| `"FASTA"`          |             |
+| `"BAI"`            |             |
+| `"CRAI"`           |             |
+| `"CSI"`            |             |
+| `"MD"`             |             |
+| `"TXT"`            |             |
+| `"XML"`            |             |
+| `"MD5"`            |             |
+| `"FASTQ"`          |             |
+| `"FASTQ-helicos"`  |             |
+| `"FASTQ-illumina"` |             |
+| `"BAS.H5"`         |             |
+| `"BAX.H5"`         |             |
+| `"HDF5"`           |             |
+| `"FASTQ-sanger"`   |             |
+| `"FASTQ-solexa"`   |             |
+| `"IDAT"`           |             |
+| `"CEL"`            |             |
+| `"qualsolid"`      |             |
+| `"qual454"`        |             |
+| `"SRA"`            |             |
+| `"SRF"`            |             |
+| `"SFF"`            |             |
+| `"CSFASTA"`        |             |
+| `"GPR"`            |             |
+| `"ADF"`            |             |
+| `"FAST5"`          |             |
+
 ## Definitions group cel-file-filename-pattern
 
 Reference this group by using
@@ -947,17 +1085,6 @@ Reference this group by using
 
 ```json
 {"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tsv-file-filename-pattern"}
-```
-
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
-
-## Definitions group adf-file-filename-pattern
-
-Reference this group by using
-
-```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/adf-file-filename-pattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1211,6 +1338,545 @@ Reference this group by using
 
 ```json
 {"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sh-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group adf-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/adf-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group md5-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/md5-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group hap-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hap-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group csfasta-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/csfasta-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group loc-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/loc-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group tgz-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tgz-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group zip-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/zip-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group html-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/html-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group hic-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hic-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group tif-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tif-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group md-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/md-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group matlab-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/matlab-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group perl-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/perl-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group r-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group tar-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tar-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group snp-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/snp-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group xml-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/xml-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group svg-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/svg-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group png-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/png-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group jpg-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/jpg-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group gtc-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gtc-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group hdf5-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hdf5-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group fast5-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fast5-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group pair-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pair-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group bgi-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bgi-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group bgen-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bgen-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group gen-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gen-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group pxf-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pxf-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group loom-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/loom-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group bax.h5-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bax.h5-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group bas.h5-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bas.h5-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group asm-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/asm-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group csi-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/csi-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group tbi-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tbi-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group bcf-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bcf-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group qual454-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/qual454-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group qualsolid-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/qualsolid-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group fastq-illumina-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastq-illumina-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group fastq-helicos-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastq-helicos-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group fastq-sanger-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastq-sanger-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group fastq-solexa-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastq-solexa-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group sam-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sam-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group crai-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/crai-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group bai-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bai-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group mtx-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/mtx-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group mex-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/mex-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group gmx-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gmx-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group gmt-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gmt-file-filename-pattern"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |
+
+## Definitions group grp-file-filename-pattern
+
+Reference this group by using
+
+```json
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/grp-file-filename-pattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |

@@ -27,5 +27,5 @@ This object exists to hold the filename pattern that a 'CRAM' filetype\_id would
 ## cram-file-filename-pattern Examples
 
 ```json
-"my_file1.cram.gz.gpg"
+"my_file1.cram.gpg"
 ```

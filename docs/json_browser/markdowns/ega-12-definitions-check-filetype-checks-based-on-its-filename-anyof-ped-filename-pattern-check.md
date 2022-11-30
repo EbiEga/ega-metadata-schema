@@ -70,10 +70,10 @@ This object exists to hold the filename pattern that a 'PED' filetype\_id would 
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
-^.+\.ped(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$
+^.+\.(ped|tped)(\.(gz|zip|rar|arj|tar|7z|bz2))?(\.gpg)?$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E.%2B%5C.ped\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E.%2B%5C.\(ped%7Ctped\)\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
 ### filename Examples
 
