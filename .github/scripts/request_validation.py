@@ -1,4 +1,3 @@
-import json
 import os
 import sys
 
@@ -45,12 +44,12 @@ def get_errors_response(response: requests.models.Response) -> list:
             type(response) == requests.models.Response
         ), "The POST response was not of the correct type"
     
-    if not response.status_code == 200:
+    if not response.status_code == requests.codes.ok:
         error_message = f"The POST response was not successful: instead of 200, the status code was '{response.status_code}' when validating file '{filename}'"
         return error_message
 
     # We load the result of the validation
-    val_response_list = json.loads(response.text)
+    val_response_list = response.json()
 
     # If the list is empty "[]", the validation found no errors
     if not len(val_response_list) == 0:
