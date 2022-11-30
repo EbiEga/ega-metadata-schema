@@ -51,4 +51,4 @@ jobs:
           # The following URL points to EGA's server of Biovalidator
           url="http://biovalidator.ega.ebi.ac.uk/validate"
 
-          python ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
+          python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
