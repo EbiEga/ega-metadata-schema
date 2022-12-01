@@ -34,7 +34,7 @@ def request_validation(
     return response
 
 
-def get_errors_response(response: requests.models.Response) -> tp.Union[list, str]:
+def get_errors_response(response: requests.models.Response) -> tp.Union[list, str, NoneType]:
     """
     Function that, given a "requests.models.Response" object, will interpret it, asserting that the request
         was successful and no validation errors (i.e. empty list of errors) were found. If not, it will
