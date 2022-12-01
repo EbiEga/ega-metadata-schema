@@ -1,0 +1,54 @@
+---
+# This workflow validates the current JSON documents against EGA's JSON schemas
+# using EGA's API endpoint (http://biovalidator.ega.ebi.ac.uk/validate) of
+# the tool Biovalidator (https://github.com/elixir-europe/biovalidator) and the
+# up-to-date EGA JSON schemas \
+# (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).
+# The logic of this workflow is:
+#   - Details: EE-2575
+#   - Why: It allows us to know if the changes introduced in the branch are
+#          compliant with the default (main branch) schemas.
+#   - Would block the PR if failed? No, it's just informative.
+#   - How: execute script .github/scripts/request_validation.py specifying the
+#       EGA's API server endpoint and this new branch's JSON documents.
+#
+# For more information, check:
+#   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/gh_workflows
+name: JSON docs validation - EGA API (json_validation_against_EGA_API.yml)
+
+on:
+  # Executes on any commit to a PR to the "main" branch
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-json-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Full git history
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v4
+        with:
+          # We'll use the latest version of python from major 3 release
+          # This bit is needed for running the following python script
+          python-version: '3.x'
+
+      - name: Install "requests" module
+          # The requests module is required for the POST requests within the 
+          #   script
+        run: pip install requests
+
+      - name: Validate JSON examples
+          # Validate all JSON documents against their corresponding schemas
+          # Check :
+          #   github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
+        run: |
+          json_ex_dir="./examples/json_validation_tests"
+          # The following URL points to EGA's server of Biovalidator
+          url="http://biovalidator.ega.ebi.ac.uk/validate"
+
+          python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
