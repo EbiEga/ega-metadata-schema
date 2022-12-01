@@ -58,7 +58,7 @@ def get_errors_response(response: requests.models.Response) -> tp.Union[list, st
     if not len(val_response_list) == 0:
         return val_response_list
     else:
-        return
+        return None
 
 
 # --------- #
