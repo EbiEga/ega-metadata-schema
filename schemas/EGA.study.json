@@ -6,52 +6,52 @@
     "meta:version": "0.0.0",
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Study metadata object. This object is intended to contain metadata about the compilation of examinations, analyses or critical inspection of a particular subject. In other words, a Study is a container of experiments and analyses of any nature (including Array data) grouped by a common goal or investigation. They often draw together data from a range of datasets and are represented in publication. For instance, an example would be a case-control study on cancer patients and healthy individuals. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/studies)",
-    "required": ["object_id", "object_title", "study_types", "study_designs"],
+    "required": ["objectId", "objectTitle", "studyTypes", "studyDesigns"],
     "additionalProperties": false,
     "properties": {
-      "object_id": {
+      "objectId": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: a study (by using EGA-study-id-pattern)", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a study (by using EGAStudyIdPattern)", 
         "allOf": [
           {
-            "title": "Inherited object_core_id object",
-            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
+            "title": "Inherited objectCoreId object",
+            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
           },
           {
             "title": "Check that study EGA ID (EGAS) is correct",
             "properties": {
-              "ega_accession": {
-                "$ref": "./EGA.common-definitions.json#/definitions/EGA-study-id-pattern"
+              "egaAccession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGAStudyIdPattern"
               }
             }
           }
         ]        
       },
 
-      "schema_descriptor": {
+      "schemaDescriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
       },
 
-      "object_title": {
+      "objectTitle": {
         "type": "string",
         "title": "Title of the study",
         "description": "Short free-form text that can be used to call out study records in searches or displays.",
         "examples": [ "EBI test case-control study for cancer" ]
       },
 
-      "object_description": {
+      "objectDescription": {
         "type": "string",
         "title": "Description of the study",
         "description": "An in-depth description of the study, including its overall purpose, goals, scope or nature.",
         "examples": [ "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls." ]
       },
 
-      "study_types": {
+      "studyTypes": {
         "type": "array",
-        "title": "Study-types array",
+        "title": "studyTypes array",
         "description": "List of study types. Contains specific keywords (e.g. 'COVID-19') as items that can be associated to the study, providing an overall view of its purpose.",
         "additionalProperties": false,
         "uniqueItems": true,
@@ -82,20 +82,20 @@
         }
       },
 
-      "study_designs": {
+      "studyDesigns": {
         "type": "array",
-        "title": "Study-designs array",
+        "title": "studyDesigns array",
         "description": "List of study designs (a.k.a. experimental designs). Contains specific keywords (e.g. 'RNA stability design') as items that can be associated to the study, providing an overall view of the method of investigating particular types of research questions or solving particular types of problems.",
         "additionalProperties": false,
         "uniqueItems": true,
         "minItems": 1,
         "items": {
           "title": "One study design",
-          "$ref": "./EGA.common-definitions.json#/definitions/study-design-keywords"
+          "$ref": "./EGA.common-definitions.json#/definitions/studyDesignKeywords"
         }
       },
 
-      "study_relationships": {
+      "studyRelationships": {
         "type": "array",
         "title": "Study relationships",
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a study) the EGA.",
@@ -106,60 +106,60 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
             },
             {
               "title": "Relationship constraints for a study",
               "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a study.",
               "anyOf": [
                 {
-                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "title": "Allowed relationships of type referencedBy (main ones)",
                   "allOf": [
                     {
-                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAnalysis"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-experiment"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExperiment"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
                         },
                         {
                           "title": "Optional one, added here to simplify",
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceProtocol"
                         }
                       ]
                     }
                   ]                  
                 },
                 {
-                  "title": "Allowed relationships of type grouped_with, is_after, same_as (optional ones)",
+                  "title": "Allowed relationships of type groupedWith, isAfter, sameAs (optional ones)",
                   "allOf": [
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-study"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceStudy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-study"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetStudy"
                         }
                       ]
                     }
@@ -172,44 +172,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-child_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-childOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-familyRelationshipWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-developsFrom"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-memberOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalURL"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalURL"
                         }
                       ]
                     }
@@ -221,11 +221,11 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
         }
       },
 
-      "study_attributes": {
+      "studyAttributes": {
         "type": "array",
         "title": "Study custom attributes",
         "description": "Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
@@ -233,7 +233,7 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": { 
-          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
+          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
         }
       }      
     }      

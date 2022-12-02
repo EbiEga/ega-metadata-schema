@@ -6,36 +6,36 @@
     "meta:version": "0.0.0",
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its analysis metadata object. This object is intended to contain metadata about a detailed examination of data (mainly data processing protocols) in order to come to some conclusion. It can be of different types (e.g. sequence variation, sequence alignment, phenotype characterization, gene expression, etc.) that will mainly differ in the protocols used to achieve the processed data of the analysis. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["object_id", "analysis_type_specifications" ],
+    "required": ["objectId", "analysisTypeSpecifications" ],
     "additionalProperties": false,
     "properties": {
-      "object_id": {
+      "objectId": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions.", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions.", 
         "allOf": [
           {
-            "title": "Inherited object_core_id object",
-            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
+            "title": "Inherited objectCoreId object",
+            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
           },
           {
             "title": "Check that analysis EGA ID (EGAZ) is correct",
             "properties": {
-              "ega_accession": {
-                "$ref": "./EGA.common-definitions.json#/definitions/EGA-analysis-id-pattern"
+              "egaAccession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGAAnalysisIdPattern"
               }
             }
           }
         ]
       },
 
-      "schema_descriptor": {
+      "schemaDescriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
       },
 
-      "object_title": {
+      "objectTitle": {
         "type": "string",
         "title": "Title of the analysis",
         "description": "An informative analysis title that should serve as an overview of the analysis, including: performed analysis, samples, purpose... (e.g. 'Variant calling analysis of tumor repressed cells'). This short text can be used to call out analyses records in searches or in displays.",
@@ -43,7 +43,7 @@
         "examples": [ "Variant calling analysis of tumor repressed cells" ]
       },
 
-      "object_description": {
+      "objectDescription": {
         "type": "string",
         "title": "Description of the analysis",
         "description": "An in-depth description of the biological relevance and intent of the analysis, including its workflow.",
@@ -51,7 +51,7 @@
         "examples": [ "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..." ]
       },
 
-      "targeted_loci": {
+      "targetedLoci": {
         "type": "array",
         "title": "Loci of the targeted genomic feature",
         "description": "Array of items that unambiguously define the loci of targeted genomic features in the analysis. For example, if the aim of the analysis was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.",
@@ -59,11 +59,11 @@
         "uniqueItems": true,
         "additionalProperties": false,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/locus_identifier" 
+          "$ref": "./EGA.common-definitions.json#/definitions/locusIdentifier" 
         }
       },
 
-      "types_of_input_data": {
+      "typesOfInputData": {
         "type": "array",
         "title": "Types of input data",
         "description": "Types of input data the analysis uses to obtain the processed files.",
@@ -71,11 +71,11 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/type_of_data"
+          "$ref": "./EGA.common-definitions.json#/definitions/typeOfData"
         }
       },
 
-      "types_of_output_data": {
+      "typesOfOutputData": {
         "type": "array",
         "title": "Types of output data",
         "description": "Types of output data the analysis uses to obtain the processed files.",
@@ -83,18 +83,18 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/type_of_data"
+          "$ref": "./EGA.common-definitions.json#/definitions/typeOfData"
         }
       },
 
-      "analysis_type_specifications": {
+      "analysisTypeSpecifications": {
         "type": "object",
         "title": "Analysis type specifications",
         "description": "Node containing different sets of fields that depend on the specific analysis type. Depending on the analysis types different metadata will be required.",
         "additionalProperties": false,
-        "required": ["analysis_types"],
+        "required": ["analysisTypes"],
         "properties": {
-          "analysis_types": {
+          "analysisTypes": {
             "type": "array",
             "title": "List of analysis types",
             "description": "Array of all analysis types applicable to this analysis. Details on how the analysis was performed (instruments, software, procedure...) shall be included in the 'analysis_protocols' field, not here. For example, if the analysis includes sequence variation files (e.g. VCF) that were obtained by a sequencing assay (i.e. from the sequenced reads), at least the analysis type 'sequence variation' would be expected. Furthermore, depending on the types of analysis, different details may be required (e.g. reference sequence details in a 'sequence alignment' type).",
@@ -109,15 +109,15 @@
               "meta:enum": [ "sequence variation__ERO:0100211: Analysis of variations at specific loci in the genomes of organisms (mutation and polymorphism) across or within a species, population, or individual (e.g healthy vs diseased tissue).", "sequence alignment__ERO:0100032: objective to display graphically how the sequences of two or more macromolecules align along a linear axis.", "phenotype characterization__ERO:0000923: The result of an organismal assay that involves characterization of a phenotype; any observable characteristic or trait of an organism: such as its morphology, development, biochemical or physiological properties, behavior, and products of behavior (such as a bird's nest). Phenotypes result from the expression of an organism's genes as well as the influence of environmental factors and the interactions between the two.", "sequence annotation__operation:0361: Analysis where molecular sequence records are annotated with terms from a controlled vocabulary. For submitting sequence annotation files, which are usually 'tab' files. Examples include gene count and OTU tables from metagenomic studies.", "sequence assembly__topic:0196: The assembly of fragments of a DNA sequence to reconstruct the original sequence.", "gene expression__topic:0203: The analysis of levels and patterns of synthesis of gene products (proteins and functional RNA) including interpretation in functional terms of gene expression data." ]
             }
           },
-          "reference_alignment_details": {
+          "referenceAlignmentDetails": {
             "title": "Reference assembly and sequence details",
             "description": "Node containing details of the reference sequence used in the alignment of raw sequences.",
-            "$ref": "./EGA.common-definitions.json#/definitions/reference_alignment_details"
+            "$ref": "./EGA.common-definitions.json#/definitions/referenceAlignmentDetails"
           }
         }
       },
 
-      "analysis_files": {
+      "analysisFiles": {
         "type": "array",
         "title": "Files of the analysis",
         "description": "This property contains the files derived from performing any processing or analysis over raw data (e.g. VCF, aligned BAM...) and those that add context to it (e.g. CSV, TXT...).",
@@ -125,11 +125,11 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": { 
-              "$ref": "./EGA.common-definitions.json#/definitions/file_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/fileObject"
         }
       },
 
-      "analysis_relationships": {
+      "analysisRelationships": {
         "type": "array",
         "title": "Analysis relationships",
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an analysis being linked to a Sample) the EGA.",
@@ -140,72 +140,72 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
             },
             {
               "title": "Relationship constraints for an analysis",
               "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a analysis.",
               "anyOf": [
                 {
-                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "title": "Allowed relationships of type referencedBy (main ones)",
                   "allOf": [
                     {
-                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-study"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceStudy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-sample"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSample"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-experiment"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExperiment"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-assay"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceAssay"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-dataset"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetDataset"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-protocol"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceProtocol"
                         },
                         {
                           "title": "Optional one, added here to simplify",
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAnalysis"
                         }
                       ]
                     }
                   ]                  
                 },
                 {
-                  "title": "Allowed relationships of type grouped_with, is_after, same_as (optional ones)",
+                  "title": "Allowed relationships of type groupedWith, isAfter, sameAs (optional ones)",
                   "allOf": [
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceAnalysis"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAnalysis"
                         }
                       ]
                     }
@@ -218,44 +218,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-child_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-childOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-familyRelationshipWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-developsFrom"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-memberOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalURL"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalURL"
                         }
                       ]
                     }
@@ -267,11 +267,11 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
         }
       },
 
-      "analysis_attributes": {
+      "analysisAttributes": {
         "type": "array",
         "title": "Analysis custom attributes",
         "description": "Custom attributes of an analysis: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal tag' and its Value 'this analysis is corresponds to internal tag XYZ') with optional units. Its properties are inherited from the common-definitions.json schema.",
@@ -279,7 +279,7 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
+          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
         }
       }
     }      

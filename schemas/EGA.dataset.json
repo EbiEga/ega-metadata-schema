@@ -6,50 +6,50 @@
     "meta:version": "0.0.0",
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Dataset metadata object. This object is intended to contain metadata about the collection of file-containing objects (ArrayAssay, runs or analyses) subject to controlled access. In other words, a dataset encompasses a set of objects to which access is granted as a whole, since access given to a data requester is access to a dataset, and fall under the same Policy. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/studies)",
-    "required": ["object_id", "object_title", "dataset_type"],
+    "required": ["objectId", "objectTitle", "datasetType"],
     "additionalProperties": false,
     "properties": {
-      "object_id": {
+      "objectId": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an dataset (by using EGA-dataset-id-pattern)", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: an dataset (by using EGADatasetIdPattern)", 
         "allOf": [
           {
-            "title": "Inherited object_core_id object",
-            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
+            "title": "Inherited objectCoreId object",
+            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
           },
           {
             "title": "Check that dataset EGA ID (EGAD) is correct",
             "properties": {
-              "ega_accession": {
-                "$ref": "./EGA.common-definitions.json#/definitions/EGA-dataset-id-pattern"
+              "egaAccession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGADatasetIdPattern"
               }
             }
           }
         ]        
       },
 
-      "schema_descriptor": {
+      "schemaDescriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
       },
 
-      "object_title": {
+      "objectTitle": {
         "type": "string",
         "title": "Title of the dataset",
         "description": "Free-form title of the Dataset. It should be the first picture of the dataset content and not contain more than 30 words. It can be used to call out dataset records in searches or displays.",
         "examples": [ "EBI colon cancer dataset" ]
       },
 
-      "object_description": {
+      "objectDescription": {
         "type": "string",
         "title": "Description of the dataset",
         "description": "More extensive free-form description of the Dataset. It should include the content of the dataset (number of samples, file types, technology/protocol used to obtain the data…) and not extend more than 4 sentences.",
         "examples": [ "This dataset is related to Project X by grant Y and encompasses samples from group Z, whose DNA was hybridized against a microarray designed for SNPs." ]
       },
 
-      "dataset_type": {
+      "datasetType": {
         "type": "string",
         "title": "Dataset type",
         "description": "Type of the dataset, expressing the overall purpose of the dataset. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition. The CV was inherited from ENA's dataset types.",
@@ -73,7 +73,7 @@
         "examples": [ "whole genome sequencing" ]
       },
 
-      "approximate_release_date": {
+      "approximateReleaseDate": {
         "type": "string",
         "title": "Approximate release date of the dataset",
         "description": "An approximate date of the desired release of the dataset. Bare in mind that this will NOT automatically release the dataset, but instead may be used to set a reminder to the submitter (and EGA's HelpDesk team) in case the dataset was not released by this time. This would help in cases where this step was forgotten by the submitter or release was stalled for some reason.",
@@ -81,7 +81,7 @@
         "allOf": [
           {
             "title": "The date has to match the common date pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/EGA-ISO8601-date-pattern"
+            "$ref": "./EGA.common-definitions.json#/definitions/EGAISO8601DatePattern"
           },
           {
             "title": "We cap the reminder up to 3 years",
@@ -91,7 +91,7 @@
         ]
       },
 
-      "dataset_relationships": {
+      "datasetRelationships": {
         "type": "array",
         "title": "Dataset relationships",
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a dataset) the EGA.",
@@ -102,59 +102,59 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
             },
             {
               "title": "Relationship constraints for a dataset",
               "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a dataset.",
               "anyOf": [
                 {
-                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "title": "Allowed relationships of type referencedBy (main ones)",
                   "allOf": [
                     {
-                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-policy"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourcePolicy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-assay"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceAssay"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-analysis"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceAnalysis"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
                         }
                       ]
                     }
                   ]                  
                 },
                 {
-                  "title": "Allowed relationships of type grouped_with, is_after, same_as (optional ones)",
+                  "title": "Allowed relationships of type groupedWith, isAfter, sameAs (optional ones)",
                   "allOf": [
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-dataset"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceDataset"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-dataset"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetDataset"
                         }
                       ]
                     }
@@ -167,44 +167,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-child_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-childOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-familyRelationshipWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-developsFrom"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-memberOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalURL"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalURL"
                         }
                       ]
                     }
@@ -216,11 +216,11 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
         }
       },
 
-      "dataset_attributes": {
+      "datasetAttributes": {
         "type": "array",
         "title": "Dataset custom attributes",
         "description": "Custom attributes of a dataset: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
@@ -228,7 +228,7 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": { 
-          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
+          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
         }
       }
       

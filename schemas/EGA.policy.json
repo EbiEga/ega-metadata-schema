@@ -6,49 +6,49 @@
     "meta:version": "0.0.0",
     "$async": true,
     "description": "A policy, also known as Data Access Agreement (DAA), is a contract made between Data User and Data Access Committee. The policy object is expected to contain metadata about such agreement, which should be drafted by the DAC and includes, but is not limited to, details of data use, publication embargoes and storage. Completion of a DAA by the applicant/s should form part of the application process to the DAC. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/submission/dac/documentation)",
-    "required": ["object_id", "object_title", "policy_descriptor"],
+    "required": ["objectId", "objectTitle", "policyDescriptor"],
     "additionalProperties": false,
     "properties": {
-      "object_id": {
+      "objectId": {
         "type": "object",
         "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, center_name...), inherited from the common definitions. #! We extend the core object (object_core_id) by adding a pattern check based on this schema's nature: an policy (by using EGA-policy-id-pattern)", 
+        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: an policy (by using EGAPolicyIdPattern)", 
         "allOf": [
           {
-            "title": "Inherited object_core_id object",
-            "$ref": "./EGA.common-definitions.json#/definitions/object_core_id"
+            "title": "Inherited objectCoreId object",
+            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
           },
           {
             "title": "Check that policy EGA ID (EGAP) is correct",
             "properties": {
-              "ega_accession": {
-                "$ref": "./EGA.common-definitions.json#/definitions/EGA-policy-id-pattern"
+              "egaAccession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGAPolicyIdPattern"
               }
             }
           }
         ]        
       },
 
-      "schema_descriptor": {
+      "schemaDescriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schema_descriptor"
+        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
       },
 
-      "object_title": {
+      "objectTitle": {
         "type": "string",
         "title": "Title of the policy",
         "description": "Free-form title of the policy. Can be used to call out policy records in searches or displays.",
         "examples": [ "EBI colon cancer policy" ]
       },
     
-      "policy_descriptor":{
+      "policyDescriptor":{
         "type": "object",
         "title": "Policy descriptor",
         "description": "Node containing the full description of the policy, whether it is hosted at some public resourced and referenced here; or directly written here.",
         "additionalProperties": false,
         "properties": {
-          "policy_reference": {
+          "policyReference": {
             "type": "string",
             "title": "Reference to the policy",
             "description": "A publicly accessible reference to the policy, where the updated text of the policy is hosted.",
@@ -58,7 +58,7 @@
               "https://ega-archive.org/submission/dac/documentation" 
             ]
           },
-          "policy_text": {
+          "policyText": {
             "type": "string",
             "title": "Policy text",
             "description": "Text describing in detail the Data Access Agreement (DAA) of the policy.",
@@ -71,16 +71,16 @@
         "anyOf": [
           {
             "title": "Either the policy reference is given",
-            "required": ["policy_reference"]
+            "required": ["policyReference"]
           },
           {
             "title": "Or the policy text is given",
-            "required": ["policy_text"]
+            "required": ["policyText"]
           }
         ]
       },
 
-      "duo_codes_curies": {
+      "duoCodesCuries": {
         "type": "array",
         "title": "Data Use Ontology (DUO) codes' curies",
         "description": "Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) format. These allow to semantically tag datasets (bound by policies) with restriction about their usage, making them discoverable automatically based on the authorization level of users, or intended usage. See more info at https://obofoundry.org/ontology/duo.html and search for DUO codes at https://www.ebi.ac.uk/ols/ontologies/duo",
@@ -95,13 +95,13 @@
           "allOf": [
             {
               "title": "General pattern of a CURIE",
-              "$ref": "./EGA.common-definitions.json#/definitions/curie_general_pattern"
+              "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
             }
           ]
         }
       },
 
-      "policy_relationships": {
+      "policyRelationships": {
         "type": "array",
         "title": "Policy relationships",
         "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a policy) the EGA.",
@@ -112,53 +112,53 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "./EGA.common-definitions.json#/definitions/relationship_object"
+              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
             },
             {
               "title": "Relationship constraints for a policy",
               "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a policy.",
               "anyOf": [
                 {
-                  "title": "Allowed relationships of type referenced_by (main ones)",
+                  "title": "Allowed relationships of type referencedBy (main ones)",
                   "allOf": [
                     {
-                      "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-dataset"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetDataset"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-DAC"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceDAC"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-submission"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
                         }
                       ]
                     }
                   ]                  
                 },
                 {
-                  "title": "Allowed relationships of type grouped_with, same_as (optional ones)",
+                  "title": "Allowed relationships of type groupedWith, sameAs (optional ones)",
                   "allOf": [
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-policy"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourcePolicy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-policy"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetPolicy"
                         }
                       ]
                     }
@@ -171,44 +171,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-child_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-childOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-family_relationship_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-familyRelationshipWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-grouped_with"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-same_as"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-referenced_by"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-develops_from"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-developsFrom"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-member_of"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-memberOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-is_after"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalURL"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_accession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-external_URL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalURL"
                         }
                       ]
                     }
@@ -220,11 +220,11 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "./EGA.common-definitions.json#/definitions/r-constraint-one-sourced-submission"
+          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
         }
       },
 
-      "policy_attributes": {
+      "policyAttributes": {
         "type": "array",
         "title": "Policy custom attributes",
         "description": "Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
@@ -232,7 +232,7 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": { 
-          "$ref": "./EGA.common-definitions.json#/definitions/custom_attribute" 
+          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
         }
       }
     }      
