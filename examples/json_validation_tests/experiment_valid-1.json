@@ -1,197 +1,197 @@
 {
-    "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
-    },
     "data": {
-        "object_id": {
-            "alias" : "My_ChIP_array_experiment_13", 
-            "center_name" : "EBI-TEST"
+        "assayTechnology": {
+            "assayInstrument": "array",
+            "assayInstrumentPlatform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
         },
-        "object_title": "Example array experiment title",
-        "object_description": "Example array experiment's description of my experiment N13.",
-        "assayed_molecule_type": "DNA",
-        "types_of_output_data": [
-            "genomic data"
-        ],
-        "assay_technology": {
-            "assay_instrument": "array",
-            "assay_instrument_platform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
+        "assayTypeDescriptor": {
+            "assayType": "ChIP-chip by SNP array"
         },
-        "assay_type_descriptor": {
-            "assay_type": "ChIP-chip by SNP array"
-        },
-        "experiment_type_specifications": {
-            "array_experiment": {
-                "array_labels": [
-                    {
-                        "array_label_id": "Cy3 dye",
-                        "array_label_curie": "CHEBI:37987",
-                        "label_description": "This label was use to dye the control samples"
-                    },
-                    {
-                        "array_label_id": "Biotin",
-                        "array_label_curie": "CHEBI:15956"
-                    }
-                ],
-                "adf_files": [
-                    {
-                        "filename": "myADF-file.xlsx",
-                        "filetype": "XLSX",
-                        "checksum_method": "MD5",
-                        "unencrypted_checksum": "c6779ec2960296ed9a04f08d67f64423",
-                        "encrypted_checksum": "c6779ec2960296ed9a04f08d67f64423"
-                    }
-                ]
-            }
-        },
-        "targeted_loci": [
+        "assayedMoleculeType": "DNA",
+        "experimentAttributes": [
             {
-                "organism_descriptor": {
-                    "taxon_id_curie": "NCBITaxon:9606",
-                    "scientific_name": "homo sapiens"
-                },
-                "loci_descriptor": [
-                    {
-                        "gene_descriptor": {
-                            "gene_symbol": "TP53",
-                            "gene_id_curie": "HGNC:11998"
-                        },
-                        "locus_additional_description": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
-                    },
-                    {
-                        "genomic_sequence_descriptor": { 
-                            "assembly_descriptor": {
-                                "assembly_name": "GRCh38.p14",
-                                "ncbi_assembly_accession": "assembly:GCA_000001405.29",
-                                "assembly_unit_name": "Chromosome 17",
-                                "ncbi_assembly_unit_accession": "refseq:NC_000017.11"
-                            },
-                            "sequence_coordinates": {
-                                "sequence_interval": {
-                                    "start": 7669450,
-                                    "end": 7669460
-                                }
-                            },
-                            "dna_sequence_strand": "forward",
-                            "nucleic_acid_sequence": "CTTGTTCAGTG"
-                        }
-                    },
-                    {
-                        "locus_external_reference": {
-                            "external_accession_curie": "nucleotide:T35715.1",
-                            "accession_label": "EST89992 Human Small intestine Homo sapiens cDNA 5' end"
-                        },
-                        "locus_additional_description": "Additional locus that was placed in the array for SNP scanning for the purpose of individuals identification as tags..."
-                    }
-                ]
-            }
-        ],
-        "experiment_relationships": [
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAS00002045411"
-                    },
-                    "object_type": "study"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_target": {
-                    "object_id": {
-                        "ega_accession": "EGAZ00001051423"
-                    },
-                    "object_type": "analysis"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00001031671",
-                        "alias": "Patient's blood collection protocol"
-                    },
-                    "object_type": "protocol"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00001031672",
-                        "alias": "Extraction of the RNA"
-                    },
-                    "object_type": "protocol"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00001031673",
-                        "alias": "Protocol to label extracted RNA"
-                    },
-                    "object_type": "protocol"
-                },
-                "r_label": "Differed from the general protocol by using parameters X and Y with values ..."
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00001031674",
-                        "alias": "Hibridization of the RNA to the array"
-                    },
-                    "object_type": "protocol"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00001031675",
-                        "alias": "Scanning of the array"
-                    },
-                    "object_type": "protocol"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00001031676",
-                        "alias": "Normalization of the data"
-                    },
-                    "object_type": "protocol"
-                }
-            },        
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAB00002045411"
-                    },
-                    "object_type": "submission"                
-                }
-            }
-        ],
-        "experiment_attributes": [
-            {            
                 "tag": "sub_project",
                 "value": "CB4-1UD"
             },
-            {            
+            {
                 "tag": "experiments_budget",
-                "value": 20500,
-                "units": "GBP"
+                "units": "GBP",
+                "value": 20500
             }
-        ],    
-        "schema_descriptor": {
-            "object_type": "experiment",
-            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
-            "object_schema_version": "0.0.0",
-            "common_schema_version": "0.0.0"
-        }
+        ],
+        "experimentRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAS00002045411"
+                    },
+                    "objectType": "study"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00001051423"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Patient's blood collection protocol",
+                        "egaAccession": "EGAO00001031671"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Extraction of the RNA",
+                        "egaAccession": "EGAO00001031672"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
+                "rSource": {
+                    "objectId": {
+                        "alias": "Protocol to label extracted RNA",
+                        "egaAccession": "EGAO00001031673"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Hibridization of the RNA to the array",
+                        "egaAccession": "EGAO00001031674"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Scanning of the array",
+                        "egaAccession": "EGAO00001031675"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Normalization of the data",
+                        "egaAccession": "EGAO00001031676"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referenced_by"
+            }
+        ],
+        "experimentTypeSpecifications": {
+            "arrayExperiment": {
+                "adfFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67f64423",
+                        "filename": "myADF-file.xlsx",
+                        "filetype": "XLSX",
+                        "unencryptedChecksum": "c6779ec2960296ed9a04f08d67f64423"
+                    }
+                ],
+                "arrayLabels": [
+                    {
+                        "arrayLabelCurie": "CHEBI:37987",
+                        "arrayLabelId": "Cy3 dye",
+                        "labelDescription": "This label was use to dye the control samples"
+                    },
+                    {
+                        "arrayLabelCurie": "CHEBI:15956",
+                        "arrayLabelId": "Biotin"
+                    }
+                ]
+            }
+        },
+        "objectDescription": "Example array experiment's description of my experiment N13.",
+        "objectId": {
+            "alias": "My_ChIP_array_experiment_13",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Example array experiment title",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "experiment"
+        },
+        "targetedLoci": [
+            {
+                "lociDescriptor": [
+                    {
+                        "geneDescriptor": {
+                            "geneIdCurie": "HGNC:11998",
+                            "geneSymbol": "TP53"
+                        },
+                        "locusAdditionalDescription": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
+                    },
+                    {
+                        "genomicSequenceDescriptor": {
+                            "assemblyDescriptor": {
+                                "assemblyName": "GRCh38.p14",
+                                "assemblyUnitName": "Chromosome 17",
+                                "ncbiAssemblyAccession": "assembly:GCA_000001405.29",
+                                "ncbiAssemblyUnitAccession": "refseq:NC_000017.11"
+                            },
+                            "dnaSequenceStrand": "forward",
+                            "nucleicAcidSequence": "CTTGTTCAGTG",
+                            "sequenceCoordinates": {
+                                "sequenceInterval": {
+                                    "end": 7669460,
+                                    "start": 7669450
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "locusAdditionalDescription": "Additional locus that was placed in the array for SNP scanning for the purpose of individuals identification as tags...",
+                        "locusExternalReference": {
+                            "accessionLabel": "EST89992 Human Small intestine Homo sapiens cDNA 5' end",
+                            "externalAccessionCurie": "nucleotide:T35715.1"
+                        }
+                    }
+                ],
+                "organismDescriptor": {
+                    "scientificName": "homo sapiens",
+                    "taxonIdCurie": "NCBITaxon:9606"
+                }
+            }
+        ],
+        "typesOfOutputData": [
+            "genomic data"
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
     }
 }

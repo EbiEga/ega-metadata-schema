@@ -1,113 +1,115 @@
 {
-    "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json"
-    },
     "data": {
-        "object_id": {
-            "alias" : "My_sample_X_from_NM305004", 
-            "center_name" : "EBI-TEST",
-            "ega_accession": "EGAN00000000001"
-        },
-        "object_title": "Skin biopsy from COVID+ patient NM305004",
-        "object_description": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
-        "organism_descriptor": {
-            "taxon_id_curie": "NCBITaxon:9606",
-            "scientific_name": "homo sapiens",
-            "common_name": "human"
-        },
-        "sample_types": [ "tissue culture" ],
-        "cell_types": [ 
+        "cellTypes": [
             {
-                "cell_type_id": "CL:0000066",
-                "cell_type_label": "epithelial cell",
-                "inferred_cell_type": "not inferred"
+                "cellTypeId": "CL:0000066",
+                "cellTypeLabel": "epithelial cell",
+                "inferredCellType": "not inferred"
             },
             {
-                "cell_type_id": "CL:0000097",
-                "cell_type_label": "mast cell",
-                "inferred_cell_type": "not inferred"
-            }
-         ],
-         "sample_status": [
-            {
-                "case_vs_control": "case",
-                "condition_under_study": {
-                    "cus_curie": "XCO:0000398",
-                    "cus_label": "treated with cisplatin"
-                }
-            }
-         ],
-        "sample_collection": {
-            "sample_collection_date": "2021-12-20",
-            "age_at_collection": {
-                "age_range": {
-                    "start": "P5Y",
-                    "end": "P10Y"
-                }
-            },
-            "sampling_site": {
-                "sampled_organism_part": "axilla skin",
-                "sampled_organism_part_curie": "UBERON:0015474"
-            }
-        },
-        "sample_grouping": {
-            "sample_group_boolean": false
-        },
-        "sample_relationships": [
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAI00002045411"
-                    },
-                    "object_type": "individual"                
-                }
-            },
-            {
-                "r_type": "same_as",
-                "r_source": {
-                    "object_id": {
-                        "external_accessions": [
-                            {
-                                "external_accession_curie": "biosample:SAMEA7616999",
-                                "accession_label": "test relationship"
-                            }
-                        ]
-                    },
-                    "object_type": "external_accession"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAO00002045411"
-                    },
-                    "object_type": "protocol"                
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAB00002045411"
-                    },
-                    "object_type": "submission"                
-                }
+                "cellTypeId": "CL:0000097",
+                "cellTypeLabel": "mast cell",
+                "inferredCellType": "not inferred"
             }
         ],
-        "sample_attributes": [
+        "objectDescription": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
+        "objectId": {
+            "alias": "My_sample_X_from_NM305004",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAN00000000001"
+        },
+        "objectTitle": "Skin biopsy from COVID+ patient NM305004",
+        "organismDescriptor": {
+            "commonName": "human",
+            "scientificName": "homo sapiens",
+            "taxonIdCurie": "NCBITaxon:9606"
+        },
+        "sampleAttributes": [
             {
-                "units": "ml",
                 "tag": "biopsy volume",
+                "units": "ml",
                 "value": "30"
             }
         ],
-        "schema_descriptor": {
-            "object_type": "sample",
-            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
-            "object_schema_version": "0.0.0",
-            "common_schema_version": "0.0.0"
+        "sampleCollection": {
+            "ageAtCollection": {
+                "ageRange": {
+                    "end": "P10Y",
+                    "start": "P5Y"
+                }
+            },
+            "sampleCollectionDate": "2021-12-20",
+            "samplingSite": {
+                "sampledOrganismPart": "axilla skin",
+                "sampledOrganismPartCurie": "UBERON:0015474"
+            }
+        },
+        "sampleGrouping": {
+            "sampleGroupBoolean": false
+        },
+        "sampleRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAI00002045411"
+                    },
+                    "objectType": "individual"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "accessionLabel": "test relationship",
+                                "externalAccessionCurie": "biosample:SAMEA7616999"
+                            }
+                        ]
+                    },
+                    "objectType": "external_accession"
+                },
+                "rType": "same_as"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAO00002045411"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referenced_by"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referenced_by"
+            }
+        ],
+        "sampleStatus": [
+            {
+                "caseVsControl": "case",
+                "conditionUnderStudy": {
+                    "cusCurie": "XCO:0000398",
+                    "cusLabel": "treated with cisplatin"
+                }
+            }
+        ],
+        "sampleTypes": [
+            "tissue culture"
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "sample"
         }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json"
     }
 }
