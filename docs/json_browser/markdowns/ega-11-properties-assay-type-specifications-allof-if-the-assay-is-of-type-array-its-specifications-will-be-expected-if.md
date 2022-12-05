@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/allOf/0/if
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/allOf/0/if
 ```
 
 
@@ -16,15 +16,15 @@ unknown
 
 # if Properties
 
-| Property                   | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                     |
-| :------------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_type](#assay_type) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected-if-properties-assay_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/allOf/0/if/properties/assay_type") |
+| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                 |
+| :---------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayType](#assaytype) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected-if-properties-assaytype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/allOf/0/if/properties/assayType") |
 
-## assay\_type
+## assayType
 
 
 
-`assay_type`
+`assayType`
 
 *   is required
 
@@ -32,13 +32,13 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected-if-properties-assay_type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/allOf/0/if/properties/assay_type")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected-if-properties-assaytype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/allOf/0/if/properties/assayType")
 
-### assay\_type Type
+### assayType Type
 
 unknown
 
-### assay\_type Constraints
+### assayType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA common metadata definitions Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/checksum_method/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/checksumMethod/meta:enum
 ```
 
 

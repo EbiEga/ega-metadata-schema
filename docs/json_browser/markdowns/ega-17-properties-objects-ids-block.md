@@ -1,16 +1,16 @@
 # Object's IDs block Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_id
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId
 ```
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions.
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## object\_id Type
+## objectId Type
 
 `object` ([Object's IDs block](ega-17-properties-objects-ids-block.md))
 

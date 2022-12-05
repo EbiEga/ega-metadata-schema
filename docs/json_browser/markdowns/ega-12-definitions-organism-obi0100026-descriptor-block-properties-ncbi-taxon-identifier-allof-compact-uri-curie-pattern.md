@@ -1,7 +1,7 @@
 # Compact URI (CURIE) pattern Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organism_descriptor/properties/taxon_id_curie/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor/properties/taxonIdCurie/allOf/0
 ```
 
 A [W3C Compact URI](https://www.w3.org/TR/curie/) formatted string. A CURIE string has the structure `prefix`:`reference`, as defined by the W3C syntax. Even though we do not restrict prefixes, we recommend that the term used as `prefix` is uniformely resolved. In other words, it is better to use prefixes (e.g. 'ensembl') from identifiers.org.

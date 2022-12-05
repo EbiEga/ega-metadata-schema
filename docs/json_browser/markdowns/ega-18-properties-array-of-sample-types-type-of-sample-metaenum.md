@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA sample metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_types/items/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleTypes/items/meta:enum
 ```
 
 

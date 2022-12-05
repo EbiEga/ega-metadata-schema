@@ -16,15 +16,15 @@ unknown
 
 # if Properties
 
-| Property                     | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
-| :--------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_files](#assay_files) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assay_files.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files") |
+| Property                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                     |
+| :------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayFiles](#assayfiles) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assayfiles.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assayFiles") |
 
-## assay\_files
+## assayFiles
 
 
 
-`assay_files`
+`assayFiles`
 
 *   is optional
 
@@ -32,8 +32,8 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assay_files.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assay_files")
+*   defined in: [EGA assay metadata schema](ega-11-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-if-properties-assayfiles.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/if/properties/assayFiles")
 
-### assay\_files Type
+### assayFiles Type
 
 unknown

@@ -16,22 +16,22 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA dataset metadata schema Properties
 
-| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                    |
-| :------------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                                | Merged   | Required | cannot be null | [EGA dataset metadata schema](ega-13-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_id")                                      |
-| [schema\_descriptor](#schema_descriptor)                | `object` | Optional | cannot be null | [EGA dataset metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/schema_descriptor")                             |
-| [object\_title](#object_title)                          | `string` | Required | cannot be null | [EGA dataset metadata schema](ega-13-properties-title-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_title")                                |
-| [object\_description](#object_description)              | `string` | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-description-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_description")                    |
-| [dataset\_type](#dataset_type)                          | `string` | Required | cannot be null | [EGA dataset metadata schema](ega-13-properties-dataset-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_type")                                        |
-| [approximate\_release\_date](#approximate_release_date) | Merged   | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-approximate-release-date-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximate_release_date") |
-| [dataset\_relationships](#dataset_relationships)        | `array`  | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-dataset-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_relationships")                      |
-| [dataset\_attributes](#dataset_attributes)              | `array`  | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-dataset-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_attributes")                     |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                  |
+| :------------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                             | Merged   | Required | cannot be null | [EGA dataset metadata schema](ega-13-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId")                                     |
+| [schemaDescriptor](#schemadescriptor)             | `object` | Optional | cannot be null | [EGA dataset metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/schemaDescriptor")                            |
+| [objectTitle](#objecttitle)                       | `string` | Required | cannot be null | [EGA dataset metadata schema](ega-13-properties-title-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectTitle")                               |
+| [objectDescription](#objectdescription)           | `string` | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-description-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectDescription")                   |
+| [datasetType](#datasettype)                       | `string` | Required | cannot be null | [EGA dataset metadata schema](ega-13-properties-dataset-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetType")                                       |
+| [approximateReleaseDate](#approximatereleasedate) | Merged   | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-approximate-release-date-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximateReleaseDate") |
+| [datasetRelationships](#datasetrelationships)     | `array`  | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-dataset-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetRelationships")                     |
+| [datasetAttributes](#datasetattributes)           | `array`  | Optional | cannot be null | [EGA dataset metadata schema](ega-13-properties-dataset-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetAttributes")                    |
 
-## object\_id
+## objectId
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions. #! We extend the core object (object\_core\_id) by adding a pattern check based on this schema's nature: an dataset (by using EGA-dataset-id-pattern)
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: an dataset (by using EGADatasetIdPattern)
 
-`object_id`
+`objectId`
 
 *   is required
 
@@ -39,9 +39,9 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_id")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId")
 
-### object\_id Type
+### objectId Type
 
 `object` ([Object's IDs block](ega-13-properties-objects-ids-block.md))
 
@@ -57,11 +57,11 @@ all of
 
 *   [Check that dataset EGA ID (EGAD) is correct](ega-13-properties-objects-ids-block-allof-check-that-dataset-ega-id-egad-is-correct.md "check type definition")
 
-## schema\_descriptor
+## schemaDescriptor
 
 This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
 
-`schema_descriptor`
+`schemaDescriptor`
 
 *   is optional
 
@@ -69,17 +69,17 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/schema_descriptor")
+*   defined in: [EGA dataset metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/schemaDescriptor")
 
-### schema\_descriptor Type
+### schemaDescriptor Type
 
 `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
-## object\_title
+## objectTitle
 
 Free-form title of the Dataset. It should be the first picture of the dataset content and not contain more than 30 words. It can be used to call out dataset records in searches or displays.
 
-`object_title`
+`objectTitle`
 
 *   is required
 
@@ -87,23 +87,23 @@ Free-form title of the Dataset. It should be the first picture of the dataset co
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-title-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_title")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-title-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectTitle")
 
-### object\_title Type
+### objectTitle Type
 
 `string` ([Title of the dataset](ega-13-properties-title-of-the-dataset.md))
 
-### object\_title Examples
+### objectTitle Examples
 
 ```json
 "EBI colon cancer dataset"
 ```
 
-## object\_description
+## objectDescription
 
 More extensive free-form description of the Dataset. It should include the content of the dataset (number of samples, file types, technology/protocol used to obtain the data…) and not extend more than 4 sentences.
 
-`object_description`
+`objectDescription`
 
 *   is optional
 
@@ -111,23 +111,23 @@ More extensive free-form description of the Dataset. It should include the conte
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-description-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_description")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-description-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectDescription")
 
-### object\_description Type
+### objectDescription Type
 
 `string` ([Description of the dataset](ega-13-properties-description-of-the-dataset.md))
 
-### object\_description Examples
+### objectDescription Examples
 
 ```json
 "This dataset is related to Project X by grant Y and encompasses samples from group Z, whose DNA was hybridized against a microarray designed for SNPs."
 ```
 
-## dataset\_type
+## datasetType
 
 Type of the dataset, expressing the overall purpose of the dataset. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition. The CV was inherited from ENA's dataset types.
 
-`dataset_type`
+`datasetType`
 
 *   is required
 
@@ -135,13 +135,13 @@ Type of the dataset, expressing the overall purpose of the dataset. Term chosen 
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-dataset-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_type")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-dataset-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetType")
 
-### dataset\_type Type
+### datasetType Type
 
 `string` ([Dataset type](ega-13-properties-dataset-type.md))
 
-### dataset\_type Constraints
+### datasetType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -162,17 +162,17 @@ Type of the dataset, expressing the overall purpose of the dataset. Term chosen 
 | `"chip-Seq"`                                                        | \[EFO:0002692]: ChIP-seq is an assay in which chromatin immunoprecipitation with high throughput sequencing is used to identify the cistrome of DNA-associated proteins                                                                                                                                                                                 |
 | `"study summary information"`                                       | Object containing complementary summaries of other objects                                                                                                                                                                                                                                                                                              |
 
-### dataset\_type Examples
+### datasetType Examples
 
 ```json
 "whole genome sequencing"
 ```
 
-## approximate\_release\_date
+## approximateReleaseDate
 
 An approximate date of the desired release of the dataset. Bare in mind that this will NOT automatically release the dataset, but instead may be used to set a reminder to the submitter (and EGA's HelpDesk team) in case the dataset was not released by this time. This would help in cases where this step was forgotten by the submitter or release was stalled for some reason.
 
-`approximate_release_date`
+`approximateReleaseDate`
 
 *   is optional
 
@@ -180,9 +180,9 @@ An approximate date of the desired release of the dataset. Bare in mind that thi
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-approximate-release-date-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximate_release_date")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-approximate-release-date-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximateReleaseDate")
 
-### approximate\_release\_date Type
+### approximateReleaseDate Type
 
 `string` ([Approximate release date of the dataset](ega-13-properties-approximate-release-date-of-the-dataset.md))
 
@@ -192,7 +192,7 @@ all of
 
 *   [We cap the reminder up to 3 years](ega-13-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
 
-### approximate\_release\_date Examples
+### approximateReleaseDate Examples
 
 ```json
 "2023-12-01"
@@ -202,11 +202,11 @@ all of
 "2024-01-10"
 ```
 
-## dataset\_relationships
+## datasetRelationships
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a dataset) the EGA.
 
-`dataset_relationships`
+`datasetRelationships`
 
 *   is optional
 
@@ -214,23 +214,23 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-dataset-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_relationships")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-dataset-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetRelationships")
 
-### dataset\_relationships Type
+### datasetRelationships Type
 
 an array of merged types ([Details](ega-13-properties-dataset-relationships-items.md))
 
-### dataset\_relationships Constraints
+### datasetRelationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## dataset\_attributes
+## datasetAttributes
 
 Custom attributes of a dataset: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
 
-`dataset_attributes`
+`datasetAttributes`
 
 *   is optional
 
@@ -238,13 +238,13 @@ Custom attributes of a dataset: reusable attributes to encode tag-value pairs (e
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-13-properties-dataset-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_attributes")
+*   defined in: [EGA dataset metadata schema](ega-13-properties-dataset-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetAttributes")
 
-### dataset\_attributes Type
+### datasetAttributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-### dataset\_attributes Constraints
+### datasetAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

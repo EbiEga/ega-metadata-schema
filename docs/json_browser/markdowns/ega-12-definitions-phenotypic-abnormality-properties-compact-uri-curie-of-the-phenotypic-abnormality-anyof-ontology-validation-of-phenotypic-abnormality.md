@@ -1,7 +1,7 @@
 # Ontology validation of phenotypic abnormality Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_curie/anyOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityCurie/anyOf/0
 ```
 
 

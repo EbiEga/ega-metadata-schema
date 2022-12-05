@@ -1,7 +1,7 @@
 # Description of the study Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectDescription
 ```
 
 An in-depth description of the study, including its overall purpose, goals, scope or nature.
@@ -10,11 +10,11 @@ An in-depth description of the study, including its overall purpose, goals, scop
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.study.json\*](../../../schemas/EGA.study.json "open original schema") |
 
-## object\_description Type
+## objectDescription Type
 
 `string` ([Description of the study](ega-19-properties-description-of-the-study.md))
 
-## object\_description Examples
+## objectDescription Examples
 
 ```json
 "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls."

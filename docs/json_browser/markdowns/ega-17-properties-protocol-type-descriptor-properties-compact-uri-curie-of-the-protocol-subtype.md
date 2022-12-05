@@ -1,16 +1,16 @@
 # Compact URI (CURIE) of the protocol subtype Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_subtype_curie
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtypeCurie
 ```
 
-Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocol\_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').
+Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocolType' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## protocol\_subtype\_curie Type
+## protocolSubtypeCurie Type
 
 `string` ([Compact URI (CURIE) of the protocol subtype](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype.md))
 
@@ -26,7 +26,7 @@ all of
 
     *   [Untitled undefined type in EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype-allof-ontology-validation-of-it-being-part-of-efos-protocol-obi0000272-or-planned-process-efo0004542-or-edams-analysis-operation2945-anyof-2.md "check type definition")
 
-## protocol\_subtype\_curie Examples
+## protocolSubtypeCurie Examples
 
 ```json
 "EFO:0005518"

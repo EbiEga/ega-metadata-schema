@@ -1,7 +1,7 @@
 # Individual's age at sample collection Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection
 ```
 
 Property describing the individual's age at sample collection. Can either be the precise age an age range.
@@ -10,7 +10,7 @@ Property describing the individual's age at sample collection. Can either be the
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## age\_at\_collection Type
+## ageAtCollection Type
 
 `object` ([Individual's age at sample collection](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md))
 
@@ -20,12 +20,12 @@ any of
 
 *   [Or the age-range is needed](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-anyof-or-the-age-range-is-needed.md "check type definition")
 
-# age\_at\_collection Properties
+# ageAtCollection Properties
 
-| Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                        |
-| :----------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [age](#age)              | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age")                                                                                                                         |
-| [age\_range](#age_range) | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                    |
+| :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [age](#age)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/age")                                                                                                                        |
+| [ageRange](#agerange) | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange") |
 
 ## age
 
@@ -39,7 +39,7 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/age")
 
 ### age Type
 
@@ -63,11 +63,11 @@ all of
 "P4Y"
 ```
 
-## age\_range
+## ageRange
 
 Age range of the individual when the sample was collected. Composed of two (start and end) age points.
 
-`age_range`
+`ageRange`
 
 *   is optional
 
@@ -75,8 +75,8 @@ Age range of the individual when the sample was collected. Composed of two (star
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range")
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange")
 
-### age\_range Type
+### ageRange Type
 
 `object` ([Individual's age range at sample collection](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md))

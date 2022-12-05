@@ -16,15 +16,15 @@ unknown
 
 # if Properties
 
-| Property                                                  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
-| :-------------------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [assay\_type\_specifications](#assay_type_specifications) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-a-sequencing-assay-if-properties-assay_type_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/1/if/properties/assay_type_specifications") |
+| Property                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                            |
+| :-------------------------------------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayTypeSpecifications](#assaytypespecifications) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-a-sequencing-assay-if-properties-assaytypespecifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/1/if/properties/assayTypeSpecifications") |
 
-## assay\_type\_specifications
+## assayTypeSpecifications
 
 
 
-`assay_type_specifications`
+`assayTypeSpecifications`
 
 *   is optional
 
@@ -32,8 +32,8 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-a-sequencing-assay-if-properties-assay_type_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/1/if/properties/assay_type_specifications")
+*   defined in: [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-a-sequencing-assay-if-properties-assaytypespecifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/1/if/properties/assayTypeSpecifications")
 
-### assay\_type\_specifications Type
+### assayTypeSpecifications Type
 
 unknown

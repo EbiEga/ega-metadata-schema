@@ -1,7 +1,7 @@
 # Full name of an individual Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/individual_full_name
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/individualFullName
 ```
 
 A full set of all personal names by which an individual is known and that can be recited as a word-group, with the understanding that, taken together, they all relate to that one individual. In case there are several, separate them with semicolons (;).
@@ -10,15 +10,15 @@ A full set of all personal names by which an individual is known and that can be
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## individual\_full\_name Type
+## individualFullName Type
 
 `string` ([Full name of an individual](ega-12-definitions-contact-details-properties-full-name-of-an-individual.md))
 
-## individual\_full\_name Constraints
+## individualFullName Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## individual\_full\_name Examples
+## individualFullName Examples
 
 ```json
 "Wayne Jr., Bruce"

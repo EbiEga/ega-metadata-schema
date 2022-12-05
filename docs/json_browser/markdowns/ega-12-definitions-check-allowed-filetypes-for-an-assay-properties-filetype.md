@@ -1,7 +1,7 @@
 # Untitled string in EGA common metadata definitions Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes/properties/filetype
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes/properties/filetype
 ```
 
 

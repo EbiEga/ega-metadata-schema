@@ -1,7 +1,7 @@
 # Title of the sample Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectTitle
 ```
 
 An informative sample title that should serve as an overview (e.g. sample tag, pseudonyms, sample type, sample groups, purpose...) of the sample and differentiate it from others. This short text can be used to call out sample records in searches or in displays.
@@ -10,11 +10,11 @@ An informative sample title that should serve as an overview (e.g. sample tag, p
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## object\_title Type
+## objectTitle Type
 
 `string` ([Title of the sample](ega-18-properties-title-of-the-sample.md))
 
-## object\_title Examples
+## objectTitle Examples
 
 ```json
 "Buccal swab from COVID+ patient NM305004"

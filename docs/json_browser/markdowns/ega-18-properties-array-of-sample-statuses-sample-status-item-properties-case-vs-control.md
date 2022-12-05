@@ -1,7 +1,7 @@
 # Case vs control Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/case_vs_control
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/caseVsControl
 ```
 
 Property that specifies whether the sample is subject to the (usually altered) condition under study (i.e. case), or part of reference group (i.e. control). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
@@ -10,11 +10,11 @@ Property that specifies whether the sample is subject to the (usually altered) c
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## case\_vs\_control Type
+## caseVsControl Type
 
 `string` ([Case vs control](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-case-vs-control.md))
 
-## case\_vs\_control Constraints
+## caseVsControl Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

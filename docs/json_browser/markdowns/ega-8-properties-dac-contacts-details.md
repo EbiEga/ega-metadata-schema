@@ -1,7 +1,7 @@
 # DAC contacts' details Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts
 ```
 
 Object containing the main contact's and optional additional contact's details.
@@ -10,22 +10,22 @@ Object containing the main contact's and optional additional contact's details.
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.DAC.json\*](../../../schemas/EGA.DAC.json "open original schema") |
 
-## dac\_contacts Type
+## dacContacts Type
 
 `object` ([DAC contacts' details](ega-8-properties-dac-contacts-details.md))
 
-# dac\_contacts Properties
+# dacContacts Properties
 
-| Property                                     | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :------------------------------------------- | :------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [main\_contact](#main_contact)               | Merged  | Required | cannot be null | [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/main_contact")                                                      |
-| [additional\_contacts](#additional_contacts) | `array` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts") |
+| Property                                  | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
+| :---------------------------------------- | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [mainContact](#maincontact)               | Merged  | Required | cannot be null | [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts/properties/mainContact")                                                      |
+| [additionalContacts](#additionalcontacts) | `array` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts/properties/additionalContacts") |
 
-## main\_contact
+## mainContact
 
 An object to contain the required metadata to identify and reach an individual or institution. Used, for instance, to list who needs to be informed (1) in case of a erroneous submission (2) or in case access to a dataset is requested by a user.
 
-`main_contact`
+`mainContact`
 
 *   is required
 
@@ -33,9 +33,9 @@ An object to contain the required metadata to identify and reach an individual o
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/main_contact")
+*   defined in: [EGA DAC metadata schema](ega-12-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts/properties/mainContact")
 
-### main\_contact Type
+### mainContact Type
 
 `object` ([Contact details](ega-12-definitions-contact-details.md))
 
@@ -45,11 +45,11 @@ any of
 
 *   [Or the institution's name is required.](ega-12-definitions-contact-details-anyof-or-the-institutions-name-is-required.md "check type definition")
 
-## additional\_contacts
+## additionalContacts
 
 An array compromising additional contact details to use when in need to reach the DAC yet the main contact is unresponsive or does not exist.
 
-`additional_contacts`
+`additionalContacts`
 
 *   is optional
 
@@ -57,13 +57,13 @@ An array compromising additional contact details to use when in need to reach th
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dac_contacts/properties/additional_contacts")
+*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts/properties/additionalContacts")
 
-### additional\_contacts Type
+### additionalContacts Type
 
 `object[]` ([Contact details](ega-12-definitions-contact-details.md))
 
-### additional\_contacts Constraints
+### additionalContacts Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

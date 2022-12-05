@@ -1,7 +1,7 @@
 # Cell type label Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/inferred_cell_type
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/inferredCellType
 ```
 
 A flag to specify whether the cell type classification was determined though single-cell analysis (e.g. cell clustering or trajectory analysis) or not (i.e. was visually observed or it is expected).
@@ -10,11 +10,11 @@ A flag to specify whether the cell type classification was determined though sin
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## inferred\_cell\_type Type
+## inferredCellType Type
 
 `string` ([Cell type label](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label-1.md))
 
-## inferred\_cell\_type Constraints
+## inferredCellType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

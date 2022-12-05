@@ -1,7 +1,7 @@
 # Check that DAC EGA ID (EGAC) is correct Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId/allOf/1
 ```
 
 
@@ -16,15 +16,15 @@ unknown ([Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
-| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                           |
+| :---------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
-## ega\_accession
+## egaAccession
 
 
 
-`ega_accession`
+`egaAccession`
 
 *   is optional
 
@@ -32,13 +32,13 @@ unknown ([Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA DAC metadata schema](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId/allOf/1/properties/egaAccession")
 
-### ega\_accession Type
+### egaAccession Type
 
 `string` ([Pattern of an EGA DAC's ID (EGAC...)](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct-properties-pattern-of-an-ega-dacs-id-egac.md))
 
-### ega\_accession Constraints
+### egaAccession Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -48,7 +48,7 @@ unknown ([Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-
 
 [try pattern](https://regexr.com/?expression=%5EEGAC%5B0-9%5D%7B11%7D%24 "try regular expression with regexr.com")
 
-### ega\_accession Examples
+### egaAccession Examples
 
 ```json
 "EGAC00001000908"

@@ -1,7 +1,7 @@
 # Filetype Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/filetype
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/filetype
 ```
 
 The main format in which data is structured and represented in an electronic file. It is normally defined by the file extension of the file (e.g. FASTQ for a '.fastq' file). The string corresponds to the ID or name (e.g. FASTA, TSV...), chosen from a list of controlled vocabulary (CV), associated with the given filetype. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.

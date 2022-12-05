@@ -1,7 +1,7 @@
 # Phenotypic abnormality Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/phenotypes/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypes/items
 ```
 
 Property to describe any abnormal (i.e. deviation from normal or average) phenotype (i.e. detectable outward manifestations of a specific genotype).
@@ -16,16 +16,16 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 # items Properties
 
-| Property                                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                |
-| :-------------------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [phenotypic\_abnormality\_curie](#phenotypic_abnormality_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_curie") |
-| [phenotypic\_abnormality\_label](#phenotypic_abnormality_label) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_label")             |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                            |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [phenotypicAbnormalityCurie](#phenotypicabnormalitycurie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityCurie") |
+| [phenotypicAbnormalityLabel](#phenotypicabnormalitylabel) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityLabel")             |
 
-## phenotypic\_abnormality\_curie
+## phenotypicAbnormalityCurie
 
 
 
-`phenotypic_abnormality_curie`
+`phenotypicAbnormalityCurie`
 
 *   is required
 
@@ -33,9 +33,9 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_curie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityCurie")
 
-### phenotypic\_abnormality\_curie Type
+### phenotypicAbnormalityCurie Type
 
 `string` ([Compact URI (CURIE) of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md))
 
@@ -45,7 +45,7 @@ any of
 
 *   [In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
-### phenotypic\_abnormality\_curie Examples
+### phenotypicAbnormalityCurie Examples
 
 ```json
 "HP:0003003"
@@ -67,11 +67,11 @@ any of
 "NCIT:C94232"
 ```
 
-## phenotypic\_abnormality\_label
+## phenotypicAbnormalityLabel
 
 
 
-`phenotypic_abnormality_label`
+`phenotypicAbnormalityLabel`
 
 *   is optional
 
@@ -79,17 +79,17 @@ any of
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypic-abnormality-descriptor/properties/phenotypic_abnormality_label")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityLabel")
 
-### phenotypic\_abnormality\_label Type
+### phenotypicAbnormalityLabel Type
 
 `string` ([Label of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md))
 
-### phenotypic\_abnormality\_label Constraints
+### phenotypicAbnormalityLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### phenotypic\_abnormality\_label Examples
+### phenotypicAbnormalityLabel Examples
 
 ```json
 "Colon cancer"

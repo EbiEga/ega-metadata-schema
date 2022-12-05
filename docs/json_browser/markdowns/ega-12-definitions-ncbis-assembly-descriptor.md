@@ -1,7 +1,7 @@
 # NCBI's Assembly descriptor Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/reference_alignment_details/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/referenceAlignmentDetails/items
 ```
 
 Node describing a sequence assembly referenced in [NCBI's Assembly database](https://www.ncbi.nlm.nih.gov/assembly). Assembly is a database providing information on the structure of assembled genomes, assembly names and other meta-data, statistical reports, and links to genomic sequence data. An assembly is defined as the set of chromosomes, unlocalized and unplaced (sometimes called 'random') and alternate sequences used to represent an organism's genome. Assemblies are constructed from 1 or more assembly units.
@@ -22,18 +22,18 @@ any of
 
 # items Properties
 
-| Property                                                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
-| :--------------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assembly\_name](#assembly_name)                                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/assembly_name")                        |
-| [ncbi\_assembly\_accession](#ncbi_assembly_accession)            | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_accession")           |
-| [assembly\_unit\_name](#assembly_unit_name)                      | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-unit-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/assembly_unit_name")              |
-| [ncbi\_assembly\_unit\_accession](#ncbi_assembly_unit_accession) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_unit_accession") |
+| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                  |
+| :------------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assemblyName](#assemblyname)                           | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/assemblyName")                      |
+| [ncbiAssemblyAccession](#ncbiassemblyaccession)         | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyAccession")          |
+| [assemblyUnitName](#assemblyunitname)                   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-unit-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/assemblyUnitName")             |
+| [ncbiAssemblyUnitAccession](#ncbiassemblyunitaccession) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnitAccession") |
 
-## assembly\_name
+## assemblyName
 
 A free-text common name (e.g. 'GRCh38') that is used to denote the sequence assembly.
 
-`assembly_name`
+`assemblyName`
 
 *   is optional
 
@@ -41,17 +41,17 @@ A free-text common name (e.g. 'GRCh38') that is used to denote the sequence asse
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/assembly_name")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/assemblyName")
 
-### assembly\_name Type
+### assemblyName Type
 
 `string` ([Assembly common name](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-common-name.md))
 
-### assembly\_name Constraints
+### assemblyName Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### assembly\_name Examples
+### assemblyName Examples
 
 ```json
 "GRCh38.p14"
@@ -69,11 +69,11 @@ A free-text common name (e.g. 'GRCh38') that is used to denote the sequence asse
 "GRCh37"
 ```
 
-## ncbi\_assembly\_accession
+## ncbiAssemblyAccession
 
 Assembly's identifier (e.g. GCF\_000001405.26) of the assembly. For example, the assembly accession for the GenBank version of the public human reference assembly (GRCh38.p14) is GCA\_000001405.29. See further details here: <https://www.ncbi.nlm.nih.gov/assembly/model/>.
 
-`ncbi_assembly_accession`
+`ncbiAssemblyAccession`
 
 *   is optional
 
@@ -81,9 +81,9 @@ Assembly's identifier (e.g. GCF\_000001405.26) of the assembly. For example, the
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_accession")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyAccession")
 
-### ncbi\_assembly\_accession Type
+### ncbiAssemblyAccession Type
 
 `string` ([NCBI Assembly accession](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-accession.md))
 
@@ -93,7 +93,7 @@ all of
 
     *   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
 
-### ncbi\_assembly\_accession Examples
+### ncbiAssemblyAccession Examples
 
 ```json
 "assembly:GCF_000001405.26"
@@ -107,11 +107,11 @@ all of
 "assembly:GCF_000005845.2"
 ```
 
-## assembly\_unit\_name
+## assemblyUnitName
 
 A free-text common name (e.g. 'chr17') that is used to denote the sequence assembly unit.
 
-`assembly_unit_name`
+`assemblyUnitName`
 
 *   is optional
 
@@ -119,17 +119,17 @@ A free-text common name (e.g. 'chr17') that is used to denote the sequence assem
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-unit-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/assembly_unit_name")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-unit-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/assemblyUnitName")
 
-### assembly\_unit\_name Type
+### assemblyUnitName Type
 
 `string` ([Assembly unit common name](ega-12-definitions-ncbis-assembly-descriptor-properties-assembly-unit-common-name.md))
 
-### assembly\_unit\_name Constraints
+### assemblyUnitName Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### assembly\_unit\_name Examples
+### assemblyUnitName Examples
 
 ```json
 "Chromosome 2"
@@ -151,11 +151,11 @@ A free-text common name (e.g. 'chr17') that is used to denote the sequence assem
 "18"
 ```
 
-## ncbi\_assembly\_unit\_accession
+## ncbiAssemblyUnitAccession
 
 NCBI's identifier (e.g. ) of the assembly unit. An assembly unit is defined as the collection of sequences used to define discrete parts of an assembly. Commonly assembly units are entire chromosomes (e.g. Chromosome 1 of human genome), scaffolds or different types of sequences (e.g. Mitochondrial DNA). For example, GenBank's accession: (1) for the assembly unit of the human chromosome 1 is [NC\_000001.11](https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11) (for the human reference assembly GRCh38.p14); (2) and for the complete mitochondrion genome of a human it is [NC\_012920.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_012920.1). See further details here: <https://www.ncbi.nlm.nih.gov/assembly/model/>.
 
-`ncbi_assembly_unit_accession`
+`ncbiAssemblyUnitAccession`
 
 *   is optional
 
@@ -163,9 +163,9 @@ NCBI's identifier (e.g. ) of the assembly unit. An assembly unit is defined as t
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbi_assembly_descriptor/properties/ncbi_assembly_unit_accession")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnitAccession")
 
-### ncbi\_assembly\_unit\_accession Type
+### ncbiAssemblyUnitAccession Type
 
 `string` ([NCBI Assembly unit accession](ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit-accession.md))
 
@@ -203,7 +203,7 @@ all of
 
     *   [WP - Molecule type: protein](ega-12-definitions-refseq-accessions-data1098-curie-pattern-oneof-wp---molecule-type-protein.md "check type definition")
 
-### ncbi\_assembly\_unit\_accession Examples
+### ncbiAssemblyUnitAccession Examples
 
 ```json
 "refseq:NC_000001.11"

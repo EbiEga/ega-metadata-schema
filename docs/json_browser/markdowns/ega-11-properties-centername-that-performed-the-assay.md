@@ -1,7 +1,7 @@
 # Centername that performed the assay Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_center
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayCenter
 ```
 
 The name of the center (e.g. 'EBI-TEST') responsible for performing assay, if applicable, in case it's different from the center submitting metadata).
@@ -10,15 +10,15 @@ The name of the center (e.g. 'EBI-TEST') responsible for performing assay, if ap
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.assay.json\*](../../../schemas/EGA.assay.json "open original schema") |
 
-## assay\_center Type
+## assayCenter Type
 
 `string` ([Centername that performed the assay](ega-11-properties-centername-that-performed-the-assay.md))
 
-## assay\_center Constraints
+## assayCenter Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## assay\_center Examples
+## assayCenter Examples
 
 ```json
 "EBI-TEST"

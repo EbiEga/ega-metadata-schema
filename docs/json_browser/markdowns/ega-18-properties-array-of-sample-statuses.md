@@ -1,7 +1,7 @@
 # Array of sample statuses Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus
 ```
 
 Array of statuses of the sample. Used to specify the condition(s) under study **if** the diagnosis of the individual is not enough to describe the status of the sample. In other words, if the differenciation between affected and unaffected groups is done at the sample level and not at the individual level. This differentiation exists when the study design is of case-control \[[EFO:0001427](http://www.ebi.ac.uk/efo/EFO_0001427)].
@@ -12,11 +12,11 @@ Same could be applied, for instance, for treated or untreated samples, but not f
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## sample\_status Type
+## sampleStatus Type
 
 `object[]` ([Sample status item](ega-18-properties-array-of-sample-statuses-sample-status-item.md))
 
-## sample\_status Constraints
+## sampleStatus Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

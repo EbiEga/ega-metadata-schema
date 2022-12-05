@@ -1,7 +1,7 @@
 # Reference of the external accession Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_external_accession/properties/accession_reference
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/accessionReference
 ```
 
 Full or partial URL/URI of the external accession, for systems to resolve it.
@@ -10,7 +10,7 @@ Full or partial URL/URI of the external accession, for systems to resolve it.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## accession\_reference Type
+## accessionReference Type
 
 `string` ([Reference of the external accession](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession.md))
 
@@ -18,7 +18,7 @@ all of
 
 *   [URL/URI pattern](ega-12-definitions-object-of-external-accession-of-the-object-properties-reference-of-the-external-accession-allof-urluri-pattern.md "check type definition")
 
-## accession\_reference Examples
+## accessionReference Examples
 
 ```json
 "https://www.ebi.ac.uk/biosamples/samples/SAMN11716999"

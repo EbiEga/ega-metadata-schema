@@ -1,7 +1,7 @@
 # Array label of the experiment Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_type_specifications/properties/array_experiment/properties/array_labels
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/arrayExperiment/properties/arrayLabels
 ```
 
 Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. Can be repeated so that dual labelled arrays can be taken into account.
@@ -10,11 +10,11 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.experiment.json\*](../../../schemas/EGA.experiment.json "open original schema") |
 
-## array\_labels Type
+## arrayLabels Type
 
-`object[]` ([Repeatable array\_label node](ega-12-definitions-repeatable-array_label-node.md))
+`object[]` ([Repeatable arrayLabel node](ega-12-definitions-repeatable-arraylabel-node.md))
 
-## array\_labels Constraints
+## arrayLabels Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

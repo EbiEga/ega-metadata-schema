@@ -1,7 +1,7 @@
 # Units of the custom attribute Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/custom_attribute/properties/units
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/units
 ```
 
 The optional units of the attribute (e.g. 'years').

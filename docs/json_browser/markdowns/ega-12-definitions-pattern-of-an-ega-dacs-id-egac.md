@@ -1,7 +1,7 @@
 # Pattern of an EGA DAC's ID (EGAC...) Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGA-DAC-id-pattern
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGADACIdPattern
 ```
 
 
@@ -10,11 +10,11 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## EGA-DAC-id-pattern Type
+## EGADACIdPattern Type
 
 `string` ([Pattern of an EGA DAC's ID (EGAC...)](ega-12-definitions-pattern-of-an-ega-dacs-id-egac.md))
 
-## EGA-DAC-id-pattern Constraints
+## EGADACIdPattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 
 [try pattern](https://regexr.com/?expression=%5EEGAC%5B0-9%5D%7B11%7D%24 "try regular expression with regexr.com")
 
-## EGA-DAC-id-pattern Examples
+## EGADACIdPattern Examples
 
 ```json
 "EGAC00001000908"

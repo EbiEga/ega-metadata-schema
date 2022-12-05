@@ -1,7 +1,7 @@
 # Relationship target: assay Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_relationships/items/allOf/1/anyOf/0/allOf/1/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleRelationships/items/allOf/1/anyOf/0/allOf/1/anyOf/1
 ```
 
 Node to be used as an object type for relationship contraints.
@@ -16,15 +16,15 @@ Node to be used as an object type for relationship contraints.
 
 # 1 Properties
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                     |
-| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r\_target](#r_target) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-target-assay-properties-r_target.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-assay/properties/r_target") |
+| Property            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                 |
+| :------------------ | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-target-assay-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAssay/properties/rTarget") |
 
-## r\_target
+## rTarget
 
 
 
-`r_target`
+`rTarget`
 
 *   is required
 
@@ -32,8 +32,8 @@ Node to be used as an object type for relationship contraints.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-target-assay-properties-r_target.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-target-assay/properties/r_target")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-target-assay-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAssay/properties/rTarget")
 
-### r\_target Type
+### rTarget Type
 
 unknown

@@ -1,7 +1,7 @@
 # Alternate gene IDs Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gene_descriptor/properties/alternate_gene_ids
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneIds
 ```
 
 Array of alternate identifiers for this gene. For example, Ensemble identifiers for genes and its transcripts.
@@ -10,11 +10,11 @@ Array of alternate identifiers for this gene. For example, Ensemble identifiers 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## alternate\_gene\_ids Type
+## alternateGeneIds Type
 
 `string[]` ([Alternate gene ID](ega-12-definitions-gene-descriptor-properties-alternate-gene-ids-alternate-gene-id.md))
 
-## alternate\_gene\_ids Constraints
+## alternateGeneIds Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

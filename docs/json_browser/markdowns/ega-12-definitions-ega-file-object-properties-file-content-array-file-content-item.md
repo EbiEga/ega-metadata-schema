@@ -1,7 +1,7 @@
 # File content item Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items
 ```
 
 Item describing the type of data a file contains or represents.
@@ -16,16 +16,16 @@ Item describing the type of data a file contains or represents.
 
 # items Properties
 
-| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                             |
-| :------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [type\_of\_data\_curie](#type_of_data_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items/properties/type_of_data_curie") |
-| [type\_of\_data\_term](#type_of_data_term)   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-term-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items/properties/type_of_data_term")               |
+| Property                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                        |
+| :---------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [typeOfDataCurie](#typeofdatacurie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items/properties/typeOfDataCurie") |
+| [typeOfDataTerm](#typeofdataterm)   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-term-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items/properties/typeOfDataTerm")               |
 
-## type\_of\_data\_curie
+## typeOfDataCurie
 
 
 
-`type_of_data_curie`
+`typeOfDataCurie`
 
 *   is required
 
@@ -33,9 +33,9 @@ Item describing the type of data a file contains or represents.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items/properties/type_of_data_curie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items/properties/typeOfDataCurie")
 
-### type\_of\_data\_curie Type
+### typeOfDataCurie Type
 
 `string` ([Compact URI (CURIE) of the type of data.](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data.md))
 
@@ -43,7 +43,7 @@ all of
 
 *   [Compact URI (CURIE) pattern](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data-allof-compact-uri-curie-pattern.md "check type definition")
 
-### type\_of\_data\_curie Examples
+### typeOfDataCurie Examples
 
 ```json
 "format:1919"
@@ -53,11 +53,11 @@ all of
 "format:3326"
 ```
 
-## type\_of\_data\_term
+## typeOfDataTerm
 
 Term that specifies the type of data content.
 
-`type_of_data_term`
+`typeOfDataTerm`
 
 *   is optional
 
@@ -65,17 +65,17 @@ Term that specifies the type of data content.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-term-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items/properties/type_of_data_term")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-term-of-the-type-of-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items/properties/typeOfDataTerm")
 
-### type\_of\_data\_term Type
+### typeOfDataTerm Type
 
 `string` ([Term of the type of data](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-term-of-the-type-of-data.md))
 
-### type\_of\_data\_term Constraints
+### typeOfDataTerm Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### type\_of\_data\_term Examples
+### typeOfDataTerm Examples
 
 ```json
 "Sequence record format"

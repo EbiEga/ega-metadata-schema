@@ -1,7 +1,7 @@
 # Title of the DAC Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectTitle
 ```
 
 Short free-form text that can be used to call out DAC records in searches or displays.
@@ -10,15 +10,15 @@ Short free-form text that can be used to call out DAC records in searches or dis
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.DAC.json\*](../../../schemas/EGA.DAC.json "open original schema") |
 
-## object\_title Type
+## objectTitle Type
 
 `string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
 
-## object\_title Constraints
+## objectTitle Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## object\_title Examples
+## objectTitle Examples
 
 ```json
 "EBI Consortium Data Access Committee"

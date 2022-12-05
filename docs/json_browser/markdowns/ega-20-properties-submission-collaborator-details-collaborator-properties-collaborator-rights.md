@@ -1,7 +1,7 @@
 # Collaborator rights Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators/items/properties/collaborator_rights
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorRights
 ```
 
 Property defining the rights of the specified collaborator. Either read-only or read and write rights.
@@ -10,11 +10,11 @@ Property defining the rights of the specified collaborator. Either read-only or 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.submission.json\*](../../../schemas/EGA.submission.json "open original schema") |
 
-## collaborator\_rights Type
+## collaboratorRights Type
 
 `string` ([Collaborator rights](ega-20-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md))
 
-## collaborator\_rights Constraints
+## collaboratorRights Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

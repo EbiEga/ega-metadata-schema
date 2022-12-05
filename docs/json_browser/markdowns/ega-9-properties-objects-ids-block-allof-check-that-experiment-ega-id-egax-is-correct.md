@@ -1,7 +1,7 @@
 # Check that experiment EGA ID (EGAX) is correct Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId/allOf/1
 ```
 
 
@@ -16,15 +16,15 @@ unknown ([Check that experiment EGA ID (EGAX) is correct](ega-9-properties-objec
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
-| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-pattern-of-an-ega-experiments-id-egax.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-pattern-of-an-ega-experiments-id-egax.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
-## ega\_accession
+## egaAccession
 
 
 
-`ega_accession`
+`egaAccession`
 
 *   is optional
 
@@ -32,13 +32,13 @@ unknown ([Check that experiment EGA ID (EGAX) is correct](ega-9-properties-objec
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-12-definitions-pattern-of-an-ega-experiments-id-egax.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA Experiment metadata schema](ega-12-definitions-pattern-of-an-ega-experiments-id-egax.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId/allOf/1/properties/egaAccession")
 
-### ega\_accession Type
+### egaAccession Type
 
 `string` ([Pattern of an EGA experiment's ID (EGAX...)](ega-12-definitions-pattern-of-an-ega-experiments-id-egax.md))
 
-### ega\_accession Constraints
+### egaAccession Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -48,7 +48,7 @@ unknown ([Check that experiment EGA ID (EGAX) is correct](ega-9-properties-objec
 
 [try pattern](https://regexr.com/?expression=%5EEGAX%5B0-9%5D%7B11%7D%24 "try regular expression with regexr.com")
 
-### ega\_accession Examples
+### egaAccession Examples
 
 ```json
 "EGAX00002189113"

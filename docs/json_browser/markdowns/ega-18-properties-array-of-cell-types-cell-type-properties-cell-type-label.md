@@ -1,7 +1,7 @@
 # Cell type label Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/cell_type_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel
 ```
 
 
@@ -10,15 +10,15 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sa
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## cell\_type\_label Type
+## cellTypeLabel Type
 
 `string` ([Cell type label](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label.md))
 
-## cell\_type\_label Constraints
+## cellTypeLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## cell\_type\_label Examples
+## cellTypeLabel Examples
 
 ```json
 "bone marrow cell"

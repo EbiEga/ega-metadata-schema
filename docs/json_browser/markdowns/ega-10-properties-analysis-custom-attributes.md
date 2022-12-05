@@ -1,7 +1,7 @@
 # Analysis custom attributes Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_attributes
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisAttributes
 ```
 
 Custom attributes of an analysis: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal tag' and its Value 'this analysis is corresponds to internal tag XYZ') with optional units. Its properties are inherited from the common-definitions.json schema.
@@ -10,11 +10,11 @@ Custom attributes of an analysis: reusable attributes to encode tag-value pairs 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.analysis.json\*](../../../schemas/EGA.analysis.json "open original schema") |
 
-## analysis\_attributes Type
+## analysisAttributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-## analysis\_attributes Constraints
+## analysisAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

@@ -1,7 +1,7 @@
 # Pattern of a partial EGA ISO 8601 duration Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/individual-age/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/individualAge/allOf/0
 ```
 
 Pattern of ISO 8601 durations. It can be used to define time intervals (e.g. 'P3Y6M4DT12H30M5S' represents a duration of three years, six months, four days, twelve hours, thirty minutes, and five seconds). See more at <https://en.wikipedia.org/wiki/ISO_8601#Durations>.

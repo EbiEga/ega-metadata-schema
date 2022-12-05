@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA sample metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/inferred_cell_type/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/inferredCellType/meta:enum
 ```
 
 

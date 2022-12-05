@@ -1,7 +1,7 @@
 # ASCII offset Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/ascii_offset
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/asciiOffset
 ```
 
 Character used in representing the minimum quality value.  Helps specify how to decode text rendering of quality data.
@@ -10,11 +10,11 @@ Character used in representing the minimum quality value.  Helps specify how to 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## ascii\_offset Type
+## asciiOffset Type
 
 `string` ([ASCII offset](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-ascii-offset.md))
 
-## ascii\_offset Constraints
+## asciiOffset Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

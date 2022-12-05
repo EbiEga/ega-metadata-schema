@@ -1,7 +1,7 @@
 # Protocol type descriptor Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor
 ```
 
 Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type.
@@ -10,23 +10,23 @@ Node to contain the information about the type and subtype of the protocol. Refe
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## protocol\_type\_descriptor Type
+## protocolTypeDescriptor Type
 
 `object` ([Protocol type descriptor](ega-17-properties-protocol-type-descriptor.md))
 
-# protocol\_type\_descriptor Properties
+# protocolTypeDescriptor Properties
 
-| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                              |
-| :-------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [protocol\_type](#protocol_type)                    | `string` | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-type-of-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_type")                                   |
-| [protocol\_subtype](#protocol_subtype)              | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_subtype")                         |
-| [protocol\_subtype\_curie](#protocol_subtype_curie) | Merged   | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_subtype_curie") |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                          |
+| :-------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [protocolType](#protocoltype)                 | `string` | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-type-of-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolType")                                  |
+| [protocolSubtype](#protocolsubtype)           | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype")                        |
+| [protocolSubtypeCurie](#protocolsubtypecurie) | Merged   | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtypeCurie") |
 
-## protocol\_type
+## protocolType
 
 Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
 
-`protocol_type`
+`protocolType`
 
 *   is required
 
@@ -34,13 +34,13 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-type-of-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_type")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-type-of-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolType")
 
-### protocol\_type Type
+### protocolType Type
 
 `string` ([Type of protocol](ega-17-properties-protocol-type-descriptor-properties-type-of-protocol.md))
 
-### protocol\_type Constraints
+### protocolType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -65,11 +65,11 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 | `"treatment"`                         | \[EFO:0003969] |
 | `"data transformation"`               | \[OBI:0200000] |
 
-## protocol\_subtype
+## protocolSubtype
 
 Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo). For example, if the protocol corresponds to a data transformation of a genome, you may find your subtype at [genome analysis](http://edamontology.org/operation_3918); while treating a patient with a drug would correspond to a [clinical treatment](http://www.ebi.ac.uk/efo/EFO_0007056).
 
-`protocol_subtype`
+`protocolSubtype`
 
 *   is optional
 
@@ -77,17 +77,17 @@ Name of the protocol's subtype. We highly recommend the usage of names given to 
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_subtype")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype")
 
-### protocol\_subtype Type
+### protocolSubtype Type
 
 `string` ([Subtype of the protocol](ega-17-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md))
 
-### protocol\_subtype Constraints
+### protocolSubtype Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### protocol\_subtype Examples
+### protocolSubtype Examples
 
 ```json
 "clinical treatment"
@@ -129,11 +129,11 @@ Name of the protocol's subtype. We highly recommend the usage of names given to 
 "Whole genome methylation analysis"
 ```
 
-## protocol\_subtype\_curie
+## protocolSubtypeCurie
 
-Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocol\_type' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').
+Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocolType' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').
 
-`protocol_subtype_curie`
+`protocolSubtypeCurie`
 
 *   is required
 
@@ -141,9 +141,9 @@ Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Sear
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_subtype_curie")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtypeCurie")
 
-### protocol\_subtype\_curie Type
+### protocolSubtypeCurie Type
 
 `string` ([Compact URI (CURIE) of the protocol subtype](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype.md))
 
@@ -159,7 +159,7 @@ all of
 
     *   [Untitled undefined type in EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor-properties-compact-uri-curie-of-the-protocol-subtype-allof-ontology-validation-of-it-being-part-of-efos-protocol-obi0000272-or-planned-process-efo0004542-or-edams-analysis-operation2945-anyof-2.md "check type definition")
 
-### protocol\_subtype\_curie Examples
+### protocolSubtypeCurie Examples
 
 ```json
 "EFO:0005518"

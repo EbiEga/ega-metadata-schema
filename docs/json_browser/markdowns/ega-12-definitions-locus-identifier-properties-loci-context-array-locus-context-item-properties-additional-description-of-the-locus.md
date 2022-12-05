@@ -1,7 +1,7 @@
 # Additional description of the locus Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/locus_additional_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusAdditionalDescription
 ```
 
 Optional free-text description of the locus to add any additional context.
@@ -10,15 +10,15 @@ Optional free-text description of the locus to add any additional context.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## locus\_additional\_description Type
+## locusAdditionalDescription Type
 
 `string` ([Additional description of the locus](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md))
 
-## locus\_additional\_description Constraints
+## locusAdditionalDescription Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## locus\_additional\_description Examples
+## locusAdditionalDescription Examples
 
 ```json
 "Targeted locus number 1 out of 3 possible loci that our experimental procedure aimed at."

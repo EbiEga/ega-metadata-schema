@@ -1,7 +1,7 @@
 # Individual's age range at sample collection Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange
 ```
 
 Age range of the individual when the sample was collected. Composed of two (start and end) age points.
@@ -10,16 +10,16 @@ Age range of the individual when the sample was collected. Composed of two (star
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## age\_range Type
+## ageRange Type
 
 `object` ([Individual's age range at sample collection](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md))
 
-# age\_range Properties
+# ageRange Properties
 
-| Property        | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                       |
-| :-------------- | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [start](#start) | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range/properties/start") |
-| [end](#end)     | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range/properties/end")   |
+| Property        | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                   |
+| :-------------- | :----- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [start](#start) | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start") |
+| [end](#end)     | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")   |
 
 ## start
 
@@ -33,7 +33,7 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range/properties/start")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start")
 
 ### start Type
 
@@ -69,7 +69,7 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection/properties/age_range/properties/end")
+*   defined in: [EGA sample metadata schema](ega-12-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")
 
 ### end Type
 

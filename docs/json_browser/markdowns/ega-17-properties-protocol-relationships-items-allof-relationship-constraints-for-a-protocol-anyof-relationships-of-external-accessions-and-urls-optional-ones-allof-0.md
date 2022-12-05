@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA protocol metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_relationships/items/allOf/1/anyOf/2/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolRelationships/items/allOf/1/anyOf/2/allOf/0
 ```
 
 
@@ -16,14 +16,14 @@ merged type ([Details](ega-17-properties-protocol-relationships-items-allof-rela
 
 any of
 
-*   [Relationship type: grouped_with](ega-12-definitions-relationship-type-grouped_with.md "check type definition")
+*   [Relationship type: groupedWith](ega-12-definitions-relationship-type-groupedwith.md "check type definition")
 
-*   [Relationship type: same_as](ega-12-definitions-relationship-type-same_as.md "check type definition")
+*   [Relationship type: sameAs](ega-12-definitions-relationship-type-sameas.md "check type definition")
 
-*   [Relationship type: referenced_by](ega-12-definitions-relationship-type-referenced_by.md "check type definition")
+*   [Relationship type: referencedBy](ega-12-definitions-relationship-type-referencedby.md "check type definition")
 
-*   [Relationship type: develops_from](ega-12-definitions-relationship-type-develops_from.md "check type definition")
+*   [Relationship type: developsFrom](ega-12-definitions-relationship-type-developsfrom.md "check type definition")
 
-*   [Relationship type: member_of](ega-12-definitions-relationship-type-member_of.md "check type definition")
+*   [Relationship type: memberOf](ega-12-definitions-relationship-type-memberof.md "check type definition")
 
-*   [Relationship type: is_after](ega-12-definitions-relationship-type-is_after.md "check type definition")
+*   [Relationship type: isAfter](ega-12-definitions-relationship-type-isafter.md "check type definition")

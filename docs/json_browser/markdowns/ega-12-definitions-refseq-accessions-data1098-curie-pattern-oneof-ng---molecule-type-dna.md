@@ -1,7 +1,7 @@
 # NG - Molecule type: DNA Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern/oneOf/5
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieRefseqPattern/oneOf/5
 ```
 
 

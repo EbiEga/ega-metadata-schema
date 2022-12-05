@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA individual metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individual_relationships/items/allOf/1/anyOf/2/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individualRelationships/items/allOf/1/anyOf/2/allOf/1
 ```
 
 
@@ -16,10 +16,10 @@ merged type ([Details](ega-14-properties-individual-relationships-items-allof-re
 
 any of
 
-*   [Relationship source: external_accession](ega-12-definitions-relationship-source-external_accession.md "check type definition")
+*   [Relationship source: externalAccession](ega-12-definitions-relationship-source-externalaccession.md "check type definition")
 
-*   [Relationship source: external_URL](ega-12-definitions-relationship-source-external_url.md "check type definition")
+*   [Relationship source: externalURL](ega-12-definitions-relationship-source-externalurl.md "check type definition")
 
-*   [Relationship target: external_accession](ega-12-definitions-relationship-target-external_accession.md "check type definition")
+*   [Relationship target: externalAccession](ega-12-definitions-relationship-target-externalaccession.md "check type definition")
 
-*   [Relationship target: external_URL](ega-12-definitions-relationship-target-external_url.md "check type definition")
+*   [Relationship target: externalURL](ega-12-definitions-relationship-target-externalurl.md "check type definition")

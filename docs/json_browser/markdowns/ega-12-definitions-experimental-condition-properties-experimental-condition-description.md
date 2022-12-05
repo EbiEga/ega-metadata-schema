@@ -1,7 +1,7 @@
 # Experimental condition description Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/experimental_condition_descriptor/properties/experimental_condition_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/experimentalConditionDescriptor/properties/experimentalConditionDescription
 ```
 
 Broad description of the experimental condition, providing further details and context over the ontologised term.
@@ -10,11 +10,11 @@ Broad description of the experimental condition, providing further details and c
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## experimental\_condition\_description Type
+## experimentalConditionDescription Type
 
 `string` ([Experimental condition description](ega-12-definitions-experimental-condition-properties-experimental-condition-description.md))
 
-## experimental\_condition\_description Examples
+## experimentalConditionDescription Examples
 
 ```json
 "A control role is borne by a material in a process in which results obtained from an experimental sample and a control sample are compared."

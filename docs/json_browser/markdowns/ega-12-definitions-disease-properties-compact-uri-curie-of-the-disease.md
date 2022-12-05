@@ -1,7 +1,7 @@
 # Compact URI (CURIE) of the disease Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_curie
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseCurie
 ```
 
 
@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## disease\_curie Type
+## diseaseCurie Type
 
 `string` ([Compact URI (CURIE) of the disease](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md))
 
@@ -20,7 +20,7 @@ one (and only one) of
 
 *   [In case whether the individual has a disease is unknown or there is none](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease-oneof-in-case-whether-the-individual-has-a-disease-is-unknown-or-there-is-none.md "check type definition")
 
-## disease\_curie Examples
+## diseaseCurie Examples
 
 ```json
 "MONDO:0100096"

@@ -1,7 +1,7 @@
 # Name of the protocol Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectTitle
 ```
 
 Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
@@ -10,15 +10,15 @@ Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## object\_title Type
+## objectTitle Type
 
 `string` ([Name of the protocol](ega-17-properties-name-of-the-protocol.md))
 
-## object\_title Constraints
+## objectTitle Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## object\_title Examples
+## objectTitle Examples
 
 ```json
 "myProtocol-13"

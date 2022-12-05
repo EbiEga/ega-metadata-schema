@@ -1,7 +1,7 @@
 # Loci context array Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor
 ```
 
 Array of locus context items. Multiple loci can be described in the array if the organism remains the same.
@@ -10,11 +10,11 @@ Array of locus context items. Multiple loci can be described in the array if the
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## loci\_descriptor Type
+## lociDescriptor Type
 
 `object[]` ([Locus context item](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item.md))
 
-## loci\_descriptor Constraints
+## lociDescriptor Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

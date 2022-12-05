@@ -1,7 +1,7 @@
 # Title of the policy Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle
 ```
 
 Free-form title of the policy. Can be used to call out policy records in searches or displays.
@@ -10,11 +10,11 @@ Free-form title of the policy. Can be used to call out policy records in searche
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.policy.json\*](../../../schemas/EGA.policy.json "open original schema") |
 
-## object\_title Type
+## objectTitle Type
 
 `string` ([Title of the policy](ega-16-properties-title-of-the-policy.md))
 
-## object\_title Examples
+## objectTitle Examples
 
 ```json
 "EBI colon cancer policy"

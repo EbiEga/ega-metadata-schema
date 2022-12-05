@@ -1,7 +1,7 @@
 # Sequence quality details Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails
 ```
 
 Sequencing quality scores measure the probability that a base is called (i.e. sequenced) incorrectly. New sequencing technologies assign a quality score to each of the bases in the sequence.
@@ -10,23 +10,23 @@ Sequencing quality scores measure the probability that a base is called (i.e. se
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## sequence\_quality\_details Type
+## sequenceQualityDetails Type
 
 `object` ([Sequence quality details](ega-12-definitions-ega-file-object-properties-sequence-quality-details.md))
 
-# sequence\_quality\_details Properties
+# sequenceQualityDetails Properties
 
-| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                            |
-| :-------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [quality\_scoring\_system](#quality_scoring_system) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-scoring-system.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/quality_scoring_system") |
-| [quality\_encoding](#quality_encoding)              | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-encoding-format.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/quality_encoding")      |
-| [ascii\_offset](#ascii_offset)                      | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-ascii-offset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/ascii_offset")                     |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                       |
+| :-------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [qualityScoringSystem](#qualityscoringsystem) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-scoring-system.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/qualityScoringSystem") |
+| [qualityEncoding](#qualityencoding)           | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-encoding-format.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/qualityEncoding")     |
+| [asciiOffset](#asciioffset)                   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-ascii-offset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/asciiOffset")                    |
 
-## quality\_scoring\_system
+## qualityScoringSystem
 
 How the quality score was computed for the data.
 
-`quality_scoring_system`
+`qualityScoringSystem`
 
 *   is required
 
@@ -34,26 +34,26 @@ How the quality score was computed for the data.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-scoring-system.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/quality_scoring_system")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-scoring-system.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/qualityScoringSystem")
 
-### quality\_scoring\_system Type
+### qualityScoringSystem Type
 
 `string` ([Quality scoring system](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-scoring-system.md))
 
-### quality\_scoring\_system Constraints
+### qualityScoringSystem Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value        | Explanation                                                                                                                                                                                                     |
-| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `"phred"`    | The quality score is expressed as a probability of error in log form: -10 log(1/p) where p is the probability of error, with value range 0..63 (0 meaning no base call).                                        |
-| `"log-odds"` | The quality score is expressed as the ratio of error to non-error in log form: -10 log(p/(1-p)) where p is the of error, with value range -40..40. The SRA will convert these into phred scale during loadtime. |
+| Value       | Explanation                                                                                                                                                                                                     |
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `"phred"`   | The quality score is expressed as a probability of error in log form: -10 log(1/p) where p is the probability of error, with value range 0..63 (0 meaning no base call).                                        |
+| `"logOdds"` | The quality score is expressed as the ratio of error to non-error in log form: -10 log(p/(1-p)) where p is the of error, with value range -40..40. The SRA will convert these into phred scale during loadtime. |
 
-## quality\_encoding
+## qualityEncoding
 
 Encoding system used to represent the quality score.
 
-`quality_encoding`
+`qualityEncoding`
 
 *   is optional
 
@@ -61,13 +61,13 @@ Encoding system used to represent the quality score.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-encoding-format.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/quality_encoding")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-encoding-format.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/qualityEncoding")
 
-### quality\_encoding Type
+### qualityEncoding Type
 
 `string` ([Quality encoding format](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-encoding-format.md))
 
-### quality\_encoding Constraints
+### qualityEncoding Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -77,11 +77,11 @@ Encoding system used to represent the quality score.
 | `"decimal"`     | Single decimal value per quality score.     |
 | `"hexadecimal"` | Single hexadecimal value per quality score. |
 
-## ascii\_offset
+## asciiOffset
 
 Character used in representing the minimum quality value.  Helps specify how to decode text rendering of quality data.
 
-`ascii_offset`
+`asciiOffset`
 
 *   is optional
 
@@ -89,13 +89,13 @@ Character used in representing the minimum quality value.  Helps specify how to 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-ascii-offset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/ascii_offset")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-ascii-offset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/asciiOffset")
 
-### ascii\_offset Type
+### asciiOffset Type
 
 `string` ([ASCII offset](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-ascii-offset.md))
 
-### ascii\_offset Constraints
+### asciiOffset Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

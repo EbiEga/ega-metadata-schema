@@ -1,7 +1,7 @@
 # Ontology validation of it being part of EFO's protocol \[OBI:0000272] or planned process \[EFO:0004542], or EDAM's Analysis \[operation:2945] Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_subtype_curie/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtypeCurie/allOf/1
 ```
 
 

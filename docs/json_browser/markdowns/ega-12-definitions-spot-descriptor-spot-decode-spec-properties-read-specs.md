@@ -1,7 +1,7 @@
 # Read specs Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor/items/properties/read_specs
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs
 ```
 
 
@@ -10,11 +10,11 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## read\_specs Type
+## readSpecs Type
 
 `object[]` ([Read spec](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec.md))
 
-## read\_specs Constraints
+## readSpecs Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

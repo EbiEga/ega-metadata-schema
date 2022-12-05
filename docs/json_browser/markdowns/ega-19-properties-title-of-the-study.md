@@ -1,7 +1,7 @@
 # Title of the study Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectTitle
 ```
 
 Short free-form text that can be used to call out study records in searches or displays.
@@ -10,11 +10,11 @@ Short free-form text that can be used to call out study records in searches or d
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.study.json\*](../../../schemas/EGA.study.json "open original schema") |
 
-## object\_title Type
+## objectTitle Type
 
 `string` ([Title of the study](ega-19-properties-title-of-the-study.md))
 
-## object\_title Examples
+## objectTitle Examples
 
 ```json
 "EBI test case-control study for cancer"

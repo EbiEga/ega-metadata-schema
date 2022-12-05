@@ -1,7 +1,7 @@
 # Description of the sample Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectDescription
 ```
 
 An informative sample description that describes the sample and differentiates it from others.
@@ -10,11 +10,11 @@ An informative sample description that describes the sample and differentiates i
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## object\_description Type
+## objectDescription Type
 
 `string` ([Description of the sample](ega-18-properties-description-of-the-sample.md))
 
-## object\_description Examples
+## objectDescription Examples
 
 ```json
 "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to..."

@@ -16,22 +16,22 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA study metadata schema Properties
 
-| Property                                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
-| :------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                     | Merged   | Required | cannot be null | [EGA study metadata schema](ega-19-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id")                 |
-| [schema\_descriptor](#schema_descriptor)     | `object` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schema_descriptor")        |
-| [object\_title](#object_title)               | `string` | Required | cannot be null | [EGA study metadata schema](ega-19-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title")             |
-| [object\_description](#object_description)   | `string` | Optional | cannot be null | [EGA study metadata schema](ega-19-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description") |
-| [study\_types](#study_types)                 | `array`  | Required | cannot be null | [EGA study metadata schema](ega-19-properties-study-types-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_types")               |
-| [study\_designs](#study_designs)             | `array`  | Required | cannot be null | [EGA study metadata schema](ega-19-properties-study-designs-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_designs")           |
-| [study\_relationships](#study_relationships) | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-19-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships")     |
-| [study\_attributes](#study_attributes)       | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-19-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_attributes")    |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                          |
+| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                     | Merged   | Required | cannot be null | [EGA study metadata schema](ega-19-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId")                 |
+| [schemaDescriptor](#schemadescriptor)     | `object` | Optional | cannot be null | [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schemaDescriptor")        |
+| [objectTitle](#objecttitle)               | `string` | Required | cannot be null | [EGA study metadata schema](ega-19-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectTitle")             |
+| [objectDescription](#objectdescription)   | `string` | Optional | cannot be null | [EGA study metadata schema](ega-19-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectDescription") |
+| [studyTypes](#studytypes)                 | `array`  | Required | cannot be null | [EGA study metadata schema](ega-19-properties-studytypes-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyTypes")                |
+| [studyDesigns](#studydesigns)             | `array`  | Required | cannot be null | [EGA study metadata schema](ega-19-properties-studydesigns-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyDesigns")            |
+| [studyRelationships](#studyrelationships) | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-19-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyRelationships")     |
+| [studyAttributes](#studyattributes)       | `array`  | Optional | cannot be null | [EGA study metadata schema](ega-19-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyAttributes")    |
 
-## object\_id
+## objectId
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions. #! We extend the core object (object\_core\_id) by adding a pattern check based on this schema's nature: a study (by using EGA-study-id-pattern)
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a study (by using EGAStudyIdPattern)
 
-`object_id`
+`objectId`
 
 *   is required
 
@@ -39,9 +39,9 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id")
+*   defined in: [EGA study metadata schema](ega-19-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId")
 
-### object\_id Type
+### objectId Type
 
 `object` ([Object's IDs block](ega-19-properties-objects-ids-block.md))
 
@@ -57,11 +57,11 @@ all of
 
 *   [Check that study EGA ID (EGAS) is correct](ega-19-properties-objects-ids-block-allof-check-that-study-ega-id-egas-is-correct.md "check type definition")
 
-## schema\_descriptor
+## schemaDescriptor
 
 This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
 
-`schema_descriptor`
+`schemaDescriptor`
 
 *   is optional
 
@@ -69,17 +69,17 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schema_descriptor")
+*   defined in: [EGA study metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schemaDescriptor")
 
-### schema\_descriptor Type
+### schemaDescriptor Type
 
 `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
-## object\_title
+## objectTitle
 
 Short free-form text that can be used to call out study records in searches or displays.
 
-`object_title`
+`objectTitle`
 
 *   is required
 
@@ -87,23 +87,23 @@ Short free-form text that can be used to call out study records in searches or d
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_title")
+*   defined in: [EGA study metadata schema](ega-19-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectTitle")
 
-### object\_title Type
+### objectTitle Type
 
 `string` ([Title of the study](ega-19-properties-title-of-the-study.md))
 
-### object\_title Examples
+### objectTitle Examples
 
 ```json
 "EBI test case-control study for cancer"
 ```
 
-## object\_description
+## objectDescription
 
 An in-depth description of the study, including its overall purpose, goals, scope or nature.
 
-`object_description`
+`objectDescription`
 
 *   is optional
 
@@ -111,47 +111,47 @@ An in-depth description of the study, including its overall purpose, goals, scop
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_description")
+*   defined in: [EGA study metadata schema](ega-19-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectDescription")
 
-### object\_description Type
+### objectDescription Type
 
 `string` ([Description of the study](ega-19-properties-description-of-the-study.md))
 
-### object\_description Examples
+### objectDescription Examples
 
 ```json
 "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls."
 ```
 
-## study\_types
+## studyTypes
 
 List of study types. Contains specific keywords (e.g. 'COVID-19') as items that can be associated to the study, providing an overall view of its purpose.
 
-`study_types`
+`studyTypes`
 
 *   is required
 
-*   Type: `string[]` ([Study type](ega-19-properties-study-types-array-study-type.md))
+*   Type: `string[]` ([Study type](ega-19-properties-studytypes-array-study-type.md))
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-study-types-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_types")
+*   defined in: [EGA study metadata schema](ega-19-properties-studytypes-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyTypes")
 
-### study\_types Type
+### studyTypes Type
 
-`string[]` ([Study type](ega-19-properties-study-types-array-study-type.md))
+`string[]` ([Study type](ega-19-properties-studytypes-array-study-type.md))
 
-### study\_types Constraints
+### studyTypes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## study\_designs
+## studyDesigns
 
 List of study designs (a.k.a. experimental designs). Contains specific keywords (e.g. 'RNA stability design') as items that can be associated to the study, providing an overall view of the method of investigating particular types of research questions or solving particular types of problems.
 
-`study_designs`
+`studyDesigns`
 
 *   is required
 
@@ -159,23 +159,23 @@ List of study designs (a.k.a. experimental designs). Contains specific keywords 
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-study-designs-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_designs")
+*   defined in: [EGA study metadata schema](ega-19-properties-studydesigns-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyDesigns")
 
-### study\_designs Type
+### studyDesigns Type
 
 `string[]` ([Enumeration of design keywords](ega-12-definitions-enumeration-of-design-keywords.md))
 
-### study\_designs Constraints
+### studyDesigns Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## study\_relationships
+## studyRelationships
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a study) the EGA.
 
-`study_relationships`
+`studyRelationships`
 
 *   is optional
 
@@ -183,23 +183,23 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_relationships")
+*   defined in: [EGA study metadata schema](ega-19-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyRelationships")
 
-### study\_relationships Type
+### studyRelationships Type
 
 an array of merged types ([Details](ega-19-properties-study-relationships-items.md))
 
-### study\_relationships Constraints
+### studyRelationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## study\_attributes
+## studyAttributes
 
 Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
 
-`study_attributes`
+`studyAttributes`
 
 *   is optional
 
@@ -207,13 +207,13 @@ Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-19-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/study_attributes")
+*   defined in: [EGA study metadata schema](ega-19-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyAttributes")
 
-### study\_attributes Type
+### studyAttributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-### study\_attributes Constraints
+### studyAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

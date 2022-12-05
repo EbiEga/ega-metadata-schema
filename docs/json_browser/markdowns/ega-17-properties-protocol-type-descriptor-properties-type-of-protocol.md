@@ -1,7 +1,7 @@
 # Type of protocol Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor/properties/protocol_type
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolType
 ```
 
 Classification by type of the protocol (e.g. 'Sample collection'), to be chosen from a controlled vocabulary (CV) list. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
@@ -10,11 +10,11 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## protocol\_type Type
+## protocolType Type
 
 `string` ([Type of protocol](ega-17-properties-protocol-type-descriptor-properties-type-of-protocol.md))
 
-## protocol\_type Constraints
+## protocolType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

@@ -1,7 +1,7 @@
 # Read label Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spot_descriptor/items/properties/read_specs/items/properties/read_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/readLabel
 ```
 
 READ\_LABEL is a name for this tag, and can be used to on output to determine read name, for example F or R.
@@ -10,10 +10,10 @@ READ\_LABEL is a name for this tag, and can be used to on output to determine re
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## read\_label Type
+## readLabel Type
 
 `string` ([Read label](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-label.md))
 
-## read\_label Constraints
+## readLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`

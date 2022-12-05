@@ -16,25 +16,25 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA analysis metadata schema Properties
 
-| Property                                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                               |
-| :-------------------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                                        | Merged   | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_id")                               |
-| [schema\_descriptor](#schema_descriptor)                        | `object` | Optional | cannot be null | [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schema_descriptor")                      |
-| [object\_title](#object_title)                                  | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_title")                        |
-| [object\_description](#object_description)                      | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_description")            |
-| [targeted\_loci](#targeted_loci)                                | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targeted_loci")        |
-| [types\_of\_input\_data](#types_of_input_data)                  | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_input_data")                   |
-| [types\_of\_output\_data](#types_of_output_data)                | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_output_data")                 |
-| [analysis\_type\_specifications](#analysis_type_specifications) | `object` | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications") |
-| [analysis\_files](#analysis_files)                              | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-files-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_files")                      |
-| [analysis\_relationships](#analysis_relationships)              | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_relationships")             |
-| [analysis\_attributes](#analysis_attributes)                    | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_attributes")            |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                             |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                                     | Merged   | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId")                              |
+| [schemaDescriptor](#schemadescriptor)                     | `object` | Optional | cannot be null | [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")                     |
+| [objectTitle](#objecttitle)                               | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectTitle")                       |
+| [objectDescription](#objectdescription)                   | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectDescription")           |
+| [targetedLoci](#targetedloci)                             | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targetedLoci")       |
+| [typesOfInputData](#typesofinputdata)                     | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfInputData")                    |
+| [typesOfOutputData](#typesofoutputdata)                   | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfOutputData")                  |
+| [analysisTypeSpecifications](#analysistypespecifications) | `object` | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications") |
+| [analysisFiles](#analysisfiles)                           | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-files-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisFiles")                     |
+| [analysisRelationships](#analysisrelationships)           | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisRelationships")            |
+| [analysisAttributes](#analysisattributes)                 | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisAttributes")           |
 
-## object\_id
+## objectId
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions.
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions.
 
-`object_id`
+`objectId`
 
 *   is required
 
@@ -42,9 +42,9 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_id")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId")
 
-### object\_id Type
+### objectId Type
 
 `object` ([Object's IDs block](ega-10-properties-objects-ids-block.md))
 
@@ -60,11 +60,11 @@ all of
 
 *   [Check that analysis EGA ID (EGAZ) is correct](ega-10-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct.md "check type definition")
 
-## schema\_descriptor
+## schemaDescriptor
 
 This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
 
-`schema_descriptor`
+`schemaDescriptor`
 
 *   is optional
 
@@ -72,17 +72,17 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schema_descriptor")
+*   defined in: [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")
 
-### schema\_descriptor Type
+### schemaDescriptor Type
 
 `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
-## object\_title
+## objectTitle
 
 An informative analysis title that should serve as an overview of the analysis, including: performed analysis, samples, purpose... (e.g. 'Variant calling analysis of tumor repressed cells'). This short text can be used to call out analyses records in searches or in displays.
 
-`object_title`
+`objectTitle`
 
 *   is optional
 
@@ -90,27 +90,27 @@ An informative analysis title that should serve as an overview of the analysis, 
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_title")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectTitle")
 
-### object\_title Type
+### objectTitle Type
 
 `string` ([Title of the analysis](ega-10-properties-title-of-the-analysis.md))
 
-### object\_title Constraints
+### objectTitle Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### object\_title Examples
+### objectTitle Examples
 
 ```json
 "Variant calling analysis of tumor repressed cells"
 ```
 
-## object\_description
+## objectDescription
 
 An in-depth description of the biological relevance and intent of the analysis, including its workflow.
 
-`object_description`
+`objectDescription`
 
 *   is optional
 
@@ -118,27 +118,27 @@ An in-depth description of the biological relevance and intent of the analysis, 
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/object_description")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectDescription")
 
-### object\_description Type
+### objectDescription Type
 
 `string` ([Description of the analysis](ega-10-properties-description-of-the-analysis.md))
 
-### object\_description Constraints
+### objectDescription Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### object\_description Examples
+### objectDescription Examples
 
 ```json
 "The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..."
 ```
 
-## targeted\_loci
+## targetedLoci
 
 Array of items that unambiguously define the loci of targeted genomic features in the analysis. For example, if the aim of the analysis was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.
 
-`targeted_loci`
+`targetedLoci`
 
 *   is optional
 
@@ -146,23 +146,23 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targeted_loci")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targetedLoci")
 
-### targeted\_loci Type
+### targetedLoci Type
 
 `object[]` ([Locus identifier](ega-12-definitions-locus-identifier.md))
 
-### targeted\_loci Constraints
+### targetedLoci Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## types\_of\_input\_data
+## typesOfInputData
 
 Types of input data the analysis uses to obtain the processed files.
 
-`types_of_input_data`
+`typesOfInputData`
 
 *   is optional
 
@@ -170,23 +170,23 @@ Types of input data the analysis uses to obtain the processed files.
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_input_data")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfInputData")
 
-### types\_of\_input\_data Type
+### typesOfInputData Type
 
 `string[]` ([Type of data](ega-10-properties-types-of-input-data-type-of-data.md))
 
-### types\_of\_input\_data Constraints
+### typesOfInputData Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## types\_of\_output\_data
+## typesOfOutputData
 
 Types of output data the analysis uses to obtain the processed files.
 
-`types_of_output_data`
+`typesOfOutputData`
 
 *   is optional
 
@@ -194,23 +194,23 @@ Types of output data the analysis uses to obtain the processed files.
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_output_data")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfOutputData")
 
-### types\_of\_output\_data Type
+### typesOfOutputData Type
 
 `string[]` ([Type of data](ega-10-properties-types-of-output-data-type-of-data.md))
 
-### types\_of\_output\_data Constraints
+### typesOfOutputData Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## analysis\_type\_specifications
+## analysisTypeSpecifications
 
 Node containing different sets of fields that depend on the specific analysis type. Depending on the analysis types different metadata will be required.
 
-`analysis_type_specifications`
+`analysisTypeSpecifications`
 
 *   is required
 
@@ -218,17 +218,17 @@ Node containing different sets of fields that depend on the specific analysis ty
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_type_specifications")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications")
 
-### analysis\_type\_specifications Type
+### analysisTypeSpecifications Type
 
 `object` ([Analysis type specifications](ega-10-properties-analysis-type-specifications.md))
 
-## analysis\_files
+## analysisFiles
 
 This property contains the files derived from performing any processing or analysis over raw data (e.g. VCF, aligned BAM...) and those that add context to it (e.g. CSV, TXT...).
 
-`analysis_files`
+`analysisFiles`
 
 *   is optional
 
@@ -236,23 +236,23 @@ This property contains the files derived from performing any processing or analy
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-files-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_files")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-files-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisFiles")
 
-### analysis\_files Type
+### analysisFiles Type
 
 `object[]` ([EGA File object](ega-12-definitions-ega-file-object.md))
 
-### analysis\_files Constraints
+### analysisFiles Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## analysis\_relationships
+## analysisRelationships
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an analysis being linked to a Sample) the EGA.
 
-`analysis_relationships`
+`analysisRelationships`
 
 *   is optional
 
@@ -260,23 +260,23 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_relationships")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisRelationships")
 
-### analysis\_relationships Type
+### analysisRelationships Type
 
 an array of merged types ([Details](ega-10-properties-analysis-relationships-items.md))
 
-### analysis\_relationships Constraints
+### analysisRelationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## analysis\_attributes
+## analysisAttributes
 
 Custom attributes of an analysis: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal tag' and its Value 'this analysis is corresponds to internal tag XYZ') with optional units. Its properties are inherited from the common-definitions.json schema.
 
-`analysis_attributes`
+`analysisAttributes`
 
 *   is optional
 
@@ -284,13 +284,13 @@ Custom attributes of an analysis: reusable attributes to encode tag-value pairs 
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_attributes")
+*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisAttributes")
 
-### analysis\_attributes Type
+### analysisAttributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-### analysis\_attributes Constraints
+### analysisAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

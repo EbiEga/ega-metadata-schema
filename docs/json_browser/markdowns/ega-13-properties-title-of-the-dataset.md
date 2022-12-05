@@ -1,7 +1,7 @@
 # Title of the dataset Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/object_title
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectTitle
 ```
 
 Free-form title of the Dataset. It should be the first picture of the dataset content and not contain more than 30 words. It can be used to call out dataset records in searches or displays.
@@ -10,11 +10,11 @@ Free-form title of the Dataset. It should be the first picture of the dataset co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.dataset.json\*](../../../schemas/EGA.dataset.json "open original schema") |
 
-## object\_title Type
+## objectTitle Type
 
 `string` ([Title of the dataset](ega-13-properties-title-of-the-dataset.md))
 
-## object\_title Examples
+## objectTitle Examples
 
 ```json
 "EBI colon cancer dataset"

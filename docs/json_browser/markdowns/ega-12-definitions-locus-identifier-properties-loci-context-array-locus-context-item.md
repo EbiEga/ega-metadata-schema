@@ -1,7 +1,7 @@
 # Locus context item Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items
 ```
 
 Node providing the context of the locus: its sequence, coordinates, encompassed genes...
@@ -24,18 +24,18 @@ any of
 
 # items Properties
 
-| Property                                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                               |
-| :-------------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [gene\_descriptor](#gene_descriptor)                            | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/gene_descriptor")                                                                                                               |
-| [genomic\_sequence\_descriptor](#genomic_sequence_descriptor)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/genomic_sequence_descriptor")                                                                                       |
-| [locus\_external\_reference](#locus_external_reference)         | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/locus_external_reference")                                                                           |
-| [locus\_additional\_description](#locus_additional_description) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/locus_additional_description") |
+| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                           |
+| :-------------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [geneDescriptor](#genedescriptor)                         | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/geneDescriptor")                                                                                                              |
+| [genomicSequenceDescriptor](#genomicsequencedescriptor)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/genomicSequenceDescriptor")                                                                                       |
+| [locusExternalReference](#locusexternalreference)         | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")                                                                           |
+| [locusAdditionalDescription](#locusadditionaldescription) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusAdditionalDescription") |
 
-## gene\_descriptor
+## geneDescriptor
 
 Node to uniquely identify a gene \[SO:0000704]: a region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions. For human genes, the standard is to use nomenclature provided by the HUGO Gene Nomenclature Committee (HGNC).
 
-`gene_descriptor`
+`geneDescriptor`
 
 *   is optional
 
@@ -43,17 +43,17 @@ Node to uniquely identify a gene \[SO:0000704]: a region (or regions) that inclu
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/gene_descriptor")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/geneDescriptor")
 
-### gene\_descriptor Type
+### geneDescriptor Type
 
 `object` ([Gene descriptor](ega-12-definitions-gene-descriptor.md))
 
-## genomic\_sequence\_descriptor
+## genomicSequenceDescriptor
 
 Node used to describe with sufficient detail a genomic sequence (e.g. Human Chromosome X: 71366222-71532374 forward strand), defined as a biological sequence that is of genomic origin (i.e. carries sequence from the genome of a cell or organism).
 
-`genomic_sequence_descriptor`
+`genomicSequenceDescriptor`
 
 *   is optional
 
@@ -61,9 +61,9 @@ Node used to describe with sufficient detail a genomic sequence (e.g. Human Chro
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/genomic_sequence_descriptor")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/genomicSequenceDescriptor")
 
-### genomic\_sequence\_descriptor Type
+### genomicSequenceDescriptor Type
 
 `object` ([Genomic sequence descriptor](ega-12-definitions-genomic-sequence-descriptor.md))
 
@@ -73,11 +73,11 @@ any of
 
 *   [Or at least the sequence itself is given](ega-12-definitions-genomic-sequence-descriptor-anyof-or-at-least-the-sequence-itself-is-given.md "check type definition")
 
-## locus\_external\_reference
+## locusExternalReference
 
 External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.
 
-`locus_external_reference`
+`locusExternalReference`
 
 *   is optional
 
@@ -85,9 +85,9 @@ External accession node containing the object accession (i.e. unique identifier 
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/locus_external_reference")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")
 
-### locus\_external\_reference Type
+### locusExternalReference Type
 
 `object` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
 
@@ -97,11 +97,11 @@ any of
 
 *   [Or the reference is needed](ega-12-definitions-object-of-external-accession-of-the-object-anyof-or-the-reference-is-needed.md "check type definition")
 
-## locus\_additional\_description
+## locusAdditionalDescription
 
 Optional free-text description of the locus to add any additional context.
 
-`locus_additional_description`
+`locusAdditionalDescription`
 
 *   is optional
 
@@ -109,17 +109,17 @@ Optional free-text description of the locus to add any additional context.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locus_identifier/properties/loci_descriptor/items/properties/locus_additional_description")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusAdditionalDescription")
 
-### locus\_additional\_description Type
+### locusAdditionalDescription Type
 
 `string` ([Additional description of the locus](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md))
 
-### locus\_additional\_description Constraints
+### locusAdditionalDescription Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### locus\_additional\_description Examples
+### locusAdditionalDescription Examples
 
 ```json
 "Targeted locus number 1 out of 3 possible loci that our experimental procedure aimed at."

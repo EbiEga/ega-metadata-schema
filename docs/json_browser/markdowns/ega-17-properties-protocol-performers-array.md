@@ -1,7 +1,7 @@
 # Protocol performers array Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_performers
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolPerformers
 ```
 
 Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.
@@ -10,11 +10,11 @@ Array of performers' descriptions of those individuals, groups, or institutions 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## protocol\_performers Type
+## protocolPerformers Type
 
 `string[]` ([Performer of the protocol](ega-17-properties-protocol-performers-array-performer-of-the-protocol.md))
 
-## protocol\_performers Constraints
+## protocolPerformers Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

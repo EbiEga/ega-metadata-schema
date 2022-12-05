@@ -1,7 +1,7 @@
 # Loci of the targeted genomic feature Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targeted_loci
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targetedLoci
 ```
 
 Array of items that unambiguously define the loci of targeted genomic features in the analysis. For example, if the aim of the analysis was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.
@@ -10,11 +10,11 @@ Array of items that unambiguously define the loci of targeted genomic features i
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.analysis.json\*](../../../schemas/EGA.analysis.json "open original schema") |
 
-## targeted\_loci Type
+## targetedLoci Type
 
 `object[]` ([Locus identifier](ega-12-definitions-locus-identifier.md))
 
-## targeted\_loci Constraints
+## targetedLoci Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

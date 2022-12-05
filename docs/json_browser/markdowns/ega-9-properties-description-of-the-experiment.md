@@ -1,7 +1,7 @@
 # Description of the experiment Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/object_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectDescription
 ```
 
 An in-depth description of the biological relevance and intent of the experiment, including the experimental workflow.
@@ -10,11 +10,11 @@ An in-depth description of the biological relevance and intent of the experiment
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.experiment.json\*](../../../schemas/EGA.experiment.json "open original schema") |
 
-## object\_description Type
+## objectDescription Type
 
 `string` ([Description of the experiment](ega-9-properties-description-of-the-experiment.md))
 
-## object\_description Examples
+## objectDescription Examples
 
 ```json
 "The experiment was conducted with the objective of... ...and for that purpose we compared untreated controls against..."

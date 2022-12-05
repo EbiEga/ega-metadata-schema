@@ -1,7 +1,7 @@
 # RefSeq accessions' \[data:1098] CURIE pattern Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curie_refseq_pattern
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieRefseqPattern
 ```
 
 The Reference Sequence (RefSeq) CURIEs take the structure of `refseq`:`accession`. [RefSeq accessions](https://registry.identifiers.org/registry/refseq) \[data:1098] have special prefixes (e.g. 'NM\_' for protein-coding transcripts - mRNA) based on the category of the object. The accession can also have a version attached as a suffix (e.g. '.23'). Their records are integrated into [NCBI's resources](https://www.ncbi.nlm.nih.gov/refseq/) including the Nucleotide, Protein, and BLAST databases and can be easily identified by the keyword 'RefSeq' and by their distinct accession prefixes that define their type (see further details at [doi:10.1093/nar/gkv1189](https://academic.oup.com/nar/article/44/D1/D733/2502674).
@@ -10,7 +10,7 @@ The Reference Sequence (RefSeq) CURIEs take the structure of `refseq`:`accession
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## curie\_refseq\_pattern Type
+## curieRefseqPattern Type
 
 `string` ([RefSeq accessions' \[data:1098\] CURIE pattern](ega-12-definitions-refseq-accessions-data1098-curie-pattern.md))
 
@@ -46,7 +46,7 @@ one (and only one) of
 
 *   [WP - Molecule type: protein](ega-12-definitions-refseq-accessions-data1098-curie-pattern-oneof-wp---molecule-type-protein.md "check type definition")
 
-## curie\_refseq\_pattern Constraints
+## curieRefseqPattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -56,7 +56,7 @@ one (and only one) of
 
 [try pattern](https://regexr.com/?expression=%5E\(RefSeq%7Crefseq\)%3A "try regular expression with regexr.com")
 
-## curie\_refseq\_pattern Examples
+## curieRefseqPattern Examples
 
 ```json
 "NC_001502.1"

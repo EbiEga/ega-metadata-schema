@@ -1,20 +1,20 @@
 # Filename pattern of a HDF5 file Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hdf5-file-filename-pattern
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hdf5FileFilenamePattern
 ```
 
-This object exists to hold the filename pattern that a 'HDF5' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
+This object exists to hold the filename pattern that a 'HDF5' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## hdf5-file-filename-pattern Type
+## hdf5FileFilenamePattern Type
 
 `string` ([Filename pattern of a HDF5 file](ega-12-definitions-filename-pattern-of-a-hdf5-file.md))
 
-## hdf5-file-filename-pattern Constraints
+## hdf5FileFilenamePattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ This object exists to hold the filename pattern that a 'HDF5' filetype\_id would
 
 [try pattern](https://regexr.com/?expression=%5E%5B%5E%3C%3E%3A%3B%2C%3F%22*%7C%2F%5D%2B%5C.\(h5%7Chdf5\)\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
-## hdf5-file-filename-pattern Examples
+## hdf5FileFilenamePattern Examples
 
 ```json
 "my_file1.h5.gpg"

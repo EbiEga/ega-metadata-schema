@@ -16,22 +16,22 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA submission metadata schema Properties
 
-| Property                                               | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                   |
-| :----------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                               | Merged   | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_id")                               |
-| [schema\_descriptor](#schema_descriptor)               | `object` | Optional | cannot be null | [EGA submission metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schema_descriptor")                      |
-| [object\_title](#object_title)                         | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_title")              |
-| [object\_description](#object_description)             | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_description") |
-| [resources](#resources)                                | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources")                            |
-| [additional\_collaborators](#additional_collaborators) | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators")  |
-| [submission\_relationships](#submission_relationships) | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships")         |
-| [submission\_attributes](#submission_attributes)       | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_attributes")        |
+| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                  |
+| :-------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                               | Merged   | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId")                               |
+| [schemaDescriptor](#schemadescriptor)               | `object` | Optional | cannot be null | [EGA submission metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schemaDescriptor")                      |
+| [objectTitle](#objecttitle)                         | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectTitle")              |
+| [objectDescription](#objectdescription)             | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectDescription") |
+| [resources](#resources)                             | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources")                           |
+| [additionalCollaborators](#additionalcollaborators) | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators")  |
+| [submissionRelationships](#submissionrelationships) | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionRelationships")         |
+| [submissionAttributes](#submissionattributes)       | `array`  | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionAttributes")        |
 
-## object\_id
+## objectId
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions. #! We extend the core object (object\_core\_id) by adding a pattern check based on this schema's nature: a submission (by using EGA-submission-id-pattern)
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a submission (by using EGASubmissionIdPattern)
 
-`object_id`
+`objectId`
 
 *   is required
 
@@ -39,9 +39,9 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_id")
+*   defined in: [EGA submission metadata schema](ega-20-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId")
 
-### object\_id Type
+### objectId Type
 
 `object` ([Object's IDs block](ega-20-properties-objects-ids-block.md))
 
@@ -57,11 +57,11 @@ all of
 
 *   [Check that Submission EGA ID (EGAB) is correct](ega-20-properties-objects-ids-block-allof-check-that-submission-ega-id-egab-is-correct.md "check type definition")
 
-## schema\_descriptor
+## schemaDescriptor
 
 This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
 
-`schema_descriptor`
+`schemaDescriptor`
 
 *   is optional
 
@@ -69,17 +69,17 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schema_descriptor")
+*   defined in: [EGA submission metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schemaDescriptor")
 
-### schema\_descriptor Type
+### schemaDescriptor Type
 
 `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
-## object\_title
+## objectTitle
 
 Short free-form text that can be used to call out submission project records in searches or displays.
 
-`object_title`
+`objectTitle`
 
 *   is optional
 
@@ -87,27 +87,27 @@ Short free-form text that can be used to call out submission project records in 
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_title")
+*   defined in: [EGA submission metadata schema](ega-20-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectTitle")
 
-### object\_title Type
+### objectTitle Type
 
 `string` ([Title of the submission project](ega-20-properties-title-of-the-submission-project.md))
 
-### object\_title Constraints
+### objectTitle Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### object\_title Examples
+### objectTitle Examples
 
 ```json
 "Submission XF40"
 ```
 
-## object\_description
+## objectDescription
 
 An in-depth description of the submission, including its overall purpose or nature of studies it governs.
 
-`object_description`
+`objectDescription`
 
 *   is optional
 
@@ -115,17 +115,17 @@ An in-depth description of the submission, including its overall purpose or natu
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/object_description")
+*   defined in: [EGA submission metadata schema](ega-20-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectDescription")
 
-### object\_description Type
+### objectDescription Type
 
 `string` ([Description of the submissions project](ega-20-properties-description-of-the-submissions-project.md))
 
-### object\_description Constraints
+### objectDescription Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### object\_description Examples
+### objectDescription Examples
 
 ```json
 "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs"
@@ -155,11 +155,11 @@ An array containing metadata of all the ontologies used in the submission. Its o
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## additional\_collaborators
+## additionalCollaborators
 
 Object containing optional collaborators of the submission project, who shall have different capabilities granted by the owner: 'read' or 'read and write' rights.
 
-`additional_collaborators`
+`additionalCollaborators`
 
 *   is optional
 
@@ -167,23 +167,23 @@ Object containing optional collaborators of the submission project, who shall ha
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators")
+*   defined in: [EGA submission metadata schema](ega-20-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators")
 
-### additional\_collaborators Type
+### additionalCollaborators Type
 
 `object[]` ([Collaborator](ega-20-properties-submission-collaborator-details-collaborator.md))
 
-### additional\_collaborators Constraints
+### additionalCollaborators Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## submission\_relationships
+## submissionRelationships
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a submission) the EGA.
 
-`submission_relationships`
+`submissionRelationships`
 
 *   is optional
 
@@ -191,23 +191,23 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_relationships")
+*   defined in: [EGA submission metadata schema](ega-20-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionRelationships")
 
-### submission\_relationships Type
+### submissionRelationships Type
 
 an array of merged types ([Details](ega-20-properties-submission-relationships-items.md))
 
-### submission\_relationships Constraints
+### submissionRelationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## submission\_attributes
+## submissionAttributes
 
 Custom attributes of a submission: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal identifier' and its Value 'XF40') with optional units. Its properties are inherited from the common-definitions.json schema.
 
-`submission_attributes`
+`submissionAttributes`
 
 *   is optional
 
@@ -215,13 +215,13 @@ Custom attributes of a submission: reusable attributes to encode tag-value pairs
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submission_attributes")
+*   defined in: [EGA submission metadata schema](ega-20-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionAttributes")
 
-### submission\_attributes Type
+### submissionAttributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-### submission\_attributes Constraints
+### submissionAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

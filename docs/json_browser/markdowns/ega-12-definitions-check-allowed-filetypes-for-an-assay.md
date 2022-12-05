@@ -1,7 +1,7 @@
 # Check: allowed filetypes for an assay Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes
 ```
 
 This object exists with the only purpose of being a reference list of the allowed filetypes of an assay (e.g. if the filetype is 'PY', it should not be accepted as raw data). It imitates the 'filetype' property with a subset of the allowed filetypes.
@@ -10,15 +10,15 @@ This object exists with the only purpose of being a reference list of the allowe
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## assay-filetypes Type
+## assayFiletypes Type
 
 `object` ([Check: allowed filetypes for an assay](ega-12-definitions-check-allowed-filetypes-for-an-assay.md))
 
-# assay-filetypes Properties
+# assayFiletypes Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
-| :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filetype](#filetype) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes/properties/filetype") |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [filetype](#filetype) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes/properties/filetype") |
 
 ## filetype
 
@@ -32,7 +32,7 @@ This object exists with the only purpose of being a reference list of the allowe
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assay-filetypes/properties/filetype")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes/properties/filetype")
 
 ### filetype Type
 

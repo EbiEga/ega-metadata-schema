@@ -1,7 +1,7 @@
 # Sample condition Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/condition_under_study
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy
 ```
 
 One of the primary conditions under study (CUS). Notice that the sample may or may not be affected by this condition under study, belonging to the case or control groups respectively.
@@ -10,22 +10,22 @@ One of the primary conditions under study (CUS). Notice that the sample may or m
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## condition\_under\_study Type
+## conditionUnderStudy Type
 
 `object` ([Sample condition](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md))
 
-# condition\_under\_study Properties
+# conditionUnderStudy Properties
 
-| Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                             |
-| :----------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [cus\_curie](#cus_curie) | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-compact-uri-curie-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/condition_under_study/properties/cus_curie") |
-| [cus\_label](#cus_label) | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-label-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/condition_under_study/properties/cus_label")             |
+| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                         |
+| :-------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cusCurie](#cuscurie) | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-compact-uri-curie-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/cusCurie") |
+| [cusLabel](#cuslabel) | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-label-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/cusLabel")             |
 
-## cus\_curie
+## cusCurie
 
 The term needs to exist within the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/search?q=\&groupField=iri\&start=0\&ontology=hp\&ontology=efo\&ontology=ordo\&ontology=mondo) (OLS). We highly recommend the usage of the following ontologies: Experimental Factor Ontology (EFO), Human Phenotype Ontology (HP), Mondo Disease Ontology (MONDO) and Orphanet Rare Disease Ontology (ORDO).
 
-`cus_curie`
+`cusCurie`
 
 *   is required
 
@@ -33,13 +33,13 @@ The term needs to exist within the [Ontology Lookup Service](https://www.ebi.ac.
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-compact-uri-curie-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/condition_under_study/properties/cus_curie")
+*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-compact-uri-curie-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/cusCurie")
 
-### cus\_curie Type
+### cusCurie Type
 
 `string` ([Compact URI (CURIE) of the condition under study](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-compact-uri-curie-of-the-condition-under-study.md))
 
-### cus\_curie Examples
+### cusCurie Examples
 
 ```json
 "MONDO:0021354"
@@ -61,11 +61,11 @@ The term needs to exist within the [Ontology Lookup Service](https://www.ebi.ac.
 "MONDO:0100096"
 ```
 
-## cus\_label
+## cusLabel
 
 
 
-`cus_label`
+`cusLabel`
 
 *   is optional
 
@@ -73,17 +73,17 @@ The term needs to exist within the [Ontology Lookup Service](https://www.ebi.ac.
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-label-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/condition_under_study/properties/cus_label")
+*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-label-of-the-condition-under-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/cusLabel")
 
-### cus\_label Type
+### cusLabel Type
 
 `string` ([Label of the condition under study](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-label-of-the-condition-under-study.md))
 
-### cus\_label Constraints
+### cusLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### cus\_label Examples
+### cusLabel Examples
 
 ```json
 "tumor of adipose tissue"

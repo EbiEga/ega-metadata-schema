@@ -1,7 +1,7 @@
 # Policy text Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_descriptor/properties/policy_text
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor/properties/policyText
 ```
 
 Text describing in detail the Data Access Agreement (DAA) of the policy.
@@ -10,11 +10,11 @@ Text describing in detail the Data Access Agreement (DAA) of the policy.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.policy.json\*](../../../schemas/EGA.policy.json "open original schema") |
 
-## policy\_text Type
+## policyText Type
 
 `string` ([Policy text](ega-16-properties-policy-descriptor-properties-policy-text.md))
 
-## policy\_text Examples
+## policyText Examples
 
 ```json
 "The data is fully available upon request with the data-access committee of this study."

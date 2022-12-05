@@ -1,20 +1,20 @@
 # Filename pattern of a QUALSOLID file Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/qualsolid-file-filename-pattern
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/qualsolidFileFilenamePattern
 ```
 
-This object exists to hold the filename pattern that a 'QUALSOLID' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
+This object exists to hold the filename pattern that a 'QUALSOLID' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## qualsolid-file-filename-pattern Type
+## qualsolidFileFilenamePattern Type
 
 `string` ([Filename pattern of a QUALSOLID file](ega-12-definitions-filename-pattern-of-a-qualsolid-file.md))
 
-## qualsolid-file-filename-pattern Constraints
+## qualsolidFileFilenamePattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ This object exists to hold the filename pattern that a 'QUALSOLID' filetype\_id 
 
 [try pattern](https://regexr.com/?expression=%5E%5B%5E%3C%3E%3A%3B%2C%3F%22*%7C%2F%5D%2B%5C.\(qualsolid%7Cqual\)\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
-## qualsolid-file-filename-pattern Examples
+## qualsolidFileFilenamePattern Examples
 
 ```json
 "my_file1.qualsolid.gpg"

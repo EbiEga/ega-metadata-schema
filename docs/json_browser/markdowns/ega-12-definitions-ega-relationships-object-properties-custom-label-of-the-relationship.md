@@ -1,7 +1,7 @@
 # Custom label of the relationship Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationship_object/properties/r_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rLabel
 ```
 
 Custom free-form label of the relationship, used to add extra details of the relationship if needed.
@@ -10,15 +10,15 @@ Custom free-form label of the relationship, used to add extra details of the rel
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## r\_label Type
+## rLabel Type
 
 `string` ([Custom label of the relationship](ega-12-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md))
 
-## r\_label Constraints
+## rLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## r\_label Examples
+## rLabel Examples
 
 ```json
 "Source individual is the third child of the target individual"

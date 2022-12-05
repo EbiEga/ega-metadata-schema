@@ -1,7 +1,7 @@
 # Quality encoding format Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/sequence_quality_details/properties/quality_encoding
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails/properties/qualityEncoding
 ```
 
 Encoding system used to represent the quality score.
@@ -10,11 +10,11 @@ Encoding system used to represent the quality score.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## quality\_encoding Type
+## qualityEncoding Type
 
 `string` ([Quality encoding format](ega-12-definitions-ega-file-object-properties-sequence-quality-details-properties-quality-encoding-format.md))
 
-## quality\_encoding Constraints
+## qualityEncoding Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

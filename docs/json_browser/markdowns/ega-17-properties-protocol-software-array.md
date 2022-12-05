@@ -1,7 +1,7 @@
 # Protocol software array Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_software
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolSoftware
 ```
 
 Array of software descriptions used in the protocol. It is not indispensable to provide each and every piece of software used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.
@@ -10,11 +10,11 @@ Array of software descriptions used in the protocol. It is not indispensable to 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## protocol\_software Type
+## protocolSoftware Type
 
 `string[]` ([Software descriptions used in the protocol](ega-17-properties-protocol-software-array-software-descriptions-used-in-the-protocol.md))
 
-## protocol\_software Constraints
+## protocolSoftware Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

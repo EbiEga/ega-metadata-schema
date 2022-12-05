@@ -16,24 +16,24 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA protocol metadata schema Properties
 
-| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                       |
-| :------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [object\_id](#object_id)                                | Merged   | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_id")                       |
-| [schema\_descriptor](#schema_descriptor)                | `object` | Optional | cannot be null | [EGA protocol metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/schema_descriptor")              |
-| [object\_title](#object_title)                          | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_title")                 |
-| [protocol\_type\_descriptor](#protocol_type_descriptor) | `object` | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor") |
-| [protocol\_description](#protocol_description)          | `string` | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_description")  |
-| [protocol\_performers](#protocol_performers)            | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_performers")     |
-| [protocol\_instruments](#protocol_instruments)          | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_instruments")    |
-| [protocol\_software](#protocol_software)                | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_software")         |
-| [protocol\_relationships](#protocol_relationships)      | `array`  | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_relationships")     |
-| [protocol\_attributes](#protocol_attributes)            | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_attributes")    |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                     |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                             | Merged   | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId")                      |
+| [schemaDescriptor](#schemadescriptor)             | `object` | Optional | cannot be null | [EGA protocol metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/schemaDescriptor")             |
+| [objectTitle](#objecttitle)                       | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectTitle")                |
+| [protocolTypeDescriptor](#protocoltypedescriptor) | `object` | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor") |
+| [protocolDescription](#protocoldescription)       | `string` | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolDescription") |
+| [protocolPerformers](#protocolperformers)         | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolPerformers")    |
+| [protocolInstruments](#protocolinstruments)       | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolInstruments")   |
+| [protocolSoftware](#protocolsoftware)             | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolSoftware")        |
+| [protocolRelationships](#protocolrelationships)   | `array`  | Required | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolRelationships")    |
+| [protocolAttributes](#protocolattributes)         | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-17-properties-protocol-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolAttributes")   |
 
-## object\_id
+## objectId
 
-Node containing the main identifiers of the object (e.g. alias, center\_name...), inherited from the common definitions.
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions.
 
-`object_id`
+`objectId`
 
 *   is required
 
@@ -41,9 +41,9 @@ Node containing the main identifiers of the object (e.g. alias, center\_name...)
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_id")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId")
 
-### object\_id Type
+### objectId Type
 
 `object` ([Object's IDs block](ega-17-properties-objects-ids-block.md))
 
@@ -59,11 +59,11 @@ all of
 
 *   [Check that protocol EGA ID (EGAO) is correct](ega-17-properties-objects-ids-block-allof-check-that-protocol-ega-id-egao-is-correct.md "check type definition")
 
-## schema\_descriptor
+## schemaDescriptor
 
 This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
 
-`schema_descriptor`
+`schemaDescriptor`
 
 *   is optional
 
@@ -71,17 +71,17 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/schema_descriptor")
+*   defined in: [EGA protocol metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/schemaDescriptor")
 
-### schema\_descriptor Type
+### schemaDescriptor Type
 
 `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
 
-## object\_title
+## objectTitle
 
 Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 
-`object_title`
+`objectTitle`
 
 *   is optional
 
@@ -89,17 +89,17 @@ Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_title")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectTitle")
 
-### object\_title Type
+### objectTitle Type
 
 `string` ([Name of the protocol](ega-17-properties-name-of-the-protocol.md))
 
-### object\_title Constraints
+### objectTitle Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### object\_title Examples
+### objectTitle Examples
 
 ```json
 "myProtocol-13"
@@ -113,11 +113,11 @@ Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 "Sample collection from infected patients"
 ```
 
-## protocol\_type\_descriptor
+## protocolTypeDescriptor
 
 Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type.
 
-`protocol_type_descriptor`
+`protocolTypeDescriptor`
 
 *   is required
 
@@ -125,17 +125,17 @@ Node to contain the information about the type and subtype of the protocol. Refe
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_type_descriptor")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor")
 
-### protocol\_type\_descriptor Type
+### protocolTypeDescriptor Type
 
 `object` ([Protocol type descriptor](ega-17-properties-protocol-type-descriptor.md))
 
-## protocol\_description
+## protocolDescription
 
 Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.
 
-`protocol_description`
+`protocolDescription`
 
 *   is required
 
@@ -143,13 +143,13 @@ Description of the protocol (e.g. 'First tilt the cell culture flask... ...and f
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_description")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolDescription")
 
-### protocol\_description Type
+### protocolDescription Type
 
 `string` ([Description of the protocol](ega-17-properties-description-of-the-protocol.md))
 
-### protocol\_description Examples
+### protocolDescription Examples
 
 ```json
 "First tilt the cell culture flask... ...and finally let it still for 2 hours."
@@ -159,11 +159,11 @@ Description of the protocol (e.g. 'First tilt the cell culture flask... ...and f
 "Patients were given a ketogenic diet for 3 weeks at intervals consisting in..."
 ```
 
-## protocol\_performers
+## protocolPerformers
 
 Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.
 
-`protocol_performers`
+`protocolPerformers`
 
 *   is optional
 
@@ -171,23 +171,23 @@ Array of performers' descriptions of those individuals, groups, or institutions 
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_performers")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolPerformers")
 
-### protocol\_performers Type
+### protocolPerformers Type
 
 `string[]` ([Performer of the protocol](ega-17-properties-protocol-performers-array-performer-of-the-protocol.md))
 
-### protocol\_performers Constraints
+### protocolPerformers Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## protocol\_instruments
+## protocolInstruments
 
 Array of instruments used in the protocol. It is not indispensable to provide each and every piece of instruments used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.
 
-`protocol_instruments`
+`protocolInstruments`
 
 *   is optional
 
@@ -195,23 +195,23 @@ Array of instruments used in the protocol. It is not indispensable to provide ea
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_instruments")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolInstruments")
 
-### protocol\_instruments Type
+### protocolInstruments Type
 
 `string[]` ([Instrument used in the protocol](ega-17-properties-protocol-instrument-array-instrument-used-in-the-protocol.md))
 
-### protocol\_instruments Constraints
+### protocolInstruments Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## protocol\_software
+## protocolSoftware
 
 Array of software descriptions used in the protocol. It is not indispensable to provide each and every piece of software used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.
 
-`protocol_software`
+`protocolSoftware`
 
 *   is optional
 
@@ -219,23 +219,23 @@ Array of software descriptions used in the protocol. It is not indispensable to 
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_software")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolSoftware")
 
-### protocol\_software Type
+### protocolSoftware Type
 
 `string[]` ([Software descriptions used in the protocol](ega-17-properties-protocol-software-array-software-descriptions-used-in-the-protocol.md))
 
-### protocol\_software Constraints
+### protocolSoftware Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## protocol\_relationships
+## protocolRelationships
 
 Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a protocol being linked to an experiment) the EGA.
 
-`protocol_relationships`
+`protocolRelationships`
 
 *   is required
 
@@ -243,23 +243,23 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_relationships")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolRelationships")
 
-### protocol\_relationships Type
+### protocolRelationships Type
 
 an array of merged types ([Details](ega-17-properties-protocol-relationships-items.md))
 
-### protocol\_relationships Constraints
+### protocolRelationships Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## protocol\_attributes
+## protocolAttributes
 
 Custom attributes of a protocol: reusable attributes to encode tag-value pairs (e.g. Tag being 'step index' and its Value '2') with optional units. Its properties are inherited from the common-definitions.json schema.
 
-`protocol_attributes`
+`protocolAttributes`
 
 *   is optional
 
@@ -267,13 +267,13 @@ Custom attributes of a protocol: reusable attributes to encode tag-value pairs (
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_attributes")
+*   defined in: [EGA protocol metadata schema](ega-17-properties-protocol-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolAttributes")
 
-### protocol\_attributes Type
+### protocolAttributes Type
 
 `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
 
-### protocol\_attributes Constraints
+### protocolAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

@@ -1,7 +1,7 @@
 # Cell type Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items
 ```
 
 One of the cell types that can be found in your sample or from which the genetic content was derived.
@@ -16,17 +16,17 @@ One of the cell types that can be found in your sample or from which the genetic
 
 # items Properties
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                      |
-| :------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [cell\_type\_id](#cell_type_id)             | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/cell_type_id") |
-| [cell\_type\_label](#cell_type_label)       | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/cell_type_label")                 |
-| [inferred\_cell\_type](#inferred_cell_type) | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/inferred_cell_type")            |
+| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                   |
+| :------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cellTypeId](#celltypeid)             | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeId") |
+| [cellTypeLabel](#celltypelabel)       | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")                 |
+| [inferredCellType](#inferredcelltype) | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/inferredCellType")            |
 
-## cell\_type\_id
+## cellTypeId
 
 
 
-`cell_type_id`
+`cellTypeId`
 
 *   is required
 
@@ -34,13 +34,13 @@ One of the cell types that can be found in your sample or from which the genetic
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/cell_type_id")
+*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeId")
 
-### cell\_type\_id Type
+### cellTypeId Type
 
 `string` ([Compact URI (CURIE) of the cell type](ega-18-properties-array-of-cell-types-cell-type-properties-compact-uri-curie-of-the-cell-type.md))
 
-### cell\_type\_id Examples
+### cellTypeId Examples
 
 ```json
 "CL:0002092"
@@ -54,11 +54,11 @@ One of the cell types that can be found in your sample or from which the genetic
 "CL:0000128"
 ```
 
-## cell\_type\_label
+## cellTypeLabel
 
 
 
-`cell_type_label`
+`cellTypeLabel`
 
 *   is optional
 
@@ -66,17 +66,17 @@ One of the cell types that can be found in your sample or from which the genetic
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/cell_type_label")
+*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")
 
-### cell\_type\_label Type
+### cellTypeLabel Type
 
 `string` ([Cell type label](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label.md))
 
-### cell\_type\_label Constraints
+### cellTypeLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### cell\_type\_label Examples
+### cellTypeLabel Examples
 
 ```json
 "bone marrow cell"
@@ -90,11 +90,11 @@ One of the cell types that can be found in your sample or from which the genetic
 "oligodendrocyte"
 ```
 
-## inferred\_cell\_type
+## inferredCellType
 
 A flag to specify whether the cell type classification was determined though single-cell analysis (e.g. cell clustering or trajectory analysis) or not (i.e. was visually observed or it is expected).
 
-`inferred_cell_type`
+`inferredCellType`
 
 *   is required
 
@@ -102,13 +102,13 @@ A flag to specify whether the cell type classification was determined though sin
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cell_types/items/properties/inferred_cell_type")
+*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/inferredCellType")
 
-### inferred\_cell\_type Type
+### inferredCellType Type
 
 `string` ([Cell type label](ega-18-properties-array-of-cell-types-cell-type-properties-cell-type-label-1.md))
 
-### inferred\_cell\_type Constraints
+### inferredCellType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

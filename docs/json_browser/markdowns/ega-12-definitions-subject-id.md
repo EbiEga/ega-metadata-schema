@@ -1,7 +1,7 @@
 # Subject ID Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/subject_id
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId
 ```
 
 A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from, providing context for the sample to be better understood through its provenance. It **shall not** contain personal sensitive data, since it will be publicly displayed for queries and searches.
@@ -10,15 +10,15 @@ A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
 
-## subject\_id Type
+## subjectId Type
 
 `string` ([Subject ID](ega-12-definitions-subject-id.md))
 
-## subject\_id Constraints
+## subjectId Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## subject\_id Examples
+## subjectId Examples
 
 ```json
 "Donor-10031"

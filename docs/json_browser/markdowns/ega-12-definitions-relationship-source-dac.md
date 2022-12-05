@@ -1,7 +1,7 @@
 # Relationship source: DAC Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policy_relationships/items/allOf/1/anyOf/0/allOf/1/anyOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships/items/allOf/1/anyOf/0/allOf/1/anyOf/1
 ```
 
 Node to be used as an object type for relationship contraints.
@@ -16,15 +16,15 @@ Node to be used as an object type for relationship contraints.
 
 # 1 Properties
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                 |
-| :--------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [r\_source](#r_source) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-source-dac-properties-r_source.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-DAC/properties/r_source") |
+| Property            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-relationship-source-dac-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDAC/properties/rSource") |
 
-## r\_source
+## rSource
 
 
 
-`r_source`
+`rSource`
 
 *   is required
 
@@ -32,8 +32,8 @@ Node to be used as an object type for relationship contraints.
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-source-dac-properties-r_source.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/r-source-DAC/properties/r_source")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-relationship-source-dac-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDAC/properties/rSource")
 
-### r\_source Type
+### rSource Type
 
 unknown

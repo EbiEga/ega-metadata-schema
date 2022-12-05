@@ -1,7 +1,7 @@
 # Institution name Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contact_details/properties/institution_name
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/institutionName
 ```
 
 The full name of an institution the contact belongs to. In case there are several, separate them with semicolons (;).
@@ -10,15 +10,15 @@ The full name of an institution the contact belongs to. In case there are severa
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## institution\_name Type
+## institutionName Type
 
 `string` ([Institution name](ega-12-definitions-contact-details-properties-institution-name.md))
 
-## institution\_name Constraints
+## institutionName Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## institution\_name Examples
+## institutionName Examples
 
 ```json
 "European Genome-phenome Archive (EGA)"

@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA study metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/object_id/allOf/1/properties
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties
 ```
 
 

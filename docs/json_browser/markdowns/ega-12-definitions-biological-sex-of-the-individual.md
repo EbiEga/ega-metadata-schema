@@ -1,7 +1,7 @@
 # Biological sex of the individual Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/biological_sex
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex
 ```
 
 An organismal quality inhering in a bearer by virtue of the bearer's physical expression of sexual characteristics. In other words, the trait that determines the individual's (from which the sample derives) reproductive function: mainly male or female. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
@@ -10,11 +10,11 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
 
-## biological\_sex Type
+## biologicalSex Type
 
 `string` ([Biological sex of the individual](ega-12-definitions-biological-sex-of-the-individual.md))
 
-## biological\_sex Constraints
+## biologicalSex Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -26,7 +26,7 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 | `"pseudohermaphrodite"` | \[PATO:0001827]: A biological sex quality inhering in an individual or a population by virtue of having internal reproductive organs of one sex and external sexual characteristics of the other sex.                   |
 | `"unknown"`             | \[NCIT:C17998]: The biological sex is unknown, not assesed or not available.                                                                                                                                            |
 
-## biological\_sex Examples
+## biologicalSex Examples
 
 ```json
 "male"

@@ -1,7 +1,7 @@
 # Sample collection descriptor Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection
 ```
 
 Node containing the provenance details (when and where) of the sample. This information does not include the whole sample collection protocol (expected at experiment's protocols), only the sampling date (when the sample was taken from the individual) and site (where was it taken within the individual).
@@ -10,7 +10,7 @@ Node containing the provenance details (when and where) of the sample. This info
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## sample\_collection Type
+## sampleCollection Type
 
 `object` ([Sample collection descriptor](ega-18-properties-sample-collection-descriptor.md))
 
@@ -22,19 +22,19 @@ any of
 
 *   [Or the sampling site is required](ega-18-properties-sample-collection-descriptor-anyof-or-the-sampling-site-is-required.md "check type definition")
 
-# sample\_collection Properties
+# sampleCollection Properties
 
-| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                             |
-| :-------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sample\_collection\_date](#sample_collection_date) | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date")   |
-| [age\_at\_collection](#age_at_collection)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection") |
-| [sampling\_site](#sampling_site)                    | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sampling_site")                            |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
+| :-------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sampleCollectionDate](#samplecollectiondate) | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/sampleCollectionDate")   |
+| [ageAtCollection](#ageatcollection)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection") |
+| [samplingSite](#samplingsite)                 | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite")                           |
 
-## sample\_collection\_date
+## sampleCollectionDate
 
 Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the collection concluded.
 
-`sample_collection_date`
+`sampleCollectionDate`
 
 *   is optional
 
@@ -42,9 +42,9 @@ Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sample_collection_date")
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/sampleCollectionDate")
 
-### sample\_collection\_date Type
+### sampleCollectionDate Type
 
 `string` ([Date of the sample collection](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md))
 
@@ -52,11 +52,11 @@ all of
 
 *   [Pattern of EGA ISO 8601 date](ega-12-definitions-pattern-of-ega-iso-8601-date.md "check type definition")
 
-## age\_at\_collection
+## ageAtCollection
 
 Property describing the individual's age at sample collection. Can either be the precise age an age range.
 
-`age_at_collection`
+`ageAtCollection`
 
 *   is optional
 
@@ -64,9 +64,9 @@ Property describing the individual's age at sample collection. Can either be the
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/age_at_collection")
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection")
 
-### age\_at\_collection Type
+### ageAtCollection Type
 
 `object` ([Individual's age at sample collection](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md))
 
@@ -76,11 +76,11 @@ any of
 
 *   [Or the age-range is needed](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-anyof-or-the-age-range-is-needed.md "check type definition")
 
-## sampling\_site
+## samplingSite
 
 A site from which a sample, i.e. a statistically representative of the whole, is extracted from the whole.
 
-`sampling_site`
+`samplingSite`
 
 *   is optional
 
@@ -88,8 +88,8 @@ A site from which a sample, i.e. a statistically representative of the whole, is
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_collection/properties/sampling_site")
+*   defined in: [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite")
 
-### sampling\_site Type
+### samplingSite Type
 
 `object` ([Sampling site](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md))

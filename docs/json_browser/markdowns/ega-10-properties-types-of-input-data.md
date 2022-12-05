@@ -1,7 +1,7 @@
 # Types of input data Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/types_of_input_data
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfInputData
 ```
 
 Types of input data the analysis uses to obtain the processed files.
@@ -10,11 +10,11 @@ Types of input data the analysis uses to obtain the processed files.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.analysis.json\*](../../../schemas/EGA.analysis.json "open original schema") |
 
-## types\_of\_input\_data Type
+## typesOfInputData Type
 
 `string[]` ([Type of data](ega-10-properties-types-of-input-data-type-of-data.md))
 
-## types\_of\_input\_data Constraints
+## typesOfInputData Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

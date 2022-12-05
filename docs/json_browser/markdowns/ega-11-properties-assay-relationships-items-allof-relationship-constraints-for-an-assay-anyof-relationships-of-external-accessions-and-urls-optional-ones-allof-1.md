@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_relationships/items/allOf/1/anyOf/2/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayRelationships/items/allOf/1/anyOf/2/allOf/1
 ```
 
 
@@ -16,10 +16,10 @@ merged type ([Details](ega-11-properties-assay-relationships-items-allof-relatio
 
 any of
 
-*   [Relationship source: external_accession](ega-12-definitions-relationship-source-external_accession.md "check type definition")
+*   [Relationship source: externalAccession](ega-12-definitions-relationship-source-externalaccession.md "check type definition")
 
-*   [Relationship source: external_URL](ega-12-definitions-relationship-source-external_url.md "check type definition")
+*   [Relationship source: externalURL](ega-12-definitions-relationship-source-externalurl.md "check type definition")
 
-*   [Relationship target: external_accession](ega-12-definitions-relationship-target-external_accession.md "check type definition")
+*   [Relationship target: externalAccession](ega-12-definitions-relationship-target-externalaccession.md "check type definition")
 
-*   [Relationship target: external_URL](ega-12-definitions-relationship-target-external_url.md "check type definition")
+*   [Relationship target: externalURL](ega-12-definitions-relationship-target-externalurl.md "check type definition")

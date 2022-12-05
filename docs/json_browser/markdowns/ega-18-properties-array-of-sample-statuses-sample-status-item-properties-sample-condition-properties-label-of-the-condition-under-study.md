@@ -1,7 +1,7 @@
 # Label of the condition under study Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_status/items/properties/condition_under_study/properties/cus_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/cusLabel
 ```
 
 
@@ -10,15 +10,15 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sa
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## cus\_label Type
+## cusLabel Type
 
 `string` ([Label of the condition under study](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-label-of-the-condition-under-study.md))
 
-## cus\_label Constraints
+## cusLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-## cus\_label Examples
+## cusLabel Examples
 
 ```json
 "tumor of adipose tissue"

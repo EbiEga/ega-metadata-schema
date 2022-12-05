@@ -1,10 +1,10 @@
 # Relationship constraint of 1 submission as source Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysis_relationships/contains
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisRelationships/contains
 ```
 
-This node defines a relationship item containing a 'submission' as a source and of type 'referenced\_by'. This node can be used with the keyword 'contains' at each relationship array of all objects (but submission), in order to assert that all objects have a submission object (EGAB...) linked to them.
+This node defines a relationship item containing a 'submission' as a source and of type 'referencedBy'. This node can be used with the keyword 'contains' at each relationship array of all objects (but submission), in order to assert that all objects have a submission object (EGAB...) linked to them.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
@@ -16,6 +16,6 @@ merged type ([Relationship constraint of 1 submission as source](ega-10-properti
 
 all of
 
-*   [Relationship type: referenced_by](ega-12-definitions-relationship-type-referenced_by.md "check type definition")
+*   [Relationship type: referencedBy](ega-12-definitions-relationship-type-referencedby.md "check type definition")
 
 *   [Relationship source: submission](ega-12-definitions-relationship-source-submission.md "check type definition")

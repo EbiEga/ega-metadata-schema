@@ -1,7 +1,7 @@
 # Check that protocol EGA ID (EGAO) is correct Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_id/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId/allOf/1
 ```
 
 
@@ -16,15 +16,15 @@ unknown ([Check that protocol EGA ID (EGAO) is correct](ega-17-properties-object
 
 # 1 Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
-| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ega\_accession](#ega_accession) | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-12-definitions-pattern-of-an-ega-protocols-id-egao.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_id/allOf/1/properties/ega_accession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
+| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-12-definitions-pattern-of-an-ega-protocols-id-egao.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
-## ega\_accession
+## egaAccession
 
 
 
-`ega_accession`
+`egaAccession`
 
 *   is optional
 
@@ -32,13 +32,13 @@ unknown ([Check that protocol EGA ID (EGAO) is correct](ega-17-properties-object
 
 *   cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-12-definitions-pattern-of-an-ega-protocols-id-egao.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/object_id/allOf/1/properties/ega_accession")
+*   defined in: [EGA protocol metadata schema](ega-12-definitions-pattern-of-an-ega-protocols-id-egao.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId/allOf/1/properties/egaAccession")
 
-### ega\_accession Type
+### egaAccession Type
 
 `string` ([Pattern of an EGA protocol's ID (EGAO...)](ega-12-definitions-pattern-of-an-ega-protocols-id-egao.md))
 
-### ega\_accession Constraints
+### egaAccession Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -48,7 +48,7 @@ unknown ([Check that protocol EGA ID (EGAO) is correct](ega-17-properties-object
 
 [try pattern](https://regexr.com/?expression=%5EEGAO%5B0-9%5D%7B11%7D%24 "try regular expression with regexr.com")
 
-### ega\_accession Examples
+### egaAccession Examples
 
 ```json
 "EGAO00001159483"

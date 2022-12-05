@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA Experiment metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experiment_relationships/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentRelationships/items
 ```
 
 
@@ -26,7 +26,7 @@ all of
 
     *   all of
 
-        *   [Relationship type: referenced_by](ega-12-definitions-relationship-type-referenced_by.md "check type definition")
+        *   [Relationship type: referencedBy](ega-12-definitions-relationship-type-referencedby.md "check type definition")
 
         *   any of
 
@@ -50,11 +50,11 @@ all of
 
         *   any of
 
-            *   [Relationship type: grouped_with](ega-12-definitions-relationship-type-grouped_with.md "check type definition")
+            *   [Relationship type: groupedWith](ega-12-definitions-relationship-type-groupedwith.md "check type definition")
 
-            *   [Relationship type: is_after](ega-12-definitions-relationship-type-is_after.md "check type definition")
+            *   [Relationship type: isAfter](ega-12-definitions-relationship-type-isafter.md "check type definition")
 
-            *   [Relationship type: same_as](ega-12-definitions-relationship-type-same_as.md "check type definition")
+            *   [Relationship type: sameAs](ega-12-definitions-relationship-type-sameas.md "check type definition")
 
         *   any of
 
@@ -66,28 +66,28 @@ all of
 
         *   any of
 
-            *   [Relationship type: child_of](ega-12-definitions-relationship-type-child_of.md "check type definition")
+            *   [Relationship type: childOf](ega-12-definitions-relationship-type-childof.md "check type definition")
 
-            *   [Relationship type: family_relationship_with](ega-12-definitions-relationship-type-family_relationship_with.md "check type definition")
+            *   [Relationship type: familyRelationshipWith](ega-12-definitions-relationship-type-familyrelationshipwith.md "check type definition")
 
-            *   [Relationship type: grouped_with](ega-12-definitions-relationship-type-grouped_with.md "check type definition")
+            *   [Relationship type: groupedWith](ega-12-definitions-relationship-type-groupedwith.md "check type definition")
 
-            *   [Relationship type: same_as](ega-12-definitions-relationship-type-same_as.md "check type definition")
+            *   [Relationship type: sameAs](ega-12-definitions-relationship-type-sameas.md "check type definition")
 
-            *   [Relationship type: referenced_by](ega-12-definitions-relationship-type-referenced_by.md "check type definition")
+            *   [Relationship type: referencedBy](ega-12-definitions-relationship-type-referencedby.md "check type definition")
 
-            *   [Relationship type: develops_from](ega-12-definitions-relationship-type-develops_from.md "check type definition")
+            *   [Relationship type: developsFrom](ega-12-definitions-relationship-type-developsfrom.md "check type definition")
 
-            *   [Relationship type: member_of](ega-12-definitions-relationship-type-member_of.md "check type definition")
+            *   [Relationship type: memberOf](ega-12-definitions-relationship-type-memberof.md "check type definition")
 
-            *   [Relationship type: is_after](ega-12-definitions-relationship-type-is_after.md "check type definition")
+            *   [Relationship type: isAfter](ega-12-definitions-relationship-type-isafter.md "check type definition")
 
         *   any of
 
-            *   [Relationship source: external_accession](ega-12-definitions-relationship-source-external_accession.md "check type definition")
+            *   [Relationship source: externalAccession](ega-12-definitions-relationship-source-externalaccession.md "check type definition")
 
-            *   [Relationship source: external_URL](ega-12-definitions-relationship-source-external_url.md "check type definition")
+            *   [Relationship source: externalURL](ega-12-definitions-relationship-source-externalurl.md "check type definition")
 
-            *   [Relationship target: external_accession](ega-12-definitions-relationship-target-external_accession.md "check type definition")
+            *   [Relationship target: externalAccession](ega-12-definitions-relationship-target-externalaccession.md "check type definition")
 
-            *   [Relationship target: external_URL](ega-12-definitions-relationship-target-external_url.md "check type definition")
+            *   [Relationship target: externalURL](ega-12-definitions-relationship-target-externalurl.md "check type definition")

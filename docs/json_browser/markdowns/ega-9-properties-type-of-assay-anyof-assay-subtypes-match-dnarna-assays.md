@@ -1,7 +1,7 @@
 # Assay subtypes match DNA/RNA assays Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTypeDescriptor/anyOf/0
 ```
 
 
@@ -16,30 +16,30 @@ unknown ([Assay subtypes match DNA/RNA assays](ega-9-properties-type-of-assay-an
 
 # 0 Properties
 
-| Property                         | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                               |
-| :------------------------------- | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_subtype](#assay_subtype) | Merged | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype") |
+| Property                      | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                           |
+| :---------------------------- | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assaySubtype](#assaysubtype) | Merged | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assaysubtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTypeDescriptor/anyOf/0/properties/assaySubtype") |
 
-## assay\_subtype
+## assaySubtype
 
 
 
-`assay_subtype`
+`assaySubtype`
 
 *   is optional
 
-*   Type: merged type ([Details](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md))
+*   Type: merged type ([Details](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assaysubtype.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assay_type_descriptor/anyOf/0/properties/assay_subtype")
+*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assaysubtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTypeDescriptor/anyOf/0/properties/assaySubtype")
 
-### assay\_subtype Type
+### assaySubtype Type
 
-merged type ([Details](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assay_subtype.md))
+merged type ([Details](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assaysubtype.md))
 
 any of
 
-*   [EGA Controlled Vocabulary (CV) for assay subtypes by DNA \[EFO:0001456\]](ega-1.md "check type definition")
+*   [DNA-Assay subtype controlled vocabulary (CV) list](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assaysubtype-anyof-dna-assay-subtype-controlled-vocabulary-cv-list.md "check type definition")
 
-*   [EGA Controlled Vocabulary (CV) for assay subtypes by RNA \[EFO:0001457\]](ega-2.md "check type definition")
+*   [RNA-Assay subtype controlled vocabulary (CV) list](ega-9-properties-type-of-assay-anyof-assay-subtypes-match-dnarna-assays-properties-assaysubtype-anyof-rna-assay-subtype-controlled-vocabulary-cv-list.md "check type definition")

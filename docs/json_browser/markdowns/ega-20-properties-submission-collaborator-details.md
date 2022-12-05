@@ -1,7 +1,7 @@
 # Submission collaborator details Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additional_collaborators
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators
 ```
 
 Object containing optional collaborators of the submission project, who shall have different capabilities granted by the owner: 'read' or 'read and write' rights.
@@ -10,11 +10,11 @@ Object containing optional collaborators of the submission project, who shall ha
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.submission.json\*](../../../schemas/EGA.submission.json "open original schema") |
 
-## additional\_collaborators Type
+## additionalCollaborators Type
 
 `object[]` ([Collaborator](ega-20-properties-submission-collaborator-details-collaborator.md))
 
-## additional\_collaborators Constraints
+## additionalCollaborators Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

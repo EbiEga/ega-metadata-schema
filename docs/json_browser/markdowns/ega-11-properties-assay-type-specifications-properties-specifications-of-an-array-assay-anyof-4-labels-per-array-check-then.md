@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/2/then
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/then
 ```
 
 
@@ -16,15 +16,15 @@ unknown
 
 # then Properties
 
-| Property                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                    |
-| :-------------------------------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [array\_sample\_labels](#array_sample_labels) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-then-properties-array_sample_labels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/2/then/properties/array_sample_labels") |
+| Property                                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                            |
+| :-------------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [arraySampleLabels](#arraysamplelabels) | Not specified | Required | cannot be null | [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-then-properties-arraysamplelabels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/then/properties/arraySampleLabels") |
 
-## array\_sample\_labels
+## arraySampleLabels
 
 
 
-`array_sample_labels`
+`arraySampleLabels`
 
 *   is required
 
@@ -32,12 +32,12 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-then-properties-array_sample_labels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assay_type_specifications/properties/array_assay_specifications/anyOf/2/then/properties/array_sample_labels")
+*   defined in: [EGA assay metadata schema](ega-11-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-then-properties-arraysamplelabels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/then/properties/arraySampleLabels")
 
-### array\_sample\_labels Type
+### arraySampleLabels Type
 
 unknown
 
-### array\_sample\_labels Constraints
+### arraySampleLabels Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `4`

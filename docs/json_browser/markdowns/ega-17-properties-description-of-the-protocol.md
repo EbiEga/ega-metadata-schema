@@ -1,7 +1,7 @@
 # Description of the protocol Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocol_description
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolDescription
 ```
 
 Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.
@@ -10,11 +10,11 @@ Description of the protocol (e.g. 'First tilt the cell culture flask... ...and f
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
 
-## protocol\_description Type
+## protocolDescription Type
 
 `string` ([Description of the protocol](ega-17-properties-description-of-the-protocol.md))
 
-## protocol\_description Examples
+## protocolDescription Examples
 
 ```json
 "First tilt the cell culture flask... ...and finally let it still for 2 hours."

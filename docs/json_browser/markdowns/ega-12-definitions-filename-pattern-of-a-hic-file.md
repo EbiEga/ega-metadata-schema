@@ -1,20 +1,20 @@
 # Filename pattern of a HIC file Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hic-file-filename-pattern
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hicFileFilenamePattern
 ```
 
-This object exists to hold the filename pattern that a 'HIC' filetype\_id would have, for it to be referenced elsewhere within this (or other) JSON schema.
+This object exists to hold the filename pattern that a 'HIC' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## hic-file-filename-pattern Type
+## hicFileFilenamePattern Type
 
 `string` ([Filename pattern of a HIC file](ega-12-definitions-filename-pattern-of-a-hic-file.md))
 
-## hic-file-filename-pattern Constraints
+## hicFileFilenamePattern Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 
@@ -24,7 +24,7 @@ This object exists to hold the filename pattern that a 'HIC' filetype\_id would 
 
 [try pattern](https://regexr.com/?expression=%5E%5B%5E%3C%3E%3A%3B%2C%3F%22*%7C%2F%5D%2B%5C.hic\(%5C.\(gz%7Czip%7Crar%7Carj%7Ctar%7C7z%7Cbz2\)\)%3F\(%5C.gpg\)%3F%24 "try regular expression with regexr.com")
 
-## hic-file-filename-pattern Examples
+## hicFileFilenamePattern Examples
 
 ```json
 "my_file1.hic.gpg"

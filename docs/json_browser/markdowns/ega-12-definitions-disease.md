@@ -1,7 +1,7 @@
 # Disease Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimal_public_attributes/properties/diseases/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items
 ```
 
 Property to describe a disease (i.e. a disposition to undergo pathological processes because of one or more disorders).
@@ -16,16 +16,16 @@ Property to describe a disease (i.e. a disposition to undergo pathological proce
 
 # items Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                    |
-| :------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [disease\_curie](#disease_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_curie") |
-| [disease\_label](#disease_label) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_label")             |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
+| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [diseaseCurie](#diseasecurie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseCurie") |
+| [diseaseLabel](#diseaselabel) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseLabel")             |
 
-## disease\_curie
+## diseaseCurie
 
 
 
-`disease_curie`
+`diseaseCurie`
 
 *   is required
 
@@ -33,9 +33,9 @@ Property to describe a disease (i.e. a disposition to undergo pathological proce
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_curie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseCurie")
 
-### disease\_curie Type
+### diseaseCurie Type
 
 `string` ([Compact URI (CURIE) of the disease](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md))
 
@@ -45,7 +45,7 @@ one (and only one) of
 
 *   [In case whether the individual has a disease is unknown or there is none](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease-oneof-in-case-whether-the-individual-has-a-disease-is-unknown-or-there-is-none.md "check type definition")
 
-### disease\_curie Examples
+### diseaseCurie Examples
 
 ```json
 "MONDO:0100096"
@@ -63,11 +63,11 @@ one (and only one) of
 "NCIT:C94232"
 ```
 
-## disease\_label
+## diseaseLabel
 
 
 
-`disease_label`
+`diseaseLabel`
 
 *   is optional
 
@@ -75,17 +75,17 @@ one (and only one) of
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease-descriptor/properties/disease_label")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseLabel")
 
-### disease\_label Type
+### diseaseLabel Type
 
 `string` ([Label of the disease](ega-12-definitions-disease-properties-label-of-the-disease.md))
 
-### disease\_label Constraints
+### diseaseLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### disease\_label Examples
+### diseaseLabel Examples
 
 ```json
 "COVID-19"

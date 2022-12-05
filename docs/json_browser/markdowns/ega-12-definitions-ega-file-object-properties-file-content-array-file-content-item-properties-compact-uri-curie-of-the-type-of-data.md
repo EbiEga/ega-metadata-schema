@@ -1,7 +1,7 @@
 # Compact URI (CURIE) of the type of data. Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/file_object/properties/file_content/items/properties/type_of_data_curie
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items/properties/typeOfDataCurie
 ```
 
 
@@ -10,7 +10,7 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## type\_of\_data\_curie Type
+## typeOfDataCurie Type
 
 `string` ([Compact URI (CURIE) of the type of data.](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data.md))
 
@@ -18,7 +18,7 @@ all of
 
 *   [Compact URI (CURIE) pattern](ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item-properties-compact-uri-curie-of-the-type-of-data-allof-compact-uri-curie-pattern.md "check type definition")
 
-## type\_of\_data\_curie Examples
+## typeOfDataCurie Examples
 
 ```json
 "format:1919"

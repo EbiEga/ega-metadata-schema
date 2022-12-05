@@ -16,16 +16,16 @@ unknown ([If the assay technology is an array, the experiment type has to match]
 
 # 1 Properties
 
-| Property                                                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                         |
-| :------------------------------------------------------------------ | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assay\_technology](#assay_technology)                              | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-assay_technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/assay_technology")                             |
-| [experiment\_type\_specifications](#experiment_type_specifications) | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-experiment_type_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/experiment_type_specifications") |
+| Property                                                      | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                     |
+| :------------------------------------------------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayTechnology](#assaytechnology)                           | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-assaytechnology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/assayTechnology")                           |
+| [experimentTypeSpecifications](#experimenttypespecifications) | Not specified | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-experimenttypespecifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/experimentTypeSpecifications") |
 
-## assay\_technology
+## assayTechnology
 
 
 
-`assay_technology`
+`assayTechnology`
 
 *   is optional
 
@@ -33,17 +33,17 @@ unknown ([If the assay technology is an array, the experiment type has to match]
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-assay_technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/assay_technology")
+*   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-assaytechnology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/assayTechnology")
 
-### assay\_technology Type
+### assayTechnology Type
 
 unknown
 
-## experiment\_type\_specifications
+## experimentTypeSpecifications
 
 
 
-`experiment_type_specifications`
+`experimentTypeSpecifications`
 
 *   is optional
 
@@ -51,8 +51,8 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-experiment_type_specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/experiment_type_specifications")
+*   defined in: [EGA Experiment metadata schema](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match-properties-experimenttypespecifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/1/properties/experimentTypeSpecifications")
 
-### experiment\_type\_specifications Type
+### experimentTypeSpecifications Type
 
 unknown

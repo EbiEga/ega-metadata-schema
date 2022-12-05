@@ -1,7 +1,7 @@
 # Dataset type Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/dataset_type
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetType
 ```
 
 Type of the dataset, expressing the overall purpose of the dataset. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition. The CV was inherited from ENA's dataset types.
@@ -10,11 +10,11 @@ Type of the dataset, expressing the overall purpose of the dataset. Term chosen 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.dataset.json\*](../../../schemas/EGA.dataset.json "open original schema") |
 
-## dataset\_type Type
+## datasetType Type
 
 `string` ([Dataset type](ega-13-properties-dataset-type.md))
 
-## dataset\_type Constraints
+## datasetType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -35,7 +35,7 @@ Type of the dataset, expressing the overall purpose of the dataset. Term chosen 
 | `"chip-Seq"`                                                        | \[EFO:0002692]: ChIP-seq is an assay in which chromatin immunoprecipitation with high throughput sequencing is used to identify the cistrome of DNA-associated proteins                                                                                                                                                                                 |
 | `"study summary information"`                                       | Object containing complementary summaries of other objects                                                                                                                                                                                                                                                                                              |
 
-## dataset\_type Examples
+## datasetType Examples
 
 ```json
 "whole genome sequencing"

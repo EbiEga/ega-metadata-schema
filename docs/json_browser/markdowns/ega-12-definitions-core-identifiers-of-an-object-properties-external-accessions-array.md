@@ -1,7 +1,7 @@
 # External accessions array Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/object_core_id/properties/external_accessions
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/externalAccessions
 ```
 
 External accession node to reference objects in other archives (e.g. an already existing sample at BioSamples).
@@ -10,11 +10,11 @@ External accession node to reference objects in other archives (e.g. an already 
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## external\_accessions Type
+## externalAccessions Type
 
 `object[]` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
 
-## external\_accessions Constraints
+## externalAccessions Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

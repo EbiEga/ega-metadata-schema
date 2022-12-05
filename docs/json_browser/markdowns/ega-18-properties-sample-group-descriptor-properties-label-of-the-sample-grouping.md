@@ -1,7 +1,7 @@
 # Label of the sample grouping Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_grouping_label
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleGroupingLabel
 ```
 
 Optional label of the sample grouping, used to add context to the group.
@@ -10,11 +10,11 @@ Optional label of the sample grouping, used to add context to the group.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## sample\_grouping\_label Type
+## sampleGroupingLabel Type
 
 `string` ([Label of the sample grouping](ega-18-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md))
 
-## sample\_grouping\_label Examples
+## sampleGroupingLabel Examples
 
 ```json
 "Group of samples X based on the day they were taken."

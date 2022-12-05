@@ -16,12 +16,12 @@ Object defining one item of the array: an individual resource (i.e. ontology).
 
 # items Properties
 
-| Property                                           | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                   |
-| :------------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [name](#name)                                      | `string`  | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/name")                                    |
-| [namespace\_prefix](#namespace_prefix)             | `string`  | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/namespace_prefix")            |
-| [version](#version)                                | `string`  | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-version.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/version")                              |
-| [automatically\_assigned](#automatically_assigned) | `boolean` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/automatically_assigned") |
+| Property                                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                  |
+| :---------------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [name](#name)                                   | `string`  | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/name")                                   |
+| [namespacePrefix](#namespaceprefix)             | `string`  | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/namespacePrefix")            |
+| [version](#version)                             | `string`  | Required | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-version.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/version")                             |
+| [automaticallyAssigned](#automaticallyassigned) | `boolean` | Optional | cannot be null | [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/automaticallyAssigned") |
 
 ## name
 
@@ -59,11 +59,11 @@ Formal (common) name of the resource.
 "PubMed"
 ```
 
-## namespace\_prefix
+## namespacePrefix
 
 Prefixes of namespaces are used to uniquely resolve the ambiguity between identically named elements or attributes. They can easily be checked at [**identifiers.org**](https://identifiers.org/) or [**OLS' list of ontologies**](https://www.ebi.ac.uk/ols/ontologies). For example, in our example of diabetes melitus, EFO:0000400, we need both parts of the CURIE: EFO (prefix) and 0000400 (local identifier). Without knowing the prefix, the local identifier alone is difficult to resolve.
 
-`namespace_prefix`
+`namespacePrefix`
 
 *   is required
 
@@ -71,17 +71,17 @@ Prefixes of namespaces are used to uniquely resolve the ambiguity between identi
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/namespace_prefix")
+*   defined in: [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/namespacePrefix")
 
-### namespace\_prefix Type
+### namespacePrefix Type
 
 `string` ([Resource namespace prefix](ega-20-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md))
 
-### namespace\_prefix Constraints
+### namespacePrefix Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### namespace\_prefix Examples
+### namespacePrefix Examples
 
 ```json
 "hp"
@@ -127,11 +127,11 @@ The version of the used resource. This is the main item of the object, since it'
 "3.45.0"
 ```
 
-## automatically\_assigned
+## automaticallyAssigned
 
 Boolean switch to know if this specific resource was automatically assigned by EGA during the curation process ('true') or if it was manually given by the submitter ('false'). If this attribute is non-existent, it will also be considered to be 'false'.
 
-`automatically_assigned`
+`automaticallyAssigned`
 
 *   is optional
 
@@ -139,8 +139,8 @@ Boolean switch to know if this specific resource was automatically assigned by E
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/automatically_assigned")
+*   defined in: [EGA submission metadata schema](ega-20-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/automaticallyAssigned")
 
-### automatically\_assigned Type
+### automaticallyAssigned Type
 
 `boolean` ([Automatically assigned boolean](ega-20-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md))

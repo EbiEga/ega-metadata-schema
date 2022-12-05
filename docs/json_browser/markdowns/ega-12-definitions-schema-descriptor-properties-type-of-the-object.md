@@ -1,7 +1,7 @@
 # Type of the object Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schema_descriptor/properties/object_type
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/objectType
 ```
 
 Type of the object (e.g. 'sample') the JSON document describes.
@@ -10,11 +10,11 @@ Type of the object (e.g. 'sample') the JSON document describes.
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## object\_type Type
+## objectType Type
 
 `string` ([Type of the object](ega-12-definitions-schema-descriptor-properties-type-of-the-object.md))
 
-## object\_type Constraints
+## objectType Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 

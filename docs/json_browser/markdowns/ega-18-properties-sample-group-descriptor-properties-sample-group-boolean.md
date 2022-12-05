@@ -1,7 +1,7 @@
 # Sample group boolean Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sample_grouping/properties/sample_group_boolean
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleGroupBoolean
 ```
 
 Boolean flag on whether the sample object is a group or an individual sample. Please note that boolean values (true or false) cannot be quoted, nor in uppercase.
@@ -10,11 +10,11 @@ Boolean flag on whether the sample object is a group or an individual sample. Pl
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.sample.json\*](../../../schemas/EGA.sample.json "open original schema") |
 
-## sample\_group\_boolean Type
+## sampleGroupBoolean Type
 
 `boolean` ([Sample group boolean](ega-18-properties-sample-group-descriptor-properties-sample-group-boolean.md))
 
-## sample\_group\_boolean Examples
+## sampleGroupBoolean Examples
 
 ```json
 true

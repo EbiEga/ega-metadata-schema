@@ -1,7 +1,7 @@
 # Cell type Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellTypeDescriptor
 ```
 
 Property to describe a cell type: a distinct morphological or functional form of cell.
@@ -10,22 +10,22 @@ Property to describe a cell type: a distinct morphological or functional form of
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## cell-type-descriptor Type
+## cellTypeDescriptor Type
 
 `object` ([Cell type](ega-12-definitions-cell-type.md))
 
-# cell-type-descriptor Properties
+# cellTypeDescriptor Properties
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
-| :------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [cell\_type\_curie](#cell_type_curie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_curie") |
-| [cell\_type\_label](#cell_type_label) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_label")             |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
+| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cellTypeCurie](#celltypecurie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellTypeDescriptor/properties/cellTypeCurie") |
+| [cellTypeLabel](#celltypelabel) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellTypeDescriptor/properties/cellTypeLabel")             |
 
-## cell\_type\_curie
+## cellTypeCurie
 
 
 
-`cell_type_curie`
+`cellTypeCurie`
 
 *   is required
 
@@ -33,9 +33,9 @@ Property to describe a cell type: a distinct morphological or functional form of
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_curie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellTypeDescriptor/properties/cellTypeCurie")
 
-### cell\_type\_curie Type
+### cellTypeCurie Type
 
 `string` ([Compact URI (CURIE) of the cell type](ega-12-definitions-cell-type-properties-compact-uri-curie-of-the-cell-type.md))
 
@@ -43,11 +43,11 @@ all of
 
 *   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
 
-## cell\_type\_label
+## cellTypeLabel
 
 
 
-`cell_type_label`
+`cellTypeLabel`
 
 *   is optional
 
@@ -55,17 +55,17 @@ all of
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cell-type-descriptor/properties/cell_type_label")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellTypeDescriptor/properties/cellTypeLabel")
 
-### cell\_type\_label Type
+### cellTypeLabel Type
 
 `string` ([Label of the cell type](ega-12-definitions-cell-type-properties-label-of-the-cell-type.md))
 
-### cell\_type\_label Constraints
+### cellTypeLabel Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
-### cell\_type\_label Examples
+### cellTypeLabel Examples
 
 ```json
 "musculo-skeletal system cell"
