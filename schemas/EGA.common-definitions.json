@@ -2144,7 +2144,7 @@
         ]
       },
 
-      "sampleLabel-association": {
+      "sampleLabelAssociation": {
         "type": "object",
         "title": "Repeatable Sample-label node",
         "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from objectCoreId - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
@@ -3283,7 +3283,7 @@
         }
       },
 
-      "r-type-groupedWith": {
+      "rTypeGroupedWith": {
         "type": "object",
         "title": "Relationship type: groupedWith",
         "description": "Node to be used as a relationship type for relationship contraints.",
@@ -3295,7 +3295,7 @@
         }
       },
 
-      "r-type-memberOf": {
+      "rTypeMemberOf": {
         "type": "object",
         "title": "Relationship type: memberOf",
         "description": "Node to be used as a relationship type for relationship contraints.",
@@ -3307,7 +3307,7 @@
         }
       },
 
-      "r-type-isAfter": {
+      "rTypeIsAfter": {
         "type": "object",
         "title": "Relationship type: isAfter",
         "description": "Node to be used as a relationship type for relationship contraints.",
@@ -3319,7 +3319,7 @@
         }
       },
 
-      "r-type-childOf": {
+      "rTypeChildOf": {
         "type": "object",
         "title": "Relationship type: childOf",
         "description": "Node to be used as a relationship type for relationship contraints.",
@@ -3331,7 +3331,7 @@
         }
       },
 
-      "r-type-developsFrom": {
+      "rTypeDevelopsFrom": {
         "type": "object",
         "title": "Relationship type: developsFrom",
         "description": "Node to be used as a relationship type for relationship contraints.",
@@ -3343,7 +3343,7 @@
         }
       },
 
-      "r-type-familyRelationshipWith": {
+      "rTypeFamilyRelationshipWith": {
         "type": "object",
         "title": "Relationship type: familyRelationshipWith",
         "description": "Node to be used as a relationship type for relationship contraints.",
@@ -3655,7 +3655,7 @@
         }
       },
 
-      "r-source-externalAccession": {
+      "rSourceExternalAccession": {
         "type": "object",
         "title": "Relationship source: externalAccession",
         "description": "Node to be used as an object type for relationship contraints.",
@@ -3671,7 +3671,7 @@
         }
       },
 
-      "r-target-externalAccession": {
+      "rTargetExternalAccession": {
         "type": "object",
         "title": "Relationship target: externalAccession",
         "description": "Node to be used as an object type for relationship contraints.",
@@ -3683,11 +3683,11 @@
                 "const": "externalAccession" 
               }
             }
-          } 
+          }
         }
       },
 
-      "r-source-externalURL": {
+      "rSourceExternalURL": {
         "type": "object",
         "title": "Relationship source: externalURL",
         "description": "Node to be used as an object type for relationship contraints.",
@@ -3703,7 +3703,7 @@
         }
       },
 
-      "r-target-externalURL": {
+      "rTargetExternalURL": {
         "type": "object",
         "title": "Relationship target: externalURL",
         "description": "Node to be used as an object type for relationship contraints.",

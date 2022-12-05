@@ -143,10 +143,10 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
                         },
                         {
                           "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
@@ -172,13 +172,13 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-childOf"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-familyRelationshipWith"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-groupedWith"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
                         },
                         {
                           "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
@@ -187,13 +187,13 @@
                           "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-developsFrom"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-memberOf"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-type-isAfter"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
                         }
                       ]
                     },
