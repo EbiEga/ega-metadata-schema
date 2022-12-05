@@ -29,7 +29,7 @@
                             },
                             "objectType": "study"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rTarget": {
@@ -38,7 +38,7 @@
                             },
                             "objectType": "analysis"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -48,7 +48,7 @@
                             },
                             "objectType": "protocol"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -58,7 +58,7 @@
                             },
                             "objectType": "protocol"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
@@ -69,7 +69,7 @@
                             },
                             "objectType": "protocol"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -79,7 +79,7 @@
                             },
                             "objectType": "protocol"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -89,7 +89,7 @@
                             },
                             "objectType": "protocol"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -99,7 +99,7 @@
                             },
                             "objectType": "protocol"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -108,7 +108,7 @@
                             },
                             "objectType": "submission"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     }
                 ],
                 "experimentTypeSpecifications": {
@@ -137,7 +137,7 @@
                 },
                 "objectDescription": "Example array experiment's description of my experiment N13.",
                 "objectId": {
-                    "alias": "My_ChIP_array_experiment_13",
+                    "alias": "My_ChIP_arrayExperiment_13",
                     "centerName": "EBI-TEST"
                 },
                 "objectTitle": "Example array experiment title",
@@ -225,7 +225,7 @@
                             },
                             "objectType": "experiment"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -234,7 +234,7 @@
                             },
                             "objectType": "submission"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     }
                 ],
                 "assayTypeSpecifications": {
@@ -304,7 +304,7 @@
                             },
                             "objectType": "experiment"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -313,7 +313,7 @@
                             },
                             "objectType": "analysis"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     },
                     {
                         "rSource": {
@@ -322,7 +322,7 @@
                             },
                             "objectType": "submission"
                         },
-                        "rType": "referenced_by"
+                        "rType": "referencedBy"
                     }
                 ],
                 "assayTypeSpecifications": {

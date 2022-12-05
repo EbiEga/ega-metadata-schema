@@ -32,7 +32,7 @@
                     },
                     "objectType": "experiment"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rTarget": {
@@ -41,17 +41,17 @@
                     },
                     "objectType": "experiment"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rTarget": {
                     "objectId": {
-                        "alias": "sample_collection_protocol",
+                        "alias": "sampleCollection_protocol",
                         "centerName": "EBI-TEST"
                     },
                     "objectType": "protocol"
                 },
-                "rType": "is_after"
+                "rType": "isAfter"
             },
             {
                 "rSource": {
@@ -60,7 +60,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "protocolTypeDescriptor": {

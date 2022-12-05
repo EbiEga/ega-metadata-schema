@@ -37,7 +37,7 @@
                     },
                     "objectType": "experiment"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -46,7 +46,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "assayTypeSpecifications": {

@@ -14,7 +14,7 @@
                     },
                     "objectType": "assay"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -23,7 +23,7 @@
                     },
                     "objectType": "assay"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -32,7 +32,7 @@
                     },
                     "objectType": "analysis"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -41,7 +41,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "datasetType": "phenotype information",

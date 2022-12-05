@@ -30,7 +30,7 @@
                     },
                     "objectType": "study"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rTarget": {
@@ -39,7 +39,7 @@
                     },
                     "objectType": "analysis"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -48,7 +48,7 @@
                     },
                     "objectType": "experiment"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -58,7 +58,7 @@
                     },
                     "objectType": "protocol"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -68,7 +68,7 @@
                     },
                     "objectType": "protocol"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
@@ -79,7 +79,7 @@
                     },
                     "objectType": "protocol"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -88,7 +88,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "analysisTypeSpecifications": {

@@ -1,7 +1,7 @@
 {
     "data": {
         "objectId": {
-            "alias": "sample_collection_protocol",
+            "alias": "sampleCollection_protocol",
             "centerName": "EBI-TEST"
         },
         "objectTitle": "Patient's blood collection protocol",
@@ -32,7 +32,7 @@
                     },
                     "objectType": "sample"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -42,7 +42,7 @@
                     },
                     "objectType": "protocol"
                 },
-                "rType": "is_after"
+                "rType": "isAfter"
             },
             {
                 "rSource": {
@@ -51,7 +51,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "protocolTypeDescriptor": {

@@ -28,7 +28,7 @@
                     },
                     "objectType": "dataset"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rTarget": {
@@ -37,7 +37,7 @@
                     },
                     "objectType": "dataset"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -46,7 +46,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "schemaDescriptor": {

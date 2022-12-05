@@ -55,7 +55,7 @@
                     },
                     "objectType": "individual"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -67,9 +67,9 @@
                             }
                         ]
                     },
-                    "objectType": "external_accession"
+                    "objectType": "externalAccession"
                 },
-                "rType": "same_as"
+                "rType": "sameAs"
             },
             {
                 "rSource": {
@@ -78,7 +78,7 @@
                     },
                     "objectType": "protocol"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rSource": {
@@ -87,7 +87,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "sampleStatus": [

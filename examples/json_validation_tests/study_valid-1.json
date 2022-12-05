@@ -30,7 +30,7 @@
                     },
                     "objectType": "experiment"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             },
             {
                 "rTarget": {
@@ -42,9 +42,9 @@
                             }
                         ]
                     },
-                    "objectType": "external_accession"
+                    "objectType": "externalAccession"
                 },
-                "rType": "same_as"
+                "rType": "sameAs"
             },
             {
                 "rSource": {
@@ -53,7 +53,7 @@
                     },
                     "objectType": "submission"
                 },
-                "rType": "referenced_by"
+                "rType": "referencedBy"
             }
         ],
         "studyTypes": [
