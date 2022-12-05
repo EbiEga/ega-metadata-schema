@@ -200,16 +200,16 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalAccession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-source-externalURL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalAccession"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/r-target-externalURL"
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
                         }
                       ]
                     }
