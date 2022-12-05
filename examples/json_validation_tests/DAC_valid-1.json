@@ -1,73 +1,73 @@
 {
-    "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json"
-    },
     "data": {
-        "object_id": {
-            "alias" : "my_DAC_X10", 
-            "center_name" : "EBI-TEST",
-            "ega_accession": "EGAC00000000001"
-        },
-        "object_title": "EBI test DAC",
-        "object_description": "A example DAC used exclusively for testing.",
-        "dac_contacts": {
-            "main_contact": {
-                "individual_full_name": "Wayne Jr., Bruce",
-                "institution_name": "European Bioinformatics Institute (EBI)",
-                "email_address": "myname@ebi.ac.uk",
-                "phone_number": "+44 7427512529"
-            },
-            "additional_contacts": [
-                {
-                    "individual_full_name": "Todd, Jason",
-                    "email_address": "myname2@ebi.ac.uk"
-                },
-                {
-                    "institution_name": "BAT-CAVE",
-                    "email_address": "myname3@ebi.ac.uk"
-                }
-            ]
-        },
-        "dac_relationships": [
-            {
-                "r_type": "referenced_by",
-                "r_target": {
-                    "object_id": {
-                        "ega_accession": "EGAP00002045411"
-                    },
-                    "object_type": "policy"                 
-                }
-            },
-            {
-                "r_type": "same_as",
-                "r_target": {
-                    "object_id": {
-                        "ega_accession": "EGAC00002344532"
-                    },
-                    "object_type": "DAC"                 
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAB00002045411"
-                    },
-                    "object_type": "submission"                
-                }
-            }
-        ],
-        "dac_attributes": [
+        "dacAttributes": [
             {
                 "tag": "Associated project ID",
-                "value": "X33981-DGH"            
+                "value": "X33981-DGH"
             }
         ],
-        "schema_descriptor": {
-            "object_type": "DAC",
-            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json",
-            "object_schema_version": "0.0.0",
-            "common_schema_version": "0.0.0"
+        "dacContacts": {
+            "additionalContacts": [
+                {
+                    "emailAddress": "myname2@ebi.ac.uk",
+                    "individualFullName": "Todd, Jason"
+                },
+                {
+                    "emailAddress": "myname3@ebi.ac.uk",
+                    "institutionName": "BAT-CAVE"
+                }
+            ],
+            "mainContact": {
+                "emailAddress": "myname@ebi.ac.uk",
+                "individualFullName": "Wayne Jr., Bruce",
+                "institutionName": "European Bioinformatics Institute (EBI)",
+                "phoneNumber": "+44 7427512529"
+            }
+        },
+        "dacRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAP00002045411"
+                    },
+                    "objectType": "policy"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAC00002344532"
+                    },
+                    "objectType": "DAC"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectDescription": "A example DAC used exclusively for testing.",
+        "objectId": {
+            "alias": "my_DAC_X10",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAC00000000001"
+        },
+        "objectTitle": "EBI test DAC",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "DAC"
         }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json"
     }
 }

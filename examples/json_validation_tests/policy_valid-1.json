@@ -1,58 +1,62 @@
 {
-    "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json"
-    },
     "data": {
-        "object_id": {
-            "alias" : "my-cancer-policy", 
-            "center_name" : "EBI-TEST"
-        },
-        "object_title": "EBI test case-control policy for cancer datasets",
-        "policy_descriptor": {
-            "policy_reference": "https://ega-archive.org/submission/dac/documentation",
-            "policy_text": "The data is fully available upon request with the data-access committee of this study."
-        },
-        "duo_codes_curies": [ "DUO:0000046", "DUO:0000028", "IAO:0000620" ],
-        "policy_relationships": [
-            {
-                "r_type": "referenced_by",
-                "r_target": {
-                    "object_id": {
-                        "ega_accession": "EGAD00002043982"
-                    },
-                    "object_type": "dataset"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_target": {
-                    "object_id": {
-                        "ega_accession": "EGAD00004543981"
-                    },
-                    "object_type": "dataset"
-                }
-            },
-            {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAB00002045411"
-                    },
-                    "object_type": "submission"                
-                }
-            }
+        "duoCodesCuries": [
+            "DUO:0000046",
+            "DUO:0000028",
+            "IAO:0000620"
         ],
-        "policy_attributes": [
+        "objectId": {
+            "alias": "my-cancer-policy",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "EBI test case-control policy for cancer datasets",
+        "policyAttributes": [
             {
                 "tag": "Associated project ID",
-                "value": "X33981-DGH"            
+                "value": "X33981-DGH"
             }
         ],
-        "schema_descriptor": {
-            "object_type": "policy",
-            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json",
-            "object_schema_version": "0.0.0",
-            "common_schema_version": "0.0.0"
+        "policyDescriptor": {
+            "policyReference": "https://ega-archive.org/submission/dac/documentation",
+            "policyText": "The data is fully available upon request with the data-access committee of this study."
+        },
+        "policyRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAD00002043982"
+                    },
+                    "objectType": "dataset"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAD00004543981"
+                    },
+                    "objectType": "dataset"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "policy"
         }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json"
     }
 }

@@ -1,66 +1,66 @@
 {
-    "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json"
-    },
     "data": {
-        "object_id": {
-            "alias" : "my-covid19-study_231", 
-            "center_name" : "EBI-TEST"
+        "objectDescription": "EBI genome-wide case-control association study for COVID-19 using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+        "objectId": {
+            "alias": "my-covid19-study_231",
+            "centerName": "EBI-TEST"
         },
-        "object_title": "EBI test case-control study for covid19",
-        "object_description": "EBI genome-wide case-control association study for COVID-19 using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
-        "study_types": [ 
-            "COVID-19"
+        "objectTitle": "EBI test case-control study for covid19",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "study"
+        },
+        "studyAttributes": [
+            {
+                "tag": "Associated project ID",
+                "value": "X33981-DGH"
+            }
         ],
-        "study_designs": [
+        "studyDesigns": [
             "case control design",
             "binding site identification design"
         ],
-        "study_relationships": [
+        "studyRelationships": [
             {
-                "r_type": "referenced_by",
-                "r_target": {
-                    "object_id": {
-                        "ega_accession": "EGAX00002043412"
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002043412"
                     },
-                    "object_type": "experiment"                             
-                }
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
             },
             {
-                "r_type": "same_as",
-                "r_target": {
-                    "object_id": {
-                        "external_accessions": [
+                "rTarget": {
+                    "objectId": {
+                        "externalAccessions": [
                             {
-                                "external_accession_curie": "biostudies:S-EPMC3314381",
-                                "accession_label": "The same study was submitted to the two archives due to a deadline approaching."
+                                "accessionLabel": "The same study was submitted to the two archives due to a deadline approaching.",
+                                "externalAccessionCurie": "biostudies:S-EPMC3314381"
                             }
                         ]
                     },
-                    "object_type": "external_accession"                                                             
-                }
+                    "objectType": "externalAccession"
+                },
+                "rType": "sameAs"
             },
             {
-                "r_type": "referenced_by",
-                "r_source": {
-                    "object_id": {
-                        "ega_accession": "EGAB00002045411"
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
                     },
-                    "object_type": "submission"                
-                }
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
             }
         ],
-        "study_attributes": [
-            {
-                "tag": "Associated project ID",
-                "value": "X33981-DGH"            
-            }
-        ],
-        "schema_descriptor": {
-            "object_type": "study",
-            "described_by_schema_uri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
-            "object_schema_version": "0.0.0",
-            "common_schema_version": "0.0.0"
-        }
+        "studyTypes": [
+            "COVID-19"
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json"
     }
 }
