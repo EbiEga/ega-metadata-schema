@@ -110,7 +110,7 @@
                 "additionalProperties": false,
                 "uniqueItems": true,
                 "items": { 
-                  "$ref": "./EGA.common-definitions.json#/definitions/sampleLabel-association"
+                  "$ref": "./EGA.common-definitions.json#/definitions/sampleLabelAssociation"
                 }
               }
             },

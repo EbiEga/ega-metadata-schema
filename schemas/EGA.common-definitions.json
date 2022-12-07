@@ -3254,7 +3254,7 @@
         "type": "string",
         "title": "Compact URI (CURIE) of the UBERON's organism part",
         "meta:propertyCurie": "EFO:0000635",
-        "description": "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells. E.g. tissue, organ, system, sperm, blood or body location (arm). Search for yours at: http://www.ebi.ac.uk/efo/EFO_0000635. This property can be used to describe a sampling site or the morphological site of a disease, for example.",
+        "description": "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells. E.g. tissue, organ, system, sperm, blood or body location (arm). Search for yours at: http://purl.obolibrary.org/obo/UBERON_0000061. This property can be used to describe a sampling site or the morphological site of a disease, for example.",
         "allOf": [
           {
             "title": "General CURIE pattern",
@@ -3262,8 +3262,8 @@
           }
         ],
         "graphRestriction":  {
-          "ontologies" : ["obo:efo"],
-          "classes": ["EFO:0000635"],
+          "ontologies" : ["obo:uberon"],
+          "classes": ["UBERON:0000061"],
           "relations": ["rdfs:subClassOf"],
           "direct": false,
           "include_self": false
