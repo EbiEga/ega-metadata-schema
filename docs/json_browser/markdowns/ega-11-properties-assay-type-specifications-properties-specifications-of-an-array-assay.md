@@ -66,7 +66,7 @@ Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which
 
 *   is optional
 
-*   Type: unknown\[]
+*   Type: `object[]` ([Repeatable Sample-label node](ega-12-definitions-repeatable-sample-label-node.md))
 
 *   cannot be null
 
@@ -74,7 +74,7 @@ Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which
 
 ### arraySampleLabels Type
 
-unknown\[]
+`object[]` ([Repeatable Sample-label node](ega-12-definitions-repeatable-sample-label-node.md))
 
 ### arraySampleLabels Constraints
 

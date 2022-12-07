@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite/properties/sampledOrganismPartCurie
 ```
 
-The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells. E.g. tissue, organ, system, sperm, blood or body location (arm). Search for yours at: <http://www.ebi.ac.uk/efo/EFO_0000635>. This property can be used to describe a sampling site or the morphological site of a disease, for example.
+The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells. E.g. tissue, organ, system, sperm, blood or body location (arm). Search for yours at: <http://purl.obolibrary.org/obo/UBERON_0000061>. This property can be used to describe a sampling site or the morphological site of a disease, for example.
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                   |
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------- |
