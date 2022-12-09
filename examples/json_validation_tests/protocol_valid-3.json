@@ -34,9 +34,11 @@
             "SAMtools [SWO:1100143]"
         ],
         "protocolTypeDescriptor": {
-            "protocolSubtype": "genome indexing",
-            "protocolSubtypeCurie": "operation:3211",
-            "protocolType": "data transformation"
+            "protocolType": "data transformation",
+            "protocolSubtype": {
+                "termId": "operation:3211",
+                "termLabel": "genome indexing"
+            }
         },
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",

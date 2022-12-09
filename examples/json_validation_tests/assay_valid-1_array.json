@@ -53,18 +53,22 @@
             "arrayAssaySpecifications": {
                 "arraySampleLabels": [
                     {
-                        "label": {
-                            "arrayLabelCurie": "CHEBI:37987",
-                            "arrayLabelId": "Cy3"
+                        "arrayLabel": {
+                            "arrayLabelIdentifier": {
+                                "termId": "CHEBI:37987",   
+                                "termLabel": "Cy3"
+                            }             
                         },
                         "objectId": {
                             "egaAccession": "EGAN00002094401"
                         }
                     },
                     {
-                        "label": {
-                            "arrayLabelCurie": "CHEBI:37989",
-                            "arrayLabelId": "Cy5"
+                        "arrayLabel": {
+                            "arrayLabelIdentifier": {
+                                "termId": "CHEBI:37989",   
+                                "termLabel": "Cy5"
+                            }
                         },
                         "objectId": {
                             "egaAccession": "EGAN00002094453"

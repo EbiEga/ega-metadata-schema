@@ -37,8 +37,11 @@
                     "objectId": {
                         "externalAccessions": [
                             {
-                                "accessionLabel": "The same study was submitted to the two archives due to a deadline approaching.",
-                                "externalAccessionCurie": "biostudies:S-EPMC3314381"
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biostudies:S-EPMC3314381",
+                                    "termLabel": "Epigenetics of kidney cancer and bladder cancer"
+                                },
+                                "objectExternalAccessionDescription": "The same study was submitted to the two archives due to a deadline approaching"
                             }
                         ]
                     },

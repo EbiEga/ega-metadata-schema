@@ -30,18 +30,18 @@
             "biologicalSex": "male",
             "diseases": [
                 {
-                    "diseaseCurie": "EFO:0003101",
-                    "diseaseLabel": "testicular seminoma"
+                    "termId": "EFO:0003101",
+                    "termLabel": "testicular seminoma"
                 },
                 {
-                    "diseaseCurie": "EFO:1000254",
-                    "diseaseLabel": "fibroadenoma"
+                    "termId": "EFO:1000254",
+                    "termLabel": "fibroadenoma"
                 }
             ],
             "phenotypes": [
                 {
-                    "phenotypicAbnormalityCurie": "HP:0033403",
-                    "phenotypicAbnormalityLabel": "Testicular ischemia"
+                    "termId": "HP:0033403",
+                    "termLabel": "Testicular ischemia"
                 }
             ],
             "subjectId": "donor-NM305004"
@@ -52,9 +52,11 @@
             "egaAccession": "EGAI00000000001"
         },
         "organismDescriptor": {
-            "commonName": "human",
-            "scientificName": "homo sapiens",
-            "taxonIdCurie": "NCBITaxon:9606"
+            "organismTaxon": {
+                "termId": "NCBITaxon:9606",
+                "termLabel": "homo sapiens"
+            },
+            "commonName": "human"
         },
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",

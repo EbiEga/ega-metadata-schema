@@ -122,13 +122,17 @@
                 ],
                 "arrayLabels": [
                     {
-                        "arrayLabelCurie": "CHEBI:37987",
-                        "arrayLabelId": "Cy3 dye",
-                        "labelDescription": "This label was use to dye the control samples"
+                        "arrayLabelIdentifier": {
+                            "termId": "CHEBI:15956",   
+                            "termLabel": "Biotin"
+                        }
                     },
                     {
-                        "arrayLabelCurie": "CHEBI:15956",
-                        "arrayLabelId": "Biotin"
+                        "arrayLabelIdentifier": {
+                            "termId": "CHEBI:37987",   
+                            "termLabel": "Cy3 dye"
+                        },
+                        "arrayLabelDescription": "This label was use to dye the control samples"                        
                     }
                 ]
             }
@@ -149,19 +153,23 @@
             {
                 "lociDescriptor": [
                     {
-                        "geneDescriptor": {
-                            "geneIdCurie": "HGNC:11998",
-                            "geneSymbol": "TP53"
+                        "geneIdentifier": {
+                            "termId": "HGNC:11998",
+                            "termLabel": "TP53"
                         },
                         "locusAdditionalDescription": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
                     },
                     {
                         "genomicSequenceDescriptor": {
                             "assemblyDescriptor": {
-                                "assemblyName": "GRCh38.p14",
-                                "assemblyUnitName": "Chromosome 17",
-                                "ncbiAssemblyAccession": "assembly:GCA_000001405.29",
-                                "ncbiAssemblyUnitAccession": "refseq:NC_000017.11"
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCA_000001405.29",
+                                    "termLabel": "GRCh38.p14"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000017.11",
+                                    "termLabel": "chr17"
+                                }
                             },
                             "dnaSequenceStrand": "forward",
                             "nucleicAcidSequence": "CTTGTTCAGTG",
@@ -182,8 +190,11 @@
                     }
                 ],
                 "organismDescriptor": {
-                    "scientificName": "homo sapiens",
-                    "taxonIdCurie": "NCBITaxon:9606"
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
                 }
             }
         ],
