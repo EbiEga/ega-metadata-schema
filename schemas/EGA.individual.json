@@ -59,7 +59,7 @@
             "additionalProperties": false,
             "uniqueItems": true,
             "items": {
-              "$ref": "./EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor"
+              "$ref": "./EGA.common-definitions.json#/definitions/phenotypicAbnormality"
             }
           },
           "diseases": {
@@ -69,7 +69,7 @@
             "additionalProperties": false,
             "uniqueItems": true,
             "items": {
-              "$ref": "./EGA.common-definitions.json#/definitions/diseaseDescriptor"
+              "$ref": "./EGA.common-definitions.json#/definitions/disease"
             }
           }
         },

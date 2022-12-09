@@ -48,7 +48,7 @@
         "type": "object",
         "title": "Protocol type descriptor",
         "description": "Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type.",
-        "required": ["protocolType", "protocolSubtypeCurie"],
+        "required": ["protocolType", "protocolSubtype"],
         "additionalProperties": false,
         "properties": {
           "protocolType": {
@@ -61,8 +61,8 @@
               "high Content Screen (HCS)": "[EFO:0007570]",
               "conversion": "[EFO:0005520]",
               "delivery method": "[EFO:0000395]",
-              "cissection": "[EFO:0005519]",
-              "cissociation": "[EFO:0009088]",
+              "dissection": "[EFO:0005519]",
+              "dissociation": "[EFO:0009088]",
               "enrichment": "[EFO:0009089]",
               "extraction": "[EFO:0002944]",
               "gene expression": "[EFO:0003788]",
@@ -80,24 +80,18 @@
           },
 
           "protocolSubtype": {
-            "type": "string",
+            "type": "object",
             "title": "Subtype of the protocol",
-            "description": "Name of the protocol's subtype. We highly recommend the usage of names given to ontologized protocols, specially those at the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/ols/ontologies/efo). For example, if the protocol corresponds to a data transformation of a genome, you may find your subtype at [genome analysis](http://edamontology.org/operation_3918); while treating a patient with a drug would correspond to a [clinical treatment](http://www.ebi.ac.uk/efo/EFO_0007056).",
-            "minLength": 1,
-            "examples": [ "clinical treatment", "array scanning and feature extraction", "Genome alignment", "Genome annotation", "Genome assembly", "Genome comparison", "Genome feature comparison", "Genome indexing", "Genome visualisation", "Whole genome methylation analysis" ]    
-          },
-
-          "protocolSubtypeCurie": {
-            "type": "string",
-            "title": "Compact URI (CURIE) of the protocol subtype",
-            "description": "Ontology term in CURIE format (e.g. 'EFO:0005518') of the protocol subtype. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the overall general of the 'protocolType' field. For instance, the CURIE for Treatment's subtype 'clinical treatment' would be 'EFO:0003814'. If the protocol does not require a subtype, use the CURIE for the protocol type per se (e.g. 'EFO:0005518' for 'Sample collection').",
+            "description": "Ontology term of the protocol subtype. Search for yours at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index). This allows for a specific designation of the protocol within the high level 'protocolType' field. For instance, for Treatment's subtype 'clinical treatment' ('termLabel') we would use 'EFO:0003814' ('termId'). In case the protocol does not have a subtype, use 'NCIT:C48660' for 'Not applicable'.",
             "allOf": [
               {
-                "title": "General CURIE pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
-              },
-              {
-                "title": "Ontology validation of it being part of EFO's protocol [OBI:0000272] or planned process [EFO:0004542], or EDAM's Analysis [operation:2945]",
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+              }
+            ],
+            "properties": {        
+              "termId": {
+                "title": "Ontology constraints for this specific termId",
                 "anyOf": [
                   {
                     "graphRestriction":  {
@@ -125,11 +119,17 @@
                       "direct": false,
                       "include_self": false
                     }
+                  },
+                  {
+                    "enum": ["NCIT:C48660"],
+                    "meta:enum": {
+                      "NCIT:C48660": "Not applicable: Determination of a subtype is not relevant for this protocol."
+                    }
                   }
-                ]
-              }              
-            ],
-            "examples": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788", "EFO:0000395", "EFO:0010892", "EFO:0010214", "EFO:0000494", "operation:3223"]
+                ],
+                "examples": ["EFO:0005518",  "EFO:0002944",  "EFO:0003813",  "EFO:0003815",  "EFO:0003814",  "EFO:0004184",  "EFO:0003789",  "EFO:0009088", "EFO:0009089", "EFO:0003969", "EFO:0005520", "EFO:0000355", "EFO:0005519", "EFO:0003788", "EFO:0000395", "EFO:0010892", "EFO:0010214", "EFO:0000494", "operation:3223"]
+              }
+            }
           }
         }
       },

@@ -119,18 +119,16 @@
               "title": "File content item",
               "description": "Item describing the type of data a file contains or represents.",
               "meta:propertyCurie": "format:2350",
-              "required": ["typeOfDataCurie"],
-              "additionalProperties": false,
-              "properties": {
-                "typeOfDataCurie": {
-                  "type": "string",
-                  "title": "Compact URI (CURIE) of the type of data.",
-                  "allOf": [
-                    {
-                      "title": "General CURIE pattern",
-                      "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
-                    }
-                  ],
+              "allOf": [
+                {
+                  "title": "Inherited ontologyTerm structure of termId and termLabel",
+                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                }
+              ],
+              "properties": {        
+                "termId": {
+                  "title": "Ontology constraints for this specific termId",
+                  "description": "Property containing just the ontology constraints for the file content. Notice the 'direct' being 'true', which makes the constraint more stringent, and only allows for terms one step below [format:2350].",
                   "graphRestriction ":  {
                     "ontologies" : ["obo:edam"],
                     "classes": ["format:2350"],
@@ -139,13 +137,6 @@
                     "include_self": false
                   },
                   "examples": [ "format:1919", "format:3326" ]
-                },
-                "typeOfDataTerm": {
-                  "type": "string",
-                  "title": "Term of the type of data",
-                  "description": "Term that specifies the type of data content.",
-                  "minLength": 1,            
-                  "examples": [ "Sequence record format", "Data index format" ]
                 }
               }
             }
@@ -403,38 +394,52 @@
       "arrayLabel": {
         "type": "object",
         "title": "Repeatable arrayLabel node",
-        "description": "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.",
-        "required": ["arrayLabelId"],
+        "description": "Chemical conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node defines one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described.",
+        "anyOf": [
+          {
+            "required": ["arrayLabelIdentifier"]
+          },
+          {
+            "required": ["arrayLabelDescription"]
+          }
+        ],
         "additionalProperties": false,
         "properties": {
-          "arrayLabelId": {
-          "type": "string",
-          "title": "Array label of the array experiment - ID",
-          "description": "ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.",
-          "examples": [ "Cy3 dye" ]
-          },
-          "arrayLabelCurie": {
-            "type": "string",
-            "title": "Array label of the array experiment - CURIE",
-            "description": "CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
+          "arrayLabelIdentifier": {
+            "type": "object",
+            "title": "Array label identifier",
+            "description": "The chosen term (e.g. 'Cy3 dye' [CHEBI:37987]) needs to be a Chemical Entity from the CHEBI ontology, look for yours at: https://www.ebi.ac.uk/ols/search?q=&ontology=chebi",
             "allOf": [
               {
-                "title": "General pattern of a CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
               }
             ],
-            "examples": [ "CHEBI:37987" ]
+            "properties": {        
+              "termId": {
+                "title": "Ontology constraints for this specific termId",
+                "graphRestriction ":  {
+                  "ontologies" : ["obo:chebi"],
+                  "classes": ["CHEBI:24431"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": false,
+                  "include_self": false
+                },
+                "examples": [ "CHEBI:37987", "CHEBI:15956" ]
+              }
+            }
           },
-          "labelDescription": {
+          "arrayLabelDescription": {
             "type": "string",
-            "title": "Array label of the array experiment - Description",
-            "description": "Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.",
-            "examples": [ 
-              "This label was use to dye the control samples",
-              "This newly discovered label (yet to be added to an ontology) consists in a compound of type X...",
-              "The label ID is unknown because we were given the RNA already dyed..." ]
+            "title": "Array label description",
+            "description": "Additional description of the used array label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etcetera.",
+            "minLength": 1,
+            "examples": [
+              "This label was used to dye the control samples",
+              "This newly discovered label (yet to be added to an ontology) consists of a compound of type X...",
+              "The label ID is unknown because we were given an already dyed kit..." ]
           }
-        }
+        }          
       },
 
       "objectIdAndObjectTypeCheck": {
@@ -1594,7 +1599,6 @@
       "bimFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a BIM file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'BIM' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.bim(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.bim.gz.gpg" ]
@@ -1603,7 +1607,6 @@
       "famFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a FAM file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'FAM' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^.+\\.(fam|tfam)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.fam.gz.gpg" ]
@@ -1648,7 +1651,6 @@
       "shFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a SH file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'SH' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(sh|SH)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.sh.gpg" ]
@@ -1675,7 +1677,6 @@
       "hapFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a HAP file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'HAP' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(hap|HAP)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.hap.gz.gpg" ]
@@ -1684,7 +1685,6 @@
       "csfastaFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a CSFASTA file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'CSFASTA' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.csfasta(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.csfasta.gpg" ]
@@ -1693,7 +1693,6 @@
       "locFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a LOC file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'LOC' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(loc|tsv)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.loc.gpg" ]
@@ -1702,7 +1701,6 @@
       "tgzFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a TGZ file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'TGZ' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.tgz(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.tgz.gpg" ]
@@ -1729,7 +1727,6 @@
       "hicFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a HIC file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'HIC' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.hic(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.hic.gpg" ]
@@ -1738,7 +1735,6 @@
       "tifFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a TIF file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'TIF' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.tif(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.tif.gpg" ]
@@ -1747,7 +1743,6 @@
       "mdFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a MD file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'MD' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(md|markdown)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.md.gpg" ]
@@ -1792,7 +1787,6 @@
       "snpFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a SNP file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'SNP' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.snp(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.snp.zip.gpg" ]
@@ -1837,7 +1831,6 @@
       "gtcFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a GTC file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'GTC' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.gtc(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.gtc.gpg" ]
@@ -1864,7 +1857,6 @@
       "pairFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a PAIR file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'PAIR' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.pair(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.pair.gpg" ]
@@ -1873,7 +1865,6 @@
       "bgiFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a BGI file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'BGI' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.bgi(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.bgi.gpg" ]
@@ -1882,7 +1873,6 @@
       "bgenFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a BGEN file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'BGEN' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.bgen(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.bgen.gpg" ]
@@ -1891,7 +1881,6 @@
       "genFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a GEN file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'GEN' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.gen(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.gen.gpg" ]
@@ -1900,7 +1889,6 @@
       "pxfFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a PXF file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'PXF' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(json|yaml)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.json.gpg" ]
@@ -1918,7 +1906,6 @@
       "bax.h5FileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a BAX.H5 file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'BAX.H5' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(bax\\.h5|h5)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.bax.h5.gpg" ]
@@ -1927,7 +1914,6 @@
       "bas.h5FileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a BAS.H5 file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'BAS.H5' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(bas\\.h5|h5)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.bas.h5.gpg" ]
@@ -1936,7 +1922,6 @@
       "asmFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a ASM file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'ASM' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.asm(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.asm.gpg" ]
@@ -1945,7 +1930,6 @@
       "csiFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a CSI file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'CSI' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.csi(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.csi.gpg" ]
@@ -1999,7 +1983,6 @@
       "fastqHelicosFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a FASTQ-HELICOS file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'FASTQ-HELICOS' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.(fastq|fq)(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.fastq.gpg" ]
@@ -2035,7 +2018,6 @@
       "craiFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a CRAI file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'CRAI' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.crai(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.crai.gpg" ]
@@ -2062,7 +2044,6 @@
       "mexFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a MEX file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'MEX' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.mex(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.mex.gpg" ]
@@ -2071,7 +2052,6 @@
       "gmxFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a GMX file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'GMX' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.gmx(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.gmx.gpg" ]
@@ -2080,7 +2060,6 @@
       "gmtFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a GMT file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'GMT' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.gmt(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.gmt.gpg" ]
@@ -2089,7 +2068,6 @@
       "grpFileFilenamePattern": {
         "type": "string",
         "title": "Filename pattern of a GRP file",
-        "meta:propertyCurie": "",
         "description": "This object exists to hold the filename pattern that a 'GRP' filetypeId would have, for it to be referenced elsewhere within this (or other) JSON schema.",
         "pattern": "^[^<>:;,?\"*|/]+\\.grp(\\.(gz|zip|rar|arj|tar|7z|bz2))?(\\.gpg)?$",
         "examples": [ "my_file1.grp.gpg" ]
@@ -2097,49 +2075,57 @@
 
       "objectExternalAccession": {
         "type": "object",
-        "title": "Object of external accession of the object",
-        "description": "External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.",
+        "title": "Object External accession",
+        "description": "External accession property defining a reference to an external record in another resource. For example, a reference to a sequence deposited in NCBI's Nucleotide database (e.g. 'https://identifiers.org/nucleotide:T35715.1'); or a sample record in BioSamples (e.g. 'https://identifiers.org/biosample:SAMEA7616999').",
         "additionalProperties": false,
         "properties": {
-          "externalAccessionCurie": {
-            "type": "string",
-            "title": "CURIE of the external accession",
-            "description": "Unique identifier of an external, to EGA, object. It shall follow CURIE format (``prefix``:``accession``): prefix assigned to the archive (e.g. biosample - search for yours at identifiers.org) and the unique accession of the object (e.g. SAMEA7616999).",
+          "objectExternalAccessionIdentifier": {
+            "type": "object",
+            "title": "Identifier of the external accession",
+            "description": "Unique identifier of an external record. Its 'termId' (e.g. 'biosample:SAMEA7616999', 'pubmed:30962759', 'biostudies:S-EPMC3314381', etc.) shall follow CURIE format of ``prefix``:``accession``, where: (1) the prefix (e.g. 'biosample') is unique and assigned to the external resource at identifiers.org; (2) and the unique accession of the object (e.g. SAMEA7616999) should resolve to an existing record within the resource. If in doubt, use identifiers.org to resolve your external accession: 'https://identifiers.org/' + 'termId', e.g. 'https://identifiers.org/biosample:SAMEA7616999'",
             "allOf": [
               {
-                "title": "General pattern of a CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
               }
-            ],
-            "examples": [ "biosample:SAMEA7616999", "arrayexpress:E-MEXP-1712", "biostudies:S-EPMC3314381", "pubmed:30962759"]
+            ]
           },
-          "accessionReference": {
+          "objectExternalAccessionURI": {
             "type": "string",
-            "title": "Reference of the external accession",
-            "description": "Full or partial URL/URI of the external accession, for systems to resolve it.",
+            "title": "URI of the external accession",
+            "description": "Full or partial URL/URI of the external accession, for systems to resolve it. Should only be used in case identifiers.org does not contain a namespace for the required resource or the mapping to the URI from its identifier is faulty.",
             "allOf": [
               {
                 "title": "General pattern of a URL/URI",
                 "$ref": "./EGA.common-definitions.json#/definitions/urlUriPattern"
               }
             ],
-            "examples": [ "https://www.ebi.ac.uk/biosamples/samples/SAMN11716999", "https://pubmed.ncbi.nlm.nih.gov/19491253", "https://identifiers.org/arrayexpress:E-MEXP-1712", "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/" ]
+            "examples": [ 
+              "https://www.ebi.ac.uk/biosamples/samples/SAMN11716999",
+              "https://pubmed.ncbi.nlm.nih.gov/19491253",
+              "https://www.ebi.ac.uk/arrayexpress/experiments/E-MEXP-1712/"
+            ]
           },
-          "accessionLabel": {
+          "objectExternalAccessionDescription": {
             "type": ["string", "number"],
-            "title": "Label of the external accession",
-            "description": "Label (e.g. 'taken from biosample temporarily') of the external accession, used to add extra information to the identifier.",
-            "examples": [ "taken from biosample temporarily", "Ensembl's part of the accessions", "first", 2, "Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation" ]
+            "title": "Description of the external accession",
+            "description": "Optional description of the external accession, used to add context to the identifier if applicable.",
+            "examples": [ 
+              "taken from biosample temporarily",
+              "Ensembl's part of the accessions",
+              "first",
+              2,
+              "Recurrent Erythema Nodosum in a Child with a SHOC2 Gene Mutation" ]
           }
         },
         "anyOf": [
           {
-            "title": "Either the CURIE is needed",
-            "required": ["externalAccessionCurie"]
+            "title": "Either the identifier is needed",
+            "required": ["objectExternalAccessionIdentifier"]
           },
           {
             "title": "Or the reference is needed",
-            "required": ["accessionReference"]
+            "required": ["objectExternalAccessionURI"]
           }
         ]
       },
@@ -2148,10 +2134,10 @@
         "type": "object",
         "title": "Repeatable Sample-label node",
         "description": "The base node of a label-sample association. One form of basic identification of the sample (inherited from objectCoreId - e.g. either the center name and alias or the accession) is required, as well as the label per se.",
-        "required": ["label", "objectId"],
+        "required": ["arrayLabel", "objectId"],
         "additionalProperties": false,
         "properties": {
-          "label": { 
+          "arrayLabel": { 
             "title": "Labelling dye used with the sample",
             "$ref": "./EGA.common-definitions.json#/definitions/arrayLabel" 
           },
@@ -2249,86 +2235,45 @@
         "examples": [ "male" ]
       },
 
-      "experimentalConditionDescriptor": {
-        "type": "object",
-        "title": "Experimental condition",
-        "meta:propertyCurie": "XCO:0000000",
-        "description": "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment. We highly recommend the usage of ontologies to describe experimental conditions (search at 'https://www.ebi.ac.uk/ols/ontologies/efo').",
-        "additionalProperties": false,
-        "required": ["experimentalConditionTerm"],
-        "properties": {
-          "experimentalConditionTerm": {
-            "type": "string",
-            "title": "Experimental condition term",
-            "description": "Term that specifies the experimental condition (e.g. 'fibroadenoma').",
-            "examples": [ "control", "fibroadenoma", "osteonecrosis" ]
-          },
-          "experimentalConditionCurie": {
-            "type": "string",
-            "title": "Experimental condition curie",
-            "description": "Curie (i.e. ontologised term - e.g. 'EFO:0001461') of the experimental condition. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).",
-            "examples": [ "EFO:0001461", "EFO:1000254", "EFO:0004259" ],
-            "allOf": [
-              {
-                "title": "General pattern of a CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
-              }
-            ]
-          },
-          "experimentalConditionDescription": {
-            "type": "string",
-            "title": "Experimental condition description",
-            "description": "Broad description of the experimental condition, providing further details and context over the ontologised term.",
-            "examples": [
-              "A control role is borne by a material in a process in which results obtained from an experimental sample and a control sample are compared.",
-              "A benign tumor of the breast characterized by the presence of stromal and epithelial elements.", 
-              "A none disease characterized by death of bone tissue due to a lack of blood supply."
-            ]
-          }
-        }
-      },
-
       "organismDescriptor": {
         "type": "object",
         "title": "Organism [OBI:0100026] descriptor block",
-        "description": "This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or made up, like humans, of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance by default.",
+        "description": "This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or, like humans, made up of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance.",
         "additionalProperties": false,
-        "required": ["taxonIdCurie"],
+        "required": ["organismTaxon"],
         "properties": {
-          "taxonIdCurie": {
-            "type": "string",
-            "title": "NCBI Taxon identifier",
+          "organismTaxon": {
+            "type": "object",
+            "title": "NCBI Taxon of the organism",
             "meta:propertyCurie": "APOLLO_SV:00000203",
-            "description": "Taxonomy Identifier (e.g. 'NCBITaxon:9606' for humans) curated by the NCBI Taxonomy (search for organisms here: https://www.ncbi.nlm.nih.gov/taxonomy; or use the OLS: https://www.ebi.ac.uk/ols/ontologies/ncbitaxon). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
+            "description": "Taxonomic classification of the organism (e.g. 'NCBITaxon:9606' and 'homo sapiens' for humans) curated by the NCBI Taxonomy (search for organisms here: https://www.ncbi.nlm.nih.gov/taxonomy; or use the OLS: https://www.ebi.ac.uk/ols/ontologies/ncbitaxon). You can find further details at 'https://www.uniprot.org/help/taxonomic_identifier'. This is appropriate for individual organisms and some environmental samples.",
             "allOf": [
               {
-                "title": "General pattern of a CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
               }
             ],
-            "graphRestriction":  {
-              "ontologies" : ["obo:NCBITAXON"],
-              "classes": ["NCBITaxon:1"],
-              "relations": ["rdfs:subClassOf"],
-              "direct": false,
-              "include_self": false
-            },
-            "examples": [ "NCBITaxon:9606", "NCBITaxon:155900", "NCBITaxon:408170", "NCBITaxon:447426" ]
-          },
-          "scientificName": {
-            "type": "string",
-            "title": "Biologic entity classification scientific name",
-            "meta:propertyCurie": "NCIT:C43459",
-            "description": "The name applied to a plant, animal, or other organism, according to the Codes of Nomenclature, consisting of a Genus and species (e.g. 'homo sapiens').",
-            "minLength": 1,
-            "examples": [ "homo sapiens", "uncultured organism", "human gut metagenome", "human oral metagenome" ]
+            "properties": {        
+              "termId": {
+                "title": "Ontology constraints for this specific termId",
+                "graphRestriction":  {
+                  "ontologies" : ["obo:NCBITAXON"],
+                  "classes": ["NCBITaxon:1"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": false,
+                  "include_self": false
+                },
+                "examples": [ "NCBITaxon:9606", "NCBITaxon:155900", "NCBITaxon:408170", "NCBITaxon:447426" ]
+              }
+            }
           },
           "commonName": {
             "type": "string",
             "title": "Biologic entity classification common name",
             "meta:propertyCurie": "NCIT:C164690",
             "description": "Common name (e.g. 'human') used to designate a plant, animal or other organism, as opposed to the scientific name.",
-            "examples": [ "human"]
+            "minLength": 1,
+            "examples": [ "human", "goat", "horse" ]
           }
         }
       },
@@ -2561,100 +2506,83 @@
         "type": "object",
         "title": "Gene descriptor",
         "description": "Node to uniquely identify a gene [SO:0000704]: a region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions. For human genes, the standard is to use nomenclature provided by the HUGO Gene Nomenclature Committee (HGNC).",
-        "required": ["geneIdCurie"],
+        "required": ["geneIdentifier"],
         "additionalProperties": false,
         "properties": {
-          "geneSymbol": {
-            "type": "string",
-            "title": "Gene Symbol",
-            "meta:propertyCurie": "data:1026",
-            "description": "The official gene symbol. It is typically derived from the gene name. This optional field exists to provide the common identifier of the gene. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
-            "minLength": 1,
-            "examples": ["TAF1", "TP53", "BRAF", "16S"]
-          },
-          "geneIdCurie": {
-            "type": "string",
-            "title": "Gene CURIE ID",
-            "meta:propertyCurie": "data:2295",
-            "description": "A unique (and typically persistent) identifier of a gene in a database, that is (typically) different to the gene name/symbol (e.g. HGNC:11535 for gene TAF1). The identifier has to follow CURIE format. Additionally, there are 2 types of allowed databases to reference: NCBIGene and HGNC. Other archives' accessions (e.g. ensembl:ENSDARG00000035330) can be cross referenced with NCBIGene to obtain its gene ID (e.g. ncbigene:555452).",            
+          "geneIdentifier": {
+            "type": "object",
+            "title": "Gene identifier",
+            "description": "Property uniquely identifying a gene. It consists of a 'termId' and 'termLabel', which correspond to: (1)  'termId': A unique (and typically persistent) identifier of a gene in a database, that is (typically) different to the gene name/symbol (e.g. HGNC:11535 for gene TAF1). There are 2 types of allowed databases to reference: NCBIGene and HGNC. Other archives' accessions (e.g. ensembl:ENSDARG00000035330) can be cross referenced with NCBIGene to obtain its gene ID (e.g. ncbigene:555452). (2) 'termLabel': the official gene symbol (e.g. 'TAF1'). It is typically derived from the gene name. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature, while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
+            "meta:propertyCurie": "data:1025",
             "allOf": [
               {
-                "title": "General pattern of a CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
               }
             ],
-            "oneOf": [
-              {
-                "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieNcbiGeneIdentifierPattern"
-              },
-              {
-                "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieHgncIdentifierPattern"
+            "properties": {        
+              "termId": {
+                "title": "Ontology constraints for this specific termId",
+                "anyOf": [
+                  {
+                    "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
+                    "$ref": "./EGA.common-definitions.json#/definitions/curieNcbiGeneIdentifierPattern"
+                  },
+                  {
+                    "title": "HGNC Gene pattern (e.g. 'hgnc:2674')",
+                    "$ref": "./EGA.common-definitions.json#/definitions/curieHgncIdentifierPattern"
+                  }
+                ],
+                "examples": [ "NCBIGene:100010", "hgnc:2674" ]
               }
-            ],
-            "examples": ["HGNC:11535", "hgnc:11998", "HGNC:1097", "ncbigene:100010", "ncbigene:6872"]
+            }
           },
           "geneDescription": {
             "type": "string",
             "title": "Description of the gene",
-            "description": "Free-text description of the gene, only to be used to provide additional context that would otherwise be impossible to add encoded in the schema. In other words, kindly refrain from providing alternative gene symbols in the description if they are not added likewise in the 'alternateGeneSymbols' property.",
+            "description": "Free-text description of the gene, only to be used to provide additional context that would otherwise be impossible to add encoded in the schema. In other words, kindly refrain from providing alternative gene identifiers in the description, when they could be added at 'alternateGeneIdentifiers'.",
             "minLength": 1,
-            "examples": [ "In the used cells, locus of gene ... was modified at positions +23, where thymine was transitioned to cytosine (T-C)..." ]
+            "examples": [ 
+              "In the mutated cells, the only difference with the reference gene is that at locus ... position +23 was modified: thymine was transitioned to cytosine (T-C)..." 
+            ]
           },
-          "alternateGeneIds": {
+          "alternateGeneIdentifiers": {
             "type": "array",
-            "title": "Alternate gene IDs",
-            "description": "Array of alternate identifiers for this gene. For example, Ensemble identifiers for genes and its transcripts.",
+            "title": "Alternate gene identifiers",
+            "description": "Array of alternate identifiers for this gene. This array can be used to provide any other alternate gene identifiers that refer to a gene, including previously approved gene symbols, Ensembl identifiers, gene transcripts (e.g. 'ensembl:ENST00000423759'), etcetera.",
             "additionalProperties": false,
             "uniqueItems": true,
             "minItems": 1,
             "items": {
-              "type": "string",
-              "title": "Alternate gene ID",
-              "meta:propertyCurie": "data:2295",
+              "type": "object",
+              "title": "Alternate gene identifier item",
+              "description": "One of the possible alternate gene identifiers for the designated gene. The 'termId' of these elements, contrary to the main identifier, can include references to other resources beyond NCBI and HGNC (e.g. 'OMIM:600296', 'ensembl:ENST00000423759', 'ucsc:uc003ldc.6', etcetera).",
+              "meta:propertyCurie": "data:1025",
               "allOf": [
                 {
-                  "title": "General pattern of a CURIE",
-                  "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                  "title": "Inherited ontologyTerm structure of termId and termLabel",
+                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
                 }
-              ],
-              "examples": ["OMIM:600296", "ensembl:ENST00000423759.6", "ucsc:uc003ldc.6"]
+              ]
             }
           },
-          "alternateGeneSymbols": {
+          "relatedGeneIdentifiers": {
             "type": "array",
-            "title": "Alternate gene symbols",
-            "description": "Array of alternate gene sumbols. This field can be used to provide any other alternate gene symbol to refer to the gene, including previously approved gene symbols. There are several resources to search for a gene of interest, although we recommend [NCBI's service](https://www.ncbi.nlm.nih.gov/gene). For example: (1) in the case of human genes, the symbol follows [HGNC](https://www.genenames.org/)'s nomenclature; (2) while in the case of mice genes they are provided by [MGI](http://www.informatics.jax.org/).",
+            "title": "Related (not equivalent) gene identifiers",
+            "description": "Array of related identifiers (e.g. termIds 'VGNC:97422', 'MGI:2385071', 'RGD:1305712' for gene ETF1). This field can be used to provide identifiers to resources representing related, but not equivalent gene identifiers. For example: paralog, analog or ortholog identifiers.",
             "additionalProperties": false,
             "uniqueItems": true,
             "minItems": 1,
             "items": {
-              "type": "string",
-              "title": "Alternate gene symbol",
-              "meta:propertyCurie": "data:1026",
-              "minLength": 1,
-              "examples": ["SUP45L1", "eRF1", "RF1", "ERF1"]
-            }
-          },
-          "geneExternalReferences": {
-            "type": "array",
-            "title": "Related (not equivalent) gene IDs",
-            "description": "Array of related identifiers. This field can be used to provide identifiers to alternative resources representing related, but not equivalent concepts, for example gene paralog, analog or ortholog IDs.",
-            "additionalProperties": false,
-            "uniqueItems": true,
-            "minItems": 1,
-            "items": {
-              "type": "string",
-              "title": "Related gene ID",
-              "meta:propertyCurie": "data:2295",
+              "type": "object",
+              "title": "Related gene identifier item",
+              "meta:propertyCurie": "data:1025",
               "allOf": [
                 {
-                  "title": "General pattern of a CURIE",
-                  "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                  "title": "Inherited ontologyTerm structure of termId and termLabel",
+                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
                 }
-              ],
-              "examples": ["VGNC:97422", "MGI:2385071", "RGD:1305712"]
+              ]            
             }
           }
         }
@@ -2666,59 +2594,49 @@
         "meta:propertyCurie": "topic:0196",
         "description": "Node describing a sequence assembly referenced in [NCBI's Assembly database](https://www.ncbi.nlm.nih.gov/assembly). Assembly is a database providing information on the structure of assembled genomes, assembly names and other meta-data, statistical reports, and links to genomic sequence data. An assembly is defined as the set of chromosomes, unlocalized and unplaced (sometimes called 'random') and alternate sequences used to represent an organism's genome. Assemblies are constructed from 1 or more assembly units.",
         "additionalProperties": false,
+        "required": [ "ncbiAssembly" ],
         "properties": {
-          "assemblyName": {
-            "type": "string",
-            "title": "Assembly common name",
-            "meta:propertyCurie": "OBI:0001948",
-            "description": "A free-text common name (e.g. 'GRCh38') that is used to denote the sequence assembly.",
-            "minLength": 1,
-            "examples": [ "GRCh38.p14", "GRCh38", "GRCh37.p13", "GRCh37" ]
-          },
-          "ncbiAssemblyAccession": {
-            "type": "string",
-            "title": "NCBI Assembly accession",
-            "description": "Assembly's identifier (e.g. GCF_000001405.26) of the assembly. For example, the assembly accession for the GenBank version of the public human reference assembly (GRCh38.p14) is GCA_000001405.29. See further details here: https://www.ncbi.nlm.nih.gov/assembly/model/.",
+          "ncbiAssembly": {
+            "type": "object",
+            "title": "NCBI Assembly",
+            "description": "Node defining an Assembly (e.g. 'GCF_000001405.26'). For example, the assembly accession for the GenBank version of the public human reference assembly ('termLabel' being 'GRCh38.p14') is 'GCA_000001405.29' ('termId'). See further details here: https://www.ncbi.nlm.nih.gov/assembly/model/.",
             "allOf": [
               {
-                "title": "Assembly's CURIE pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieNcbiAssemblyPattern"
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
               }
             ],
-            "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
+            "properties": {        
+              "termId": {
+                "title": "Ontology constraints for this specific termId",
+                "allOf": [
+                  {
+                    "title": "NCBI's assembly CURIE pattern",
+                    "$ref": "./EGA.common-definitions.json#/definitions/curieNcbiAssemblyPattern"
+                  }
+                ],
+                "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
+              }
+            }
           },
-          "assemblyUnitName": {
-            "type": "string",
-            "title": "Assembly unit common name",
-            "meta:propertyCurie": "OBI:0001948",
-            "description": "A free-text common name (e.g. 'chr17') that is used to denote the sequence assembly unit.",
-            "minLength": 1,
-            "examples": [ "Chromosome 2", "MT", "chr17", "chr20", "18" ]
-          },
-          "ncbiAssemblyUnitAccession": {
-            "type": "string",
-            "title": "NCBI Assembly unit accession",
-            "description": "NCBI's identifier (e.g. ) of the assembly unit. An assembly unit is defined as the collection of sequences used to define discrete parts of an assembly. Commonly assembly units are entire chromosomes (e.g. Chromosome 1 of human genome), scaffolds or different types of sequences (e.g. Mitochondrial DNA). For example, GenBank's accession: (1) for the assembly unit of the human chromosome 1 is [NC_000001.11](https://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11) (for the human reference assembly GRCh38.p14); (2) and for the complete mitochondrion genome of a human it is [NC_012920.1](https://www.ncbi.nlm.nih.gov/nuccore/NC_012920.1). See further details here: https://www.ncbi.nlm.nih.gov/assembly/model/.",
-            "allOf": [
+          "ncbiAssemblyUnit": {
+            "type": "object",
+            "title": "NCBI assembly unit",
+            "description": "NCBI's identifier of the assembly unit. An assembly unit is defined as the collection of sequences used to define discrete parts of an assembly. Commonly, assembly units are entire chromosomes (e.g. Chromosome 1 of human genome), scaffolds or different types of sequences (e.g. Mitochondrial DNA). Again, it follows an 'ontologyTerm' structure, having a 'termId' (e.g. 'refseq:NC_000001.11') and 'termLabel' (e.g. 'chromosome 1'). See further details here: https://www.ncbi.nlm.nih.gov/assembly/model/.",
+                "allOf": [
               {
-                "title": "RefSeq accession CURIE",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieRefseqPattern"
+                "title": "Inherited ontologyTerm structure of termId and termLabel",
+                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
               }
             ],
-            "examples": ["refseq:NC_000001.11", "refseq:NC_012920.1"]
+            "properties": {        
+              "termId": {
+                "title": "Ontology constraints for this specific termId",
+                "examples": ["refseq:NC_000001.11", "refseq:NC_012920.1"]
+              }
+            }
           }
-        },
-        "anyOf": [
-          {
-            "title": "Or the Assembly accession is required",
-            "required": ["ncbiAssemblyAccession"]
-          },
-          {
-            "title": "Or the Assembly unit accession is required",
-            "required": ["ncbiAssemblyUnitAccession"]
-          }
-        ]
-        
+        }
       },
 
       "genomicSequenceDescriptor": {
@@ -2834,6 +2752,7 @@
         "type": "string",
         "title": "Compact URI (CURIE) pattern",
         "description": "A [W3C Compact URI](https://www.w3.org/TR/curie/) formatted string. A CURIE string has the structure ``prefix``:``reference``, as defined by the W3C syntax. Even though we do not restrict prefixes, we recommend that the term used as ``prefix`` is uniformely resolved. In other words, it is better to use prefixes (e.g. 'ensembl') from identifiers.org.",
+        "minLength": 1,
         "pattern": "^\\w[^:]*:.+$",
         "examples": ["ensembl:ENSG00000139618", "HGNC:11535", "data:1026", "EFO:0003815"]
       },
@@ -3134,7 +3053,7 @@
                     },
                     "precedesReadIndex": {
                       "type": "integer",
-                      "title": "",
+                      "title": "Precedes read index",
                       "description": "Specify the read index that follows this read.",
                       "minInclusive": 0
                     }
@@ -3250,25 +3169,30 @@
         }
       },
 
-      "organismPartEntity": {
-        "type": "string",
-        "title": "Compact URI (CURIE) of the UBERON's organism part",
-        "meta:propertyCurie": "EFO:0000635",
-        "description": "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, excludes cells. E.g. tissue, organ, system, sperm, blood or body location (arm). Search for yours at: http://purl.obolibrary.org/obo/UBERON_0000061. This property can be used to describe a sampling site or the morphological site of a disease, for example.",
+      "materialAnatomicalEntity": {
+        "type": "object",
+        "title": "Material anatomical entity",
+        "meta:propertyCurie": "UBERON:0000465",
+        "description": "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, exlucing cell types. For example: tissues, organs, systems, fluids (e.g. semen, blood), body locations (e.g. arm skin, eye), etcetera. Search for yours at: http://purl.obolibrary.org/obo/UBERON_0000465. This property can be used to describe a sampling site or the morphological site of a disease, for example.",
         "allOf": [
           {
-            "title": "General CURIE pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+            "title": "Inherited ontologyTerm structure of termId and termLabel",
+            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
           }
         ],
-        "graphRestriction":  {
-          "ontologies" : ["obo:uberon"],
-          "classes": ["UBERON:0000061"],
-          "relations": ["rdfs:subClassOf"],
-          "direct": false,
-          "include_self": false
-        },
-        "examples": [ "UBERON:0000956", "UBERON:0006530" ]
+        "properties": {        
+          "termId": {
+            "title": "Ontology constraints for this specific termId",
+            "graphRestriction":  {
+              "ontologies" : ["obo:uberon"],
+              "classes": ["UBERON:0000465"],
+              "relations": ["rdfs:subClassOf"],
+              "direct": false,
+              "include_self": false
+            },
+            "examples": [ "UBERON:0000956", "UBERON:0006530" ]
+          }
+        }        
       },
 
       "rTypeReferencedBy": {
@@ -3818,17 +3742,20 @@
         "examples": [ "P3Y6M4D", "P23DT23H", "P4Y" ]
       },
 
-      "cellTypeDescriptor": {
+      "cellType": {
         "type": "object",
         "title": "Cell type",
         "description": "Property to describe a cell type: a distinct morphological or functional form of cell.",
         "meta:propertyCurie": "EFO:0000324",
-        "additionalProperties": false,
-        "required": [ "cellTypeCurie" ],
-        "properties": {          
-          "cellTypeCurie": {
-            "type": "string",
-            "title": "Compact URI (CURIE) of the cell type",
+        "allOf": [
+          {
+            "title": "Inherited ontologyTerm structure of termId and termLabel",
+            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+          }
+        ],
+        "properties": {        
+          "termId": {
+            "title": "Ontology constraints for this specific termId",
             "graphRestriction":  {
               "ontologies" : ["obo:efo"],
               "classes": ["EFO:0000324"],
@@ -3836,33 +3763,25 @@
               "direct": false,
               "include_self": false
             },
-            "allOf": [
-              {
-                "title": "General CURIE pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
-              }
-            ]
-          },
-          "cellTypeLabel": {
-            "type": "string",
-            "title": "Label of the cell type",
-            "minLength": 1,
-            "examples": [ "musculo-skeletal system cell", "neoplastic cell", "nervous system cell" ]
+            "examples": [ "CL:0002092", "CL:0000127", "CL:0000128" ]
           }
         }
       },
 
-      "phenotypicAbnormalityDescriptor": {
+      "phenotypicAbnormality": {
         "type": "object",
         "title": "Phenotypic abnormality",
         "description": "Property to describe any abnormal (i.e. deviation from normal or average) phenotype (i.e. detectable outward manifestations of a specific genotype).",
         "meta:propertyCurie": "HP:0000118",
-        "additionalProperties": false,
-        "required": [ "phenotypicAbnormalityCurie" ],
-        "properties": {          
-          "phenotypicAbnormalityCurie": {
-            "type": "string",
-            "title": "Compact URI (CURIE) of the phenotypic abnormality",
+        "allOf": [
+          {
+            "title": "Inherited ontologyTerm structure of termId and termLabel",
+            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+          }
+        ],
+        "properties": {        
+          "termId": {
+            "title": "Ontology constraints for this specific termId",
             "anyOf": [
               {
                 "title": "Ontology validation of phenotypic abnormality",
@@ -3876,40 +3795,35 @@
               },
               { 
                 "title": "In case the phenotypic abnormality is unknown or there is none",
-                "enum": ["NCIT:C17998", "NCIT:C94232"]
-              }
-            ],            
-            "allOf": [
-              {
-                "title": "General CURIE pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                "enum": ["NCIT:C17998", "NCIT:C94232"],
+                "meta:enum": {
+                  "NCIT:C17998": "Unknown",
+                  "NCIT:C94232": "Unaffected"
+                }
               }
             ],
             "examples": [ "HP:0003003", "HP:0010442", "HP:0002515", "NCIT:C17998", "NCIT:C94232" ]
-          },
-          "phenotypicAbnormalityLabel": {
-            "type": "string",
-            "title": "Label of the phenotypic abnormality",
-            "minLength": 1,
-            "examples": [ "Colon cancer", "Polydactyly", "Waddling gait", "Unknown", "Unaffected" ]
           }
         }
       },
 
-      "diseaseDescriptor": {
+      "disease": {
         "type": "object",
         "title": "Disease",
         "description": "Property to describe a disease (i.e. a disposition to undergo pathological processes because of one or more disorders).",
         "meta:propertyCurie": "EFO:0000408",
-        "additionalProperties": false,
-        "required": [ "diseaseCurie" ],
-        "properties": {          
-          "diseaseCurie": {
-            "type": "string",
-            "title": "Compact URI (CURIE) of the disease",
-            "oneOf": [
+        "allOf": [
+          {
+            "title": "Inherited ontologyTerm structure of termId and termLabel",
+            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+          }
+        ],
+        "properties": {        
+          "termId": {
+            "title": "Ontology constraints for this specific termId",
+            "anyOf": [
               {
-                "title": "Ontology validation of dieases",
+                "title": "Ontology validation of diseases",
                 "graphRestriction":  {
                   "ontologies" : ["obo:efo"],
                   "classes": ["EFO:0000408"],
@@ -3918,24 +3832,46 @@
                   "include_self": false
                 }
               },
-              {
-                "title": "In case whether the individual has a disease is unknown or there is none",
-                "enum": ["NCIT:C17998", "NCIT:C94232"]
+              { 
+                "title": "In case the phenotypic abnormality is unknown or there is none",
+                "enum": ["NCIT:C17998", "NCIT:C94232"],
+                "meta:enum": {
+                  "NCIT:C17998": "Unknown",
+                  "NCIT:C94232": "Unaffected"
+                }
               }
-            ],          
+            ],
+            "examples": [ "MONDO:0100096", "EFO:0003101", "NCIT:C17998", "NCIT:C94232" ]
+          }
+        }
+      },
+
+      "ontologyTerm": {
+        "type": "object",
+        "title": "Ontology term",
+        "description": "This property represents an ontology term (a.k.a. class). It consists on two properties: the term identifier (termId) and its label (termLabel). This property and its structure is inherited across many other elements in the schemas. It is there, when inherited, where the real ontology constraint is put in place (e.g. using 'graphRestriction' keywords). Based on phenopacket's [OntologyClass](https://phenopacket-schema.readthedocs.io/en/latest/ontologyclass.html)",
+        "additionalProperties": false,
+        "required": ["termId", "termLabel"],
+        "properties": {
+          "termId": {
+            "type": "string",
+            "title": "ID of the term",
+            "description": "The identifier of an ontology term must be in CURIE format (check property 'curieGeneralPattern'). Whether a specific term is valid or not according to an ontology hierarchy is checked at each specific termId using ontology validation keywords (e.g. 'graphRestriction').",
+            "minLength": 1,
             "allOf": [
               {
                 "title": "General CURIE pattern",
                 "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
               }
             ],
-            "examples": [ "MONDO:0100096", "EFO:0003101", "NCIT:C17998", "NCIT:C94232" ]
+            "examples": [ "MONDO:0100096", "EFO:0003101", "EFO:0005518",  "EFO:0002944",  "EFO:0003813" ]
           },
-          "diseaseLabel": {
+          "termLabel": {
             "type": "string",
-            "title": "Label of the disease",
+            "title": "Label of the term",
+            "description": "The label of a term is the human-readable string associated with the identifier. It is not required that it matches the label of the termId within the referenced ontology, although it should. This is due to the fact that the source of truth will always be the termId, and not the label, which adds more context.",
             "minLength": 1,
-            "examples": [ "COVID-19", "testicular seminoma", "Unknown", "Unaffected" ]
+            "examples": [ "COVID-19", "Axila skin", "bone marrow cell", "astrocyte", "oligodendrocyte", "Unknown", "Unaffected", "homo sapiens" ]
           }
         }
       }

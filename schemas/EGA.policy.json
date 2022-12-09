@@ -80,24 +80,58 @@
         ]
       },
 
-      "duoCodesCuries": {
+      "duoCodes": {
         "type": "array",
-        "title": "Data Use Ontology (DUO) codes' curies",
-        "description": "Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) format. These allow to semantically tag datasets (bound by policies) with restriction about their usage, making them discoverable automatically based on the authorization level of users, or intended usage. See more info at https://obofoundry.org/ontology/duo.html and search for DUO codes at https://www.ebi.ac.uk/ols/ontologies/duo",
+        "title": "Data Use Ontology (DUO) codes",
+        "description": "Collection of Data Use Ontology (DUO) codes. These allow to semantically tag datasets (bound by policies) with restriction about their usage, improving their discoverability based on the authorization level of users, or intended usage. See more info at https://obofoundry.org/ontology/duo.html and search for DUO codes at https://www.ebi.ac.uk/ols/ontologies/duo",
         "minItems": 1,
         "additionalProperties": false,
         "uniqueItems": true,
         "items": {
-          "type": "string",
-          "title": "Data Use Ontology (DUO) code",
-          "description": "Single Data Use Ontology (DUO) code in Shorter Compact URI (CURIE) format.",
-          "examples": [ "DUO:0000046", "DUO:0000028", "IAO:0000620" ],
+          "type": "object",
+          "title": "Data Use Ontology (DUO)",
+          "description": "Single Data Use Ontology (DUO) code.",
           "allOf": [
             {
-              "title": "General pattern of a CURIE",
-              "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+              "title": "Inherited ontologyTerm structure of termId and termLabel",
+              "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
             }
-          ]
+          ],
+          "properties": {        
+            "termId": {
+              "title": "Ontology constraints for this specific termId",
+              "anyOf": [
+                {
+                  "graphRestriction":  {
+                    "ontologies" : ["obo:duo"],
+                    "classes": ["DUO:0000001"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": false
+                  }
+                },
+                {
+                  "graphRestriction":  {
+                    "ontologies" : ["obo:duo"],
+                    "classes": ["DUO:0000017"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": false
+                  }
+                },
+                {
+                  "graphRestriction":  {
+                    "ontologies" : ["obo:duo"],
+                    "classes": ["OBI:0000066"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": false
+                  }
+                }
+              ],              
+              "examples": [ "DUO:0000046", "DUO:0000028", "DUO:0000032" ]
+            }
+          }
         }
       },
 
