@@ -8,44 +8,47 @@ Property to describe a disease (i.e. a disposition to undergo pathological proce
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
 
 ## items Type
 
 `object` ([Disease](ega-12-definitions-disease.md))
 
+all of
+
+*   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")
+
 # items Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
-| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [diseaseCurie](#diseasecurie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseCurie") |
-| [diseaseLabel](#diseaselabel) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseLabel")             |
+| Property          | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                               |
+| :---------------- | :----- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [termId](#termid) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease/properties/termId") |
 
-## diseaseCurie
-
+## termId
 
 
-`diseaseCurie`
 
-*   is required
+`termId`
 
-*   Type: `string` ([Compact URI (CURIE) of the disease](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md))
+*   is optional
+
+*   Type: merged type ([Ontology constraints for this specific termId](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseCurie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease/properties/termId")
 
-### diseaseCurie Type
+### termId Type
 
-`string` ([Compact URI (CURIE) of the disease](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease.md))
+merged type ([Ontology constraints for this specific termId](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md))
 
-one (and only one) of
+any of
 
-*   [Ontology validation of dieases](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease-oneof-ontology-validation-of-dieases.md "check type definition")
+*   [Ontology validation of diseases](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-diseases.md "check type definition")
 
-*   [In case whether the individual has a disease is unknown or there is none](ega-12-definitions-disease-properties-compact-uri-curie-of-the-disease-oneof-in-case-whether-the-individual-has-a-disease-is-unknown-or-there-is-none.md "check type definition")
+*   [In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
-### diseaseCurie Examples
+### termId Examples
 
 ```json
 "MONDO:0100096"
@@ -61,44 +64,4 @@ one (and only one) of
 
 ```json
 "NCIT:C94232"
-```
-
-## diseaseLabel
-
-
-
-`diseaseLabel`
-
-*   is optional
-
-*   Type: `string` ([Label of the disease](ega-12-definitions-disease-properties-label-of-the-disease.md))
-
-*   cannot be null
-
-*   defined in: [EGA common metadata definitions](ega-12-definitions-disease-properties-label-of-the-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor/properties/diseaseLabel")
-
-### diseaseLabel Type
-
-`string` ([Label of the disease](ega-12-definitions-disease-properties-label-of-the-disease.md))
-
-### diseaseLabel Constraints
-
-**minimum length**: the minimum number of characters for this string is: `1`
-
-### diseaseLabel Examples
-
-```json
-"COVID-19"
-```
-
-```json
-"testicular seminoma"
-```
-
-```json
-"Unknown"
-```
-
-```json
-"Unaffected"
 ```

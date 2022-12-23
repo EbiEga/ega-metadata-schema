@@ -16,10 +16,10 @@ The read is located beginning at the offset or cycle relative to another read. T
 
 # relativeOrder Properties
 
-| Property                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                  |
-| :-------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [followsReadIndex](#followsreadindex)   | `integer` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-follows-read-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder/properties/followsReadIndex") |
-| [precedesReadIndex](#precedesreadindex) | `integer` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-precedesreadindex.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder/properties/precedesReadIndex") |
+| Property                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [followsReadIndex](#followsreadindex)   | `integer` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-follows-read-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder/properties/followsReadIndex")   |
+| [precedesReadIndex](#precedesreadindex) | `integer` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-precedes-read-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder/properties/precedesReadIndex") |
 
 ## followsReadIndex
 
@@ -47,12 +47,12 @@ Specify the read index that follows this read.
 
 *   is optional
 
-*   Type: `integer`
+*   Type: `integer` ([Precedes read index](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-precedes-read-index.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-precedesreadindex.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder/properties/precedesReadIndex")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-precedes-read-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder/properties/precedesReadIndex")
 
 ### precedesReadIndex Type
 
-`integer`
+`integer` ([Precedes read index](ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order-properties-precedes-read-index.md))

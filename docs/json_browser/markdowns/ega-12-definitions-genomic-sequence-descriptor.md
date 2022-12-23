@@ -24,7 +24,7 @@ any of
 
 | Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                          |
 | :------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assemblyDescriptor](#assemblydescriptor)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/assemblyDescriptor")                                     |
+| [assemblyDescriptor](#assemblydescriptor)   | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/assemblyDescriptor")                                     |
 | [sequenceCoordinates](#sequencecoordinates) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/sequenceCoordinates")                                         |
 | [dnaSequenceStrand](#dnasequencestrand)     | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/dnaSequenceStrand")                                            |
 | [nucleicAcidSequence](#nucleicacidsequence) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/nucleicAcidSequence") |
@@ -46,12 +46,6 @@ Node describing a sequence assembly referenced in [NCBI's Assembly database](htt
 ### assemblyDescriptor Type
 
 `object` ([NCBI's Assembly descriptor](ega-12-definitions-ncbis-assembly-descriptor.md))
-
-any of
-
-*   [Or the Assembly accession is required](ega-12-definitions-ncbis-assembly-descriptor-anyof-or-the-assembly-accession-is-required.md "check type definition")
-
-*   [Or the Assembly unit accession is required](ega-12-definitions-ncbis-assembly-descriptor-anyof-or-the-assembly-unit-accession-is-required.md "check type definition")
 
 ## sequenceCoordinates
 

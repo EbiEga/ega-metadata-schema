@@ -16,15 +16,15 @@ A policy, also known as Data Access Agreement (DAA), is a contract made between 
 
 # EGA policy metadata schema Properties
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                   |
-| :------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")                        |
-| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")               |
-| [objectTitle](#objecttitle)                 | `string` | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")                   |
-| [policyDescriptor](#policydescriptor)       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")                |
-| [duoCodesCuries](#duocodescuries)           | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes-curies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodesCuries") |
-| [policyRelationships](#policyrelationships) | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships")          |
-| [policyAttributes](#policyattributes)       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyAttributes")         |
+| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
+| :------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")                |
+| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")       |
+| [objectTitle](#objecttitle)                 | `string` | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")           |
+| [policyDescriptor](#policydescriptor)       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")        |
+| [duoCodes](#duocodes)                       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")      |
+| [policyRelationships](#policyrelationships) | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships")  |
+| [policyAttributes](#policyattributes)       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-16-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyAttributes") |
 
 ## objectId
 
@@ -122,25 +122,25 @@ any of
 
 *   [Or the policy text is given](ega-16-properties-policy-descriptor-anyof-or-the-policy-text-is-given.md "check type definition")
 
-## duoCodesCuries
+## duoCodes
 
-Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) format. These allow to semantically tag datasets (bound by policies) with restriction about their usage, making them discoverable automatically based on the authorization level of users, or intended usage. See more info at <https://obofoundry.org/ontology/duo.html> and search for DUO codes at <https://www.ebi.ac.uk/ols/ontologies/duo>
+Collection of Data Use Ontology (DUO) codes. These allow to semantically tag datasets (bound by policies) with restriction about their usage, improving their discoverability based on the authorization level of users, or intended usage. See more info at <https://obofoundry.org/ontology/duo.html> and search for DUO codes at <https://www.ebi.ac.uk/ols/ontologies/duo>
 
-`duoCodesCuries`
+`duoCodes`
 
 *   is optional
 
-*   Type: `string[]` ([Data Use Ontology (DUO) code](ega-16-properties-data-use-ontology-duo-codes-curies-data-use-ontology-duo-code.md))
+*   Type: `object[]` ([Data Use Ontology (DUO)](ega-16-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md))
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes-curies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodesCuries")
+*   defined in: [EGA policy metadata schema](ega-16-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")
 
-### duoCodesCuries Type
+### duoCodes Type
 
-`string[]` ([Data Use Ontology (DUO) code](ega-16-properties-data-use-ontology-duo-codes-curies-data-use-ontology-duo-code.md))
+`object[]` ([Data Use Ontology (DUO)](ega-16-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md))
 
-### duoCodesCuries Constraints
+### duoCodes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

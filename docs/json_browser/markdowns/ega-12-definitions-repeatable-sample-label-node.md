@@ -16,16 +16,16 @@ The base node of a label-sample association. One form of basic identification of
 
 # sampleLabelAssociation Properties
 
-| Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
-| :-------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [label](#label)       | `object` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/label")                                   |
-| [objectId](#objectid) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/objectId") |
+| Property                  | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
+| :------------------------ | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [arrayLabel](#arraylabel) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/arrayLabel")                              |
+| [objectId](#objectid)     | Merged | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/objectId") |
 
-## label
+## arrayLabel
 
-Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.
+Chemical conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node defines one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described.
 
-`label`
+`arrayLabel`
 
 *   is required
 
@@ -33,11 +33,17 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/label")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/arrayLabel")
 
-### label Type
+### arrayLabel Type
 
 `object` ([Repeatable arrayLabel node](ega-12-definitions-repeatable-arraylabel-node.md))
+
+any of
+
+*   [Untitled undefined type in EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-anyof-0.md "check type definition")
+
+*   [Untitled undefined type in EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-anyof-1.md "check type definition")
 
 ## objectId
 

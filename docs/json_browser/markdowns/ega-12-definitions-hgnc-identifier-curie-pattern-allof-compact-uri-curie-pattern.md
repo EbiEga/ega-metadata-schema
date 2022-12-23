@@ -16,6 +16,8 @@ A [W3C Compact URI](https://www.w3.org/TR/curie/) formatted string. A CURIE stri
 
 ## 0 Constraints
 
+**minimum length**: the minimum number of characters for this string is: `1`
+
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp

@@ -18,7 +18,8 @@ Property that specifies whether the sample is subject to the (usually altered) c
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value       | Explanation                                                                                                                        |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `"case"`    | \[PATO:0000460]: Abnormal - A quality inhering in a bearer by virtue of the bearer's deviation from normal or average.             |
-| `"control"` | \[PATO:0000461]: Normal - A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average. |
+| Value              | Explanation                                                                                                                        |
+| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `"case"`           | \[PATO:0000460]: Abnormal - A quality inhering in a bearer by virtue of the bearer's deviation from normal or average.             |
+| `"control"`        | \[PATO:0000461]: Normal - A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average. |
+| `"not applicable"` | \[NCIT:C48660]: Determination of a case or control is not relevant for this condition under study.                                 |

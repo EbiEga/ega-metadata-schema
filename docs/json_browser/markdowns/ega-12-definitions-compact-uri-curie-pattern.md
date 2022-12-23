@@ -1,20 +1,22 @@
 # Compact URI (CURIE) pattern Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtypeCurie/allOf/0
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieHgncSymbolPattern/allOf/0
 ```
 
 A [W3C Compact URI](https://www.w3.org/TR/curie/) formatted string. A CURIE string has the structure `prefix`:`reference`, as defined by the W3C syntax. Even though we do not restrict prefixes, we recommend that the term used as `prefix` is uniformely resolved. In other words, it is better to use prefixes (e.g. 'ensembl') from identifiers.org.
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                       |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.protocol.json\*](../../../schemas/EGA.protocol.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                           |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## 0 Type
 
 `string` ([Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md))
 
 ## 0 Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 **pattern**: the string must match the following regular expression:&#x20;
 

@@ -24,11 +24,11 @@ any of
 
 # sampleCollection Properties
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
-| :-------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sampleCollectionDate](#samplecollectiondate) | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/sampleCollectionDate")   |
-| [ageAtCollection](#ageatcollection)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection") |
-| [samplingSite](#samplingsite)                 | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite")                           |
+| Property                                      | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
+| :-------------------------------------------- | :----- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sampleCollectionDate](#samplecollectiondate) | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/sampleCollectionDate")   |
+| [ageAtCollection](#ageatcollection)           | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection") |
+| [samplingSite](#samplingsite)                 | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite")                           |
 
 ## sampleCollectionDate
 
@@ -78,7 +78,7 @@ any of
 
 ## samplingSite
 
-A site from which a sample, i.e. a statistically representative of the whole, is extracted from the whole.
+A site or entity from which a sample (i.e. a statistically representative of the whole) is extracted from the whole. Search for your sample collection site at <http://purl.obolibrary.org/obo/UBERON_0000465>. For example: in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.
 
 `samplingSite`
 
@@ -93,3 +93,9 @@ A site from which a sample, i.e. a statistically representative of the whole, is
 ### samplingSite Type
 
 `object` ([Sampling site](ega-18-properties-sample-collection-descriptor-properties-sampling-site.md))
+
+all of
+
+*   all of
+
+    *   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")

@@ -8,44 +8,47 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
 
 ## items Type
 
 `object` ([Phenotypic abnormality](ega-12-definitions-phenotypic-abnormality.md))
 
+all of
+
+*   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")
+
 # items Properties
 
-| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                            |
-| :-------------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [phenotypicAbnormalityCurie](#phenotypicabnormalitycurie) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityCurie") |
-| [phenotypicAbnormalityLabel](#phenotypicabnormalitylabel) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityLabel")             |
+| Property          | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                            |
+| :---------------- | :----- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [termId](#termid) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality/properties/termId") |
 
-## phenotypicAbnormalityCurie
-
+## termId
 
 
-`phenotypicAbnormalityCurie`
 
-*   is required
+`termId`
 
-*   Type: `string` ([Compact URI (CURIE) of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md))
+*   is optional
+
+*   Type: merged type ([Ontology constraints for this specific termId](ega-12-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityCurie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality/properties/termId")
 
-### phenotypicAbnormalityCurie Type
+### termId Type
 
-`string` ([Compact URI (CURIE) of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality.md))
+merged type ([Ontology constraints for this specific termId](ega-12-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
 
 any of
 
-*   [Ontology validation of phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
+*   [Ontology validation of phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
 
-*   [In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-phenotypic-abnormality-properties-compact-uri-curie-of-the-phenotypic-abnormality-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
+*   [In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
-### phenotypicAbnormalityCurie Examples
+### termId Examples
 
 ```json
 "HP:0003003"
@@ -65,48 +68,4 @@ any of
 
 ```json
 "NCIT:C94232"
-```
-
-## phenotypicAbnormalityLabel
-
-
-
-`phenotypicAbnormalityLabel`
-
-*   is optional
-
-*   Type: `string` ([Label of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md))
-
-*   cannot be null
-
-*   defined in: [EGA common metadata definitions](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor/properties/phenotypicAbnormalityLabel")
-
-### phenotypicAbnormalityLabel Type
-
-`string` ([Label of the phenotypic abnormality](ega-12-definitions-phenotypic-abnormality-properties-label-of-the-phenotypic-abnormality.md))
-
-### phenotypicAbnormalityLabel Constraints
-
-**minimum length**: the minimum number of characters for this string is: `1`
-
-### phenotypicAbnormalityLabel Examples
-
-```json
-"Colon cancer"
-```
-
-```json
-"Polydactyly"
-```
-
-```json
-"Waddling gait"
-```
-
-```json
-"Unknown"
-```
-
-```json
-"Unaffected"
 ```

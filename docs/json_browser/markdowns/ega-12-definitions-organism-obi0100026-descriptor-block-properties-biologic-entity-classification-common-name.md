@@ -14,8 +14,20 @@ Common name (e.g. 'human') used to designate a plant, animal or other organism, 
 
 `string` ([Biologic entity classification common name](ega-12-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
 
+## commonName Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## commonName Examples
 
 ```json
 "human"
+```
+
+```json
+"goat"
+```
+
+```json
+"horse"
 ```

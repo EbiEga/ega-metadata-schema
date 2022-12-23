@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/arrayExperiment/properties/arrayLabels/items
 ```
 
-Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node corresponds to the basic description of one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described. Its basic structure is a label ID and its optional CURIE.
+Chemical conjugated to nucleic acid/proteins to label them before microarray hybridisation. This node defines one single label, and thus should be repeated as an array where inherited if multiple labels are intended to be described.
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
@@ -14,94 +14,73 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 `object` ([Repeatable arrayLabel node](ega-12-definitions-repeatable-arraylabel-node.md))
 
+any of
+
+*   [Untitled undefined type in EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-anyof-0.md "check type definition")
+
+*   [Untitled undefined type in EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-anyof-1.md "check type definition")
+
 # items Properties
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                   |
-| :------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [arrayLabelId](#arraylabelid)         | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelId")              |
-| [arrayLabelCurie](#arraylabelcurie)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---curie.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelCurie")        |
-| [labelDescription](#labeldescription) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/labelDescription") |
+| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                              |
+| :---------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [arrayLabelIdentifier](#arraylabelidentifier)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelIdentifier")   |
+| [arrayLabelDescription](#arraylabeldescription) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelDescription") |
 
-## arrayLabelId
+## arrayLabelIdentifier
 
-ID/name (e.g. 'Cy3 dye' or 'Biotin') of the Array label used for the experiment.
+The chosen term (e.g. 'Cy3 dye' \[CHEBI:37987]) needs to be a Chemical Entity from the CHEBI ontology, look for yours at: <https://www.ebi.ac.uk/ols/search?q=&ontology=chebi>
 
-`arrayLabelId`
-
-*   is required
-
-*   Type: `string` ([Array label of the array experiment - ID](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---id.md))
-
-*   cannot be null
-
-*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelId")
-
-### arrayLabelId Type
-
-`string` ([Array label of the array experiment - ID](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---id.md))
-
-### arrayLabelId Examples
-
-```json
-"Cy3 dye"
-```
-
-## arrayLabelCurie
-
-CURIE (i.e. ontologized term - e.g. 'CHEBI:37987' or 'CHEBI:15956') of the Array label used for the experiment. Search for the ontologized term at the [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index).
-
-`arrayLabelCurie`
+`arrayLabelIdentifier`
 
 *   is optional
 
-*   Type: `string` ([Array label of the array experiment - CURIE](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---curie.md))
+*   Type: `object` ([Array label identifier](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---curie.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelCurie")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelIdentifier")
 
-### arrayLabelCurie Type
+### arrayLabelIdentifier Type
 
-`string` ([Array label of the array experiment - CURIE](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---curie.md))
+`object` ([Array label identifier](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md))
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-12-definitions-compact-uri-curie-pattern.md "check type definition")
+*   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")
 
-### arrayLabelCurie Examples
+## arrayLabelDescription
 
-```json
-"CHEBI:37987"
-```
+Additional description of the used array label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etcetera.
 
-## labelDescription
-
-Additional description of the used label, indicating further details: context, purpose of the label, description of the label in the absence of an ontologized term, etc.
-
-`labelDescription`
+`arrayLabelDescription`
 
 *   is optional
 
-*   Type: `string` ([Array label of the array experiment - Description](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---description.md))
+*   Type: `string` ([Array label description](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-description.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/labelDescription")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelDescription")
 
-### labelDescription Type
+### arrayLabelDescription Type
 
-`string` ([Array label of the array experiment - Description](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-of-the-array-experiment---description.md))
+`string` ([Array label description](ega-12-definitions-repeatable-arraylabel-node-properties-array-label-description.md))
 
-### labelDescription Examples
+### arrayLabelDescription Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+### arrayLabelDescription Examples
 
 ```json
-"This label was use to dye the control samples"
+"This label was used to dye the control samples"
 ```
 
 ```json
-"This newly discovered label (yet to be added to an ontology) consists in a compound of type X..."
+"This newly discovered label (yet to be added to an ontology) consists of a compound of type X..."
 ```
 
 ```json
-"The label ID is unknown because we were given the RNA already dyed..."
+"The label ID is unknown because we were given an already dyed kit..."
 ```

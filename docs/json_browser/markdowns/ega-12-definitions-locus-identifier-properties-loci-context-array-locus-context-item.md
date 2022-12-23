@@ -28,7 +28,7 @@ any of
 | :-------------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [geneDescriptor](#genedescriptor)                         | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/geneDescriptor")                                                                                                              |
 | [genomicSequenceDescriptor](#genomicsequencedescriptor)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/genomicSequenceDescriptor")                                                                                       |
-| [locusExternalReference](#locusexternalreference)         | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")                                                                           |
+| [locusExternalReference](#locusexternalreference)         | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-object-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")                                                                                            |
 | [locusAdditionalDescription](#locusadditionaldescription) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-12-definitions-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusAdditionalDescription") |
 
 ## geneDescriptor
@@ -75,27 +75,27 @@ any of
 
 ## locusExternalReference
 
-External accession node containing the object accession (i.e. unique identifier -  each following their respective formats) assigned by other archives (e.g. biosample, ena, ensembl...) and an optional label to add context to the reference.
+External accession property defining a reference to an external record in another resource. For example, a reference to a sequence deposited in NCBI's Nucleotide database (e.g. '<https://identifiers.org/nucleotide:T35715.1>'); or a sample record in BioSamples (e.g. '<https://identifiers.org/biosample:SAMEA7616999>').
 
 `locusExternalReference`
 
 *   is optional
 
-*   Type: `object` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
+*   Type: `object` ([Object External accession](ega-12-definitions-object-external-accession.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-object-of-external-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-object-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")
 
 ### locusExternalReference Type
 
-`object` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
+`object` ([Object External accession](ega-12-definitions-object-external-accession.md))
 
 any of
 
-*   [Either the CURIE is needed](ega-12-definitions-object-of-external-accession-of-the-object-anyof-either-the-curie-is-needed.md "check type definition")
+*   [Either the identifier is needed](ega-12-definitions-object-external-accession-anyof-either-the-identifier-is-needed.md "check type definition")
 
-*   [Or the reference is needed](ega-12-definitions-object-of-external-accession-of-the-object-anyof-or-the-reference-is-needed.md "check type definition")
+*   [Or the reference is needed](ega-12-definitions-object-external-accession-anyof-or-the-reference-is-needed.md "check type definition")
 
 ## locusAdditionalDescription
 

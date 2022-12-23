@@ -119,7 +119,7 @@ External accession node to reference objects in other archives (e.g. an already 
 
 *   is optional
 
-*   Type: `object[]` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
+*   Type: `object[]` ([Object External accession](ega-12-definitions-object-external-accession.md))
 
 *   cannot be null
 
@@ -127,7 +127,7 @@ External accession node to reference objects in other archives (e.g. an already 
 
 ### externalAccessions Type
 
-`object[]` ([Object of external accession of the object](ega-12-definitions-object-of-external-accession-of-the-object.md))
+`object[]` ([Object External accession](ega-12-definitions-object-external-accession.md))
 
 ### externalAccessions Constraints
 

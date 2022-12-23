@@ -19,7 +19,7 @@ One individual sample status of the array.
 | Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                           |
 | :------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [caseVsControl](#casevscontrol)             | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-case-vs-control.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/caseVsControl")        |
-| [conditionUnderStudy](#conditionunderstudy) | `object` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy") |
+| [conditionUnderStudy](#conditionunderstudy) | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy") |
 
 ## caseVsControl
 
@@ -43,14 +43,15 @@ Property that specifies whether the sample is subject to the (usually altered) c
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value       | Explanation                                                                                                                        |
-| :---------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `"case"`    | \[PATO:0000460]: Abnormal - A quality inhering in a bearer by virtue of the bearer's deviation from normal or average.             |
-| `"control"` | \[PATO:0000461]: Normal - A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average. |
+| Value              | Explanation                                                                                                                        |
+| :----------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `"case"`           | \[PATO:0000460]: Abnormal - A quality inhering in a bearer by virtue of the bearer's deviation from normal or average.             |
+| `"control"`        | \[PATO:0000461]: Normal - A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average. |
+| `"not applicable"` | \[NCIT:C48660]: Determination of a case or control is not relevant for this condition under study.                                 |
 
 ## conditionUnderStudy
 
-One of the primary conditions under study (CUS). Notice that the sample may or may not be affected by this condition under study, belonging to the case or control groups respectively.
+One of the primary conditions under study (CUS). For example: treated with cisplatin, sample taken from a fibroadenoma, osteonecrosis, differences in sequencing workflows, etcetera. Notice that the sample may or may not be affected by this condition under study, belonging to the case or control groups respectively (defined by 'caseVsControl' for each CUS).
 
 `conditionUnderStudy`
 
@@ -65,3 +66,7 @@ One of the primary conditions under study (CUS). Notice that the sample may or m
 ### conditionUnderStudy Type
 
 `object` ([Sample condition](ega-18-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md))
+
+all of
+
+*   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")

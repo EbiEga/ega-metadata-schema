@@ -58,7 +58,7 @@ The value of the attribute (e.g. '40').
 
 *   is required
 
-*   Type: any of the folllowing: `string` or `number` ([Value of the custom attribute](ega-12-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
+*   Type: any of the following: `string` or `number` ([Value of the custom attribute](ega-12-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
 
 *   cannot be null
 
@@ -66,7 +66,7 @@ The value of the attribute (e.g. '40').
 
 ### value Type
 
-any of the folllowing: `string` or `number` ([Value of the custom attribute](ega-12-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
+any of the following: `string` or `number` ([Value of the custom attribute](ega-12-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
 
 ### value Examples
 

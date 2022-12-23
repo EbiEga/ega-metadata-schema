@@ -23,8 +23,8 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 | `"high Content Screen (HCS)"`         | \[EFO:0007570] |
 | `"conversion"`                        | \[EFO:0005520] |
 | `"delivery method"`                   | \[EFO:0000395] |
-| `"dissection"`                        |                |
-| `"dissociation"`                      |                |
+| `"dissection"`                        | \[EFO:0005519] |
+| `"dissociation"`                      | \[EFO:0009088] |
 | `"enrichment"`                        | \[EFO:0009089] |
 | `"extraction"`                        | \[EFO:0002944] |
 | `"gene expression"`                   | \[EFO:0003788] |

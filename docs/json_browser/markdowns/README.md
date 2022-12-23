@@ -48,7 +48,11 @@
 
 ### Objects
 
+*   [Alternate gene identifier item](./ega-12-definitions-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md "One of the possible alternate gene identifiers for the designated gene") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneIdentifiers/items`
+
 *   [Analysis type specifications](./ega-10-properties-analysis-type-specifications.md "Node containing different sets of fields that depend on the specific analysis type") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications`
+
+*   [Array label identifier](./ega-12-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md "The chosen term (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelIdentifier`
 
 *   [Assay technology](./ega-12-definitions-assay-technology.md "Metadata of the assay instrument (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor`
 
@@ -56,7 +60,7 @@
 
 *   [Basecall](./ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items`
 
-*   [Cell type](./ega-12-definitions-cell-type.md "Property to describe a cell type: a distinct morphological or functional form of cell") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellTypeDescriptor`
+*   [Cell type](./ega-12-definitions-cell-type.md "Property to describe a cell type: a distinct morphological or functional form of cell") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellType`
 
 *   [Cell type](./ega-18-properties-array-of-cell-types-cell-type.md "One of the cell types that can be found in your sample or from which the genetic content was derived") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items`
 
@@ -78,7 +82,9 @@
 
 *   [DAC contacts' details](./ega-8-properties-dac-contacts-details.md "Object containing the main contact's and optional additional contact's details") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts`
 
-*   [Disease](./ega-12-definitions-disease.md "Property to describe a disease (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/diseaseDescriptor`
+*   [Data Use Ontology (DUO)](./ega-16-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md "Single Data Use Ontology (DUO) code") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes/items`
+
+*   [Disease](./ega-12-definitions-disease.md "Property to describe a disease (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease`
 
 *   [EGA File object](./ega-12-definitions-ega-file-object.md "Object containing the base metadata attributes of a file object in the EGA") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject`
 
@@ -88,13 +94,15 @@
 
 *   [Experiment type specifications](./ega-9-properties-experiment-type-specifications.md "Node containing additional attributes to describe the experiment, either array experiments (those in which an array instrument \[EFO:0002698] was used) or sequencing experiments (those in which a sequencing instrument \[EFO:0003739] was used)") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications`
 
-*   [Experimental condition](./ega-12-definitions-experimental-condition.md "A state of being, an external or environmental factor or a treatment observed or administered prior to or concurrent with an investigative procedure such as an assessment of a morphological or physiological state or property in a single individual or sample or in a group of individuals or samples, especially a state, factor or treatment which has the potential to influence the outcome of such an assessment") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/experimentalConditionDescriptor`
-
 *   [File content item](./ega-12-definitions-ega-file-object-properties-file-content-array-file-content-item.md "Item describing the type of data a file contains or represents") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent/items`
 
 *   [Gene descriptor](./ega-12-definitions-gene-descriptor.md "Node to uniquely identify a gene \[SO:0000704]: a region (or regions) that includes all of the sequence elements necessary to encode a functional transcript") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor`
 
+*   [Gene identifier](./ega-12-definitions-gene-descriptor-properties-gene-identifier.md "Property uniquely identifying a gene") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/geneIdentifier`
+
 *   [Genomic sequence descriptor](./ega-12-definitions-genomic-sequence-descriptor.md "Node used to describe with sufficient detail a genomic sequence (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor`
+
+*   [Identifier of the external accession](./ega-12-definitions-object-external-accession-properties-identifier-of-the-external-accession.md "Unique identifier of an external record") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionIdentifier`
 
 *   [Individual's age at sample collection](./ega-18-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "Property describing the individual's age at sample collection") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection`
 
@@ -104,11 +112,19 @@
 
 *   [Locus identifier](./ega-12-definitions-locus-identifier.md "Node to unambiguously identify loci \[OGI:0000022]: the unique chromosomal location defining the position of an individual gene or DNA sequence") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier`
 
+*   [Material anatomical entity](./ega-12-definitions-material-anatomical-entity.md "The part of organism's anatomy or substance arising from an organism from which the biomaterial was derived, exlucing cell types") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/materialAnatomicalEntity`
+
 *   [Minimal public attributes describing an individual](./ega-14-properties-minimal-public-attributes-describing-an-individual.md "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes`
+
+*   [NCBI Assembly](./ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly.md "Node defining an Assembly (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssembly`
+
+*   [NCBI Taxon of the organism](./ega-12-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "Taxonomic classification of the organism (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor/properties/organismTaxon`
+
+*   [NCBI assembly unit](./ega-12-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md "NCBI's identifier of the assembly unit") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnit`
 
 *   [NCBI's Assembly descriptor](./ega-12-definitions-ncbis-assembly-descriptor.md "Node describing a sequence assembly referenced in NCBI's Assembly database") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor`
 
-*   [Object of external accession of the object](./ega-12-definitions-object-of-external-accession-of-the-object.md "External accession node containing the object accession (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession`
+*   [Object External accession](./ega-12-definitions-object-external-accession.md "External accession property defining a reference to an external record in another resource") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession`
 
 *   [Object's IDs block](./ega-8-properties-objects-ids-block.md "Node containing the main identifiers of the object (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId`
 
@@ -134,15 +150,19 @@
 
 *   [Object's IDs block](./ega-17-properties-objects-ids-block.md "Node containing the main identifiers of the object (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId`
 
+*   [Ontology term](./ega-12-definitions-ontology-term.md "This property represents an ontology term (a") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ontologyTerm`
+
 *   [Organism \[OBI:0100026\] descriptor block](./ega-12-definitions-organism-obi0100026-descriptor-block.md "This property describes the material entity the sample consists in") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor`
 
-*   [Phenotypic abnormality](./ega-12-definitions-phenotypic-abnormality.md "Property to describe any abnormal (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormalityDescriptor`
+*   [Phenotypic abnormality](./ega-12-definitions-phenotypic-abnormality.md "Property to describe any abnormal (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality`
 
 *   [Policy descriptor](./ega-16-properties-policy-descriptor.md "Node containing the full description of the policy, whether it is hosted at some public resourced and referenced here; or directly written here") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor`
 
 *   [Protocol type descriptor](./ega-17-properties-protocol-type-descriptor.md "Node to contain the information about the type and subtype of the protocol") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor`
 
 *   [Read spec](./ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items`
+
+*   [Related gene identifier item](./ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/relatedGeneIdentifiers/items`
 
 *   [Relationship source: DAC](./ega-12-definitions-relationship-source-dac.md "Node to be used as an object type for relationship contraints") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDAC`
 
@@ -220,7 +240,7 @@
 
 *   [Repeatable Sample-label node](./ega-12-definitions-repeatable-sample-label-node.md "The base node of a label-sample association") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation`
 
-*   [Repeatable arrayLabel node](./ega-12-definitions-repeatable-arraylabel-node.md "Chemicals conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel`
+*   [Repeatable arrayLabel node](./ega-12-definitions-repeatable-arraylabel-node.md "Chemical conjugated to nucleic acid/proteins to label them before microarray hybridisation") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel`
 
 *   [Resource](./ega-20-properties-resources-ontologies-resource.md "Object defining one item of the array: an individual resource (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items`
 
@@ -232,7 +252,7 @@
 
 *   [Sample status item](./ega-18-properties-array-of-sample-statuses-sample-status-item.md "One individual sample status of the array") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items`
 
-*   [Sampling site](./ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "A site from which a sample, i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite`
+*   [Sampling site](./ega-18-properties-sample-collection-descriptor-properties-sampling-site.md "A site or entity from which a sample (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite`
 
 *   [Schema descriptor](./ega-12-definitions-schema-descriptor.md "This node is intended to be used to describe the schemas and standards that a JSON document was based on") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor`
 
@@ -254,6 +274,8 @@
 
 *   [Spot decode spec](./ega-12-definitions-spot-descriptor-spot-decode-spec.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items`
 
+*   [Subtype of the protocol](./ega-17-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "Ontology term of the protocol subtype") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype`
+
 *   [Target of the relationship](./ega-12-definitions-ega-relationships-object-properties-target-of-the-relationship.md "Object reference of the relationship's target") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rTarget`
 
 *   [Type of assay](./ega-9-properties-type-of-assay.md "Node defining the type of assay applicable to the experiment") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTypeDescriptor`
@@ -262,9 +284,7 @@
 
 *   [Additional DAC contacts' details](./ega-8-properties-dac-contacts-details-properties-additional-dac-contacts-details.md "An array compromising additional contact details to use when in need to reach the DAC yet the main contact is unresponsive or does not exist") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts/properties/additionalContacts`
 
-*   [Alternate gene IDs](./ega-12-definitions-gene-descriptor-properties-alternate-gene-ids.md "Array of alternate identifiers for this gene") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneIds`
-
-*   [Alternate gene symbols](./ega-12-definitions-gene-descriptor-properties-alternate-gene-symbols.md "Array of alternate gene sumbols") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneSymbols`
+*   [Alternate gene identifiers](./ega-12-definitions-gene-descriptor-properties-alternate-gene-identifiers.md "Array of alternate identifiers for this gene") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneIdentifiers`
 
 *   [Analysis custom attributes](./ega-10-properties-analysis-custom-attributes.md "Custom attributes of an analysis: reusable attributes to encode tag-value pairs (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisAttributes`
 
@@ -298,7 +318,7 @@
 
 *   [DAC relationships](./ega-8-properties-dac-relationships.md "Comprises metadata (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacRelationships`
 
-*   [Data Use Ontology (DUO) codes' curies](./ega-16-properties-data-use-ontology-duo-codes-curies.md "Collection of Data Use Ontology (DUO) codes in Shorter Compact URI (CURIE) format") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodesCuries`
+*   [Data Use Ontology (DUO) codes](./ega-16-properties-data-use-ontology-duo-codes.md "Collection of Data Use Ontology (DUO) codes") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes`
 
 *   [Data files produced from an assay](./ega-11-properties-data-files-produced-from-an-assay.md "This property contains the specific files (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayFiles`
 
@@ -346,7 +366,7 @@
 
 *   [Reference assembly and sequence details](./ega-12-definitions-reference-assembly-and-sequence-details.md "Node containing the information of the reference assembly that was used to obtain the sequence alignment") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/referenceAlignmentDetails`
 
-*   [Related (not equivalent) gene IDs](./ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-ids.md "Array of related identifiers") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/geneExternalReferences`
+*   [Related (not equivalent) gene identifiers](./ega-12-definitions-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "Array of related identifiers (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/relatedGeneIdentifiers`
 
 *   [Resources (ontologies)](./ega-20-properties-resources-ontologies.md "An array containing metadata of all the ontologies used in the submission") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources`
 
