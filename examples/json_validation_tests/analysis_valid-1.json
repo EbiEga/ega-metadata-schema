@@ -122,8 +122,10 @@
                 "lociDescriptor": [
                     {
                         "geneDescriptor": {
-                            "termId": "HGNC:11998",
-                            "termLabel": "TP53"
+                            "geneIdentifier": {
+                                "termId": "HGNC:11998",
+                                "termLabel": "TP53"
+                            }
                         },
                         "locusAdditionalDescription": "Variation within the VCF corresponds to TP53 variation among patients."
                     }
