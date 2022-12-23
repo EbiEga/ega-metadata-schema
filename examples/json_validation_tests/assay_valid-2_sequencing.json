@@ -63,15 +63,26 @@
             "sequencingAssaySpecifications": {
                 "referenceAlignmentDetails": [
                     {
-                        "assemblyName": "GRCh38.p14",
-                        "assemblyUnitName": "1",
-                        "ncbiAssemblyAccession": "assembly:GCF_000001405.26",
-                        "ncbiAssemblyUnitAccession": "refseq:NC_000001.11"
+                        "ncbiAssembly": {
+                            "termId": "assembly:GCF_000001405.26",
+                            "termLabel": "GRCh38.p14"
+                        },
+                        "ncbiAssemblyUnit": {
+                            "termId": "refseq:NC_000001.11",
+                            "termLabel": "chr1"
+                        }
                     },
                     {
-                        "assemblyUnitName": "2",
-                        "ncbiAssemblyUnitAccession": "refseq:NC_000002.12"
+                        "ncbiAssembly": {
+                            "termId": "assembly:GCF_000001405.26",
+                            "termLabel": "GRCh38.p14"
+                        },
+                        "ncbiAssemblyUnit": {
+                            "termId": "refseq:NC_000002.12",
+                            "termLabel": "chr2"
+                        }
                     }
+
                 ]
             }
         },

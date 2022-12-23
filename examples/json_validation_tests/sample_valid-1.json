@@ -2,14 +2,18 @@
     "data": {
         "cellTypes": [
             {
-                "cellTypeId": "CL:0000066",
-                "cellTypeLabel": "epithelial cell",
-                "inferredCellType": "not inferred"
+                "cellType": {
+                    "termId": "CL:0000066",
+                    "termLabel": "epithelial cell"
+                },
+                "cellTypeInferred": "not inferred"
             },
             {
-                "cellTypeId": "CL:0000097",
-                "cellTypeLabel": "mast cell",
-                "inferredCellType": "not inferred"
+                "cellType": {
+                    "termId": "CL:0000097",
+                    "termLabel": "mast cell"
+                },
+                "cellTypeInferred": "not inferred"
             }
         ],
         "objectDescription": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
@@ -20,9 +24,11 @@
         },
         "objectTitle": "Skin biopsy from COVID+ patient NM305004",
         "organismDescriptor": {
-            "commonName": "human",
-            "scientificName": "homo sapiens",
-            "taxonIdCurie": "NCBITaxon:9606"
+            "organismTaxon": {
+                "termId": "NCBITaxon:9606",
+                "termLabel": "homo sapiens"
+            },
+            "commonName": "human"
         },
         "sampleAttributes": [
             {
@@ -40,8 +46,8 @@
             },
             "sampleCollectionDate": "2021-12-20",
             "samplingSite": {
-                "sampledOrganismPart": "axilla skin",
-                "sampledOrganismPartCurie": "UBERON:0015474"
+                "termId": "UBERON:0015474",
+                "termLabel": "axilla skin"
             }
         },
         "sampleGrouping": {
@@ -62,8 +68,11 @@
                     "objectId": {
                         "externalAccessions": [
                             {
-                                "accessionLabel": "test relationship",
-                                "externalAccessionCurie": "biosample:SAMEA7616999"
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biosample:SAMEA7616999",
+                                    "termLabel": "test12345"
+                                },
+                                "objectExternalAccessionDescription": "A test sample"
                             }
                         ]
                     },
@@ -94,8 +103,8 @@
             {
                 "caseVsControl": "case",
                 "conditionUnderStudy": {
-                    "cusCurie": "XCO:0000398",
-                    "cusLabel": "treated with cisplatin"
+                    "termId": "XCO:0000398",
+                    "termLabel": "treated with cisplatin"
                 }
             }
         ],

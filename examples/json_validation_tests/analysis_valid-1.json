@@ -98,8 +98,10 @@
             ],
             "referenceAlignmentDetails": [
                 {
-                    "assemblyName": "GRCh38.p14",
-                    "ncbiAssemblyAccession": "assembly:GCA_000001405.29"
+                    "ncbiAssembly": {
+                        "termId": "assembly:GCA_000001405.29",
+                        "termLabel": "GRCh38.p14"
+                    }
                 }
             ]
         },
@@ -120,15 +122,18 @@
                 "lociDescriptor": [
                     {
                         "geneDescriptor": {
-                            "geneIdCurie": "HGNC:11998",
-                            "geneSymbol": "TP53"
+                            "termId": "HGNC:11998",
+                            "termLabel": "TP53"
                         },
                         "locusAdditionalDescription": "Variation within the VCF corresponds to TP53 variation among patients."
                     }
                 ],
                 "organismDescriptor": {
-                    "scientificName": "homo sapiens",
-                    "taxonIdCurie": "NCBITaxon:9606"
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
                 }
             }
         ],

@@ -55,8 +55,11 @@
             }
         ],
         "protocolTypeDescriptor": {
-            "protocolSubtypeCurie": "EFO:0005518",
-            "protocolType": "sample collection"
+            "protocolType": "sample collection",
+            "protocolSubtype": {
+                "termId": "NCIT:C48660",
+                "termLabel": "Not applicable"
+            }
         },
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",

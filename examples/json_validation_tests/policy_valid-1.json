@@ -1,9 +1,18 @@
 {
     "data": {
-        "duoCodesCuries": [
-            "DUO:0000046",
-            "DUO:0000028",
-            "IAO:0000620"
+        "duoCodes": [
+            {
+                "termId": "DUO:0000046",
+                "termLabel": "non-commercial use only"
+            },
+            {
+                "termId": "DUO:0000028",
+                "termLabel": "institution specific restriction"
+            },
+            {
+                "termId": "DUO:0000032",
+                "termLabel": "population research"
+            }
         ],
         "objectId": {
             "alias": "my-cancer-policy",

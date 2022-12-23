@@ -64,9 +64,11 @@
             }
         ],
         "protocolTypeDescriptor": {
-            "protocolSubtype": "Nucleic acid hybridization to array",
-            "protocolSubtypeCurie": "EFO:0003815",
-            "protocolType": "hybridization"
+            "protocolType": "hybridization",
+            "protocolSubtype": {
+                "termId": "EFO:0003815",
+                "termLabel": "Nucleic acid hybridization to array"
+            }
         },
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
