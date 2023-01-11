@@ -2256,7 +2256,7 @@
             "properties": {        
               "termId": {
                 "title": "Ontology constraints for this specific termId",
-                "graphRestriction":  {
+                "$graphRestriction":  {
                   "ontologies" : ["obo:NCBITAXON"],
                   "classes": ["NCBITaxon:1"],
                   "relations": ["rdfs:subClassOf"],
