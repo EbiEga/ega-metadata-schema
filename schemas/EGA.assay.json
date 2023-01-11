@@ -69,18 +69,18 @@
       "assayTypeSpecifications": {
         "type": "object",
         "title": "Assay type specifications",
-        "description": "Node containing different sets of fields that depend on the specific assay type. The main categories of assay types follow a similar pattern as the used technology: either array assays (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing assays (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its sample_arrayLabels will be expected. Having this modular assay type-related node allows for easy additions of new technology-specific requirements.",
+        "description": "Node containing different sets of fields that depend on the instrument used for the assay: either array assays (those in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing assays (those in which a [sequencing instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its arraySampleLabels will be expected. Having this modular assay type-related node allows for easy additions of new technology-specific requirements.",
         "additionalProperties": false,
-        "required": ["assayType"],
+        "required": ["assayInstrument"],
         "properties": {
-          "assayType": {
+          "assayInstrument": {
             "type": "string",
             "title": "Assay type",
             "description": "The general categories, either sequencing or array, in which assays are categorized based on the used instruments. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-            "enum": ["array", "sequencing"],
+            "enum": ["array", "sequencer"],
             "meta:enum": {
               "array": "An assay in which an [array instrument [EFO:0002698]](http://www.ebi.ac.uk/efo/EFO_0002698) was used.",
-              "sequencing": "An assay in which a [sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used."
+              "sequencer": "An assay in which a [sequencer instrument [EFO:0003739]](http://www.ebi.ac.uk/efo/EFO_0003739) was used."
             }
           },
           "arrayAssaySpecifications": {
@@ -159,7 +159,7 @@
           "sequencingAssaySpecifications": {
             "type": "object",
             "title": "Specifications of a sequencing assay",
-            "description": "Node containing the set of fields specific to an assay of type 'sequencing' (i.e. a sequencer was used to obtain the raw data).",
+            "description": "Node containing the set of fields specific to an assay of type 'sequencer' (i.e. a sequencer was used to obtain the raw data).",
             "additionalProperties": false,
             "properties": {
               "referenceAlignmentDetails": {
@@ -174,9 +174,9 @@
           {
             "title": "If the assay is of type array its specifications will be expected",
             "if": {
-              "required": ["assayType"],
+              "required": ["assayInstrument"],
               "properties": {
-                "assayType": {
+                "assayInstrument": {
                       "enum": ["array"]
                 }
               }
@@ -389,8 +389,8 @@
           "properties": {
             "assayTypeSpecifications": {
               "properties": {
-                "assayType": {
-                  "const": "sequencing"
+                "assayInstrument": {
+                  "const": "sequencer"
                 }
               }
             }
@@ -416,7 +416,7 @@
           "properties": {
             "assayTypeSpecifications": {
               "properties": {
-                "assayType": {
+                "assayInstrument": {
                   "const": "array"
                 }
               }
