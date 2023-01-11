@@ -6,7 +6,7 @@
     "meta:version": "0.0.0",
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["objectId", "assayTechnology", "assayType", "assayedMoleculeType", "experimentTypeSpecifications"],
+    "required": ["objectId", "assayTechnology", "assayType", "assayedBiologicalMacromolecule", "experimentTypeSpecifications"],
     "additionalProperties": false,
     "properties": {
       "objectId": {
@@ -88,7 +88,7 @@
                   "ontologies" : ["obo:efo"],
                   "classes": ["EFO:0003740"],
                   "relations": ["rdfs:subClassOf"],
-                  "direct": true,
+                  "direct": false,
                   "include_self": false
                 }
               },
@@ -98,7 +98,7 @@
                   "ontologies" : ["obo:efo"],
                   "classes": ["EFO:0002696"],
                   "relations": ["rdfs:subClassOf"],
-                  "direct": true,
+                  "direct": false,
                   "include_self": false
                 }
               }
@@ -122,7 +122,6 @@
         "properties": {        
           "termId": {
             "title": "Ontology constraints for this specific termId",
-            "description": "",
             "graphRestriction ":  {
               "ontologies" : ["obo:efo"],
               "classes": ["EFO:0004446"],
@@ -405,6 +404,94 @@
           }
         }
       }
-    ]
-      
+    ],
+
+    "allOf": [
+      {
+        "title": "If the assayed molecule is 'deoxyribonucleic acid' then, the assay type must be of 'DNA asay' type",
+        "if": {
+          "required": ["assayedBiologicalMacromolecule"],
+          "properties": {
+            "assayedBiologicalMacromolecule": {
+              "required": ["termId"],
+              "properties": {
+                "termId": {
+                  "title": "Ontology constraint for 'deoxyribonucleic acid'",
+                  "graphRestriction ":  {
+                    "ontologies" : ["obo:efo"],
+                    "classes": ["CHEBI:16991"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "required": ["assayType"],
+          "properties": {
+            "assayType": {
+              "required": ["termId"],
+              "properties": {
+                "termId": {
+                  "title": "Ontology constraint for 'DNA assay'",
+                  "graphRestriction":  {
+                    "ontologies" : ["obo:efo"],
+                    "classes": ["EFO:0001456"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": false
+                  }
+                }                
+              }
+            }
+          }
+        }
+      },
+      {
+        "title": "If the assayed molecule is 'ribonucleic acid' then, the assay type must be of 'RNA asay' type",
+        "if": {
+          "required": ["assayedBiologicalMacromolecule"],
+          "properties": {
+            "assayedBiologicalMacromolecule": {
+              "required": ["termId"],
+              "properties": {
+                "termId": {
+                  "title": "Ontology constraint for 'ribonucleic acid'",
+                  "graphRestriction ":  {
+                    "ontologies" : ["obo:efo"],
+                    "classes": ["CHEBI:33697"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "required": ["assayType"],
+          "properties": {
+            "assayType": {
+              "required": ["termId"],
+              "properties": {
+                "termId": {
+                  "title": "Ontology constraint for 'RNA assay'",
+                  "graphRestriction":  {
+                    "ontologies" : ["obo:efo"],
+                    "classes": ["EFO:0001457"],
+                    "relations": ["rdfs:subClassOf"],
+                    "direct": false,
+                    "include_self": false
+                  }
+                }                
+              }
+            }
+          }
+        }
+      }
+    ]      
   }
