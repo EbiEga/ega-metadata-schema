@@ -229,7 +229,7 @@ Regular expression to check the syntax of a date following 'ISO 8601 date' forma
 
 ## assayTypeSpecifications
 
-Node containing different sets of fields that depend on the specific assay type. The main categories of assay types follow a similar pattern as the used technology: either array assays (those in which an [array instrument \[EFO:0002698\]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing assays (those in which a [sequencing instrument \[EFO:0003739\]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its sample\_arrayLabels will be expected. Having this modular assay type-related node allows for easy additions of new technology-specific requirements.
+Node containing different sets of fields that depend on the instrument used for the assay: either array assays (those in which an [array instrument \[EFO:0002698\]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing assays (those in which a [sequencing instrument \[EFO:0003739\]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). Depending on the used technology, different types of fields will be required. For example, if an array was used, its arraySampleLabels will be expected. Having this modular assay type-related node allows for easy additions of new technology-specific requirements.
 
 `assayTypeSpecifications`
 

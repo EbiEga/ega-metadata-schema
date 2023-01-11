@@ -56,7 +56,9 @@
 
 *   [Assay technology](./ega-12-definitions-assay-technology.md "Metadata of the assay instrument (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor`
 
-*   [Assay type specifications](./ega-11-properties-assay-type-specifications.md "Node containing different sets of fields that depend on the specific assay type") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications`
+*   [Assay type specifications](./ega-11-properties-assay-type-specifications.md "Node containing different sets of fields that depend on the instrument used for the assay: either array assays (those in which an array instrument \[EFO:0002698] was used) or sequencing assays (those in which a sequencing instrument \[EFO:0003739] was used)") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications`
+
+*   [Assayed biological macromolecule](./ega-9-properties-assayed-biological-macromolecule.md "Node containing information about the assayed biological macromolecule: the material entity (e") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayedBiologicalMacromolecule`
 
 *   [Basecall](./ega-12-definitions-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items`
 
@@ -264,7 +266,7 @@
 
 *   [Source of the relationship](./ega-12-definitions-ega-relationships-object-properties-source-of-the-relationship.md "Object reference of the relationship's source") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rSource`
 
-*   [Specifications of a sequencing assay](./ega-11-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "Node containing the set of fields specific to an assay of type 'sequencing' (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications`
+*   [Specifications of a sequencing assay](./ega-11-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "Node containing the set of fields specific to an assay of type 'sequencer' (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications`
 
 *   [Specifications of a sequencing experiment](./ega-9-properties-experiment-type-specifications-properties-specifications-of-a-sequencing-experiment.md "Node containing the set of fields specific to an experiment of sequencing-type (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment`
 
@@ -278,7 +280,7 @@
 
 *   [Target of the relationship](./ega-12-definitions-ega-relationships-object-properties-target-of-the-relationship.md "Object reference of the relationship's target") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rTarget`
 
-*   [Type of assay](./ega-9-properties-type-of-assay.md "Node defining the type of assay applicable to the experiment") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTypeDescriptor`
+*   [Type of used assay](./ega-9-properties-type-of-used-assay.md "Node defining the type of assay applicable to the experiment") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayType`
 
 ### Arrays
 
