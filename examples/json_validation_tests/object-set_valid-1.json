@@ -2,103 +2,42 @@
     "data": {
         "objectArray": [
             {
-                "assayTechnology": {
-                    "assayInstrument": "array",
-                    "assayInstrumentPlatform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
-                },
-                "assayType": {
-                    "termId": "EFO:0002764",   
-                    "termLabel": "ChIP-chip by SNP array"
-                },
-                "assayedMoleculeType": "DNA",
-                "experimentAttributes": [
+                "assayAttributes": [
                     {
-                        "tag": "sub_project",
-                        "value": "CB4-1UD"
+                        "tag": "weather",
+                        "value": "When the assay was executed it was sunny outside"
                     },
                     {
-                        "tag": "experiments_budget",
-                        "units": "GBP",
-                        "value": 20500
+                        "tag": "assay price",
+                        "units": "euros",
+                        "value": 200
                     }
                 ],
-                "experimentRelationships": [
+                "assayCenter": "EBI-TEST",
+                "assayDate": "2022-02-13",
+                "assayFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                        "filename": "myfile1_M3051057.cel.gpg",
+                        "filetype": "CEL",
+                        "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                        "filename": "myfile2_M3051057.cel.gpg",
+                        "filetype": "CEL",
+                        "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+                    }
+                ],
+                "assayRelationships": [
                     {
                         "rSource": {
                             "objectId": {
-                                "egaAccession": "EGAS00002045411"
+                                "egaAccession": "EGAX00002094401"
                             },
-                            "objectType": "study"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rTarget": {
-                            "objectId": {
-                                "egaAccession": "EGAZ00001051423"
-                            },
-                            "objectType": "analysis"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rSource": {
-                            "objectId": {
-                                "alias": "Patient's blood collection protocol",
-                                "egaAccession": "EGAO00001031671"
-                            },
-                            "objectType": "protocol"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rSource": {
-                            "objectId": {
-                                "alias": "Extraction of the RNA",
-                                "egaAccession": "EGAO00001031672"
-                            },
-                            "objectType": "protocol"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
-                        "rSource": {
-                            "objectId": {
-                                "alias": "Protocol to label extracted RNA",
-                                "egaAccession": "EGAO00001031673"
-                            },
-                            "objectType": "protocol"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rSource": {
-                            "objectId": {
-                                "alias": "Hibridization of the RNA to the array",
-                                "egaAccession": "EGAO00001031674"
-                            },
-                            "objectType": "protocol"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rSource": {
-                            "objectId": {
-                                "alias": "Scanning of the array",
-                                "egaAccession": "EGAO00001031675"
-                            },
-                            "objectType": "protocol"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rSource": {
-                            "objectId": {
-                                "alias": "Normalization of the data",
-                                "egaAccession": "EGAO00001031676"
-                            },
-                            "objectType": "protocol"
+                            "objectType": "experiment"
                         },
                         "rType": "referencedBy"
                     },
@@ -112,81 +51,47 @@
                         "rType": "referencedBy"
                     }
                 ],
-                "experimentTypeSpecifications": {
-                    "arrayExperiment": {
-                        "adfFiles": [
+                "assayTypeSpecifications": {
+                    "assayInstrument": "array",
+                    "arrayAssaySpecifications": {
+                        "arraySampleLabels": [
                             {
-                                "checksumMethod": "MD5",
-                                "encryptedChecksum": "c6779ec2960296ed9a04f08d67f64423",
-                                "filename": "myADF-file.xlsx",
-                                "filetype": "XLSX",
-                                "unencryptedChecksum": "c6779ec2960296ed9a04f08d67f64423"
-                            }
-                        ],
-                        "arrayLabels": [
-                            {
-                                "arrayLabelCurie": "CHEBI:37987",
-                                "arrayLabelId": "Cy3 dye",
-                                "labelDescription": "This label was use to dye the control samples"
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37987",   
+                                        "termLabel": "Cy3"
+                                    }             
+                                },
+                                "objectId": {
+                                    "egaAccession": "EGAN00002094401"
+                                }
                             },
                             {
-                                "arrayLabelCurie": "CHEBI:15956",
-                                "arrayLabelId": "Biotin"
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37989",   
+                                        "termLabel": "Cy5"
+                                    }
+                                },
+                                "objectId": {
+                                    "egaAccession": "EGAN00002094453"
+                                }
                             }
-                        ]
+                        ],
+                        "nLabelsPerArray": 2
                     }
                 },
-                "objectDescription": "Example array experiment's description of my experiment N13.",
                 "objectId": {
-                    "alias": "My_ChIP_arrayExperiment_13",
+                    "alias": "My_array_assay_M3051057",
                     "centerName": "EBI-TEST"
                 },
-                "objectTitle": "Example array experiment title",
-                "targetedLoci": [
-                    {
-                        "lociDescriptor": [
-                            {
-                                "geneDescriptor": {
-                                    "geneIdCurie": "HGNC:11998",
-                                    "geneSymbol": "TP53"
-                                },
-                                "locusAdditionalDescription": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
-                            },
-                            {
-                                "genomicSequenceDescriptor": {
-                                    "assemblyDescriptor": {
-                                        "assemblyName": "GRCh38.p14",
-                                        "assemblyUnitName": "Chromosome 17",
-                                        "ncbiAssemblyAccession": "assembly:GCA_000001405.29",
-                                        "ncbiAssemblyUnitAccession": "refseq:NC_000017.11"
-                                    },
-                                    "dnaSequenceStrand": "forward",
-                                    "nucleicAcidSequence": "CTTGTTCAGTG",
-                                    "sequenceCoordinates": {
-                                        "sequenceInterval": {
-                                            "end": 7669460,
-                                            "start": 7669450
-                                        }
-                                    }
-                                }
-                            },
-                            {
-                                "locusAdditionalDescription": "Additional locus that was placed in the array for SNP scanning for the purpose of individuals identification as tags...",
-                                "locusExternalReference": {
-                                    "accessionLabel": "EST89992 Human Small intestine Homo sapiens cDNA 5' end",
-                                    "externalAccessionCurie": "nucleotide:T35715.1"
-                                }
-                            }
-                        ],
-                        "organismDescriptor": {
-                            "scientificName": "homo sapiens",
-                            "taxonIdCurie": "NCBITaxon:9606"
-                        }
-                    }
-                ],
-                "typesOfOutputData": [
-                    "genomic data"
-                ]
+                "objectTitle": "Breast cancer array assay M3051057",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "assay"
+                }
             },
             {
                 "assayAttributes": [
@@ -222,85 +127,6 @@
                     {
                         "rSource": {
                             "objectId": {
-                                "egaAccession": "EGAX00002095401"
-                            },
-                            "objectType": "experiment"
-                        },
-                        "rType": "referencedBy"
-                    },
-                    {
-                        "rSource": {
-                            "objectId": {
-                                "egaAccession": "EGAB00002045411"
-                            },
-                            "objectType": "submission"
-                        },
-                        "rType": "referencedBy"
-                    }
-                ],
-                "assayTypeSpecifications": {
-                    "assayInstrument": "sequencer",
-                    "sequencingAssaySpecifications": {
-                        "referenceAlignmentDetails": [
-                            {
-                                "assemblyName": "GRCh38.p14",
-                                "assemblyUnitName": "1",
-                                "ncbiAssemblyAccession": "assembly:GCF_000001405.26",
-                                "ncbiAssemblyUnitAccession": "refseq:NC_000001.11"
-                            },
-                            {
-                                "assemblyUnitName": "2",
-                                "ncbiAssemblyUnitAccession": "refseq:NC_000002.12"
-                            }
-                        ]
-                    }
-                },
-                "objectId": {
-                    "alias": "My_sequencing_assay_M305004",
-                    "centerName": "EBI-TEST"
-                },
-                "objectTitle": "Breast cancer sequencing assay M305004",
-                "schemaDescriptor": {
-                    "commonSchemaVersion": "0.0.0",
-                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
-                    "objectSchemaVersion": "0.0.0",
-                    "objectType": "assay"
-                }
-            },
-            {
-                "assayAttributes": [
-                    {
-                        "tag": "weather",
-                        "value": "When the assay was executed it was rainy outside"
-                    },
-                    {
-                        "tag": "assay price",
-                        "units": "euros",
-                        "value": 200
-                    }
-                ],
-                "assayCenter": "EBI-TEST",
-                "assayDate": "2022-02-13",
-                "assayFiles": [
-                    {
-                        "checksumMethod": "MD5",
-                        "encryptedChecksum": "0beca40a04c283069df9c484ef7e2c68",
-                        "filename": "myfile1_M3051057.cel.gpg",
-                        "filetype": "CEL",
-                        "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
-                    },
-                    {
-                        "checksumMethod": "MD5",
-                        "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
-                        "filename": "myfile2_M3051057.cel.gpg",
-                        "filetype": "CEL",
-                        "unencryptedChecksum": "7cfc795b42d428697ca8e33bf1fb8228"
-                    }
-                ],
-                "assayRelationships": [
-                    {
-                        "rSource": {
-                            "objectId": {
                                 "egaAccession": "EGAX00002094401"
                             },
                             "objectType": "experiment"
@@ -308,7 +134,7 @@
                         "rType": "referencedBy"
                     },
                     {
-                        "rSource": {
+                        "rTarget": {
                             "objectId": {
                                 "egaAccession": "EGAZ00002024153"
                             },
@@ -327,36 +153,38 @@
                     }
                 ],
                 "assayTypeSpecifications": {
-                    "assayInstrument": "array",
-                    "arrayAssaySpecifications": {
-                        "arraySampleLabels": [
+                    "assayInstrument": "sequencer",
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
                             {
-                                "label": {
-                                    "arrayLabelCurie": "CHEBI:37987",
-                                    "arrayLabelId": "Cy3"
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26",
+                                    "termLabel": "GRCh38.p14"
                                 },
-                                "objectId": {
-                                    "egaAccession": "EGAN00002094401"
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000001.11",
+                                    "termLabel": "chr1"
                                 }
                             },
                             {
-                                "label": {
-                                    "arrayLabelCurie": "CHEBI:37989",
-                                    "arrayLabelId": "Cy5"
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26",
+                                    "termLabel": "GRCh38.p14"
                                 },
-                                "objectId": {
-                                    "egaAccession": "EGAN00002094453"
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000002.12",
+                                    "termLabel": "chr2"
                                 }
                             }
-                        ],
-                        "nLabelsPerArray": 2
+        
+                        ]
                     }
                 },
                 "objectId": {
-                    "alias": "My_array_assay_M3051057",
+                    "alias": "My_sequencing_assay_M305004",
                     "centerName": "EBI-TEST"
                 },
-                "objectTitle": "Breast cancer array assay M3051057",
+                "objectTitle": "Breast cancer sequencing assay M305004",
                 "schemaDescriptor": {
                     "commonSchemaVersion": "0.0.0",
                     "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",

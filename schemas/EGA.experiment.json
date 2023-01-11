@@ -406,7 +406,7 @@
       }
     ],
 
-    "allOf": [
+    "anyOf": [
       {
         "title": "If the assayed molecule is 'deoxyribonucleic acid' then, the assay type must be of 'DNA asay' type",
         "if": {
