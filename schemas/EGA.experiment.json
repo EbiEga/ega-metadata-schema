@@ -6,7 +6,7 @@
     "meta:version": "0.0.0",
     "$async": true,
     "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["objectId", "assayTechnology", "assayTypeDescriptor", "assayedMoleculeType", "experimentTypeSpecifications"],
+    "required": ["objectId", "assayTechnology", "assayType", "assayedMoleculeType", "experimentTypeSpecifications"],
     "additionalProperties": false,
     "properties": {
       "objectId": {
@@ -67,83 +67,45 @@
         "$ref": "./EGA.common-definitions.json#/definitions/assayTechnologyDescriptor"
       },
 
-      "assayTypeDescriptor": {
+      "assayType": {
         "type": "object",
-        "title": "Type of assay",
+        "title": "Type of used assay",
         "meta:propertyCurie": "OBI:0000070",
-        "description": "Node defining the type of assay applicable to the experiment. Consists in an overall category (based on the purpose and technology of the instrument [EFO:0002773]) and its possible subtype. Both types and subtypes are taken from controlled vocabulary (CV) lists, stored in the controlled_vocabulary_schemas folder. For example, in a single cell RNA-seq assay the assay type would be 'assay by high throughput sequencer' [EFO:0002697] and its subtype 'RNA-seq of coding RNA from single cells' [EFO:0005684].",
-        "additionalProperties": false,
-        "required": ["assayType"],
+        "description": "Node defining the type of assay applicable to the experiment. Notice how, depending on the complexity of the assay type (i.e. how many subtypes it may have), the assay type can be a high level term (e.g. 'single cell sequencing') or very specific (e.g. '454 Sequencing'). We recommend to use the most specific term possible if available: for example, in case your assay was an 'RNA-seq of coding RNA from single cells' [EFO:0005684], we advise to provide the specific term [EFO:0005684], instead of the generic 'assay by high throughput sequencer' [EFO:0002697].",
+        "allOf": [
+          {
+            "title": "Inherited ontologyTerm structure of termId and termLabel",
+            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+          }
+        ],
         "properties": {
-          "assayType": {
-            "type": "string",
-            "title": "Type of the assay",
-            "description": "Overall type of the assay. Term chosen from a controlled vocabulary (CV) list. Search for yours either at (1) our GitHub repository ([array types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json) and [sequencing types](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json)) or (2) in the OLS service ([sequencing types](http://www.ebi.ac.uk/efo/EFO_0003740) and [array types](http://www.ebi.ac.uk/efo/EFO_0002696)).",
+          "termId": {
+            "title": "Ontology constraints for this specific termId",
             "anyOf": [
               {
-                "title": "Array-assay type controlled vocabulary (CV) list",
-                "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json"
+                "title": "Ontology validation of terms below 'assay by sequencer'",
+                "graphRestriction":  {
+                  "ontologies" : ["obo:efo"],
+                  "classes": ["EFO:0003740"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": true,
+                  "include_self": false
+                }
               },
               {
-                "title": "Sequencer-assay type controlled vocabulary (CV) list",
-                "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json"
+                "title": "Ontology validation of terms below 'assay by array'",
+                "graphRestriction":  {
+                  "ontologies" : ["obo:efo"],
+                  "classes": ["EFO:0002696"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": true,
+                  "include_self": false
+                }
               }
             ],
-            "examples": [ "Hi-C", "amplicon sequencing", "assay by high throughput sequencer", "immune sequencing", "ChIP-chip by array", "transcription profiling by array", "microRNA profiling by array", "genotyping by array", "comparative genomic hybridization by array" ]
-          },
-          "assaySubtype": {
-            "type": "string",
-            "title": "Subtype of the assay",
-            "description": "Subtype of the assay: any ontologized term hierarchically below the assay type. Term chosen from a controlled vocabulary (CV) list. Search for yours at our GitHub repository: [array subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json), [sequencing subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json), [RNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json) and [DNA assay subtypes](https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json))",
-            "examples": [ "MC-4C", "UMI-4C", "single nucleus RNA sequencing", "RNA-seq of coding RNA from single cells", "Quant-seq", "DNA-seq", "ATAC-seq", "DNase Hi-C", "scDNase-seq", "in situ HiC", "exome sequencing" ]
+            "examples": [ "EFO:0002697", "EFO:0030006", "EFO:0002765", "EFO:0005517" ]
           }
-        },
-        "anyOf": [
-          {
-            "title": "Assay subtypes match DNA/RNA assays",
-            "properties": {
-              "assaySubtype": {
-                "anyOf": [
-                  {
-                    "title": "DNA-Assay subtype controlled vocabulary (CV) list",
-                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_dna.json"
-                  },
-                  {
-                    "title": "RNA-Assay subtype controlled vocabulary (CV) list",
-                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_rna.json"
-                  }
-                ]                 
-              }
-            }
-          },
-          {
-            "title": "Assay subtypes match array/sequencer assays",
-            "oneOf": [
-              {
-                "title": "Assay type and subtype terms are from the array CV list",
-                "properties": {
-                  "assayType": {
-                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_array.json" 
-                  },
-                  "assaySubtype": {
-                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_array.json" 
-                  }
-                }
-              },
-              {
-                "title": "Assay type and subtype terms are from the sequencer CV list",
-                "properties": {
-                  "assayType": {
-                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_type_by_sequencer.json" 
-                  },
-                  "assaySubtype": {
-                    "$ref": "./controlled_vocabulary_schemas/EGA.cv.assay_subtype_by_sequencer.json" 
-                  }
-                }
-              }
-            ]
-          }
-        ]
+        }
       },
 
       "assayedMoleculeType": {
