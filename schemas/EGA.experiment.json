@@ -407,7 +407,7 @@
           "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
         }
       }
-    },
+    }, 
     
     "oneOf": [
       {
