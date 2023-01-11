@@ -117,58 +117,43 @@
             "anyOf": [
               {
                 "title": "2 labels per array check",
-                "description": "If two labels were used per array, the sampleLabel specifications will be expected and at least 2 items (one for each label)",
-                "if": {
-                  "required": [ "nLabelsPerArray" ],
-                  "properties": {
-                    "prueba": { "const": 2 }
-                  }
-                },
-                "then": { 
-                  "required": [ "arraySampleLabels" ],
-                  "properties": {
-                    "arraySampleLabels": {
-                      "minItems": 2
-                    }
+                "description": "If 2 labels were used per array, the sampleLabel specifications will be expected and at least 2 items (one for each label)",
+                "required": [ "nLabelsPerArray", "arraySampleLabels" ],
+                "properties": {
+                  "nLabelsPerArray": { 
+                    "const": 2 
+                  },
+                  "arraySampleLabels": {
+                    "minItems": 2
                   }
                 }
               },
               {
                 "title": "3 labels per array check",
-                "description": "If three labels were used per array, the sampleLabel specifications will be expected and at least 3 items (one for each label)",
-                "if": {
-                  "required": [ "nLabelsPerArray" ],
-                  "properties": {
-                    "prueba": { "const": 3 }
-                  }
-                },
-                "then": { 
-                  "required": [ "arraySampleLabels" ],
-                  "properties": {
-                    "arraySampleLabels": {
-                      "minItems": 3
-                    }
+                "description": "If 3 labels were used per array, the sampleLabel specifications will be expected and at least 3 items (one for each label)",
+                "required": [ "nLabelsPerArray", "arraySampleLabels" ],
+                "properties": {
+                  "nLabelsPerArray": { 
+                    "const": 3 
+                  },
+                  "arraySampleLabels": {
+                    "minItems": 3
                   }
                 }
               },
               {
                 "title": "4 labels per array check",
-                "description": "If four labels were used per array, the sampleLabel specifications will be expected and at least 4 items (one for each label)",
-                "if": {
-                  "required": [ "nLabelsPerArray" ],
-                  "properties": {
-                    "prueba": { "const": 4 }
-                  }
-                },
-                "then": { 
-                  "required": [ "arraySampleLabels" ],
-                  "properties": {
-                    "arraySampleLabels": {
-                      "minItems": 4
-                    }
+                "description": "If 4 labels were used per array, the sampleLabel specifications will be expected and at least 4 items (one for each label)",
+                "required": [ "nLabelsPerArray", "arraySampleLabels" ],
+                "properties": {
+                  "nLabelsPerArray": { 
+                    "const": 4 
+                  },
+                  "arraySampleLabels": {
+                    "minItems": 4
                   }
                 }
-              }              
+              }           
             ]
           },
           "sequencingAssaySpecifications": {
