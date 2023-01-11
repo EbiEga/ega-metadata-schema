@@ -6,7 +6,6 @@ is one schema file (_e.g._ ``EGA.experiment.json``) for every metadata object (_
 reference.
 * An **object-set** (``EGA.object-set.json``) is, simply put, an array of EGA metadata objects. In other words, a compilation of individual metadata objects (e.g. 20 ``samples``, 2 ``assays`` and 1 ``experiment`` - any combination is valid) that are validated individually. The purpose of an object-set is to avoid the need of one file per each of the metadata objects (e.g. 100 sample JSON documents
  if we were to validate 100 sample objects), being able to group them all in a single file.
-* Some **controlled vocabularies** also reside within the ``controlled_vocabulary_schemas/`` directory in a JSON schema format. These schemas exist so that the common definitions file is not large enough for problems viewing and editing it arise.
 
 The current schemas are written in JavaScript Object Notation (**JSON**), providing both human- and machine-readable documentation. For further details regarding JSON-schemas visit [JSON-schema](https://json-schema.org/) and [Getting started](https://json-schema.org/learn/getting-started-step-by-step) (for an overview), or
 [Understanding JSON schema](https://json-schema.org/understanding-json-schema/) (for a detailed explanation).

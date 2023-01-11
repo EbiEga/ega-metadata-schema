@@ -59,7 +59,7 @@
             }
         ],
         "assayTypeSpecifications": {
-            "assayType": "sequencing",
+            "assayInstrument": "sequencer",
             "sequencingAssaySpecifications": {
                 "referenceAlignmentDetails": [
                     {

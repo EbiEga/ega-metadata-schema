@@ -50,6 +50,7 @@
             }
         ],
         "assayTypeSpecifications": {
+            "assayInstrument": "array",
             "arrayAssaySpecifications": {
                 "arraySampleLabels": [
                     {
@@ -76,8 +77,7 @@
                     }
                 ],
                 "nLabelsPerArray": 2
-            },
-            "assayType": "array"
+            }
         },
         "objectId": {
             "alias": "My_array_assay_M3051057",

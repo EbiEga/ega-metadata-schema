@@ -6,8 +6,9 @@
                     "assayInstrument": "array",
                     "assayInstrumentPlatform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
                 },
-                "assayTypeDescriptor": {
-                    "assayType": "ChIP-chip by SNP array"
+                "assayType": {
+                    "termId": "EFO:0002764",   
+                    "termLabel": "ChIP-chip by SNP array"
                 },
                 "assayedMoleculeType": "DNA",
                 "experimentAttributes": [
@@ -238,7 +239,7 @@
                     }
                 ],
                 "assayTypeSpecifications": {
-                    "assayType": "sequencing",
+                    "assayInstrument": "sequencer",
                     "sequencingAssaySpecifications": {
                         "referenceAlignmentDetails": [
                             {
@@ -326,6 +327,7 @@
                     }
                 ],
                 "assayTypeSpecifications": {
+                    "assayInstrument": "array",
                     "arrayAssaySpecifications": {
                         "arraySampleLabels": [
                             {
@@ -348,8 +350,7 @@
                             }
                         ],
                         "nLabelsPerArray": 2
-                    },
-                    "assayType": "array"
+                    }
                 },
                 "objectId": {
                     "alias": "My_array_assay_M3051057",
