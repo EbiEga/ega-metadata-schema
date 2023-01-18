@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 import argparse
 from typing import Tuple
 
+# Module used to record validation parameters of JSON documents. For further details, please check:
+#   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/biovalidator_benchmarks
+
 #---#
 # Initial arguments
 #---#
