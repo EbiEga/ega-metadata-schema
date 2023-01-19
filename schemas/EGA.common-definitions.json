@@ -2256,7 +2256,7 @@
             "properties": {        
               "termId": {
                 "title": "Ontology constraints for this specific termId",
-                "graphRestriction":  {
+                "$graphRestriction":  {
                   "ontologies" : ["obo:NCBITAXON"],
                   "classes": ["NCBITaxon:1"],
                   "relations": ["rdfs:subClassOf"],
@@ -2916,7 +2916,7 @@
             "type": "string",
             "title": "Assay's instrument category",
             "meta:propertyCurie": "EFO:0002773",
-            "description": "The general categories (e.g. sequencers) in which assay instruments are categorized. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
+            "description": "The general categories (e.g. sequencer) in which assay instruments are categorized. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
             "enum": [ "array", "sequencer" ],
             "meta:enum": {
               "array": "[EFO:0002698][Array instrument](http://www.ebi.ac.uk/efo/EFO_0002698), an instrument which consists of nucleic acid or protein molecules bound to a substrate",
@@ -2925,36 +2925,12 @@
           },
           "assayInstrumentPlatform": {
             "type": "string",
-            "title": "Assay instrument label",
-            "description": "Label (e.g. 'Illumina HiSeq 2500'), chosen from a list of controlled vocabulary (CV), of the technology used at the experiment. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
+            "title": "Assay instrument platform",
+            "description": "Platform of the used instrument (e.g. 'Illumina HiSeq 2500'). Given the heterogenity in sequencing and array platforms (power of thousands), this property is not restricted by a CV list (i.e. it is free text).",
             "minLength": 1,
             "examples": ["Illumina HiSeq 2500", "[HuGene-1_1-st] Affymetrix Human Gene 1.1 ST Array [probe set (exon) version]", "DNBSEQ-G400 FAST"]
           }
-        },
-        "oneOf": [
-          {
-            "title": "Asserting array technology controlled vocabulary (CV)",
-            "properties": {
-              "assayInstrument": {
-                "enum": [ "array" ]
-              },
-              "assayInstrumentPlatform": {
-                "$ref": "./controlled_vocabulary_schemas/EGA.cv.instrument_platforms_array.json"
-              }
-            }              
-          },
-          {
-            "title": "Asserting sequencer technology controlled vocabulary (CV)",
-            "properties": {
-              "assayInstrument": {
-                "enum": [ "sequencer" ]
-              },
-              "assayInstrumentPlatform": {
-                "$ref": "./controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json"
-              }
-            }              
-          }
-        ]
+        }
       },
 
       "libraryLayout": {

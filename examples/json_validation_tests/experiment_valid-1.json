@@ -4,10 +4,14 @@
             "assayInstrument": "array",
             "assayInstrumentPlatform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
         },
-        "assayTypeDescriptor": {
-            "assayType": "ChIP-chip by SNP array"
+        "assayType": {
+            "termId": "EFO:0002764",   
+            "termLabel": "ChIP-chip by SNP array"
         },
-        "assayedMoleculeType": "DNA",
+        "assayedBiologicalMacromolecule": {
+            "termId": "EFO:0008479",   
+            "termLabel": "genomic DNA"
+        },
         "experimentAttributes": [
             {
                 "tag": "sub_project",
@@ -153,9 +157,11 @@
             {
                 "lociDescriptor": [
                     {
-                        "geneIdentifier": {
-                            "termId": "HGNC:11998",
-                            "termLabel": "TP53"
+                        "geneDescriptor": {
+                            "geneIdentifier": {
+                                "termId": "HGNC:11998",
+                                "termLabel": "TP53"
+                            }
                         },
                         "locusAdditionalDescription": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
                     },
@@ -184,8 +190,10 @@
                     {
                         "locusAdditionalDescription": "Additional locus that was placed in the array for SNP scanning for the purpose of individuals identification as tags...",
                         "locusExternalReference": {
-                            "accessionLabel": "EST89992 Human Small intestine Homo sapiens cDNA 5' end",
-                            "externalAccessionCurie": "nucleotide:T35715.1"
+                            "objectExternalAccessionIdentifier": {
+                                "termLabel": "EST89992 Human Small intestine Homo sapiens cDNA 5' end",
+                                "termId": "nucleotide:T35715.1"
+                            }
                         }
                     }
                 ],

@@ -1,7 +1,7 @@
 # Untitled undefined type in EGA assay metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/assayType/meta:enum
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/assayInstrument/meta:enum
 ```
 
 

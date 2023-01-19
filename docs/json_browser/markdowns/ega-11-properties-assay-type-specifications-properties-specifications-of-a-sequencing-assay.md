@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications
 ```
 
-Node containing the set of fields specific to an assay of type 'sequencing' (i.e. a sequencer was used to obtain the raw data).
+Node containing the set of fields specific to an assay of type 'sequencer' (i.e. a sequencer was used to obtain the raw data).
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |

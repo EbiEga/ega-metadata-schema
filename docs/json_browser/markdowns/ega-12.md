@@ -3024,14 +3024,14 @@ Reference this group by using
 {"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor"}
 ```
 
-| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                    |
-| :-------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assayInstrument](#assayinstrument)                 | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrument")     |
-| [assayInstrumentPlatform](#assayinstrumentplatform) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-properties-assay-instrument-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrumentPlatform") |
+| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
+| :-------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayInstrument](#assayinstrument)                 | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrument")        |
+| [assayInstrumentPlatform](#assayinstrumentplatform) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-12-definitions-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrumentPlatform") |
 
 ### assayInstrument
 
-The general categories (e.g. sequencers) in which assay instruments are categorized. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
+The general categories (e.g. sequencer) in which assay instruments are categorized. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
 
 `assayInstrument`
 
@@ -3058,21 +3058,21 @@ The general categories (e.g. sequencers) in which assay instruments are categori
 
 ### assayInstrumentPlatform
 
-Label (e.g. 'Illumina HiSeq 2500'), chosen from a list of controlled vocabulary (CV), of the technology used at the experiment. If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
+Platform of the used instrument (e.g. 'Illumina HiSeq 2500'). Given the heterogenity in sequencing and array platforms (power of thousands), this property is not restricted by a CV list (i.e. it is free text).
 
 `assayInstrumentPlatform`
 
 *   is required
 
-*   Type: `string` ([Assay instrument label](ega-12-definitions-assay-technology-properties-assay-instrument-label.md))
+*   Type: `string` ([Assay instrument platform](ega-12-definitions-assay-technology-properties-assay-instrument-platform.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-12-definitions-assay-technology-properties-assay-instrument-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrumentPlatform")
+*   defined in: [EGA common metadata definitions](ega-12-definitions-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrumentPlatform")
 
 #### assayInstrumentPlatform Type
 
-`string` ([Assay instrument label](ega-12-definitions-assay-technology-properties-assay-instrument-label.md))
+`string` ([Assay instrument platform](ega-12-definitions-assay-technology-properties-assay-instrument-platform.md))
 
 #### assayInstrumentPlatform Constraints
 

@@ -16,15 +16,15 @@ unknown
 
 # assayTypeSpecifications Properties
 
-| Property                | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                  |
-| :---------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assayType](#assaytype) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-an-array-assay-if-properties-assaytypespecifications-properties-assaytype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/2/if/properties/assayTypeSpecifications/properties/assayType") |
+| Property                            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                              |
+| :---------------------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayInstrument](#assayinstrument) | Not specified | Optional | cannot be null | [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-an-array-assay-if-properties-assaytypespecifications-properties-assayinstrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/2/if/properties/assayTypeSpecifications/properties/assayInstrument") |
 
-## assayType
+## assayInstrument
 
 
 
-`assayType`
+`assayInstrument`
 
 *   is optional
 
@@ -32,13 +32,13 @@ unknown
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-an-array-assay-if-properties-assaytypespecifications-properties-assaytype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/2/if/properties/assayTypeSpecifications/properties/assayType")
+*   defined in: [EGA assay metadata schema](ega-11-allof-allowed-filetypes-for-an-array-assay-if-properties-assaytypespecifications-properties-assayinstrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/2/if/properties/assayTypeSpecifications/properties/assayInstrument")
 
-### assayType Type
+### assayInstrument Type
 
 unknown
 
-### assayType Constraints
+### assayInstrument Constraints
 
 **constant**: the value of this property must be equal to:
 
