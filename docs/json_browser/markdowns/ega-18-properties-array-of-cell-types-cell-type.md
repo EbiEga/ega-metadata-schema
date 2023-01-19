@@ -20,6 +20,7 @@ One of the cell types that can be found in your sample or from which the genetic
 | :------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [cellType](#celltype)                 | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-12-definitions-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")                                                               |
 | [cellTypeInferred](#celltypeinferred) | `string` | Required | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-inferred-cell-type-flag.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeInferred") |
+| [cellTypeLabel](#celltypelabel)       | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")     |
 
 ## cellType
 
@@ -69,3 +70,35 @@ A flag to specify whether the cell type classification was inferred though singl
 | :--------------- | :------------------------------------------------------------------------------------------------------ |
 | `"inferred"`     | The cell type was inferred through single-cell analysis.                                                |
 | `"not inferred"` | The cell type was not inferred through single-cell analysis (i.e. it was asserted to be in the sample). |
+
+## cellTypeLabel
+
+A field to add extra context to the cell type. For example, the expression profile (e.g. FCGR3A+) used to distinguish within the cell group or the morphology. Only advised to be used when the ontology term for the cell type is not granular enough. Otherwise, the most granular ontology term for the cell type should be used.
+
+`cellTypeLabel`
+
+*   is optional
+
+*   Type: `string` ([Label of the cell type](ega-18-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-18-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")
+
+### cellTypeLabel Type
+
+`string` ([Label of the cell type](ega-18-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md))
+
+### cellTypeLabel Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+### cellTypeLabel Examples
+
+```json
+"FCGR3A+ Monocytes"
+```
+
+```json
+"TUNEL-positive ACE2-positive neurons"
+```
