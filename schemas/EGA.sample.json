@@ -257,6 +257,13 @@
                 "inferred": "The cell type was inferred through single-cell analysis.",
                 "not inferred": "The cell type was not inferred through single-cell analysis (i.e. it was asserted to be in the sample)."
               }
+            },
+            "cellTypeLabel": {
+              "type": "string",
+              "title": "Label of the cell type",
+              "description": "A field to add extra context to the cell type. For example, the expression profile (e.g. FCGR3A+) used to distinguish within the cell group or the morphology. Only advised to be used when the ontology term for the cell type is not granular enough. Otherwise, the most granular ontology term for the cell type should be used.",
+              "minLength": 1,
+              "examples": [ "FCGR3A+ Monocytes", "TUNEL-positive ACE2-positive neurons" ]
             }
           }          
         }
