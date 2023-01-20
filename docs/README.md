@@ -7,3 +7,4 @@ This document serves as an index for EGA's documentation in its [ega-metadata-sc
 | [JSON browser](./json_browser/) 	|   Easy-to-read summaries of [EGA's metadata schemas](../schemas/) 	|
 | [Contributions](./contributing.md) 	|   Documentation on how to contribute to the EGA metadata standards 	|
 | [GitHub Actions](./gh_workflows/) 	|   Diagrams summarizing workflows of GH actions (see [source files](../.github/workflows/)) 	|
+| [Biovalidator benchmarks](./biovalidator_benchmarks/) 	|   Benchmarks collected when validating JSON documents with Biovalidator |
