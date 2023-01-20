@@ -378,11 +378,13 @@ class JSONBatchValidationStats:
             f"\n\nAll files generated in this execution are stored in this directory (``{self.output_directory}``) with this same README. These files are:"
             f"\n1. Two CSV files: the complete set of validation parameters for each file and validation attempt ([``{self.complete_df_csv_filepath}``]({os.path.basename(self.summary_df_csv_filepath)}))"
             f" and a summary of those ([``{self.summary_df_csv_filepath}``]({os.path.basename(self.summary_df_csv_filepath)})), also displayed below."
-            f"\n2. Two graphs (both inserted below) of the full set of parameters: a 3D graph ([``{self.filepath_3d_scatter_plot}``]({os.path.basename(self.filepath_3d_scatter_plot)})) of the validation time, number of properties, and number of ontology validations;"
-            f" and a 2D density plot ([``{self.filepath_2d_density_plot}``]({os.path.basename(self.filepath_2d_density_plot)})) containing 2 subplots: one for each variable versus the validation time"
+            f"\n2. Three graphs (all inserted below) of the full set of parameters: a 3D graph ([``{self.filepath_3d_scatter_plot}``]({os.path.basename(self.filepath_3d_scatter_plot)})) of the validation time, number of properties, and number of ontology validations; "
+            f"two 2D scatter subplots ([``{self.filepath_2d_scatter_plot}``]({os.path.basename(self.filepath_2d_scatter_plot)})) of the validation time versus the other two variables; "
+            f"and a 2D density plot ([``{self.filepath_2d_density_plot}``]({os.path.basename(self.filepath_2d_density_plot)})) containing 2 subplots: one for each variable versus the validation time"
             f"\n\n"
             f"Graphical representations:\n"
             f"\n![3D Scatter plot]({os.path.basename(self.filepath_3d_scatter_plot)})\n"
+            f"![2D Scatter plots]({os.path.basename(self.filepath_2d_scatter_plot)})\n"
             f"![2D Density plot]({os.path.basename(self.filepath_2d_density_plot)})\n"
             f"\nSummary table:\n"
             f"{summary_table}"
@@ -425,4 +427,5 @@ batch_validator.save_dataframe_csv(dataframe=batch_validator.summary_df, filenam
 
 batch_validator.create_3d_scatter_plot()
 batch_validator.create_2d_density_graphs()
+batch_validator.create_2d_scatter_graphs()
 batch_validator.create_summary_readme()
