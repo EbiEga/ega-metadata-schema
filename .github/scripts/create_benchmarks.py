@@ -6,6 +6,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import argparse
 from typing import Tuple
+import concurrent.futures
+import threading
 
 # Module used to record validation parameters of JSON documents. For further details, please check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/biovalidator_benchmarks
@@ -18,6 +20,7 @@ parser.add_argument('--endpoint', type=str, required=True, help='The endpoint of
 parser.add_argument('--input_directory', type=str, required=True, help='The filepath to a directory that contains the JSON documents to validate. Example: "examples/json_validation_tests/"')
 parser.add_argument('--output_directory', type=str, default='./', help='The filepath to a directory in which the results will be stored. Example: "2023_benchmarks/". Default value: "./"')
 parser.add_argument('--number_of_iterations', type=int, default=1, help='The amount of iterations of validation of each JSON document within the input directory. Example: 10. Default value: 1')
+parser.add_argument('--n_parallel_threads', type=int, default=1, help='The amount of parallel threads for each validation iteration. Example: 5. Default value: 1')
 parser.add_argument('--stop_at_errors', action='store_true', default=False, help='A boolean switch by which we tell the script to stop the execution when a validation error is raised.')
 parser.add_argument('--not_just_summary_df', action='store_true', default=False, help='A boolean switch by which we tell the script to not just print the summary dataframe with parameters, but instead save the parameters in files and generate a README.')
 parser.add_argument('--only_print_complete_df', action='store_true', default=False, help='A boolean switch by which we tell the script that we do not want any files to be saved and, instead, we just want the complete table of parameters to be printed.')
@@ -37,6 +40,10 @@ if not isinstance(args.number_of_iterations, int):
     raise ValueError("number_of_iterations must be an integer.")
 if not args.number_of_iterations > 0:
     raise ValueError("number_of_iterations must be an integer greater than 0.")
+if not isinstance(args.n_parallel_threads, int):
+    raise ValueError("n_parallel_threads must be an integer.")
+if not args.n_parallel_threads > 0:
+    raise ValueError("n_parallel_threads must be an integer greater than 0.")
 if not isinstance(args.stop_at_errors, bool):
     raise ValueError("stop_at_errors must be a boolean.")
 if not isinstance(args.not_just_summary_df, bool):
@@ -187,30 +194,69 @@ class JSONBatchValidationStats:
         
         self.complete_df_columns = ["filepath", "passed_validation", "validation_time", "n_data_properties", "n_ontology_properties", "timestamp", "validation_outcome"]
         self.complete_df = pd.DataFrame(columns=self.complete_df_columns)
-
-    def iterate_over_dir(self) -> pd.DataFrame:
-        """ 
-        Iterates over all JSON documents within the directory, loads them and calls JSONDocValidationStats(), populating with one validation round the self.complete_df
+    
+    def validate_one_file(self, filepath:str) -> dict:
         """
-        rows = []
+        calls JSONDocValidationStats(), returning a set of useful parameters as results
+        """                
+        validator = JSONDocValidationStats(
+            json_doc=filepath,
+            endpoint=self.endpoint,
+            stop_at_errors=self.stop_at_errors
+        )
+        timestamp = get_current_timestamp()
+        
+        results_l = [
+            filepath,
+            validator.passed_validation, 
+            validator.validation_time,
+            validator.n_data_properties, 
+            validator.n_ontology_properties,
+            timestamp,
+            validator.validation_outcome            
+        ]
+        
+        # We zip together the DF column names and the results in a dictionary
+        results_dict = dict(zip(self.complete_df_columns, results_l))
+        
+        return results_dict
+    
+    def append_one_iteration(self, filepath:str) -> None:
+        """
+        Function used to call the validation and append its iteration to the current list of validation attempts in the iteration
+        """
+        # The threading.Lock is used so that the common resources between multiple iterations are not overwritten
+        #    In other words, so that three parallel 'append_one_iteration' methods do not overwrite self.iteration_list losing information
+        with threading.Lock():
+            self.iteration_list.append(self.validate_one_file(filepath))
+
+    def iterate_over_dir(self, n_iterations:int = 1, n_parallel_threads:int = 1) -> pd.DataFrame:
+        """
+        Iterates over all JSON documents within the directory and then performs a set of parallel (n_parallel_threads) validation attempts
+            a number (n_iterations) of times. These validation attempts will produce the parameters that will be added to the complete DF.
+            
+        Parameters:
+            n_iterations:int --> Number of validation iterations over the same file. Used to repeat several validation attempts in sequence.
+            n_parallel_threads:int --> Number of parallel threads of each validation iteration. Used to test the stress of the validation
+                server under parallel validation attempts.
+        
+        E.g. if n_iterations=3 and n_parallel_threads=2, then there will be 6 new rows in the complete DF.
+        """
+        self.iteration_list = []
         for file in os.scandir(self.input_directory):
             if file.name.endswith('.json') and file.is_file():
                 filepath = file.path
-                validator = JSONDocValidationStats(json_doc=filepath,
-                                                endpoint=self.endpoint,
-                                                stop_at_errors=self.stop_at_errors)
-                timestamp = get_current_timestamp()
-                rows.append({
-                    "filepath": filepath,
-                    "passed_validation": validator.passed_validation, 
-                    "validation_time": validator.validation_time, 
-                    "n_data_properties": validator.n_data_properties, 
-                    "n_ontology_properties": validator.n_ontology_properties,
-                    "timestamp": timestamp,
-                    "validation_outcome": validator.validation_outcome
-                })
+                # Now we iterate N times over the file
+                for i in range(n_iterations):                    
+                    # In case we want to do several validations of the file in parallel:
+                    with concurrent.futures.ThreadPoolExecutor(max_workers=n_parallel_threads) as executor:
+                        futures = [executor.submit(
+                            self.append_one_iteration, 
+                            filepath
+                        ) for _ in range(n_parallel_threads)]
+                    concurrent.futures.wait(futures)
 
-        self.complete_df = self.complete_df.append(rows, ignore_index=True)
+        self.complete_df = self.complete_df.append(self.iteration_list, ignore_index=True)
 
         return self.complete_df
 
@@ -404,9 +450,12 @@ batch_validator = JSONBatchValidationStats(
     stop_at_errors=args.stop_at_errors
     )
 
-for i in range(args.number_of_iterations):
-    # We validate all files "number_of_iterations" times, populating the "batch_validator.complete_df" dataframe
-    batch_validator.iterate_over_dir()
+# We validate all files "number_of_iterations" times, with "n_parallel_threads" parallel threads,
+#   populating the "batch_validator.complete_df" dataframe
+batch_validator.iterate_over_dir(
+    n_iterations = args.number_of_iterations,
+    n_parallel_threads = args.n_parallel_threads
+)
 
 # We get the populated complete dataframe and generate the summary one
 batch_validator.join_validation_stats()

@@ -13,7 +13,8 @@ ega-metadata-schema/
 ........biovalidator_benchmarks/
 ............[date]_benchmarks/
 ................json_docs/
-................benchmark_results/
+................local_endpoint/
+................EGAs_endpoint/
 ````
 
 
@@ -47,11 +48,10 @@ The idea of taking an existing object-set (e.g. ``object-set_valid-1.json``) as 
 The script can be called from the terminal:
 ````bash
 $ python3 create_benchmarks.py --help
-usage: create_benchmarks.py [-h] --endpoint ENDPOINT --input_directory INPUT_DIRECTORY [--output_directory OUTPUT_DIRECTORY]
-                            [--number_of_iterations NUMBER_OF_ITERATIONS] [--stop_at_errors] [--not_just_summary_df] [--only_print_complete_df]
+usage: create_benchmarks.py [-h] --endpoint ENDPOINT --input_directory INPUT_DIRECTORY [--output_directory OUTPUT_DIRECTORY] [--number_of_iterations NUMBER_OF_ITERATIONS] [--n_parallel_threads N_PARALLEL_THREADS] [--stop_at_errors]
+                            [--not_just_summary_df] [--only_print_complete_df]
 
-Create benchmarks for a Biovalidator server. Check details at https://github.com/EbiEga/ega-metadata-
-schema/tree/main/docs/biovalidator_benchmarks.
+Create benchmarks for a Biovalidator server. Check details at https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/biovalidator_benchmarks.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -62,13 +62,13 @@ optional arguments:
                         The filepath to a directory in which the results will be stored. Example: "2023_benchmarks/". Default value: "./"
   --number_of_iterations NUMBER_OF_ITERATIONS
                         The amount of iterations of validation of each JSON document within the input directory. Example: 10. Default value: 1
+  --n_parallel_threads N_PARALLEL_THREADS
+                        The amount of parallel threads for each validation iteration. Example: 5. Default value: 1
   --stop_at_errors      A boolean switch by which we tell the script to stop the execution when a validation error is raised.
   --not_just_summary_df
-                        A boolean switch by which we tell the script to not just print the summary dataframe with parameters, but instead save
-                        the parameters in files and generate a README.
+                        A boolean switch by which we tell the script to not just print the summary dataframe with parameters, but instead save the parameters in files and generate a README.
   --only_print_complete_df
-                        A boolean switch by which we tell the script that we do not want any files to be saved and, instead, we just want the
-                        complete table of parameters to be printed.
+                        A boolean switch by which we tell the script that we do not want any files to be saved and, instead, we just want the complete table of parameters to be printed.
 ````
 There are three major ways in which this script is intended to be used:
 ````bash
@@ -79,6 +79,7 @@ $ python3 create_benchmarks.py --endpoint "http://localhost:3020/validate" --inp
 # Creating the full set of benchmarks, including summaries and graphs
 $ python3 create_benchmarks.py --endpoint "http://localhost:3020/validate" --input_directory "../../examples/json_validation_tests/" --output_directory "benchmark_results" --number_of_iterations 20 --not_just_summary_df
 ````
+Additionally, to test how well the validation endpoint handles **parallel calls**, one can add to the last command a number of parallel threads. For example ``--n_parallel_threads 5``. This would make every validation iteration a set of 5 parallel validations, thus testing how the server would behave if 5 different users were to send their JSON files at the same time. The summary statistics will reflect these, since all parallel validations will belong to the same dataframe from which the summary is made.
 
 ### Additional Notes
 There are two caveats to obtain the representative benchmarks:
