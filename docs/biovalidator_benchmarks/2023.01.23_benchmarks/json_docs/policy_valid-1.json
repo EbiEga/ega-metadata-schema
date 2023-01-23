@@ -1,0 +1,71 @@
+{
+    "data": {
+        "duoCodes": [
+            {
+                "termId": "DUO:0000046",
+                "termLabel": "non-commercial use only"
+            },
+            {
+                "termId": "DUO:0000028",
+                "termLabel": "institution specific restriction"
+            },
+            {
+                "termId": "DUO:0000032",
+                "termLabel": "population research"
+            }
+        ],
+        "objectId": {
+            "alias": "my-cancer-policy",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "EBI test case-control policy for cancer datasets",
+        "policyAttributes": [
+            {
+                "tag": "Associated project ID",
+                "value": "X33981-DGH"
+            }
+        ],
+        "policyDescriptor": {
+            "policyReference": "https://ega-archive.org/submission/dac/documentation",
+            "policyText": "The data is fully available upon request with the data-access committee of this study."
+        },
+        "policyRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAD00002043982"
+                    },
+                    "objectType": "dataset"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAD00004543981"
+                    },
+                    "objectType": "dataset"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "policy"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json"
+    }
+}

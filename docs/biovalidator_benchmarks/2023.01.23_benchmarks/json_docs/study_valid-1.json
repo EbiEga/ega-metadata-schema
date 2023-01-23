@@ -1,0 +1,69 @@
+{
+    "data": {
+        "objectDescription": "EBI genome-wide case-control association study for COVID-19 using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+        "objectId": {
+            "alias": "my-covid19-study_231",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "EBI test case-control study for covid19",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "study"
+        },
+        "studyAttributes": [
+            {
+                "tag": "Associated project ID",
+                "value": "X33981-DGH"
+            }
+        ],
+        "studyDesigns": [
+            "case control design",
+            "binding site identification design"
+        ],
+        "studyRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002043412"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biostudies:S-EPMC3314381",
+                                    "termLabel": "Epigenetics of kidney cancer and bladder cancer"
+                                },
+                                "objectExternalAccessionDescription": "The same study was submitted to the two archives due to a deadline approaching"
+                            }
+                        ]
+                    },
+                    "objectType": "externalAccession"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "studyTypes": [
+            "COVID-19"
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json"
+    }
+}

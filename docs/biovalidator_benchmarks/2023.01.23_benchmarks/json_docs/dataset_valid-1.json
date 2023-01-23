@@ -1,0 +1,64 @@
+{
+    "data": {
+        "datasetAttributes": [
+            {
+                "tag": "Associated project ID",
+                "value": "X33981-DGH"
+            }
+        ],
+        "datasetRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAR00002043412"
+                    },
+                    "objectType": "assay"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAR00004343122"
+                    },
+                    "objectType": "assay"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00004343122"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "datasetType": "phenotype information",
+        "objectDescription": "EBI genome-wide case-control association dataset for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+        "objectId": {
+            "alias": "my-cancer-dataset_231",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "EBI test case-control dataset for cancer",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "dataset"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json"
+    }
+}

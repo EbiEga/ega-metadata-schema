@@ -1,0 +1,73 @@
+{
+    "data": {
+        "dacAttributes": [
+            {
+                "tag": "Associated project ID",
+                "value": "X33981-DGH"
+            }
+        ],
+        "dacContacts": {
+            "additionalContacts": [
+                {
+                    "emailAddress": "myname2@ebi.ac.uk",
+                    "individualFullName": "Todd, Jason"
+                },
+                {
+                    "emailAddress": "myname3@ebi.ac.uk",
+                    "institutionName": "BAT-CAVE"
+                }
+            ],
+            "mainContact": {
+                "emailAddress": "myname@ebi.ac.uk",
+                "individualFullName": "Wayne Jr., Bruce",
+                "institutionName": "European Bioinformatics Institute (EBI)",
+                "phoneNumber": "+44 7427512529"
+            }
+        },
+        "dacRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAP00002045411"
+                    },
+                    "objectType": "policy"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAC00002344532"
+                    },
+                    "objectType": "DAC"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectDescription": "A example DAC used exclusively for testing.",
+        "objectId": {
+            "alias": "my_DAC_X10",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAC00000000001"
+        },
+        "objectTitle": "EBI test DAC",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "DAC"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json"
+    }
+}

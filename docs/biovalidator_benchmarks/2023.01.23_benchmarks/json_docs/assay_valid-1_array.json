@@ -1,0 +1,97 @@
+{
+    "data": {
+        "assayAttributes": [
+            {
+                "tag": "weather",
+                "value": "When the assay was executed it was sunny outside"
+            },
+            {
+                "tag": "assay price",
+                "units": "euros",
+                "value": 200
+            }
+        ],
+        "assayCenter": "EBI-TEST",
+        "assayDate": "2022-02-13",
+        "assayFiles": [
+            {
+                "checksumMethod": "MD5",
+                "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                "filename": "myfile1_M3051057.cel.gpg",
+                "filetype": "CEL",
+                "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+            },
+            {
+                "checksumMethod": "MD5",
+                "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                "filename": "myfile2_M3051057.cel.gpg",
+                "filetype": "CEL",
+                "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+            }
+        ],
+        "assayRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002094401"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "assayTypeSpecifications": {
+            "assayInstrument": "array",
+            "arrayAssaySpecifications": {
+                "arraySampleLabels": [
+                    {
+                        "arrayLabel": {
+                            "arrayLabelIdentifier": {
+                                "termId": "CHEBI:37987",   
+                                "termLabel": "Cy3"
+                            }             
+                        },
+                        "objectId": {
+                            "egaAccession": "EGAN00002094401"
+                        }
+                    },
+                    {
+                        "arrayLabel": {
+                            "arrayLabelIdentifier": {
+                                "termId": "CHEBI:37989",   
+                                "termLabel": "Cy5"
+                            }
+                        },
+                        "objectId": {
+                            "egaAccession": "EGAN00002094453"
+                        }
+                    }
+                ],
+                "nLabelsPerArray": 2
+            }
+        },
+        "objectId": {
+            "alias": "My_array_assay_M3051057",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Breast cancer array assay M3051057",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "assay"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json"
+    }
+}

@@ -1,0 +1,152 @@
+{
+    "data": {
+        "analysisAttributes": [
+            {
+                "tag": "sub_project",
+                "value": "CB4-1UD"
+            }
+        ],
+        "analysisFiles": [
+            {
+                "checksumMethod": "MD5",
+                "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                "filename": "sequence_variation.vcf.gpg",
+                "filetype": "VCF",
+                "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+            },
+            {
+                "checksumMethod": "MD5",
+                "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                "filename": "analysis_script.py.gpg",
+                "filetype": "PY",
+                "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+            }
+        ],
+        "analysisRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAS00002045411"
+                    },
+                    "objectType": "study"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00001051423"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAX00001051423"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Genome indexing protocol",
+                        "egaAccession": "EGAO00001031671"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Read mapping protocol",
+                        "egaAccession": "EGAO00001031672"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
+                "rSource": {
+                    "objectId": {
+                        "alias": "Variant calling protocol",
+                        "egaAccession": "EGAO00001031673"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "analysisTypeSpecifications": {
+            "analysisTypes": [
+                "sequence variation",
+                "phenotype characterization"
+            ],
+            "referenceAlignmentDetails": [
+                {
+                    "ncbiAssembly": {
+                        "termId": "assembly:GCA_000001405.29",
+                        "termLabel": "GRCh38.p14"
+                    }
+                }
+            ]
+        },
+        "objectDescription": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned against the human referenced and then extracted sequence variation... ...VCF files were compared along patients' clinical histories.",
+        "objectId": {
+            "alias": "Sequencing_analysis_13",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Example VCF analysis",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "analysis"
+        },
+        "targetedLoci": [
+            {
+                "lociDescriptor": [
+                    {
+                        "geneDescriptor": {
+                            "geneIdentifier": {
+                                "termId": "HGNC:11998",
+                                "termLabel": "TP53"
+                            }
+                        },
+                        "locusAdditionalDescription": "Variation within the VCF corresponds to TP53 variation among patients."
+                    }
+                ],
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                }
+            }
+        ],
+        "typesOfInputData": [
+            "genomic data"
+        ],
+        "typesOfOutputData": [
+            "processed sequencing data"
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"
+    }
+}
