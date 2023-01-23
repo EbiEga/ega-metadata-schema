@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum length of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schemaDescriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object-set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum length of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schemaDescriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. Notice how this schema is missing the basic 'objectId' of other objects, since an object-set is not an object per se, it is just a compilation of objects. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
@@ -16,10 +16,68 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate an
 
 # EGA object-set metadata schema Properties
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                       |
-| :------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [schemaDescriptor](#schemadescriptor) | `object` | Optional | cannot be null | [EGA object-set metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")           |
-| [objectArray](#objectarray)           | `array`  | Required | cannot be null | [EGA object-set metadata schema](ega-15-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray") |
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                         |
+| :-------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectTitle](#objecttitle)             | `string` | Optional | cannot be null | [EGA object-set metadata schema](ega-15-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")             |
+| [objectDescription](#objectdescription) | `string` | Optional | cannot be null | [EGA object-set metadata schema](ega-15-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription") |
+| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA object-set metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")             |
+| [objectArray](#objectarray)             | `array`  | Required | cannot be null | [EGA object-set metadata schema](ega-15-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray")   |
+
+## objectTitle
+
+Free-form title of the object-set. Used as a convenient way to identify different object-sets.
+
+`objectTitle`
+
+*   is optional
+
+*   Type: `string` ([Title of the object-set](ega-15-properties-title-of-the-object-set.md))
+
+*   cannot be null
+
+*   defined in: [EGA object-set metadata schema](ega-15-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")
+
+### objectTitle Type
+
+`string` ([Title of the object-set](ega-15-properties-title-of-the-object-set.md))
+
+### objectTitle Examples
+
+```json
+"Example of Single Cell Sequencing"
+```
+
+```json
+"myObjectSet_2"
+```
+
+## objectDescription
+
+More extensive free-form description of the object-set. Used to provide context on why the items (i.e. individual objects) of the array are grouped together.
+
+`objectDescription`
+
+*   is optional
+
+*   Type: `string` ([Description of the object-set](ega-15-properties-description-of-the-object-set.md))
+
+*   cannot be null
+
+*   defined in: [EGA object-set metadata schema](ega-15-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription")
+
+### objectDescription Type
+
+`string` ([Description of the object-set](ega-15-properties-description-of-the-object-set.md))
+
+### objectDescription Examples
+
+```json
+"This object-set corresponds to a whole example of a Single Cell Sequencing submission, being grouped together and submitted together."
+```
+
+```json
+"When submitting the previous object set, 4 samples were wrong and need to be re-submitted, and that's the purpose of this object-set."
+```
 
 ## schemaDescriptor
 

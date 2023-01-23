@@ -32,7 +32,7 @@
 
 *   [EGA individual metadata schema](./ega-14.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json`
 
-*   [EGA object-set metadata schema](./ega-15.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object set") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json`
+*   [EGA object-set metadata schema](./ega-15.md "Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object-set") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json`
 
 *   [EGA policy metadata schema](./ega-16.md "A policy, also known as Data Access Agreement (DAA), is a contract made between Data User and Data Access Committee") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json`
 
