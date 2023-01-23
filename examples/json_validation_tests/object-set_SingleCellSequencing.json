@@ -6,7 +6,6 @@
         "objectTitle": "Example of a Single Cell Sequencing minimal submission",
         "objectDescription": "This object-set constitutes an example of some objects one would expect in a minimal Single Cell Sequencing (SCS) submission: an individual (from which 2 samples were derived); physical samples (blood samples, not individual cells); an experiment compiling the protocols performed over the samples; and the resulting assays containing the raw and sequencing files. There are many other objects one would submit for a full SCS submission: a policy, DAC and dataset to specify the reusability of the data; a study highlighting the aims and topics of the submission; analyses containing the bioinformatics investigations over the raw files; protocols describing each of the procedures performed (from sample collection to differential expression); and finally a submission which would be referenced by all objects. This minimal objects are inspired in the SC RNASeq tutorial: https://hbctraining.github.io/scRNA-seq/lessons/pseudobulk_DESeq2_scrnaseq.html",
         "objectArray": [
-            
             {
                 "objectId": {
                     "alias": "NM305004-PBMC_Sample_treated",
@@ -81,8 +80,8 @@
                     },
                     {
                         "cellType": {
-                            "termId": "CL:0001054",
-                            "termLabel": "CD14-positive monocyte"
+                            "termId": "CL:0002057",
+                            "termLabel": "CD14-positive, CD16-negative classical monocyte"
                         },
                         "cellTypeInferred": "inferred"
                     },
@@ -222,8 +221,8 @@
                     },
                     {
                         "cellType": {
-                            "termId": "CL:0001054",
-                            "termLabel": "CD14-positive monocyte"
+                            "termId": "CL:0002057",
+                            "termLabel": "CD14-positive, CD16-negative classical monocyte"
                         },
                         "cellTypeInferred": "inferred"
                     },
@@ -290,11 +289,14 @@
                     "assayInstrument": "sequencer",
                     "assayInstrumentPlatform": "Illumina NextSeq 500"
                 },
-                "assayTypeDescriptor": {
-                    "assayType": "assay by high throughput sequencer",
-                    "assaySubtype": "single cell sequencing"
+                "assayType": {
+                    "termId": "EFO:0008913",
+                    "termLabel": "single-cell RNA sequencing"
                 },
-                "assayedMoleculeType": "RNA",
+                "assayedBiologicalMacromolecule": {
+                    "termId": "CHEBI:33697",
+                    "termLabel": "ribonucleic acid"
+                },
                 "typesOfOutputData": [
                     "transcriptomic data"
                 ],
@@ -378,7 +380,7 @@
                 "assayCenter": "EBI-TEST",
                 "assayDate": "2022-02-13",
                 "assayTypeSpecifications": {
-                    "assayType": "sequencing",
+                    "assayInstrument": "sequencer",
                     "sequencingAssaySpecifications": {
                         "referenceAlignmentDetails": [
                             {
@@ -462,7 +464,7 @@
                 "assayCenter": "EBI-TEST",
                 "assayDate": "2022-02-13",
                 "assayTypeSpecifications": {
-                    "assayType": "sequencing",
+                    "assayInstrument": "sequencer",
                     "sequencingAssaySpecifications": {
                         "referenceAlignmentDetails": [
                             {
