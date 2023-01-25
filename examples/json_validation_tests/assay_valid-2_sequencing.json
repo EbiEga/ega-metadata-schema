@@ -17,14 +17,14 @@
             {
                 "checksumMethod": "MD5",
                 "encryptedChecksum": "fdbfd70466017e8387bc55c65b553b2b",
-                "filename": "myfile1_NM305004_50000reads.cram.gpg",
+                "filename": "myfile1_NM305004_50000reads.cram",
                 "filetype": "CRAM",
                 "unencryptedChecksum": "66526ffc57804187654eba000bc3905c"
             },
             {
                 "checksumMethod": "MD5",
                 "encryptedChecksum": "db75a499836cd430cc9d25b5f89ea4c3",
-                "filename": "myfile2_NM305004_50000reads.cram.gpg",
+                "filename": "myfile2_NM305004_50000reads.cram",
                 "filetype": "CRAM",
                 "unencryptedChecksum": "dc2f2f3aa81f299944e23aacf5a40b2c"
             }

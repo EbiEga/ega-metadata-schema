@@ -397,14 +397,14 @@
                     {
                         "checksumMethod": "MD5",
                         "encryptedChecksum": "db75a499836cd430cc9d25b5f89ea4c3",
-                        "filename": "unaligned_reads_ot_untreated_sample.fastq.gpg",
+                        "filename": "unaligned_reads_ot_untreated_sample.fastq",
                         "filetype": "FASTQ",
                         "unencryptedChecksum": "dc2f2f3aa81f299944e23aacf5a40b2c"
                     },
                     {
                         "checksumMethod": "MD5",
                         "encryptedChecksum": "fdbfd70466017e8387bc55c65b553b2b",
-                        "filename": "aligned_reads_ot_untreated_sample.cram.gpg",
+                        "filename": "aligned_reads_ot_untreated_sample.cram",
                         "filetype": "CRAM",
                         "unencryptedChecksum": "66526ffc57804187654eba000bc3905c"
                     }
@@ -481,14 +481,14 @@
                     {
                         "checksumMethod": "MD5",
                         "encryptedChecksum": "4f254fb40667afec9bc7d98085dea53c",
-                        "filename": "unaligned_reads_ot_treated_sample.fastq.gpg",
+                        "filename": "unaligned_reads_ot_treated_sample.fastq",
                         "filetype": "FASTQ",
                         "unencryptedChecksum": "bcb4d19c09bd5463bddb01ec8aae8d63"
                     },
                     {
                         "checksumMethod": "MD5",
                         "encryptedChecksum": "d82c00a086dd492978ead392cfd8335f",
-                        "filename": "aligned_reads_ot_treated_sample.cram.gpg",
+                        "filename": "aligned_reads_ot_treated_sample.cram",
                         "filetype": "CRAM",
                         "unencryptedChecksum": "8033f2e64be1d2585d733fd92d0009af"
                     }
