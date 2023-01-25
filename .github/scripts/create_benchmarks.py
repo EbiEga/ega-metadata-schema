@@ -118,6 +118,7 @@ class JSONDocValidationStats:
         start_time = datetime.now()
         try:
             response = requests.post(self.endpoint, json=self.json_dict)
+            end_time = datetime.now()
             response.raise_for_status()
             
         except (requests.exceptions.HTTPError, requests.exceptions.ConnectionError) as e:
@@ -128,7 +129,7 @@ class JSONDocValidationStats:
             )
             raise Exception(error_message) from e
         
-        end_time = datetime.now()
+        
 
         self.validation_outcome = response.json()
         self.validation_time = (end_time - start_time).total_seconds()
