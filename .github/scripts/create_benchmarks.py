@@ -1,3 +1,4 @@
+import sys
 import os
 import json
 import requests
@@ -115,7 +116,18 @@ class JSONDocValidationStats:
         Validates a json document by sending a post request to the specified endpoint, the json document is passed as the json payload and saves the response in json format as well as the time it took to get the response
         """
         start_time = datetime.now()
-        response = requests.post(self.endpoint, json=self.json_dict)
+        try:
+            response = requests.post(self.endpoint, json=self.json_dict)
+            response.raise_for_status()
+            
+        except (requests.exceptions.HTTPError, requests.exceptions.ConnectionError) as e:
+            error_message = (
+                f"ERROR When requesting validation from the endpoint: server could not be reached.\n"
+                f"\tCheck that the given endpoint ({self.endpoint}) is reachable and try again.\n"
+                f"\tFor further details on Biovalidator's server endpoints, check: https://github.com/elixir-europe/biovalidator#using-biovalidator-as-a-server"
+            )
+            raise Exception(error_message) from e
+        
         end_time = datetime.now()
 
         self.validation_outcome = response.json()
@@ -198,7 +210,7 @@ class JSONBatchValidationStats:
     def validate_one_file(self, filepath:str) -> dict:
         """
         calls JSONDocValidationStats(), returning a set of useful parameters as results
-        """                
+        """
         validator = JSONDocValidationStats(
             json_doc=filepath,
             endpoint=self.endpoint,
@@ -254,6 +266,15 @@ class JSONBatchValidationStats:
                             self.append_one_iteration, 
                             filepath
                         ) for _ in range(n_parallel_threads)]
+                        # If there was an exception with the parallel threads, exceptions will not be shown until the end, but
+                        #    they can be overlooked if we don't iterate over each and check that they did not raise any exception.
+                        for future in concurrent.futures.as_completed(futures):
+                            try:
+                                future.result()
+                            except Exception as e:
+                                # For example, an exception like "requests.exceptions.HTTPError" when the server is not reachable
+                                print(e)
+                                sys.exit()
                     concurrent.futures.wait(futures)
 
         temp_df = pd.DataFrame(self.iteration_list)
