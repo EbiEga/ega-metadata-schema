@@ -256,7 +256,8 @@ class JSONBatchValidationStats:
                         ) for _ in range(n_parallel_threads)]
                     concurrent.futures.wait(futures)
 
-        self.complete_df = self.complete_df.append(self.iteration_list, ignore_index=True)
+        temp_df = pd.DataFrame(self.iteration_list)
+        self.complete_df = pd.concat([self.complete_df, temp_df], ignore_index=True)
 
         return self.complete_df
 
