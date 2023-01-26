@@ -68,7 +68,7 @@ def df_to_markdown_table(dataframe: pd.DataFrame) -> str:
     """
     Returns a markdown formatted table from a dataframe
     """
-    markdown_params = {"showindex": False, "tablefmt": "pipe"}
+    markdown_params = {"index": False, "tablefmt": "pipe"}
     table = dataframe.to_markdown(**markdown_params)
     return table
 
@@ -333,11 +333,18 @@ class JSONBatchValidationStats:
         """
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
-        ax.scatter(            
+        sc = ax.scatter(            
             self.complete_df["n_data_properties"], 
             self.complete_df["n_ontology_properties"],
-            self.complete_df["validation_time"]
+            self.complete_df["validation_time"],
+            c=self.complete_df["validation_time"], # use validation_time as the color value
+            cmap='plasma' # use the plasma colormap
         )
+        # Add the colorbar to show the color mapping
+        cbar = fig.colorbar(sc, shrink=0.5)
+        cbar.set_label('validation_time')
+        cbar.ax.set_position([0.87, 0.1, 0.03, 0.6])
+
         ax.set_xlabel('n_data_properties')
         ax.set_ylabel('n_ontology_properties')
         ax.set_zlabel('validation_time')
