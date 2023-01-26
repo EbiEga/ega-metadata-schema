@@ -127,9 +127,7 @@ class JSONDocValidationStats:
                 f"\tCheck that the given endpoint ({self.endpoint}) is reachable and try again.\n"
                 f"\tFor further details on Biovalidator's server endpoints, check: https://github.com/elixir-europe/biovalidator#using-biovalidator-as-a-server"
             )
-            raise Exception(error_message) from e
-        
-        
+            raise Exception(error_message) from e        
 
         self.validation_outcome = response.json()
         self.validation_time = (end_time - start_time).total_seconds()
@@ -297,7 +295,13 @@ class JSONBatchValidationStats:
         Uses the self.complete_df dataframe to generate a summary of it (self.summary_df), grouping parameters by the "filepath" (i.e. grouping parameters by filename)
         """
         if not hasattr(self, 'complete_df') or self.complete_df.empty:
-            raise ValueError("complete_df has not been initialized or is empty. Use method 'iterate_over_dir()' at least once before trying to create the summary dataframe.")
+            err_message = (
+                "complete_df has not been initialized or is empty. "
+                "Use method 'iterate_over_dir()' at least once before trying to create the summary dataframe.\n"
+                f"You should also check that the given endpoint ({self.endpoint}) is reachable. "
+                "For further details on Biovalidator's server endpoints, check: https://github.com/elixir-europe/biovalidator#using-biovalidator-as-a-server"
+            )
+            raise ValueError(err_message)
 
         summary_df = self.complete_df.groupby("filepath").agg(
             {
