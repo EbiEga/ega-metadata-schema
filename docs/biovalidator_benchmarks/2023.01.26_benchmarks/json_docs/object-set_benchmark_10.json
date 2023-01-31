@@ -1,0 +1,851 @@
+{
+    "data": {
+        "objectArray": [
+            {
+                "dacAttributes": [
+                    {
+                        "tag": "Associated project ID",
+                        "value": "X33981-DGH"
+                    }
+                ],
+                "dacContacts": {
+                    "additionalContacts": [
+                        {
+                            "emailAddress": "myname2@ebi.ac.uk",
+                            "individualFullName": "Todd, Jason"
+                        },
+                        {
+                            "emailAddress": "myname3@ebi.ac.uk",
+                            "institutionName": "BAT-CAVE"
+                        }
+                    ],
+                    "mainContact": {
+                        "emailAddress": "myname@ebi.ac.uk",
+                        "individualFullName": "Wayne Jr., Bruce",
+                        "institutionName": "European Bioinformatics Institute (EBI)",
+                        "phoneNumber": "+44 7427512529"
+                    }
+                },
+                "dacRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAP00002045411"
+                            },
+                            "objectType": "policy"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAC00002344532"
+                            },
+                            "objectType": "DAC"
+                        },
+                        "rType": "sameAs"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "objectDescription": "A example DAC used exclusively for testing.",
+                "objectId": {
+                    "alias": "0.6892740817200416",
+                    "centerName": "EBI-TEST",
+                    "egaAccession": "EGAC00000000001"
+                },
+                "objectTitle": "EBI test DAC",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.DAC.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "DAC"
+                }
+            },
+            {
+                "duoCodes": [
+                    {
+                        "termId": "DUO:0000046",
+                        "termLabel": "non-commercial use only"
+                    },
+                    {
+                        "termId": "DUO:0000028",
+                        "termLabel": "institution specific restriction"
+                    },
+                    {
+                        "termId": "DUO:0000032",
+                        "termLabel": "population research"
+                    }
+                ],
+                "objectId": {
+                    "alias": "0.14868456473623448",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "EBI test case-control policy for cancer datasets",
+                "policyAttributes": [
+                    {
+                        "tag": "Associated project ID",
+                        "value": "X33981-DGH"
+                    }
+                ],
+                "policyDescriptor": {
+                    "policyReference": "https://ega-archive.org/submission/dac/documentation",
+                    "policyText": "The data is fully available upon request with the data-access committee of this study."
+                },
+                "policyRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAD00002043982"
+                            },
+                            "objectType": "dataset"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAD00004543981"
+                            },
+                            "objectType": "dataset"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.policy.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "policy"
+                }
+            },
+            {
+                "analysisAttributes": [
+                    {
+                        "tag": "sub_project",
+                        "value": "CB4-1UD"
+                    }
+                ],
+                "analysisFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                        "filename": "sequence_variation.vcf.gpg",
+                        "filetype": "VCF",
+                        "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                        "filename": "analysis_script.py.gpg",
+                        "filetype": "PY",
+                        "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+                    }
+                ],
+                "analysisRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAS00002045411"
+                            },
+                            "objectType": "study"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00001051423"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00001051423"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Genome indexing protocol",
+                                "egaAccession": "EGAO00001031671"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Read mapping protocol",
+                                "egaAccession": "EGAO00001031672"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Variant calling protocol",
+                                "egaAccession": "EGAO00001031673"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "analysisTypeSpecifications": {
+                    "analysisTypes": [
+                        "sequence variation",
+                        "phenotype characterization"
+                    ],
+                    "referenceAlignmentDetails": [
+                        {
+                            "ncbiAssembly": {
+                                "termId": "assembly:GCA_000001405.29",
+                                "termLabel": "GRCh38.p14"
+                            }
+                        }
+                    ]
+                },
+                "objectDescription": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned against the human referenced and then extracted sequence variation... ...VCF files were compared along patients' clinical histories.",
+                "objectId": {
+                    "alias": "0.3556574790625866",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Example VCF analysis",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "analysis"
+                },
+                "targetedLoci": [
+                    {
+                        "lociDescriptor": [
+                            {
+                                "geneDescriptor": {
+                                    "geneIdentifier": {
+                                        "termId": "HGNC:11998",
+                                        "termLabel": "TP53"
+                                    }
+                                },
+                                "locusAdditionalDescription": "Variation within the VCF corresponds to TP53 variation among patients."
+                            }
+                        ],
+                        "organismDescriptor": {
+                            "organismTaxon": {
+                                "termId": "NCBITaxon:9606",
+                                "termLabel": "homo sapiens"
+                            },
+                            "commonName": "human"
+                        }
+                    }
+                ],
+                "typesOfInputData": [
+                    "genomic data"
+                ],
+                "typesOfOutputData": [
+                    "processed sequencing data"
+                ]
+            },
+            {
+                "additionalCollaborators": [
+                    {
+                        "collaboratorContactDetails": {
+                            "emailAddress": "example@gmail.com",
+                            "institutionName": "EMBL European Bioinformatics Institute (EBI)"
+                        },
+                        "collaboratorRights": "read_and_write"
+                    },
+                    {
+                        "collaboratorContactDetails": {
+                            "emailAddress": "example@ebi.ac.uk",
+                            "individualFullName": "Isaac Asimov",
+                            "institutionName": "Boston University"
+                        },
+                        "collaboratorRights": "read_only"
+                    }
+                ],
+                "objectDescription": "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs",
+                "objectId": {
+                    "alias": "0.4539279165855544",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Submission XF40",
+                "resources": [
+                    {
+                        "automaticallyAssigned": false,
+                        "name": "Human Phenotype Ontology",
+                        "namespacePrefix": "HP",
+                        "version": "2022-06-11"
+                    },
+                    {
+                        "automaticallyAssigned": false,
+                        "name": "Experimental Factor Ontology",
+                        "namespacePrefix": "EFO",
+                        "version": "3.45.0"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "submission"
+                },
+                "submissionAttributes": [
+                    {
+                        "tag": "internal submission identifier",
+                        "value": "XF40"
+                    }
+                ],
+                "submissionRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002543432"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "isAfter"
+                    }
+                ]
+            },
+            {
+                "assayAttributes": [
+                    {
+                        "tag": "weather",
+                        "value": "When the assay was executed it was sunny outside"
+                    },
+                    {
+                        "tag": "assay price",
+                        "units": "euros",
+                        "value": 200
+                    }
+                ],
+                "assayCenter": "EBI-TEST",
+                "assayDate": "2022-02-13",
+                "assayFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                        "filename": "myfile1_M3051057.cel.gpg",
+                        "filetype": "CEL",
+                        "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                        "filename": "myfile2_M3051057.cel.gpg",
+                        "filetype": "CEL",
+                        "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+                    }
+                ],
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002094401"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "assayTypeSpecifications": {
+                    "assayInstrument": "array",
+                    "arrayAssaySpecifications": {
+                        "arraySampleLabels": [
+                            {
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37987",
+                                        "termLabel": "Cy3"
+                                    }
+                                },
+                                "objectId": {
+                                    "egaAccession": "EGAN00002094401"
+                                }
+                            },
+                            {
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37989",
+                                        "termLabel": "Cy5"
+                                    }
+                                },
+                                "objectId": {
+                                    "egaAccession": "EGAN00002094453"
+                                }
+                            }
+                        ],
+                        "nLabelsPerArray": 2
+                    }
+                },
+                "objectId": {
+                    "alias": "0.4877463617849769",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Breast cancer array assay M3051057",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "assay"
+                }
+            },
+            {
+                "objectDescription": "EBI genome-wide case-control association study for COVID-19 using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+                "objectId": {
+                    "alias": "0.5963096619880462",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "EBI test case-control study for covid19",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "study"
+                },
+                "studyAttributes": [
+                    {
+                        "tag": "Associated project ID",
+                        "value": "X33981-DGH"
+                    }
+                ],
+                "studyDesigns": [
+                    "case control design",
+                    "binding site identification design"
+                ],
+                "studyRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002043412"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionIdentifier": {
+                                            "termId": "biostudies:S-EPMC3314381",
+                                            "termLabel": "Epigenetics of kidney cancer and bladder cancer"
+                                        },
+                                        "objectExternalAccessionDescription": "The same study was submitted to the two archives due to a deadline approaching"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "sameAs"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "studyTypes": [
+                    "COVID-19"
+                ]
+            },
+            {
+                "objectDescription": "EBI genome-wide case-control association study for COVID-19 using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls.",
+                "objectId": {
+                    "alias": "0.9577207129081627",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "EBI test case-control study for covid19",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "study"
+                },
+                "studyAttributes": [
+                    {
+                        "tag": "Associated project ID",
+                        "value": "X33981-DGH"
+                    }
+                ],
+                "studyDesigns": [
+                    "case control design",
+                    "binding site identification design"
+                ],
+                "studyRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002043412"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionIdentifier": {
+                                            "termId": "biostudies:S-EPMC3314381",
+                                            "termLabel": "Epigenetics of kidney cancer and bladder cancer"
+                                        },
+                                        "objectExternalAccessionDescription": "The same study was submitted to the two archives due to a deadline approaching"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "sameAs"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "studyTypes": [
+                    "COVID-19"
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "0.06373922592498504",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Hibridization of the RNA to the array",
+                "protocolAttributes": [
+                    {
+                        "tag": "step_index",
+                        "value": "2"
+                    },
+                    {
+                        "tag": "instrument_cost",
+                        "units": "GBP",
+                        "value": 2500
+                    }
+                ],
+                "protocolDescription": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA hybridization according to the manufacturer's protocol (Affymetrix).",
+                "protocolInstruments": [
+                    "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]"
+                ],
+                "protocolPerformers": [
+                    "EGA's Lab Technician group",
+                    "Technician N41394"
+                ],
+                "protocolRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002045411"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002045412"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "alias": "sampleCollection_protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "isAfter"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "protocolTypeDescriptor": {
+                    "protocolType": "hybridization",
+                    "protocolSubtype": {
+                        "termId": "EFO:0003815",
+                        "termLabel": "Nucleic acid hybridization to array"
+                    }
+                },
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "protocol"
+                }
+            },
+            {
+                "analysisAttributes": [
+                    {
+                        "tag": "sub_project",
+                        "value": "CB4-1UD"
+                    }
+                ],
+                "analysisFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                        "filename": "sequence_variation.vcf.gpg",
+                        "filetype": "VCF",
+                        "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                        "filename": "analysis_script.py.gpg",
+                        "filetype": "PY",
+                        "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+                    }
+                ],
+                "analysisRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAS00002045411"
+                            },
+                            "objectType": "study"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00001051423"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00001051423"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Genome indexing protocol",
+                                "egaAccession": "EGAO00001031671"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Read mapping protocol",
+                                "egaAccession": "EGAO00001031672"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Variant calling protocol",
+                                "egaAccession": "EGAO00001031673"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "analysisTypeSpecifications": {
+                    "analysisTypes": [
+                        "sequence variation",
+                        "phenotype characterization"
+                    ],
+                    "referenceAlignmentDetails": [
+                        {
+                            "ncbiAssembly": {
+                                "termId": "assembly:GCA_000001405.29",
+                                "termLabel": "GRCh38.p14"
+                            }
+                        }
+                    ]
+                },
+                "objectDescription": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned against the human referenced and then extracted sequence variation... ...VCF files were compared along patients' clinical histories.",
+                "objectId": {
+                    "alias": "0.4819845208558139",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Example VCF analysis",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "analysis"
+                },
+                "targetedLoci": [
+                    {
+                        "lociDescriptor": [
+                            {
+                                "geneDescriptor": {
+                                    "geneIdentifier": {
+                                        "termId": "HGNC:11998",
+                                        "termLabel": "TP53"
+                                    }
+                                },
+                                "locusAdditionalDescription": "Variation within the VCF corresponds to TP53 variation among patients."
+                            }
+                        ],
+                        "organismDescriptor": {
+                            "organismTaxon": {
+                                "termId": "NCBITaxon:9606",
+                                "termLabel": "homo sapiens"
+                            },
+                            "commonName": "human"
+                        }
+                    }
+                ],
+                "typesOfInputData": [
+                    "genomic data"
+                ],
+                "typesOfOutputData": [
+                    "processed sequencing data"
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "0.5482872502278217",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Genome indexing protocol",
+                "protocolDescription": "Index the reads in the run. You can use as input a FASTA file (preferred) or a FASTQ. The file can also be compressed with gzip, having a .gz extension. The script will uncompress the file and pass it to FASTA format if it's a FASTQ file. Run ``./index.sh your_run_id /mnt/c/your_run.fastq.gz``.",
+                "protocolPerformers": [
+                    "EGA's testing bioinformaticians"
+                ],
+                "protocolRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00002045411"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "protocolSoftware": [
+                    "FastQC v1.1.0 [SWO:1100144]",
+                    "SAMtools [SWO:1100143]"
+                ],
+                "protocolTypeDescriptor": {
+                    "protocolType": "data transformation",
+                    "protocolSubtype": {
+                        "termId": "operation:3211",
+                        "termLabel": "genome indexing"
+                    }
+                },
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "protocol"
+                }
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "object-set"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "data": {
+        "individualAttributes": [
+            {
+                "tag": "haircolor",
+                "value": "red"
+            }
+        ],
+        "individualRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAN00000000001"
+                    },
+                    "objectType": "sample"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "minimalPublicAttributes": {
+            "biologicalSex": "male",
+            "diseases": [
+                {
+                    "termId": "EFO:0003101",
+                    "termLabel": "testicular seminoma"
+                },
+                {
+                    "termId": "EFO:1000254",
+                    "termLabel": "fibroadenoma"
+                }
+            ],
+            "phenotypes": [
+                {
+                    "termId": "HP:0033403",
+                    "termLabel": "Testicular ischemia"
+                }
+            ],
+            "subjectId": "donor-NM305004"
+        },
+        "objectId": {
+            "alias": "NM305004",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAI00000000001"
+        },
+        "organismDescriptor": {
+            "organismTaxon": {
+                "termId": "NCBITaxon:9606",
+                "termLabel": "homo sapiens"
+            },
+            "commonName": "human"
+        },
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "individual"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json"
+    }
+}

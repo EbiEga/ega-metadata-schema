@@ -1,0 +1,67 @@
+{
+    "data": {
+        "additionalCollaborators": [
+            {
+                "collaboratorContactDetails": {
+                    "emailAddress": "example@gmail.com",
+                    "institutionName": "EMBL European Bioinformatics Institute (EBI)"
+                },
+                "collaboratorRights": "read_and_write"
+            },
+            {
+                "collaboratorContactDetails": {
+                    "emailAddress": "example@ebi.ac.uk",
+                    "individualFullName": "Isaac Asimov",
+                    "institutionName": "Boston University"
+                },
+                "collaboratorRights": "read_only"
+            }
+        ],
+        "objectDescription": "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs",
+        "objectId": {
+            "alias": "submission_XF40",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Submission XF40",
+        "resources": [
+            {
+                "automaticallyAssigned": false,
+                "name": "Human Phenotype Ontology",
+                "namespacePrefix": "HP",
+                "version": "2022-06-11"
+            },
+            {
+                "automaticallyAssigned": false,
+                "name": "Experimental Factor Ontology",
+                "namespacePrefix": "EFO",
+                "version": "3.45.0"
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.submission.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "submission"
+        },
+        "submissionAttributes": [
+            {
+                "tag": "internal submission identifier",
+                "value": "XF40"
+            }
+        ],
+        "submissionRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002543432"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "isAfter"
+            }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json"
+    }
+}

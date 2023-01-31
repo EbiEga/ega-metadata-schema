@@ -1,0 +1,548 @@
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    },
+    "data": {
+        "objectTitle": "Example of a Single Cell Sequencing minimal submission",
+        "objectDescription": "This object-set constitutes an example of some objects one would expect in a minimal Single Cell Sequencing (SCS) submission: an individual (from which 2 samples were derived); physical samples (blood samples, not individual cells); an experiment compiling the protocols performed over the samples; and the resulting assays containing the raw and sequencing files. There are many other objects one would submit for a full SCS submission: a policy, DAC and dataset to specify the reusability of the data; a study highlighting the aims and topics of the submission; analyses containing the bioinformatics investigations over the raw files; protocols describing each of the procedures performed (from sample collection to differential expression); and finally a submission which would be referenced by all objects. This minimal objects are inspired in the SC RNASeq tutorial: https://hbctraining.github.io/scRNA-seq/lessons/pseudobulk_DESeq2_scrnaseq.html",
+        "objectArray": [
+            {
+                "objectId": {
+                    "alias": "0.6977916691592991",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "PBMC sample - Lupus treated",
+                "objectDescription": "Peripheral Blood Mononuclear Cells (PBMC) sample from individual with lupus.",
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "sampleCollection": {
+                    "ageAtCollection": {
+                        "age": "P10Y6M"
+                    },
+                    "samplingSite": {
+                        "termId": "UBERON:0001414",
+                        "termLabel": "median basilic vein"
+                    }
+                },
+                "sampleStatus": [
+                    {
+                        "caseVsControl": "case",
+                        "conditionUnderStudy": {
+                            "termId": "EFO:0003023",
+                            "termLabel": "Activated by 100 U/mL of recombinant IFN-\u03b2 for 6 hours"
+                        }
+                    }
+                ],
+                "sampleTypes": [
+                    "cell culture"
+                ],
+                "cellTypes": [
+                    {
+                        "cellType": {
+                            "termId": "CL:0000236",
+                            "termLabel": "B cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000624",
+                            "termLabel": "CD4-positive, alpha-beta T cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000625",
+                            "termLabel": "CD8-positive, alpha-beta T cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000623",
+                            "termLabel": "natural killer cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000576",
+                            "termLabel": "Monocyte"
+                        },
+                        "cellTypeInferred": "inferred",
+                        "cellTypeLabel": "FCGR3A+"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0002057",
+                            "termLabel": "CD14-positive, CD16-negative classical monocyte"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000451",
+                            "termLabel": "Dendritic cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000556",
+                            "termLabel": "Megakaryocyte"
+                        },
+                        "cellTypeInferred": "inferred"
+                    }
+                ],
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAI00000000001"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sample collection protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "IFN-Beta sample treatment",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "sample"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "0.03824936023417902",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "PBMC sample - Lupus untreated",
+                "objectDescription": "Peripheral Blood Mononuclear Cells (PBMC) sample from individual with lupus.",
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "sampleCollection": {
+                    "ageAtCollection": {
+                        "age": "P10Y6M"
+                    },
+                    "samplingSite": {
+                        "termId": "UBERON:0001414",
+                        "termLabel": "median basilic vein"
+                    }
+                },
+                "sampleStatus": [
+                    {
+                        "caseVsControl": "control",
+                        "conditionUnderStudy": {
+                            "termId": "EFO:0003023",
+                            "termLabel": "Activated by 100 U/mL of recombinant IFN-\u03b2 for 6 hours"
+                        }
+                    }
+                ],
+                "sampleTypes": [
+                    "cell culture"
+                ],
+                "cellTypes": [
+                    {
+                        "cellType": {
+                            "termId": "CL:0000236",
+                            "termLabel": "B cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000624",
+                            "termLabel": "CD4-positive, alpha-beta T cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000625",
+                            "termLabel": "CD8-positive, alpha-beta T cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000623",
+                            "termLabel": "natural killer cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000576",
+                            "termLabel": "Monocyte"
+                        },
+                        "cellTypeInferred": "inferred",
+                        "cellTypeLabel": "FCGR3A+"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0002057",
+                            "termLabel": "CD14-positive, CD16-negative classical monocyte"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000451",
+                            "termLabel": "Dendritic cell"
+                        },
+                        "cellTypeInferred": "inferred"
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000556",
+                            "termLabel": "Megakaryocyte"
+                        },
+                        "cellTypeInferred": "inferred"
+                    }
+                ],
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAI00000000001"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sample collection protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "sample"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "0.43380016121740983",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Single Cell Sequencing of Lupus Tissue to Identify Cell Subpopulations and Pathogenic Mechanisms",
+                "objectDescription": "This single cell sequencing experiment utilizes the Illumina NextSeq 500 platform and the 10x Genomics library to analyze the cellular heterogeneity of lupus. The high-throughput capabilities of the NextSeq 500 and the improved resolution of the 10x Genomics library allow for the detailed analysis of specific cell subpopulations and the identification of potential pathogenic mechanisms in lupus. The results of this experiment may inform the development of targeted therapies for this autoimmune disease.",
+                "assayTechnology": {
+                    "assayInstrument": "sequencer",
+                    "assayInstrumentPlatform": "Illumina NextSeq 500"
+                },
+                "assayType": {
+                    "termId": "EFO:0008913",
+                    "termLabel": "single-cell RNA sequencing"
+                },
+                "assayedBiologicalMacromolecule": {
+                    "termId": "CHEBI:33697",
+                    "termLabel": "ribonucleic acid"
+                },
+                "typesOfOutputData": [
+                    "transcriptomic data"
+                ],
+                "experimentTypeSpecifications": {
+                    "sequencingExperiment": {
+                        "libraryLayout": "paired-end"
+                    }
+                },
+                "experimentRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAS00000000001"
+                            },
+                            "objectType": "study"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00000000001"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Library preparation 10X Genomics",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sequencing protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sample demultiplexing",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "experiment"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "0.2757656308926839",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Single Cell Sequencing Assay 1 - Untreated sample",
+                "assayCenter": "EBI-TEST",
+                "assayDate": "2022-02-13",
+                "assayTypeSpecifications": {
+                    "assayInstrument": "sequencer",
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26",
+                                    "termLabel": "GRCh38.p14"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "assayFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "db75a499836cd430cc9d25b5f89ea4c3",
+                        "filename": "unaligned_reads_ot_untreated_sample.fastq.gpg",
+                        "filetype": "FASTQ",
+                        "unencryptedChecksum": "dc2f2f3aa81f299944e23aacf5a40b2c"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "fdbfd70466017e8387bc55c65b553b2b",
+                        "filename": "aligned_reads_ot_untreated_sample.cram.gpg",
+                        "filetype": "CRAM",
+                        "unencryptedChecksum": "66526ffc57804187654eba000bc3905c"
+                    }
+                ],
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "NM305004-PBMC_Sample_Untreated",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "sample"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00000000001"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00000000001"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "assay"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "0.18781330022907494",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Single Cell Sequencing Assay 1 - Treated sample",
+                "assayCenter": "EBI-TEST",
+                "assayDate": "2022-02-13",
+                "assayTypeSpecifications": {
+                    "assayInstrument": "sequencer",
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26",
+                                    "termLabel": "GRCh38.p14"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "assayFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "4f254fb40667afec9bc7d98085dea53c",
+                        "filename": "unaligned_reads_ot_treated_sample.fastq.gpg",
+                        "filetype": "FASTQ",
+                        "unencryptedChecksum": "bcb4d19c09bd5463bddb01ec8aae8d63"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "d82c00a086dd492978ead392cfd8335f",
+                        "filename": "aligned_reads_ot_treated_sample.cram.gpg",
+                        "filetype": "CRAM",
+                        "unencryptedChecksum": "8033f2e64be1d2585d733fd92d0009af"
+                    }
+                ],
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "NM305004-PBMC_Sample_treated",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "sample"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00000000001"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00000000001"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "assay"
+                }
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "object-set"
+        }
+    }
+}
