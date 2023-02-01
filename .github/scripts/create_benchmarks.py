@@ -136,6 +136,7 @@ class JSONDocValidationStats:
 
         useful_parameters = [validate.passed_validation, validate.validation_time, validate.n_data_properties, validate.n_ontology_properties, validate.validation_outcome]
     """
+
     def __init__(
         self,
         json_doc: str,
@@ -174,7 +175,10 @@ class JSONDocValidationStats:
             end_time = datetime.now()
             response.raise_for_status()
 
-        except (requests.exceptions.HTTPError, requests.exceptions.ConnectionError) as e:
+        except (
+            requests.exceptions.HTTPError,
+            requests.exceptions.ConnectionError
+        ) as e:
             error_message = (
                 f"ERROR When requesting validation from the endpoint: server could not be reached.\n"
                 f"\tCheck that the given endpoint ({self.endpoint}) is reachable and try again.\n"
@@ -227,6 +231,7 @@ class JSONDocValidationStats:
 
         return count, term_id_count
 
+
 class JSONBatchValidationStats:
     """
     A class that makes use of JSONDocValidationStats class to validate in batch all JSON files in a directory and record useful parameters of it for display.
@@ -240,6 +245,7 @@ class JSONBatchValidationStats:
         my_class = MyClass("some input data")
         my_class.process_data()
     """
+
     def __init__(
         self,
         input_directory: str,
