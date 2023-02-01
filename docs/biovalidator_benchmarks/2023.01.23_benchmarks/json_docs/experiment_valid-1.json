@@ -1,0 +1,216 @@
+{
+    "data": {
+        "assayTechnology": {
+            "assayInstrument": "array",
+            "assayInstrumentPlatform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
+        },
+        "assayType": {
+            "termId": "EFO:0002764",   
+            "termLabel": "ChIP-chip by SNP array"
+        },
+        "assayedBiologicalMacromolecule": {
+            "termId": "EFO:0008479",   
+            "termLabel": "genomic DNA"
+        },
+        "experimentAttributes": [
+            {
+                "tag": "sub_project",
+                "value": "CB4-1UD"
+            },
+            {
+                "tag": "experiments_budget",
+                "units": "GBP",
+                "value": 20500
+            }
+        ],
+        "experimentRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAS00002045411"
+                    },
+                    "objectType": "study"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00001051423"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Patient's blood collection protocol",
+                        "egaAccession": "EGAO00001031671"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Extraction of the RNA",
+                        "egaAccession": "EGAO00001031672"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
+                "rSource": {
+                    "objectId": {
+                        "alias": "Protocol to label extracted RNA",
+                        "egaAccession": "EGAO00001031673"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Hibridization of the RNA to the array",
+                        "egaAccession": "EGAO00001031674"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Scanning of the array",
+                        "egaAccession": "EGAO00001031675"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Normalization of the data",
+                        "egaAccession": "EGAO00001031676"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "experimentTypeSpecifications": {
+            "arrayExperiment": {
+                "adfFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67f64423",
+                        "filename": "myADF-file.xlsx",
+                        "filetype": "XLSX",
+                        "unencryptedChecksum": "c6779ec2960296ed9a04f08d67f64423"
+                    }
+                ],
+                "arrayLabels": [
+                    {
+                        "arrayLabelIdentifier": {
+                            "termId": "CHEBI:15956",   
+                            "termLabel": "Biotin"
+                        }
+                    },
+                    {
+                        "arrayLabelIdentifier": {
+                            "termId": "CHEBI:37987",   
+                            "termLabel": "Cy3 dye"
+                        },
+                        "arrayLabelDescription": "This label was use to dye the control samples"                        
+                    }
+                ]
+            }
+        },
+        "objectDescription": "Example array experiment's description of my experiment N13.",
+        "objectId": {
+            "alias": "My_ChIP_arrayExperiment_13",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Example array experiment title",
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "experiment"
+        },
+        "targetedLoci": [
+            {
+                "lociDescriptor": [
+                    {
+                        "geneDescriptor": {
+                            "geneIdentifier": {
+                                "termId": "HGNC:11998",
+                                "termLabel": "TP53"
+                            }
+                        },
+                        "locusAdditionalDescription": "The locus of TP53 within the array corresponds to a variant version of the defined gene, only existing in patients with the pulmonary disease."
+                    },
+                    {
+                        "genomicSequenceDescriptor": {
+                            "assemblyDescriptor": {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCA_000001405.29",
+                                    "termLabel": "GRCh38.p14"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000017.11",
+                                    "termLabel": "chr17"
+                                }
+                            },
+                            "dnaSequenceStrand": "forward",
+                            "nucleicAcidSequence": "CTTGTTCAGTG",
+                            "sequenceCoordinates": {
+                                "sequenceInterval": {
+                                    "end": 7669460,
+                                    "start": 7669450
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "locusAdditionalDescription": "Additional locus that was placed in the array for SNP scanning for the purpose of individuals identification as tags...",
+                        "locusExternalReference": {
+                            "objectExternalAccessionIdentifier": {
+                                "termLabel": "EST89992 Human Small intestine Homo sapiens cDNA 5' end",
+                                "termId": "nucleotide:T35715.1"
+                            }
+                        }
+                    }
+                ],
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                }
+            }
+        ],
+        "typesOfOutputData": [
+            "genomic data"
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
+    }
+}

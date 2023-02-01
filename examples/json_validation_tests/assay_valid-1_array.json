@@ -17,14 +17,14 @@
             {
                 "checksumMethod": "MD5",
                 "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
-                "filename": "myfile1_M3051057.cel.gpg",
+                "filename": "myfile1_M3051057.cel",
                 "filetype": "CEL",
                 "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
             },
             {
                 "checksumMethod": "MD5",
                 "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
-                "filename": "myfile2_M3051057.cel.gpg",
+                "filename": "myfile2_M3051057.cel",
                 "filetype": "CEL",
                 "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
             }

@@ -1,0 +1,205 @@
+{
+    "data": {
+        "objectArray": [
+            {
+                "assayAttributes": [
+                    {
+                        "tag": "weather",
+                        "value": "When the assay was executed it was sunny outside"
+                    },
+                    {
+                        "tag": "assay price",
+                        "units": "euros",
+                        "value": 200
+                    }
+                ],
+                "assayCenter": "EBI-TEST",
+                "assayDate": "2022-02-13",
+                "assayFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
+                        "filename": "myfile1_M3051057.cel.gpg",
+                        "filetype": "CEL",
+                        "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
+                        "filename": "myfile2_M3051057.cel.gpg",
+                        "filetype": "CEL",
+                        "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
+                    }
+                ],
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002094401"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "assayTypeSpecifications": {
+                    "assayInstrument": "array",
+                    "arrayAssaySpecifications": {
+                        "arraySampleLabels": [
+                            {
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37987",
+                                        "termLabel": "Cy3"
+                                    }
+                                },
+                                "objectId": {
+                                    "egaAccession": "EGAN00002094401"
+                                }
+                            },
+                            {
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37989",
+                                        "termLabel": "Cy5"
+                                    }
+                                },
+                                "objectId": {
+                                    "egaAccession": "EGAN00002094453"
+                                }
+                            }
+                        ],
+                        "nLabelsPerArray": 2
+                    }
+                },
+                "objectId": {
+                    "alias": "0.5016946448305717",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Breast cancer array assay M3051057",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "assay"
+                }
+            },
+            {
+                "assayAttributes": [
+                    {
+                        "tag": "weather",
+                        "value": "When the assay was executed it was raining outside"
+                    },
+                    {
+                        "tag": "assay price",
+                        "units": "euros",
+                        "value": 350
+                    }
+                ],
+                "assayCenter": "EBI-TEST",
+                "assayDate": "2022-02-13",
+                "assayFiles": [
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "fdbfd70466017e8387bc55c65b553b2b",
+                        "filename": "myfile1_NM305004_50000reads.cram.gpg",
+                        "filetype": "CRAM",
+                        "unencryptedChecksum": "66526ffc57804187654eba000bc3905c"
+                    },
+                    {
+                        "checksumMethod": "MD5",
+                        "encryptedChecksum": "db75a499836cd430cc9d25b5f89ea4c3",
+                        "filename": "myfile2_NM305004_50000reads.cram.gpg",
+                        "filetype": "CRAM",
+                        "unencryptedChecksum": "dc2f2f3aa81f299944e23aacf5a40b2c"
+                    }
+                ],
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00002094401"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00002024153"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00002045411"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "assayTypeSpecifications": {
+                    "assayInstrument": "sequencer",
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26",
+                                    "termLabel": "GRCh38.p14"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000001.11",
+                                    "termLabel": "chr1"
+                                }
+                            },
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26",
+                                    "termLabel": "GRCh38.p14"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000002.12",
+                                    "termLabel": "chr2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "objectId": {
+                    "alias": "0.5880537391071998",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Breast cancer sequencing assay M305004",
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "assay"
+                }
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "object-set"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    }
+}

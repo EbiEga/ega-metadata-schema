@@ -1,0 +1,74 @@
+{
+    "data": {
+        "objectId": {
+            "alias": "sampleCollection_protocol",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Patient's blood collection protocol",
+        "protocolAttributes": [
+            {
+                "tag": "step_index",
+                "value": "1"
+            },
+            {
+                "tag": "instrument_cost",
+                "units": "GBP",
+                "value": 15
+            }
+        ],
+        "protocolDescription": "Total PBMC were collected from blood of HIV-1 patients. H1N1, H3N2, and B mean the influenza virus subtypes (influenza virus H1N1, influenza virus H3N2, and influenza virus B subtypes). HIV+ subjects were stratified as immune responders and immune non-responders post-vaccination (\u201cresponders\u201d\u2265 4-fold increase of neutralization antibody at Day28/Day0; \u201cnon-responders\u201d < 4-fold increase of neutralization antibody at Day28/Day0) to each influenza subtypes. RNA was isolated from the fresh isolated PBMCs on Day0 and Day7 in each responder and non-responder. So, the 0w means at day 0, 1w means at day 7.",
+        "protocolInstruments": [
+            "Syringe [OBI:0000422]",
+            "PAXgene Blood DNA Tube [NCIT:C126393]"
+        ],
+        "protocolPerformers": [
+            "Addenbrooke's Hospital nurse"
+        ],
+        "protocolRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAN00002045411"
+                    },
+                    "objectType": "sample"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "RNA_hybridization_protocol",
+                        "centerName": "EBI-TEST"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "isAfter"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "protocolTypeDescriptor": {
+            "protocolType": "sample collection",
+            "protocolSubtype": {
+                "termId": "NCIT:C48660",
+                "termLabel": "Not applicable"
+            }
+        },
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "protocol"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json"
+    }
+}

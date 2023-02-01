@@ -1,0 +1,124 @@
+{
+    "data": {
+        "cellTypes": [
+            {
+                "cellType": {
+                    "termId": "CL:0000066",
+                    "termLabel": "epithelial cell"
+                },
+                "cellTypeInferred": "not inferred"
+            },
+            {
+                "cellType": {
+                    "termId": "CL:0000097",
+                    "termLabel": "mast cell"
+                },
+                "cellTypeInferred": "not inferred"
+            }
+        ],
+        "objectDescription": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
+        "objectId": {
+            "alias": "My_sample_X_from_NM305004",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAN00000000001"
+        },
+        "objectTitle": "Skin biopsy from COVID+ patient NM305004",
+        "organismDescriptor": {
+            "organismTaxon": {
+                "termId": "NCBITaxon:9606",
+                "termLabel": "homo sapiens"
+            },
+            "commonName": "human"
+        },
+        "sampleAttributes": [
+            {
+                "tag": "biopsy volume",
+                "units": "ml",
+                "value": "30"
+            }
+        ],
+        "sampleCollection": {
+            "ageAtCollection": {
+                "ageRange": {
+                    "end": "P10Y",
+                    "start": "P5Y"
+                }
+            },
+            "sampleCollectionDate": "2021-12-20",
+            "samplingSite": {
+                "termId": "UBERON:0015474",
+                "termLabel": "axilla skin"
+            }
+        },
+        "sampleGrouping": {
+            "sampleGroupBoolean": false
+        },
+        "sampleRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAI00002045411"
+                    },
+                    "objectType": "individual"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biosample:SAMEA7616999",
+                                    "termLabel": "test12345"
+                                },
+                                "objectExternalAccessionDescription": "A test sample"
+                            }
+                        ]
+                    },
+                    "objectType": "externalAccession"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAO00002045411"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "sampleStatus": [
+            {
+                "caseVsControl": "case",
+                "conditionUnderStudy": {
+                    "termId": "XCO:0000398",
+                    "termLabel": "treated with cisplatin"
+                }
+            }
+        ],
+        "sampleTypes": [
+            "tissue culture"
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "sample"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json"
+    }
+}

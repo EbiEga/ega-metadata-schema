@@ -10,14 +10,14 @@
             {
                 "checksumMethod": "MD5",
                 "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
-                "filename": "sequence_variation.vcf.gpg",
+                "filename": "sequence_variation.vcf",
                 "filetype": "VCF",
                 "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
             },
             {
                 "checksumMethod": "MD5",
                 "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
-                "filename": "analysis_script.py.gpg",
+                "filename": "analysis_script.py",
                 "filetype": "PY",
                 "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
             }

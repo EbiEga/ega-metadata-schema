@@ -1,0 +1,53 @@
+{
+    "data": {
+        "objectId": {
+            "alias": "genome_indexing_Prot23",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Genome indexing protocol",
+        "protocolDescription": "Index the reads in the run. You can use as input a FASTA file (preferred) or a FASTQ. The file can also be compressed with gzip, having a .gz extension. The script will uncompress the file and pass it to FASTA format if it's a FASTQ file. Run ``./index.sh your_run_id /mnt/c/your_run.fastq.gz``.",
+        "protocolPerformers": [
+            "EGA's testing bioinformaticians"
+        ],
+        "protocolRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00002045411"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "protocolSoftware": [
+            "FastQC v1.1.0 [SWO:1100144]",
+            "SAMtools [SWO:1100143]"
+        ],
+        "protocolTypeDescriptor": {
+            "protocolType": "data transformation",
+            "protocolSubtype": {
+                "termId": "operation:3211",
+                "termLabel": "genome indexing"
+            }
+        },
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "protocol"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json"
+    }
+}

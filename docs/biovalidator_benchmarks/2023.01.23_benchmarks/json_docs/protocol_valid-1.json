@@ -1,0 +1,83 @@
+{
+    "data": {
+        "objectId": {
+            "alias": "RNA_hybridization_protocol",
+            "centerName": "EBI-TEST"
+        },
+        "objectTitle": "Hibridization of the RNA to the array",
+        "protocolAttributes": [
+            {
+                "tag": "step_index",
+                "value": "2"
+            },
+            {
+                "tag": "instrument_cost",
+                "units": "GBP",
+                "value": 2500
+            }
+        ],
+        "protocolDescription": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA hybridization according to the manufacturer's protocol (Affymetrix).",
+        "protocolInstruments": [
+            "Human Genome U133 Plus 2.0 tiling array [OBI:0002023]"
+        ],
+        "protocolPerformers": [
+            "EGA's Lab Technician group",
+            "Technician N41394"
+        ],
+        "protocolRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002045411"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002045412"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "alias": "sampleCollection_protocol",
+                        "centerName": "EBI-TEST"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "isAfter"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "protocolTypeDescriptor": {
+            "protocolType": "hybridization",
+            "protocolSubtype": {
+                "termId": "EFO:0003815",
+                "termLabel": "Nucleic acid hybridization to array"
+            }
+        },
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.protocol.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "protocol"
+        }
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json"
+    }
+}
