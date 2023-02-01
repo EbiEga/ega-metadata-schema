@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes
 ```
 
-Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex and phenotype. These shall be displayed and queryable. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' \[NCIT:C94232].
+Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex, phenotypes and/or diseases. These shall be displayed and queryable on our portal. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' \[NCIT:C94232].
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                           |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
