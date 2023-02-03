@@ -106,7 +106,7 @@
         "anyOf": [
           {
             "title": "Either the phenotypes array is given",
-            "required": ["phenotypes"]
+            "required": ["phenotypicAbnormalities"]
           },
           {
             "title": "Or the diseases array is given",
