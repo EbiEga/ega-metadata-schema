@@ -3799,10 +3799,30 @@
             "title": "Ontology constraints for this specific termId",
             "anyOf": [
               {
-                "title": "Ontology validation of diseases",
+                "title": "Ontology validation of 'disease' - EFO",
                 "graphRestriction":  {
                   "ontologies" : ["obo:efo"],
                   "classes": ["EFO:0000408"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": false,
+                  "include_self": false
+                }
+              },
+              {
+                "title": "Ontology validation of 'disease' - ORDO",
+                "graphRestriction":  {
+                  "ontologies" : ["obo:ordo"],
+                  "classes": ["Orphanet:377788"],
+                  "relations": ["rdfs:subClassOf"],
+                  "direct": false,
+                  "include_self": false
+                }
+              },
+              {
+                "title": "Ontology validation of 'human disease or disorder' - MONDO",
+                "graphRestriction":  {
+                  "ontologies" : ["obo:mondo"],
+                  "classes": ["MONDO:0700096"],
                   "relations": ["rdfs:subClassOf"],
                   "direct": false,
                   "include_self": false
