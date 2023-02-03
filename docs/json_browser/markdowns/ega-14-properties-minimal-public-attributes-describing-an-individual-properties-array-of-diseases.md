@@ -12,7 +12,7 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.in
 
 ## diseases Type
 
-`object[]` ([Disease](ega-12-definitions-disease.md))
+`object[]` ([Disease item](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases-disease-item.md))
 
 ## diseases Constraints
 

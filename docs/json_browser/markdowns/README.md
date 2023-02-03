@@ -88,6 +88,8 @@
 
 *   [Disease](./ega-12-definitions-disease.md "Property to describe a disease (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease`
 
+*   [Disease item](./ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases-disease-item.md "One individual disease of the array") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items`
+
 *   [EGA File object](./ega-12-definitions-ega-file-object.md "Object containing the base metadata attributes of a file object in the EGA") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject`
 
 *   [EGA Relationships object](./ega-12-definitions-ega-relationships-object.md "Object containing the base metadata attributes of a relationship object in the EGA") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject`
@@ -157,6 +159,8 @@
 *   [Organism \[OBI:0100026\] descriptor block](./ega-12-definitions-organism-obi0100026-descriptor-block.md "This property describes the material entity the sample consists in") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor`
 
 *   [Phenotypic abnormality](./ega-12-definitions-phenotypic-abnormality.md "Property to describe any abnormal (i") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality`
+
+*   [Phenotypic abnormality item](./ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item.md "One individual Phenotypic abnormality of the array") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items`
 
 *   [Policy descriptor](./ega-16-properties-policy-descriptor.md "Node containing the full description of the policy, whether it is hosted at some public resourced and referenced here; or directly written here") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor`
 
@@ -302,7 +306,7 @@
 
 *   [Array of diseases](./ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases`
 
-*   [Array of phenotypic abnormalities](./ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypes`
+*   [Array of phenotypic abnormalities](./ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md) – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities`
 
 *   [Array of sample statuses](./ega-18-properties-array-of-sample-statuses.md "Array of statuses of the sample") – `https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus`
 

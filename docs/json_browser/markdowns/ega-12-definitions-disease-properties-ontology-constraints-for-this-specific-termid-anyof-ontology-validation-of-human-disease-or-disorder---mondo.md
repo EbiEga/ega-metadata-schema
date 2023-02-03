@@ -1,7 +1,7 @@
-# In case the phenotypic abnormality is unknown or there is none Schema
+# Ontology validation of 'human disease or disorder' - MONDO Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease/properties/termId/anyOf/3
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease/properties/termId/anyOf/2
 ```
 
 
@@ -10,15 +10,6 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json\*](../../../schemas/EGA.common-definitions.json "open original schema") |
 
-## 3 Type
+## 2 Type
 
-unknown ([In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md))
-
-## 3 Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value           | Explanation |
-| :-------------- | :---------- |
-| `"NCIT:C17998"` | Unknown     |
-| `"NCIT:C94232"` | Unaffected  |
+unknown ([Ontology validation of 'human disease or disorder' - MONDO](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-human-disease-or-disorder---mondo.md))

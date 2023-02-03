@@ -1,7 +1,7 @@
 # Phenotypic abnormality Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypes/items
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality
 ```
 
 Property to describe any abnormal (i.e. deviation from normal or average) phenotype (i.e. detectable outward manifestations of a specific genotype).
@@ -10,7 +10,7 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [EGA.individual.json\*](../../../schemas/EGA.individual.json "open original schema") |
 
-## items Type
+## phenotypicAbnormality Type
 
 `object` ([Phenotypic abnormality](ega-12-definitions-phenotypic-abnormality.md))
 
@@ -18,7 +18,7 @@ all of
 
 *   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")
 
-# items Properties
+# phenotypicAbnormality Properties
 
 | Property          | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                            |
 | :---------------- | :----- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

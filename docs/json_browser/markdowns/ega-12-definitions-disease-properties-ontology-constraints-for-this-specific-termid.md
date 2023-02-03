@@ -16,7 +16,11 @@ merged type ([Ontology constraints for this specific termId](ega-12-definitions-
 
 any of
 
-*   [Ontology validation of diseases](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-diseases.md "check type definition")
+*   [Ontology validation of 'disease' - EFO](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-disease---efo.md "check type definition")
+
+*   [Ontology validation of 'disease' - ORDO](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-disease---ordo.md "check type definition")
+
+*   [Ontology validation of 'human disease or disorder' - MONDO](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-human-disease-or-disorder---mondo.md "check type definition")
 
 *   [In case the phenotypic abnormality is unknown or there is none](ega-12-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 

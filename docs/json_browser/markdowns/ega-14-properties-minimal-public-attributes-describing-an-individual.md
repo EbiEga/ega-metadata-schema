@@ -22,12 +22,12 @@ any of
 
 # minimalPublicAttributes Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
-| :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [subjectId](#subjectid)         | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId")                                                                                      |
-| [biologicalSex](#biologicalsex) | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex")                                                            |
-| [phenotypes](#phenotypes)       | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypes") |
-| [diseases](#diseases)           | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases")                   |
+| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                    |
+| :-------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [subjectId](#subjectid)                             | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId")                                                                                                   |
+| [biologicalSex](#biologicalsex)                     | `string` | Required | cannot be null | [EGA individual metadata schema](ega-12-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex")                                                                         |
+| [phenotypicAbnormalities](#phenotypicabnormalities) | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities") |
+| [diseases](#diseases)                               | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases")                                |
 
 ## subjectId
 
@@ -105,25 +105,25 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 "male"
 ```
 
-## phenotypes
+## phenotypicAbnormalities
 
 
 
-`phenotypes`
+`phenotypicAbnormalities`
 
 *   is optional
 
-*   Type: `object[]` ([Phenotypic abnormality](ega-12-definitions-phenotypic-abnormality.md))
+*   Type: `object[]` ([Phenotypic abnormality item](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypes")
+*   defined in: [EGA individual metadata schema](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities")
 
-### phenotypes Type
+### phenotypicAbnormalities Type
 
-`object[]` ([Phenotypic abnormality](ega-12-definitions-phenotypic-abnormality.md))
+`object[]` ([Phenotypic abnormality item](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item.md))
 
-### phenotypes Constraints
+### phenotypicAbnormalities Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
@@ -137,7 +137,7 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 
 *   is optional
 
-*   Type: `object[]` ([Disease](ega-12-definitions-disease.md))
+*   Type: `object[]` ([Disease item](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases-disease-item.md))
 
 *   cannot be null
 
@@ -145,7 +145,7 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 
 ### diseases Type
 
-`object[]` ([Disease](ega-12-definitions-disease.md))
+`object[]` ([Disease item](ega-14-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases-disease-item.md))
 
 ### diseases Constraints
 
