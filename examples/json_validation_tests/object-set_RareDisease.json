@@ -14,29 +14,39 @@
                 "minimalPublicAttributes": {
                     "subjectId": "Affected_proband_14y",
                     "biologicalSex": "male",
-                    "phenotypes": [
+                    "phenotypicAbnormalities": [
                         {
-                            "termId": "HP:0001558",
-                            "termLabel": "Decreased fetal movement"
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0001558",
+                                "termLabel": "Decreased fetal movement"
+                            }
                         },
                         {
-                            "termId": "HP:0031910",
-                            "termLabel": "Abnormal cranial nerve physiology"
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0031910",
+                                "termLabel": "Abnormal cranial nerve physiology"
+                            }
                         },
                         {
-                            "termId": "HP:0012587",
-                            "termLabel": "Macroscopic hematuria"
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0012587",
+                                "termLabel": "Macroscopic hematuria"
+                            }
                         },
                         {
-                            "termId": "HP:0001270",
-                            "termLabel": "Motor delay"
-                        }
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0001270",
+                                "termLabel": "Motor delay"
+                            }
+                        }                        
                     ],
                     "diseases": [
                         {
-                            "termId": "MONDO:0008029",
-                            "termLabel": "Bethlem myopathy"
-                        }
+                            "disease": {
+                                "termId": "MONDO:0008029",
+                                "termLabel": "Bethlem myopathy"
+                            }
+                        }                        
                     ]
                 },
                 "organismDescriptor": {
@@ -82,10 +92,12 @@
                 "minimalPublicAttributes": {
                     "subjectId": "Unaffected mother",
                     "biologicalSex": "female",
-                    "phenotypes": [
+                    "phenotypicAbnormalities": [
                         {
-                            "termId": "NCIT:C94232",
-                            "termLabel": "Unaffected"
+                            "phenotypicAbnormality": {
+                                "termId": "NCIT:C94232",
+                                "termLabel": "Unaffected"
+                            }
                         }
                     ]
                 },

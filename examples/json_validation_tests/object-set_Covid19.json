@@ -16,25 +16,35 @@
                     "biologicalSex": "male",
                     "diseases": [
                         {
-                            "termId": "MONDO:0100096",
-                            "termLabel": "COVID-19"
+                            "disease": {
+                                "termId": "MONDO:0100096",
+                                "termLabel": "COVID-19"
+                            }
                         },
                         {
-                            "termId": "EFO:0000400",
-                            "termLabel": "Diabetes Mellitus"
+                            "disease": {
+                                "termId": "EFO:0000400",
+                                "termLabel": "Diabetes Mellitus"
+                            }
                         },
                         {
-                            "termId": "EFO:0000318",
-                            "termLabel": "Cardiomyopathy"
+                            "disease": {
+                                "termId": "EFO:0000318",
+                                "termLabel": "Cardiomyopathy"
+                            }
                         },
                         {
-                            "termId": "EFO:0009909",
-                            "termLabel": "Chronic Kidney Disease"
+                            "disease": {
+                                "termId": "EFO:0009909",
+                                "termLabel": "Chronic Kidney Disease"
+                            }
                         },
                         {
-                            "termId": "EFO:0001073",
-                            "termLabel": "Obesity"
-                        }
+                            "disease": {
+                                "termId": "EFO:0001073",
+                                "termLabel": "Obesity"
+                            }
+                        }                        
                     ]
                 },
                 "organismDescriptor": {

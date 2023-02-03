@@ -52,14 +52,29 @@
           "biologicalSex": {
             "$ref": "./EGA.common-definitions.json#/definitions/biologicalSex"
           },
-          "phenotypes": {
+          "phenotypicAbnormalities": {
             "type": "array",
             "title": "Array of phenotypic abnormalities",
             "minItems": 1,
             "additionalProperties": false,
             "uniqueItems": true,
             "items": {
-              "$ref": "./EGA.common-definitions.json#/definitions/phenotypicAbnormality"
+              "type": "object",
+              "title": "Phenotypic abnormality item",
+              "description": "One individual Phenotypic abnormality of the array. Keep in mind that in order to correctly interprete the phenotype it is **imperative** to check the 'excluded' property: each item of the array can be either specifying that the phenotipic abnormality was present or the opposite (i.e. logical negation).",
+              "additionalProperties": false,
+              "required": [ "phenotypicAbnormality" ],
+              "properties": {
+                "excluded": {
+                  "type": "boolean",
+                  "title": "Excluded",
+                  "description": "Property that specifies whether the phenotype was observed or not. Similar to phenopacket's 'excluded' property, by default it is 'false', which means that the phenotype was observed (i.e. not excluded). This flag is only required to indicate that the phenotype was looked for, but found to be absent. The terms 'not excluded' (i.e. false) and 'excluded' (i.e. true) correlate with the common notation of 'case' versus 'control', respectively.",
+                  "default": false
+                },
+                "phenotypicAbnormality": {
+                  "$ref": "./EGA.common-definitions.json#/definitions/phenotypicAbnormality"
+                }
+              }
             }
           },
           "diseases": {
@@ -69,7 +84,22 @@
             "additionalProperties": false,
             "uniqueItems": true,
             "items": {
-              "$ref": "./EGA.common-definitions.json#/definitions/disease"
+              "type": "object",
+              "title": "Disease item",
+              "description": "One individual disease of the array. Keep in mind that in order to correctly interprete the disease it is **imperative** to check the 'excluded' property: each item of the array can be either specifying that the disease was present or the opposite (i.e. logical negation).",
+              "additionalProperties": false,
+              "required": [ "disease" ],
+              "properties": {
+                "excluded": {
+                  "type": "boolean",
+                  "title": "Excluded",
+                  "description": "Property that specifies whether the disease was observed or not. Similar to phenopacket's 'excluded' property, by default it is 'false', which means that the disease was observed (i.e. not excluded). This flag is only required to indicate that the disease was looked for, but found to be absent. The terms 'not excluded' (i.e. false) and 'excluded' (i.e. true) correlate with the common notation of 'case' versus 'control', respectively.",
+                  "default": false
+                },
+                "disease": {
+                  "$ref": "./EGA.common-definitions.json#/definitions/disease"
+                }
+              }
             }
           }
         },

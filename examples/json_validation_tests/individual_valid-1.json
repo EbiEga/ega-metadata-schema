@@ -30,18 +30,38 @@
             "biologicalSex": "male",
             "diseases": [
                 {
-                    "termId": "EFO:0003101",
-                    "termLabel": "testicular seminoma"
+                    "excluded": true,
+                    "disease": {
+                        "termId": "EFO:0003101",
+                        "termLabel": "testicular seminoma"
+                    }
                 },
                 {
-                    "termId": "EFO:1000254",
-                    "termLabel": "fibroadenoma"
+                    "excluded": true,
+                    "disease": {
+                        "termId": "MONDO:0019808",
+                        "termLabel": "aortic valve atresia"
+                    }
+                },             
+                {
+                    "disease": {
+                        "termId": "EFO:1000254",
+                        "termLabel": "fibroadenoma"
+                    }
+                },
+                {
+                    "disease": {
+                        "termId": "Orphanet:610",
+                        "termLabel": "Bethlem myopathy"
+                    }
                 }
             ],
-            "phenotypes": [
+            "phenotypicAbnormalities": [
                 {
-                    "termId": "HP:0033403",
-                    "termLabel": "Testicular ischemia"
+                    "phenotypicAbnormality": {
+                        "termId": "HP:0033403",
+                        "termLabel": "Testicular ischemia"
+                    }
                 }
             ],
             "subjectId": "donor-NM305004"
