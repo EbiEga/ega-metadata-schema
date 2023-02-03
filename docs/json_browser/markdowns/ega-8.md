@@ -1,34 +1,34 @@
-# EGA DAC metadata schema Schema
+# EGA policy metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Data Access Committee (DAC) metadata object. This object is intended to contain metadata about the body of one or more named individuals who are responsible for data release to external requestors based on consent and/or National Research Ethics terms. A DAC is typically formed, but not necessarily, from the same organization that collected the samples and generated any associated files/analyses. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/submission/data_access_committee>)
+A policy, also known as Data Access Agreement (DAA), is a contract made between Data User and Data Access Committee. The policy object is expected to contain metadata about such agreement, which should be drafted by the DAC and includes, but is not limited to, details of data use, publication embargoes and storage. Completion of a DAA by the applicant/s should form part of the application process to the DAC. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/submission/dac/documentation>)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                           |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.DAC.json](../../../schemas/EGA.DAC.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.policy.json](../../../schemas/EGA.policy.json "open original schema") |
 
-## EGA DAC metadata schema Type
+## EGA policy metadata schema Type
 
-`object` ([EGA DAC metadata schema](ega-8.md))
+`object` ([EGA policy metadata schema](ega-8.md))
 
-# EGA DAC metadata schema Properties
+# EGA policy metadata schema Properties
 
-| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                   |
-| :-------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectId](#objectid)                   | Merged   | Required | cannot be null | [EGA DAC metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId")               |
-| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA DAC metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/schemaDescriptor")     |
-| [objectTitle](#objecttitle)             | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-title-of-the-dac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectTitle")             |
-| [objectDescription](#objectdescription) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-description-of-the-dac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectDescription") |
-| [dacContacts](#daccontacts)             | `object` | Required | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts")         |
-| [dacRelationships](#dacrelationships)   | `array`  | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacRelationships")       |
-| [dacAttributes](#dacattributes)         | `array`  | Optional | cannot be null | [EGA DAC metadata schema](ega-8-properties-dac-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacAttributes")      |
+| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                          |
+| :------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")                |
+| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")       |
+| [objectTitle](#objecttitle)                 | `string` | Required | cannot be null | [EGA policy metadata schema](ega-8-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")           |
+| [policyDescriptor](#policydescriptor)       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-8-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")        |
+| [duoCodes](#duocodes)                       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")      |
+| [policyRelationships](#policyrelationships) | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-8-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships")  |
+| [policyAttributes](#policyattributes)       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-8-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyAttributes") |
 
 ## objectId
 
-Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: an DAC (by using EGADACIdPattern)
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: an policy (by using EGAPolicyIdPattern)
 
 `objectId`
 
@@ -38,7 +38,7 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId")
+*   defined in: [EGA policy metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")
 
 ### objectId Type
 
@@ -48,13 +48,13 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that DAC EGA ID (EGAC) is correct](ega-8-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct.md "check type definition")
+*   [Check that policy EGA ID (EGAP) is correct](ega-8-properties-objects-ids-block-allof-check-that-policy-ega-id-egap-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -64,133 +64,131 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/schemaDescriptor")
+*   defined in: [EGA policy metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 ## objectTitle
 
-Short free-form text that can be used to call out DAC records in searches or displays.
+Free-form title of the policy. Can be used to call out policy records in searches or displays.
 
 `objectTitle`
 
-*   is optional
+*   is required
 
-*   Type: `string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
+*   Type: `string` ([Title of the policy](ega-8-properties-title-of-the-policy.md))
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-title-of-the-dac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectTitle")
+*   defined in: [EGA policy metadata schema](ega-8-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")
 
 ### objectTitle Type
 
-`string` ([Title of the DAC](ega-8-properties-title-of-the-dac.md))
-
-### objectTitle Constraints
-
-**minimum length**: the minimum number of characters for this string is: `1`
+`string` ([Title of the policy](ega-8-properties-title-of-the-policy.md))
 
 ### objectTitle Examples
 
 ```json
-"EBI Consortium Data Access Committee"
+"EBI colon cancer policy"
 ```
 
-## objectDescription
+## policyDescriptor
 
-An in-depth description of the DAC, including its overall purpose or nature of studies it governs.
+Node containing the full description of the policy, whether it is hosted at some public resourced and referenced here; or directly written here.
 
-`objectDescription`
-
-*   is optional
-
-*   Type: `string` ([Description of the DAC](ega-8-properties-description-of-the-dac.md))
-
-*   cannot be null
-
-*   defined in: [EGA DAC metadata schema](ega-8-properties-description-of-the-dac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectDescription")
-
-### objectDescription Type
-
-`string` ([Description of the DAC](ega-8-properties-description-of-the-dac.md))
-
-### objectDescription Constraints
-
-**minimum length**: the minimum number of characters for this string is: `1`
-
-### objectDescription Examples
-
-```json
-"EBI DAC governing data from projects related to human microbiome with data provenance..."
-```
-
-## dacContacts
-
-Object containing the main contact's and optional additional contact's details.
-
-`dacContacts`
+`policyDescriptor`
 
 *   is required
 
-*   Type: `object` ([DAC contacts' details](ega-8-properties-dac-contacts-details.md))
+*   Type: `object` ([Policy descriptor](ega-8-properties-policy-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts")
+*   defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")
 
-### dacContacts Type
+### policyDescriptor Type
 
-`object` ([DAC contacts' details](ega-8-properties-dac-contacts-details.md))
+`object` ([Policy descriptor](ega-8-properties-policy-descriptor.md))
 
-## dacRelationships
+any of
 
-Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a DAC) the EGA.
+*   [Either the policy reference is given](ega-8-properties-policy-descriptor-anyof-either-the-policy-reference-is-given.md "check type definition")
 
-`dacRelationships`
+*   [Or the policy text is given](ega-8-properties-policy-descriptor-anyof-or-the-policy-text-is-given.md "check type definition")
+
+## duoCodes
+
+Collection of Data Use Ontology (DUO) codes. These allow to semantically tag datasets (bound by policies) with restriction about their usage, improving their discoverability based on the authorization level of users, or intended usage. See more info at <https://obofoundry.org/ontology/duo.html> and search for DUO codes at <https://www.ebi.ac.uk/ols/ontologies/duo>
+
+`duoCodes`
 
 *   is optional
 
-*   Type: an array of merged types ([Details](ega-8-properties-dac-relationships-items.md))
+*   Type: `object[]` ([Data Use Ontology (DUO)](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md))
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacRelationships")
+*   defined in: [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")
 
-### dacRelationships Type
+### duoCodes Type
 
-an array of merged types ([Details](ega-8-properties-dac-relationships-items.md))
+`object[]` ([Data Use Ontology (DUO)](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md))
 
-### dacRelationships Constraints
+### duoCodes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## dacAttributes
+## policyRelationships
 
-Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
+Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a policy being linked to a policy) the EGA.
 
-`dacAttributes`
+`policyRelationships`
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+*   Type: an array of merged types ([Details](ega-8-properties-policy-relationships-items.md))
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-8-properties-dac-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacAttributes")
+*   defined in: [EGA policy metadata schema](ega-8-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships")
 
-### dacAttributes Type
+### policyRelationships Type
 
-`object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+an array of merged types ([Details](ega-8-properties-policy-relationships-items.md))
 
-### dacAttributes Constraints
+### policyRelationships Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## policyAttributes
+
+Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.
+
+`policyAttributes`
+
+*   is optional
+
+*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+
+*   cannot be null
+
+*   defined in: [EGA policy metadata schema](ega-8-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyAttributes")
+
+### policyAttributes Type
+
+`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+
+### policyAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

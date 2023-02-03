@@ -1,41 +1,33 @@
-# EGA Experiment metadata schema Schema
+# EGA protocol metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate its experiment metadata object. An experiment is considered a planned and intentionally designed process performed as part of a study. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate its protocol metadata object. A protocol is an information entity of a set of instructions that describe an how a procedure, analysis or experiment is done. Comprises metadata (e.g. Type of protocol) of a plan specification, with sufficient level of detail and quantitative information to communicate it (and thus reproduce it) between investigation agents (i.e. researchers). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.experiment.json](../../../schemas/EGA.experiment.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                     |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.protocol.json](../../../schemas/EGA.protocol.json "open original schema") |
 
-## EGA Experiment metadata schema Type
+## EGA protocol metadata schema Type
 
-`object` ([EGA Experiment metadata schema](ega-9.md))
+`object` ([EGA protocol metadata schema](ega-9.md))
 
-one (and only one) of
+# EGA protocol metadata schema Properties
 
-*   [If the assay technology is a sequencer, the experiment type has to match](ega-9-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match.md "check type definition")
-
-*   [If the assay technology is an array, the experiment type has to match](ega-9-oneof-if-the-assay-technology-is-an-array-the-experiment-type-has-to-match.md "check type definition")
-
-# EGA Experiment metadata schema Properties
-
-| Property                                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
-| :---------------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectId](#objectid)                                             | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId")                                      |
-| [schemaDescriptor](#schemadescriptor)                             | `object` | Optional | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schemaDescriptor")                            |
-| [objectTitle](#objecttitle)                                       | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectTitle")                             |
-| [objectDescription](#objectdescription)                           | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectDescription")                 |
-| [targetedLoci](#targetedloci)                                     | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targetedLoci")               |
-| [assayTechnology](#assaytechnology)                               | `object` | Required | cannot be null | [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTechnology")                              |
-| [assayType](#assaytype)                                           | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-type-of-used-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayType")                                    |
-| [assayedBiologicalMacromolecule](#assayedbiologicalmacromolecule) | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-assayed-biological-macromolecule.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayedBiologicalMacromolecule") |
-| [typesOfOutputData](#typesofoutputdata)                           | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/typesOfOutputData")                          |
-| [experimentTypeSpecifications](#experimenttypespecifications)     | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications")     |
-| [experimentRelationships](#experimentrelationships)               | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentRelationships")                |
-| [experimentAttributes](#experimentattributes)                     | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-9-properties-experiment-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentAttributes")               |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                    |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [objectId](#objectid)                             | Merged   | Required | cannot be null | [EGA protocol metadata schema](ega-9-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId")                      |
+| [schemaDescriptor](#schemadescriptor)             | `object` | Optional | cannot be null | [EGA protocol metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/schemaDescriptor")             |
+| [objectTitle](#objecttitle)                       | `string` | Optional | cannot be null | [EGA protocol metadata schema](ega-9-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectTitle")                |
+| [protocolTypeDescriptor](#protocoltypedescriptor) | `object` | Required | cannot be null | [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor") |
+| [protocolDescription](#protocoldescription)       | `string` | Required | cannot be null | [EGA protocol metadata schema](ega-9-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolDescription") |
+| [protocolPerformers](#protocolperformers)         | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-9-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolPerformers")    |
+| [protocolInstruments](#protocolinstruments)       | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-9-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolInstruments")   |
+| [protocolSoftware](#protocolsoftware)             | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-9-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolSoftware")        |
+| [protocolRelationships](#protocolrelationships)   | `array`  | Required | cannot be null | [EGA protocol metadata schema](ega-9-properties-protocol-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolRelationships")    |
+| [protocolAttributes](#protocolattributes)         | `array`  | Optional | cannot be null | [EGA protocol metadata schema](ega-9-properties-protocol-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolAttributes")   |
 
 ## objectId
 
@@ -49,7 +41,7 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId")
+*   defined in: [EGA protocol metadata schema](ega-9-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId")
 
 ### objectId Type
 
@@ -59,13 +51,13 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that experiment EGA ID (EGAX) is correct](ega-9-properties-objects-ids-block-allof-check-that-experiment-ega-id-egax-is-correct.md "check type definition")
+*   [Check that protocol EGA ID (EGAO) is correct](ega-9-properties-objects-ids-block-allof-check-that-protocol-ega-id-egao-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -75,239 +67,213 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schemaDescriptor")
+*   defined in: [EGA protocol metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 ## objectTitle
 
-An informative experiment title that should serve as an overview of the experiment, including: used technology, samples, purpose... (e.g. 'Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls'). This short text can be used to call out experiment records in searches or in displays.
+Name of the protocol (e.g. 'myProtocol-13'). To be defined by the user.
 
 `objectTitle`
 
 *   is optional
 
-*   Type: `string` ([Title of the experiment](ega-9-properties-title-of-the-experiment.md))
+*   Type: `string` ([Name of the protocol](ega-9-properties-name-of-the-protocol.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-title-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectTitle")
+*   defined in: [EGA protocol metadata schema](ega-9-properties-name-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectTitle")
 
 ### objectTitle Type
 
-`string` ([Title of the experiment](ega-9-properties-title-of-the-experiment.md))
+`string` ([Name of the protocol](ega-9-properties-name-of-the-protocol.md))
+
+### objectTitle Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ### objectTitle Examples
 
 ```json
-"Affymetrix-X microarray of human breast cancer cell line MCF-7 treated with tamoxifen compared with untreated controls"
+"myProtocol-13"
 ```
-
-## objectDescription
-
-An in-depth description of the biological relevance and intent of the experiment, including the experimental workflow.
-
-`objectDescription`
-
-*   is optional
-
-*   Type: `string` ([Description of the experiment](ega-9-properties-description-of-the-experiment.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-description-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectDescription")
-
-### objectDescription Type
-
-`string` ([Description of the experiment](ega-9-properties-description-of-the-experiment.md))
-
-### objectDescription Examples
 
 ```json
-"The experiment was conducted with the objective of... ...and for that purpose we compared untreated controls against..."
+"Treatment for leukemia patients C30"
 ```
 
-## targetedLoci
+```json
+"Sample collection from infected patients"
+```
 
-Array of items that unambiguously define the loci of targeted genomic features in the experiment. For example, if the experiment aim was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.
+## protocolTypeDescriptor
 
-`targetedLoci`
+Node to contain the information about the type and subtype of the protocol. References to ontologies allow for a clear provenance and documentation of the protocol type.
 
-*   is optional
+`protocolTypeDescriptor`
 
-*   Type: `object[]` ([Locus identifier](ega-12-definitions-locus-identifier.md))
+*   is required
+
+*   Type: `object` ([Protocol type descriptor](ega-9-properties-protocol-type-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targetedLoci")
+*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor")
 
-### targetedLoci Type
+### protocolTypeDescriptor Type
 
-`object[]` ([Locus identifier](ega-12-definitions-locus-identifier.md))
+`object` ([Protocol type descriptor](ega-9-properties-protocol-type-descriptor.md))
 
-### targetedLoci Constraints
+## protocolDescription
+
+Description of the protocol (e.g. 'First tilt the cell culture flask... ...and finally let it still for 2 hours.'), being descriptive enough to be replicated between institutions or performers.
+
+`protocolDescription`
+
+*   is required
+
+*   Type: `string` ([Description of the protocol](ega-9-properties-description-of-the-protocol.md))
+
+*   cannot be null
+
+*   defined in: [EGA protocol metadata schema](ega-9-properties-description-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolDescription")
+
+### protocolDescription Type
+
+`string` ([Description of the protocol](ega-9-properties-description-of-the-protocol.md))
+
+### protocolDescription Examples
+
+```json
+"First tilt the cell culture flask... ...and finally let it still for 2 hours."
+```
+
+```json
+"Patients were given a ketogenic diet for 3 weeks at intervals consisting in..."
+```
+
+## protocolPerformers
+
+Array of performers' descriptions of those individuals, groups, or institutions that executed the protocol.
+
+`protocolPerformers`
+
+*   is optional
+
+*   Type: `string[]` ([Performer of the protocol](ega-9-properties-protocol-performers-array-performer-of-the-protocol.md))
+
+*   cannot be null
+
+*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-performers-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolPerformers")
+
+### protocolPerformers Type
+
+`string[]` ([Performer of the protocol](ega-9-properties-protocol-performers-array-performer-of-the-protocol.md))
+
+### protocolPerformers Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## assayTechnology
+## protocolInstruments
 
-Metadata of the assay instrument (e.g. sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) of an assay.
+Array of instruments used in the protocol. It is not indispensable to provide each and every piece of instruments used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.
 
-`assayTechnology`
-
-*   is required
-
-*   Type: `object` ([Assay technology](ega-12-definitions-assay-technology.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-12-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTechnology")
-
-### assayTechnology Type
-
-`object` ([Assay technology](ega-12-definitions-assay-technology.md))
-
-## assayType
-
-Node defining the type of assay applicable to the experiment. Notice how, depending on the complexity of the assay type (i.e. how many subtypes it may have), the assay type can be a high level term (e.g. 'single cell sequencing') or very specific (e.g. '454 Sequencing'). We recommend to use the most specific term possible if available: for example, in case your assay was an 'RNA-seq of coding RNA from single cells' \[EFO:0005684], we advise to provide the specific term \[EFO:0005684], instead of the generic 'assay by high throughput sequencer' \[EFO:0002697].
-
-`assayType`
-
-*   is required
-
-*   Type: `object` ([Type of used assay](ega-9-properties-type-of-used-assay.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-type-of-used-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayType")
-
-### assayType Type
-
-`object` ([Type of used assay](ega-9-properties-type-of-used-assay.md))
-
-all of
-
-*   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")
-
-## assayedBiologicalMacromolecule
-
-Node containing information about the assayed biological macromolecule: the material entity (e.g. 'nuclear RNA') that was assayed to generate the data. We recommend that you choose the most specific term that applies to your case: for example, if the assayed molecule is 'long non polyA RNA', choose the specific term 'long non polyA RNA' \[EFO:0005018], instead of the generic term 'ribonucleic acid' \[CHEBI:33697].
-
-`assayedBiologicalMacromolecule`
-
-*   is required
-
-*   Type: `object` ([Assayed biological macromolecule](ega-9-properties-assayed-biological-macromolecule.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-assayed-biological-macromolecule.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayedBiologicalMacromolecule")
-
-### assayedBiologicalMacromolecule Type
-
-`object` ([Assayed biological macromolecule](ega-9-properties-assayed-biological-macromolecule.md))
-
-all of
-
-*   [Ontology term](ega-12-definitions-ontology-term.md "check type definition")
-
-## typesOfOutputData
-
-Types of data the experiment produces.
-
-`typesOfOutputData`
+`protocolInstruments`
 
 *   is optional
 
-*   Type: `string[]` ([Type of data](ega-12-definitions-type-of-data.md))
+*   Type: `string[]` ([Instrument used in the protocol](ega-9-properties-protocol-instrument-array-instrument-used-in-the-protocol.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/typesOfOutputData")
+*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-instrument-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolInstruments")
 
-### typesOfOutputData Type
+### protocolInstruments Type
 
-`string[]` ([Type of data](ega-12-definitions-type-of-data.md))
+`string[]` ([Instrument used in the protocol](ega-9-properties-protocol-instrument-array-instrument-used-in-the-protocol.md))
 
-### typesOfOutputData Constraints
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
-
-## experimentTypeSpecifications
-
-Node containing additional attributes to describe the experiment, either array experiments (those in which an [array instrument \[EFO:0002698\]](http://www.ebi.ac.uk/efo/EFO_0002698) was used) or sequencing experiments (those in which a [sequencing instrument \[EFO:0003739\]](http://www.ebi.ac.uk/efo/EFO_0003739) was used). For example, if an array was used, its Array Design Format (ADF) will be expected.
-
-`experimentTypeSpecifications`
-
-*   is required
-
-*   Type: `object` ([Experiment type specifications](ega-9-properties-experiment-type-specifications.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications")
-
-### experimentTypeSpecifications Type
-
-`object` ([Experiment type specifications](ega-9-properties-experiment-type-specifications.md))
-
-one (and only one) of
-
-*   [The sequencing experiment descriptors are required](ega-9-properties-experiment-type-specifications-oneof-the-sequencing-experiment-descriptors-are-required.md "check type definition")
-
-*   [The array experiment descriptors are required](ega-9-properties-experiment-type-specifications-oneof-the-array-experiment-descriptors-are-required.md "check type definition")
-
-## experimentRelationships
-
-Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an experiment being linked to a Sample) the EGA.
-
-`experimentRelationships`
-
-*   is optional
-
-*   Type: an array of merged types ([Details](ega-9-properties-experiment-relationships-items.md))
-
-*   cannot be null
-
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentRelationships")
-
-### experimentRelationships Type
-
-an array of merged types ([Details](ega-9-properties-experiment-relationships-items.md))
-
-### experimentRelationships Constraints
+### protocolInstruments Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## experimentAttributes
+## protocolSoftware
 
-Custom attributes of an experiment: reusable attributes to encode tag-value pairs (e.g. Tag being 'additional description' and its Value 'this experiment is a re-do of another 3 experiments due to...') with optional units. Its properties are inherited from the common-definitions.json schema.
+Array of software descriptions used in the protocol. It is not indispensable to provide each and every piece of software used, but a set of the ones you would highlight in your protocol for other researchers to know, since it will help them discover your data.
 
-`experimentAttributes`
+`protocolSoftware`
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+*   Type: `string[]` ([Software descriptions used in the protocol](ega-9-properties-protocol-software-array-software-descriptions-used-in-the-protocol.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-9-properties-experiment-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentAttributes")
+*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-software-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolSoftware")
 
-### experimentAttributes Type
+### protocolSoftware Type
 
-`object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+`string[]` ([Software descriptions used in the protocol](ega-9-properties-protocol-software-array-software-descriptions-used-in-the-protocol.md))
 
-### experimentAttributes Constraints
+### protocolSoftware Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## protocolRelationships
+
+Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. a protocol being linked to an experiment) the EGA.
+
+`protocolRelationships`
+
+*   is required
+
+*   Type: an array of merged types ([Details](ega-9-properties-protocol-relationships-items.md))
+
+*   cannot be null
+
+*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolRelationships")
+
+### protocolRelationships Type
+
+an array of merged types ([Details](ega-9-properties-protocol-relationships-items.md))
+
+### protocolRelationships Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## protocolAttributes
+
+Custom attributes of a protocol: reusable attributes to encode tag-value pairs (e.g. Tag being 'step index' and its Value '2') with optional units. Its properties are inherited from the common-definitions.json schema.
+
+`protocolAttributes`
+
+*   is optional
+
+*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+
+*   cannot be null
+
+*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolAttributes")
+
+### protocolAttributes Type
+
+`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+
+### protocolAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

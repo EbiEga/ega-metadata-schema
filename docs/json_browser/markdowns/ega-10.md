@@ -1,38 +1,39 @@
-# EGA analysis metadata schema Schema
+# EGA sample metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate its analysis metadata object. This object is intended to contain metadata about a detailed examination of data (mainly data processing protocols) in order to come to some conclusion. It can be of different types (e.g. sequence variation, sequence alignment, phenotype characterization, gene expression, etc.) that will mainly differ in the protocols used to achieve the processed data of the analysis. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample \[OBI:0000747] used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. It is a material which is collected with the intention of being representative of a greater whole. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json>). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                     |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.analysis.json](../../../schemas/EGA.analysis.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                 |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.sample.json](../../../schemas/EGA.sample.json "open original schema") |
 
-## EGA analysis metadata schema Type
+## EGA sample metadata schema Type
 
-`object` ([EGA analysis metadata schema](ega-10.md))
+`object` ([EGA sample metadata schema](ega-10.md))
 
-# EGA analysis metadata schema Properties
+# EGA sample metadata schema Properties
 
-| Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                             |
-| :-------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectId](#objectid)                                     | Merged   | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId")                              |
-| [schemaDescriptor](#schemadescriptor)                     | `object` | Optional | cannot be null | [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")                     |
-| [objectTitle](#objecttitle)                               | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectTitle")                       |
-| [objectDescription](#objectdescription)                   | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectDescription")           |
-| [targetedLoci](#targetedloci)                             | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targetedLoci")       |
-| [typesOfInputData](#typesofinputdata)                     | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfInputData")                    |
-| [typesOfOutputData](#typesofoutputdata)                   | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfOutputData")                  |
-| [analysisTypeSpecifications](#analysistypespecifications) | `object` | Required | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications") |
-| [analysisFiles](#analysisfiles)                           | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-files-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisFiles")                     |
-| [analysisRelationships](#analysisrelationships)           | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisRelationships")            |
-| [analysisAttributes](#analysisattributes)                 | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-10-properties-analysis-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisAttributes")           |
+| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                         |
+| :------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectId")                              |
+| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schemaDescriptor")                      |
+| [objectTitle](#objecttitle)                 | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectTitle")                         |
+| [objectDescription](#objectdescription)     | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectDescription")             |
+| [organismDescriptor](#organismdescriptor)   | `object` | Required | cannot be null | [EGA sample metadata schema](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organismDescriptor") |
+| [sampleCollection](#samplecollection)       | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection")           |
+| [sampleGrouping](#samplegrouping)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping")                  |
+| [sampleTypes](#sampletypes)                 | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-sample-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleTypes")                       |
+| [cellTypes](#celltypes)                     | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-cell-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes")                           |
+| [sampleStatus](#samplestatus)               | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus")                   |
+| [sampleRelationships](#samplerelationships) | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleRelationships")                |
+| [sampleAttributes](#sampleattributes)       | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleAttributes")               |
 
 ## objectId
 
-Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions.
+Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a sample (by using EGASampleIdPattern)
 
 `objectId`
 
@@ -42,7 +43,7 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId")
+*   defined in: [EGA sample metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectId")
 
 ### objectId Type
 
@@ -52,13 +53,13 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-12-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that analysis EGA ID (EGAZ) is correct](ega-10-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct.md "check type definition")
+*   [Check that sample EGA ID (EGAN) is correct](ega-10-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -68,229 +69,249 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-12-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")
+*   defined in: [EGA sample metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-12-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
 
 ## objectTitle
 
-An informative analysis title that should serve as an overview of the analysis, including: performed analysis, samples, purpose... (e.g. 'Variant calling analysis of tumor repressed cells'). This short text can be used to call out analyses records in searches or in displays.
+An informative sample title that should serve as an overview (e.g. sample tag, pseudonyms, sample type, sample groups, purpose...) of the sample and differentiate it from others. This short text can be used to call out sample records in searches or in displays.
 
 `objectTitle`
 
 *   is optional
 
-*   Type: `string` ([Title of the analysis](ega-10-properties-title-of-the-analysis.md))
+*   Type: `string` ([Title of the sample](ega-10-properties-title-of-the-sample.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectTitle")
+*   defined in: [EGA sample metadata schema](ega-10-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectTitle")
 
 ### objectTitle Type
 
-`string` ([Title of the analysis](ega-10-properties-title-of-the-analysis.md))
-
-### objectTitle Constraints
-
-**minimum length**: the minimum number of characters for this string is: `1`
+`string` ([Title of the sample](ega-10-properties-title-of-the-sample.md))
 
 ### objectTitle Examples
 
 ```json
-"Variant calling analysis of tumor repressed cells"
+"Buccal swab from COVID+ patient NM305004"
 ```
 
 ## objectDescription
 
-An in-depth description of the biological relevance and intent of the analysis, including its workflow.
+An informative sample description that describes the sample and differentiates it from others.
 
 `objectDescription`
 
 *   is optional
 
-*   Type: `string` ([Description of the analysis](ega-10-properties-description-of-the-analysis.md))
+*   Type: `string` ([Description of the sample](ega-10-properties-description-of-the-sample.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectDescription")
+*   defined in: [EGA sample metadata schema](ega-10-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectDescription")
 
 ### objectDescription Type
 
-`string` ([Description of the analysis](ega-10-properties-description-of-the-analysis.md))
-
-### objectDescription Constraints
-
-**minimum length**: the minimum number of characters for this string is: `1`
+`string` ([Description of the sample](ega-10-properties-description-of-the-sample.md))
 
 ### objectDescription Examples
 
 ```json
-"The analysis was conducted with the objective of... ...and for that purpose we compared untreated controls against..."
+"Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to..."
 ```
 
-## targetedLoci
+## organismDescriptor
 
-Array of items that unambiguously define the loci of targeted genomic features in the analysis. For example, if the aim of the analysis was to detect variants in the human gene TAF1 and TP53, their identifiers will be expected in two items of this array.
+This property describes the material entity the sample consists in. That is, an individual living system, such as animal, plant, bacteria or virus, that is capable of replicating or reproducing, growth and maintenance in the right environment. An organism may be unicellular or, like humans, made up of many billions of cells divided into specialized tissues and organs. This node is of special interest in case the provenance of the sample is not human (e.g. microbiota taken from a donor). Unless stated otherwise, given the nature of the EGA, it is expected to be of human provenance.
 
-`targetedLoci`
-
-*   is optional
-
-*   Type: `object[]` ([Locus identifier](ega-12-definitions-locus-identifier.md))
-
-*   cannot be null
-
-*   defined in: [EGA analysis metadata schema](ega-10-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targetedLoci")
-
-### targetedLoci Type
-
-`object[]` ([Locus identifier](ega-12-definitions-locus-identifier.md))
-
-### targetedLoci Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
-
-## typesOfInputData
-
-Types of input data the analysis uses to obtain the processed files.
-
-`typesOfInputData`
-
-*   is optional
-
-*   Type: `string[]` ([Type of data](ega-10-properties-types-of-input-data-type-of-data.md))
-
-*   cannot be null
-
-*   defined in: [EGA analysis metadata schema](ega-10-properties-types-of-input-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfInputData")
-
-### typesOfInputData Type
-
-`string[]` ([Type of data](ega-10-properties-types-of-input-data-type-of-data.md))
-
-### typesOfInputData Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
-
-## typesOfOutputData
-
-Types of output data the analysis uses to obtain the processed files.
-
-`typesOfOutputData`
-
-*   is optional
-
-*   Type: `string[]` ([Type of data](ega-10-properties-types-of-output-data-type-of-data.md))
-
-*   cannot be null
-
-*   defined in: [EGA analysis metadata schema](ega-10-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/typesOfOutputData")
-
-### typesOfOutputData Type
-
-`string[]` ([Type of data](ega-10-properties-types-of-output-data-type-of-data.md))
-
-### typesOfOutputData Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-**unique items**: all items in this array must be unique. Duplicates are not allowed.
-
-## analysisTypeSpecifications
-
-Node containing different sets of fields that depend on the specific analysis type. Depending on the analysis types different metadata will be required.
-
-`analysisTypeSpecifications`
+`organismDescriptor`
 
 *   is required
 
-*   Type: `object` ([Analysis type specifications](ega-10-properties-analysis-type-specifications.md))
+*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications")
+*   defined in: [EGA sample metadata schema](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organismDescriptor")
 
-### analysisTypeSpecifications Type
+### organismDescriptor Type
 
-`object` ([Analysis type specifications](ega-10-properties-analysis-type-specifications.md))
+`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
 
-## analysisFiles
+## sampleCollection
 
-This property contains the files derived from performing any processing or analysis over raw data (e.g. VCF, aligned BAM...) and those that add context to it (e.g. CSV, TXT...).
+Node containing the provenance details (when and where) of the sample. This information does not include the whole sample collection protocol (expected at experiment's protocols), only the sampling date (when the sample was taken from the individual) and site (where was it taken within the individual).
 
-`analysisFiles`
+`sampleCollection`
 
 *   is optional
 
-*   Type: `object[]` ([EGA File object](ega-12-definitions-ega-file-object.md))
+*   Type: `object` ([Sample collection descriptor](ega-10-properties-sample-collection-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-files-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisFiles")
+*   defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection")
 
-### analysisFiles Type
+### sampleCollection Type
 
-`object[]` ([EGA File object](ega-12-definitions-ega-file-object.md))
+`object` ([Sample collection descriptor](ega-10-properties-sample-collection-descriptor.md))
 
-### analysisFiles Constraints
+any of
+
+*   [Either the collection date is required](ega-10-properties-sample-collection-descriptor-anyof-either-the-collection-date-is-required.md "check type definition")
+
+*   [Or the age at collection is required](ega-10-properties-sample-collection-descriptor-anyof-or-the-age-at-collection-is-required.md "check type definition")
+
+*   [Or the sampling site is required](ega-10-properties-sample-collection-descriptor-anyof-or-the-sampling-site-is-required.md "check type definition")
+
+## sampleGrouping
+
+Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e.g. blood samples from different donors) physically or during the experimentation and analysis. One sample corresponds to one biological replicate \[EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates \[EFO:0002090] being used several times (see <https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/miscellaneous/sample_replicate.jpg>).
+
+`sampleGrouping`
+
+*   is optional
+
+*   Type: `object` ([Sample group descriptor](ega-10-properties-sample-group-descriptor.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping")
+
+### sampleGrouping Type
+
+`object` ([Sample group descriptor](ega-10-properties-sample-group-descriptor.md))
+
+one (and only one) of
+
+*   [Either the sampleNumber is present and above 1](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1.md "check type definition")
+
+*   [Or the sampleGroupBoolean is 'false', hence an individual sample with sampleNumber being '1' or no sampleNumber](ega-10-properties-sample-group-descriptor-oneof-or-the-samplegroupboolean-is-false-hence-an-individual-sample-with-samplenumber-being-1-or-no-samplenumber.md "check type definition")
+
+## sampleTypes
+
+Array of sample types: the material entity (e.g. DNA) that is this sample. Use this property as tags that befit your sample, picking as many as needed. Choose the specific terms if possible (e.g. if the assayed molecule is cDNA, add 'cDNA' instead of just 'DNA'). This property should not be confused with the sample collection protocols: regardless of the procedure to collect the sample, this property specifies what this sample is representing.
+
+`sampleTypes`
+
+*   is optional
+
+*   Type: `string[]` ([Type of sample](ega-10-properties-array-of-sample-types-type-of-sample.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleTypes")
+
+### sampleTypes Type
+
+`string[]` ([Type of sample](ega-10-properties-array-of-sample-types-type-of-sample.md))
+
+### sampleTypes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## analysisRelationships
+## cellTypes
 
-Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an analysis being linked to a Sample) the EGA.
+Array of cell types, in case the sample is composed of cells (e.g. cell culture) or the cells from which the genetic material derived are known (e.g. extract DNA from astrocytes). Use this property as tags that befit your sample, picking as many cell types as your sample contains or may contain.
 
-`analysisRelationships`
+`cellTypes`
 
 *   is optional
 
-*   Type: an array of merged types ([Details](ega-10-properties-analysis-relationships-items.md))
+*   Type: `object[]` ([Cell type](ega-10-properties-array-of-cell-types-cell-type.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisRelationships")
+*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-cell-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes")
 
-### analysisRelationships Type
+### cellTypes Type
 
-an array of merged types ([Details](ega-10-properties-analysis-relationships-items.md))
+`object[]` ([Cell type](ega-10-properties-array-of-cell-types-cell-type.md))
 
-### analysisRelationships Constraints
+### cellTypes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 
-## analysisAttributes
+## sampleStatus
 
-Custom attributes of an analysis: reusable attributes to encode tag-value pairs (e.g. Tag being 'internal tag' and its Value 'this analysis is corresponds to internal tag XYZ') with optional units. Its properties are inherited from the common-definitions.json schema.
+Array of statuses of the sample. Used to specify the condition(s) under study **if** the diagnosis of the individual is not enough to describe the status of the sample. In other words, if the differenciation between affected and unaffected groups is done at the sample level and not at the individual level. This differentiation exists when the study design is of case-control \[[EFO:0001427](http://www.ebi.ac.uk/efo/EFO_0001427)].
+For example, if two samples derive from an individual with 'renal cell carcinoma', one deriving from the affected tissue and the other from an unaffected tissue, this node can be used to specify whether the sample belongs to the unaffected group (i.e. control) or the affected one (i.e. case). On the other hand, if two samples derived from different probands each, one person being affected and the other unaffected by the condition under study, this node **is not** required.
+Same could be applied, for instance, for treated or untreated samples, but not for treated or untreated individuals.
 
-`analysisAttributes`
+`sampleStatus`
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Sample status item](ega-10-properties-array-of-sample-statuses-sample-status-item.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-10-properties-analysis-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisAttributes")
+*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus")
 
-### analysisAttributes Type
+### sampleStatus Type
 
-`object[]` ([Custom attribute of an object](ega-12-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Sample status item](ega-10-properties-array-of-sample-statuses-sample-status-item.md))
 
-### analysisAttributes Constraints
+### sampleStatus Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## sampleRelationships
+
+Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to a sequencing run) the EGA.
+
+`sampleRelationships`
+
+*   is optional
+
+*   Type: an array of merged types ([Details](ega-10-properties-sample-relationships-items.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-10-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleRelationships")
+
+### sampleRelationships Type
+
+an array of merged types ([Details](ega-10-properties-sample-relationships-items.md))
+
+### sampleRelationships Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## sampleAttributes
+
+Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.
+
+`sampleAttributes`
+
+*   is optional
+
+*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+
+*   cannot be null
+
+*   defined in: [EGA sample metadata schema](ega-10-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleAttributes")
+
+### sampleAttributes Type
+
+`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+
+### sampleAttributes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `1`
 

@@ -1,84 +1,122 @@
-# EGA Controlled Vocabulary (CV) for sequencing instrument platforms Schema
+# EGA object-set metadata schema Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json
 ```
 
-Controlled Vocabulary (CV) list for the sequencing instrument platforms. Commonly consisting in the manufacturers name (e.g. Illumina) and the instrument model (e.g. HiSeq 2000). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate an object-set. A set or group of objects is defined as an array of individual objects (e.g. 'sample' or 'experiment'). The minimum length of the array is 1 (i.e. it has to contain at least one object). These objects can be of different nature, and are validated against their corresponding schemas based on the 'schemaDescriptor' node within each individual object, which specifies the schema against the individual object needs to be validated. Notice how this schema is missing the basic 'objectId' of other objects, since an object-set is not an object per se, it is just a compilation of objects. To put it simply, this object-set schema exists to avoid the need of 1 single file per each object: for a submission of 1000 samples we would require 1000 JSON files, each of them corresponding to one of the objects; whereas using an object-set allows us to fit all those objects together in a single file. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                                                                         |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.cv.instrument\_platforms\_sequencing.json](../../../schemas/controlled_vocabulary_schemas/EGA.cv.instrument_platforms_sequencing.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [EGA.object-set.json](../../../schemas/EGA.object-set.json "open original schema") |
 
-## EGA Controlled Vocabulary (CV) for sequencing instrument platforms Type
+## EGA object-set metadata schema Type
 
-`string` ([EGA Controlled Vocabulary (CV) for sequencing instrument platforms](ega-7.md))
+`object` ([EGA object-set metadata schema](ega-7.md))
 
-## EGA Controlled Vocabulary (CV) for sequencing instrument platforms Constraints
+# EGA object-set metadata schema Properties
 
-**enum**: the value of this property must be equal to one of the following values:
+| Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                        |
+| :-------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectTitle](#objecttitle)             | `string` | Optional | cannot be null | [EGA object-set metadata schema](ega-7-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")             |
+| [objectDescription](#objectdescription) | `string` | Optional | cannot be null | [EGA object-set metadata schema](ega-7-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription") |
+| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA object-set metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")             |
+| [objectArray](#objectarray)             | `array`  | Required | cannot be null | [EGA object-set metadata schema](ega-7-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray")   |
 
-| Value                                   | Explanation          |
-| :-------------------------------------- | :------------------- |
-| `"HiSeq X Five"`                        | GENEPIO:0100112      |
-| `"HiSeq X Ten"`                         | GENEPIO:0100113      |
-| `"Illumina Genome Analyzer"`            | EFO:0004200          |
-| `"Illumina Genome Analyzer II"`         | EFO:0004201          |
-| `"Illumina Genome Analyzer IIx"`        | EFO:0004202          |
-| `"Illumina HiScanSQ"`                   | GENEPIO:0100109      |
-| `"Illumina HiSeq 1000"`                 | EFO:0004204          |
-| `"Illumina HiSeq 1500"`                 | EFO:0011027          |
-| `"Illumina HiSeq 2000"`                 | EFO:0004203          |
-| `"Illumina HiSeq 2500"`                 | EFO:0008565          |
-| `"Illumina HiSeq 3000"`                 | EFO:0008564          |
-| `"Illumina HiSeq 4000"`                 | EFO:0008563          |
-| `"Illumina HiSeq X"`                    | EFO:0008567          |
-| `"Illumina iSeq 100"`                   | EFO:0008635          |
-| `"Illumina MiSeq"`                      | EFO:0004205          |
-| `"Illumina MiniSeq"`                    | EFO:0008636          |
-| `"Illumina NovaSeq 6000"`               | EFO:0008637          |
-| `"NextSeq 500"`                         | OBI:0002021          |
-| `"NextSeq 550"`                         | EFO:0008566          |
-| `"NextSeq 1000"`                        | EFO:0010962          |
-| `"NextSeq 2000"`                        | EFO:0010963          |
-| `"Helicos HeliScope"`                   | OBI:0000717          |
-| `"AB SOLiD System"`                     | EFO:0004435          |
-| `"AB SOLiD System 2.0"`                 | EFO:0004442          |
-| `"AB SOLiD System 3.0"`                 | EFO:0004439          |
-| `"AB SOLiD 3 Plus System"`              | OBI:0002007          |
-| `"AB SOLiD 4 System"`                   | EFO:0004438          |
-| `"AB SOLiD 4hq System"`                 | EFO:0004441          |
-| `"AB SOLiD PI System"`                  | EFO:0004437          |
-| `"AB 5500 Genetic Analyzer"`            | EFO:0004440          |
-| `"AB 5500xl Genetic Analyzer"`          | EFO:000443           |
-| `"AB 5500xl-W Genetic Analysis System"` | EFO:0004436          |
-| `"Complete Genomics"`                   | NCIT:C146815         |
-| `"BGISEQ-50"`                           |                      |
-| `"BGISEQ-500"`                          | NCIT:C146812         |
-| `"MGISEQ-2000RS"`                       |                      |
-| `"PacBio RS"`                           | GENEPIO:0100131      |
-| `"PacBio RS II"`                        | EFO:0008631          |
-| `"Sequel"`                              | OBI:0002632          |
-| `"Sequel II"`                           | OBI:0002633          |
-| `"Ion Torrent PGM"`                     | GENEPIO:0100136      |
-| `"Ion Torrent Proton"`                  | GENEPIO:0100137      |
-| `"Ion Torrent S5"`                      | GENEPIO:0100139      |
-| `"Ion Torrent S5 XL"`                   | GENEPIO:0100138      |
-| `"Ion Torrent Genexus"`                 |                      |
-| `"Ion GeneStudio S5"`                   | GENEPIO:0100139      |
-| `"Ion GeneStudio S5 Prime"`             | thermofisher:A38196  |
-| `"Ion GeneStudio S5 Plus"`              | thermofisher:A38195  |
-| `"AB 3730xL Genetic Analyzer"`          | thermofisher:3730XL  |
-| `"AB 3730 Genetic Analyzer"`            |                      |
-| `"AB 3500xL Genetic Analyzer"`          | thermofisher:4405633 |
-| `"AB 3500 Genetic Analyzer"`            | thermofisher:4405673 |
-| `"AB 3130xL Genetic Analyzer"`          | thermofisher:3130XLR |
-| `"AB 3130 Genetic Analyzer"`            |                      |
-| `"AB 310 Genetic Analyzer"`             |                      |
-| `"DNBSEQ-T7"`                           | GENEPIO:0100147      |
-| `"DNBSEQ-G400"`                         | GENEPIO:0100148      |
-| `"DNBSEQ-G50"`                          | GENEPIO:0100150      |
-| `"DNBSEQ-G400 FAST"`                    | GENEPIO:0100149      |
-| `"MinION"`                              | EFO:0008632          |
-| `"GridION"`                             | OBI:0002751          |
-| `"PromethION"`                          | EFO:0008634          |
+## objectTitle
+
+Free-form title of the object-set. Used as a convenient way to identify different object-sets.
+
+`objectTitle`
+
+*   is optional
+
+*   Type: `string` ([Title of the object-set](ega-7-properties-title-of-the-object-set.md))
+
+*   cannot be null
+
+*   defined in: [EGA object-set metadata schema](ega-7-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")
+
+### objectTitle Type
+
+`string` ([Title of the object-set](ega-7-properties-title-of-the-object-set.md))
+
+### objectTitle Examples
+
+```json
+"Example of Single Cell Sequencing"
+```
+
+```json
+"myObjectSet_2"
+```
+
+## objectDescription
+
+More extensive free-form description of the object-set. Used to provide context on why the items (i.e. individual objects) of the array are grouped together.
+
+`objectDescription`
+
+*   is optional
+
+*   Type: `string` ([Description of the object-set](ega-7-properties-description-of-the-object-set.md))
+
+*   cannot be null
+
+*   defined in: [EGA object-set metadata schema](ega-7-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription")
+
+### objectDescription Type
+
+`string` ([Description of the object-set](ega-7-properties-description-of-the-object-set.md))
+
+### objectDescription Examples
+
+```json
+"This object-set corresponds to a whole example of a Single Cell Sequencing submission, being grouped together and submitted together."
+```
+
+```json
+"When submitting the previous object set, 4 samples were wrong and need to be re-submitted, and that's the purpose of this object-set."
+```
+
+## schemaDescriptor
+
+This node is intended to be used to describe the schemas and standards that a JSON document was based on. For instance, if a sample.json document was created to be validated against EGA.sample.json schema version 1.0.0, such information should be reflected in this block. This way, both a human and a machine can interpret and validate the JSON document efficiently, without the need of guessing versions.
+
+`schemaDescriptor`
+
+*   is optional
+
+*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+
+*   cannot be null
+
+*   defined in: [EGA object-set metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")
+
+### schemaDescriptor Type
+
+`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+
+## objectArray
+
+The array per se containing the list of metadata objects to be validated. For each type of metadata object (e.g. 'sample') its corresponding schema (e.g. '<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json#>') is applied conditionally based on the value of schemaDescriptor\[objectType] within each object. This way this array can contain any combination of metadata objects and each will be validated individually against the correct schemas. Notice how the 'schemaDescriptor' is a required node for the object-set to be used.
+
+`objectArray`
+
+*   is required
+
+*   Type: an array of merged types ([Schemas being conditionally applied based on value of 'objectType' from 'schemaDescriptor' in each object.](ega-7-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-objecttype-from-schemadescriptor-in-each-object.md))
+
+*   cannot be null
+
+*   defined in: [EGA object-set metadata schema](ega-7-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray")
+
+### objectArray Type
+
+an array of merged types ([Schemas being conditionally applied based on value of 'objectType' from 'schemaDescriptor' in each object.](ega-7-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-objecttype-from-schemadescriptor-in-each-object.md))
+
+### objectArray Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
