@@ -42,7 +42,7 @@
       "minimalPublicAttributes":{
         "type": "object",
         "title": "Minimal public attributes describing an individual",
-        "description": "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex, phenotypes and/or diseases. These shall be displayed and queryable on our portal. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' [NCIT:C94232].",
+        "description": "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex, phenotypicAbnormalities and/or diseases. These shall be displayed and queryable on our portal. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypicAbnormalities' and 'diseases' arrays will contain a reference to 'Unaffected' [NCIT:C94232]. Do take into account the 'excluded' property of each 'disease' or 'phenotypicAbnormality' in order to evaluate it correctly, since logic negation can be provided using that property.",
         "additionalProperties": false,
         "required": ["subjectId", "biologicalSex"],
         "properties": {
@@ -105,8 +105,8 @@
         },
         "anyOf": [
           {
-            "title": "Either the phenotypes array is given",
-            "required": ["phenotypes"]
+            "title": "Either the phenotypicAbnormalities array is given",
+            "required": ["phenotypicAbnormalities"]
           },
           {
             "title": "Or the diseases array is given",
