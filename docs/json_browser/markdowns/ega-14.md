@@ -93,7 +93,7 @@ This property describes the material entity the sample consists in. That is, an 
 
 ## minimalPublicAttributes
 
-Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex, phenotypes and/or diseases. These shall be displayed and queryable on our portal. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypes' and 'diseases' arrays will contain a reference to 'Unaffected' \[NCIT:C94232].
+Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex, phenotypicAbnormalities and/or diseases. These shall be displayed and queryable on our portal. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypicAbnormalities' and 'diseases' arrays will contain a reference to 'Unaffected' \[NCIT:C94232]. Do take into account the 'excluded' property of each 'disease' or 'phenotypicAbnormality' in order to evaluate it correctly, since logic negation can be provided using that property.
 
 `minimalPublicAttributes`
 
@@ -111,7 +111,7 @@ Among all attributes describing an individual, some may contain identifiable met
 
 any of
 
-*   [Either the phenotypes array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-either-the-phenotypes-array-is-given.md "check type definition")
+*   [Either the phenotypicAbnormalities array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-either-the-phenotypicabnormalities-array-is-given.md "check type definition")
 
 *   [Or the diseases array is given](ega-14-properties-minimal-public-attributes-describing-an-individual-anyof-or-the-diseases-array-is-given.md "check type definition")
 
