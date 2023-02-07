@@ -59,10 +59,8 @@ jobs:
           #   changes. Therefore we specify the schemas at deployment level (-r)
         run: |
           schemas_dir="./schemas"
-          cv_schemas_dir="$schemas_dir/controlled_vocabulary_schemas"
           
-          node biovalidator/src/biovalidator -r "$schemas_dir/*.json" \
-            -r "$cv_schemas_dir/*.json" &
+          node biovalidator/src/biovalidator -r "$schemas_dir/*.json"
           
           # We stop for a few seconds to give the server time
           sleep 3
