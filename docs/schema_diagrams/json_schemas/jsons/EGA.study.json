@@ -1,0 +1,240 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json",
+    "type": "object",
+    "title": "EGA study metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Study metadata object. This object is intended to contain metadata about the compilation of examinations, analyses or critical inspection of a particular subject. In other words, a Study is a container of experiments and analyses of any nature (including Array data) grouped by a common goal or investigation. They often draw together data from a range of datasets and are represented in publication. For instance, an example would be a case-control study on cancer patients and healthy individuals. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/studies)",
+    "required": ["objectId", "objectTitle", "studyTypes", "studyDesigns"],
+    "additionalProperties": false,
+    "properties": {
+      "objectId": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a study (by using EGAStudyIdPattern)", 
+        "allOf": [
+          {
+            "title": "Inherited objectCoreId object",
+            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+          },
+          {
+            "title": "Check that study EGA ID (EGAS) is correct",
+            "properties": {
+              "egaAccession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGAStudyIdPattern"
+              }
+            }
+          }
+        ]        
+      },
+
+      "schemaDescriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
+      },
+
+      "objectTitle": {
+        "type": "string",
+        "title": "Title of the study",
+        "description": "Short free-form text that can be used to call out study records in searches or displays.",
+        "examples": [ "EBI test case-control study for cancer" ]
+      },
+
+      "objectDescription": {
+        "type": "string",
+        "title": "Description of the study",
+        "description": "An in-depth description of the study, including its overall purpose, goals, scope or nature.",
+        "examples": [ "EBI genome-wide case-control association study for Hypertension (HT) using seven disease collections together with the 1958 Spanish Birth Cohort and the EU National Blood Service collections as controls." ]
+      },
+
+      "studyTypes": {
+        "type": "array",
+        "title": "studyTypes array",
+        "description": "List of study types. Contains specific keywords (e.g. 'COVID-19') as items that can be associated to the study, providing an overall view of its purpose.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "title": "Study type",
+          "description": "One of the types of the study, expressing the overall purpose of the study. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition. The CV was inherited from ENA's study types.",
+          "enum": ["whole genome sequencing", "metagenomics", "transcriptome analysis", "resequencing", "epigenetics", "synthetic genomics", "forensic", "paleo-genomics", "gene regulation", "cancer genomics", "population genomics", "RNASeq", "exome sequencing", "pooled clone sequencing", "COVID-19", "xenograft"],
+          "meta:enum": {
+            "whole genome sequencing": "[topic:3673] laboratory technique to sequence the complete DNA sequence of an organism's genome at a single time", 
+            "metagenomics": "[topic:3174]: The study of genetic material recovered from environmental samples, and associated environmental data",
+            "transcriptome analysis": "[EFO:0009865]: sequencing and characterization of transcription elements",
+            "resequencing": "[operation:3923]: Laboratory experiment to identify the differences between a specific genome (of an individual) and a reference genome (developed typically from many thousands of individuals). WGS re-sequencing is used as golden standard to detect variations compared to a given reference genome, including small variants (SNP and InDels) as well as larger genome re-organisations (CNVs, translocations, etc.). ows re-sequencing of complete genomes of any given organism with high resolution and high accuracy",
+            "epigenetics": "[topic:3295]: study of heritable changes, for example in gene expression or phenotype, caused by mechanisms other than changes in the DNA sequence",
+            "synthetic genomics": "Sequencing of modified, synthetic, or transplanted genomes",
+            "forensic": "[OMIT:0025593]: genetic samples to help identify crime victims, perpetrators, or family relationships",
+            "paleo-genomics": "[topic:3943]: The reconstruction and analysis of genomic information in extinct species",
+            "gene regulation": "[topic:0204]: The regulation of gene expression",
+            "cancer genomics": "Study of cancer genomics",
+            "population genomics": "[topic:3796]: Large-scale study (typically comparison) of DNA sequences of populations",
+            "RNASeq": "[EFO:0008896]: a method that involves purifying RNA and making cDNA, followed by high-throughput sequencing",
+            "exome sequencing": "[EFO:0005396]: exome sequencing, also known as whole exome sequencing (WES), is a genomic technique for sequencing all of the protein-coding regions of genes in a genome (known as the exome). Exons (the subset of DNA that encodes proteins) are selected, and the exonic DNA is then sequenced using any high-throughput DNA sequencing technology",
+            "pooled clone sequencing": "[EFO:0003741]: An assay in which DNA is the input molecule derived from pooled clones (for example BACs and Fosmids) is sequenced using high throughput technology using shotgun methodology",
+            "COVID-19": "[MONDO:0100096]: A study related to the COVID-19 disease, caused infection with severe acute respiratory syndrome coronavirus 2",
+            "xenograft": "[EFO:0003942]: Transplantation between animals of different species"
+          }
+        }
+      },
+
+      "studyDesigns": {
+        "type": "array",
+        "title": "studyDesigns array",
+        "description": "List of study designs (a.k.a. experimental designs). Contains specific keywords (e.g. 'RNA stability design') as items that can be associated to the study, providing an overall view of the method of investigating particular types of research questions or solving particular types of problems.",
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "minItems": 1,
+        "items": {
+          "title": "One study design",
+          "$ref": "./EGA.common-definitions.json#/definitions/studyDesignKeywords"
+        }
+      },
+
+      "studyRelationships": {
+        "type": "array",
+        "title": "Study relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. an Array Design Format that was submitted to ArrayExpress being linked to their microarray data within EGA) and within (e.g. an ArrayExperiment being linked to a study) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
+            },
+            {
+              "title": "Relationship constraints for a study",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a study.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referencedBy (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAnalysis"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExperiment"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceProtocol"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type groupedWith, isAfter, sameAs (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceStudy"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetStudy"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Relationships of external accessions and URLs (optional ones)",
+                  "description": "Almost any relationship is imaginable with external accessions and URLs.",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
+        }
+      },
+
+      "studyAttributes": {
+        "type": "array",
+        "title": "Study custom attributes",
+        "description": "Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with optional units (e.g. 'base pairs'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
+        }
+      }      
+    }      
+  }

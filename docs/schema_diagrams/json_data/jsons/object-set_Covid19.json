@@ -1,0 +1,220 @@
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    },
+    "data": {
+        "objectTitle": "Example of a COVID19 small submission",
+        "objectDescription": "This object-set constitutes an example of some objects one would expect in a small COVID-19 submission that may differ from other types of submissions: an individual, samples, and the study encompassing all. There are many other objects one would submit for a full COVID-19 submission: a policy, DAC and dataset to specify the reusability of the data; experiments and assays containing the raw data; analyses containing the bioinformatics investigations; protocols describing each of the procedures performed; and finally a submission which would be referenced by all objects. This COVID-19 example is **inspired** on the COVID-19 example of Phenopackets (https://phenopacket-schema.readthedocs.io/en/latest/covid19-example.html) and the published case report it is based on (https://www.jacc.org/doi/10.1016/j.jaccas.2020.04.001).",
+        "objectArray": [
+            {
+                "objectId": {
+                    "alias": "P123542",
+                    "centerName": "EBI-TEST"
+                },
+                "minimalPublicAttributes": {
+                    "subjectId": "P123542",
+                    "biologicalSex": "male",
+                    "diseases": [
+                        {
+                            "disease": {
+                                "termId": "MONDO:0100096",
+                                "termLabel": "COVID-19"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0000400",
+                                "termLabel": "Diabetes Mellitus"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0000318",
+                                "termLabel": "Cardiomyopathy"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0009909",
+                                "termLabel": "Chronic Kidney Disease"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0001073",
+                                "termLabel": "Obesity"
+                            }
+                        }                        
+                    ]
+                },
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "individualAttributes": [
+                    {
+                        "tag": "vitalStatus",
+                        "value": "DECEASED"
+                    }
+                ],
+                "individualRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionURI": "https://www.jacc.org/doi/10.1016/j.jaccas.2020.04.001"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "individual"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "P123542 - Lung swab",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "P123542 - Lung swab",
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "sampleStatus": [
+                    {
+                        "caseVsControl": "case",
+                        "conditionUnderStudy": {
+                            "termId": "MONDO:0100096",
+                            "termLabel": "COVID-19"
+                        }
+                    }
+                ],
+                "sampleTypes": [
+                    "biofilm",
+                    "RNA"
+                ],
+                "sampleCollection": {
+                    "ageAtCollection": {
+                        "age": "P70Y"
+                    },
+                    "sampleCollectionDate": "2020-03-28T00:00:00Z",
+                    "samplingSite": {
+                        "termId": "UBERON:0007196",
+                        "termLabel": "tracheobronchial tree"
+                    }
+                },
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "P123542",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Lung swab collection",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "sample"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "COVID19 Study",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "The Imperfect Cytokine Storm: Severe COVID-19 With ARDS in a Patient on Durable LVAD Support",
+                "objectDescription": "As health systems worldwide grapple with the coronavirus disease-2019 (COVID-19) pandemic, patients with durable LVAD support represent a unique population at risk for the disease. This paper outlines the case of such a patient who developed COVID-19 complicated by a “cytokine storm” with severe acute respiratory distress syndrome and myocardial injury and describes the challenges that arose during management.",
+                "studyDesigns": [
+                    "clinical history design"
+                ],
+                "studyTypes": [
+                    "COVID-19"
+                ],
+                "studyRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionURI": "https://www.jacc.org/doi/10.1016/j.jaccas.2020.04.001"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "study"
+                }
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "object-set"
+        }
+    }
+}

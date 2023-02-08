@@ -1,0 +1,263 @@
+@startjson
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json",
+    "type": "object",
+    "title": "EGA individual metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its individual metadata object. This object is intended to contain metadata about the individual, also known as the sample donor or subject of study. An individual is defined as a person that participates in an experiment or from which a material sample was derived. Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "required": ["objectId", "organismDescriptor", "minimalPublicAttributes"],
+    "additionalProperties": false,
+    "properties": {
+      "objectId": {
+        "type": "object",
+        "title": "Object's IDs block",
+        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a individual (by using EGAIndividualIdPattern)", 
+        "allOf": [
+          {
+            "title": "Inherited objectCoreId object",
+            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+          },
+          {
+            "title": "Check that individual EGA ID (EGAI) is correct",
+            "properties": {
+              "egaAccession": {
+                "$ref": "./EGA.common-definitions.json#/definitions/EGAIndividualIdPattern"
+              }
+            }
+          }
+        ]
+      },
+
+      "schemaDescriptor": {
+        "title": "Schema descriptor node",
+        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
+        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
+      },
+
+      "organismDescriptor": {
+        "$ref": "./EGA.common-definitions.json#/definitions/organismDescriptor"
+      },
+     
+      "minimalPublicAttributes":{
+        "type": "object",
+        "title": "Minimal public attributes describing an individual",
+        "description": "Among all attributes describing an individual, some may contain identifiable metadata and thus must be private. Nevertheless, there are three/four required attributes (even if they are unknown): subject id, biological sex, phenotypicAbnormalities and/or diseases. These shall be displayed and queryable on our portal. In the case of a healthy individual (with no phenotypic abnormalities nor diseases), the 'phenotypicAbnormalities' and 'diseases' arrays will contain a reference to 'Unaffected' [NCIT:C94232]. Do take into account the 'excluded' property of each 'disease' or 'phenotypicAbnormality' in order to evaluate it correctly, since logic negation can be provided using that property.",
+        "additionalProperties": false,
+        "required": ["subjectId", "biologicalSex"],
+        "properties": {
+          "subjectId": {
+            "$ref": "./EGA.common-definitions.json#/definitions/subjectId"
+          },
+          "biologicalSex": {
+            "$ref": "./EGA.common-definitions.json#/definitions/biologicalSex"
+          },
+          "phenotypicAbnormalities": {
+            "type": "array",
+            "title": "Array of phenotypic abnormalities",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "title": "Phenotypic abnormality item",
+              "description": "One individual Phenotypic abnormality of the array. Keep in mind that in order to correctly interprete the phenotype it is **imperative** to check the 'excluded' property: each item of the array can be either specifying that the phenotipic abnormality was present or the opposite (i.e. logical negation).",
+              "additionalProperties": false,
+              "required": [ "phenotypicAbnormality" ],
+              "properties": {
+                "excluded": {
+                  "type": "boolean",
+                  "title": "Excluded",
+                  "description": "Property that specifies whether the phenotype was observed or not. Similar to phenopacket's 'excluded' property, by default it is 'false', which means that the phenotype was observed (i.e. not excluded). This flag is only required to indicate that the phenotype was looked for, but found to be absent. The terms 'not excluded' (i.e. false) and 'excluded' (i.e. true) correlate with the common notation of 'case' versus 'control', respectively.",
+                  "default": false
+                },
+                "phenotypicAbnormality": {
+                  "$ref": "./EGA.common-definitions.json#/definitions/phenotypicAbnormality"
+                }
+              }
+            }
+          },
+          "diseases": {
+            "type": "array",
+            "title": "Array of diseases",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "title": "Disease item",
+              "description": "One individual disease of the array. Keep in mind that in order to correctly interprete the disease it is **imperative** to check the 'excluded' property: each item of the array can be either specifying that the disease was present or the opposite (i.e. logical negation).",
+              "additionalProperties": false,
+              "required": [ "disease" ],
+              "properties": {
+                "excluded": {
+                  "type": "boolean",
+                  "title": "Excluded",
+                  "description": "Property that specifies whether the disease was observed or not. Similar to phenopacket's 'excluded' property, by default it is 'false', which means that the disease was observed (i.e. not excluded). This flag is only required to indicate that the disease was looked for, but found to be absent. The terms 'not excluded' (i.e. false) and 'excluded' (i.e. true) correlate with the common notation of 'case' versus 'control', respectively.",
+                  "default": false
+                },
+                "disease": {
+                  "$ref": "./EGA.common-definitions.json#/definitions/disease"
+                }
+              }
+            }
+          }
+        },
+        "anyOf": [
+          {
+            "title": "Either the phenotypicAbnormalities array is given",
+            "required": ["phenotypicAbnormalities"]
+          },
+          {
+            "title": "Or the diseases array is given",
+            "required": ["diseases"]
+          }
+        ]
+      },
+
+      "individualRelationships": {
+        "type": "array",
+        "title": "Individual relationships",
+        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to an individual) the EGA.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "allOf": [
+            {
+              "title": "Inherited relationship node",
+              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
+            },
+            {
+              "title": "Relationship constraints for an individual",
+              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a individual.",
+              "anyOf": [
+                {
+                  "title": "Allowed relationships of type referencedBy (main ones)",
+                  "allOf": [
+                    {
+                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetSample"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceProtocol"
+                        }
+                      ]
+                    }
+                  ]                  
+                },
+                {
+                  "title": "Allowed relationships of type childOf, familyRelationshipWith, groupedWith, sameAs (optional ones)",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceIndividual"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetIndividual"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "Relationships of external accessions and URLs (optional ones)",
+                  "description": "Almost any relationship is imaginable with external accessions and URLs.",
+                  "allOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                        }
+                      ]
+                    },
+                    {
+                      "anyOf": [
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
+                        },
+                        {
+                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ] 
+        },
+        "contains": {
+          "title": "Constraint to have at least one 'submission' relationship",
+          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
+        }
+      },
+
+      "individualAttributes": {
+        "type": "array",
+        "title": "Individual custom attributes",
+        "description": "Custom attributes of an individual: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.",
+        "minItems": 1,
+        "additionalProperties": false,
+        "uniqueItems": true,
+        "items": { 
+          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
+        }
+      }
+    }
+      
+  }
+@endjson

@@ -1,0 +1,265 @@
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    },
+    "data": {
+        "objectTitle": "Example of a Rare Disease small submission",
+        "objectDescription": "This object-set constitutes an example of some objects one would expect in a small Rare Disease submission that may differ from other types of submissions: an affected individual and his unaffected mother, a sample and the study encompassing all. There are many other objects one could submit for a full Rare Disease submission: a policy, DAC and dataset to specify the reusability of the data; experiments and assays containing the raw data; analyses containing the bioinformatics investigations; protocols describing each of the procedures performed; and finally a submission which would be referenced by all objects. This Rare Disease example is inspired on the Rare Disease example of Phenopackets (https://phenopacket-schema.readthedocs.io/en/latest/rd-example.html) and the article it is based on (https://pubmed.ncbi.nlm.nih.gov/30808312/).",
+        "objectArray": [
+            {
+                "objectId": {
+                    "alias": "14 year-old boy",
+                    "centerName": "EBI-TEST"
+                },
+                "minimalPublicAttributes": {
+                    "subjectId": "Affected_proband_14y",
+                    "biologicalSex": "male",
+                    "phenotypicAbnormalities": [
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0001558",
+                                "termLabel": "Decreased fetal movement"
+                            }
+                        },
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0031910",
+                                "termLabel": "Abnormal cranial nerve physiology"
+                            }
+                        },
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0012587",
+                                "termLabel": "Macroscopic hematuria"
+                            }
+                        },
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0001270",
+                                "termLabel": "Motor delay"
+                            }
+                        }                        
+                    ],
+                    "diseases": [
+                        {
+                            "disease": {
+                                "termId": "MONDO:0008029",
+                                "termLabel": "Bethlem myopathy"
+                            }
+                        }                        
+                    ]
+                },
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "individualRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "alias": "Unaffected mother",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "childOf"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "individual"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "Unaffected mother",
+                    "centerName": "EBI-TEST"
+                },
+                "minimalPublicAttributes": {
+                    "subjectId": "Unaffected mother",
+                    "biologicalSex": "female",
+                    "phenotypicAbnormalities": [
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "NCIT:C94232",
+                                "termLabel": "Unaffected"
+                            }
+                        }
+                    ]
+                },
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "individualRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "14 year-old boy",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "childOf"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "individual"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "Blood sample - 14y Proband",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "Blood sample of the 14y affected proband",
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606",
+                        "termLabel": "homo sapiens"
+                    },
+                    "commonName": "human"
+                },
+                "sampleStatus": [
+                    {
+                        "caseVsControl": "not applicable",
+                        "conditionUnderStudy": {
+                            "termId": "MONDO:0008029",
+                            "termLabel": "Bethlem myopathy"
+                        }
+                    }
+                ],
+                "sampleTypes": [
+                    "DNA"
+                ],
+                "sampleCollection": {
+                    "ageAtCollection": {
+                        "age": "P14Y"
+                    },
+                    "samplingSite": {
+                        "termId": "UBERON:0001414",
+                        "termLabel": "median basilic vein"
+                    }
+                },
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "14 year-old boy",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Blood drawn protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "sample"
+                }
+            },
+            {
+                "objectId": {
+                    "alias": "14Y COL6A1 mutation - Bethlem myopathy",
+                    "centerName": "EBI-TEST"
+                },
+                "objectTitle": "COL6A1 mutation leading to Bethlem myopathy with recurrent hematuria",
+                "objectDescription": "Study of a 14-year-old boy presenting with muscle weakness from 3 years of age without any family history. Six months before admission, he developed recurrent gross hematuria, three bouts in total, with the presence of blood clots in the urine. Next-generation sequencing of his whole-exome was performed. The result of sequencing revealed a de novo heterozygous G-to-A nucleotide substitution at position 877 in exon 10 of the COL6A1 gene. After treatment, the hematuria healed, but the muscle weakness failed to improve.",
+                "studyDesigns": [
+                    "clinical history design",
+                    "family based design",
+                    "genotyping design"
+                ],
+                "studyTypes": [
+                    "whole genome sequencing"
+                ],
+                "studyRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionURI": "https://pubmed.ncbi.nlm.nih.gov/30808312/"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ],
+                "schemaDescriptor": {
+                    "commonSchemaVersion": "0.0.0",
+                    "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+                    "objectSchemaVersion": "0.0.0",
+                    "objectType": "study"
+                }
+            }
+        ],
+        "schemaDescriptor": {
+            "commonSchemaVersion": "0.0.0",
+            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "objectSchemaVersion": "0.0.0",
+            "objectType": "object-set"
+        }
+    }
+}
