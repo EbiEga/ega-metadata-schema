@@ -1,0 +1,23 @@
+@startjson
+#highlight "data" / "protocolTypeDescriptor" / "protocolSubtype" / "termId"
+#highlight "data"
+#highlight "data" / "protocolTypeDescriptor"
+#highlight "data" / "protocolTypeDescriptor" / "protocolSubtype"
+
+{
+    "data": {
+        "objectId": "{ ... }",
+        "objectTitle": "Patient's blood collection protocol",
+        "protocolAttributes": "[ ... ]",
+        "protocolDescription": "Total PBMC were collected from blood of HIV-1 patients. H1N1, H3N2, and B mean \\nthe influenza virus subtypes (influenza virus H1N1, influenza virus H3N2, and \\ninfluenza virus B subtypes). HIV+ subjects were stratified as immune responders \\nand immune non-responders post-vaccination (\u201cresponders\u201d\u2265 4-fold increase of \\nneutralization antibody at Day28/Day0; \u201cnon-responders\u201d < 4-fold increase of \\nneutralization antibody at Day28/Day0) to each influenza subtypes. RNA was \\nisolated from the fresh isolated PBMCs on Day0 and Day7 in each responder and \\nnon-responder. So, the 0w means at day 0, 1w means at day 7.",
+        "protocolInstruments": "[ ... ]",
+        "protocolPerformers": "[ ... ]",
+        "protocolRelationships": "[ ... ]",
+        "protocolTypeDescriptor": "{ ... }",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json"
+    }
+}
+@endjson

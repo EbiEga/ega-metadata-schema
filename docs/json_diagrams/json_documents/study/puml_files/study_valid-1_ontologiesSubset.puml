@@ -1,0 +1,22 @@
+@startjson
+
+{
+    "data": {
+        "studyRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biostudies:S-EPMC3314381"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson

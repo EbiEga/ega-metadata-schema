@@ -1,0 +1,49 @@
+@startjson
+
+{
+    "data": {
+        "datasetRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAR00002043412"
+                    },
+                    "objectType": "assay"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAR00004343122"
+                    },
+                    "objectType": "assay"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00004343122"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectId": {
+            "alias": "my-cancer-dataset_231",
+            "centerName": "EBI-TEST"
+        }
+    }
+}
+@endjson

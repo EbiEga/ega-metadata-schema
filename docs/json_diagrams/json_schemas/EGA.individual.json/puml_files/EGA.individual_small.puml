@@ -1,0 +1,26 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json",
+    "type": "object",
+    "title": "EGA individual metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits individual metadata object. This object is intended to contain metadata \\nabout the individual, also known as the sample donor or subject of study. An \\nindividual is defined as a person that participates in an experiment or from \\nwhich a material sample was derived. Further details can be found in the \\nEGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectId",
+        "organismDescriptor",
+        "minimalPublicAttributes"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "organismDescriptor": "{ ... }",
+        "minimalPublicAttributes": "{ ... }",
+        "individualRelationships": "{ ... }",
+        "individualAttributes": "{ ... }"
+    }
+}
+@endjson

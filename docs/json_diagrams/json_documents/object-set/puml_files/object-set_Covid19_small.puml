@@ -1,0 +1,48 @@
+@startjson
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "0" / "disease" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "1" / "disease" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "2" / "disease" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "3" / "disease" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "4" / "disease" / "termId"
+#highlight "data" / "objectArray" / "0" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data" / "objectArray" / "1" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data" / "objectArray" / "1" / "sampleStatus" / "0" / "conditionUnderStudy" / "termId"
+#highlight "data" / "objectArray" / "1" / "sampleCollection" / "samplingSite" / "termId"
+#highlight "data"
+#highlight "data" / "objectArray"
+#highlight "data" / "objectArray" / "0"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "0"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "0" / "disease"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "1"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "1" / "disease"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "2"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "2" / "disease"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "3"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "3" / "disease"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "4"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "4" / "disease"
+#highlight "data" / "objectArray" / "0" / "organismDescriptor"
+#highlight "data" / "objectArray" / "0" / "organismDescriptor" / "organismTaxon"
+#highlight "data" / "objectArray" / "1"
+#highlight "data" / "objectArray" / "1" / "organismDescriptor"
+#highlight "data" / "objectArray" / "1" / "organismDescriptor" / "organismTaxon"
+#highlight "data" / "objectArray" / "1" / "sampleStatus"
+#highlight "data" / "objectArray" / "1" / "sampleStatus" / "0"
+#highlight "data" / "objectArray" / "1" / "sampleStatus" / "0" / "conditionUnderStudy"
+#highlight "data" / "objectArray" / "1" / "sampleCollection"
+#highlight "data" / "objectArray" / "1" / "sampleCollection" / "samplingSite"
+
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    },
+    "data": {
+        "objectTitle": "Example of a COVID19 small submission",
+        "objectDescription": "This object-set constitutes an example of some objects one would expect in a \\nsmall COVID-19 submission that may differ from other types of submissions: an \\nindividual, samples, and the study encompassing all. There are many other \\nobjects one would submit for a full COVID-19 submission: a policy, DAC and \\ndataset to specify the reusability of the data; experiments and assays \\ncontaining the raw data; analyses containing the bioinformatics investigations; \\nprotocols describing each of the procedures performed; and finally a submission \\nwhich would be referenced by all objects. This COVID-19 example is **inspired** \\non the COVID-19 example of Phenopackets \\n(https://phenopacket-schema.readthedocs.io/en/latest/covid19-example.html) and \\nthe published case report it is based on \\n(https://www.jacc.org/doi/10.1016/j.jaccas.2020.04.001).",
+        "objectArray": "[ ... ]",
+        "schemaDescriptor": "{ ... }"
+    }
+}
+@endjson

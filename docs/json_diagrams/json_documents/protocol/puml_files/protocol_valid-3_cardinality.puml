@@ -1,0 +1,31 @@
+@startjson
+
+{
+    "data": {
+        "objectId": {
+            "alias": "genome_indexing_Prot23",
+            "centerName": "EBI-TEST"
+        },
+        "protocolRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00002045411"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ]
+    }
+}
+@endjson

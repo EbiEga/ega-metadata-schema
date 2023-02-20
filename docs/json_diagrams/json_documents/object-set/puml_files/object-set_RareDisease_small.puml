@@ -1,0 +1,58 @@
+@startjson
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0" / "phenotypicAbnormality" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "1" / "phenotypicAbnormality" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "2" / "phenotypicAbnormality" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "3" / "phenotypicAbnormality" / "termId"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "0" / "disease" / "termId"
+#highlight "data" / "objectArray" / "0" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data" / "objectArray" / "1" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0" / "phenotypicAbnormality" / "termId"
+#highlight "data" / "objectArray" / "1" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data" / "objectArray" / "2" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data" / "objectArray" / "2" / "sampleStatus" / "0" / "conditionUnderStudy" / "termId"
+#highlight "data" / "objectArray" / "2" / "sampleCollection" / "samplingSite" / "termId"
+#highlight "data"
+#highlight "data" / "objectArray"
+#highlight "data" / "objectArray" / "0"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0" / "phenotypicAbnormality"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "1"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "1" / "phenotypicAbnormality"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "2"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "2" / "phenotypicAbnormality"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "3"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "3" / "phenotypicAbnormality"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "0"
+#highlight "data" / "objectArray" / "0" / "minimalPublicAttributes" / "diseases" / "0" / "disease"
+#highlight "data" / "objectArray" / "0" / "organismDescriptor"
+#highlight "data" / "objectArray" / "0" / "organismDescriptor" / "organismTaxon"
+#highlight "data" / "objectArray" / "1"
+#highlight "data" / "objectArray" / "1" / "minimalPublicAttributes"
+#highlight "data" / "objectArray" / "1" / "minimalPublicAttributes" / "phenotypicAbnormalities"
+#highlight "data" / "objectArray" / "1" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0"
+#highlight "data" / "objectArray" / "1" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0" / "phenotypicAbnormality"
+#highlight "data" / "objectArray" / "1" / "organismDescriptor"
+#highlight "data" / "objectArray" / "1" / "organismDescriptor" / "organismTaxon"
+#highlight "data" / "objectArray" / "2"
+#highlight "data" / "objectArray" / "2" / "organismDescriptor"
+#highlight "data" / "objectArray" / "2" / "organismDescriptor" / "organismTaxon"
+#highlight "data" / "objectArray" / "2" / "sampleStatus"
+#highlight "data" / "objectArray" / "2" / "sampleStatus" / "0"
+#highlight "data" / "objectArray" / "2" / "sampleStatus" / "0" / "conditionUnderStudy"
+#highlight "data" / "objectArray" / "2" / "sampleCollection"
+#highlight "data" / "objectArray" / "2" / "sampleCollection" / "samplingSite"
+
+{
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    },
+    "data": {
+        "objectTitle": "Example of a Rare Disease small submission",
+        "objectDescription": "This object-set constitutes an example of some objects one would expect in a \\nsmall Rare Disease submission that may differ from other types of submissions: \\nan affected individual and his unaffected mother, a sample and the study \\nencompassing all. There are many other objects one could submit for a full Rare \\nDisease submission: a policy, DAC and dataset to specify the reusability of the \\ndata; experiments and assays containing the raw data; analyses containing the \\nbioinformatics investigations; protocols describing each of the procedures \\nperformed; and finally a submission which would be referenced by all objects. \\nThis Rare Disease example is inspired on the Rare Disease example of \\nPhenopackets \\n(https://phenopacket-schema.readthedocs.io/en/latest/rd-example.html) and the \\narticle it is based on (https://pubmed.ncbi.nlm.nih.gov/30808312/).",
+        "objectArray": "[ ... ]",
+        "schemaDescriptor": "{ ... }"
+    }
+}
+@endjson

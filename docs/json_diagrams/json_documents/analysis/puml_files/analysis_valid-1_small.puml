@@ -1,0 +1,37 @@
+@startjson
+#highlight "data" / "analysisTypeSpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssembly" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0" / "geneDescriptor" / "geneIdentifier" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data"
+#highlight "data" / "analysisTypeSpecifications"
+#highlight "data" / "analysisTypeSpecifications" / "referenceAlignmentDetails"
+#highlight "data" / "analysisTypeSpecifications" / "referenceAlignmentDetails" / "0"
+#highlight "data" / "analysisTypeSpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssembly"
+#highlight "data" / "targetedLoci"
+#highlight "data" / "targetedLoci" / "0"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0" / "geneDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0" / "geneDescriptor" / "geneIdentifier"
+#highlight "data" / "targetedLoci" / "0" / "organismDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "organismDescriptor" / "organismTaxon"
+
+{
+    "data": {
+        "analysisAttributes": "[ ... ]",
+        "analysisFiles": "[ ... ]",
+        "analysisRelationships": "[ ... ]",
+        "analysisTypeSpecifications": "{ ... }",
+        "objectDescription": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned \\nagainst the human referenced and then extracted sequence variation... ...VCF \\nfiles were compared along patients' clinical histories.",
+        "objectId": "{ ... }",
+        "objectTitle": "Example VCF analysis",
+        "schemaDescriptor": "{ ... }",
+        "targetedLoci": "[ ... ]",
+        "typesOfInputData": "[ ... ]",
+        "typesOfOutputData": "[ ... ]"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"
+    }
+}
+@endjson

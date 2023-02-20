@@ -1,0 +1,58 @@
+@startjson
+
+{
+    "data": {
+        "objectId": {
+            "alias": "My_sample_X_from_NM305004",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAN00000000001"
+        },
+        "sampleRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAI00002045411"
+                    },
+                    "objectType": "individual"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biosample:SAMEA7616999",
+                                    "termLabel": "test12345"
+                                },
+                                "objectExternalAccessionDescription": "A test sample"
+                            }
+                        ]
+                    },
+                    "objectType": "externalAccession"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAO00002045411"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ]
+    }
+}
+@endjson

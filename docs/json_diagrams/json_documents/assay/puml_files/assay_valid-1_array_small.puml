@@ -1,0 +1,31 @@
+@startjson
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0" / "arrayLabel" / "arrayLabelIdentifier" / "termId"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1" / "arrayLabel" / "arrayLabelIdentifier" / "termId"
+#highlight "data"
+#highlight "data" / "assayTypeSpecifications"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0" / "arrayLabel"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0" / "arrayLabel" / "arrayLabelIdentifier"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1" / "arrayLabel"
+#highlight "data" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1" / "arrayLabel" / "arrayLabelIdentifier"
+
+{
+    "data": {
+        "assayAttributes": "[ ... ]",
+        "assayCenter": "EBI-TEST",
+        "assayDate": "2022-02-13",
+        "assayFiles": "[ ... ]",
+        "assayRelationships": "[ ... ]",
+        "assayTypeSpecifications": "{ ... }",
+        "objectId": "{ ... }",
+        "objectTitle": "Breast cancer array assay M3051057",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json"
+    }
+}
+@endjson

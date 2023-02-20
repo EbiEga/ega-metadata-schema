@@ -1,0 +1,34 @@
+@startjson
+
+{
+    "data": {
+        "analysisTypeSpecifications": {
+            "referenceAlignmentDetails": [
+                {
+                    "ncbiAssembly": {
+                        "termId": "assembly:GCA_000001405.29"
+                    }
+                }
+            ]
+        },
+        "targetedLoci": [
+            {
+                "lociDescriptor": [
+                    {
+                        "geneDescriptor": {
+                            "geneIdentifier": {
+                                "termId": "HGNC:11998"
+                            }
+                        }
+                    }
+                ],
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson

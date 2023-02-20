@@ -1,0 +1,405 @@
+@startjson
+
+{
+    "properties": {
+        "schemaDescriptor": {
+            "properties": {
+                "objectType": {
+                    "enum": [
+                        "experiment",
+                        "study",
+                        "sample",
+                        "individual",
+                        "submission",
+                        "assay",
+                        "dataset",
+                        "analysis",
+                        "policy",
+                        "DAC",
+                        "protocol",
+                        "object-set"
+                    ]
+                }
+            }
+        },
+        "studyTypes": {
+            "items": {
+                "enum": [
+                    "whole genome sequencing",
+                    "metagenomics",
+                    "transcriptome analysis",
+                    "resequencing",
+                    "epigenetics",
+                    "synthetic genomics",
+                    "forensic",
+                    "paleo-genomics",
+                    "gene regulation",
+                    "cancer genomics",
+                    "population genomics",
+                    "RNASeq",
+                    "exome sequencing",
+                    "pooled clone sequencing",
+                    "COVID-19",
+                    "xenograft"
+                ]
+            }
+        },
+        "studyDesigns": {
+            "items": {
+                "enum": [
+                    "RNA stability design",
+                    "binding site identification design",
+                    "case control design",
+                    "cell component comparison design",
+                    "cell cycle design",
+                    "cell type comparison design",
+                    "cellular modification design",
+                    "clinical history design",
+                    "compound treatment design",
+                    "cross sectional design",
+                    "development or differentiation design",
+                    "disease state design",
+                    "dose response design",
+                    "twin design",
+                    "genetic modification design",
+                    "genotype design",
+                    "growth condition design",
+                    "imprinting design",
+                    "injury design",
+                    "innate behavior design",
+                    "organism part comparison design",
+                    "organism status design",
+                    "pathogenicity design",
+                    "population based design",
+                    "sex design",
+                    "species design",
+                    "stimulus or stress design",
+                    "strain or line design",
+                    "time series design",
+                    "family based design",
+                    "genotyping design",
+                    "mobile element identification design",
+                    "operon identification design",
+                    "secreted protein identification design",
+                    "translational bias design",
+                    "transposable element identification design",
+                    "hardware variation design",
+                    "normalization testing design",
+                    "operator variation design",
+                    "optimization design",
+                    "quality control testing design",
+                    "reference design",
+                    "replicate design",
+                    "software variation design",
+                    "validation by real time PCR design",
+                    "validation by reverse transcription PCR design"
+                ]
+            }
+        },
+        "studyRelationships": {
+            "items": {
+                "allOf": [
+                    {
+                        "properties": {
+                            "rType": {
+                                "enum": [
+                                    "referencedBy",
+                                    "developsFrom",
+                                    "sameAs",
+                                    "memberOf",
+                                    "groupedWith",
+                                    "familyRelationshipWith",
+                                    "childOf",
+                                    "isAfter",
+                                    "publishedIn",
+                                    "submittedBy",
+                                    "contactOf",
+                                    "mainContactOf"
+                                ]
+                            },
+                            "rSource": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "objectType": {
+                                                "enum": [
+                                                    "experiment",
+                                                    "study",
+                                                    "sample",
+                                                    "individual",
+                                                    "submission",
+                                                    "assay",
+                                                    "dataset",
+                                                    "analysis",
+                                                    "policy",
+                                                    "DAC",
+                                                    "protocol",
+                                                    "externalAccession",
+                                                    "externalURL"
+                                                ]
+                                            }
+                                        },
+                                        "allOf": [
+                                            {
+                                                "anyOf": [
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "externalAccession"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "experiment"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "study"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "sample"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "submission"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "assay"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "dataset"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "analysis"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "policy"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "DAC"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "individual"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "protocol"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "rTarget": {
+                                "allOf": [
+                                    {
+                                        "properties": {
+                                            "objectType": {
+                                                "enum": [
+                                                    "experiment",
+                                                    "study",
+                                                    "sample",
+                                                    "individual",
+                                                    "submission",
+                                                    "assay",
+                                                    "dataset",
+                                                    "analysis",
+                                                    "policy",
+                                                    "DAC",
+                                                    "protocol",
+                                                    "externalAccession",
+                                                    "externalURL"
+                                                ]
+                                            }
+                                        },
+                                        "allOf": [
+                                            {
+                                                "anyOf": [
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "externalAccession"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "experiment"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "study"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "sample"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "submission"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "assay"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "dataset"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "analysis"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "policy"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "DAC"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "individual"
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "properties": {
+                                                            "objectType": {
+                                                                "enum": [
+                                                                    "protocol"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+@endjson

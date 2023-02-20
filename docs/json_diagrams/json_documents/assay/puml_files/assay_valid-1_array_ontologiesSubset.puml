@@ -1,0 +1,27 @@
+@startjson
+
+{
+    "data": {
+        "assayTypeSpecifications": {
+            "arrayAssaySpecifications": {
+                "arraySampleLabels": [
+                    {
+                        "arrayLabel": {
+                            "arrayLabelIdentifier": {
+                                "termId": "CHEBI:37987"
+                            }
+                        }
+                    },
+                    {
+                        "arrayLabel": {
+                            "arrayLabelIdentifier": {
+                                "termId": "CHEBI:37989"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
+@endjson

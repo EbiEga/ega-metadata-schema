@@ -1,0 +1,18 @@
+@startjson
+
+{
+    "data": {
+        "duoCodes": [
+            {
+                "termId": "DUO:0000046"
+            },
+            {
+                "termId": "DUO:0000028"
+            },
+            {
+                "termId": "DUO:0000032"
+            }
+        ]
+    }
+}
+@endjson

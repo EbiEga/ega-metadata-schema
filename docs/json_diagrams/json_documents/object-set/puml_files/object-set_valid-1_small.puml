@@ -1,0 +1,40 @@
+@startjson
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0" / "arrayLabel" / "arrayLabelIdentifier" / "termId"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1" / "arrayLabel" / "arrayLabelIdentifier" / "termId"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssembly" / "termId"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssemblyUnit" / "termId"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssembly" / "termId"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssemblyUnit" / "termId"
+#highlight "data"
+#highlight "data" / "objectArray"
+#highlight "data" / "objectArray" / "0"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0" / "arrayLabel"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "0" / "arrayLabel" / "arrayLabelIdentifier"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1" / "arrayLabel"
+#highlight "data" / "objectArray" / "0" / "assayTypeSpecifications" / "arrayAssaySpecifications" / "arraySampleLabels" / "1" / "arrayLabel" / "arrayLabelIdentifier"
+#highlight "data" / "objectArray" / "1"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssembly"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssemblyUnit"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssembly"
+#highlight "data" / "objectArray" / "1" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssemblyUnit"
+
+{
+    "data": {
+        "objectArray": "[ ... ]",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json"
+    }
+}
+@endjson

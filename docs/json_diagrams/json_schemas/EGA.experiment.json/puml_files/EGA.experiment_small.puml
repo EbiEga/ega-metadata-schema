@@ -1,0 +1,72 @@
+@startjson
+#highlight "properties" / "assayType" / "properties" / "termId"
+#highlight "properties" / "assayedBiologicalMacromolecule" / "properties" / "termId"
+#highlight "anyOf" / "0" / "if" / "properties" / "assayedBiologicalMacromolecule" / "properties" / "termId"
+#highlight "anyOf" / "0" / "then" / "properties" / "assayType" / "properties" / "termId"
+#highlight "anyOf" / "1" / "if" / "properties" / "assayedBiologicalMacromolecule" / "properties" / "termId"
+#highlight "anyOf" / "1" / "then" / "properties" / "assayType" / "properties" / "termId"
+#highlight "properties"
+#highlight "properties" / "assayType"
+#highlight "properties" / "assayType" / "properties"
+#highlight "properties" / "assayedBiologicalMacromolecule"
+#highlight "properties" / "assayedBiologicalMacromolecule" / "properties"
+#highlight "anyOf"
+#highlight "anyOf" / "0"
+#highlight "anyOf" / "0" / "if"
+#highlight "anyOf" / "0" / "if" / "properties"
+#highlight "anyOf" / "0" / "if" / "properties" / "assayedBiologicalMacromolecule"
+#highlight "anyOf" / "0" / "if" / "properties" / "assayedBiologicalMacromolecule" / "properties"
+#highlight "anyOf" / "0" / "then"
+#highlight "anyOf" / "0" / "then" / "properties"
+#highlight "anyOf" / "0" / "then" / "properties" / "assayType"
+#highlight "anyOf" / "0" / "then" / "properties" / "assayType" / "properties"
+#highlight "anyOf" / "1"
+#highlight "anyOf" / "1" / "if"
+#highlight "anyOf" / "1" / "if" / "properties"
+#highlight "anyOf" / "1" / "if" / "properties" / "assayedBiologicalMacromolecule"
+#highlight "anyOf" / "1" / "if" / "properties" / "assayedBiologicalMacromolecule" / "properties"
+#highlight "anyOf" / "1" / "then"
+#highlight "anyOf" / "1" / "then" / "properties"
+#highlight "anyOf" / "1" / "then" / "properties" / "assayType"
+#highlight "anyOf" / "1" / "then" / "properties" / "assayType" / "properties"
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json",
+    "type": "object",
+    "title": "EGA Experiment metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits experiment metadata object. An experiment is considered a planned and \\nintentionally designed process performed as part of a study. Further details can \\nbe found in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectId",
+        "assayTechnology",
+        "assayType",
+        "assayedBiologicalMacromolecule",
+        "experimentTypeSpecifications"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "targetedLoci": "{ ... }",
+        "assayTechnology": "{ ... }",
+        "assayType": "{ ... }",
+        "assayedBiologicalMacromolecule": "{ ... }",
+        "typesOfOutputData": "{ ... }",
+        "experimentTypeSpecifications": "{ ... }",
+        "experimentRelationships": "{ ... }",
+        "experimentAttributes": "{ ... }"
+    },
+    "oneOf": [
+        "{ ... }",
+        "{ ... }"
+    ],
+    "anyOf": [
+        "{ ... }",
+        "{ ... }"
+    ]
+}
+@endjson

@@ -1,0 +1,100 @@
+@startjson
+
+{
+    "data": {
+        "experimentRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAS00002045411"
+                    },
+                    "objectType": "study"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00001051423"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Patient's blood collection protocol",
+                        "egaAccession": "EGAO00001031671"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Extraction of the RNA",
+                        "egaAccession": "EGAO00001031672"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Protocol to label extracted RNA",
+                        "egaAccession": "EGAO00001031673"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Hibridization of the RNA to the array",
+                        "egaAccession": "EGAO00001031674"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Scanning of the array",
+                        "egaAccession": "EGAO00001031675"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Normalization of the data",
+                        "egaAccession": "EGAO00001031676"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectId": {
+            "alias": "My_ChIP_arrayExperiment_13",
+            "centerName": "EBI-TEST"
+        }
+    }
+}
+@endjson

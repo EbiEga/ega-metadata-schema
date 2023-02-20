@@ -1,0 +1,33 @@
+@startjson
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssembly" / "termId"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssemblyUnit" / "termId"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssembly" / "termId"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssemblyUnit" / "termId"
+#highlight "data"
+#highlight "data" / "assayTypeSpecifications"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssembly"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "0" / "ncbiAssemblyUnit"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssembly"
+#highlight "data" / "assayTypeSpecifications" / "sequencingAssaySpecifications" / "referenceAlignmentDetails" / "1" / "ncbiAssemblyUnit"
+
+{
+    "data": {
+        "assayAttributes": "[ ... ]",
+        "assayCenter": "EBI-TEST",
+        "assayDate": "2022-02-13",
+        "assayFiles": "[ ... ]",
+        "assayRelationships": "[ ... ]",
+        "assayTypeSpecifications": "{ ... }",
+        "objectId": "{ ... }",
+        "objectTitle": "Breast cancer sequencing assay M305004",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json"
+    }
+}
+@endjson

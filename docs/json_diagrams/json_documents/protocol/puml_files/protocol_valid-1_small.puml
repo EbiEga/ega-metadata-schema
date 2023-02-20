@@ -1,0 +1,23 @@
+@startjson
+#highlight "data" / "protocolTypeDescriptor" / "protocolSubtype" / "termId"
+#highlight "data"
+#highlight "data" / "protocolTypeDescriptor"
+#highlight "data" / "protocolTypeDescriptor" / "protocolSubtype"
+
+{
+    "data": {
+        "objectId": "{ ... }",
+        "objectTitle": "Hibridization of the RNA to the array",
+        "protocolAttributes": "[ ... ]",
+        "protocolDescription": "Affymetrix Human GeneChip U133 Plus 2.0 Array was used for RNA hybridization \\naccording to the manufacturer's protocol (Affymetrix).",
+        "protocolInstruments": "[ ... ]",
+        "protocolPerformers": "[ ... ]",
+        "protocolRelationships": "[ ... ]",
+        "protocolTypeDescriptor": "{ ... }",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json"
+    }
+}
+@endjson

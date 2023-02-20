@@ -1,0 +1,12 @@
+@startjson
+
+{
+    "data": {
+        "protocolTypeDescriptor": {
+            "protocolSubtype": {
+                "termId": "EFO:0003815"
+            }
+        }
+    }
+}
+@endjson

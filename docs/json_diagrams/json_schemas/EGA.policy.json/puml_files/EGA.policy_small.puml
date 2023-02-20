@@ -1,0 +1,32 @@
+@startjson
+#highlight "properties" / "duoCodes" / "items" / "properties" / "termId"
+#highlight "properties"
+#highlight "properties" / "duoCodes"
+#highlight "properties" / "duoCodes" / "items"
+#highlight "properties" / "duoCodes" / "items" / "properties"
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json",
+    "type": "object",
+    "title": "EGA policy metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "A policy, also known as Data Access Agreement (DAA), is a contract made between \\nData User and Data Access Committee. The policy object is expected to contain \\nmetadata about such agreement, which should be drafted by the DAC and includes, \\nbut is not limited to, details of data use, publication embargoes and storage. \\nCompletion of a DAA by the applicant/s should form part of the application \\nprocess to the DAC. Further details can be found in the EGA-metadata-schema \\nGitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/submission/dac/documentation)",
+    "required": [
+        "objectId",
+        "objectTitle",
+        "policyDescriptor"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "policyDescriptor": "{ ... }",
+        "duoCodes": "{ ... }",
+        "policyRelationships": "{ ... }",
+        "policyAttributes": "{ ... }"
+    }
+}
+@endjson

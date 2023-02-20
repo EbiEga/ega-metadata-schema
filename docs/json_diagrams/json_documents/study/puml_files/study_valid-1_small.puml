@@ -1,0 +1,27 @@
+@startjson
+#highlight "data" / "studyRelationships" / "1" / "rTarget" / "objectId" / "externalAccessions" / "0" / "objectExternalAccessionIdentifier" / "termId"
+#highlight "data"
+#highlight "data" / "studyRelationships"
+#highlight "data" / "studyRelationships" / "1"
+#highlight "data" / "studyRelationships" / "1" / "rTarget"
+#highlight "data" / "studyRelationships" / "1" / "rTarget" / "objectId"
+#highlight "data" / "studyRelationships" / "1" / "rTarget" / "objectId" / "externalAccessions"
+#highlight "data" / "studyRelationships" / "1" / "rTarget" / "objectId" / "externalAccessions" / "0"
+#highlight "data" / "studyRelationships" / "1" / "rTarget" / "objectId" / "externalAccessions" / "0" / "objectExternalAccessionIdentifier"
+
+{
+    "data": {
+        "objectDescription": "EBI genome-wide case-control association study for COVID-19 using seven disease \\ncollections together with the 1958 Spanish Birth Cohort and the EU National \\nBlood Service collections as controls.",
+        "objectId": "{ ... }",
+        "objectTitle": "EBI test case-control study for covid19",
+        "schemaDescriptor": "{ ... }",
+        "studyAttributes": "[ ... ]",
+        "studyDesigns": "[ ... ]",
+        "studyRelationships": "[ ... ]",
+        "studyTypes": "[ ... ]"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json"
+    }
+}
+@endjson

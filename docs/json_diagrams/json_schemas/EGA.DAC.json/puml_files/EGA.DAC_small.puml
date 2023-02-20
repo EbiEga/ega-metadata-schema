@@ -1,0 +1,26 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json",
+    "type": "object",
+    "title": "EGA DAC metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits Data Access Committee (DAC) metadata object. This object is intended to \\ncontain metadata about the body of one or more named individuals who are \\nresponsible for data release to external requestors based on consent and/or \\nNational Research Ethics terms. A DAC is typically formed, but not necessarily, \\nfrom the same organization that collected the samples and generated any \\nassociated files/analyses. Further details can be found in the \\nEGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/submission/data_access_committee)",
+    "required": [
+        "objectId",
+        "dacContacts"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "dacContacts": "{ ... }",
+        "dacRelationships": "{ ... }",
+        "dacAttributes": "{ ... }"
+    }
+}
+@endjson

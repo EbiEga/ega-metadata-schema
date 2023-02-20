@@ -1,0 +1,51 @@
+@startjson
+
+{
+    "data": {
+        "cellTypes": [
+            {
+                "cellType": {
+                    "termId": "CL:0000066"
+                }
+            },
+            {
+                "cellType": {
+                    "termId": "CL:0000097"
+                }
+            }
+        ],
+        "organismDescriptor": {
+            "organismTaxon": {
+                "termId": "NCBITaxon:9606"
+            }
+        },
+        "sampleCollection": {
+            "samplingSite": {
+                "termId": "UBERON:0015474"
+            }
+        },
+        "sampleRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biosample:SAMEA7616999"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "sampleStatus": [
+            {
+                "conditionUnderStudy": {
+                    "termId": "XCO:0000398"
+                }
+            }
+        ]
+    }
+}
+@endjson

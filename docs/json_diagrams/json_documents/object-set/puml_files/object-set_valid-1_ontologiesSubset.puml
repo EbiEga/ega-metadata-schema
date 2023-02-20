@@ -1,0 +1,55 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "assayTypeSpecifications": {
+                    "arrayAssaySpecifications": {
+                        "arraySampleLabels": [
+                            {
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37987"
+                                    }
+                                }
+                            },
+                            {
+                                "arrayLabel": {
+                                    "arrayLabelIdentifier": {
+                                        "termId": "CHEBI:37989"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "assayTypeSpecifications": {
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000001.11"
+                                }
+                            },
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000002.12"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson

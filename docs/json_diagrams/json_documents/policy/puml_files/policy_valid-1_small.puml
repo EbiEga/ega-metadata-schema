@@ -1,0 +1,25 @@
+@startjson
+#highlight "data" / "duoCodes" / "0" / "termId"
+#highlight "data" / "duoCodes" / "1" / "termId"
+#highlight "data" / "duoCodes" / "2" / "termId"
+#highlight "data"
+#highlight "data" / "duoCodes"
+#highlight "data" / "duoCodes" / "0"
+#highlight "data" / "duoCodes" / "1"
+#highlight "data" / "duoCodes" / "2"
+
+{
+    "data": {
+        "duoCodes": "[ ... ]",
+        "objectId": "{ ... }",
+        "objectTitle": "EBI test case-control policy for cancer datasets",
+        "policyAttributes": "[ ... ]",
+        "policyDescriptor": "{ ... }",
+        "policyRelationships": "[ ... ]",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json"
+    }
+}
+@endjson

@@ -1,0 +1,17 @@
+@startjson
+
+{
+    "data": {
+        "dacAttributes": "[ ... ]",
+        "dacContacts": "{ ... }",
+        "dacRelationships": "[ ... ]",
+        "objectDescription": "A example DAC used exclusively for testing.",
+        "objectId": "{ ... }",
+        "objectTitle": "EBI test DAC",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json"
+    }
+}
+@endjson

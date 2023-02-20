@@ -1,0 +1,28 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json",
+    "type": "object",
+    "title": "EGA dataset metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits Dataset metadata object. This object is intended to contain metadata about \\nthe collection of file-containing objects (ArrayAssay, runs or analyses) subject \\nto controlled access. In other words, a dataset encompasses a set of objects to \\nwhich access is granted as a whole, since access given to a data requester is \\naccess to a dataset, and fall under the same Policy. Further details can be \\nfound in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/studies)",
+    "required": [
+        "objectId",
+        "objectTitle",
+        "datasetType"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "datasetType": "{ ... }",
+        "approximateReleaseDate": "{ ... }",
+        "datasetRelationships": "{ ... }",
+        "datasetAttributes": "{ ... }"
+    }
+}
+@endjson

@@ -1,0 +1,22 @@
+@startjson
+
+{
+    "data": {
+        "objectId": {
+            "alias": "submission_XF40",
+            "centerName": "EBI-TEST"
+        },
+        "submissionRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002543432"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "isAfter"
+            }
+        ]
+    }
+}
+@endjson

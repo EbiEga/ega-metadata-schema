@@ -1,0 +1,29 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json",
+    "type": "object",
+    "title": "EGA study metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits Study metadata object. This object is intended to contain metadata about the \\ncompilation of examinations, analyses or critical inspection of a particular \\nsubject. In other words, a Study is a container of experiments and analyses of \\nany nature (including Array data) grouped by a common goal or investigation. \\nThey often draw together data from a range of datasets and are represented in \\npublication. For instance, an example would be a case-control study on cancer \\npatients and healthy individuals. Further details can be found in the \\nEGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/studies)",
+    "required": [
+        "objectId",
+        "objectTitle",
+        "studyTypes",
+        "studyDesigns"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "studyTypes": "{ ... }",
+        "studyDesigns": "{ ... }",
+        "studyRelationships": "{ ... }",
+        "studyAttributes": "{ ... }"
+    }
+}
+@endjson

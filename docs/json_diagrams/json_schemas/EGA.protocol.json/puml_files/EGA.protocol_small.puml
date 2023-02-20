@@ -1,0 +1,37 @@
+@startjson
+#highlight "properties" / "protocolTypeDescriptor" / "properties" / "protocolSubtype" / "properties" / "termId"
+#highlight "properties"
+#highlight "properties" / "protocolTypeDescriptor"
+#highlight "properties" / "protocolTypeDescriptor" / "properties"
+#highlight "properties" / "protocolTypeDescriptor" / "properties" / "protocolSubtype"
+#highlight "properties" / "protocolTypeDescriptor" / "properties" / "protocolSubtype" / "properties"
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json",
+    "type": "object",
+    "title": "EGA protocol metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits protocol metadata object. A protocol is an information entity of a set of \\ninstructions that describe an how a procedure, analysis or experiment is done. \\nComprises metadata (e.g. Type of protocol) of a plan specification, with \\nsufficient level of detail and quantitative information to communicate it (and \\nthus reproduce it) between investigation agents (i.e. researchers). Further \\ndetails can be found in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectId",
+        "protocolTypeDescriptor",
+        "protocolDescription",
+        "protocolRelationships"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "protocolTypeDescriptor": "{ ... }",
+        "protocolDescription": "{ ... }",
+        "protocolPerformers": "{ ... }",
+        "protocolInstruments": "{ ... }",
+        "protocolSoftware": "{ ... }",
+        "protocolRelationships": "{ ... }",
+        "protocolAttributes": "{ ... }"
+    }
+}
+@endjson

@@ -1,0 +1,2267 @@
+@startjson
+
+{
+    "definitions": {
+        "fileObject": {
+            "properties": {
+                "filetype": {
+                    "enum": [
+                        "CEL",
+                        "TSV",
+                        "FASTQ",
+                        "FASTA",
+                        "VCF",
+                        "SRA",
+                        "SRF",
+                        "SFF",
+                        "BAM",
+                        "CRAM",
+                        "XLSX",
+                        "CSV",
+                        "BED",
+                        "IDAT",
+                        "MAP",
+                        "PED",
+                        "BIM",
+                        "FAM",
+                        "TXT",
+                        "EXP",
+                        "GPR",
+                        "PY",
+                        "SH",
+                        "ADF",
+                        "SDRF",
+                        "IDF",
+                        "MD5",
+                        "HAP",
+                        "CSFASTA",
+                        "LOC",
+                        "HTML",
+                        "HIC",
+                        "MD",
+                        "MATLAB",
+                        "PERL",
+                        "TIF",
+                        "R",
+                        "SNP",
+                        "XML",
+                        "SVG",
+                        "PNG",
+                        "JPG",
+                        "GTC",
+                        "HDF5",
+                        "FAST5",
+                        "PAIR",
+                        "TXT",
+                        "BGI",
+                        "BGEN",
+                        "GEN",
+                        "PXF",
+                        "LOOM",
+                        "BAX.H5",
+                        "BAS.H5",
+                        "ASM",
+                        "CSI",
+                        "TBI",
+                        "BCF",
+                        "qual454",
+                        "qualsolid",
+                        "FASTQ-illumina",
+                        "FASTQ-helicos",
+                        "FASTQ-sanger",
+                        "FASTQ-solexa",
+                        "SAM",
+                        "CRAI",
+                        "BAI",
+                        "MTX",
+                        "MEX ",
+                        "GMX",
+                        "GMT",
+                        "GRP"
+                    ]
+                },
+                "checksumMethod": {
+                    "enum": [
+                        "MD5",
+                        "SHA-256"
+                    ]
+                },
+                "sequenceQualityDetails": {
+                    "properties": {
+                        "qualityScoringSystem": {
+                            "enum": [
+                                "phred",
+                                "logOdds"
+                            ]
+                        },
+                        "qualityEncoding": {
+                            "enum": [
+                                "ascii",
+                                "decimal",
+                                "hexadecimal"
+                            ]
+                        },
+                        "asciiOffset": {
+                            "enum": [
+                                "!",
+                                "@"
+                            ]
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "checksumMethod": {
+                                    "enum": [
+                                        "MD5"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "checksumMethod": {
+                                    "enum": [
+                                        "SHA-256"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "CEL"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "TSV"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "ADF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FASTQ"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FASTA"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SDRF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "IDF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "VCF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SRA"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SRF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SFF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BAM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "CRAM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "XLSX"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "CSV"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BED"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "IDAT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "MAP"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "PED"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BIM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FAM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "TXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "EXP"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "GPR"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "PY"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SH"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "MD5"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "HAP"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "CSFASTA"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "LOC"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "HTML"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "HIC"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "MD"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "MATLAB"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "PERL"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "TIF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "R"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SNP"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "XML"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SVG"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "PNG"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "JPG"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "GTC"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "HDF5"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FAST5"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "PAIR"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "TXT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BGI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BGEN"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "GEN"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "PXF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "LOOM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BAX.H5"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BAS.H5"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "ASM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "CSI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "TBI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BCF"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "qual454"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "qualsolid"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FASTQ-illumina"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FASTQ-helicos"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FASTQ-sanger"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "FASTQ-solexa"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "SAM"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "CRAI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "BAI"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "MTX"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "MEX"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "GMX"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "GMT"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "filetype": {
+                                    "enum": [
+                                        "GRP"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "relationshipObject": {
+            "properties": {
+                "rType": {
+                    "enum": [
+                        "referencedBy",
+                        "developsFrom",
+                        "sameAs",
+                        "memberOf",
+                        "groupedWith",
+                        "familyRelationshipWith",
+                        "childOf",
+                        "isAfter",
+                        "publishedIn",
+                        "submittedBy",
+                        "contactOf",
+                        "mainContactOf"
+                    ]
+                },
+                "rSource": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "experiment",
+                                        "study",
+                                        "sample",
+                                        "individual",
+                                        "submission",
+                                        "assay",
+                                        "dataset",
+                                        "analysis",
+                                        "policy",
+                                        "DAC",
+                                        "protocol",
+                                        "externalAccession",
+                                        "externalURL"
+                                    ]
+                                }
+                            },
+                            "allOf": [
+                                {
+                                    "anyOf": [
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "externalAccession"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "experiment"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "study"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "sample"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "submission"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "assay"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "dataset"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "analysis"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "policy"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "DAC"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "individual"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "protocol"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "rTarget": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "experiment",
+                                        "study",
+                                        "sample",
+                                        "individual",
+                                        "submission",
+                                        "assay",
+                                        "dataset",
+                                        "analysis",
+                                        "policy",
+                                        "DAC",
+                                        "protocol",
+                                        "externalAccession",
+                                        "externalURL"
+                                    ]
+                                }
+                            },
+                            "allOf": [
+                                {
+                                    "anyOf": [
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "externalAccession"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "experiment"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "study"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "sample"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "submission"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "assay"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "dataset"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "analysis"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "policy"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "DAC"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "individual"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "properties": {
+                                                "objectType": {
+                                                    "enum": [
+                                                        "protocol"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "objectIdAndObjectTypeCheck": {
+            "anyOf": [
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "externalAccession"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "experiment"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "study"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "sample"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "submission"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "assay"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "dataset"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "analysis"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "policy"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "DAC"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "individual"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "objectType": {
+                            "enum": [
+                                "protocol"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "checksumPatternCheck": {
+            "anyOf": [
+                {
+                    "properties": {
+                        "checksumMethod": {
+                            "enum": [
+                                "MD5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "checksumMethod": {
+                            "enum": [
+                                "SHA-256"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "filenameFiletypePatternCheck": {
+            "anyOf": [
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "CEL"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "TSV"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "ADF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FASTQ"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FASTA"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SDRF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "IDF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "VCF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SRA"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SRF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SFF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BAM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "CRAM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "XLSX"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "CSV"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BED"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "IDAT"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "MAP"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "PED"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BIM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FAM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "TXT"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "EXP"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "GPR"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "PY"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SH"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "MD5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "HAP"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "CSFASTA"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "LOC"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "HTML"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "HIC"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "MD"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "MATLAB"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "PERL"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "TIF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "R"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SNP"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "XML"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SVG"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "PNG"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "JPG"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "GTC"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "HDF5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FAST5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "PAIR"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "TXT"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BGI"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BGEN"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "GEN"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "PXF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "LOOM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BAX.H5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BAS.H5"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "ASM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "CSI"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "TBI"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BCF"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "qual454"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "qualsolid"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FASTQ-illumina"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FASTQ-helicos"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FASTQ-sanger"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "FASTQ-solexa"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "SAM"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "CRAI"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "BAI"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "MTX"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "MEX"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "GMX"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "GMT"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "properties": {
+                        "filetype": {
+                            "enum": [
+                                "GRP"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "assayFiletypes": {
+            "properties": {
+                "filetype": {
+                    "enum": [
+                        "BAM",
+                        "CRAM",
+                        "SAM",
+                        "FASTA",
+                        "BAI",
+                        "CRAI",
+                        "CSI",
+                        "MD",
+                        "TXT",
+                        "XML",
+                        "MD5",
+                        "FASTQ",
+                        "FASTQ-helicos",
+                        "FASTQ-illumina",
+                        "BAS.H5",
+                        "BAX.H5",
+                        "HDF5",
+                        "FASTQ-sanger",
+                        "FASTQ-solexa",
+                        "IDAT",
+                        "CEL",
+                        "qualsolid",
+                        "qual454",
+                        "SRA",
+                        "SRF",
+                        "SFF",
+                        "CSFASTA",
+                        "GPR",
+                        "ADF",
+                        "FAST5"
+                    ]
+                }
+            }
+        },
+        "oneRelationshipEnd": {
+            "properties": {
+                "objectType": {
+                    "enum": [
+                        "experiment",
+                        "study",
+                        "sample",
+                        "individual",
+                        "submission",
+                        "assay",
+                        "dataset",
+                        "analysis",
+                        "policy",
+                        "DAC",
+                        "protocol",
+                        "externalAccession",
+                        "externalURL"
+                    ]
+                }
+            },
+            "allOf": [
+                {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "externalAccession"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "experiment"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "study"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "sample"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "submission"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "assay"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "dataset"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "analysis"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "policy"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "DAC"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "individual"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "objectType": {
+                                    "enum": [
+                                        "protocol"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "biologicalSex": {
+            "enum": [
+                "male",
+                "female",
+                "hermaphrodite",
+                "pseudohermaphrodite",
+                "unknown"
+            ]
+        },
+        "schemaDescriptor": {
+            "properties": {
+                "objectType": {
+                    "enum": [
+                        "experiment",
+                        "study",
+                        "sample",
+                        "individual",
+                        "submission",
+                        "assay",
+                        "dataset",
+                        "analysis",
+                        "policy",
+                        "DAC",
+                        "protocol",
+                        "object-set"
+                    ]
+                }
+            }
+        },
+        "studyDesignKeywords": {
+            "enum": [
+                "RNA stability design",
+                "binding site identification design",
+                "case control design",
+                "cell component comparison design",
+                "cell cycle design",
+                "cell type comparison design",
+                "cellular modification design",
+                "clinical history design",
+                "compound treatment design",
+                "cross sectional design",
+                "development or differentiation design",
+                "disease state design",
+                "dose response design",
+                "twin design",
+                "genetic modification design",
+                "genotype design",
+                "growth condition design",
+                "imprinting design",
+                "injury design",
+                "innate behavior design",
+                "organism part comparison design",
+                "organism status design",
+                "pathogenicity design",
+                "population based design",
+                "sex design",
+                "species design",
+                "stimulus or stress design",
+                "strain or line design",
+                "time series design",
+                "family based design",
+                "genotyping design",
+                "mobile element identification design",
+                "operon identification design",
+                "secreted protein identification design",
+                "translational bias design",
+                "transposable element identification design",
+                "hardware variation design",
+                "normalization testing design",
+                "operator variation design",
+                "optimization design",
+                "quality control testing design",
+                "reference design",
+                "replicate design",
+                "software variation design",
+                "validation by real time PCR design",
+                "validation by reverse transcription PCR design"
+            ]
+        },
+        "locusIdentifier": {
+            "properties": {
+                "lociDescriptor": {
+                    "items": {
+                        "properties": {
+                            "genomicSequenceDescriptor": {
+                                "properties": {
+                                    "dnaSequenceStrand": {
+                                        "enum": [
+                                            "forward",
+                                            "reverse"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "genomicSequenceDescriptor": {
+            "properties": {
+                "dnaSequenceStrand": {
+                    "enum": [
+                        "forward",
+                        "reverse"
+                    ]
+                }
+            }
+        },
+        "dnaSequenceStrand": {
+            "enum": [
+                "forward",
+                "reverse"
+            ]
+        },
+        "assayTechnologyDescriptor": {
+            "properties": {
+                "assayInstrument": {
+                    "enum": [
+                        "array",
+                        "sequencer"
+                    ]
+                }
+            }
+        },
+        "libraryLayout": {
+            "enum": [
+                "paired-end",
+                "single-end"
+            ]
+        },
+        "spotDescriptor": {
+            "items": {
+                "properties": {
+                    "readSpecs": {
+                        "items": {
+                            "properties": {
+                                "readClass": {
+                                    "enum": [
+                                        "Application Read",
+                                        "Technical Read"
+                                    ]
+                                },
+                                "readType": {
+                                    "enum": [
+                                        "Forward",
+                                        "Reverse",
+                                        "Adapter",
+                                        "Primer",
+                                        "Linker",
+                                        "BarCode",
+                                        "Other"
+                                    ]
+                                },
+                                "expectedBasecallTable": {
+                                    "properties": {
+                                        "basecalls": {
+                                            "items": {
+                                                "properties": {
+                                                    "matchEdge": {
+                                                        "enum": [
+                                                            "full",
+                                                            "start",
+                                                            "end"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "typeOfData": {
+            "enum": [
+                "gene list",
+                "genomic data",
+                "metagenomic data",
+                "metatranscriptomic data",
+                "synthetic DNA data",
+                "transcriptomic data",
+                "viral RNA data",
+                "processed sequencing data",
+                "processed array data"
+            ]
+        },
+        "phenotypicAbnormality": {
+            "properties": {
+                "termId": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "NCIT:C17998",
+                                "NCIT:C94232"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "disease": {
+            "properties": {
+                "termId": {
+                    "anyOf": [
+                        {
+                            "enum": [
+                                "NCIT:C17998",
+                                "NCIT:C94232"
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+@endjson

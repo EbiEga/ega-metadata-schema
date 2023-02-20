@@ -1,0 +1,66 @@
+@startjson
+
+{
+    "data": {
+        "assayType": {
+            "termId": "EFO:0002764"
+        },
+        "assayedBiologicalMacromolecule": {
+            "termId": "EFO:0008479"
+        },
+        "experimentTypeSpecifications": {
+            "arrayExperiment": {
+                "arrayLabels": [
+                    {
+                        "arrayLabelIdentifier": {
+                            "termId": "CHEBI:15956"
+                        }
+                    },
+                    {
+                        "arrayLabelIdentifier": {
+                            "termId": "CHEBI:37987"
+                        }
+                    }
+                ]
+            }
+        },
+        "targetedLoci": [
+            {
+                "lociDescriptor": [
+                    {
+                        "geneDescriptor": {
+                            "geneIdentifier": {
+                                "termId": "HGNC:11998"
+                            }
+                        }
+                    },
+                    {
+                        "genomicSequenceDescriptor": {
+                            "assemblyDescriptor": {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCA_000001405.29"
+                                },
+                                "ncbiAssemblyUnit": {
+                                    "termId": "refseq:NC_000017.11"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "locusExternalReference": {
+                            "objectExternalAccessionIdentifier": {
+                                "termId": "nucleotide:T35715.1"
+                            }
+                        }
+                    }
+                ],
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson
