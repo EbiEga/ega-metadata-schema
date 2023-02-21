@@ -7,13 +7,13 @@ import jsonref
 from pathlib import Path
 import json
 
-#------#
+# ------#
 # JSONManipulationFormatter Class
-#------#
+# ------#
 
-#-#
+# -#
 # Hardcoded values
-#-#
+# -#
 # Used to simplify the graph based on depth
 mapping_property_names = {
     "list": "[ ... ]",
@@ -21,29 +21,18 @@ mapping_property_names = {
 }
 
 # Different condition_dict dictionaries for filtering a JSON object
-conditions_cardinality = {
-    "property_names": [
-        "objectId",
-        "rSource",
-        "rTarget",
-        "rType"
-    ]
-}
+conditions_cardinality = { "property_names": [ "objectId", "rSource", "rTarget", "rType" ] }
 
-conditions_controlled_vocabulary = {
-    "property_names": [ "enum" ]
-}
+conditions_controlled_vocabulary = { "property_names": [ "enum" ] }
 
-conditions_ontology_validation = {
-    "property_names": [ "termId" ]
-}
+conditions_ontology_validation = { "property_names": [ "termId" ] }
 
-#-#
+# -#
 # Helper functions
-#-#
+# -#
 def max_depth(json_obj: dict) -> int:
     """
-        Function to find the maximum depth of a JSON object
+    Function to find the maximum depth of a JSON object
     """
     if isinstance(json_obj, dict):
         return 1 + max(max_depth(v) for v in json_obj.values())
@@ -54,7 +43,7 @@ def max_depth(json_obj: dict) -> int:
 
 def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: dict):
     """
-        Recursive function to create, based on a given dictionary, a shorter version of it based on its depth.
+    Recursive function to create, based on a given dictionary, a shorter version of it based on its depth.
     """
     property_type = type(json_object_value)
     if property_type == dict and depth > 0:
@@ -62,8 +51,8 @@ def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: 
         for key, value in json_object_value.items():
             new_dict[key] = new_dict_depth(
                 json_object_value=value,
-                depth=depth-1,
-                mapping_property_names = mapping_property_names
+                depth=depth - 1,
+                mapping_property_names=mapping_property_names
             )
 
         return new_dict
@@ -73,8 +62,8 @@ def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: 
         for item in json_object_value:
             item_content = new_dict_depth(
                 json_object_value=item,
-                depth=depth-1,
-                mapping_property_names = mapping_property_names
+                depth=depth - 1,
+                mapping_property_names=mapping_property_names
             )
             new_list.append(item_content)
         return new_list
@@ -91,13 +80,13 @@ def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: 
 
 def check_condition_dict(original_key, original_value, condition_dict:dict) -> bool:
     """
-        Function that checks if a given key and value of a dictionary satisfy conditions based
-            on a dictionary with conditions (condition_dict)
+    Function that checks if a given key and value of a dictionary satisfy conditions based
+        on a dictionary with conditions (condition_dict)
 
-        Stablished conditions:
-            - { "property_names": [...] } --> If any item in the list ([...]) matches a property name.
-                    Can be used, for example, to check if the given key matches any of the strings
-                    within the given list.
+    Stablished conditions:
+        - { "property_names": [...] } --> If any item in the list ([...]) matches a property name.
+                Can be used, for example, to check if the given key matches any of the strings
+                within the given list.
     """
     satsified_conditions = False
     for key, value in condition_dict.items():
@@ -122,10 +111,10 @@ def check_condition_dict(original_key, original_value, condition_dict:dict) -> b
 
 def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
     """
-        Recursive function that, given a dictionary to filter (original_dict) and a dictionary
-            with conditions for the former to satisfy (condition_dict), iterates over the
-            original_dict to create a subset of the original dictionary based on conditions
-            to match within the condition_dict.
+    Recursive function that, given a dictionary to filter (original_dict) and a dictionary
+        with conditions for the former to satisfy (condition_dict), iterates over the
+        original_dict to create a subset of the original dictionary based on conditions
+        to match within the condition_dict.
     """
     current_dict = {}
     for key, value in original_dict.items():
@@ -166,8 +155,8 @@ def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
 
 def add_char_to_str(string: str, str_length: int = 80, new_character: str = "\\n") -> str:
     """
-        Function that, given a string, splits it into words and inserts a new character (new_character)
-            the the character count of the words is above the given maximum string length (str_length)
+    Function that, given a string, splits it into words and inserts a new character (new_character)
+        the the character count of the words is above the given maximum string length (str_length)
     """
     assert isinstance(string, str), f"The given string '{string}' is not of string type."
     words = string.split()
@@ -188,12 +177,12 @@ def add_char_to_str(string: str, str_length: int = 80, new_character: str = "\\n
 
 def add_newlines(current_value, str_length: int = 80, newline_character: str = "\\n"):
     """
-        Recursive function that iterates over a given value (e.g. a loaded JSON) and
-            changes the values of all strings whose lenght is above the given maximum
-            string length (str_length).
+    Recursive function that iterates over a given value (e.g. a loaded JSON) and
+        changes the values of all strings whose lenght is above the given maximum
+        string length (str_length).
 
-        In our use-case, it is used to add new lines for the graphs to be readable in case
-            some strings (e.g. 'description' fields) are way too long.
+    In our use-case, it is used to add new lines for the graphs to be readable in case
+        some strings (e.g. 'description' fields) are way too long.
     """
     if isinstance(current_value, dict):
         new_dict = {}
@@ -229,26 +218,24 @@ def add_newlines(current_value, str_length: int = 80, newline_character: str = "
     else:
         return current_value
 
-#-#
+# -#
 # Class definition
-#-#
+# -#
 class JSONManipulationFormatter:
     """
-        JSONManipulationFormatter - a class for formatting JSON data to be used in graphing software. Examples
-            of formatting include: reducing the depth of a JSON object, resolving its references,
-            filtering the JSON object based on set of conditions, etc.
+    JSONManipulationFormatter - a class for formatting JSON data to be used in graphing software. Examples
+        of formatting include: reducing the depth of a JSON object, resolving its references,
+        filtering the JSON object based on set of conditions, etc.
 
-        Arguments:
-        - json_filepath (str): a string representing the path to the JSON file to be loaded. The file must be of type .json.
-        - json_data (dict): a dictionary representing the JSON data to be used.
-        - is_schema (bool): a boolean flag that specifies whether the given JSON is a schema or not.
+    Arguments:
+    - json_filepath (str): a string representing the path to the JSON file to be loaded. The file must be of type .json.
+    - json_data (dict): a dictionary representing the JSON data to be used.
+    - is_schema (bool): a boolean flag that specifies whether the given JSON is a schema or not.
     """
 
-    def __init__(self,
-                 json_filepath: str = None,
-                 json_data: dict = None,
-                 is_schema: bool = None
-                ):
+    def __init__(
+        self, json_filepath: str = None, json_data: dict = None, is_schema: bool = None
+    ):
 
         # We either take the given JSON data or load the given JSON file
         if json_data:
@@ -279,26 +266,26 @@ class JSONManipulationFormatter:
 
     def prettify(self) -> str:
         """
-            Returns a string representation of the current JSON object formatted as a string in
-                a more human-readable way: with newlines and indentation.
-                Example: JSONManipulationFormatter.prettify()
+        Returns a string representation of the current JSON object formatted as a string in
+            a more human-readable way: with newlines and indentation.
+            Example: JSONManipulationFormatter.prettify()
         """
         return json.dumps(self.current_json, indent=4)
 
     def max_depth(self) -> int:
         """
-            Returns an integer that represents the maximum depth of the current JSON object.
-                Example: JSONManipulationFormatter.max_depth()
+        Returns an integer that represents the maximum depth of the current JSON object.
+            Example: JSONManipulationFormatter.max_depth()
         """
         return max_depth(self.current_json)
 
     def identify_schema_or_data(self) -> bool:
         """
-            Determines whether the loaded JSON data is a JSON schema or JSON data. It is based on the
-                top-level properties of the JSON object:
-                - If the JSON data has the properties "data" and "schema" at the top-level, it is
-                    considered a data object.
-                - If it has any other properties, it is considered a schema object.
+        Determines whether the loaded JSON data is a JSON schema or JSON data. It is based on the
+            top-level properties of the JSON object:
+            - If the JSON data has the properties "data" and "schema" at the top-level, it is
+                considered a data object.
+            - If it has any other properties, it is considered a schema object.
         """
         properties_at_root = list(self.current_json.keys())
         if properties_at_root == ["data", "schema"]:
@@ -310,23 +297,22 @@ class JSONManipulationFormatter:
 
     def restart_json(self) -> dict:
         """
-            Restarts the current JSON to the original JSON.
-                Example: JSONManipulationFormatter.restart_json()
+        Restarts the current JSON to the original JSON.
+            Example: JSONManipulationFormatter.restart_json()
         """
         self.current_json = self.original_json.copy()
 
         return self.current_json
 
     def resolve_json_references(
-        self, json_filepath: str = None,
-        resolve_schema_prop: bool = False
+        self, json_filepath: str = None, resolve_schema_prop: bool = False
     ) -> dict:
         """
-            Replaces all references ('$ref') in the JSON with their resolved values using the jsonref library.
-                If the JSON has inter-file references, the json_filepath argument must be provided.
-                If 'resolve_schema_prop' is True, it will resolve also the 'schema' property within a JSON data.
+        Replaces all references ('$ref') in the JSON with their resolved values using the jsonref library.
+            If the JSON has inter-file references, the json_filepath argument must be provided.
+            If 'resolve_schema_prop' is True, it will resolve also the 'schema' property within a JSON data.
 
-                Example: JSONManipulationFormatter.resolve_json_references(json_filepath="/path/to/file.json")
+            Example: JSONManipulationFormatter.resolve_json_references(json_filepath="/path/to/file.json")
         """
         # We need the absolute path for jsonref to be able to resolve inter-file references
         #   See https://jsonref.readthedocs.io/en/v1.0.0b1/#a-note-on-base-uri
@@ -366,41 +352,38 @@ class JSONManipulationFormatter:
 
     def reduce_depth(self, desired_depth: int) -> dict:
         """
-            Reduces the current JSON object to the desired amount of depth.
-                Example: JSONManipulationFormatter.reduce_depth(desired_depth=3)
+        Reduces the current JSON object to the desired amount of depth.
+            Example: JSONManipulationFormatter.reduce_depth(desired_depth=3)
         """
         current_depth = max_depth(self.current_json)
         if current_depth < desired_depth:
             self.restart_json()
-        self.current_json = new_dict_depth(json_object_value=self.current_json,
-                                           depth=desired_depth,
-                                           mapping_property_names=mapping_property_names)
+        self.current_json = new_dict_depth(
+            json_object_value=self.current_json,
+            depth=desired_depth,
+            mapping_property_names=mapping_property_names
+        )
 
         return self.current_json
 
     def subset_json(self, condition_dict: dict) -> dict:
         """
-            Subsets the current JSON object based on a set of conditions given in the condition_dict.
-                Example: JSONManipulationFormatter.subset_json(condition_dict=cardinality_dict)
-                Example of cardinality_dict:
-                    {
-                        "property_names": [
-                            "objectId",
-                            "rSource",
-                            "rTarget"
-                        ]
-                    }
+        Subsets the current JSON object based on a set of conditions given in the condition_dict.
+            Example: JSONManipulationFormatter.subset_json(condition_dict=cardinality_dict)
+            Example of cardinality_dict:
+                cardinality_dict = { "property_names": [ "objectId", "rSource", "rTarget", "rType" ] }
         """
         self.current_json = filter_dict(
-            original_dict=self.current_json,
-            condition_dict=condition_dict
+            original_dict=self.current_json, condition_dict=condition_dict
         )
         return self.current_json
 
-    def add_newlines(self, str_length: int = 80, newline_character: str = "\\n") -> dict:
+    def add_newlines(
+        self, str_length: int = 80, newline_character: str = "\\n"
+    ) -> dict:
         """
-            Adds newlines ('\\n') to long strings in the JSON object so that it is easier to interpret.
-                Example: JSONManipulationFormatter.add_newlines(str_length=80, newline_character="\\n")
+        Adds newlines ('\\n') to long strings in the JSON object so that it is easier to interpret.
+            Example: JSONManipulationFormatter.add_newlines(str_length=80, newline_character="\\n")
         """
         self.current_json = add_newlines(
             current_value=self.current_json,
@@ -416,21 +399,21 @@ class JSONManipulationFormatter:
         overwrite: bool = False
     ) -> None:
         """
-            Saves the JSON object to a file.
-                Example: JSONManipulationFormatter.save_json()
+        Saves the JSON object to a file.
+            Example: JSONManipulationFormatter.save_json()
         """
         if os.path.isfile(output_filepath) and not overwrite:
             raise ValueError(
-                    f"File '{output_filepath}' already exists and 'overwrite' was set to False.\n "
-                    f"\tChoose a different filename or set overwrite to True."
+                f"File '{output_filepath}' already exists and 'overwrite' was set to False.\n "
+                f"\tChoose a different filename or set overwrite to True."
             )
 
         with open(output_filepath, "w", encoding="utf-8") as outfile:
             json.dump(self.current_json, outfile, indent=4)
 
-#-#
+# -#
 # Examples of usage
-#-#
+# -#
 
 # formatter = JSONManipulationFormatter(json_filepath="../../examples/json_validation_tests/sample_valid-1.json")
 # null = formatter.resolve_json_references()
