@@ -60,7 +60,7 @@ jobs:
         run: |
           schemas_dir="./schemas"
           
-          node biovalidator/src/biovalidator -r "$schemas_dir/*.json"
+          node biovalidator/src/biovalidator -r "$schemas_dir/*.json" &
           
           # We stop for a few seconds to give the server time
           sleep 3
