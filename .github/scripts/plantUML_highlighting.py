@@ -3,7 +3,7 @@
 
 import json
 import os
-import json
+from typing import Union
 import jsonpath_ng
 
 # # Only for the examples in the end:
@@ -26,7 +26,9 @@ plantUML_format_dictionary = {
 # -#
 # Helper functions
 # -#
-def jsonexpression_condition_dict(condition_dict: dict) -> jsonpath_ng.jsonpath.Descendants:
+def jsonexpression_condition_dict(
+    condition_dict: dict
+) -> jsonpath_ng.jsonpath.Descendants:
     """
     Function that generates a JSON expression for 'jsonjsonpath_ng' based on a given
         dictionary with conditions (condition_dict).
@@ -55,6 +57,7 @@ def jsonexpression_condition_dict(condition_dict: dict) -> jsonpath_ng.jsonpath.
                 f"\n\tif it is not an expected error."
             )
 
+
 def create_parent_json_paths(input_list: list) -> list:
     """
     From a given input list whose items are JSON Paths, returns a list with both the given
@@ -75,6 +78,7 @@ def create_parent_json_paths(input_list: list) -> list:
 
     return updated_list
 
+
 def find_json_paths(json_data: dict, condition_dict: dict) -> list:
     """
     Find all JSON paths in a JSON object that match a set of conditions. The set of conditions
@@ -85,11 +89,13 @@ def find_json_paths(json_data: dict, condition_dict: dict) -> list:
     list_of_paths = list(str(match.full_path) for match in matches)
     return list_of_paths
 
+
 def create_highlights_liner(json_path_str: str) -> str:
     """
     Formats the JSON Path with the preffix and newline for PlantUML
     """
     return "#highlight " + json_path_str + "\n"
+
 
 def remove_char_from_list(input_list: list, char: str) -> list:
     """
@@ -98,7 +104,8 @@ def remove_char_from_list(input_list: list, char: str) -> list:
     updated_list = list(item.replace(char, "") for item in input_list)
     return updated_list
 
-def add_char_to_list(input_list: list,  char: str) -> list:
+
+def add_char_to_list(input_list: list, char: str) -> list:
     """
     Adds a given character (char) at the beginning and end of a given list (input_list)
     """
@@ -118,16 +125,14 @@ class PlantUMLFormatter:
     - json_data (dict): a dictionary representing the JSON data to be used.
     """
 
-    def __init__(
-        self, json_filepath: str = None, json_data: dict = None
-    ):
+    def __init__(self, json_filepath: str = "", json_data: Union[dict, None] = None):
 
         self.load_json_data(json_filepath=json_filepath, json_data=json_data)
         self.empty_jsonpath_list()
         self.empty_highlight_header_list()
         self.highlights_header = ""
 
-    def load_json_data(self, json_filepath: str = None, json_data: dict = None) -> dict:
+    def load_json_data(self, json_filepath: str = "", json_data: Union[bool, None] = None) -> dict:
         """
         Loads JSON data from either a file or a dictionary.
             It's used not only at the definition of the class, but also can be used later on
@@ -185,7 +190,6 @@ class PlantUMLFormatter:
 
         return self.jsonpaths_list
 
-
     def format_json_paths(
         self, plantUML_format_dictionary: dict, add_parent_properties: bool = True
     ) -> list:
@@ -200,9 +204,7 @@ class PlantUMLFormatter:
             separator = plantUML_format_dictionary["highlight_separator"]      # e.g. " / "
 
         except KeyError as e:
-            raise KeyError(
-                f"KeyError: {e}"
-            )
+            raise KeyError( f"KeyError: {e}" )
 
         if len(self.jsonpaths_list) == 0:
             self.highlight_header_list = []
@@ -241,9 +243,7 @@ class PlantUMLFormatter:
         )
         return self.highlights_header
 
-    def save_all(
-        self, output_filepath: str, overwrite: bool = False
-    ) -> None:
+    def save_all(self, output_filepath: str, overwrite: bool = False) -> None:
         """
         Saves the JSON object with the correct start and end of file and its header
             Example: PlantUMLFormatter.save_all()

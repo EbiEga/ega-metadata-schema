@@ -3,9 +3,9 @@
 
 import json
 import os
-import jsonref
 from pathlib import Path
-import json
+import jsonref
+from typing import Union
 
 # ------#
 # JSONManipulationFormatter Class
@@ -21,11 +21,11 @@ mapping_property_names = {
 }
 
 # Different condition_dict dictionaries for filtering a JSON object
-conditions_cardinality = { "property_names": [ "objectId", "rSource", "rTarget", "rType" ] }
+conditions_cardinality = {"property_names": [ "objectId", "rSource", "rTarget", "rType" ]}
 
-conditions_controlled_vocabulary = { "property_names": [ "enum" ] }
+conditions_controlled_vocabulary = {"property_names": [ "enum" ]}
 
-conditions_ontology_validation = { "property_names": [ "termId" ] }
+conditions_ontology_validation = {"property_names": [ "termId" ]}
 
 # -#
 # Helper functions
@@ -40,6 +40,7 @@ def max_depth(json_obj: dict) -> int:
         return 1 + max(max_depth(v) for v in json_obj)
     else:
         return 0
+
 
 def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: dict):
     """
@@ -78,7 +79,8 @@ def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: 
 
         return property_type
 
-def check_condition_dict(original_key, original_value, condition_dict:dict) -> bool:
+
+def check_condition_dict(original_key: str, original_value, condition_dict: dict) -> bool:
     """
     Function that checks if a given key and value of a dictionary satisfy conditions based
         on a dictionary with conditions (condition_dict)
@@ -103,10 +105,10 @@ def check_condition_dict(original_key, original_value, condition_dict:dict) -> b
                     return satsified_conditions
         else:
             raise TypeError(
-                    f"The given dictionary containing the conditions to check has an unexpected syntax."
-                    f"\n\tCheck the possibilities in function 'check_condition_dict()' and add yours"
-                    f"\n\tif it is not an expected error."
-                )
+                f"The given dictionary containing the conditions to check has an unexpected syntax."
+                f"\n\tCheck the possibilities in function 'check_condition_dict()' and add yours"
+                f"\n\tif it is not an expected error."
+            )
 
 
 def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
@@ -119,9 +121,7 @@ def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
     current_dict = {}
     for key, value in original_dict.items():
         condition_matches = check_condition_dict(
-            original_key=key,
-            original_value=value,
-            condition_dict=condition_dict
+            original_key=key, original_value=value, condition_dict=condition_dict
         )
 
         if condition_matches:
@@ -153,12 +153,17 @@ def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
 
     return current_dict
 
-def add_char_to_str(string: str, str_length: int = 80, new_character: str = "\\n") -> str:
+
+def add_char_to_str(
+    string: str, str_length: int = 80, new_character: str = "\\n"
+) -> str:
     """
     Function that, given a string, splits it into words and inserts a new character (new_character)
         the the character count of the words is above the given maximum string length (str_length)
     """
-    assert isinstance(string, str), f"The given string '{string}' is not of string type."
+    assert isinstance(
+        string, str
+    ), f"The given string '{string}' is not of string type."
     words = string.split()
     new_string = ""
     line_length = 0
@@ -174,6 +179,7 @@ def add_char_to_str(string: str, str_length: int = 80, new_character: str = "\\n
     updated_string = new_string.strip()
 
     return updated_string
+
 
 def add_newlines(current_value, str_length: int = 80, newline_character: str = "\\n"):
     """
@@ -218,6 +224,7 @@ def add_newlines(current_value, str_length: int = 80, newline_character: str = "
     else:
         return current_value
 
+
 # -#
 # Class definition
 # -#
@@ -234,7 +241,7 @@ class JSONManipulationFormatter:
     """
 
     def __init__(
-        self, json_filepath: str = None, json_data: dict = None, is_schema: bool = None
+        self, json_filepath: str = "", json_data: dict = {}, is_schema: Union[bool, None] = None 
     ):
 
         # We either take the given JSON data or load the given JSON file
@@ -305,7 +312,7 @@ class JSONManipulationFormatter:
         return self.current_json
 
     def resolve_json_references(
-        self, json_filepath: str = None, resolve_schema_prop: bool = False
+        self, json_filepath: str = "", resolve_schema_prop: bool = False
     ) -> dict:
         """
         Replaces all references ('$ref') in the JSON with their resolved values using the jsonref library.
@@ -393,11 +400,7 @@ class JSONManipulationFormatter:
 
         return self.current_json
 
-    def save_json(
-        self,
-        output_filepath: str,
-        overwrite: bool = False
-    ) -> None:
+    def save_json(self, output_filepath: str, overwrite: bool = False) -> None:
         """
         Saves the JSON object to a file.
             Example: JSONManipulationFormatter.save_json()
