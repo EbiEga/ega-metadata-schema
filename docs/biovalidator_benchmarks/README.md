@@ -22,9 +22,9 @@ ega-metadata-schema/
 The two python scripts are differently used, based on the flexibility we desired for each: ``object_set_creator.py`` is expected to be imported and used within a python3 environment; while ``create_benchmarks.py`` can be executed given a few arguments. The former is more interactive than the second, on purpose.
 
 ### ``object_set_creator.py``
-From within a python3 environment we can run the following:
+At ``ega-metadata-schema/.github/scripts`` and from within a python3 environment we can run the following:
 ````python
-from object_set_creator import CreateObjectSet
+from utils.json_manipulation import CreateObjectSet
 # To instance the new object set
 new_objectset = CreateObjectSet("../../examples/json_validation_tests/object-set_valid-1.json")
 # To empty the objectArray, but keep the other values of the taken object-set
