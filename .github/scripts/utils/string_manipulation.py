@@ -5,14 +5,6 @@
 #   in the GitHub actions of this repository and imported accordingly in other
 #   scripts.
 
-# - #
-# System imports
-# - #
-
-# -#
-# Hardcoded values
-# -#
-
 # -#
 # Helper functions
 # -#

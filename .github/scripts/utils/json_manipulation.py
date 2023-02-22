@@ -18,9 +18,9 @@ from pathlib import Path
 from typing import Union
 from .string_manipulation import add_newlines
 
-# -#
+# - #
 # Hardcoded values
-# -#
+# - #
 # Used to simplify the graph based on depth
 mapping_property_names = {
     "list": "[ ... ]",
@@ -32,9 +32,9 @@ conditions_cardinality = {"property_names": [ "objectId", "rSource", "rTarget", 
 conditions_controlled_vocabulary = {"property_names": [ "enum" ]}
 conditions_ontology_validation = {"property_names": [ "termId" ]}
 
-# -#
+# - #
 # Helper functions
-# -#
+# - #
 def jsonexpression_condition_dict(
     condition_dict: dict
 ) -> jsonpath_ng.jsonpath.Descendants:
@@ -259,9 +259,9 @@ def empty_json_values(json_data, root_level: bool = False):
     return json_data
 
 
-# -#
+# - #
 # Class definition
-# -#
+# - #
 class JSONManipulationFormatter:
     """
     JSONManipulationFormatter - a class for formatting JSON data to be used in graphing software. Examples
