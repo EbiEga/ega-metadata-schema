@@ -1,18 +1,22 @@
-#!/usr/bin/env python
-# coding: utf-8
+# ------ #
+# Utils for PlantUML format
+# ------ #
+# In this file there are functions, classes or variables that are used widely
+#   in the GitHub actions of this repository and imported accordingly in other
+#   scripts.
 
+# - #
+# System imports
+# - #
 import json
 import os
 from typing import Union
-import jsonpath_ng
+from .json_manipulation import create_parent_json_paths, \
+    find_json_paths
 
-# # Only for the examples in the end:
-# from json_manipulation import JSONManipulationFormatter
-# from json_manipulation import conditions_ontology_validation
-
-# ------#
-# PlantUMLFormatter Class
-# ------#
+from .string_manipulation import remove_char_from_list, \
+    add_char_to_list, \
+    create_highlights_liner
 
 # -#
 # Hardcoded values
@@ -26,91 +30,7 @@ plantUML_format_dictionary = {
 # -#
 # Helper functions
 # -#
-def jsonexpression_condition_dict(
-    condition_dict: dict
-) -> jsonpath_ng.jsonpath.Descendants:
-    """
-    Function that generates a JSON expression for 'jsonjsonpath_ng' based on a given
-        dictionary with conditions (condition_dict).
 
-    Expression purpose based on the given dict:
-        - { "property_names": [...] } --> the expression will match properties named as every item in the list.
-    """
-    for key, value in condition_dict.items():
-        # The syntax of the condition_dict is made-up
-        if key == "property_names":
-            if not isinstance(value, list):
-                raise ValueError(
-                    f"The value for the key 'property_names' in the 'condition_dict' needs to be of type list"
-                    f"\n\tGiven value: {value}"
-                )
-
-            # We create the JSON path expression based on the syntax, giving the whole list (value) as property names
-            jsonpath_expression = jsonpath_ng.parse(f"$..{value}")
-
-            return jsonpath_expression
-
-        else:
-            raise TypeError(
-                f"The given dictionary containing the conditions to check has an unexpected syntax."
-                f"\n\tCheck the possibilities in function 'jsonexpression_condition_dict()' and add yours"
-                f"\n\tif it is not an expected error."
-            )
-
-
-def create_parent_json_paths(input_list: list) -> list:
-    """
-    From a given input list whose items are JSON Paths, returns a list with both the given
-        JSON Paths and an extra JSON path for depth level in the JSON object.
-
-    Example: from an 'input_list' ["data.cellTypes.cellType"], it would return an updated_list
-        being ["data.cellTypes.cellType", "data.cellTypes", "data"]
-
-    Intended purpose: to add all parent-properties JSON paths of a given JSON path leaf.
-    """
-    n_items = len(input_list)
-    updated_list = []
-    for i in range(n_items + 1):
-        list_index = i + 1
-        # We iterate over the list and create a new list (path)
-        #   with all items (properties) up to the range.
-        updated_list.append(input_list[0:list_index])
-
-    return updated_list
-
-
-def find_json_paths(json_data: dict, condition_dict: dict) -> list:
-    """
-    Find all JSON paths in a JSON object that match a set of conditions. The set of conditions
-        is a dictionary with a syntax specific to function 'jsonexpression_condition_dict()'
-    """
-    jsonpath_expression = jsonexpression_condition_dict(condition_dict)
-    matches = jsonpath_expression.find(json_data)
-    list_of_paths = list(str(match.full_path) for match in matches)
-    return list_of_paths
-
-
-def create_highlights_liner(json_path_str: str) -> str:
-    """
-    Formats the JSON Path with the preffix and newline for PlantUML
-    """
-    return "#highlight " + json_path_str + "\n"
-
-
-def remove_char_from_list(input_list: list, char: str) -> list:
-    """
-    Removes a given character (char) from a given list (input_list)
-    """
-    updated_list = list(item.replace(char, "") for item in input_list)
-    return updated_list
-
-
-def add_char_to_list(input_list: list, char: str) -> list:
-    """
-    Adds a given character (char) at the beginning and end of a given list (input_list)
-    """
-    updated_list = list(char + item + char for item in input_list)
-    return updated_list
 
 # -#
 # Class definition
@@ -268,22 +188,3 @@ class PlantUMLFormatter:
 
             # And finally "@endjson" to the end of the file
             f.write("\n@endjson")
-
-# -#
-# Examples of usage
-# -#
-# formatter = JSONManipulationFormatter(json_filepath="../../examples/json_validation_tests/sample_valid-1.json")
-# json_data = formatter.current_json
-
-# header = PlantUMLFormatter(json_data=json_data)
-# header.add_jsonpaths(condition_dict=conditions_ontology_validation)
-# header.format_json_paths(plantUML_format_dictionary=plantUML_format_dictionary)
-# header.create_highlights_header()
-# header.save_all(output_filepath="output_sample.json", overwrite=True)
-
-# # Example of usage: reducing the JSON object after creating the header:
-# formatter.reduce_depth(desired_depth=2)
-# json_data = formatter.current_json
-
-# header.load_json_data(json_data=json_data)
-# header.save_all(output_filepath="reduced_output_sample.json", overwrite=True)

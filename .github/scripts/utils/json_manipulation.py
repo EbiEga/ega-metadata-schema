@@ -1,15 +1,20 @@
-#!/usr/bin/env python
-# coding: utf-8
+# ------ #
+# Utils for JSON Manipulation
+# ------ #
+# In this file there are functions, classes or variables that are used widely
+#   in the GitHub actions of this repository and imported accordingly in other
+#   scripts.
 
+# - #
+# System imports
+# - #
 import json
 import os
-from pathlib import Path
 import jsonref
+import jsonpath_ng
+from pathlib import Path
 from typing import Union
-
-# ------#
-# JSONManipulationFormatter Class
-# ------#
+from .string_manipulation import add_newlines
 
 # -#
 # Hardcoded values
@@ -22,62 +27,42 @@ mapping_property_names = {
 
 # Different condition_dict dictionaries for filtering a JSON object
 conditions_cardinality = {"property_names": [ "objectId", "rSource", "rTarget", "rType" ]}
-
 conditions_controlled_vocabulary = {"property_names": [ "enum" ]}
-
 conditions_ontology_validation = {"property_names": [ "termId" ]}
 
 # -#
 # Helper functions
 # -#
-def max_depth(json_obj: dict) -> int:
+def jsonexpression_condition_dict(
+    condition_dict: dict
+) -> jsonpath_ng.jsonpath.Descendants:
     """
-    Function to find the maximum depth of a JSON object
-    """
-    if isinstance(json_obj, dict):
-        return 1 + max(max_depth(v) for v in json_obj.values())
-    elif isinstance(json_obj, list):
-        return 1 + max(max_depth(v) for v in json_obj)
-    else:
-        return 0
+    Function that generates a JSON expression for 'jsonjsonpath_ng' based on a given
+        dictionary with conditions (condition_dict).
 
+    Expression purpose based on the given dict:
+        - { "property_names": [...] } --> the expression will match properties named as every item in the list.
+    """
+    for key, value in condition_dict.items():
+        # The syntax of the condition_dict is made-up
+        if key == "property_names":
+            if not isinstance(value, list):
+                raise ValueError(
+                    f"The value for the key 'property_names' in the 'condition_dict' needs to be of type list"
+                    f"\n\tGiven value: {value}"
+                )
 
-def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: dict):
-    """
-    Recursive function to create, based on a given dictionary, a shorter version of it based on its depth.
-    """
-    property_type = type(json_object_value)
-    if property_type == dict and depth > 0:
-        new_dict = {}
-        for key, value in json_object_value.items():
-            new_dict[key] = new_dict_depth(
-                json_object_value=value,
-                depth=depth - 1,
-                mapping_property_names=mapping_property_names
+            # We create the JSON path expression based on the syntax, giving the whole list (value) as property names
+            jsonpath_expression = jsonpath_ng.parse(f"$..{value}")
+
+            return jsonpath_expression
+
+        else:
+            raise TypeError(
+                f"The given dictionary containing the conditions to check has an unexpected syntax."
+                f"\n\tCheck the possibilities in function 'jsonexpression_condition_dict()' and add yours"
+                f"\n\tif it is not an expected error."
             )
-
-        return new_dict
-
-    elif property_type == list and depth > 0:
-        new_list = []
-        for item in json_object_value:
-            item_content = new_dict_depth(
-                json_object_value=item,
-                depth=depth - 1,
-                mapping_property_names=mapping_property_names
-            )
-            new_list.append(item_content)
-        return new_list
-
-    elif property_type == str or property_type == bool or property_type == int:
-        return json_object_value
-
-    else:
-        property_type = type(json_object_value).__name__
-        if property_type in mapping_property_names.keys():
-            property_type = mapping_property_names[property_type]
-
-        return property_type
 
 
 def check_condition_dict(original_key: str, original_value, condition_dict: dict) -> bool:
@@ -109,6 +94,38 @@ def check_condition_dict(original_key: str, original_value, condition_dict: dict
                 f"\n\tCheck the possibilities in function 'check_condition_dict()' and add yours"
                 f"\n\tif it is not an expected error."
             )
+
+
+def find_json_paths(json_data: dict, condition_dict: dict) -> list:
+    """
+    Find all JSON paths in a JSON object that match a set of conditions. The set of conditions
+        is a dictionary with a syntax specific to function 'jsonexpression_condition_dict()'
+    """
+    jsonpath_expression = jsonexpression_condition_dict(condition_dict)
+    matches = jsonpath_expression.find(json_data)
+    list_of_paths = list(str(match.full_path) for match in matches)
+    return list_of_paths
+
+
+def create_parent_json_paths(input_list: list) -> list:
+    """
+    From a given input list whose items are JSON Paths, returns a list with both the given
+        JSON Paths and an extra JSON path for depth level in the JSON object.
+
+    Example: from an 'input_list' ["data.cellTypes.cellType"], it would return an updated_list
+        being ["data.cellTypes.cellType", "data.cellTypes", "data"]
+
+    Intended purpose: to add all parent-properties JSON paths of a given JSON path leaf.
+    """
+    n_items = len(input_list)
+    updated_list = []
+    for i in range(n_items + 1):
+        list_index = i + 1
+        # We iterate over the list and create a new list (path)
+        #   with all items (properties) up to the range.
+        updated_list.append(input_list[0:list_index])
+
+    return updated_list
 
 
 def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
@@ -154,75 +171,54 @@ def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
     return current_dict
 
 
-def add_char_to_str(
-    string: str, str_length: int = 80, new_character: str = "\\n"
-) -> str:
+def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: dict):
     """
-    Function that, given a string, splits it into words and inserts a new character (new_character)
-        the the character count of the words is above the given maximum string length (str_length)
+    Recursive function to create, based on a given dictionary, a shorter version of it based on a given depth.
     """
-    assert isinstance(
-        string, str
-    ), f"The given string '{string}' is not of string type."
-    words = string.split()
-    new_string = ""
-    line_length = 0
-    for word in words:
-        if line_length + len(word) > str_length:
-            if not len(word) > str_length:
-                # We don't want new lines at the beginning in words that are too long (e.g. '$ref')
-                new_string += new_character
-            line_length = 0
-        new_string += word + " "
-        line_length += len(word) + 1
-
-    updated_string = new_string.strip()
-
-    return updated_string
-
-
-def add_newlines(current_value, str_length: int = 80, newline_character: str = "\\n"):
-    """
-    Recursive function that iterates over a given value (e.g. a loaded JSON) and
-        changes the values of all strings whose lenght is above the given maximum
-        string length (str_length).
-
-    In our use-case, it is used to add new lines for the graphs to be readable in case
-        some strings (e.g. 'description' fields) are way too long.
-    """
-    if isinstance(current_value, dict):
+    property_type = type(json_object_value)
+    if property_type == dict and depth > 0:
         new_dict = {}
-        for key, value in current_value.items():
-            new_dict[key] = add_newlines(
-                current_value=value,
-                str_length=str_length,
-                newline_character=newline_character
+        for key, value in json_object_value.items():
+            new_dict[key] = new_dict_depth(
+                json_object_value=value,
+                depth=depth - 1,
+                mapping_property_names=mapping_property_names
             )
+
         return new_dict
 
-    elif isinstance(current_value, list):
+    elif property_type == list and depth > 0:
         new_list = []
-        for item in current_value:
-            item_content = add_newlines(
-                current_value=item,
-                str_length=str_length,
-                newline_character=newline_character
+        for item in json_object_value:
+            item_content = new_dict_depth(
+                json_object_value=item,
+                depth=depth - 1,
+                mapping_property_names=mapping_property_names
             )
             new_list.append(item_content)
         return new_list
 
-    elif isinstance(current_value, str):
-        if len(current_value) > str_length:
-            current_value = add_char_to_str(
-                string=current_value,
-                str_length=str_length,
-                new_character=newline_character
-            )
-
-        return current_value
+    elif property_type == str or property_type == bool or property_type == int:
+        return json_object_value
 
     else:
-        return current_value
+        property_type = type(json_object_value).__name__
+        if property_type in mapping_property_names.keys():
+            property_type = mapping_property_names[property_type]
+
+        return property_type
+
+
+def max_depth(json_obj: dict) -> int:
+    """
+    Function to find the maximum depth of a JSON object
+    """
+    if isinstance(json_obj, dict):
+        return 1 + max(max_depth(v) for v in json_obj.values())
+    elif isinstance(json_obj, list):
+        return 1 + max(max_depth(v) for v in json_obj)
+    else:
+        return 0
 
 
 # -#
@@ -414,31 +410,3 @@ class JSONManipulationFormatter:
         with open(output_filepath, "w", encoding="utf-8") as outfile:
             json.dump(self.current_json, outfile, indent=4)
 
-# -#
-# Examples of usage
-# -#
-
-# formatter = JSONManipulationFormatter(json_filepath="../../examples/json_validation_tests/sample_valid-1.json")
-# null = formatter.resolve_json_references()
-# formatter.subset_json(condition_dict=conditions_cardinality)
-# print(formatter.prettify())
-
-# formatter.restart_json()
-# formatter.reduce_depth(2)
-# print(formatter.prettify())
-
-# formatter.restart_json()
-# formatter.subset_json(condition_dict=conditions_cardinality)
-# print(formatter.prettify())
-
-# formatter.restart_json()
-# formatter.subset_json(condition_dict=conditions_controlled_vocabulary)
-# print(formatter.prettify())
-
-# formatter.restart_json()
-# formatter.subset_json(condition_dict=conditions_ontology_validation)
-# print(formatter.prettify())
-
-# formatter.restart_json()
-# formatter.add_newlines()
-# print(formatter.prettify())
