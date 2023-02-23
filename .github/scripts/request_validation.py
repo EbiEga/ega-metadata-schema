@@ -2,7 +2,7 @@ import json
 import os
 import sys
 
-from utils.validation_statistics import request_validation, \
+from utils.json_validation import request_validation, \
     get_errors_response
 
 # --------- #
