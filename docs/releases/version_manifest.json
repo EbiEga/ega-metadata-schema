@@ -1,0 +1,62 @@
+{
+    "releases": [
+        {
+            "version": "0.0.0",
+            "date": "2023-03-01",
+            "jsonSchemas": [
+                {
+                    "schemaName": "common-definitions",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "experiment",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "study", 
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "sample",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "individual",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "submission",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "assay",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "dataset",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "analysis",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "policy",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "DAC",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "protocol",
+                    "version": "0.0.0"
+                },
+                {
+                    "schemaName": "object-set",
+                    "version": "0.0.0"
+                }
+            ]
+        }
+    ]
+}
