@@ -8,3 +8,4 @@ This document serves as an index for EGA's documentation in its [ega-metadata-sc
 | [Contributions](./contributing.md) 	|   Documentation on how to contribute to the EGA metadata standards 	|
 | [GitHub Actions](./gh_workflows/) 	|   Diagrams summarizing workflows of GH actions (see [source files](../.github/workflows/)) 	|
 | [Biovalidator benchmarks](./biovalidator_benchmarks/) 	|   Benchmarks collected when validating JSON documents with Biovalidator |
+| [Releases](./releases/) 	|   Documentation on how GitHub releases for this project are done |
