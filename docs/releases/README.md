@@ -2,10 +2,14 @@
 In this document you will find the workflow for creating releases of the Ega Metadata Schemas GitHub project. It provides a step-by-step diagram to help illustrate the steps involved.
 
 ## Workflow Diagram
-![Release Workflow Diagram](Release_workflow_diagram.svg)
+![Release Workflow Diagram](images/Release_workflow_diagram.svg)
 
 
 The above diagram illustrates the process for creating a new release of the EGA Metadata Schemas project.
+
+![Release GitHub Diagram](images/Release_github_diagram.svg)
+
+The above diagram represents a simplified example of how the branches are managed in GitHub for a release to be done.
 
 ## Version Manifest
 To keep track of which JSON schema versions are included in each release version of the Ega Metadata Schemas project, a manifest ([``version_manifest.json``](./version_manifest.json)) is maintained in this same directory. This file lists the schema versions included in each release, along with other relevant metadata of the releases.
