@@ -16,7 +16,8 @@ import warnings
 
 from pathlib import Path
 from typing import Union
-from .string_manipulation import add_newlines
+from .string_manipulation import add_newlines, \
+    replace_after_string_in_url
 
 # - #
 # Hardcoded values
@@ -264,14 +265,16 @@ def empty_json_values(json_data, root_level: bool = False):
 # - #
 class JSONManipulationFormatter:
     """
-    JSONManipulationFormatter - a class for formatting JSON data to be used in graphing software. Examples
-        of formatting include: reducing the depth of a JSON object, resolving its references,
+    JSONManipulationFormatter - a class for re-formatting JSON data, primarily to be used in graphing software.
+        Examples of formatting include: reducing the depth of a JSON object, resolving its references,
         filtering the JSON object based on set of conditions, etc.
 
     Arguments:
     - json_filepath (str): a string representing the path to the JSON file to be loaded. The file must be of type .json.
     - json_data (dict): a dictionary representing the JSON data to be used.
-    - is_schema (bool): a boolean flag that specifies whether the given JSON is a schema or not.
+    - is_schema (bool): an optional boolean flag that specifies whether the given JSON is a schema or not.
+
+    Either json_filepath or json_data need to be given in order to load the JSON to format.
     """
 
     def __init__(
@@ -328,8 +331,7 @@ class JSONManipulationFormatter:
                 considered a data object.
             - If it has any other properties, it is considered a schema object.
         """
-        properties_at_root = list(self.current_json.keys())
-        if properties_at_root == ["data", "schema"]:
+        if set(self.current_json.keys()) == set(["data", "schema"]):
             self.is_schema = False
         else:
             self.is_schema = True
@@ -448,6 +450,32 @@ class JSONManipulationFormatter:
         with open(output_filepath, "w", encoding="utf-8") as outfile:
             json.dump(self.current_json, outfile, indent=4)
 
+    def modify_static_pointers(self, new_str: str, previous_str: str = "ega-metadata-schema"):
+        """
+        Modifies the static pointers of the JSON file, based on whether it is a schema or a document.
+            Example: JSONManipulationFormatter.modify_static_pointers()
+        """
+        if self.is_schema:
+            # We modify the "$id"
+            modified_url = replace_after_string_in_url(
+                url=self.current_json["$id"],
+                new_str=new_str,
+                previous_str=previous_str
+            )
+            self.current_json["$id"] = modified_url
+            return modified_url
+            
+        else:
+            # We modify the "$ref"s from "schema" and "$SchemaDescriptor" from "data"
+            modified_url = replace_after_string_in_url(
+                url=self.current_json["schema"]["$ref"],
+                new_str=new_str,
+                previous_str=previous_str
+            )
+            # Notice how we are intentionally overwritting "describedBySchemaUri" with "$ref" from "schema"
+            self.current_json["schema"]["$ref"] = modified_url
+            self.current_json["data"]["schemaDescriptor"]["describedBySchemaUri"] = modified_url
+            return modified_url
 
 class CreateObjectSet:
     """
