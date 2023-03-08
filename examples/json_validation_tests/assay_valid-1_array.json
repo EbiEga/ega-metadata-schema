@@ -56,9 +56,9 @@
                     {
                         "arrayLabel": {
                             "arrayLabelIdentifier": {
-                                "termId": "CHEBI:37987",   
+                                "termId": "CHEBI:37987",
                                 "termLabel": "Cy3"
-                            }             
+                            }
                         },
                         "objectId": {
                             "egaAccession": "EGAN00002094401"
@@ -67,7 +67,7 @@
                     {
                         "arrayLabel": {
                             "arrayLabelIdentifier": {
-                                "termId": "CHEBI:37989",   
+                                "termId": "CHEBI:37989",
                                 "termLabel": "Cy5"
                             }
                         },
@@ -86,7 +86,7 @@
         "objectTitle": "Breast cancer array assay M3051057",
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "assay"
         }
