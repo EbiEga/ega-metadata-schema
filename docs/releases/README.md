@@ -10,6 +10,7 @@ The above diagram illustrates the process for creating a new release of the EGA 
 ![Release GitHub Diagram](images/Release_github_diagram.svg)
 
 The above diagram represents a simplified example of how the branches are managed in GitHub for a release to be done.
+In case it is needed to modify any of the above schemas, please refer to [this comment](https://www.ebi.ac.uk/panda/jira/browse/EE-2412?focusedId=423652&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-423652). Only EGA members have access to it.
 
 ## Version Manifest
 To keep track of which JSON schema versions are included in each release version of the EGA Metadata Schemas project, a manifest ([``version_manifest.json``](./version_manifest.json)) is maintained in this same directory. This file lists the schema versions included in each release, along with other relevant metadata of the releases.
