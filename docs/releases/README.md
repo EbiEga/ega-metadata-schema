@@ -14,7 +14,11 @@ The above diagram represents a simplified example of how the branches are manage
 ## Version Manifest
 To keep track of which JSON schema versions are included in each release version of the EGA Metadata Schemas project, a manifest ([``version_manifest.json``](./version_manifest.json)) is maintained in this same directory. This file lists the schema versions included in each release, along with other relevant metadata of the releases.
 
-To ensure that the "version_manifest.json" file is properly formatted, a JSON Schema called [``VM_schema.json``](./VM_schema.json) is included in the same directory. This schema can be used to validate the "version_manifest.json" file before each release.
+To ensure that the "version_manifest.json" file is properly formatted, a JSON Schema called [``VM_schema.json``](./VM_schema.json) is included in the same directory. This schema can be used to validate the "version_manifest.json" file before each release. In this case, we can deploy BioValidator and provide it with both the VM schema and document. 
+````bash
+# Assuming you have Biovalidator cloned and installed on a directory above EGA's repo
+$ node src/biovalidator -s ../ega-metadata-schema/docs/releases/VM_schema.json -d ../ega-metadata-schema/docs/releases/version_manifest.json
+````
 
 We hope that this document and the accompanying diagram help to clarify the release workflow for the EGA Metadata Schemas project. If you have any questions or concerns, please don't hesitate to reach out to us.
 
