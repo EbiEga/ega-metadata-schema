@@ -1,0 +1,106 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "objectId": {
+                    "alias": "P123542",
+                    "centerName": "EBI-TEST"
+                },
+                "individualRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionURI": "https://www.jacc.org/doi/10.1016/j.jaccas.2020.04.001"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "P123542 - Lung swab",
+                    "centerName": "EBI-TEST"
+                },
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "P123542",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Lung swab collection",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "COVID19 Study",
+                    "centerName": "EBI-TEST"
+                },
+                "studyRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionURI": "https://www.jacc.org/doi/10.1016/j.jaccas.2020.04.001"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            }
+        ]
+    }
+}
+@endjson

@@ -1,0 +1,22 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json",
+    "type": "object",
+    "title": "EGA object-set metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate an \\nobject-set. A set or group of objects is defined as an array of individual \\nobjects (e.g. 'sample' or 'experiment'). The minimum length of the array is 1 \\n(i.e. it has to contain at least one object). These objects can be of different \\nnature, and are validated against their corresponding schemas based on the \\n'schemaDescriptor' node within each individual object, which specifies the \\nschema against the individual object needs to be validated. Notice how this \\nschema is missing the basic 'objectId' of other objects, since an object-set is \\nnot an object per se, it is just a compilation of objects. To put it simply, \\nthis object-set schema exists to avoid the need of 1 single file per each \\nobject: for a submission of 1000 samples we would require 1000 JSON files, each \\nof them corresponding to one of the objects; whereas using an object-set allows \\nus to fit all those objects together in a single file. Further details can be \\nfound in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectArray"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectArray": "{ ... }"
+    }
+}
+@endjson

@@ -1,0 +1,40 @@
+@startjson
+
+{
+    "data": {
+        "objectId": {
+            "alias": "my-cancer-policy",
+            "centerName": "EBI-TEST"
+        },
+        "policyRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAD00002043982"
+                    },
+                    "objectType": "dataset"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAD00004543981"
+                    },
+                    "objectType": "dataset"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ]
+    }
+}
+@endjson

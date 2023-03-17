@@ -1,0 +1,50 @@
+@startjson
+
+{
+    "data": {
+        "objectId": {
+            "alias": "RNA_hybridization_protocol",
+            "centerName": "EBI-TEST"
+        },
+        "protocolRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002045411"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002045412"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "alias": "sampleCollection_protocol",
+                        "centerName": "EBI-TEST"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "isAfter"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ]
+    }
+}
+@endjson

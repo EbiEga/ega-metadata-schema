@@ -1,0 +1,38 @@
+@startjson
+#highlight "properties" / "sampleStatus" / "items" / "properties" / "conditionUnderStudy" / "properties" / "termId"
+#highlight "properties"
+#highlight "properties" / "sampleStatus"
+#highlight "properties" / "sampleStatus" / "items"
+#highlight "properties" / "sampleStatus" / "items" / "properties"
+#highlight "properties" / "sampleStatus" / "items" / "properties" / "conditionUnderStudy"
+#highlight "properties" / "sampleStatus" / "items" / "properties" / "conditionUnderStudy" / "properties"
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json",
+    "type": "object",
+    "title": "EGA sample metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits sample metadata object. This object is intended to contain metadata about \\nthe physical sample [OBI:0000747] used in the experiment. A sample is defined as \\na limited quantity of something (e.g. a portion of a substance or individual) to \\nbe used for testing, analysis, inspection, investigation, demonstration, or \\ntrial use. It is a material which is collected with the intention of being \\nrepresentative of a greater whole. A sample shall not be confused with the \\nindividual (i.e. a person or donor) such sample derives from, for 'individual' \\nis its own metadata object (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json). \\nFurther details can be found in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectId",
+        "organismDescriptor"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "organismDescriptor": "{ ... }",
+        "sampleCollection": "{ ... }",
+        "sampleGrouping": "{ ... }",
+        "sampleTypes": "{ ... }",
+        "cellTypes": "{ ... }",
+        "sampleStatus": "{ ... }",
+        "sampleRelationships": "{ ... }",
+        "sampleAttributes": "{ ... }"
+    }
+}
+@endjson

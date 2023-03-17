@@ -1,0 +1,262 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json",
+    "type": "object",
+    "title": "EGA submission metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits Submission (also known as submission project) metadata object. This object \\nis intended to be an object that others can reference, grouping them by \\nsubmission details. An EGA user can submit metadata comprising thousands of \\nobjects, or just a few that suffice the bare minimum of a comprehensive \\nsubmission: at least one dataset, with its proper links to other objects. A \\nsubmission JSON document hold little details, mainly the basic descriptive \\nfields and collaborators array, but its main use is for other objects to \\nreference it. Further details can be found in the EGA-metadata-schema GitHub \\nrepository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas).",
+    "required": [
+        "objectId"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": {
+            "type": "object",
+            "title": "Object's IDs block",
+            "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), \\ninherited from the common definitions. #! We extend the core object \\n(objectCoreId) by adding a pattern check based on this schema's nature: a \\nsubmission (by using EGASubmissionIdPattern)",
+            "allOf": [
+                {
+                    "title": "Inherited objectCoreId object",
+                    "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+                },
+                {
+                    "title": "Check that Submission EGA ID (EGAB) is correct",
+                    "properties": {
+                        "egaAccession": {
+                            "$ref": "./EGA.common-definitions.json#/definitions/EGASubmissionIdPattern"
+                        }
+                    }
+                }
+            ]
+        },
+        "schemaDescriptor": {
+            "title": "Schema descriptor node",
+            "description": "Inherited schema descriptor node containing metadata about the schemas and \\nstandards used to create the JSON document itself.",
+            "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
+        },
+        "objectTitle": {
+            "type": "string",
+            "title": "Title of the submission project",
+            "description": "Short free-form text that can be used to call out submission project records in \\nsearches or displays.",
+            "minLength": 1,
+            "examples": [
+                "Submission XF40"
+            ]
+        },
+        "objectDescription": {
+            "type": "string",
+            "title": "Description of the submissions project",
+            "description": "An in-depth description of the submission, including its overall purpose or \\nnature of studies it governs.",
+            "minLength": 1,
+            "examples": [
+                "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs"
+            ]
+        },
+        "resources": {
+            "type": "array",
+            "title": "Resources (ontologies)",
+            "description": "An array containing metadata of all the ontologies used in the submission. Its \\nonly purpose is to enhance traceability of the used ontologies in the future. \\nFor example, if an individual's phenotype is diabetes mellitus (which \\ncorresponds to curie EFO:0000400), one of the used ontologies would be EFO. Now, \\nif in the future the term EFO:0000400 is changed in a new release of EFO, it's \\nimperative to keep track of what version of EFO the submitter was referring to \\nwhen it was referenced. Since most submitters would normally use the latest \\nversion of the ontologies at the time of the submission, these resources are \\nintended to be automatically populated at every submission (and thus are not \\nrequired) to ease the process; nonetheless, if provided, they should not be \\noverwritten by that process. Bear in mind that there is only one 'resources' \\narray per submission, and the items need to be unique, which means that \\ndifferent versions of the same ontologies will not be allowed.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "title": "Resource",
+                "description": "Object defining one item of the array: an individual resource (i.e. ontology).",
+                "additionalProperties": false,
+                "required": [
+                    "name",
+                    "namespacePrefix",
+                    "version"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "title": "Resource name",
+                        "description": "Formal (common) name of the resource.",
+                        "minLength": 1,
+                        "examples": [
+                            "Human Phenotype Ontology",
+                            "Experimental Factor Ontology",
+                            "PubMed"
+                        ]
+                    },
+                    "namespacePrefix": {
+                        "type": "string",
+                        "title": "Resource namespace prefix",
+                        "description": "Prefixes of namespaces are used to uniquely resolve the ambiguity between \\nidentically named elements or attributes. They can easily be checked at \\n[**identifiers.org**](https://identifiers.org/) or [**OLS' list of \\nontologies**](https://www.ebi.ac.uk/ols/ontologies). For example, in our example \\nof diabetes melitus, EFO:0000400, we need both parts of the CURIE: EFO (prefix) \\nand 0000400 (local identifier). Without knowing the prefix, the local identifier \\nalone is difficult to resolve.",
+                        "minLength": 1,
+                        "examples": [
+                            "hp",
+                            "efo",
+                            "pubmed"
+                        ]
+                    },
+                    "version": {
+                        "type": "string",
+                        "title": "Resource version",
+                        "description": "The version of the used resource. This is the main item of the object, since \\nit's not included within the CURIEs and allows for traceability in the future. \\nThe version of an ontology varies in format and can be checked in multiple ways, \\nthe easiest being: (1) going straight to the source of the ontology, commonly a \\nGitHub repository (e.g. [EFO's GH \\nrepo](https://github.com/EBISPOT/efo/releases)) and checking the latest release; \\n(2) checking the latest version that the OLS service uses (e.g. 'version' field \\nat [EFO's record](https://www.ebi.ac.uk/ols/ontologies/efo)).",
+                        "minLength": 1,
+                        "examples": [
+                            "2022-06-11",
+                            "3.45.0"
+                        ]
+                    },
+                    "automaticallyAssigned": {
+                        "type": "boolean",
+                        "title": "Automatically assigned boolean",
+                        "description": "Boolean switch to know if this specific resource was automatically assigned by \\nEGA during the curation process ('true') or if it was manually given by the \\nsubmitter ('false'). If this attribute is non-existent, it will also be \\nconsidered to be 'false'."
+                    }
+                }
+            }
+        },
+        "additionalCollaborators": {
+            "type": "array",
+            "title": "Submission collaborator details",
+            "description": "Object containing optional collaborators of the submission project, who shall \\nhave different capabilities granted by the owner: 'read' or 'read and write' \\nrights.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "title": "Collaborator",
+                "description": "Collaborator item comprising both the collaborator's contact details and rights.",
+                "additionalProperties": false,
+                "required": [
+                    "collaboratorRights",
+                    "collaboratorContactDetails"
+                ],
+                "properties": {
+                    "collaboratorRights": {
+                        "type": "string",
+                        "title": "Collaborator rights",
+                        "description": "Property defining the rights of the specified collaborator. Either read-only or \\nread and write rights.",
+                        "enum": [
+                            "read_only",
+                            "read_and_write"
+                        ],
+                        "meta:enum": {
+                            "read_only": "Collaborator will only be capable of reading the details of the submission.",
+                            "read_and_write": "Collaborator will be able to not only read, but modify or add changes to the \\nsubmission."
+                        }
+                    },
+                    "collaboratorContactDetails": {
+                        "$ref": "./EGA.common-definitions.json#/definitions/contactDetails"
+                    }
+                }
+            }
+        },
+        "submissionRelationships": {
+            "type": "array",
+            "title": "Submission relationships",
+            "description": "Comprises metadata (e.g. Source or Target) of a directional association between \\ntwo entities. This relationships node contains all the possible relationships \\nbetween metadata objects, both outside of (e.g. an Array Design Format that was \\nsubmitted to ArrayExpress being linked to their microarray data within EGA) and \\nwithin (e.g. a policy being linked to a submission) the EGA.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "allOf": [
+                    {
+                        "title": "Inherited relationship node",
+                        "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
+                    },
+                    {
+                        "title": "Relationship constraints for a submission",
+                        "description": "Not all possible relationships between objects are allowed (e.g. an individual \\nshould not be linked to a policy). This node contains the restricted \\nrelationships that can be given for a submission. Bare in mind that \\n'submissions' are referencedBy other objects, hence the relationship shall exist \\nin their respective JSON documents.",
+                        "anyOf": [
+                            {
+                                "title": "Allowed relationships of type sameAs, groupedWith and memberOf (optional ones)",
+                                "allOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetSubmission"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Relationships of external accessions and URLs (optional ones)",
+                                "description": "Almost any relationship is imaginable with external accessions and URLs.",
+                                "allOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "submissionAttributes": {
+            "type": "array",
+            "title": "Submission custom attributes",
+            "description": "Custom attributes of a submission: reusable attributes to encode tag-value pairs \\n(e.g. Tag being 'internal identifier' and its Value 'XF40') with optional units. \\nIts properties are inherited from the common-definitions.json schema.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "$ref": "./EGA.common-definitions.json#/definitions/customAttribute"
+            }
+        }
+    }
+}
+@endjson

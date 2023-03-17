@@ -1,0 +1,165 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                },
+                "sampleCollection": {
+                    "samplingSite": {
+                        "termId": "UBERON:0001414"
+                    }
+                },
+                "sampleStatus": [
+                    {
+                        "conditionUnderStudy": {
+                            "termId": "EFO:0003023"
+                        }
+                    }
+                ],
+                "cellTypes": [
+                    {
+                        "cellType": {
+                            "termId": "CL:0000236"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000624"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000625"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000623"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000576"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0002057"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000451"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000556"
+                        }
+                    }
+                ]
+            },
+            {
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                },
+                "sampleCollection": {
+                    "samplingSite": {
+                        "termId": "UBERON:0001414"
+                    }
+                },
+                "sampleStatus": [
+                    {
+                        "conditionUnderStudy": {
+                            "termId": "EFO:0003023"
+                        }
+                    }
+                ],
+                "cellTypes": [
+                    {
+                        "cellType": {
+                            "termId": "CL:0000236"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000624"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000625"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000623"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000576"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0002057"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000451"
+                        }
+                    },
+                    {
+                        "cellType": {
+                            "termId": "CL:0000556"
+                        }
+                    }
+                ]
+            },
+            {
+                "assayType": {
+                    "termId": "EFO:0008913"
+                },
+                "assayedBiologicalMacromolecule": {
+                    "termId": "CHEBI:33697"
+                }
+            },
+            {
+                "assayTypeSpecifications": {
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "assayTypeSpecifications": {
+                    "sequencingAssaySpecifications": {
+                        "referenceAlignmentDetails": [
+                            {
+                                "ncbiAssembly": {
+                                    "termId": "assembly:GCF_000001405.26"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson

@@ -1,0 +1,43 @@
+@startjson
+
+{
+    "data": {
+        "minimalPublicAttributes": {
+            "diseases": [
+                {
+                    "disease": {
+                        "termId": "EFO:0003101"
+                    }
+                },
+                {
+                    "disease": {
+                        "termId": "MONDO:0019808"
+                    }
+                },
+                {
+                    "disease": {
+                        "termId": "EFO:1000254"
+                    }
+                },
+                {
+                    "disease": {
+                        "termId": "Orphanet:610"
+                    }
+                }
+            ],
+            "phenotypicAbnormalities": [
+                {
+                    "phenotypicAbnormality": {
+                        "termId": "HP:0033403"
+                    }
+                }
+            ]
+        },
+        "organismDescriptor": {
+            "organismTaxon": {
+                "termId": "NCBITaxon:9606"
+            }
+        }
+    }
+}
+@endjson

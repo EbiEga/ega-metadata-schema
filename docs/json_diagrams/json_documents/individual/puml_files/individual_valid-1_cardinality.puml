@@ -1,0 +1,32 @@
+@startjson
+
+{
+    "data": {
+        "individualRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAN00000000001"
+                    },
+                    "objectType": "sample"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectId": {
+            "alias": "NM305004",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAI00000000001"
+        }
+    }
+}
+@endjson

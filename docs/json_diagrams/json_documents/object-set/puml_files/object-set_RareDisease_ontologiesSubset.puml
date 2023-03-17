@@ -1,0 +1,82 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "minimalPublicAttributes": {
+                    "phenotypicAbnormalities": [
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0001558"
+                            }
+                        },
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0031910"
+                            }
+                        },
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0012587"
+                            }
+                        },
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "HP:0001270"
+                            }
+                        }
+                    ],
+                    "diseases": [
+                        {
+                            "disease": {
+                                "termId": "MONDO:0008029"
+                            }
+                        }
+                    ]
+                },
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                }
+            },
+            {
+                "minimalPublicAttributes": {
+                    "phenotypicAbnormalities": [
+                        {
+                            "phenotypicAbnormality": {
+                                "termId": "NCIT:C94232"
+                            }
+                        }
+                    ]
+                },
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                }
+            },
+            {
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                },
+                "sampleStatus": [
+                    {
+                        "conditionUnderStudy": {
+                            "termId": "MONDO:0008029"
+                        }
+                    }
+                ],
+                "sampleCollection": {
+                    "samplingSite": {
+                        "termId": "UBERON:0001414"
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson

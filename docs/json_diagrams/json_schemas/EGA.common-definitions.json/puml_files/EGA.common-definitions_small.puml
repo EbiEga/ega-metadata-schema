@@ -1,0 +1,228 @@
+@startjson
+#highlight "definitions" / "fileObject" / "properties" / "fileContent" / "items" / "properties" / "termId"
+#highlight "definitions" / "arrayLabel" / "properties" / "arrayLabelIdentifier" / "properties" / "termId"
+#highlight "definitions" / "organismDescriptor" / "properties" / "organismTaxon" / "properties" / "termId"
+#highlight "definitions" / "geneDescriptor" / "properties" / "geneIdentifier" / "properties" / "termId"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties" / "ncbiAssembly" / "properties" / "termId"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties" / "ncbiAssemblyUnit" / "properties" / "termId"
+#highlight "definitions" / "materialAnatomicalEntity" / "properties" / "termId"
+#highlight "definitions" / "cellType" / "properties" / "termId"
+#highlight "definitions" / "phenotypicAbnormality" / "properties" / "termId"
+#highlight "definitions" / "disease" / "properties" / "termId"
+#highlight "definitions" / "ontologyTerm" / "properties" / "termId"
+#highlight "definitions"
+#highlight "definitions" / "fileObject"
+#highlight "definitions" / "fileObject" / "properties"
+#highlight "definitions" / "fileObject" / "properties" / "fileContent"
+#highlight "definitions" / "fileObject" / "properties" / "fileContent" / "items"
+#highlight "definitions" / "fileObject" / "properties" / "fileContent" / "items" / "properties"
+#highlight "definitions" / "arrayLabel"
+#highlight "definitions" / "arrayLabel" / "properties"
+#highlight "definitions" / "arrayLabel" / "properties" / "arrayLabelIdentifier"
+#highlight "definitions" / "arrayLabel" / "properties" / "arrayLabelIdentifier" / "properties"
+#highlight "definitions" / "organismDescriptor"
+#highlight "definitions" / "organismDescriptor" / "properties"
+#highlight "definitions" / "organismDescriptor" / "properties" / "organismTaxon"
+#highlight "definitions" / "organismDescriptor" / "properties" / "organismTaxon" / "properties"
+#highlight "definitions" / "geneDescriptor"
+#highlight "definitions" / "geneDescriptor" / "properties"
+#highlight "definitions" / "geneDescriptor" / "properties" / "geneIdentifier"
+#highlight "definitions" / "geneDescriptor" / "properties" / "geneIdentifier" / "properties"
+#highlight "definitions" / "ncbiAssemblyDescriptor"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties" / "ncbiAssembly"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties" / "ncbiAssembly" / "properties"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties" / "ncbiAssemblyUnit"
+#highlight "definitions" / "ncbiAssemblyDescriptor" / "properties" / "ncbiAssemblyUnit" / "properties"
+#highlight "definitions" / "materialAnatomicalEntity"
+#highlight "definitions" / "materialAnatomicalEntity" / "properties"
+#highlight "definitions" / "cellType"
+#highlight "definitions" / "cellType" / "properties"
+#highlight "definitions" / "phenotypicAbnormality"
+#highlight "definitions" / "phenotypicAbnormality" / "properties"
+#highlight "definitions" / "disease"
+#highlight "definitions" / "disease" / "properties"
+#highlight "definitions" / "ontologyTerm"
+#highlight "definitions" / "ontologyTerm" / "properties"
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json",
+    "type": "object",
+    "title": "EGA common metadata definitions",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store \\ncommon definitions for other metadata objects. Basically, we are defining here \\ncommon properties (e.g. instances' aliases) that other metadata objects (e.g. \\nsample) may use. The way we refer to them is by using this object's '$id' field, \\nreferencing it in other files (with '$ref' and the relative path of the property \\n- e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId'). \\nSee structuring documentation \\n(https://json-schema.org/understanding-json-schema/structuring.html). Further \\ndetails can be found in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "definitions": {
+        "objectCoreId": "{ ... }",
+        "customAttribute": "{ ... }",
+        "fileObject": "{ ... }",
+        "relationshipObject": "{ ... }",
+        "arrayLabel": "{ ... }",
+        "objectIdAndObjectTypeCheck": "{ ... }",
+        "checksumPatternCheck": "{ ... }",
+        "md5ChecksumPattern": "{ ... }",
+        "SHA256ChecksumPattern": "{ ... }",
+        "EGAExperimentIdPattern": "{ ... }",
+        "EGAStudyIdPattern": "{ ... }",
+        "EGASampleIdPattern": "{ ... }",
+        "EGASubmissionIdPattern": "{ ... }",
+        "EGAAssayIdPattern": "{ ... }",
+        "EGADatasetIdPattern": "{ ... }",
+        "EGAAnalysisIdPattern": "{ ... }",
+        "EGAPolicyIdPattern": "{ ... }",
+        "EGADACIdPattern": "{ ... }",
+        "EGAIndividualIdPattern": "{ ... }",
+        "EGAProtocolIdPattern": "{ ... }",
+        "EGAISO8601DatePattern": "{ ... }",
+        "EGAISO8601DurationPattern": "{ ... }",
+        "filenameFiletypePatternCheck": "{ ... }",
+        "assayFiletypes": "{ ... }",
+        "celFileFilenamePattern": "{ ... }",
+        "tsvFileFilenamePattern": "{ ... }",
+        "fastqFileFilenamePattern": "{ ... }",
+        "fastaFileFilenamePattern": "{ ... }",
+        "sdrfFileFilenamePattern": "{ ... }",
+        "idfFileFilenamePattern": "{ ... }",
+        "vcfFileFilenamePattern": "{ ... }",
+        "sraFileFilenamePattern": "{ ... }",
+        "srfFileFilenamePattern": "{ ... }",
+        "sffFileFilenamePattern": "{ ... }",
+        "bamFileFilenamePattern": "{ ... }",
+        "cramFileFilenamePattern": "{ ... }",
+        "xlsxFileFilenamePattern": "{ ... }",
+        "csvFileFilenamePattern": "{ ... }",
+        "bedFileFilenamePattern": "{ ... }",
+        "idatFileFilenamePattern": "{ ... }",
+        "mapFileFilenamePattern": "{ ... }",
+        "pedFileFilenamePattern": "{ ... }",
+        "bimFileFilenamePattern": "{ ... }",
+        "famFileFilenamePattern": "{ ... }",
+        "txtFileFilenamePattern": "{ ... }",
+        "expFileFilenamePattern": "{ ... }",
+        "gprFileFilenamePattern": "{ ... }",
+        "pyFileFilenamePattern": "{ ... }",
+        "shFileFilenamePattern": "{ ... }",
+        "adfFileFilenamePattern": "{ ... }",
+        "md5FileFilenamePattern": "{ ... }",
+        "hapFileFilenamePattern": "{ ... }",
+        "csfastaFileFilenamePattern": "{ ... }",
+        "locFileFilenamePattern": "{ ... }",
+        "tgzFileFilenamePattern": "{ ... }",
+        "zipFileFilenamePattern": "{ ... }",
+        "htmlFileFilenamePattern": "{ ... }",
+        "hicFileFilenamePattern": "{ ... }",
+        "tifFileFilenamePattern": "{ ... }",
+        "mdFileFilenamePattern": "{ ... }",
+        "matlabFileFilenamePattern": "{ ... }",
+        "perlFileFilenamePattern": "{ ... }",
+        "rFileFilenamePattern": "{ ... }",
+        "tarFileFilenamePattern": "{ ... }",
+        "snpFileFilenamePattern": "{ ... }",
+        "xmlFileFilenamePattern": "{ ... }",
+        "svgFileFilenamePattern": "{ ... }",
+        "pngFileFilenamePattern": "{ ... }",
+        "jpgFileFilenamePattern": "{ ... }",
+        "gtcFileFilenamePattern": "{ ... }",
+        "hdf5FileFilenamePattern": "{ ... }",
+        "fast5FileFilenamePattern": "{ ... }",
+        "pairFileFilenamePattern": "{ ... }",
+        "bgiFileFilenamePattern": "{ ... }",
+        "bgenFileFilenamePattern": "{ ... }",
+        "genFileFilenamePattern": "{ ... }",
+        "pxfFileFilenamePattern": "{ ... }",
+        "loomFileFilenamePattern": "{ ... }",
+        "bax.h5FileFilenamePattern": "{ ... }",
+        "bas.h5FileFilenamePattern": "{ ... }",
+        "asmFileFilenamePattern": "{ ... }",
+        "csiFileFilenamePattern": "{ ... }",
+        "tbiFileFilenamePattern": "{ ... }",
+        "bcfFileFilenamePattern": "{ ... }",
+        "qual454FileFilenamePattern": "{ ... }",
+        "qualsolidFileFilenamePattern": "{ ... }",
+        "fastqIlluminaFileFilenamePattern": "{ ... }",
+        "fastqHelicosFileFilenamePattern": "{ ... }",
+        "fastqSangerFileFilenamePattern": "{ ... }",
+        "fastqSolexaFileFilenamePattern": "{ ... }",
+        "samFileFilenamePattern": "{ ... }",
+        "craiFileFilenamePattern": "{ ... }",
+        "baiFileFilenamePattern": "{ ... }",
+        "mtxFileFilenamePattern": "{ ... }",
+        "mexFileFilenamePattern": "{ ... }",
+        "gmxFileFilenamePattern": "{ ... }",
+        "gmtFileFilenamePattern": "{ ... }",
+        "grpFileFilenamePattern": "{ ... }",
+        "objectExternalAccession": "{ ... }",
+        "sampleLabelAssociation": "{ ... }",
+        "oneRelationshipEnd": "{ ... }",
+        "subjectId": "{ ... }",
+        "biologicalSex": "{ ... }",
+        "organismDescriptor": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "semanticVersioningPattern": "{ ... }",
+        "contactDetails": "{ ... }",
+        "studyDesignKeywords": "{ ... }",
+        "locusIdentifier": "{ ... }",
+        "geneDescriptor": "{ ... }",
+        "ncbiAssemblyDescriptor": "{ ... }",
+        "genomicSequenceDescriptor": "{ ... }",
+        "sequenceCoordinates": "{ ... }",
+        "dnaSequenceStrand": "{ ... }",
+        "nucleicAcidSequence": "{ ... }",
+        "singleSequencePosition": "{ ... }",
+        "curieGeneralPattern": "{ ... }",
+        "curieRefseqPattern": "{ ... }",
+        "curieHgncSymbolPattern": "{ ... }",
+        "curieHgncIdentifierPattern": "{ ... }",
+        "curieNcbiGeneIdentifierPattern": "{ ... }",
+        "curieNcbiAssemblyPattern": "{ ... }",
+        "assayTechnologyDescriptor": "{ ... }",
+        "libraryLayout": "{ ... }",
+        "spotDescriptor": "{ ... }",
+        "typeOfData": "{ ... }",
+        "referenceAlignmentDetails": "{ ... }",
+        "materialAnatomicalEntity": "{ ... }",
+        "rTypeReferencedBy": "{ ... }",
+        "rTypeGroupedWith": "{ ... }",
+        "rTypeMemberOf": "{ ... }",
+        "rTypeIsAfter": "{ ... }",
+        "rTypeChildOf": "{ ... }",
+        "rTypeDevelopsFrom": "{ ... }",
+        "rTypeFamilyRelationshipWith": "{ ... }",
+        "rTypeSameAs": "{ ... }",
+        "rTargetPolicy": "{ ... }",
+        "rSourcePolicy": "{ ... }",
+        "rTargetDAC": "{ ... }",
+        "rSourceDAC": "{ ... }",
+        "rTargetDataset": "{ ... }",
+        "rSourceDataset": "{ ... }",
+        "rTargetAnalysis": "{ ... }",
+        "rSourceAnalysis": "{ ... }",
+        "rTargetSample": "{ ... }",
+        "rSourceSample": "{ ... }",
+        "rTargetExperiment": "{ ... }",
+        "rSourceExperiment": "{ ... }",
+        "rSourceIndividual": "{ ... }",
+        "rTargetIndividual": "{ ... }",
+        "rSourceProtocol": "{ ... }",
+        "rTargetProtocol": "{ ... }",
+        "rSourceSubmission": "{ ... }",
+        "rTargetSubmission": "{ ... }",
+        "rSourceExternalAccession": "{ ... }",
+        "rTargetExternalAccession": "{ ... }",
+        "rSourceExternalURL": "{ ... }",
+        "rTargetExternalURL": "{ ... }",
+        "rSourceStudy": "{ ... }",
+        "rTargetStudy": "{ ... }",
+        "rTargetAssay": "{ ... }",
+        "rSourceAssay": "{ ... }",
+        "rConstraintOneSourcedSubmission": "{ ... }",
+        "urlUriPattern": "{ ... }",
+        "individualAge": "{ ... }",
+        "cellType": "{ ... }",
+        "phenotypicAbnormality": "{ ... }",
+        "disease": "{ ... }",
+        "ontologyTerm": "{ ... }"
+    }
+}
+@endjson

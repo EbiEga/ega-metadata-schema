@@ -1,0 +1,302 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json",
+    "type": "object",
+    "title": "EGA policy metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "A policy, also known as Data Access Agreement (DAA), is a contract made between \\nData User and Data Access Committee. The policy object is expected to contain \\nmetadata about such agreement, which should be drafted by the DAC and includes, \\nbut is not limited to, details of data use, publication embargoes and storage. \\nCompletion of a DAA by the applicant/s should form part of the application \\nprocess to the DAC. Further details can be found in the EGA-metadata-schema \\nGitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/submission/dac/documentation)",
+    "required": [
+        "objectId",
+        "objectTitle",
+        "policyDescriptor"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": {
+            "type": "object",
+            "title": "Object's IDs block",
+            "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), \\ninherited from the common definitions. #! We extend the core object \\n(objectCoreId) by adding a pattern check based on this schema's nature: an \\npolicy (by using EGAPolicyIdPattern)",
+            "allOf": [
+                {
+                    "title": "Inherited objectCoreId object",
+                    "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+                },
+                {
+                    "title": "Check that policy EGA ID (EGAP) is correct",
+                    "properties": {
+                        "egaAccession": {
+                            "$ref": "./EGA.common-definitions.json#/definitions/EGAPolicyIdPattern"
+                        }
+                    }
+                }
+            ]
+        },
+        "schemaDescriptor": {
+            "title": "Schema descriptor node",
+            "description": "Inherited schema descriptor node containing metadata about the schemas and \\nstandards used to create the JSON document itself.",
+            "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
+        },
+        "objectTitle": {
+            "type": "string",
+            "title": "Title of the policy",
+            "description": "Free-form title of the policy. Can be used to call out policy records in \\nsearches or displays.",
+            "examples": [
+                "EBI colon cancer policy"
+            ]
+        },
+        "policyDescriptor": {
+            "type": "object",
+            "title": "Policy descriptor",
+            "description": "Node containing the full description of the policy, whether it is hosted at some \\npublic resourced and referenced here; or directly written here.",
+            "additionalProperties": false,
+            "properties": {
+                "policyReference": {
+                    "type": "string",
+                    "title": "Reference to the policy",
+                    "description": "A publicly accessible reference to the policy, where the updated text of the \\npolicy is hosted.",
+                    "pattern": "^(http(s)?:\\/\\/.)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)$",
+                    "examples": [
+                        "https://github.com/EbiEga/ega-metadata-schema/blob/main/schemas/EGA.policy.json",
+                        "https://ega-archive.org/submission/dac/documentation"
+                    ]
+                },
+                "policyText": {
+                    "type": "string",
+                    "title": "Policy text",
+                    "description": "Text describing in detail the Data Access Agreement (DAA) of the policy.",
+                    "examples": [
+                        "The data is fully available upon request with the data-access committee of this \\nstudy.",
+                        "Access to data generated is available by emailing application to the Data Access \\nCommittee and will be granted to qualified investigators for appropriate \\nuse.\\nThe following two documents may be required by the Data Access \\nCommittee.\\n1) DATA ACCESS AGREEMENT\\nIn signing this agreement, You are \\nagreeing to be bound by the terms and conditions of access set out in this \\nagreement.\\nDefinitions:\\n- Data means all and any human genetic data obtained \\nrelated to the 'Study on the proliferation history of lung adenomas'.\\n- User \\nmeans a researcher whose User Institution has previously completed this Data \\nAccess Agreement and has received acknowledgment of its acceptance.\\n- User \\nInstitution means the organization at which the User is employed, affiliated or \\nenrolled.\\nYou agree to use the Data only for the advancement of medical \\nresearch, according to the consent obtained from sample donors.\\n- Publications \\nmeans, without limitation, articles published in print journals, electronic \\njournals, reviews, books, posters and other written and verbal presentations of \\nresearch.\\nYou agree not to use the data for the creation of products for sale \\nor for any commercial purpose.\\nYou agree to preserve, at all times, the \\nconfidentiality of any information related to Data and to not transfer or \\ndisclose the Data.\\nYou agree to use the data for the approved purpose and \\nproject described in your Application.\\nYou agree to acknowledge in any work \\nbased in whole or part on the Data, the published paper from which the Data \\nderives.\\nFor and on behalf of User:\\n Report the name of Applicants, Signature \\nof Applicants and Date.\\nFor and on behalf of User Institution:\\nReport the name \\nof Institutional Authority, his/her and Date.\\n\\n2) DATA ACCESS APPLICATION \\nFORM:\\nApplications for access to data can be submitted at any time. The Data \\nAccess Committee will consider applications on a rolling basis and aim to \\nprovide a decision within one months of receipt. The Application must \\ninclude:\\n- A full postal and email address for each Applicant. PhD student \\napplicants must include their supervisors as a co-applicant and provide their \\nfull contact details.\\n- Title of the project.\\n- A clear description of the \\nproject and its specific aims, including specific details of what You plan to do \\nwith the data and including key references.\\n- Signature, name and date of each \\nApplicant.\\n- Data Access Agreement dated and signed."
+                    ]
+                }
+            },
+            "anyOf": [
+                {
+                    "title": "Either the policy reference is given",
+                    "required": [
+                        "policyReference"
+                    ]
+                },
+                {
+                    "title": "Or the policy text is given",
+                    "required": [
+                        "policyText"
+                    ]
+                }
+            ]
+        },
+        "duoCodes": {
+            "type": "array",
+            "title": "Data Use Ontology (DUO) codes",
+            "description": "Collection of Data Use Ontology (DUO) codes. These allow to semantically tag \\ndatasets (bound by policies) with restriction about their usage, improving their \\ndiscoverability based on the authorization level of users, or intended usage. \\nSee more info at https://obofoundry.org/ontology/duo.html and search for DUO \\ncodes at https://www.ebi.ac.uk/ols/ontologies/duo",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "title": "Data Use Ontology (DUO)",
+                "description": "Single Data Use Ontology (DUO) code.",
+                "allOf": [
+                    {
+                        "title": "Inherited ontologyTerm structure of termId and termLabel",
+                        "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                    }
+                ],
+                "properties": {
+                    "termId": {
+                        "title": "Ontology constraints for this specific termId",
+                        "anyOf": [
+                            {
+                                "graphRestriction": {
+                                    "ontologies": [
+                                        "obo:duo"
+                                    ],
+                                    "classes": [
+                                        "DUO:0000001"
+                                    ],
+                                    "relations": [
+                                        "rdfs:subClassOf"
+                                    ],
+                                    "direct": false,
+                                    "include_self": false
+                                }
+                            },
+                            {
+                                "graphRestriction": {
+                                    "ontologies": [
+                                        "obo:duo"
+                                    ],
+                                    "classes": [
+                                        "DUO:0000017"
+                                    ],
+                                    "relations": [
+                                        "rdfs:subClassOf"
+                                    ],
+                                    "direct": false,
+                                    "include_self": false
+                                }
+                            },
+                            {
+                                "graphRestriction": {
+                                    "ontologies": [
+                                        "obo:duo"
+                                    ],
+                                    "classes": [
+                                        "OBI:0000066"
+                                    ],
+                                    "relations": [
+                                        "rdfs:subClassOf"
+                                    ],
+                                    "direct": false,
+                                    "include_self": false
+                                }
+                            }
+                        ],
+                        "examples": [
+                            "DUO:0000046",
+                            "DUO:0000028",
+                            "DUO:0000032"
+                        ]
+                    }
+                }
+            }
+        },
+        "policyRelationships": {
+            "type": "array",
+            "title": "Policy relationships",
+            "description": "Comprises metadata (e.g. Source or Target) of a directional association between \\ntwo entities. This relationships node contains all the possible relationships \\nbetween metadata objects, both outside of (e.g. an Array Design Format that was \\nsubmitted to ArrayExpress being linked to their microarray data within EGA) and \\nwithin (e.g. a policy being linked to a policy) the EGA.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "allOf": [
+                    {
+                        "title": "Inherited relationship node",
+                        "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
+                    },
+                    {
+                        "title": "Relationship constraints for a policy",
+                        "description": "Not all possible relationships between objects are allowed (e.g. an individual \\nshould not be linked to a policy). This node contains the restricted \\nrelationships that can be given for a policy.",
+                        "anyOf": [
+                            {
+                                "title": "Allowed relationships of type referencedBy (main ones)",
+                                "allOf": [
+                                    {
+                                        "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                                    },
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetDataset"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceDAC"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Allowed relationships of type groupedWith, sameAs (optional ones)",
+                                "allOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourcePolicy"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetPolicy"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Relationships of external accessions and URLs (optional ones)",
+                                "description": "Almost any relationship is imaginable with external accessions and URLs.",
+                                "allOf": [
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
+                                            },
+                                            {
+                                                "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "contains": {
+                "title": "Constraint to have at least one 'submission' relationship",
+                "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
+            }
+        },
+        "policyAttributes": {
+            "type": "array",
+            "title": "Policy custom attributes",
+            "description": "Custom attributes of a policy: reusable attributes to encode tag-value pairs \\n(e.g. Tag being 'Targeted loci' and its Value '5:63256183-63258334') with \\noptional units (e.g. 'base pairs'). Its properties are inherited from the \\ncommon-definitions.json schema.",
+            "minItems": 1,
+            "additionalProperties": false,
+            "uniqueItems": true,
+            "items": {
+                "$ref": "./EGA.common-definitions.json#/definitions/customAttribute"
+            }
+        }
+    }
+}
+@endjson

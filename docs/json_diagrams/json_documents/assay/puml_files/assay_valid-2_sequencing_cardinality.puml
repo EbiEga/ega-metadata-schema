@@ -1,0 +1,40 @@
+@startjson
+
+{
+    "data": {
+        "assayRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002094401"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00002024153"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectId": {
+            "alias": "My_sequencing_assay_M305004",
+            "centerName": "EBI-TEST"
+        }
+    }
+}
+@endjson

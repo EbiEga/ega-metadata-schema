@@ -1,0 +1,246 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "objectId": {
+                    "alias": "NM305004-PBMC_Sample_treated",
+                    "centerName": "EBI-TEST"
+                },
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAI00000000001"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sample collection protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "IFN-Beta sample treatment",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "NM305004-PBMC_Sample_Untreated",
+                    "centerName": "EBI-TEST"
+                },
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAI00000000001"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sample collection protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "SCS_rnaseq",
+                    "centerName": "EBI-TEST"
+                },
+                "experimentRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAS00000000001"
+                            },
+                            "objectType": "study"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00000000001"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Library preparation 10X Genomics",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sequencing protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Sample demultiplexing",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "SCS_Assay - Untreated sample",
+                    "centerName": "EBI-TEST"
+                },
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "NM305004-PBMC_Sample_Untreated",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "sample"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00000000001"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00000000001"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "SCS_Assay - Treated sample",
+                    "centerName": "EBI-TEST"
+                },
+                "assayRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "NM305004-PBMC_Sample_treated",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "sample"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAX00000000001"
+                            },
+                            "objectType": "experiment"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "egaAccession": "EGAZ00000000001"
+                            },
+                            "objectType": "analysis"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            }
+        ]
+    }
+}
+@endjson

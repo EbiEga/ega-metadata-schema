@@ -1,0 +1,48 @@
+@startjson
+#highlight "data" / "cellTypes" / "0" / "cellType" / "termId"
+#highlight "data" / "cellTypes" / "1" / "cellType" / "termId"
+#highlight "data" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data" / "sampleCollection" / "samplingSite" / "termId"
+#highlight "data" / "sampleRelationships" / "1" / "rSource" / "objectId" / "externalAccessions" / "0" / "objectExternalAccessionIdentifier" / "termId"
+#highlight "data" / "sampleStatus" / "0" / "conditionUnderStudy" / "termId"
+#highlight "data"
+#highlight "data" / "cellTypes"
+#highlight "data" / "cellTypes" / "0"
+#highlight "data" / "cellTypes" / "0" / "cellType"
+#highlight "data" / "cellTypes" / "1"
+#highlight "data" / "cellTypes" / "1" / "cellType"
+#highlight "data" / "organismDescriptor"
+#highlight "data" / "organismDescriptor" / "organismTaxon"
+#highlight "data" / "sampleCollection"
+#highlight "data" / "sampleCollection" / "samplingSite"
+#highlight "data" / "sampleRelationships"
+#highlight "data" / "sampleRelationships" / "1"
+#highlight "data" / "sampleRelationships" / "1" / "rSource"
+#highlight "data" / "sampleRelationships" / "1" / "rSource" / "objectId"
+#highlight "data" / "sampleRelationships" / "1" / "rSource" / "objectId" / "externalAccessions"
+#highlight "data" / "sampleRelationships" / "1" / "rSource" / "objectId" / "externalAccessions" / "0"
+#highlight "data" / "sampleRelationships" / "1" / "rSource" / "objectId" / "externalAccessions" / "0" / "objectExternalAccessionIdentifier"
+#highlight "data" / "sampleStatus"
+#highlight "data" / "sampleStatus" / "0"
+#highlight "data" / "sampleStatus" / "0" / "conditionUnderStudy"
+
+{
+    "data": {
+        "cellTypes": "[ ... ]",
+        "objectDescription": "Skin biopsy from COVID positive patient (NM305004) that travelled back from \\nAlaska.",
+        "objectId": "{ ... }",
+        "objectTitle": "Skin biopsy from COVID+ patient NM305004",
+        "organismDescriptor": "{ ... }",
+        "sampleAttributes": "[ ... ]",
+        "sampleCollection": "{ ... }",
+        "sampleGrouping": "{ ... }",
+        "sampleRelationships": "[ ... ]",
+        "sampleStatus": "[ ... ]",
+        "sampleTypes": "[ ... ]",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json"
+    }
+}
+@endjson

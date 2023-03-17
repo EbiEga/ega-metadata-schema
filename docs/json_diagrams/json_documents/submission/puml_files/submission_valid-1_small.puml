@@ -1,0 +1,18 @@
+@startjson
+
+{
+    "data": {
+        "additionalCollaborators": "[ ... ]",
+        "objectDescription": "EBI submission project XF40 of 1000 samples and its 1500 sequencing runs",
+        "objectId": "{ ... }",
+        "objectTitle": "Submission XF40",
+        "resources": "[ ... ]",
+        "schemaDescriptor": "{ ... }",
+        "submissionAttributes": "[ ... ]",
+        "submissionRelationships": "[ ... ]"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json"
+    }
+}
+@endjson

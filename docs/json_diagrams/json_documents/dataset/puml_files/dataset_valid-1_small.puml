@@ -1,0 +1,17 @@
+@startjson
+
+{
+    "data": {
+        "datasetAttributes": "[ ... ]",
+        "datasetRelationships": "[ ... ]",
+        "datasetType": "phenotype information",
+        "objectDescription": "EBI genome-wide case-control association dataset for Hypertension (HT) using \\nseven disease collections together with the 1958 Spanish Birth Cohort and the EU \\nNational Blood Service collections as controls.",
+        "objectId": "{ ... }",
+        "objectTitle": "EBI test case-control dataset for cancer",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json"
+    }
+}
+@endjson

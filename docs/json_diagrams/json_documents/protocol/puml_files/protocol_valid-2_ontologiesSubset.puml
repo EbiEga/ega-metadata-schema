@@ -1,0 +1,12 @@
+@startjson
+
+{
+    "data": {
+        "protocolTypeDescriptor": {
+            "protocolSubtype": {
+                "termId": "NCIT:C48660"
+            }
+        }
+    }
+}
+@endjson

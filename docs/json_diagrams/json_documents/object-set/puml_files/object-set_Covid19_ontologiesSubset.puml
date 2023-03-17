@@ -1,0 +1,64 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "minimalPublicAttributes": {
+                    "diseases": [
+                        {
+                            "disease": {
+                                "termId": "MONDO:0100096"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0000400"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0000318"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0009909"
+                            }
+                        },
+                        {
+                            "disease": {
+                                "termId": "EFO:0001073"
+                            }
+                        }
+                    ]
+                },
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                }
+            },
+            {
+                "organismDescriptor": {
+                    "organismTaxon": {
+                        "termId": "NCBITaxon:9606"
+                    }
+                },
+                "sampleStatus": [
+                    {
+                        "conditionUnderStudy": {
+                            "termId": "MONDO:0100096"
+                        }
+                    }
+                ],
+                "sampleCollection": {
+                    "samplingSite": {
+                        "termId": "UBERON:0007196"
+                    }
+                }
+            }
+        ]
+    }
+}
+@endjson

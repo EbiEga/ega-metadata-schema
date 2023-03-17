@@ -1,0 +1,30 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json",
+    "type": "object",
+    "title": "EGA analysis metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits analysis metadata object. This object is intended to contain metadata about \\na detailed examination of data (mainly data processing protocols) in order to \\ncome to some conclusion. It can be of different types (e.g. sequence variation, \\nsequence alignment, phenotype characterization, gene expression, etc.) that will \\nmainly differ in the protocols used to achieve the processed data of the \\nanalysis. Further details can be found in the EGA-metadata-schema GitHub \\nrepository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectId",
+        "analysisTypeSpecifications"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "targetedLoci": "{ ... }",
+        "typesOfInputData": "{ ... }",
+        "typesOfOutputData": "{ ... }",
+        "analysisTypeSpecifications": "{ ... }",
+        "analysisFiles": "{ ... }",
+        "analysisRelationships": "{ ... }",
+        "analysisAttributes": "{ ... }"
+    }
+}
+@endjson

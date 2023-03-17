@@ -1,0 +1,38 @@
+@startjson
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "0" / "disease" / "termId"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "1" / "disease" / "termId"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "2" / "disease" / "termId"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "3" / "disease" / "termId"
+#highlight "data" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0" / "phenotypicAbnormality" / "termId"
+#highlight "data" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data"
+#highlight "data" / "minimalPublicAttributes"
+#highlight "data" / "minimalPublicAttributes" / "diseases"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "0"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "0" / "disease"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "1"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "1" / "disease"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "2"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "2" / "disease"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "3"
+#highlight "data" / "minimalPublicAttributes" / "diseases" / "3" / "disease"
+#highlight "data" / "minimalPublicAttributes" / "phenotypicAbnormalities"
+#highlight "data" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0"
+#highlight "data" / "minimalPublicAttributes" / "phenotypicAbnormalities" / "0" / "phenotypicAbnormality"
+#highlight "data" / "organismDescriptor"
+#highlight "data" / "organismDescriptor" / "organismTaxon"
+
+{
+    "data": {
+        "individualAttributes": "[ ... ]",
+        "individualRelationships": "[ ... ]",
+        "minimalPublicAttributes": "{ ... }",
+        "objectId": "{ ... }",
+        "organismDescriptor": "{ ... }",
+        "schemaDescriptor": "{ ... }"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json"
+    }
+}
+@endjson

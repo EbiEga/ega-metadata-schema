@@ -1,0 +1,48 @@
+@startjson
+
+{
+    "data": {
+        "objectId": {
+            "alias": "my-covid19-study_231",
+            "centerName": "EBI-TEST"
+        },
+        "studyRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002043412"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "externalAccessions": [
+                            {
+                                "objectExternalAccessionIdentifier": {
+                                    "termId": "biostudies:S-EPMC3314381",
+                                    "termLabel": "Epigenetics of kidney cancer and bladder cancer"
+                                },
+                                "objectExternalAccessionDescription": "The same study was submitted to the two archives due to a deadline approaching"
+                            }
+                        ]
+                    },
+                    "objectType": "externalAccession"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ]
+    }
+}
+@endjson

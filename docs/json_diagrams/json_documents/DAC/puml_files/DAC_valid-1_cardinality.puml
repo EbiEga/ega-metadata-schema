@@ -1,0 +1,41 @@
+@startjson
+
+{
+    "data": {
+        "dacRelationships": [
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAP00002045411"
+                    },
+                    "objectType": "policy"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAC00002344532"
+                    },
+                    "objectType": "DAC"
+                },
+                "rType": "sameAs"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectId": {
+            "alias": "my_DAC_X10",
+            "centerName": "EBI-TEST",
+            "egaAccession": "EGAC00000000001"
+        }
+    }
+}
+@endjson

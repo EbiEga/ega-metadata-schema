@@ -1,0 +1,57 @@
+@startjson
+#highlight "data" / "assayType" / "termId"
+#highlight "data" / "assayedBiologicalMacromolecule" / "termId"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels" / "0" / "arrayLabelIdentifier" / "termId"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels" / "1" / "arrayLabelIdentifier" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0" / "geneDescriptor" / "geneIdentifier" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1" / "genomicSequenceDescriptor" / "assemblyDescriptor" / "ncbiAssembly" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1" / "genomicSequenceDescriptor" / "assemblyDescriptor" / "ncbiAssemblyUnit" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "2" / "locusExternalReference" / "objectExternalAccessionIdentifier" / "termId"
+#highlight "data" / "targetedLoci" / "0" / "organismDescriptor" / "organismTaxon" / "termId"
+#highlight "data"
+#highlight "data" / "assayType"
+#highlight "data" / "assayedBiologicalMacromolecule"
+#highlight "data" / "experimentTypeSpecifications"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels" / "0"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels" / "0" / "arrayLabelIdentifier"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels" / "1"
+#highlight "data" / "experimentTypeSpecifications" / "arrayExperiment" / "arrayLabels" / "1" / "arrayLabelIdentifier"
+#highlight "data" / "targetedLoci"
+#highlight "data" / "targetedLoci" / "0"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0" / "geneDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "0" / "geneDescriptor" / "geneIdentifier"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1" / "genomicSequenceDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1" / "genomicSequenceDescriptor" / "assemblyDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1" / "genomicSequenceDescriptor" / "assemblyDescriptor" / "ncbiAssembly"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "1" / "genomicSequenceDescriptor" / "assemblyDescriptor" / "ncbiAssemblyUnit"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "2"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "2" / "locusExternalReference"
+#highlight "data" / "targetedLoci" / "0" / "lociDescriptor" / "2" / "locusExternalReference" / "objectExternalAccessionIdentifier"
+#highlight "data" / "targetedLoci" / "0" / "organismDescriptor"
+#highlight "data" / "targetedLoci" / "0" / "organismDescriptor" / "organismTaxon"
+
+{
+    "data": {
+        "assayTechnology": "{ ... }",
+        "assayType": "{ ... }",
+        "assayedBiologicalMacromolecule": "{ ... }",
+        "experimentAttributes": "[ ... ]",
+        "experimentRelationships": "[ ... ]",
+        "experimentTypeSpecifications": "{ ... }",
+        "objectDescription": "Example array experiment's description of my experiment N13.",
+        "objectId": "{ ... }",
+        "objectTitle": "Example array experiment title",
+        "schemaDescriptor": "{ ... }",
+        "targetedLoci": "[ ... ]",
+        "typesOfOutputData": "[ ... ]"
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
+    }
+}
+@endjson

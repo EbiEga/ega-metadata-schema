@@ -1,0 +1,130 @@
+@startjson
+
+{
+    "data": {
+        "objectArray": [
+            {
+                "objectId": {
+                    "alias": "14 year-old boy",
+                    "centerName": "EBI-TEST"
+                },
+                "individualRelationships": [
+                    {
+                        "rTarget": {
+                            "objectId": {
+                                "alias": "Unaffected mother",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "childOf"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "Unaffected mother",
+                    "centerName": "EBI-TEST"
+                },
+                "individualRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "14 year-old boy",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "childOf"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "Blood sample - 14y Proband",
+                    "centerName": "EBI-TEST"
+                },
+                "sampleRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "14 year-old boy",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "individual"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "alias": "Blood drawn protocol",
+                                "centerName": "EBI-TEST"
+                            },
+                            "objectType": "protocol"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            },
+            {
+                "objectId": {
+                    "alias": "14Y COL6A1 mutation - Bethlem myopathy",
+                    "centerName": "EBI-TEST"
+                },
+                "studyRelationships": [
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "externalAccessions": [
+                                    {
+                                        "objectExternalAccessionURI": "https://pubmed.ncbi.nlm.nih.gov/30808312/"
+                                    }
+                                ]
+                            },
+                            "objectType": "externalAccession"
+                        },
+                        "rType": "referencedBy"
+                    },
+                    {
+                        "rSource": {
+                            "objectId": {
+                                "egaAccession": "EGAB00000000001"
+                            },
+                            "objectType": "submission"
+                        },
+                        "rType": "referencedBy"
+                    }
+                ]
+            }
+        ]
+    }
+}
+@endjson

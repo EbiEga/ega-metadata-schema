@@ -1,0 +1,12 @@
+@startjson
+
+{
+    "data": {
+        "protocolTypeDescriptor": {
+            "protocolSubtype": {
+                "termId": "operation:3211"
+            }
+        }
+    }
+}
+@endjson

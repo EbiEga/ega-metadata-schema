@@ -1,0 +1,47 @@
+@startjson
+
+{
+    "data": {
+        "assayRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAX00002094401"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "assayTypeSpecifications": {
+            "arrayAssaySpecifications": {
+                "arraySampleLabels": [
+                    {
+                        "objectId": {
+                            "egaAccession": "EGAN00002094401"
+                        }
+                    },
+                    {
+                        "objectId": {
+                            "egaAccession": "EGAN00002094453"
+                        }
+                    }
+                ]
+            }
+        },
+        "objectId": {
+            "alias": "My_array_assay_M3051057",
+            "centerName": "EBI-TEST"
+        }
+    }
+}
+@endjson

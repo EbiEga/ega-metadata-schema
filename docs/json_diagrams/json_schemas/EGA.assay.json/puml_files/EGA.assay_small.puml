@@ -1,0 +1,35 @@
+@startjson
+
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json",
+    "type": "object",
+    "title": "EGA assay metadata schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate \\nits assay metadata object. This object is intended to contain metadata about the \\nraw qualitative or quantitative test performed to determine any kind of \\nbiological property of a biological sample. It can be of different types: (1) \\nsequencing assay [EFO:0003740] (e.g. sequence CRAM or FastQ files); and an (2) \\narray assay [EFO:0002696] (e.g. intensity CEL files). Further details can be \\nfound in the EGA-metadata-schema GitHub repository \\n(https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and \\nEGA-archive website (https://ega-archive.org/)",
+    "required": [
+        "objectId",
+        "assayTypeSpecifications",
+        "assayFiles"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "objectId": "{ ... }",
+        "schemaDescriptor": "{ ... }",
+        "objectTitle": "{ ... }",
+        "objectDescription": "{ ... }",
+        "assayCenter": "{ ... }",
+        "assayDate": "{ ... }",
+        "assayTypeSpecifications": "{ ... }",
+        "assayRelationships": "{ ... }",
+        "assayFiles": "{ ... }",
+        "assayAttributes": "{ ... }"
+    },
+    "allOf": [
+        "{ ... }",
+        "{ ... }",
+        "{ ... }"
+    ]
+}
+@endjson

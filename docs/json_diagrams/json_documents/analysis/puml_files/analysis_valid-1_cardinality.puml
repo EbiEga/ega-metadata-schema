@@ -1,0 +1,79 @@
+@startjson
+
+{
+    "data": {
+        "analysisRelationships": [
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAS00002045411"
+                    },
+                    "objectType": "study"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rTarget": {
+                    "objectId": {
+                        "egaAccession": "EGAZ00001051423"
+                    },
+                    "objectType": "analysis"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAX00001051423"
+                    },
+                    "objectType": "experiment"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Genome indexing protocol",
+                        "egaAccession": "EGAO00001031671"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Read mapping protocol",
+                        "egaAccession": "EGAO00001031672"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "alias": "Variant calling protocol",
+                        "egaAccession": "EGAO00001031673"
+                    },
+                    "objectType": "protocol"
+                },
+                "rType": "referencedBy"
+            },
+            {
+                "rSource": {
+                    "objectId": {
+                        "egaAccession": "EGAB00002045411"
+                    },
+                    "objectType": "submission"
+                },
+                "rType": "referencedBy"
+            }
+        ],
+        "objectId": {
+            "alias": "Sequencing_analysis_13",
+            "centerName": "EBI-TEST"
+        }
+    }
+}
+@endjson
