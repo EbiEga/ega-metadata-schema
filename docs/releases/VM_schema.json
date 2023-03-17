@@ -1,0 +1,79 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/docs/releases/VM_schema.json",
+    "type": "object",
+    "title": "Version Manifest JSON Schema",
+    "meta:version": "0.0.0",
+    "$async": true,
+    "description": "Schema used by the European Genome-phenome Archive (EGA) to validate its release manifest (version_manifest.json). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases).",
+    "required": ["releases" ],
+    "additionalProperties": false,
+    "properties": {
+        "releases": {
+            "type": "array",
+            "title": "EGA Metadata Schema releases",
+            "description": "Array containing all releases for the EGA-metadata-schema repository as items.",
+            "minItems": 1,
+            "uniqueItems": true,
+            "additionalProperties": false,
+            "items": {
+                "type": "object",
+                "title": "Individual release",
+                "description": "A single release of the EGA-metadata-schema repository, containing metadata concerning its release alone",
+                "required": ["version", "date", "jsonSchemas"],
+                "additionalProperties": false,
+                "properties": {
+                    "version": {
+                        "title": "Version of the release",
+                        "$ref": "#/definitions/semanticVersioningPattern"
+                    },
+                    "date": {
+                        "title": "Date of the release",
+                        "$ref": "#/definitions/EGAISO8601DatePattern"
+                    },
+                    "jsonSchemas": {
+                        "type": "array",
+                        "title": "JSON Schema Versions for the release",
+                        "description": "Array containing all individual JSON schema versions for the release.",
+                        "minItems": 13,
+                        "maxItems": 13,
+                        "uniqueItems": true,
+                        "additionalProperties": false,
+                        "items": {
+                            "type": "object",
+                            "title": "Individual JSON schema",
+                            "required": [ "schemaName", "version" ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "schemaName": {
+                                    "type": "string",
+                                    "title": "Name of the JSON schema",
+                                    "enum": [ "common-definitions", "experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "protocol", "object-set" ]
+                                },
+                                "version": {
+                                    "$ref": "#/definitions/semanticVersioningPattern"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "semanticVersioningPattern": {
+            "type": "string",
+            "title": "Semantic versioning pattern",
+            "description": "For further details about semantic versioning check 'https://semver.org/'",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "examples": [ "1.5.1" ]
+        },
+        "EGAISO8601DatePattern": {
+            "type": "string",
+            "title": "Pattern of EGA ISO 8601 date",
+            "description": "Regular expression to check the syntax of a date following 'ISO 8601 date' format. Notice that the Time (denoted by 'T...') is optional and so is the time zone, specified at the end of the string (e.g. 'Z', '+01:00'...). See more detail at 'https://regexpattern.com/iso-8601-dates-times/'.",
+            "pattern": "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])(T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?)?$",
+            "examples": [ "2021-04-30", "2020-12-29T19:30:45.123Z", "2020-12-29", "2020-12-29T19:30:45", "2021-10-13T04:13:00+01:00", "2021-10-13T12:13:00-08:00", "2021-10-13T12:13:00" ]
+        }
+    }
+}
