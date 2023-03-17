@@ -9,3 +9,5 @@ typing
 requests==2.26.0
 pandas==1.5.3
 matplotlib==3.4.3
+jsonpath_ng
+jsonref

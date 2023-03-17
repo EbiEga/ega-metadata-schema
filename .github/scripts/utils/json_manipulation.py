@@ -1,19 +1,26 @@
-#!/usr/bin/env python
-# coding: utf-8
+# ------ #
+# Utils for JSON Manipulation
+# ------ #
+# In this file there are functions, classes or variables that are used widely
+#   in the GitHub actions of this repository and imported accordingly in other
+#   scripts.
 
+# - #
+# System imports
+# - #
 import json
 import os
-from pathlib import Path
 import jsonref
+import jsonpath_ng
+import warnings
+
+from pathlib import Path
 from typing import Union
+from .string_manipulation import add_newlines
 
-# ------#
-# JSONManipulationFormatter Class
-# ------#
-
-# -#
+# - #
 # Hardcoded values
-# -#
+# - #
 # Used to simplify the graph based on depth
 mapping_property_names = {
     "list": "[ ... ]",
@@ -22,62 +29,42 @@ mapping_property_names = {
 
 # Different condition_dict dictionaries for filtering a JSON object
 conditions_cardinality = {"property_names": [ "objectId", "rSource", "rTarget", "rType" ]}
-
 conditions_controlled_vocabulary = {"property_names": [ "enum" ]}
-
 conditions_ontology_validation = {"property_names": [ "termId" ]}
 
-# -#
+# - #
 # Helper functions
-# -#
-def max_depth(json_obj: dict) -> int:
+# - #
+def jsonexpression_condition_dict(
+    condition_dict: dict
+) -> jsonpath_ng.jsonpath.Descendants:
     """
-    Function to find the maximum depth of a JSON object
-    """
-    if isinstance(json_obj, dict):
-        return 1 + max(max_depth(v) for v in json_obj.values())
-    elif isinstance(json_obj, list):
-        return 1 + max(max_depth(v) for v in json_obj)
-    else:
-        return 0
+    Function that generates a JSON expression for 'jsonjsonpath_ng' based on a given
+        dictionary with conditions (condition_dict).
 
+    Expression purpose based on the given dict:
+        - { "property_names": [...] } --> the expression will match properties named as every item in the list.
+    """
+    for key, value in condition_dict.items():
+        # The syntax of the condition_dict is made-up
+        if key == "property_names":
+            if not isinstance(value, list):
+                raise ValueError(
+                    f"The value for the key 'property_names' in the 'condition_dict' needs to be of type list"
+                    f"\n\tGiven value: {value}"
+                )
 
-def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: dict):
-    """
-    Recursive function to create, based on a given dictionary, a shorter version of it based on its depth.
-    """
-    property_type = type(json_object_value)
-    if property_type == dict and depth > 0:
-        new_dict = {}
-        for key, value in json_object_value.items():
-            new_dict[key] = new_dict_depth(
-                json_object_value=value,
-                depth=depth - 1,
-                mapping_property_names=mapping_property_names
+            # We create the JSON path expression based on the syntax, giving the whole list (value) as property names
+            jsonpath_expression = jsonpath_ng.parse(f"$..{value}")
+
+            return jsonpath_expression
+
+        else:
+            raise TypeError(
+                f"The given dictionary containing the conditions to check has an unexpected syntax."
+                f"\n\tCheck the possibilities in function 'jsonexpression_condition_dict()' and add yours"
+                f"\n\tif it is not an expected error."
             )
-
-        return new_dict
-
-    elif property_type == list and depth > 0:
-        new_list = []
-        for item in json_object_value:
-            item_content = new_dict_depth(
-                json_object_value=item,
-                depth=depth - 1,
-                mapping_property_names=mapping_property_names
-            )
-            new_list.append(item_content)
-        return new_list
-
-    elif property_type == str or property_type == bool or property_type == int:
-        return json_object_value
-
-    else:
-        property_type = type(json_object_value).__name__
-        if property_type in mapping_property_names.keys():
-            property_type = mapping_property_names[property_type]
-
-        return property_type
 
 
 def check_condition_dict(original_key: str, original_value, condition_dict: dict) -> bool:
@@ -109,6 +96,38 @@ def check_condition_dict(original_key: str, original_value, condition_dict: dict
                 f"\n\tCheck the possibilities in function 'check_condition_dict()' and add yours"
                 f"\n\tif it is not an expected error."
             )
+
+
+def find_json_paths(json_data: dict, condition_dict: dict) -> list:
+    """
+    Find all JSON paths in a JSON object that match a set of conditions. The set of conditions
+        is a dictionary with a syntax specific to function 'jsonexpression_condition_dict()'
+    """
+    jsonpath_expression = jsonexpression_condition_dict(condition_dict)
+    matches = jsonpath_expression.find(json_data)
+    list_of_paths = list(str(match.full_path) for match in matches)
+    return list_of_paths
+
+
+def create_parent_json_paths(input_list: list) -> list:
+    """
+    From a given input list whose items are JSON Paths, returns a list with both the given
+        JSON Paths and an extra JSON path for depth level in the JSON object.
+
+    Example: from an 'input_list' ["data.cellTypes.cellType"], it would return an updated_list
+        being ["data.cellTypes.cellType", "data.cellTypes", "data"]
+
+    Intended purpose: to add all parent-properties JSON paths of a given JSON path leaf.
+    """
+    n_items = len(input_list)
+    updated_list = []
+    for i in range(n_items + 1):
+        list_index = i + 1
+        # We iterate over the list and create a new list (path)
+        #   with all items (properties) up to the range.
+        updated_list.append(input_list[0:list_index])
+
+    return updated_list
 
 
 def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
@@ -154,80 +173,95 @@ def filter_dict(original_dict: dict, condition_dict: dict) -> dict:
     return current_dict
 
 
-def add_char_to_str(
-    string: str, str_length: int = 80, new_character: str = "\\n"
-) -> str:
+def new_dict_depth(json_object_value: dict, depth: int, mapping_property_names: dict):
     """
-    Function that, given a string, splits it into words and inserts a new character (new_character)
-        the the character count of the words is above the given maximum string length (str_length)
+    Recursive function to create, based on a given dictionary, a shorter version of it based on a given depth.
     """
-    assert isinstance(
-        string, str
-    ), f"The given string '{string}' is not of string type."
-    words = string.split()
-    new_string = ""
-    line_length = 0
-    for word in words:
-        if line_length + len(word) > str_length:
-            if not len(word) > str_length:
-                # We don't want new lines at the beginning in words that are too long (e.g. '$ref')
-                new_string += new_character
-            line_length = 0
-        new_string += word + " "
-        line_length += len(word) + 1
-
-    updated_string = new_string.strip()
-
-    return updated_string
-
-
-def add_newlines(current_value, str_length: int = 80, newline_character: str = "\\n"):
-    """
-    Recursive function that iterates over a given value (e.g. a loaded JSON) and
-        changes the values of all strings whose lenght is above the given maximum
-        string length (str_length).
-
-    In our use-case, it is used to add new lines for the graphs to be readable in case
-        some strings (e.g. 'description' fields) are way too long.
-    """
-    if isinstance(current_value, dict):
+    property_type = type(json_object_value)
+    if property_type == dict and depth > 0:
         new_dict = {}
-        for key, value in current_value.items():
-            new_dict[key] = add_newlines(
-                current_value=value,
-                str_length=str_length,
-                newline_character=newline_character
+        for key, value in json_object_value.items():
+            new_dict[key] = new_dict_depth(
+                json_object_value=value,
+                depth=depth - 1,
+                mapping_property_names=mapping_property_names
             )
+
         return new_dict
 
-    elif isinstance(current_value, list):
+    elif property_type == list and depth > 0:
         new_list = []
-        for item in current_value:
-            item_content = add_newlines(
-                current_value=item,
-                str_length=str_length,
-                newline_character=newline_character
+        for item in json_object_value:
+            item_content = new_dict_depth(
+                json_object_value=item,
+                depth=depth - 1,
+                mapping_property_names=mapping_property_names
             )
             new_list.append(item_content)
         return new_list
 
-    elif isinstance(current_value, str):
-        if len(current_value) > str_length:
-            current_value = add_char_to_str(
-                string=current_value,
-                str_length=str_length,
-                new_character=newline_character
-            )
-
-        return current_value
+    elif property_type == str or property_type == bool or property_type == int:
+        return json_object_value
 
     else:
-        return current_value
+        property_type = type(json_object_value).__name__
+        if property_type in mapping_property_names.keys():
+            property_type = mapping_property_names[property_type]
+
+        return property_type
 
 
-# -#
+def max_depth(json_obj: dict) -> int:
+    """
+    Function to find the maximum depth of a JSON object
+    """
+    if isinstance(json_obj, dict):
+        return 1 + max(max_depth(v) for v in json_obj.values())
+    elif isinstance(json_obj, list):
+        return 1 + max(max_depth(v) for v in json_obj)
+    else:
+        return 0
+
+
+def load_json(json_filepath: str) -> dict:
+    """
+    Function to load a JSON file and returns it as a python dictionary.
+    """
+    file_extension = os.path.splitext(json_filepath)[1].lower()
+    if not os.path.isfile(json_filepath) or not file_extension == ".json":
+        raise ValueError(
+            f"File '{json_filepath}' does not exist, is not a file, or is not a JSON file"
+        )
+    with open(json_filepath, "r") as json_file:
+        json_data = json.load(json_file)
+    return json_data
+
+
+def empty_json_values(json_data, root_level: bool = False):
+    """
+    Function to empty all values within a given JSON object (dictionary), but keeping its structure.
+        Alternatively, "root_level" can be True so that the "schema" property is not erased at root level.
+    """
+    if isinstance(json_data, dict):
+        for key in json_data:
+            if root_level and key == "schema":
+                # We don't want to get rid of the "$ref" within the schema
+                continue
+            json_data[key] = empty_json_values(json_data[key])
+    elif isinstance(json_data, list):
+        for i in range(len(json_data)):
+            json_data[i] = empty_json_values(json_data[i])
+    elif isinstance(json_data, str):
+        json_data = ""
+    elif isinstance(json_data, int):
+        json_data = 0
+
+    return json_data
+
+
+# - #
 # Class definition
-# -#
+# - #
 class JSONManipulationFormatter:
     """
     JSONManipulationFormatter - a class for formatting JSON data to be used in graphing software. Examples
@@ -414,31 +448,104 @@ class JSONManipulationFormatter:
         with open(output_filepath, "w", encoding="utf-8") as outfile:
             json.dump(self.current_json, outfile, indent=4)
 
-# -#
-# Examples of usage
-# -#
 
-# formatter = JSONManipulationFormatter(json_filepath="../../examples/json_validation_tests/sample_valid-1.json")
-# null = formatter.resolve_json_references()
-# formatter.subset_json(condition_dict=conditions_cardinality)
-# print(formatter.prettify())
+class CreateObjectSet:
+    """
+    The CreateObjectSet class is used to create a new JSON object set by using an existing JSON file as a template.
+        The new object set can have new JSON objects added to it, and can also have the values of its properties cleared.
+        The idea is to use one of the object-sets in the 'example/json_validation_tests' directory as a template for a new object-set.
 
-# formatter.restart_json()
-# formatter.reduce_depth(2)
-# print(formatter.prettify())
+    For further details, please check:
+        https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/biovalidator_benchmarks
+    """
+    def __init__(
+        self,
+        template_doc: str
+    ):
+        """
+        Initialize the class with the path to a template JSON file.
 
-# formatter.restart_json()
-# formatter.subset_json(condition_dict=conditions_cardinality)
-# print(formatter.prettify())
+            :param template_doc: str : path to the template JSON file
+        """
+        self.template_doc = template_doc
+        self.data_name = "data"
+        self.objectArray_name = "objectArray"
 
-# formatter.restart_json()
-# formatter.subset_json(condition_dict=conditions_controlled_vocabulary)
-# print(formatter.prettify())
+        # Load the template object-set file
+        self.template_json_obj = load_json(self.template_doc)
 
-# formatter.restart_json()
-# formatter.subset_json(condition_dict=conditions_ontology_validation)
-# print(formatter.prettify())
+    def empty_objectArray(self):
+        """
+        Empties the "objectArray" list in the template JSON object. Used prior new additions to an existing template
+        """
+        self.template_json_obj[self.data_name][self.objectArray_name].clear()
 
-# formatter.restart_json()
-# formatter.add_newlines()
-# print(formatter.prettify())
+    def empty_all_properties(self):
+        """
+        Will empty the objectArray property and all other properties in the template will lose their values
+        """
+        self.empty_objectArray()
+        self.template_json_obj = empty_json_values(
+            self.template_json_obj, root_level=True
+        )
+
+    def add_new_json(
+        self,
+        new_json: Union[str,dict]
+    ):
+        """
+        Adds a new JSON object to the "objectArray" list of the template JSON object.
+
+            :param new_json: [str,dict] : either the path to the template JSON file or the loaded JSON file
+        """
+        if isinstance(new_json, str):
+            new_data = load_json(new_json)
+        elif isinstance(new_json, dict):
+            new_data = new_json
+        else:
+            raise ValueError(
+                f"New JSON to be added '{new_json}' must be either the filepath to a JSON document or the loaded dictionary of a JSON"
+            )
+
+        # If we are using a JSON with the "data" and "schema" structure, we only keep the data
+        if "schema" in new_data and "data" in new_data:
+            new_data = new_data["data"]
+
+        self.template_json_obj[self.data_name][self.objectArray_name].append(new_data)
+
+    def count_n_objects(self):
+        """
+        Returns the number of objects (i.e. items) in the 'objectArray' array of the template JSON
+        """
+        n_of_objects = len(
+            self.template_json_obj[self.data_name][self.objectArray_name]
+        )
+        return n_of_objects
+
+    def save_json(
+        self,
+        output_filepath: str = "new_object-set.json",
+        add_suffix: bool = False,
+        overwrite: bool = False
+    ):
+        """
+        Saves the JSON object to a file.
+
+            :param output_filepath: str : the filepath that the saved file will have
+            :param add_suffix: bool : whether the new filepath will have an added suffix with the number of objects it contains
+            :param overwrite: bool : whether the saved file is allowed to overwrite an existing file or not
+        """
+        if add_suffix:
+            split_filename = os.path.splitext(output_filepath)
+            suffix = "_" + str(self.count_n_objects())
+            output_filepath = split_filename[0] + suffix + split_filename[1]
+
+        if os.path.isfile(output_filepath) and not overwrite:
+            warnings.warn(
+                f"File '{output_filepath}' already exists and 'overwrite' was set to False. Choose a different filename or set overwrite to True.",
+                UserWarning
+            )
+            return
+
+        with open(output_filepath, "w") as outfile:
+            json.dump(self.template_json_obj, outfile, indent=4)
