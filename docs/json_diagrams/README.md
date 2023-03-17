@@ -29,6 +29,8 @@ A summary of what to expect based on the suffix:
 - ``...cardinality.svg``: subset of the original JSON file, only containing paths with: properties named ``objectId``; or relationship properties (e.g. ``rSource``).
 - ``...ontologiesHighlight.svg``: The whole JSON object, but with highlighted ``termId`` in properties (ontology validation)
 - ``...ontologiesSubset.svg``: Subset of the original JSON file, only containing paths with ``termId`` in the properties (ontology validation) 
+- ``...CVhighlights.svg``: The whole JSON object, but with highlighted ``enum`` in properties (Controlled Vocabulary)
+- ``...CVsubset.svg``: Subset of the original JSON file, only containing paths with ``enum`` in their properties (Controlled Vocabulary)
 - ``...small.svg``: subset of the original JSON file, with only 2 levels of depth. Additionally, having highlighted properties whose leaves have with ``termId`` in the properties (ontology validation)
 - ``...wholeUnresolved.svg``: The whole JSON object but without resolved references (``$ref``).
 - ``...whole.svg``: The whole JSON object with resolved references (``$ref``).
