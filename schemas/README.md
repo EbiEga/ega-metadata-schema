@@ -11,7 +11,9 @@ The current schemas are written in JavaScript Object Notation (**JSON**), provid
 [Understanding JSON schema](https://json-schema.org/understanding-json-schema/) (for a detailed explanation).
 
 ## JSON Schema Validation
-In the folder [``json_validation_tests/``](../examples/json_validation_tests/) there are several ``json`` files which serve as **examples that are supposed to pass validation** (their name contains ``valid``). The current approach taken to validate JSON documents against their schemas is through EBI's tool [**Biovalidator**](https://github.com/elixir-europe/biovalidator)(``main`` branch). This tool is, in summary, AJV validation with extra custom keywords. This GitHub repository contains GH actions that perform validations onto the JSON test files. Check the actions [folder](../.github/workflows/) and [diagrams](../docs/gh_workflows/) for details on how local and remote validation is performed.
+In the folder [``json_validation_tests/``](../examples/json_validation_tests/) there are several ``json`` files which serve as **examples that are supposed to pass validation** (their name contains ``valid``). The current approach taken to validate JSON documents against their schemas is through EBI's tool [**Biovalidator**](https://github.com/elixir-europe/biovalidator) (``main`` branch). This tool is, in summary, AJV validation with extra custom keywords. 
+
+This GitHub repository contains GH actions that perform validations onto the JSON test files. Check the actions [folder](../.github/workflows/) and [diagrams](../docs/gh_workflows/) for details on how automatic validation is performed.
 
 ## Contributing to the schemas
 **Your contributions are welcomed**! If you have any ideas on how our metadata standards should improve (e.g. new fields, terms, structure...) please go to our [**contribution documentation**](../docs/contributing.md).
@@ -19,8 +21,8 @@ In the folder [``json_validation_tests/``](../examples/json_validation_tests/) t
 ## Planning to modify the schemas?
 In case these schemas need to be modified, in this section you will find listed some details about the current approach that may ease the process:
 * **Naming conventions**. Properties within the JSON schemas follow SWIFT naming conventions: they are named in ``lowerCammelCase`` format. For example, ``md5ChecksumPattern`` versus ``md5_checksum_pattern``.
-* **Shared definitions**. All schemas share some fields (_e.g._ ``alias``) or patterns (_e.g._ checksum patterns) which can lead to duplicated code. In order to avoid it, we created an additional schema that corresponds to none of the EGA objects: ``EGA.common-definitions.json``. Within this file those repeated objects are specified for other schemas or objects to inherit. Based on the
-**source and target** (being the same file or another) **of the reference**, we can differentiate: (1) same-file shared definitions; (2) different-file shared definitions.
+* **Shared definitions**. All schemas share some fields (_e.g._ ``alias``) or patterns (_e.g._ checksum patterns), which can lead to duplicated code. In order to avoid it, we created an additional schema that corresponds to none of the EGA objects: ``EGA.common-definitions.json``. Within this file those repeated objects are specified for other schemas or objects to inherit. Based on the
+**source and target** (being within the same file or another) **of the reference**, we can differentiate: (1) same-file shared definitions; (2) different-file shared definitions.
     1. **Same-file shared definitions**. Objects within a JSON schema can be reused indefinitely. In order to do so, we stored them in the **``definitions`` anchor** (at the first level of the common schema), and then referenced them elsewhere using their relative JSON pointer (its path - _e.g._ ``"#/definitions/md5ChecksumPattern"``).
     See [Definitions](https://json-schema.org/understanding-json-schema/structuring.html#definitions) section for further details.
     As an **example**, take a look at how we defined ``md5ChecksumPattern`` within ``definitions`` of the ``EGA.common-definitions.json``:
@@ -40,11 +42,10 @@ In case these schemas need to be modified, in this section you will find listed 
     { "$ref": "#/definitions/md5ChecksumPattern" }
     ````
 
-    2. **Different-file shared definitions**. The way these cross-file references are achieved is by using the IDs of the schemas (``$id`` within its first layer) and object's anchors (_e.g._ ``"EGASampleIdPattern``), which point to the objects within the files, turning them into references (``$ref`` wherever they are needed). References are resolved against the absolute URL identifiers of the 
+    2. **Different-file shared definitions**. The way these cross-file references are achieved is by using the IDs of the schemas (``$id`` within its first layer) and properties' anchors (_e.g._ ``"EGASampleIdPattern``), which point to the properties within the files, turning them into references (``$ref`` wherever they are needed). References are resolved against the absolute URL identifiers of the 
     schemas. In other words, a relative reference ($ref; e.g. ``./EGA.common-definitions.json#...``) is resolved against the absolute identifier (``$id``; e.g. ``https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json``) of the referencing schema (in this example ``EGA.analysis.json``), transforming the relative reference into an absolute one (e.g. 
     ``https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#...``). See 
-    [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html) for further details. As an **example**, take a look at how we defined ``objectCoreId`` within ``definitions`` of the ``EGA.common-definitions.json`` and then referenced it within the ``EGA.experiment.json`` (notice how this time the JSON 
-    pointer contains the whole ``$id`` instead of being relative):
+    [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html) for further details. As an **example**, take a look at how we defined ``objectCoreId`` within ``definitions`` of the ``EGA.common-definitions.json`` and then referenced it within the ``EGA.analysis.json``:
     ````
     # Simplified common schema
     {
@@ -55,9 +56,9 @@ In case these schemas need to be modified, in this section you will find listed 
             }
     }
 
-    # Simplified experiment schema with a reference to the objectCoreId:
+    # Simplified analysis schema with a reference to the objectCoreId:
     {
-        "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json",
+        "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json",
         "properties": {
             "objectId": {
                 "type": "object",
