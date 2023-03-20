@@ -4,7 +4,7 @@
 - [Reporting bugs](#Reporting-bugs)
 
 ## Introduction
-In this document you will find a brief description on **how to contribute to the European Genome-phenome Archive (EGA) metadata standards and how EGA handles contributions**. Metadata standards are permanently in change, and we want to cover our users needs above all. Although we thoroughly review bioinformatics' field standards to be in sync, there can be occasions in which there is room for 
+In this document you will find a brief description on **how to contribute** to the European Genome-phenome Archive (EGA) metadata standards and how EGA handles contributions. Metadata standards are permanently in change, and we want to cover our users needs above all. Although we thoroughly review bioinformatics' field standards to be in sync, there can be occasions in which there is room for 
 improvement. Be it a new feature or different structure, **any suggestion is highly valued**.
 
 Currently EGA does not support direct contributions (i.e. external Pull Requests) to our GitHub repository.
@@ -12,7 +12,7 @@ Currently EGA does not support direct contributions (i.e. external Pull Requests
 If you need any help for your contribution, please contact ``helpdesk [at] ega-archive.org``.
 
 ## Suggesting changes
-Before any suggestion or request is made, we advise you to check our metadata model through its [diagrams](./metadata_model/) and [JSON browser](./json_browser/).
+Before any suggestion or request is made, we advise you to check our metadata model through its [simplified diagrams](./metadata_model/), [JSON browser](./json_browser/) and [detailed diagrams](./json_diagrams/).
 
 To make a suggestion you shall create an issue in this same GitHub repository, making use of the [**set of issue templates**](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose
 ). In these templates you will find forms requesting information for us to consider your contribution based on its type:
