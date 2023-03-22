@@ -16,7 +16,7 @@ import warnings
 
 from pathlib import Path
 from typing import Union
-from .string_manipulation import add_newlines
+from string_manipulation import add_newlines
 
 # - #
 # Hardcoded values
