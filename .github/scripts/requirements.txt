@@ -11,3 +11,4 @@ pandas==1.5.3
 matplotlib==3.4.3
 jsonpath_ng
 jsonref
+jsonschema==3.2.0
