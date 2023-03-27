@@ -338,7 +338,7 @@ class JSONManipulationFormatter:
     """
 
     def __init__(
-        self, json_filepath: str = "", json_data: dict = {}, is_schema: Union[bool, None] = None 
+        self, json_filepath: str = "", json_data: dict = {}, is_schema: Union[bool, None] = None
     ):
 
         # We either take the given JSON data or load the given JSON file

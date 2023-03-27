@@ -96,7 +96,7 @@ if args.overwrite_mode:
     )
     # If the same project release version was found, we remove it
     if same_version_index:
-        releases = version_obj.current_json["releases"]    
+        releases = version_obj.current_json["releases"]
         del releases[same_version_index]
         version_obj.current_json["releases"] = releases
 
