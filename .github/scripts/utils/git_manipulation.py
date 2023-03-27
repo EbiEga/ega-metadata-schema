@@ -22,7 +22,7 @@ def get_current_branch(directory_path: str) -> Union[str, None]:
     try:
         repo = git.Repo(directory_path, search_parent_directories=True)
         return repo.active_branch.name
-    
+
     except git.InvalidGitRepositoryError:
         print(f"The given directory ('{directory_path}') is neither a valid Git repository nor has a parent directory that is.")
         return None

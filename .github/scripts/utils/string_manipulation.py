@@ -139,28 +139,28 @@ def is_higher_version(o_lower_version: str, o_higher_version:str) -> bool:
     # Strip off any pre-release version and build metadata
     lower_version = o_lower_version.split('+')[0].split('-')[0]
     higher_version = o_higher_version.split('+')[0].split('-')[0]
-    
+
     # Split the version strings into their components (major, minor, patch)
     higher_version_l = [int(v) for v in higher_version.split('.')]
     lower_version_l = [int(v) for v in lower_version.split('.')]
-    
+
     # Compare the major version numbers
     if higher_version_l[0] > lower_version_l[0]:
         return True
     elif higher_version_l[0] < lower_version_l[0]:
         return False
-    
+
     # Compare the minor version numbers
     if higher_version_l[1] > lower_version_l[1]:
         return True
     elif higher_version_l[1] < lower_version_l[1]:
         return False
-    
+
     # Compare the patch version numbers
     if higher_version_l[2] > lower_version_l[2]:
         return True
     elif higher_version_l[2] < lower_version_l[2]:
         return False
-    
+
     # The versions are identical
     return False

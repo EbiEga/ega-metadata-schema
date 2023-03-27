@@ -284,7 +284,7 @@ def check_previous_project_versions(version_manifest_json: dict, new_version: st
                 f"Found issue when parsing the version manifest: one of the versions ('{existing_release_version}') does not follow the expected semantic versioning."
                 f"\n\t- Release:\n{release}"
             )
-            
+
         if not is_higher_version(o_lower_version=existing_release_version, o_higher_version=new_version):
             if strict_mode:
                 raise ValueError(
@@ -294,7 +294,7 @@ def check_previous_project_versions(version_manifest_json: dict, new_version: st
                     f"\n\t- Full existing release details:\n{release}"
                 )
             return False
-    
+
     # If all were lower than the newer one
     return True
 
@@ -318,7 +318,7 @@ def find_same_version(version_manifest_json: dict, new_version: str) -> Union[in
     for i in range(len(releases)):
         if releases[i]['version'] == new_version:
             return i
-        
+
     return None
 
 
@@ -502,7 +502,7 @@ class JSONManipulationFormatter:
         )
 
         return self.current_json
-    
+
     def add_version(self, version_keyword: str = "meta:version"):
         """
         Finds the version of the JSON object if it is a schema.

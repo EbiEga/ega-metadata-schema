@@ -116,7 +116,7 @@ for file in os.scandir(args.schemas_dir):
     found_files = True
     file_basename = os.path.splitext(file.name)[0]
     object_name = file_basename.replace("EGA.", "")
-    
+
     json_obj = JSONManipulationFormatter(json_filepath=file.path)
     version_dict[object_name] = json_obj.version
 
