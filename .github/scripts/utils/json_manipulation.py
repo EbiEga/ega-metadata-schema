@@ -16,7 +16,9 @@ import warnings
 
 from pathlib import Path
 from typing import Union
-from string_manipulation import add_newlines
+from .string_manipulation import add_newlines, \
+    is_semantic_version, \
+    is_higher_version
 
 # - #
 # Hardcoded values
@@ -259,6 +261,67 @@ def empty_json_values(json_data, root_level: bool = False):
     return json_data
 
 
+def check_previous_project_versions(version_manifest_json: dict, new_version: str, strict_mode: bool = False) -> bool:
+    """
+    Given a newer version string (e.g. '1.0.0'), checks that it is higher than all existing project versions
+        in the given version_manifest_json file.
+    """
+    if not isinstance(version_manifest_json, dict):
+        err_type = type(version_manifest_json)
+        raise TypeError(
+                f"The given Version Manifest JSON (type: {err_type}) needs to be dictionary type."
+            )
+    if not is_semantic_version(new_version):
+        raise ValueError(
+            f"The given version ('{new_version}') does not follow the expected semantic versioning."
+        )
+
+    # We iterate over each release within the version manifest
+    for release in version_manifest_json["releases"]:
+        existing_release_version = release["version"]
+        if not is_semantic_version(existing_release_version):
+            raise ValueError(
+                f"Found issue when parsing the version manifest: one of the versions ('{existing_release_version}') does not follow the expected semantic versioning."
+                f"\n\t- Release:\n{release}"
+            )
+            
+        if not is_higher_version(o_lower_version=existing_release_version, o_higher_version=new_version):
+            if strict_mode:
+                raise ValueError(
+                    f"Found issue when comparing the version manifest and the newer version: one of the versions is higher than or equal to the newer version."
+                    f"\n\t- Given newer version: {new_version}"
+                    f"\n\t- Existing version that is higher: {existing_release_version}"
+                    f"\n\t- Full existing release details:\n{release}"
+                )
+            return False
+    
+    # If all were lower than the newer one
+    return True
+
+
+def find_same_version(version_manifest_json: dict, new_version: str) -> Union[int, None]:
+    """
+    Returns the index of the release in the Version Manifest whose "version" matches the
+        given "new_version". Returns None otherwise.
+    """
+    if not isinstance(version_manifest_json, dict):
+        err_type = type(version_manifest_json)
+        raise TypeError(
+                f"The given Version Manifest JSON (type: {err_type}) needs to be dictionary type."
+            )
+    if not is_semantic_version(new_version):
+        raise ValueError(
+            f"The given version ('{new_version}') does not follow the expected semantic versioning."
+        )
+
+    releases = version_manifest_json["releases"]
+    for i in range(len(releases)):
+        if releases[i]['version'] == new_version:
+            return i
+        
+    return None
+
+
 # - #
 # Class definition
 # - #
@@ -300,10 +363,17 @@ class JSONManipulationFormatter:
         # Whether the given JSON is a schema or the data
         if is_schema is None:
             self.identify_schema_or_data()
-        elif is_schema:
+        elif is_schema == True:
             self.is_schema = True
-        elif not is_schema:
+        elif not is_schema == False:
             self.is_schema = False
+        else:
+            raise ValueError(
+                f"The given 'is_schema' value ({is_schema}) was not None, True or False."
+            )
+
+        # We extract the Schema version
+        self.add_version()
 
     def prettify(self) -> str:
         """
@@ -324,15 +394,14 @@ class JSONManipulationFormatter:
         """
         Determines whether the loaded JSON data is a JSON schema or JSON data. It is based on the
             top-level properties of the JSON object:
-            - If the JSON data has the properties "data" and "schema" at the top-level, it is
-                considered a data object.
+            - If the JSON data has property "$id" at its root, it is considered data.
             - If it has any other properties, it is considered a schema object.
         """
         properties_at_root = list(self.current_json.keys())
-        if properties_at_root == ["data", "schema"]:
-            self.is_schema = False
-        else:
+        if "$id" in properties_at_root:
             self.is_schema = True
+        else:
+            self.is_schema = False
 
         return self.is_schema
 
@@ -433,6 +502,19 @@ class JSONManipulationFormatter:
         )
 
         return self.current_json
+    
+    def add_version(self, version_keyword: str = "meta:version"):
+        """
+        Finds the version of the JSON object if it is a schema.
+        """
+        if self.is_schema:
+            self.version = self.current_json[version_keyword]
+            if not is_semantic_version(self.version):
+                raise ValueError(
+                    f"The found version of the JSON object does not follow semantic versioning.\n"
+                    f"\t- Found version: '{self.version}'\n"
+                    f"\t- Used keyword to get the version: '{version_keyword}'"
+                )
 
     def save_json(self, output_filepath: str, overwrite: bool = False) -> None:
         """
