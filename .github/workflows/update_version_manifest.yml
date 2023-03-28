@@ -22,9 +22,9 @@ on:
       - main
   # This "push" clause is to avoid having the GH action trigger at every push
   #   in the opened PR.
-  push:
-    branches-ignore:
-      - '*'
+  # push:
+  #   branches-ignore:
+  #     - '*'
 
 jobs:
   update-version-manifest:
@@ -33,8 +33,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          # Full git history
-          fetch-depth: 0
+          # This bit is needed to checkout in the branch that triggered the action
+          #   (e.g. v2.0.1)
+          ref: ${{ github.ref }}
+          fetch-depth: 1
 
       - uses: actions/setup-python@v4
         with:
