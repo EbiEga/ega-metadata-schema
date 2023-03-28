@@ -11,10 +11,10 @@
 import json
 import os
 from typing import Union
-from .json_manipulation import create_parent_json_paths, \
+from json_manipulation import create_parent_json_paths, \
     find_json_paths
 
-from .string_manipulation import remove_char_from_list, \
+from string_manipulation import remove_char_from_list, \
     add_char_to_list, \
     create_highlights_liner
 

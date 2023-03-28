@@ -1,0 +1,68 @@
+---
+# This workflow updates the version manifest (version_manifest.json) of the
+# project releases using the branch name, i.e. the project version (e.g. v2.0.0)
+# and each JSON schema version.
+# The logic of this workflow is:
+#   - Details: EE-2687
+#   - Why: It automatically compiles the version of the project and the version
+#       of the schemas, enabling a structured and traceable documentation.
+#   - Would block the PR if failed? Yes, as long as the PR is for a release.
+#   - How: executing script .github/scripts/update_version_manifest.py, 
+#       automatically when opening a PR to "main".
+#
+# For more information, check:
+#   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases
+name: Version manifest update (update_version_manifest.yml)
+
+on:
+  # Executes when opening a PR to the "main" branch
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+  # This "push" clause is to avoid having the GH action trigger at every push
+  #   in the opened PR.
+  push:
+    branches-ignore:
+      - '*'
+
+jobs:
+  update-version-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          # Full git history
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v4
+        with:
+          # We'll use the latest version of python from major 3 release
+          # This bit is needed for running the following python script
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          requirements_f="./.github/scripts/requirements.txt"
+          if [ -f "$requirements_f" ]; then pip install -r "$requirements_f"; fi
+
+      - name: Update version manifest
+        run: |
+          script_path="./.github/scripts/update_version_manifest.py"
+          schemas_path="./schemas"
+          releases_path="./docs/releases"
+          python3 "$script_path" --schemas_dir "$schemas_path" --version_manifest_dir "$releases_path"
+
+      - name: Setup git config
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+
+      - name: Commit version manifest changes
+        run: |
+          today=$(date +%F)
+          git add ./docs/releases/version_manifest.json
+          git commit -m "Update version manifest - $today"
+          git push

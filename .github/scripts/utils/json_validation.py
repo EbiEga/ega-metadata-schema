@@ -9,16 +9,16 @@
 # - #
 # System imports
 # - #
-import os
 from typing import Union
 import requests
+import jsonschema
 
 
 # -#
 # Helper functions
 # -#
 def request_validation(
-    data_filepath: Union[str, os.DirEntry[str]], curl_URL: str, headers: dict = None
+    data_filepath: str, curl_URL: str, headers: dict = None
 ) -> requests.models.Response:
     """
     Function that, given a data_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
@@ -62,6 +62,24 @@ def get_errors_response(
         return None
 
 
-# - #
-# Class definition
-# - #
+def validate_json(json_obj:dict, json_schema:dict, strict_mode:bool = False) -> bool:
+    """
+    Validates a given JSON object (data dictionary) against a given JSON schema (schema dictionary) and returns
+        True if it validates and False otherwise.
+    Additionally, if strict_mode is True, it will raise an exception when validation is not met.
+    """
+    if not isinstance(json_obj, dict):
+        raise TypeError(
+            f"The given JSON object ('json_obj') is not of type dictionary."
+        )
+    if not isinstance(json_schema, dict):
+        raise TypeError(
+            f"The given JSON schema ('json_schema') is not of type dictionary."
+        )
+    try:
+        jsonschema.validate(instance=json_obj, schema=json_schema)
+        return True
+    except jsonschema.exceptions.ValidationError as e:
+        if strict_mode:
+            raise e
+        return False
