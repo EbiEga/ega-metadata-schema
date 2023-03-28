@@ -13,6 +13,7 @@ The above diagram represents a simplified example of how the branches are manage
 In case it is needed to modify any of the above schemas, please go to the [editor's URL](https://app.diagrams.net/?libs=general;flowchart#G1bWcDQRYVkDVWP7ArPkxlZUo5pSZzHfZF). Only EGA members have access to it.
 
 ## Version Manifest
+### Introduction
 To keep track of which JSON schema versions are included in each release version of the EGA Metadata Schemas project, a manifest ([``version_manifest.json``](./version_manifest.json)) is maintained in this same directory. This file lists the schema versions included in each release, along with other relevant metadata of the releases.
 
 To ensure that the "version_manifest.json" file is properly formatted, a JSON Schema called [``VM_schema.json``](./VM_schema.json) is included in the same directory. This schema can be used to validate the "version_manifest.json" file before each release. In this case, we can deploy BioValidator and provide it with both the VM schema and document. 
@@ -22,6 +23,18 @@ $ node src/biovalidator -s ../ega-metadata-schema/docs/releases/VM_schema.json -
 ````
 
 We hope that this document and the accompanying diagram help to clarify the release workflow for the EGA Metadata Schemas project. If you have any questions or concerns, please don't hesitate to reach out to us.
+
+### Updating the version manifest
+In order to keep the version manifest updated every time there is a new release to be merged to ``main``, there is an automatic way to modify it. It is making use of the [``update_version_manifest.py``](../../.github/scripts/update_version_manifest.py) script. Check details of the script in its help (i.e. ``--help``) documentation.
+
+The script is **automatically** triggered by a GitHub action (see [file](../../.github/workflows/update_version_manifest.yml) and [diagram](../../docs/gh_workflows/README.md#version-manifest-update)), but can also be triggered **manually**. If the latter, one can, within the release branch (e.g. ``v2.0.1``) execute the script as follows:
+````
+$ python3 .github/scripts/update_version_manifest.py
+````
+If, during the review of a PR the version of some schemas change with respect to the ones at the beginning of the PR (which were automatically saved by the GH action), then the version manifest needs to be updated. This update during the PR to ``main`` should overwrite the existing project version that was saved at its creation. In order to do so, one can simply add ``--overwrite_mode``, but use with **caution**:
+````
+python3 .github/scripts/update_version_manifest.py --overwrite_mode
+````
 
 ## Modification of static pointers
 At some steps in the release process, there is a need to **modify the static schema and document pointers**. These pointers are basically a URL-resolvable ID of the schemas. It is thanks to these IDs that, during the validation process, we know:
