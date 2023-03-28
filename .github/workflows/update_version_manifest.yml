@@ -17,7 +17,7 @@ name: Version manifest update (update_version_manifest.yml)
 on:
   # Executes when opening a PR to the "main" branch
   pull_request:
-    types: [opened]
+    #! types: [opened]
     branches:
       - main
 
@@ -27,12 +27,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
-          # This bit is needed to checkout in the branch that triggered the action
-          #   (e.g. v2.0.1)
-          ref: ${{ github.ref }}
-          fetch-depth: 1
+          ref: ${{ github.head_ref }}
+
+      #! - name: Checkout code
+      #   uses: actions/checkout@v3
+      #   with:
+      #     # This bit is needed to checkout in the branch that triggered the action
+      #     #   (e.g. v2.0.1)
+      #     ref: ${{ github.ref }}
+      #     fetch-depth: 1
 
       - uses: actions/setup-python@v4
         with:
