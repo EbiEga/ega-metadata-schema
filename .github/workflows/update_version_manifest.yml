@@ -20,11 +20,7 @@ on:
     types: [opened]
     branches:
       - main
-  # This "push" clause is to avoid having the GH action trigger at every push
-  #   in the opened PR.
-  # push:
-  #   branches-ignore:
-  #     - '*'
+
 
 jobs:
   update-version-manifest:
