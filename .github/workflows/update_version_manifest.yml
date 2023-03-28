@@ -7,9 +7,8 @@
 #   - Why: It automatically compiles the version of the project and the version
 #       of the schemas, enabling a structured and traceable documentation.
 #   - Would block the PR if failed? Yes, as long as the PR is for a release.
-#   - How: executing script .github/scripts/update_version_manifest.py, both
-#       automatically when opening a PR to "main", and manually if required
-#       at the end of said PR, to update the versions.
+#   - How: executing script .github/scripts/update_version_manifest.py, 
+#       automatically when opening a PR to "main".
 #
 # For more information, check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases
@@ -26,14 +25,6 @@ on:
   push:
     branches-ignore:
       - '*'
-  # The workflow can be triggered automatically, with the option to overwrite 
-  #   an existing project version
-  workflow_dispatch:
-    inputs:
-      overwrite_mode:
-        description: 'Whether to use overwrite mode or not. Only use at the end of a PR to "main"'
-        type: boolean
-        default: false
 
 jobs:
   update-version-manifest:
@@ -62,13 +53,7 @@ jobs:
           script_path="./.github/scripts/update_version_manifest.py"
           schemas_path="./schemas"
           releases_path="./docs/releases"
-          overwrite_mode=${{ github.event.inputs.overwrite_mode }}
-
-          if [ "$overwrite_mode" = "true" ]; then
-            python3 "$script_path" --schemas_dir "$schemas_path" --version_manifest_dir "$releases_path" --overwrite_mode
-          else
-            python3 "$script_path" --schemas_dir "$schemas_path" --version_manifest_dir "$releases_path"
-          fi
+          python3 "$script_path" --schemas_dir "$schemas_path" --version_manifest_dir "$releases_path"
 
       - name: Setup git config
         run: |
