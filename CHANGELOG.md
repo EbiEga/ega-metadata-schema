@@ -48,6 +48,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Modified all JSON schema pointers (``$ids``) for them to point to the raw text version of each file [PR#46](https://github.com/EbiEga/ega-metadata-schema/pull/46)].
 - Transformed the protocols properties of experiments and analyses into an object on its own [PR#47](https://github.com/EbiEga/ega-metadata-schema/pull/47)].
 
+## [1.0.1] - 2023-03-28
+### Added [2023-03-28]
+- EE-2687 - Testing automatic version manifest
+
 ## [0.0.0] - 2021-04-26
 ### Added [2021-04-26]
 - [ega-metadata-schema/README.md](README.md) - Main README of the project with all its related information.
