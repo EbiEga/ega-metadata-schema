@@ -56,3 +56,8 @@ jobs:
         continue-on-error: true
           # This bit is used to turn this workflow into a warning instead of 
           #   failure.
+          
+      - name: Display warning message in PR if validation failed with warnings
+        if: ${{ job.status == 'completed' && job.outcome == 'success' && steps.validate-json-docs.outcome == 'success_with_warnings' }}
+        run: |
+          gh pr review ${{ github.event.number }} --body "Warning: JSON validation completed with warnings."
