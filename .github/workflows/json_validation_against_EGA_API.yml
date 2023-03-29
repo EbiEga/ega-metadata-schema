@@ -7,8 +7,9 @@
 # The logic of this workflow is:
 #   - Details: EE-2575
 #   - Why: It allows us to know if the changes introduced in the branch are
-#          compliant with the default (main branch) schemas.
-#   - Would block the PR if failed? No, it's just informative.
+#          compliant with the default (main branch) schemas and schemas prior
+#          any modification in the PR.
+#   - Would block the PR if failed? No, it's just a warning.
 #   - How: execute script .github/scripts/request_validation.py specifying the
 #       EGA's API server endpoint and this new branch's JSON documents.
 #
@@ -52,3 +53,6 @@ jobs:
           url="http://biovalidator.ega.ebi.ac.uk/validate"
 
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
+        continue-on-error: true
+          # This bit is used to turn this workflow into a warning instead of 
+          #   failure.
