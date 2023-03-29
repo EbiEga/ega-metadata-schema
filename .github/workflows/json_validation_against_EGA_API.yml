@@ -47,17 +47,32 @@ jobs:
           # Validate all JSON documents against their corresponding schemas
           # Check :
           #   github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
+        id: validate-json-docs
+        continue-on-error: true
         run: |
           json_ex_dir="./examples/json_validation_tests"
           # The following URL points to EGA's server of Biovalidator
           url="http://biovalidator.ega.ebi.ac.uk/validate"
 
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
-        continue-on-error: true
-          # This bit is used to turn this workflow into a warning instead of 
-          #   failure.
           
       - name: Display warning message in PR if validation failed with warnings
         if: ${{ job.status == 'completed' && job.outcome == 'success' && steps.validate-json-docs.outcome == 'success_with_warnings' }}
         run: |
           gh pr review ${{ github.event.number }} --body "Warning: JSON validation completed with warnings."
+
+      - name: Display warning if validation had failures
+        if: ${{ steps.validate-json-docs.conclusion == 'success' && steps.validate-json-docs.outcome == 'failure' }}
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              target_url: '',
+              description: 'JSON validation failed with warnings',
+              context: 'JSON validation'
+            })
