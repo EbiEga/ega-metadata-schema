@@ -3,7 +3,13 @@
         {
             "version": "0.0.0",
             "date": "2023-03-01",
-            "jsonSchemas": [
+            "changedJsonSchemas": [
+                {
+                    "schemaName": "protocol",
+                    "version": "0.0.0"
+                }
+            ],
+            "allJsonSchemas": [
                 {
                     "schemaName": "common-definitions",
                     "version": "0.0.0"
