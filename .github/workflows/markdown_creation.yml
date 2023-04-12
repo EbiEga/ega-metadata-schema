@@ -52,14 +52,17 @@ jobs:
 
       - name: Setup git config
         run: |
-          # Setup the username and email. No email by default
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          # Setup the username and email
+          git config --local user.name "GitHub Actions Bot"
+          git config --local user.email "action@github.com"
 
       - name: Add, commit and push to main
         run: |
           markdown_dir="./docs/json_browser/markdowns"
           today=$(date +%F)
+          # We add new additions
           git add $markdown_dir/*
+          # And add to stage the deleted files as well
+          git rm $(git ls-files --deleted "$markdown_dir")
           git commit -m "JSON Schemas to Markdown - $today"
           git push origin main
