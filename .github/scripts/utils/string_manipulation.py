@@ -164,3 +164,26 @@ def is_higher_version(o_lower_version: str, o_higher_version:str) -> bool:
 
     # The versions are identical
     return False
+
+
+def get_keys_for_diff_values(dict1, dict2):
+    """
+    Returns a list containing the keys whose values differed in the two given dictionaries
+    """
+    if not isinstance(dict1, dict):
+        err_type = type(dict1)
+        raise TypeError(
+                f"The given 'dict1' (type: {err_type}) needs to be dictionary type."
+            )
+    if not isinstance(dict2, dict):
+        err_type = type(dict2)
+        raise TypeError(
+                f"The given 'dict2' (type: {err_type}) needs to be dictionary type."
+            )
+    if set(dict1.keys()) != set(dict2.keys()):
+        raise ValueError("The two dictionaries have different keys.")
+    keys_with_diff_values = []
+    for key in dict1.keys():
+        if dict1[key] != dict2[key]:
+            keys_with_diff_values.append(key)
+    return keys_with_diff_values
