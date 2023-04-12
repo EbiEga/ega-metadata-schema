@@ -14,9 +14,11 @@ In case it is needed to modify any of the above schemas, please go to the [edito
 
 ## Version Manifest
 ### Introduction
-To keep track of which JSON schema versions are included in each release version of the EGA Metadata Schemas project, a manifest ([``version_manifest.json``](./version_manifest.json)) is maintained in this same directory. This file lists the schema versions included in each release, along with other relevant metadata of the releases.
+To keep track of which JSON schema versions are included in each release version of the EGA Metadata Schemas project, a manifest ([``version_manifest.json``](./version_manifest.json)) is maintained in this same directory. This file lists the schema versions included in the last release, the schema versions that changed in each release, and any other relevant metadata of the releases. 
 
-To ensure that the "version_manifest.json" file is properly formatted, a JSON Schema called [``VM_schema.json``](./VM_schema.json) is included in the same directory. This schema can be used to validate the "version_manifest.json" file before each release. In this case, we can deploy BioValidator and provide it with both the VM schema and document. 
+Each release contains at their version manifest file the schema versions of all objects. Whenever a new release is made and this file is edited, the previous releases are summarized, only containing the schema versions that were modified at their specific release, instead of all. This was designed for an easier reading without any information loss.
+
+To ensure that the "version_manifest.json" file is properly formatted, a JSON Schema called [``VM_schema.json``](./VM_schema.json) is included alongside it. This schema can be used to validate the "version_manifest.json" file before each release. There are multiple ways to validate the data with the schema, in many languages (e.g. bash, python, etc.). For example, we can deploy BioValidator and provide it with both the VM schema and document. 
 ````bash
 # Assuming you have Biovalidator cloned and installed on a directory above EGA's repo
 $ node src/biovalidator -s ../ega-metadata-schema/docs/releases/VM_schema.json -d ../ega-metadata-schema/docs/releases/version_manifest.json
