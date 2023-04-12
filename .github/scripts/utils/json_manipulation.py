@@ -321,6 +321,36 @@ def find_same_version(version_manifest_json: dict, new_version: str) -> Union[in
 
     return None
 
+def get_highest_version_index(version_manifest_json: dict) -> Union[int, None]:
+    """
+    Returns the index of the release in the Version Manifest whose "version" is the highest.
+    """
+    if not isinstance(version_manifest_json, dict):
+        err_type = type(version_manifest_json)
+        raise TypeError(
+                f"The given Version Manifest JSON (type: {err_type}) needs to be dictionary type."
+        )
+    releases = version_manifest_json['releases']
+    if len(releases) == 0:
+        return None
+    elif len(releases) == 1:
+        print("only one")
+        return 0
+    
+    highest_version_index = 0
+    highest_version = releases[0]['version']
+    for i, release in enumerate(releases):
+        i_version = release['version']
+        new_is_higher = is_higher_version(
+            o_lower_version=highest_version, 
+            o_higher_version=i_version
+        )
+        if new_is_higher:
+            highest_version = i_version
+            highest_version_index = i
+            
+    return highest_version_index
+
 
 # - #
 # Class definition
