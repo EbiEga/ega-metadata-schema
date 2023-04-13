@@ -58,9 +58,9 @@
                             {
                                 "arrayLabel": {
                                     "arrayLabelIdentifier": {
-                                        "termId": "CHEBI:37987",   
+                                        "termId": "CHEBI:37987",
                                         "termLabel": "Cy3"
-                                    }             
+                                    }
                                 },
                                 "objectId": {
                                     "egaAccession": "EGAN00002094401"
@@ -69,7 +69,7 @@
                             {
                                 "arrayLabel": {
                                     "arrayLabelIdentifier": {
-                                        "termId": "CHEBI:37989",   
+                                        "termId": "CHEBI:37989",
                                         "termLabel": "Cy5"
                                     }
                                 },
@@ -176,7 +176,6 @@
                                     "termLabel": "chr2"
                                 }
                             }
-        
                         ]
                     }
                 },
@@ -195,7 +194,7 @@
         ],
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "object-set"
         }

@@ -5,11 +5,11 @@
             "assayInstrumentPlatform": "[HuGene-2_0-st] Affymetrix Human Gene 2.0 ST Array [transcript (gene) version]"
         },
         "assayType": {
-            "termId": "EFO:0002764",   
+            "termId": "EFO:0002764",
             "termLabel": "ChIP-chip by SNP array"
         },
         "assayedBiologicalMacromolecule": {
-            "termId": "EFO:0008479",   
+            "termId": "EFO:0008479",
             "termLabel": "genomic DNA"
         },
         "experimentAttributes": [
@@ -127,16 +127,16 @@
                 "arrayLabels": [
                     {
                         "arrayLabelIdentifier": {
-                            "termId": "CHEBI:15956",   
+                            "termId": "CHEBI:15956",
                             "termLabel": "Biotin"
                         }
                     },
                     {
                         "arrayLabelIdentifier": {
-                            "termId": "CHEBI:37987",   
+                            "termId": "CHEBI:37987",
                             "termLabel": "Cy3 dye"
                         },
-                        "arrayLabelDescription": "This label was use to dye the control samples"                        
+                        "arrayLabelDescription": "This label was use to dye the control samples"
                     }
                 ]
             }
@@ -149,7 +149,7 @@
         "objectTitle": "Example array experiment title",
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.experiment.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "experiment"
         },

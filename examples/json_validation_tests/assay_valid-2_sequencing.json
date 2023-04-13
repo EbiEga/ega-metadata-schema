@@ -82,7 +82,6 @@
                             "termLabel": "chr2"
                         }
                     }
-
                 ]
             }
         },
@@ -93,7 +92,7 @@
         "objectTitle": "Breast cancer sequencing assay M305004",
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.assay.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "assay"
         }

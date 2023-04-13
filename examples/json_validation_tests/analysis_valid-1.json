@@ -113,7 +113,7 @@
         "objectTitle": "Example VCF analysis",
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.analysis.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "analysis"
         },

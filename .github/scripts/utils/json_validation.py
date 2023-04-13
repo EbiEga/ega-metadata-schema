@@ -18,10 +18,10 @@ import jsonschema
 # Helper functions
 # -#
 def request_validation(
-    data_filepath: str, curl_URL: str, headers: dict = None
+    data_filepath: Union[str, os.DirEntry[str]], validator_url: str, headers: dict = None
 ) -> requests.models.Response:
     """
-    Function that, given a data_filepath (e.g. "path/to/file.json"), a URL (e.g. http://localhost:3020/validate)
+    Function that, given a data_filepath (e.g. "path/to/file.json"), a validation URL (e.g. http://localhost:3020/validate)
         and the HTTP headers, will do a post request and return the response
     """
     if headers is None:
@@ -30,7 +30,7 @@ def request_validation(
     with open(data_filepath) as f:
         data = f.read().replace("\n", "").replace("\r", "").encode("utf-8")
 
-    response = requests.post(url=curl_URL, headers=headers, data=data)
+    response = requests.post(url=validator_url, headers=headers, data=data)
     return response
 
 
@@ -59,7 +59,7 @@ def get_errors_response(
     if not len(val_response_list) == 0:
         return val_response_list
     else:
-        return None
+        return []
 
 
 def validate_json(json_obj:dict, json_schema:dict, strict_mode:bool = False) -> bool:

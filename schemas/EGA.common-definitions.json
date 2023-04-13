@@ -2294,9 +2294,14 @@
           "describedBySchemaUri": {
             "type": "string",
             "title": "URI of the schema",
-            "description": "URI of the schema (e.g. 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json') that describes the JSON document (e.g. 'my_sample.json')",
-            "pattern": "^https://github\\.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA\\..+\\.json$",
-            "examples": ["https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.sample.json"]
+            "description": "URI of the schema that describes the JSON document (e.g. 'my_sample.json')",
+            "allOf": [
+              {
+                "title": "General pattern of a URL/URI",
+                "$ref": "./EGA.common-definitions.json#/definitions/urlUriPattern"
+              }
+            ],
+            "examples": ["https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"]
           },
           "objectSchemaVersion": {
             "type": "string",

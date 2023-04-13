@@ -53,7 +53,7 @@
         "objectTitle": "EBI test case-control dataset for cancer",
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.dataset.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "dataset"
         }

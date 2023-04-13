@@ -187,3 +187,37 @@ def get_keys_for_diff_values(dict1, dict2):
         if dict1[key] != dict2[key]:
             keys_with_diff_values.append(key)
     return keys_with_diff_values
+
+
+def replace_after_string_in_url(url: str, new_str: str, previous_str: str = "ega-metadata-schema") -> str:
+    """
+    Replaces the string following "previous_str" with the "new_str" in the given "url",
+        after splitting the "url" by "/".
+        Example URL:
+            "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"
+    There are two main use-cases:
+        1. Modifying the branch name in a GitHub URL with a new branch name by giving the repo name
+            (e.g. "ega-metadata-schema") as the "previous_str" and another branch name as "new_str" (e.g. "v1.0.0")
+        2. Modifying the owner of a repository (e.g. in a forked repo) by giving "raw.githubusercontent.com"
+            as the "previous_str" and another username as "new_str" (e.g. M-casado).
+    """
+    parts = url.split("/")
+    new_parts = []
+    if not previous_str in parts:
+        raise ValueError(
+            f"The given 'previous_str' ('{previous_str}') was not found as an element within the given URL ('{url}'). Amend this issue"
+            f" by providing an existing string within the url.."
+            f"\n\tFull list of URL elements: {parts}"
+        )
+    elif previous_str == "":
+        raise ValueError(
+            f"The given 'new_str' ('{previous_str}') is an empty string."
+        )
+    for part in parts:
+        if new_parts and new_parts[-1] == previous_str:
+            # If the previous item was the "previous_str", we don't get this "part", but the new string instead
+            new_parts.append(new_str)
+        else:
+            new_parts.append(part)
+    
+    return "/".join(new_parts)

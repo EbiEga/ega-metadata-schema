@@ -44,7 +44,7 @@
                                 "termId": "EFO:0001073",
                                 "termLabel": "Obesity"
                             }
-                        }                        
+                        }
                     ]
                 },
                 "organismDescriptor": {
@@ -171,7 +171,7 @@
                     "centerName": "EBI-TEST"
                 },
                 "objectTitle": "The Imperfect Cytokine Storm: Severe COVID-19 With ARDS in a Patient on Durable LVAD Support",
-                "objectDescription": "As health systems worldwide grapple with the coronavirus disease-2019 (COVID-19) pandemic, patients with durable LVAD support represent a unique population at risk for the disease. This paper outlines the case of such a patient who developed COVID-19 complicated by a “cytokine storm” with severe acute respiratory distress syndrome and myocardial injury and describes the challenges that arose during management.",
+                "objectDescription": "As health systems worldwide grapple with the coronavirus disease-2019 (COVID-19) pandemic, patients with durable LVAD support represent a unique population at risk for the disease. This paper outlines the case of such a patient who developed COVID-19 complicated by a \u201ccytokine storm\u201d with severe acute respiratory distress syndrome and myocardial injury and describes the challenges that arose during management.",
                 "studyDesigns": [
                     "clinical history design"
                 ],
@@ -212,7 +212,7 @@
         ],
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "object-set"
         }
