@@ -15,12 +15,12 @@ parser.add_argument(
     "--input_directory",
     type=str,
     required=True,
-    help='The filepath to a directory that contains the JSON documents or schemas to modify. Example: "examples/json_validation_tests/"',
+    help='The path to a directory that contains the JSON documents or schemas to modify. Example: "examples/json_validation_tests/"',
 )
 parser.add_argument(
     "--output_directory",
     type=str,
-    help='The filepath to a directory in which the modified JSON files will be stored. If missing, the original ones will be overwritten. Example: "examples/modified_jsons/".',
+    help='The path to a directory in which the modified JSON files will be stored. If missing, the original ones will be overwritten. Example: "examples/modified_jsons/".',
 )
 parser.add_argument(
     "--new_str",
