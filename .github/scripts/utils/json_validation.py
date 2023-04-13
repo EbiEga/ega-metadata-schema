@@ -60,8 +60,3 @@ def get_errors_response(
         return val_response_list
     else:
         return []
-
-
-# - #
-# Class definition
-# - #
