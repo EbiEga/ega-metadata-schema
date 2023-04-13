@@ -5,6 +5,12 @@
 #   in the GitHub actions of this repository and imported accordingly in other
 #   scripts.
 
+# - #
+# System imports
+# - #
+import re
+
+
 # -#
 # Helper functions
 # -#
@@ -99,6 +105,89 @@ def add_char_to_str(
     updated_string = new_string.strip()
 
     return updated_string
+
+
+def is_semantic_version(version_string: str) -> bool:
+    """
+    Checks whether a given string matches semantic versioning pattern (e.g. "1.1.1" is correct; "hello-world" is not).
+    The pattern allows for the three main elements: major version; minor version; and patch version; as well
+        as optional additions like: Pre-release version and Build metadata.
+    """
+    semver_regex = r'^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$'
+    match = re.match(semver_regex, version_string)
+    there_was_match = match is not None
+    return there_was_match
+
+
+def is_higher_version(o_lower_version: str, o_higher_version:str) -> bool:
+    """
+    Compare two strings that follow the semantic versioning specification.
+    Returns:
+        - True if "o_higher_version" is greater than "o_lower_version".
+        - False otherwise.
+    """
+    # Double check that they do follow semantic versioning
+    if not is_semantic_version(o_lower_version):
+        raise ValueError(
+            f"The given lower version ('{o_lower_version}') does not follow semantic versioning."
+        )
+    if not is_semantic_version(o_higher_version):
+        raise ValueError(
+            f"The given higher version ('{o_higher_version}') does not follow semantic versioning."
+        )
+
+    # Strip off any pre-release version and build metadata
+    lower_version = o_lower_version.split('+')[0].split('-')[0]
+    higher_version = o_higher_version.split('+')[0].split('-')[0]
+
+    # Split the version strings into their components (major, minor, patch)
+    higher_version_l = [int(v) for v in higher_version.split('.')]
+    lower_version_l = [int(v) for v in lower_version.split('.')]
+
+    # Compare the major version numbers
+    if higher_version_l[0] > lower_version_l[0]:
+        return True
+    elif higher_version_l[0] < lower_version_l[0]:
+        return False
+
+    # Compare the minor version numbers
+    if higher_version_l[1] > lower_version_l[1]:
+        return True
+    elif higher_version_l[1] < lower_version_l[1]:
+        return False
+
+    # Compare the patch version numbers
+    if higher_version_l[2] > lower_version_l[2]:
+        return True
+    elif higher_version_l[2] < lower_version_l[2]:
+        return False
+
+    # The versions are identical
+    return False
+
+
+def get_keys_for_diff_values(dict1, dict2):
+    """
+    Returns a list containing the keys whose values differed in the two given dictionaries
+    """
+    if not isinstance(dict1, dict):
+        err_type = type(dict1)
+        raise TypeError(
+                f"The given 'dict1' (type: {err_type}) needs to be dictionary type."
+            )
+    if not isinstance(dict2, dict):
+        err_type = type(dict2)
+        raise TypeError(
+                f"The given 'dict2' (type: {err_type}) needs to be dictionary type."
+            )
+    if set(dict1.keys()) != set(dict2.keys()):
+        raise ValueError("The two dictionaries have different keys.")
+    keys_with_diff_values = []
+    for key in dict1.keys():
+        if dict1[key] != dict2[key]:
+            keys_with_diff_values.append(key)
+    return keys_with_diff_values
+
 
 def replace_after_string_in_url(url: str, new_str: str, previous_str: str = "ega-metadata-schema") -> str:
     """

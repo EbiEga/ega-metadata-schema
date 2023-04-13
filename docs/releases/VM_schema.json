@@ -20,7 +20,7 @@
                 "type": "object",
                 "title": "Individual release",
                 "description": "A single release of the EGA-metadata-schema repository, containing metadata concerning its release alone",
-                "required": ["version", "date", "jsonSchemas"],
+                "required": ["version", "date", "changedJsonSchemas"],
                 "additionalProperties": false,
                 "properties": {
                     "version": {
@@ -31,36 +31,120 @@
                         "title": "Date of the release",
                         "$ref": "#/definitions/EGAISO8601DatePattern"
                     },
-                    "jsonSchemas": {
-                        "type": "array",
-                        "title": "JSON Schema Versions for the release",
-                        "description": "Array containing all individual JSON schema versions for the release.",
-                        "minItems": 13,
-                        "maxItems": 13,
-                        "uniqueItems": true,
-                        "additionalProperties": false,
-                        "items": {
-                            "type": "object",
-                            "title": "Individual JSON schema",
-                            "required": [ "schemaName", "version" ],
-                            "additionalProperties": false,
-                            "properties": {
-                                "schemaName": {
-                                    "type": "string",
-                                    "title": "Name of the JSON schema",
-                                    "enum": [ "common-definitions", "experiment", "study", "sample", "individual", "submission", "assay", "dataset", "analysis", "policy", "DAC", "protocol", "object-set" ]
-                                },
-                                "version": {
-                                    "$ref": "#/definitions/semanticVersioningPattern"
-                                }
-                            }
-                        }
+                    "changedJsonSchemas": {
+                        "title": "JSON Schema Versions that changed for this release",
+                        "description": "Property containing all JSON schema versions that changed for this release.",
+                        "$ref": "#/definitions/allObjectsVersions"
+                    },
+                    "allJsonSchemas": {
+                        "title": "All JSON Schema Versions for the release",
+                        "description": "Property containing all individual JSON schema versions for the release. In order to avoid adding a lot of data here, this array is intended to be used exclusively at the latest release, instead of all.",
+                        "$ref": "#/definitions/allObjectsVersions"
                     }
                 }
             }
         }
     },
     "definitions": {
+        "allObjectsVersions": {
+            "type": "object",
+            "title": "All object versions",
+            "description": "This definition is of a node with all objects and versions: the object's name (e.g. 'sample') as the property name and its version as the value (e.g. '1.0.0').",
+            "additionalProperties": false,
+            "properties": {
+                "common-definitions": {
+                    "type": "string",
+                    "title": "Semantic version for common-definitions object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "experiment": {
+                    "type": "string",
+                    "title": "Semantic version for experiment object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "study": {
+                    "type": "string",
+                    "title": "Semantic version for study object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "sample": {
+                    "type": "string",
+                    "title": "Semantic version for sample object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "individual": {
+                    "type": "string",
+                    "title": "Semantic version for individual object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "submission": {
+                    "type": "string",
+                    "title": "Semantic version for submission object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "assay": {
+                    "type": "string",
+                    "title": "Semantic version for assay object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "dataset": {
+                    "type": "string",
+                    "title": "Semantic version for dataset object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "analysis": {
+                    "type": "string",
+                    "title": "Semantic version for analysis object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "policy": {
+                    "type": "string",
+                    "title": "Semantic version for policy object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "DAC": {
+                    "type": "string",
+                    "title": "Semantic version for DAC object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "protocol": {
+                    "type": "string",
+                    "title": "Semantic version for protocol object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                },
+                "object-set": {
+                    "type": "string",
+                    "title": "Semantic version for object-set object",
+                    "allOf": [
+                        { "$ref": "#/definitions/semanticVersioningPattern" }
+                    ]
+                }
+            }
+        },
         "semanticVersioningPattern": {
             "type": "string",
             "title": "Semantic versioning pattern",
