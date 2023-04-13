@@ -18,7 +18,7 @@ import jsonschema
 # Helper functions
 # -#
 def request_validation(
-    data_filepath: Union[str, os.DirEntry[str]], validator_url: str, headers: dict = None
+    data_filepath: str, validator_url: str, headers: dict = None
 ) -> requests.models.Response:
     """
     Function that, given a data_filepath (e.g. "path/to/file.json"), a validation URL (e.g. http://localhost:3020/validate)
