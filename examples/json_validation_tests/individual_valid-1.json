@@ -42,7 +42,7 @@
                         "termId": "MONDO:0019808",
                         "termLabel": "aortic valve atresia"
                     }
-                },             
+                },
                 {
                     "disease": {
                         "termId": "EFO:1000254",
@@ -80,7 +80,7 @@
         },
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "individual"
         }

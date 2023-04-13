@@ -34,7 +34,7 @@
                         "caseVsControl": "case",
                         "conditionUnderStudy": {
                             "termId": "EFO:0003023",
-                            "termLabel": "Activated by 100 U/mL of recombinant IFN-β for 6 hours"
+                            "termLabel": "Activated by 100 U/mL of recombinant IFN-\u03b2 for 6 hours"
                         }
                     }
                 ],
@@ -175,7 +175,7 @@
                         "caseVsControl": "control",
                         "conditionUnderStudy": {
                             "termId": "EFO:0003023",
-                            "termLabel": "Activated by 100 U/mL of recombinant IFN-β for 6 hours"
+                            "termLabel": "Activated by 100 U/mL of recombinant IFN-\u03b2 for 6 hours"
                         }
                     }
                 ],
@@ -389,7 +389,6 @@
                                     "termLabel": "GRCh38.p14"
                                 }
                             }
-        
                         ]
                     }
                 },
@@ -473,7 +472,6 @@
                                     "termLabel": "GRCh38.p14"
                                 }
                             }
-        
                         ]
                     }
                 },
@@ -538,11 +536,11 @@
                     "objectSchemaVersion": "0.0.0",
                     "objectType": "assay"
                 }
-            }            
+            }
         ],
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.object-set.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "object-set"
         }

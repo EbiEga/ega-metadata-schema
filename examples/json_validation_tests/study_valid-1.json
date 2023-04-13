@@ -8,7 +8,7 @@
         "objectTitle": "EBI test case-control study for covid19",
         "schemaDescriptor": {
             "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.study.json",
+            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json",
             "objectSchemaVersion": "0.0.0",
             "objectType": "study"
         },
