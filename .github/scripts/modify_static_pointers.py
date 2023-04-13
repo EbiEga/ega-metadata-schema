@@ -26,13 +26,13 @@ parser.add_argument(
     "--new_str",
     type=str,
     required=True,
-    help='The string bit that will be replacing the element right after the "previous_str" in the static pointers. Examples: "v1.0.0" or "M-casado"',
+    help='The string that will be replacing the element right after the "previous_str" in the static pointers. Examples: "v1.0.0" or "M-casado"',
 )
 parser.add_argument(
     "--previous_str",
     type=str,
     default="ega-metadata-schema",
-    help='The string bit that will be used to locate what is replaced: the element that comes right after this "previous_str" in the static pointers. Example: "ega-metadata-schema" when changing branch names, or "EbiEga" when changing owners of the repository.',
+    help='The string that will be used to locate what is replaced: the element that comes right after this "previous_str" in the static pointers. Example: "ega-metadata-schema" when changing branch names, or "EbiEga" when changing owners of the repository.',
 )
 args = parser.parse_args()
 
