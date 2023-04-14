@@ -27,7 +27,7 @@ for file in os.scandir(dirname):
 
     request = request_validation(
         data_filepath=file,
-        curl_URL=curl_URL
+        validator_url=curl_URL
     )
 
     val_error = get_errors_response(
