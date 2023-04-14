@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Union
 from .string_manipulation import add_newlines, \
     is_semantic_version, \
-    is_higher_version
+    is_higher_version, \
     replace_after_string_in_url
 
 # - #
