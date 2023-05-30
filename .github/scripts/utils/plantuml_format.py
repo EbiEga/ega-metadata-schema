@@ -16,7 +16,8 @@ from json_manipulation import create_parent_json_paths, \
 
 from string_manipulation import remove_char_from_list, \
     add_char_to_list, \
-    create_highlights_liner
+    create_highlights_liner, \
+    validate_json_file_path
 
 # -#
 # Hardcoded values
@@ -68,11 +69,7 @@ class PlantUMLFormatter:
             self.original_json = json_data
 
         elif json_filepath:
-            file_extension = os.path.splitext(json_filepath)[1].lower()
-            if not os.path.isfile(json_filepath) or not file_extension == ".json":
-                raise ValueError(
-                    f"The given JSON filepath ('{json_filepath}') was not a file or is not a JSON file (*.json)."
-                )
+            validate_json_file_path(json_filepath)
             self.json_filepath = json_filepath
             with open(json_filepath, "r", encoding="utf-8") as json_file:
                 self.original_json = json.load(json_file)
