@@ -4,7 +4,8 @@
 #
 # For more information, check:
 #   https://github.com/github/super-linter
-name: [OPTIONAL] Super-linter (super_linter.yml)
+name: |
+  [OPTIONAL] Super-linter (super_linter.yml)
 
 on:
   pull_request:

@@ -12,7 +12,9 @@
 #
 # For more information, check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases
-name: [REQUIRED] Check schema semantic versioning
+
+name: |
+  [REQUIRED] Check schema semantic versioning
 
 on:
   pull_request:
