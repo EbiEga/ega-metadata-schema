@@ -51,7 +51,7 @@ jobs:
         id: run-version-modification-check
         run: |
           # We get the list of modified JSON files
-          json_files=$(git diff --name-only origin/main...$GITHUB_HEAD_REF -- schemas/ | grep -E '\.json$')
+          json_files=$(git diff --name-only ${{ github.base_ref }}...${{ github.head_ref }} -- schemas/ | grep -E '\.json$')
           script_path="./.github/scripts/version_modification_check.py"
 
           python3 "$script_path" --strict_mode --set_output_gh_action "version_needs_to_be_checked" --files "$json_files"
@@ -128,10 +128,3 @@ jobs:
           url="http://localhost:3020/validate"
 
           python3 ./.github/scripts/request_validation.py "$old_json_ex_dir" "$url"
-
-
-
-
-
-
-          
