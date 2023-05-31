@@ -12,7 +12,7 @@
 #
 # For more information, check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases
-name: Version manifest update (update_version_manifest.yml)
+name: [REQUIRED] Version manifest update (update_version_manifest.yml)
 
 on:
   # Executes when opening a PR to the "main" branch
