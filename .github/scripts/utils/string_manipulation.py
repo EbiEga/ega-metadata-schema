@@ -10,7 +10,7 @@
 # - #
 import re
 import os
-from typing import Tuple
+from typing import Union
 
 # -#
 # Helper functions
@@ -188,7 +188,7 @@ def validate_json_file_path(file_path: str) -> None:
         raise ValueError(f"File is not a JSON file: {file_path}")
     
 
-def compare_semantic_versions(old_version: str, new_version: str) -> Tuple(bool, str):
+def compare_semantic_versions(old_version: str, new_version: str) -> Union[bool, str]:
     """
     Compares two given semantic versions and returns a tuple with a boolean indicating if the new version is higher
     and the type of change (Major, Minor, Patch, or Invalid) between them.
