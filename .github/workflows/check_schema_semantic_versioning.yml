@@ -50,8 +50,8 @@ jobs:
       - name: Run version modification check
         id: run-version-modification-check
         run: |
-          # We get the list of modified JSON files
-          json_files=$(git diff --name-only ${{ github.base_ref }}...${{ github.head_ref }} -- schemas/ | grep -E '\.json$')
+          # We get the list of modified JSON schemas
+          json_files=$(git diff --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} -- "schemas/*.json")
           script_path="./.github/scripts/version_modification_check.py"
 
           python3 "$script_path" --strict_mode --set_output_gh_action "version_needs_to_be_checked" --files "$json_files"
