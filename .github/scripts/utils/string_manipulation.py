@@ -9,7 +9,8 @@
 # System imports
 # - #
 import re
-
+import os
+from typing import Union
 
 # -#
 # Helper functions
@@ -119,53 +120,6 @@ def is_semantic_version(version_string: str) -> bool:
     return there_was_match
 
 
-def is_higher_version(o_lower_version: str, o_higher_version:str) -> bool:
-    """
-    Compare two strings that follow the semantic versioning specification.
-    Returns:
-        - True if "o_higher_version" is greater than "o_lower_version".
-        - False otherwise.
-    """
-    # Double check that they do follow semantic versioning
-    if not is_semantic_version(o_lower_version):
-        raise ValueError(
-            f"The given lower version ('{o_lower_version}') does not follow semantic versioning."
-        )
-    if not is_semantic_version(o_higher_version):
-        raise ValueError(
-            f"The given higher version ('{o_higher_version}') does not follow semantic versioning."
-        )
-
-    # Strip off any pre-release version and build metadata
-    lower_version = o_lower_version.split('+')[0].split('-')[0]
-    higher_version = o_higher_version.split('+')[0].split('-')[0]
-
-    # Split the version strings into their components (major, minor, patch)
-    higher_version_l = [int(v) for v in higher_version.split('.')]
-    lower_version_l = [int(v) for v in lower_version.split('.')]
-
-    # Compare the major version numbers
-    if higher_version_l[0] > lower_version_l[0]:
-        return True
-    elif higher_version_l[0] < lower_version_l[0]:
-        return False
-
-    # Compare the minor version numbers
-    if higher_version_l[1] > lower_version_l[1]:
-        return True
-    elif higher_version_l[1] < lower_version_l[1]:
-        return False
-
-    # Compare the patch version numbers
-    if higher_version_l[2] > lower_version_l[2]:
-        return True
-    elif higher_version_l[2] < lower_version_l[2]:
-        return False
-
-    # The versions are identical
-    return False
-
-
 def get_keys_for_diff_values(dict1, dict2):
     """
     Returns a list containing the keys whose values differed in the two given dictionaries
@@ -221,3 +175,56 @@ def replace_after_string_in_url(url: str, new_str: str, previous_str: str = "ega
             new_parts.append(part)
     
     return "/".join(new_parts)
+
+
+def validate_json_file_path(file_path: str) -> None:
+    """
+    Validates if a file exists and is a JSON file
+    """
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
+    file_extension = os.path.splitext(file_path)[1].lower()
+    if not file_extension == ".json":
+        raise ValueError(f"File is not a JSON file: {file_path}")
+    
+
+def compare_semantic_versions(old_version: str, new_version: str) -> Union[bool, str]:
+    """
+    Compares two given semantic versions and returns a tuple with a boolean indicating if the new version is higher
+    and the type of change (Major, Minor, Patch, or Invalid) between them.
+    
+    Args:
+        old_version (str): The old version string to be compared, following semantic versioning.
+        new_version (str): The new version string to be compared, following semantic versioning.
+    
+    Returns:
+        Tuple[bool, str]: A tuple containing:
+            - A boolean value indicating if the new version is higher than the old version.
+            - A string representing the type of change between the versions: "Major", "Minor", "Patch", or "Invalid".
+            
+    Raises:
+        ValueError: If either the old_version or new_version does not follow the semantic versioning format.
+    """
+    if not is_semantic_version(old_version):
+        raise ValueError(f"The given old version ('{old_version}') does not follow semantic versioning.")
+    if not is_semantic_version(new_version):
+        raise ValueError(f"The given new version ('{new_version}') does not follow semantic versioning.")
+    
+    old_major, old_minor, old_patch = map(int, old_version.split('.')[0:3])
+    new_major, new_minor, new_patch = map(int, new_version.split('.')[0:3])
+    
+    is_higher = False
+    version_change = "Invalid"
+
+    if new_major > old_major:
+        is_higher = True
+        version_change = "Major"
+    elif new_major == old_major:
+        if new_minor > old_minor:
+            is_higher = True
+            version_change = "Minor"
+        elif new_minor == old_minor and new_patch > old_patch:
+            is_higher = True
+            version_change = "Patch"
+
+    return is_higher, version_change

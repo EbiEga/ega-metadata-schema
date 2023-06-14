@@ -10,7 +10,9 @@
 #     events-that-trigger-workflows#running-your-workflow-when-a-pull-
 #     request-merges
 #   https://lannonbr.com/blog/2019-12-09-git-commit-in-actions
-name: JSON Schemas to Markdown (markdown_creation.yml)
+name: |
+  [OPTIONAL] JSON Schemas to Markdown (markdown_creation.yml)
+
 on:
   # A closed PR will imply a push to "main". After that push, this action
   #   executes, using as input the JSON schemas from "main".

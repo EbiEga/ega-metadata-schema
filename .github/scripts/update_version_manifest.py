@@ -10,7 +10,7 @@ from utils.json_manipulation import JSONManipulationFormatter, \
     get_highest_version_index
 from utils.string_manipulation import is_semantic_version, \
     get_keys_for_diff_values, \
-    is_higher_version
+    compare_semantic_versions
 from utils.json_validation import validate_json
 
 # Script used to update the version manifest (./docs/releases) with the versions of the JSON schemas. For further details, please check:
@@ -164,9 +164,9 @@ if highest_version_index is not None:
     # We iterate over the objects with diff. versions, creating "changedJsonSchemas"
     changed_version_dict = {}
     for object_name in diff_keys_list:
-        new_is_higher = is_higher_version(
-            o_lower_version=highest_allJsonSchemas[object_name], 
-            o_higher_version=new_allJsonSchemas[object_name]
+        new_is_higher, version_change = compare_semantic_versions(
+            old_version=highest_allJsonSchemas[object_name],
+            new_version=new_allJsonSchemas[object_name]
         )
         if not new_is_higher:
             raise ValueError(

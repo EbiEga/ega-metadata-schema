@@ -15,11 +15,12 @@ import jsonpath_ng
 import warnings
 
 from pathlib import Path
-from typing import Union
+from typing import Optional, Union
 from .string_manipulation import add_newlines, \
     is_semantic_version, \
-    is_higher_version, \
-    replace_after_string_in_url
+    compare_semantic_versions, \
+    replace_after_string_in_url, \
+    validate_json_file_path
 
 # - #
 # Hardcoded values
@@ -230,11 +231,7 @@ def load_json(json_filepath: str) -> dict:
     """
     Function to load a JSON file and returns it as a python dictionary.
     """
-    file_extension = os.path.splitext(json_filepath)[1].lower()
-    if not os.path.isfile(json_filepath) or not file_extension == ".json":
-        raise ValueError(
-            f"File '{json_filepath}' does not exist, is not a file, or is not a JSON file"
-        )
+    validate_json_file_path(json_filepath)
     with open(json_filepath, "r") as json_file:
         json_data = json.load(json_file)
     return json_data
@@ -286,7 +283,11 @@ def check_previous_project_versions(version_manifest_json: dict, new_version: st
                 f"\n\t- Release:\n{release}"
             )
 
-        if not is_higher_version(o_lower_version=existing_release_version, o_higher_version=new_version):
+        new_is_higher, version_change = compare_semantic_versions(
+            old_version=existing_release_version,
+            new_version=new_version
+        )
+        if not new_is_higher:
             if strict_mode:
                 raise ValueError(
                     f"Found issue when comparing the version manifest and the newer version: one of the versions is higher than or equal to the newer version."
@@ -342,9 +343,9 @@ def get_highest_version_index(version_manifest_json: dict) -> Union[int, None]:
     highest_version = releases[0]['version']
     for i, release in enumerate(releases):
         i_version = release['version']
-        new_is_higher = is_higher_version(
-            o_lower_version=highest_version, 
-            o_higher_version=i_version
+        new_is_higher, version_change = compare_semantic_versions(
+            old_version=highest_version,
+            new_version=i_version
         )
         if new_is_higher:
             highest_version = i_version
@@ -371,18 +372,14 @@ class JSONManipulationFormatter:
     """
 
     def __init__(
-        self, json_filepath: str = "", json_data: dict = {}, is_schema: Union[bool, None] = None
+        self, json_filepath: str = "", json_data: Optional[dict] = None, is_schema: Optional[bool] = None
     ):
 
         # We either take the given JSON data or load the given JSON file
         if json_data:
             self.original_json = json_data
         elif json_filepath:
-            file_extension = os.path.splitext(json_filepath)[1].lower()
-            if not os.path.isfile(json_filepath) or not file_extension == ".json":
-                raise ValueError(
-                    f"The given JSON filepath ('{json_filepath}') was not a file or is not a JSON file (*.json)."
-                )
+            validate_json_file_path(json_filepath)
             self.json_filepath = json_filepath
             with open(json_filepath, "r", encoding="utf-8") as json_file:
                 self.original_json = json.load(json_file)
@@ -396,10 +393,8 @@ class JSONManipulationFormatter:
         # Whether the given JSON is a schema or the data
         if is_schema is None:
             self.identify_schema_or_data()
-        elif is_schema == True:
-            self.is_schema = True
-        elif not is_schema == False:
-            self.is_schema = False
+        elif is_schema == True or is_schema == False:
+            self.is_schema = is_schema
         else:
             raise ValueError(
                 f"The given 'is_schema' value ({is_schema}) was not None, True or False."
