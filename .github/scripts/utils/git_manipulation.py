@@ -30,18 +30,17 @@ def get_current_branch(directory_path: str) -> Union[str, None]:
         return None
     
 
-def load_main_json_schema(file_path: str) -> dict:
+def load_main_json(file_path: str, base_url: str = "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main") -> dict:
     """
     Given a file path, returns the loaded JSON file of its version of the "main" branch of the ega-metadata-schema repository
     """
     file_extension = os.path.splitext(file_path)[1].lower()
     if not file_extension == ".json":
         raise ValueError(f"Given file path is not of a JSON file: {file_path}")
-    file_name = os.path.basename(file_path)
-    url = f"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/{file_name}"
+    url = f"{base_url}/{file_path}"
     response = requests.get(url)
     if response.status_code != 200:
-        raise FileNotFoundError(f"Given file was not found in the repository's main branch (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas): {file_name}")
+        raise FileNotFoundError(f"Given file '{os.path.basename(file_path)}' was not found in the repository's main branch at the given URL: {url}")
     return response.json()
 
 def fetch_and_copy_files(
