@@ -52,6 +52,9 @@ def main(args: argparse.Namespace) -> bool:
     # We get the new version of the project
     if not args.new_release_version:
         new_version = get_current_branch(directory_path = schema_repo_filepath)
+        if current_branch_name.startswith("v"):
+            # We get rid of the "v" string that represents the "version"
+            current_branch_name = current_branch_name[1:]
         if not is_semantic_version(new_version):
             raise ValueError(f"The current branch name ('{new_version}') does not follow semantic versioning.")
     else:
