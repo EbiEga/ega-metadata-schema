@@ -1,3 +1,4 @@
+import os
 import argparse
 
 from utils.git_manipulation import get_current_branch, \
@@ -29,12 +30,6 @@ parser.add_argument(
     default=None,
     help='Semantic version of the new project release version to use instead of the current branch name. Do NOT use unless you know exactly what you are doing: to comply with the release workflow, the version should normally be taken from the branch name. Default: None',
 )
-parser.add_argument(
-    "--set_output_gh_action",
-    type=str,
-    required=False,
-    help='The variable name that is used to set the output of the script. Only used if present, and should only be present if the script is being used in a GitHub workflow, so that this one can use the output for other jobs/steps. Example: "version_change_type"',
-)
 args = parser.parse_args()
 
 # Check the integrity of the given arguments
@@ -47,19 +42,6 @@ if args.new_release_version:
 # --------- #
 # Main function for the check
 # --------- #
-def set_output(name: str, value):
-    """
-    Function to set the output of the script within the environment of a GitHub workflow, for the variable (i.e. name
-        and value) to be used by other jobs/runs/steps.
-    """
-    try:
-        output_file = os.environ['GITHUB_OUTPUT']
-    except KeyError:
-        raise KeyError("The 'GITHUB_OUTPUT' environment variable is not set. Perhaps you are running option '--set_output_gh_action' outside of a GitHub workflow.")
-    
-    with open(output_file, 'a') as fh:
-        print(f'{name}={value}', file=fh)
-
 def main(args: argparse.Namespace) -> bool:
     # Hardcoded values
     schema_repo_filepath = "."
@@ -96,8 +78,4 @@ def main(args: argparse.Namespace) -> bool:
 
 if __name__ == "__main__":
     version_check_type = main(args)
-    if args.set_output_gh_action:
-        # We set the output for the GitHub workflow
-        set_output(name=args.set_output_gh_action, value=version_check_type)
-    else:
-        print(version_check_type)
+    print(version_check_type)
