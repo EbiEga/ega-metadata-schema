@@ -50,7 +50,7 @@ jobs:
         id: run-version-modification-check
         run: |
           script_path="./.github/scripts/check_project_version_change.py"
-          python3 "$script_path" --git_var_name "VERSION_CHANGE"
+          python3 "$script_path" --git_var_name "VERSION_CHANGE" --verbose
           echo "- The version change is: $VERSION_CHANGE"
         
         # The output of this previous script will determine if changes are not "major" (i.e. minor or patch), and therefore retrocompatibility
@@ -99,12 +99,39 @@ jobs:
           url="http://localhost:3020/validate"
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
 
+      - name: Kill previous Biovalidator server
+        if: ${{ env.version_needs_to_be_checked == 'True' }}
+          # We kill the existing Biovalidator server if it exists
+        run: |
+          # File path
+          file="./server.pid"
+
+          # Check if the file exists
+          if [ -f "$file" ]
+          then
+              # Read PID
+              pid=$(cat "$file")
+
+              # Check if the PID exists
+              if ps -p $pid > /dev/null
+              then
+                  echo "Killing task with PID: $pid"
+                  kill $pid
+              else
+                  echo "No process found with PID: $pid"
+              fi
+              rm $file
+          else
+              echo "File $file does not exist"
+          fi
+
+
       - name: Start Biovalidator server (New schemas)
         if: ${{ env.version_needs_to_be_checked == 'True' }}
           # We want to specify the NEW JSON schemas, so we DO specify the schemas
           #   at deployment level
         run: |
-          schemas_dir="./schemas"          
+          schemas_dir="./schemas"
           node biovalidator/src/biovalidator -r "$schemas_dir/*.json" &
           sleep 3
 
