@@ -99,12 +99,12 @@ jobs:
           url="http://localhost:3020/validate"
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
 
-      - name: Kill task if it exists
+      - name: Kill previous Biovalidator server
         if: ${{ env.version_needs_to_be_checked == 'True' }}
           # We kill the existing Biovalidator server if it exists
         run: |
           # File path
-          file="biovalidator/server.pid"
+          file="./server.pid"
 
           # Check if the file exists
           if [ -f "$file" ]
