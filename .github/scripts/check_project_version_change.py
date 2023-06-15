@@ -31,6 +31,12 @@ parser.add_argument(
     help='Semantic version of the new project release version to use instead of the current branch name. Do NOT use unless you know exactly what you are doing: to comply with the release workflow, the version should normally be taken from the branch name. Default: None',
 )
 parser.add_argument(
+    "--git_var_name",
+    type=str,
+    default=None,
+    help='The variable name (e.g. "VERSION_CHANGE") to which the output of this script will be associated. This variable will be written within the GitHub environment, so this option should only be used in a GitHub environment (e.g. in a GH workflow). Default: None',
+)
+parser.add_argument(
     "--verbose",
     action="store_true",
     default=False,
@@ -106,4 +112,12 @@ def main(args: argparse.Namespace) -> bool:
 
 if __name__ == "__main__":
     version_check_type = main(args)
-    print(version_check_type)
+    if not args.git_var_name:
+        print(version_check_type)
+    else:
+        # If we were given the variable name for the Github env, we associate
+        #   the value to it by writting it to the GitHub env. file
+        #   See: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+        with open(os.getenv('GITHUB_ENV'), 'a') as env_file:
+            env_file.write(f"{args.git_var_name}={version_check_type}\n")
+

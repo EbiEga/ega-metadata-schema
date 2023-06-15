@@ -50,19 +50,18 @@ jobs:
         id: run-version-modification-check
         run: |
           script_path="./.github/scripts/check_project_version_change.py"
-          version_change=$(python3 "$script_path")
-          echo "version_change=$version_change" >> $GITHUB_ENV
-          echo "- The version change is: $version_change"
+          python3 "$script_path" --git_var_name "VERSION_CHANGE"
+          echo "- The version change is: $VERSION_CHANGE"
         
         # The output of this previous script will determine if changes are not "major" (i.e. minor or patch), and therefore retrocompatibility
         #   has to be tested through JSON Schema validation (combination of old and new schemas with old and new examples).
-        #   Thus, only if the output (saved at 'version_change') from the script is True, the following steps will occur.
+        #   Thus, only if the output (saved at 'VERSION_CHANGE') from the script is True, the following steps will occur.
 
       - name: Check if version change is Major
         id: check-version
           # This step is just to set the logic for triggering the following steps
         run: |
-          if [[ "${{ env.version_change }}" != "Major" ]]; then
+          if [[ "${{ env.VERSION_CHANGE }}" != "Major" ]]; then
             echo "version_needs_to_be_checked=True" >> $GITHUB_ENV
           else
             echo "version_needs_to_be_checked=False" >> $GITHUB_ENV

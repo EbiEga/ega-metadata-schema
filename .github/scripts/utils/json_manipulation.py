@@ -336,7 +336,6 @@ def get_highest_version_index(version_manifest_json: dict) -> Union[int, None]:
     if len(releases) == 0:
         return None
     elif len(releases) == 1:
-        print("only one")
         return 0
     
     highest_version_index = 0
