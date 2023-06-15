@@ -56,7 +56,7 @@ jobs:
         #   has to be tested through JSON Schema validation (combination of old and new schemas with old and new examples).
         #   Thus, only if the output (saved at 'version_change') from the script is True, the following steps will occur.
 
-        - name: Check if version change is Major
+      - name: Check if version change is Major
         id: check-version
           # This step is just to set the logic for triggering the following steps
         run: |
