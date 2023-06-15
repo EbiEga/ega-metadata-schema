@@ -18,11 +18,9 @@ name: |
   [REQUIRED] Check project version change
 
 on:
+  # Executes on any commit to a PR to the "main" branch
   pull_request:
     branches: [main]
-    # We only want for it to be triggered when JSON Schemas change in the PR
-    paths:
-      - 'schemas/**.json'
 
 jobs:
   check-modifications:
