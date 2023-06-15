@@ -18,11 +18,9 @@ name: |
   [REQUIRED] Check project version change
 
 on:
+  # Executes on any commit to a PR to the "main" branch
   pull_request:
     branches: [main]
-    # We only want for it to be triggered when JSON Schemas change in the PR
-    paths:
-      - 'schemas/**.json'
 
 jobs:
   check-modifications:
@@ -56,7 +54,7 @@ jobs:
         
         # The output of this previous script will determine if changes are not "major" (i.e. minor or patch), and therefore retrocompatibility
         #   has to be tested through JSON Schema validation (combination of old and new schemas with old and new examples).
-        #   Thus, only if the variable "version_needs_to_be_checked" from the script is True, the following steps will occur.
+        #   Thus, only if the output (saved at 'version_change') from the script is True, the following steps will occur.
 
         - name: Check if version change is Major
         id: check-version
