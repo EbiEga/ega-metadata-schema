@@ -45,11 +45,10 @@ if args.new_release_version:
     if not is_semantic_version(args.new_release_version):
         raise ValueError(f"The given new release version ('{args.new_release_version}') does not follow semantic versioning.")
 
-def print_verbose(text:str):
+def print_verbose(text: str, verbose: bool):
     """
     Function that prints messages based on the script's verbose level
     """
-    global verbose
     if verbose:
         print(text)
 
@@ -83,7 +82,8 @@ def main(args: argparse.Namespace) -> bool:
     print_verbose(
         f"- Comparison of versions:"
         f"\tThe new version is '{new_version}'"
-        f"\tThe highest existing version in the version manifest is '{highest_version}'"
+        f"\tThe highest existing version in the version manifest is '{highest_version}'",
+        args.verbose
     )
 
     # Time to compare the new and old versions, to assert that the new is higher
@@ -98,7 +98,8 @@ def main(args: argparse.Namespace) -> bool:
         )
     
     print_verbose(
-        f"- The change type is '{change_type}'"
+        f"- The change type is '{change_type}'",
+        args.verbose
     )
 
     return change_type
