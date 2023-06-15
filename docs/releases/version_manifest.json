@@ -1,28 +1,6 @@
 {
     "releases": [
         {
-            "version": "1.1.0",
-            "date": "2023-06-14",
-            "allJsonSchemas": {
-                "dataset": "0.0.0",
-                "study": "0.0.0",
-                "individual": "0.0.0",
-                "experiment": "0.0.0",
-                "submission": "0.0.0",
-                "analysis": "0.0.0",
-                "assay": "0.0.0",
-                "DAC": "1.0.0",
-                "protocol": "0.0.0",
-                "object-set": "0.0.0",
-                "policy": "0.0.0",
-                "sample": "0.0.0",
-                "common-definitions": "0.0.0"
-            },
-            "changedJsonSchemas": {
-                "DAC": "1.0.0"
-            }
-        },
-        {
             "version": "0.0.0",
             "date": "2023-04-12",
             "changedJsonSchemas": {
