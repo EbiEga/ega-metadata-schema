@@ -51,28 +51,20 @@ jobs:
         run: |
           script_path="./.github/scripts/check_project_version_change.py"
           version_change=$(python3 "$script_path")
+          echo "version_change=$version_change" >> $GITHUB_ENV
+          echo "- The version change is: $version_change"
         
         # The output of this previous script will determine if changes are not "major" (i.e. minor or patch), and therefore retrocompatibility
         #   has to be tested through JSON Schema validation (combination of old and new schemas with old and new examples).
         #   Thus, only if the output (saved at 'version_change') from the script is True, the following steps will occur.
 
-      - name: Check if version change is Major
-        id: check-version
-          # This step is just to set the logic for triggering the following steps
-        run: |
-          if [[ "${{ steps.run-version-modification-check.outputs.version_change }}" != "Major" ]]; then
-            echo "::set-output name=version_needs_to_be_checked::True"
-          else
-            echo "::set-output name=version_needs_to_be_checked::False"
-          fi
-
       - name: Clone Biovalidator
-        if: ${{ steps.check-version.outputs.version_needs_to_be_checked == 'True' }}
+        if: ${{ env.version_change != "Major" }}
           # See https://github.com/elixir-europe/biovalidator#installation
         run: git clone https://github.com/elixir-europe/biovalidator.git
 
       - name: Install Biovalidator
-        if: ${{ steps.check-version.outputs.version_needs_to_be_checked == 'True' }}
+        if: ${{ env.version_change != "Major" }}
         run: |
           cd biovalidator
           npm install
@@ -80,7 +72,7 @@ jobs:
           npm audit fix
 
       - name: Start Biovalidator server (old schemas)
-        if: ${{ steps.check-version.outputs.version_needs_to_be_checked == 'True' }}
+        if: ${{ env.version_change != "Major" }}
           # We want to specify the OLD JSON schemas, so we DO NOT specify the schemas
           #   at deployment level, and instead let Biovalidator fetch them from "main"
         run: |
@@ -89,7 +81,7 @@ jobs:
           sleep 3
 
       - name: Validate JSON examples (old schemas, new examples)
-        if: ${{ steps.check-version.outputs.version_needs_to_be_checked == 'True' }}
+        if: ${{ env.version_change != "Major" }}
           # Validate NEW JSON documents against the OLD (from "main") schemas
         run: |
           json_ex_dir="./examples/json_validation_tests"
@@ -99,7 +91,7 @@ jobs:
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
 
       - name: Start Biovalidator server (New schemas)
-        if: ${{ steps.check-version.outputs.version_needs_to_be_checked == 'True' }}
+        if: ${{ env.version_change != "Major" }}
           # We want to specify the NEW JSON schemas, so we DO specify the schemas
           #   at deployment level
         run: |
@@ -108,7 +100,7 @@ jobs:
           sleep 3
 
       - name: Validate JSON examples (New schemas, old examples)
-        if: ${{ steps.check-version.outputs.version_needs_to_be_checked == 'True' }}
+        if: ${{ env.version_change != "Major" }}
           # Validate OLD JSON documents against the NEW (from branch) schemas
         run: |
           # We fetch all old JSON examples from "main"

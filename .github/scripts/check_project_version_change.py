@@ -30,6 +30,12 @@ parser.add_argument(
     default=None,
     help='Semantic version of the new project release version to use instead of the current branch name. Do NOT use unless you know exactly what you are doing: to comply with the release workflow, the version should normally be taken from the branch name. Default: None',
 )
+parser.add_argument(
+    "--verbose",
+    action="store_true",
+    default=False,
+    help="A boolean switch by which we tell the script to print more information along the way.",
+)
 args = parser.parse_args()
 
 # Check the integrity of the given arguments
@@ -38,6 +44,14 @@ if not isinstance(args.version_manifest_dir, str):
 if args.new_release_version:
     if not is_semantic_version(args.new_release_version):
         raise ValueError(f"The given new release version ('{args.new_release_version}') does not follow semantic versioning.")
+
+def print_verbose(text:str):
+    """
+    Function that prints messages based on the script's verbose level
+    """
+    global verbose
+    if verbose:
+        print(text)
 
 # --------- #
 # Main function for the check
@@ -60,11 +74,17 @@ def main(args: argparse.Namespace) -> bool:
     else:
         new_version = args.new_release_version
 
+
     main_version_manifest_json = load_main_json(file_path = version_manifest_file)
 
     # We get the highest version of all the releases within the manifest file
     highest_version_index = get_highest_version_index(version_manifest_json=main_version_manifest_json)
     highest_version = main_version_manifest_json[releases_array_keyword][highest_version_index][version_keyword]
+    print_verbose(
+        f"- Comparison of versions:"
+        f"\tThe new version is '{new_version}'"
+        f"\tThe highest existing version in the version manifest is '{highest_version}'"
+    )
 
     # Time to compare the new and old versions, to assert that the new is higher
     new_is_higher, change_type = compare_semantic_versions(
@@ -77,6 +97,10 @@ def main(args: argparse.Namespace) -> bool:
             f"version manifest ({highest_version}). In order to comply with semantic versioning, new ones should always be higher."
         )
     
+    print_verbose(
+        f"- The change type is '{change_type}'"
+    )
+
     return change_type
 
 if __name__ == "__main__":
