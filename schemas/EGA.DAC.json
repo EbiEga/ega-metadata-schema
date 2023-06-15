@@ -9,6 +9,9 @@
     "required": ["objectId", "dacContacts", "#! TEST REMOVE"],
     "additionalProperties": false,
     "properties": {
+      "#! TEST REMOVE": {
+        "type": "string"
+      },
       "objectId": {
         "type": "object",
         "title": "Object's IDs block",
