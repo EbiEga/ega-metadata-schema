@@ -86,9 +86,9 @@ def main(args: argparse.Namespace) -> bool:
     highest_version_index = get_highest_version_index(version_manifest_json=main_version_manifest_json)
     highest_version = main_version_manifest_json[releases_array_keyword][highest_version_index][version_keyword]
     print_verbose(
-        f"- Comparison of versions:"
-        f"\tThe new version is '{new_version}'"
-        f"\tThe highest existing version in the version manifest is '{highest_version}'",
+        f"- Comparison of versions:\n"
+        f"\tThe new version is '{new_version}'\n"
+        f"\tThe highest existing version in the version manifest is '{highest_version}'\n",
         args.verbose
     )
 
@@ -104,7 +104,7 @@ def main(args: argparse.Namespace) -> bool:
         )
     
     print_verbose(
-        f"- The change type is '{change_type}'",
+        f"- The change type is '{change_type}'\n",
         args.verbose
     )
 
