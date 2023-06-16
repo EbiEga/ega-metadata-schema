@@ -49,6 +49,12 @@ jobs:
       - name: Run version modification check
         id: run-version-modification-check
         run: |
+          #! Added for debugging purposes:
+          echo "Working directory: $(pwd)"
+          echo "Listing files in script directory:"
+          ls -la ./.github/scripts/
+          #! 
+          
           script_path="./.github/scripts/check_project_version_change.py"
           python3 "$script_path" --git_var_name "VERSION_CHANGE" --verbose
           echo "- The version change is: $VERSION_CHANGE"
