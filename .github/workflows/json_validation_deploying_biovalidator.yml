@@ -23,7 +23,7 @@
 # For more information, check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/gh_workflows
 name: |
-  JSON docs validation - Local Biovalidator 
+  [REQUIRED] JSON docs validation - Local Biovalidator 
   (json_validation_deploying_biovalidator.yml)
 
 on:
@@ -52,7 +52,7 @@ jobs:
           cd biovalidator
           npm install
           # We shouldn't need to audit the issues, but for now it is what it is
-          npm audit fix
+          # npm audit fix
 
       - name: Start Biovalidator server
           # We want to specify the JSON schemas and documents with the new 

@@ -14,7 +14,9 @@
 #
 # For more information, check:
 #   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/gh_workflows
-name: JSON docs validation - EGA API (json_validation_against_EGA_API.yml)
+name: |
+  [OPTIONAL] JSON docs validation - 
+  EGA API (json_validation_against_EGA_API.yml)
 
 on:
   # Executes on any commit to a PR to the "main" branch

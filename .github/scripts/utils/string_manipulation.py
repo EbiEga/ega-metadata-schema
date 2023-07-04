@@ -8,8 +8,9 @@
 # - #
 # System imports
 # - #
-import re
-
+import os
+from typing import Union
+import semver
 
 # -#
 # Helper functions
@@ -106,66 +107,19 @@ def add_char_to_str(
 
     return updated_string
 
-
 def is_semantic_version(version_string: str) -> bool:
     """
     Checks whether a given string matches semantic versioning pattern (e.g. "1.1.1" is correct; "hello-world" is not).
-    The pattern allows for the three main elements: major version; minor version; and patch version; as well
-        as optional additions like: Pre-release version and Build metadata.
+    The pattern is defined by semver module (https://github.com/python-semver/python-semver) and allows for the three
+    main elements (major, minor, and patch) as well as optional additions like Pre-release and Build metadata.
     """
-    semver_regex = r'^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$'
-    match = re.match(semver_regex, version_string)
-    there_was_match = match is not None
-    return there_was_match
-
-
-def is_higher_version(o_lower_version: str, o_higher_version:str) -> bool:
-    """
-    Compare two strings that follow the semantic versioning specification.
-    Returns:
-        - True if "o_higher_version" is greater than "o_lower_version".
-        - False otherwise.
-    """
-    # Double check that they do follow semantic versioning
-    if not is_semantic_version(o_lower_version):
-        raise ValueError(
-            f"The given lower version ('{o_lower_version}') does not follow semantic versioning."
-        )
-    if not is_semantic_version(o_higher_version):
-        raise ValueError(
-            f"The given higher version ('{o_higher_version}') does not follow semantic versioning."
-        )
-
-    # Strip off any pre-release version and build metadata
-    lower_version = o_lower_version.split('+')[0].split('-')[0]
-    higher_version = o_higher_version.split('+')[0].split('-')[0]
-
-    # Split the version strings into their components (major, minor, patch)
-    higher_version_l = [int(v) for v in higher_version.split('.')]
-    lower_version_l = [int(v) for v in lower_version.split('.')]
-
-    # Compare the major version numbers
-    if higher_version_l[0] > lower_version_l[0]:
+    try:
+        # Raises a ValueError if not following semantic versioning
+        semver.parse_version_info(version_string)
         return True
-    elif higher_version_l[0] < lower_version_l[0]:
+    except ValueError:
         return False
-
-    # Compare the minor version numbers
-    if higher_version_l[1] > lower_version_l[1]:
-        return True
-    elif higher_version_l[1] < lower_version_l[1]:
-        return False
-
-    # Compare the patch version numbers
-    if higher_version_l[2] > lower_version_l[2]:
-        return True
-    elif higher_version_l[2] < lower_version_l[2]:
-        return False
-
-    # The versions are identical
-    return False
-
-
+    
 def get_keys_for_diff_values(dict1, dict2):
     """
     Returns a list containing the keys whose values differed in the two given dictionaries
@@ -221,3 +175,55 @@ def replace_after_string_in_url(url: str, new_str: str, previous_str: str = "ega
             new_parts.append(part)
     
     return "/".join(new_parts)
+
+
+def validate_json_file_path(file_path: str) -> None:
+    """
+    Validates if a file exists and is a JSON file
+    """
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError(f"File not found: {file_path}")
+    file_extension = os.path.splitext(file_path)[1].lower()
+    if not file_extension == ".json":
+        raise ValueError(f"File is not a JSON file: {file_path}")
+    
+
+def compare_semantic_versions(old_version: str, new_version: str) -> Union[bool, str]:
+    """
+    Compares two given semantic versions and returns a tuple with a boolean indicating if the new version is higher
+    and the type of change (Major, Minor, Patch, or Invalid) between them.
+    
+    Args:
+        old_version (str): The old version string to be compared, following semantic versioning.
+        new_version (str): The new version string to be compared, following semantic versioning.
+    
+    Returns:
+        Tuple[bool, str]: A tuple containing:
+            - A boolean value indicating if the new version is higher than the old version.
+            - A string representing the type of change between the versions: "Major", "Minor", "Patch", or "Invalid".
+            
+    Raises:
+        ValueError: If either the old_version or new_version does not follow the semantic versioning format.
+    """
+    if not is_semantic_version(old_version):
+        raise ValueError(f"The given old version ('{old_version}') does not follow semantic versioning.")
+    if not is_semantic_version(new_version):
+        raise ValueError(f"The given new version ('{new_version}') does not follow semantic versioning.")
+    
+    # Semver.compare output:
+    #   0 if the versions are equal; a negative integer if the first version is smaller; a positive integer if the first version is bigger.
+    is_higher = semver.compare(new_version, old_version) > 0
+    version_change = "Invalid"
+
+    if is_higher:
+        old_ver_info = semver.parse_version_info(old_version)
+        new_ver_info = semver.parse_version_info(new_version)
+
+        if new_ver_info.major > old_ver_info.major:
+            version_change = "Major"
+        elif new_ver_info.minor > old_ver_info.minor:
+            version_change = "Minor"
+        elif new_ver_info.patch > old_ver_info.patch:
+            version_change = "Patch"
+
+    return is_higher, version_change

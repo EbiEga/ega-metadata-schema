@@ -7,3 +7,4 @@ jsonpath_ng
 jsonref
 jsonschema==3.2.0
 GitPython==3.1.30
+semver==3.0.1
