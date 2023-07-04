@@ -8,7 +8,6 @@
 # - #
 # System imports
 # - #
-import re
 import os
 from typing import Union
 import semver
@@ -108,19 +107,19 @@ def add_char_to_str(
 
     return updated_string
 
-
 def is_semantic_version(version_string: str) -> bool:
     """
     Checks whether a given string matches semantic versioning pattern (e.g. "1.1.1" is correct; "hello-world" is not).
-    The pattern allows for the three main elements: major version; minor version; and patch version; as well
-        as optional additions like: Pre-release version and Build metadata.
+    The pattern is defined by semver module (https://github.com/python-semver/python-semver) and allows for the three
+    main elements (major, minor, and patch) as well as optional additions like Pre-release and Build metadata.
     """
-    semver_regex = r'^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$'
-    match = re.match(semver_regex, version_string)
-    there_was_match = match is not None
-    return there_was_match
-
-
+    try:
+        # Raises a ValueError if not following semantic versioning
+        semver.parse_version_info(version_string)
+        return True
+    except ValueError:
+        return False
+    
 def get_keys_for_diff_values(dict1, dict2):
     """
     Returns a list containing the keys whose values differed in the two given dictionaries
