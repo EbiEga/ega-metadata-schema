@@ -16,7 +16,7 @@ from utils.string_manipulation import is_semantic_version, \
 # Handling arguments
 # --------- #
 parser = argparse.ArgumentParser(
-    description="Checks whether the change in version of the project is major (returning 'Major') or not (returning either 'Minor' or 'Patch'). The version change is defined as the difference in semantic versionings between the 'current branch' (e.g. '1.0.0') and the highest version within the version_manifest file (e.g. '0.0.0'). The script can be used to check whether backwards compatibility needs to be test: only if a non-major change occurs in the project. Check further details at https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases."
+    description="Checks whether the change in version of the project is major (returning 'Major') or not (returning either 'Minor' or 'Patch'). The version change is defined as the difference in semantic versionings between the 'current branch' (e.g. '1.0.0') and the highest version within the version_manifest file (e.g. '0.0.0'). The script can be used to check whether backwards compatibility needs to be tested: only if a non-major change occurs in the project. Check further details at https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases."
 )
 parser.add_argument(
     "--version_manifest_dir",
