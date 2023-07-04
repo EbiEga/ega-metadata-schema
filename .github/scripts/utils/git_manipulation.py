@@ -60,13 +60,22 @@ def load_main_json(file_path: str, base_url: str = None) -> dict:
 def fetch_and_copy_files(
     directory_to_copy: str,
     destination_directory_name: str = "./",
-    repository_url: str = "https://api.github.com/repos/EbiEga/ega-metadata-schema",
+    repository_url: str = None,
     verbose: bool = False,
     branch: str = "main"
     ):
     """
     Given a repository URL and its directory to copy, it copies the contents to another given destination directory.
     """
+    if repository_url is None:
+        repository_url = os.getenv('REPOSITORY_URL')
+        if repository_url is None:
+            raise EnvironmentError(
+                "The environment variable 'REPOSITORY_URL' is not set. "
+                "Please set this variable to the base URL for your repository, e.g., "
+                "'https://api.github.com/repos/EbiEga/ega-metadata-schema'"
+            )
+    
     # Fetch the contents of the directory from the GitHub API
     api_url = f"{repository_url}/contents/{directory_to_copy}?ref={branch}"
     response = requests.get(api_url)

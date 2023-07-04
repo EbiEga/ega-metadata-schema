@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BASE_URL: "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main"
+      REPOSITORY_URL: "https://api.github.com/repos/EbiEga/ega-metadata-schema"
 
     steps:
       - name: Checkout code
