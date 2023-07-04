@@ -79,6 +79,7 @@ jobs:
         if: ${{ env.version_needs_to_be_checked == 'True' }}
         run: |
           cd biovalidator
+          npm install semver@latest
           npm install
           # We shouldn't need to audit the issues, but for now it is what it is
           npm audit fix
