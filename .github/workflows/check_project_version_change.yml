@@ -58,7 +58,7 @@ jobs:
         
         # The output of this previous script will determine if changes are not "major" (i.e. minor or patch), and therefore retrocompatibility
         #   has to be tested through JSON Schema validation (combination of old and new schemas with old and new examples).
-        #   Thus, only if the output (saved at 'VERSION_CHANGE') from the script is True, the following steps will occur.
+        #   Thus, only if the output (saved at 'VERSION_CHANGE') from the script is NOT Major, the following steps will occur.
 
       - name: Check if version change is Major
         id: check-version
