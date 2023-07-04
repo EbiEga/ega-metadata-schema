@@ -25,6 +25,8 @@ on:
 jobs:
   check-modifications:
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main"
 
     steps:
       - name: Checkout code

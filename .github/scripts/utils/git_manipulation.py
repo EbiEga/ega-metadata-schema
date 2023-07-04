@@ -30,18 +30,28 @@ def get_current_branch(directory_path: str) -> Union[str, None]:
         return None
     
 
-def load_main_json(file_path: str, base_url: str = "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main") -> dict:
+def load_main_json(file_path: str, base_url: str = None) -> dict:
     """
     Given a file path, returns the loaded JSON file of its version of the "main" branch of the ega-metadata-schema repository
     """
+    if base_url is None:
+        base_url = os.getenv('BASE_URL')
+        if base_url is None:
+            raise EnvironmentError(
+                "The environment variable 'BASE_URL' is not set. "
+                "Please set this variable to the base URL for your repository, e.g., "
+                "'https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main'"
+            )
+
     file_extension = os.path.splitext(file_path)[1].lower()
     if not file_extension == ".json":
         raise ValueError(f"Given file path is not of a JSON file: {file_path}")
+
     url = f"{base_url}/{file_path}"
     response = requests.get(url)
     if not response.status_code == requests.codes.ok:
         error_message = (
-            f"The POST response was not successful: the status code was '{response.status_code}' when trying to"
+            f"The GET request was not successful: the status code was '{response.status_code}' when trying to"
             f" fetch file '{os.path.basename(file_path)}' from the repository at the given URL: {url}"
         )
         raise requests.HTTPError(error_message)
