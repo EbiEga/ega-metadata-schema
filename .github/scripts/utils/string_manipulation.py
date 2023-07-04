@@ -11,6 +11,7 @@
 import re
 import os
 from typing import Union
+import semver
 
 # -#
 # Helper functions
@@ -210,21 +211,20 @@ def compare_semantic_versions(old_version: str, new_version: str) -> Union[bool,
     if not is_semantic_version(new_version):
         raise ValueError(f"The given new version ('{new_version}') does not follow semantic versioning.")
     
-    old_major, old_minor, old_patch = map(int, old_version.split('.')[0:3])
-    new_major, new_minor, new_patch = map(int, new_version.split('.')[0:3])
-    
-    is_higher = False
+    # Semver.compare output:
+    #   0 if the versions are equal; a negative integer if the first version is smaller; a positive integer if the first version is bigger.
+    is_higher = semver.compare(new_version, old_version) > 0
     version_change = "Invalid"
 
-    if new_major > old_major:
-        is_higher = True
-        version_change = "Major"
-    elif new_major == old_major:
-        if new_minor > old_minor:
-            is_higher = True
+    if is_higher:
+        old_ver_info = semver.parse_version_info(old_version)
+        new_ver_info = semver.parse_version_info(new_version)
+
+        if new_ver_info.major > old_ver_info.major:
+            version_change = "Major"
+        elif new_ver_info.minor > old_ver_info.minor:
             version_change = "Minor"
-        elif new_minor == old_minor and new_patch > old_patch:
-            is_higher = True
+        elif new_ver_info.patch > old_ver_info.patch:
             version_change = "Patch"
 
     return is_higher, version_change
