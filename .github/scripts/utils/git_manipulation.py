@@ -39,8 +39,12 @@ def load_main_json(file_path: str, base_url: str = "https://raw.githubuserconten
         raise ValueError(f"Given file path is not of a JSON file: {file_path}")
     url = f"{base_url}/{file_path}"
     response = requests.get(url)
-    if response.status_code != 200:
-        raise FileNotFoundError(f"Given file '{os.path.basename(file_path)}' was not found in the repository's main branch at the given URL: {url}")
+    if not response.status_code == requests.codes.ok:
+        error_message = (
+            f"The POST response was not successful: the status code was '{response.status_code}' when trying to"
+            f" fetch file '{os.path.basename(file_path)}' from the repository at the given URL: {url}"
+        )
+        raise requests.HTTPError(error_message)
     return response.json()
 
 def fetch_and_copy_files(
