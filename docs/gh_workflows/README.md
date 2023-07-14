@@ -16,4 +16,4 @@ In case the diagrams need to be updated, go to their [original URL](https://app.
 ![Markdown creation workflow](diagrams/20220419_Markdown_creation.drawio.png)
 
 ## Version manifest update
-![Version manifest update](diagrams/20230328_github_workflows-version_manifest_update.drawio.svg)
+![Version manifest update](diagrams/20230714_github_workflows-version_manifest_update.drawio.png)

@@ -77,4 +77,4 @@ body:
       description: Add here any additional comments that you would want to add to this issue.
       placeholder: e.g. I believe this term would depend on the experiment type of... 
     validations:
-      required: true
+      required: false
