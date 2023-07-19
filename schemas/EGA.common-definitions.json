@@ -5,8 +5,8 @@
     "title": "EGA common metadata definitions",
     "meta:version": "0.0.0",
     "$async": true,
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "definitions": {
+    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': 'https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId'). See structuring documentation (https://json-schema.org/understanding-json-schema/structuring.html). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
+    "$defs": {
       "objectCoreId": {
         "type": "object",
         "title": "Core identifiers of an object",
@@ -41,7 +41,7 @@
             "additionalProperties": false,
             "uniqueItems": true,
             "items": {
-              "$ref": "./EGA.common-definitions.json#/definitions/objectExternalAccession"
+              "$ref": "./EGA.common-definitions.json#/$defs/objectExternalAccession"
             }
           }
 
@@ -122,7 +122,7 @@
               "allOf": [
                 {
                   "title": "Inherited ontologyTerm structure of termId and termLabel",
-                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                  "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
                 }
               ],
               "properties": {        
@@ -240,11 +240,11 @@
             "oneOf": [
               { 
                 "title": "Check of MD5 checksum pattern", 
-                "$ref": "#/definitions/md5ChecksumPattern"
+                "$ref": "#/$defs/md5ChecksumPattern"
               },
               { 
                 "title": "Check of SHA-256 checksum pattern",
-                "$ref": "#/definitions/SHA256ChecksumPattern"
+                "$ref": "#/$defs/SHA256ChecksumPattern"
               }
             ]
           },
@@ -256,11 +256,11 @@
             "oneOf": [
               { 
                 "title": "Check of MD5 checksum pattern", 
-                "$ref": "#/definitions/md5ChecksumPattern"
+                "$ref": "#/$defs/md5ChecksumPattern"
               },
               { 
                 "title": "Check of SHA-256 checksum pattern",
-                "$ref": "#/definitions/SHA256ChecksumPattern"
+                "$ref": "#/$defs/SHA256ChecksumPattern"
               }
             ]
           },
@@ -308,11 +308,11 @@
         "allOf": [
           { 
             "title": "Inherited check of checksum patterns", 
-            "$ref": "#/definitions/checksumPatternCheck" 
+            "$ref": "#/$defs/checksumPatternCheck" 
           },
           { 
             "title": "Inherited check of filetype-filename patterns", 
-            "$ref": "#/definitions/filenameFiletypePatternCheck" 
+            "$ref": "#/$defs/filenameFiletypePatternCheck" 
           }
         ]        
       },
@@ -352,7 +352,7 @@
             "allOf": [
               {
                 "title": "Inherited oneRelationshipEnd object", 
-                "$ref": "./EGA.common-definitions.json#/definitions/oneRelationshipEnd" 
+                "$ref": "./EGA.common-definitions.json#/$defs/oneRelationshipEnd" 
               }
             ]
           },
@@ -363,7 +363,7 @@
             "allOf": [
               {
                 "title": "Inherited oneRelationshipEnd object", 
-                "$ref": "./EGA.common-definitions.json#/definitions/oneRelationshipEnd" 
+                "$ref": "./EGA.common-definitions.json#/$defs/oneRelationshipEnd" 
               }
             ]
           },
@@ -412,7 +412,7 @@
             "allOf": [
               {
                 "title": "Inherited ontologyTerm structure of termId and termLabel",
-                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
               }
             ],
             "properties": {        
@@ -474,7 +474,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAExperimentIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAExperimentIdPattern" }
                 }
               },
               "objectType": {
@@ -488,7 +488,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAStudyIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAStudyIdPattern" }
                 }
               },
               "objectType": {
@@ -502,7 +502,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGASampleIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGASampleIdPattern" }
                 }
               },
               "objectType": {
@@ -516,7 +516,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGASubmissionIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGASubmissionIdPattern" }
                 }
               },
               "objectType": {
@@ -530,7 +530,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAAssayIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAAssayIdPattern" }
                 }
               },
               "objectType": {
@@ -544,7 +544,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGADatasetIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGADatasetIdPattern" }
                 }
               },
               "objectType": {
@@ -558,7 +558,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAAnalysisIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAAnalysisIdPattern" }
                 }
               },
               "objectType": {
@@ -572,7 +572,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAPolicyIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAPolicyIdPattern" }
                 }
               },
               "objectType": {
@@ -586,7 +586,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGADACIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGADACIdPattern" }
                 }
               },
               "objectType": {
@@ -600,7 +600,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAIndividualIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAIndividualIdPattern" }
                 }
               },
               "objectType": {
@@ -614,7 +614,7 @@
             "properties": {
               "objectId": { 
                 "properties": {
-                  "egaAccession": { "$ref": "#/definitions/EGAProtocolIdPattern" }
+                  "egaAccession": { "$ref": "#/$defs/EGAProtocolIdPattern" }
                 }
               },
               "objectType": {
@@ -637,8 +637,8 @@
                 "checksumMethod": {
                       "enum": ["MD5"]
                 },
-                "unencryptedChecksum": { "$ref": "#/definitions/md5ChecksumPattern" },
-                "encryptedChecksum": { "$ref": "#/definitions/md5ChecksumPattern" }
+                "unencryptedChecksum": { "$ref": "#/$defs/md5ChecksumPattern" },
+                "encryptedChecksum": { "$ref": "#/$defs/md5ChecksumPattern" }
               }
           },
           { 
@@ -648,8 +648,8 @@
                 "checksumMethod": {
                       "enum": ["SHA-256"]
                 },
-                "unencryptedChecksum": { "$ref": "#/definitions/SHA256ChecksumPattern" },
-                "encryptedChecksum": { "$ref": "#/definitions/SHA256ChecksumPattern" }
+                "unencryptedChecksum": { "$ref": "#/$defs/SHA256ChecksumPattern" },
+                "encryptedChecksum": { "$ref": "#/$defs/SHA256ChecksumPattern" }
               }
           }
         ]                    
@@ -775,7 +775,7 @@
                 "filetype": {
                    "enum": ["CEL"] 
                 },
-                "filename": { "$ref": "#/definitions/celFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/celFileFilenamePattern" }
             }
           },                
           {
@@ -784,7 +784,7 @@
                 "filetype": {
                    "enum": ["TSV"] 
                 },
-                "filename": { "$ref": "#/definitions/tsvFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/tsvFileFilenamePattern" }
             }
           },                
           {
@@ -793,7 +793,7 @@
                 "filetype": {
                    "enum": ["ADF"] 
                 },
-                "filename": { "$ref": "#/definitions/adfFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/adfFileFilenamePattern" }
             }
           },                
           {
@@ -802,7 +802,7 @@
                 "filetype": {
                    "enum": ["FASTQ"] 
                 },
-                "filename": { "$ref": "#/definitions/fastqFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/fastqFileFilenamePattern" }
             }
           },                
           {
@@ -811,7 +811,7 @@
                 "filetype": {
                    "enum": ["FASTA"] 
                 },
-                "filename": { "$ref": "#/definitions/fastaFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/fastaFileFilenamePattern" }
             }
           },                
           {
@@ -820,7 +820,7 @@
                 "filetype": {
                    "enum": ["SDRF"] 
                 },
-                "filename": { "$ref": "#/definitions/sdrfFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/sdrfFileFilenamePattern" }
             }
           },                
           {
@@ -829,7 +829,7 @@
                 "filetype": {
                    "enum": ["IDF"] 
                 },
-                "filename": { "$ref": "#/definitions/idfFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/idfFileFilenamePattern" }
             }
           },                
           {
@@ -838,7 +838,7 @@
                 "filetype": {
                    "enum": ["VCF"] 
                 },
-                "filename": { "$ref": "#/definitions/vcfFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/vcfFileFilenamePattern" }
             }
           },                
           {
@@ -847,7 +847,7 @@
                 "filetype": {
                    "enum": ["SRA"] 
                 },
-                "filename": { "$ref": "#/definitions/sraFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/sraFileFilenamePattern" }
             }
           },                
           {
@@ -856,7 +856,7 @@
                 "filetype": {
                    "enum": ["SRF"] 
                 },
-                "filename": { "$ref": "#/definitions/srfFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/srfFileFilenamePattern" }
             }
           },                
           {
@@ -865,7 +865,7 @@
                 "filetype": {
                    "enum": ["SFF"] 
                 },
-                "filename": { "$ref": "#/definitions/sffFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/sffFileFilenamePattern" }
             }
           },                
           {
@@ -874,7 +874,7 @@
                 "filetype": {
                    "enum": ["BAM"] 
                 },
-                "filename": { "$ref": "#/definitions/bamFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/bamFileFilenamePattern" }
             }
           },                
           {
@@ -883,7 +883,7 @@
                 "filetype": {
                    "enum": ["CRAM"] 
                 },
-                "filename": { "$ref": "#/definitions/cramFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/cramFileFilenamePattern" }
             }
           },                
           {
@@ -892,7 +892,7 @@
                 "filetype": {
                    "enum": ["XLSX"] 
                 },
-                "filename": { "$ref": "#/definitions/xlsxFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/xlsxFileFilenamePattern" }
             }
           },                
           {
@@ -901,7 +901,7 @@
                 "filetype": {
                    "enum": ["CSV"] 
                 },
-                "filename": { "$ref": "#/definitions/csvFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/csvFileFilenamePattern" }
             }
           },                
           {
@@ -910,7 +910,7 @@
                 "filetype": {
                    "enum": ["BED"] 
                 },
-                "filename": { "$ref": "#/definitions/bedFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/bedFileFilenamePattern" }
             }
           },                
           {
@@ -919,7 +919,7 @@
                 "filetype": {
                    "enum": ["IDAT"] 
                 },
-                "filename": { "$ref": "#/definitions/idatFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/idatFileFilenamePattern" }
             }
           },                
           {
@@ -928,7 +928,7 @@
                 "filetype": {
                    "enum": ["MAP"] 
                 },
-                "filename": { "$ref": "#/definitions/mapFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/mapFileFilenamePattern" }
             }
           },                
           {
@@ -937,7 +937,7 @@
                 "filetype": {
                    "enum": ["PED"] 
                 },
-                "filename": { "$ref": "#/definitions/pedFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/pedFileFilenamePattern" }
             }
           },                
           {
@@ -946,7 +946,7 @@
                 "filetype": {
                    "enum": ["BIM"] 
                 },
-                "filename": { "$ref": "#/definitions/bimFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/bimFileFilenamePattern" }
             }
           },                
           {
@@ -955,7 +955,7 @@
                 "filetype": {
                    "enum": ["FAM"] 
                 },
-                "filename": { "$ref": "#/definitions/famFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/famFileFilenamePattern" }
             }
           },
           {
@@ -964,7 +964,7 @@
                 "filetype": {
                    "enum": ["TXT"] 
                 },
-                "filename": { "$ref": "#/definitions/txtFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/txtFileFilenamePattern" }
             }
           },
           {
@@ -973,7 +973,7 @@
                 "filetype": {
                    "enum": ["EXP"] 
                 },
-                "filename": { "$ref": "#/definitions/expFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/expFileFilenamePattern" }
             }
           },
           {
@@ -982,7 +982,7 @@
                 "filetype": {
                    "enum": ["GPR"] 
                 },
-                "filename": { "$ref": "#/definitions/gprFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/gprFileFilenamePattern" }
             }
           },
           {
@@ -991,7 +991,7 @@
                 "filetype": {
                    "enum": ["PY"] 
                 },
-                "filename": { "$ref": "#/definitions/pyFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/pyFileFilenamePattern" }
             }
           },
           {
@@ -1000,7 +1000,7 @@
                 "filetype": {
                    "enum": ["SH"] 
                 },
-                "filename": { "$ref": "#/definitions/shFileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/shFileFilenamePattern" }
             }
           },
           {
@@ -1009,7 +1009,7 @@
                 "filetype": {
                     "enum": ["MD5"]
                 },
-                "filename": { "$ref": "#/definitions/md5FileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/md5FileFilenamePattern" }
             }
           },
           {
@@ -1018,7 +1018,7 @@
                   "filetype": {
                       "enum": ["HAP"]
                   },
-                  "filename": { "$ref": "#/definitions/hapFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/hapFileFilenamePattern" }
               }
           },
           {
@@ -1027,7 +1027,7 @@
                   "filetype": {
                       "enum": ["CSFASTA"]
                   },
-                  "filename": { "$ref": "#/definitions/csfastaFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/csfastaFileFilenamePattern" }
               }
           },
           {
@@ -1036,7 +1036,7 @@
                   "filetype": {
                       "enum": ["LOC"]
                   },
-                  "filename": { "$ref": "#/definitions/locFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/locFileFilenamePattern" }
               }
           },
           {
@@ -1045,7 +1045,7 @@
                   "filetype": {
                       "enum": ["HTML"]
                   },
-                  "filename": { "$ref": "#/definitions/htmlFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/htmlFileFilenamePattern" }
               }
           },
           {
@@ -1054,7 +1054,7 @@
                   "filetype": {
                       "enum": ["HIC"]
                   },
-                  "filename": { "$ref": "#/definitions/hicFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/hicFileFilenamePattern" }
               }
           },
           {
@@ -1063,7 +1063,7 @@
                   "filetype": {
                       "enum": ["MD"]
                   },
-                  "filename": { "$ref": "#/definitions/mdFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/mdFileFilenamePattern" }
               }
           },
           {
@@ -1072,7 +1072,7 @@
                   "filetype": {
                       "enum": ["MATLAB"]
                   },
-                  "filename": { "$ref": "#/definitions/matlabFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/matlabFileFilenamePattern" }
               }
           },
           {
@@ -1081,7 +1081,7 @@
                   "filetype": {
                       "enum": ["PERL"]
                   },
-                  "filename": { "$ref": "#/definitions/perlFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/perlFileFilenamePattern" }
               }
           },
           {
@@ -1090,7 +1090,7 @@
                   "filetype": {
                       "enum": ["TIF"]
                   },
-                  "filename": { "$ref": "#/definitions/tifFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/tifFileFilenamePattern" }
               }
           },
           {
@@ -1099,7 +1099,7 @@
                   "filetype": {
                       "enum": ["R"]
                   },
-                  "filename": { "$ref": "#/definitions/rFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/rFileFilenamePattern" }
               }
           },
           {
@@ -1108,7 +1108,7 @@
                   "filetype": {
                       "enum": ["SNP"]
                   },
-                  "filename": { "$ref": "#/definitions/snpFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/snpFileFilenamePattern" }
               }
           },
           {
@@ -1117,7 +1117,7 @@
                   "filetype": {
                       "enum": ["XML"]
                   },
-                  "filename": { "$ref": "#/definitions/xmlFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/xmlFileFilenamePattern" }
               }
           },
           {
@@ -1126,7 +1126,7 @@
                   "filetype": {
                       "enum": ["SVG"]
                   },
-                  "filename": { "$ref": "#/definitions/svgFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/svgFileFilenamePattern" }
               }
           },
           {
@@ -1135,7 +1135,7 @@
                   "filetype": {
                       "enum": ["PNG"]
                   },
-                  "filename": { "$ref": "#/definitions/pngFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/pngFileFilenamePattern" }
               }
           },
           {
@@ -1144,7 +1144,7 @@
                   "filetype": {
                       "enum": ["JPG"]
                   },
-                  "filename": { "$ref": "#/definitions/jpgFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/jpgFileFilenamePattern" }
               }
           },
           {
@@ -1153,7 +1153,7 @@
                   "filetype": {
                       "enum": ["GTC"]
                   },
-                  "filename": { "$ref": "#/definitions/gtcFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/gtcFileFilenamePattern" }
               }
           },
           {
@@ -1162,7 +1162,7 @@
                   "filetype": {
                       "enum": ["HDF5"]
                   },
-                  "filename": { "$ref": "#/definitions/hdf5FileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/hdf5FileFilenamePattern" }
               }
           },
           {
@@ -1171,7 +1171,7 @@
                 "filetype": {
                     "enum": ["FAST5"]
                 },
-                "filename": { "$ref": "#/definitions/fast5FileFilenamePattern" }
+                "filename": { "$ref": "#/$defs/fast5FileFilenamePattern" }
             }
           },
           {
@@ -1180,7 +1180,7 @@
                   "filetype": {
                       "enum": ["PAIR"]
                   },
-                  "filename": { "$ref": "#/definitions/pairFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/pairFileFilenamePattern" }
               }
           },
           {
@@ -1189,7 +1189,7 @@
                   "filetype": {
                       "enum": ["TXT"]
                   },
-                  "filename": { "$ref": "#/definitions/txtFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/txtFileFilenamePattern" }
               }
           },
           {
@@ -1198,7 +1198,7 @@
                   "filetype": {
                       "enum": ["BGI"]
                   },
-                  "filename": { "$ref": "#/definitions/bgiFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/bgiFileFilenamePattern" }
               }
           },
           {
@@ -1207,7 +1207,7 @@
                   "filetype": {
                       "enum": ["BGEN"]
                   },
-                  "filename": { "$ref": "#/definitions/bgenFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/bgenFileFilenamePattern" }
               }
           },
           {
@@ -1216,7 +1216,7 @@
                   "filetype": {
                       "enum": ["GEN"]
                   },
-                  "filename": { "$ref": "#/definitions/genFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/genFileFilenamePattern" }
               }
           },
           {
@@ -1225,7 +1225,7 @@
                   "filetype": {
                       "enum": ["PXF"]
                   },
-                  "filename": { "$ref": "#/definitions/pxfFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/pxfFileFilenamePattern" }
               }
           },
           {
@@ -1234,7 +1234,7 @@
                   "filetype": {
                       "enum": ["LOOM"]
                   },
-                  "filename": { "$ref": "#/definitions/loomFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/loomFileFilenamePattern" }
               }
           },
           {
@@ -1243,7 +1243,7 @@
                   "filetype": {
                       "enum": ["BAX.H5"]
                   },
-                  "filename": { "$ref": "#/definitions/bax.h5FileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/bax.h5FileFilenamePattern" }
               }
           },
           {
@@ -1252,7 +1252,7 @@
                   "filetype": {
                       "enum": ["BAS.H5"]
                   },
-                  "filename": { "$ref": "#/definitions/bas.h5FileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/bas.h5FileFilenamePattern" }
               }
           },
           {
@@ -1261,7 +1261,7 @@
                   "filetype": {
                       "enum": ["ASM"]
                   },
-                  "filename": { "$ref": "#/definitions/asmFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/asmFileFilenamePattern" }
               }
           },
           {
@@ -1270,7 +1270,7 @@
                   "filetype": {
                       "enum": ["CSI"]
                   },
-                  "filename": { "$ref": "#/definitions/csiFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/csiFileFilenamePattern" }
               }
           },
           {
@@ -1279,7 +1279,7 @@
                   "filetype": {
                       "enum": ["TBI"]
                   },
-                  "filename": { "$ref": "#/definitions/tbiFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/tbiFileFilenamePattern" }
               }
           },
           {
@@ -1288,7 +1288,7 @@
                   "filetype": {
                       "enum": ["BCF"]
                   },
-                  "filename": { "$ref": "#/definitions/bcfFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/bcfFileFilenamePattern" }
               }
           },
           {
@@ -1297,7 +1297,7 @@
                   "filetype": {
                       "enum": ["qual454"]
                   },
-                  "filename": { "$ref": "#/definitions/qual454FileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/qual454FileFilenamePattern" }
               }
           },
           {
@@ -1306,7 +1306,7 @@
                   "filetype": {
                       "enum": ["qualsolid"]
                   },
-                  "filename": { "$ref": "#/definitions/qualsolidFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/qualsolidFileFilenamePattern" }
               }
           },
           {
@@ -1315,7 +1315,7 @@
                   "filetype": {
                       "enum": ["FASTQ-illumina"]
                   },
-                  "filename": { "$ref": "#/definitions/fastqIlluminaFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/fastqIlluminaFileFilenamePattern" }
               }
           },
           {
@@ -1324,7 +1324,7 @@
                   "filetype": {
                       "enum": ["FASTQ-helicos"]
                   },
-                  "filename": { "$ref": "#/definitions/fastqHelicosFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/fastqHelicosFileFilenamePattern" }
               }
           },
           {
@@ -1333,7 +1333,7 @@
                   "filetype": {
                       "enum": ["FASTQ-sanger"]
                   },
-                  "filename": { "$ref": "#/definitions/fastqSangerFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/fastqSangerFileFilenamePattern" }
               }
           },
           {
@@ -1342,7 +1342,7 @@
                   "filetype": {
                       "enum": ["FASTQ-solexa"]
                   },
-                  "filename": { "$ref": "#/definitions/fastqSolexaFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/fastqSolexaFileFilenamePattern" }
               }
           },
           {
@@ -1351,7 +1351,7 @@
                   "filetype": {
                       "enum": ["SAM"]
                   },
-                  "filename": { "$ref": "#/definitions/samFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/samFileFilenamePattern" }
               }
           },
           {
@@ -1360,7 +1360,7 @@
                   "filetype": {
                       "enum": ["CRAI"]
                   },
-                  "filename": { "$ref": "#/definitions/craiFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/craiFileFilenamePattern" }
               }
           },
           {
@@ -1369,7 +1369,7 @@
                   "filetype": {
                       "enum": ["BAI"]
                   },
-                  "filename": { "$ref": "#/definitions/baiFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/baiFileFilenamePattern" }
               }
           },
           {
@@ -1378,7 +1378,7 @@
                   "filetype": {
                       "enum": ["MTX"]
                   },
-                  "filename": { "$ref": "#/definitions/mtxFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/mtxFileFilenamePattern" }
               }
           },
           {
@@ -1387,7 +1387,7 @@
                   "filetype": {
                       "enum": ["MEX"]
                   },
-                  "filename": { "$ref": "#/definitions/mexFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/mexFileFilenamePattern" }
               }
           },
           {
@@ -1396,7 +1396,7 @@
                   "filetype": {
                       "enum": ["GMX"]
                   },
-                  "filename": { "$ref": "#/definitions/gmxFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/gmxFileFilenamePattern" }
               }
           },
           {
@@ -1405,7 +1405,7 @@
                   "filetype": {
                       "enum": ["GMT"]
                   },
-                  "filename": { "$ref": "#/definitions/gmtFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/gmtFileFilenamePattern" }
               }
           },
           {
@@ -1414,7 +1414,7 @@
                   "filetype": {
                       "enum": ["GRP"]
                   },
-                  "filename": { "$ref": "#/definitions/grpFileFilenamePattern" }
+                  "filename": { "$ref": "#/$defs/grpFileFilenamePattern" }
               }
           }
         ]        
@@ -2086,7 +2086,7 @@
             "allOf": [
               {
                 "title": "Inherited ontologyTerm structure of termId and termLabel",
-                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
               }
             ]
           },
@@ -2097,7 +2097,7 @@
             "allOf": [
               {
                 "title": "General pattern of a URL/URI",
-                "$ref": "./EGA.common-definitions.json#/definitions/urlUriPattern"
+                "$ref": "./EGA.common-definitions.json#/$defs/urlUriPattern"
               }
             ],
             "examples": [ 
@@ -2139,7 +2139,7 @@
         "properties": {
           "arrayLabel": { 
             "title": "Labelling dye used with the sample",
-            "$ref": "./EGA.common-definitions.json#/definitions/arrayLabel" 
+            "$ref": "./EGA.common-definitions.json#/$defs/arrayLabel" 
           },
           "objectId": {
             "type": "object",
@@ -2147,13 +2147,13 @@
             "allOf": [
               {
                 "title": "Inherited objectCoreId object",
-                "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+                "$ref": "./EGA.common-definitions.json#/$defs/objectCoreId"
               },
               {
                 "title": "Check that sample EGA ID (EGAN) pattern is correct",
                 "properties": {
                   "egaAccession": {
-                    "$ref": "./EGA.common-definitions.json#/definitions/EGASampleIdPattern"
+                    "$ref": "./EGA.common-definitions.json#/$defs/EGASampleIdPattern"
                   }
                 }
               }
@@ -2172,11 +2172,11 @@
           "objectId": {
             "type": "object",
             "title": "Relationship's object's IDs block",
-            "description": "Node containing the main identifiers of the relationship's object (e.g. alias, centerName...), inherited from the common definitions (#/definitions/objectCoreId).",
+            "description": "Node containing the main identifiers of the relationship's object (e.g. alias, centerName...), inherited from the common definitions (#/$defs/objectCoreId).",
             "allOf": [
               { 
                 "title": "Inherited objectCoreId object", 
-                "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId" 
+                "$ref": "./EGA.common-definitions.json#/$defs/objectCoreId" 
               }
             ]
           },
@@ -2206,7 +2206,7 @@
         "allOf": [
           { 
             "title": "Check for objectId and objectType to match",
-            "$ref": "./EGA.common-definitions.json#/definitions/objectIdAndObjectTypeCheck" 
+            "$ref": "./EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck" 
           }
         ]        
       },
@@ -2250,7 +2250,7 @@
             "allOf": [
               {
                 "title": "Inherited ontologyTerm structure of termId and termLabel",
-                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
               }
             ],
             "properties": {        
@@ -2298,7 +2298,7 @@
             "allOf": [
               {
                 "title": "General pattern of a URL/URI",
-                "$ref": "./EGA.common-definitions.json#/definitions/urlUriPattern"
+                "$ref": "./EGA.common-definitions.json#/$defs/urlUriPattern"
               }
             ],
             "examples": ["https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"]
@@ -2310,7 +2310,7 @@
             "allOf": [
               {
                 "title": "Check semantic versioning pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/semanticVersioningPattern"
+                "$ref": "./EGA.common-definitions.json#/$defs/semanticVersioningPattern"
               }
             ]
           },
@@ -2321,7 +2321,7 @@
             "allOf": [
               {
                 "title": "Check semantic versioning pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/semanticVersioningPattern"
+                "$ref": "./EGA.common-definitions.json#/$defs/semanticVersioningPattern"
               }
             ]
           }
@@ -2451,7 +2451,7 @@
           "organismDescriptor": {
             "title": "Organism descriptor",
             "description": "Node to identify the specific organism the locus belongs to.",
-            "$ref": "./EGA.common-definitions.json#/definitions/organismDescriptor"
+            "$ref": "./EGA.common-definitions.json#/$defs/organismDescriptor"
           },
           "lociDescriptor": {
             "type": "array",
@@ -2468,17 +2468,17 @@
                 "geneDescriptor": {
                   "title": "Gene descriptor",
                   "description": "Node to identify the gene of the locus of interest.",
-                  "$ref": "./EGA.common-definitions.json#/definitions/geneDescriptor"
+                  "$ref": "./EGA.common-definitions.json#/$defs/geneDescriptor"
                 },
                 "genomicSequenceDescriptor": {
                   "title": "Genomic sequence descriptor",
                   "description": "Node to describe the sequence per se, instead of referencing it.",
-                  "$ref": "./EGA.common-definitions.json#/definitions/genomicSequenceDescriptor"
+                  "$ref": "./EGA.common-definitions.json#/$defs/genomicSequenceDescriptor"
                 },
                 "locusExternalReference": {
                   "title": "External reference of the locus",
                   "description": "If the locus can not be identified by a gene (if so, use 'geneDescriptor'), and it is well represented (i.e. uniquely identifiable and with comprehensive detail) in another resource that is accessible and persistent, one can reference it here instead of providing all their details. In other words, one can reference here ways to access the locus information that is accessible elsewhere. For example miRNA 'MI0039740' (mirbase:MI0039740) that lacks a gene descriptor.",
-                  "$ref": "./EGA.common-definitions.json#/definitions/objectExternalAccession"
+                  "$ref": "./EGA.common-definitions.json#/$defs/objectExternalAccession"
                 },
                 "locusAdditionalDescription": {
                   "type": "string",
@@ -2522,7 +2522,7 @@
             "allOf": [
               {
                 "title": "Inherited ontologyTerm structure of termId and termLabel",
-                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
               }
             ],
             "properties": {        
@@ -2531,11 +2531,11 @@
                 "anyOf": [
                   {
                     "title": "NCBI Gene pattern (e.g. 'NCBIGene:100010')",
-                    "$ref": "./EGA.common-definitions.json#/definitions/curieNcbiGeneIdentifierPattern"
+                    "$ref": "./EGA.common-definitions.json#/$defs/curieNcbiGeneIdentifierPattern"
                   },
                   {
                     "title": "HGNC Gene pattern (e.g. 'hgnc:2674')",
-                    "$ref": "./EGA.common-definitions.json#/definitions/curieHgncIdentifierPattern"
+                    "$ref": "./EGA.common-definitions.json#/$defs/curieHgncIdentifierPattern"
                   }
                 ],
                 "examples": [ "NCBIGene:100010", "hgnc:2674" ]
@@ -2566,7 +2566,7 @@
               "allOf": [
                 {
                   "title": "Inherited ontologyTerm structure of termId and termLabel",
-                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                  "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
                 }
               ]
             }
@@ -2585,7 +2585,7 @@
               "allOf": [
                 {
                   "title": "Inherited ontologyTerm structure of termId and termLabel",
-                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                  "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
                 }
               ]            
             }
@@ -2608,7 +2608,7 @@
             "allOf": [
               {
                 "title": "Inherited ontologyTerm structure of termId and termLabel",
-                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
               }
             ],
             "properties": {        
@@ -2617,7 +2617,7 @@
                 "allOf": [
                   {
                     "title": "NCBI's assembly CURIE pattern",
-                    "$ref": "./EGA.common-definitions.json#/definitions/curieNcbiAssemblyPattern"
+                    "$ref": "./EGA.common-definitions.json#/$defs/curieNcbiAssemblyPattern"
                   }
                 ],
                 "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
@@ -2631,7 +2631,7 @@
                 "allOf": [
               {
                 "title": "Inherited ontologyTerm structure of termId and termLabel",
-                "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+                "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
               }
             ],
             "properties": {        
@@ -2655,20 +2655,20 @@
             "title": "Assembly descriptor",
             "meta:propertyCurie": "topic:0196",
             "description": "Node to identify the assembly of the locus of interest.",
-            "$ref": "./EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor"
+            "$ref": "./EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor"
           },
           "sequenceCoordinates": {
             "title": "DNA Sequence coordinates",
             "description": "Node to define que specific sequence coordinates of the genomic feature within the assembly.",
-            "$ref": "./EGA.common-definitions.json#/definitions/sequenceCoordinates"
+            "$ref": "./EGA.common-definitions.json#/$defs/sequenceCoordinates"
           },
           "dnaSequenceStrand": {
             "title": "DNA Sequence strand",
-            "$ref": "./EGA.common-definitions.json#/definitions/dnaSequenceStrand"
+            "$ref": "./EGA.common-definitions.json#/$defs/dnaSequenceStrand"
           },
           "nucleicAcidSequence": {
             "title": "Nucleic acid sequence of the locus",
-            "$ref": "./EGA.common-definitions.json#/definitions/nucleicAcidSequence"
+            "$ref": "./EGA.common-definitions.json#/$defs/nucleicAcidSequence"
           }
         },
         "anyOf": [
@@ -2692,7 +2692,7 @@
         "properties": {
           "singlePosition": {
             "title": "Single position",
-            "$ref": "./EGA.common-definitions.json#/definitions/singleSequencePosition"
+            "$ref": "./EGA.common-definitions.json#/$defs/singleSequencePosition"
           },
           "sequenceInterval": {
             "type": "object",
@@ -2704,11 +2704,11 @@
             "properties": {
               "start": {
                 "title": "Start position",
-                "$ref": "./EGA.common-definitions.json#/definitions/singleSequencePosition"
+                "$ref": "./EGA.common-definitions.json#/$defs/singleSequencePosition"
               },
               "end": {
                 "title": "End position",
-                "$ref": "./EGA.common-definitions.json#/definitions/singleSequencePosition"
+                "$ref": "./EGA.common-definitions.json#/$defs/singleSequencePosition"
               }
             }
           }
@@ -2770,7 +2770,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+            "$ref": "./EGA.common-definitions.json#/$defs/curieGeneralPattern"
           }
         ],        
         "oneOf": [
@@ -2861,7 +2861,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+            "$ref": "./EGA.common-definitions.json#/$defs/curieGeneralPattern"
           }
         ],
         "examples": ["hgnc.symbol:DAPK1", "hgnc.symbol:TAF1"]
@@ -2875,7 +2875,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+            "$ref": "./EGA.common-definitions.json#/$defs/curieGeneralPattern"
           }
         ],
         "examples": ["hgnc:2674", "HGNC:11535"]
@@ -2889,7 +2889,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+            "$ref": "./EGA.common-definitions.json#/$defs/curieGeneralPattern"
           }
         ],
         "examples": ["ncbigene:100010", "ncbigene:270627"]
@@ -2903,7 +2903,7 @@
         "allOf": [
           {
             "title": "General CURIE pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+            "$ref": "./EGA.common-definitions.json#/$defs/curieGeneralPattern"
           }
         ],
         "examples": ["assembly:GCF_000001405.26", "assembly:GCA_000001405.1", "assembly:GCF_000005845.2" ]
@@ -3146,7 +3146,7 @@
         "minItems": 1,
         "items": {
           "title": "One item containing metadata of the assembly or assembly unit.",
-          "$ref": "./EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor"
+          "$ref": "./EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor"
         }
       },
 
@@ -3158,7 +3158,7 @@
         "allOf": [
           {
             "title": "Inherited ontologyTerm structure of termId and termLabel",
-            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+            "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
           }
         ],
         "properties": {        
@@ -3693,10 +3693,10 @@
         "description": "This node defines a relationship item containing a 'submission' as a source and of type 'referencedBy'. This node can be used with the keyword 'contains' at each relationship array of all objects (but submission), in order to assert that all objects have a submission object (EGAB...) linked to them.",
         "allOf": [
           {
-            "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+            "$ref": "./EGA.common-definitions.json#/$defs/rTypeReferencedBy"
           },
           {
-            "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
+            "$ref": "./EGA.common-definitions.json#/$defs/rSourceSubmission"
           }
         ]
       },
@@ -3717,7 +3717,7 @@
         "allOf": [
           {
             "title": "ISO8601 Date pattern",
-            "$ref": "./EGA.common-definitions.json#/definitions/EGAISO8601DurationPattern"
+            "$ref": "./EGA.common-definitions.json#/$defs/EGAISO8601DurationPattern"
           }
         ],
         "examples": [ "P3Y6M4D", "P23DT23H", "P4Y" ]
@@ -3731,7 +3731,7 @@
         "allOf": [
           {
             "title": "Inherited ontologyTerm structure of termId and termLabel",
-            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+            "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
           }
         ],
         "properties": {        
@@ -3757,7 +3757,7 @@
         "allOf": [
           {
             "title": "Inherited ontologyTerm structure of termId and termLabel",
-            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+            "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
           }
         ],
         "properties": {        
@@ -3796,7 +3796,7 @@
         "allOf": [
           {
             "title": "Inherited ontologyTerm structure of termId and termLabel",
-            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+            "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
           }
         ],
         "properties": {        
@@ -3862,7 +3862,7 @@
             "allOf": [
               {
                 "title": "General CURIE pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/curieGeneralPattern"
+                "$ref": "./EGA.common-definitions.json#/$defs/curieGeneralPattern"
               }
             ],
             "examples": [ "MONDO:0100096", "EFO:0003101", "EFO:0005518",  "EFO:0002944",  "EFO:0003813" ]

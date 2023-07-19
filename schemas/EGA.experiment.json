@@ -16,13 +16,13 @@
         "allOf": [
           {
             "title": "Inherited objectCoreId object",
-            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+            "$ref": "./EGA.common-definitions.json#/$defs/objectCoreId"
           },
           {
             "title": "Check that experiment EGA ID (EGAX) is correct",
             "properties": {
               "egaAccession": {
-                "$ref": "./EGA.common-definitions.json#/definitions/EGAExperimentIdPattern"
+                "$ref": "./EGA.common-definitions.json#/$defs/EGAExperimentIdPattern"
               }
             }
           }
@@ -32,7 +32,7 @@
       "schemaDescriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
+        "$ref": "./EGA.common-definitions.json#/$defs/schemaDescriptor"
       },
 
       "objectTitle": {
@@ -57,14 +57,14 @@
         "additionalProperties": false,
         "uniqueItems": true,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/locusIdentifier" 
+          "$ref": "./EGA.common-definitions.json#/$defs/locusIdentifier" 
         }
       },
 
       "assayTechnology": {
         "title": "Technology used in the assay",
         "description": "Technology used in the assay. This node allows for an easy filtering of the technology (e.g. a sequencer Illumina NextSeq 500) used to obtain the raw data (e.g. sequence files) in an assay.",
-        "$ref": "./EGA.common-definitions.json#/definitions/assayTechnologyDescriptor"
+        "$ref": "./EGA.common-definitions.json#/$defs/assayTechnologyDescriptor"
       },
 
       "assayType": {
@@ -75,7 +75,7 @@
         "allOf": [
           {
             "title": "Inherited ontologyTerm structure of termId and termLabel",
-            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+            "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
           }
         ],
         "properties": {
@@ -116,7 +116,7 @@
         "allOf": [
           {
             "title": "Inherited ontologyTerm structure of termId and termLabel",
-            "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
+            "$ref": "./EGA.common-definitions.json#/$defs/ontologyTerm"
           }
         ],
         "properties": {        
@@ -141,7 +141,7 @@
         "description": "Types of data the experiment produces.",
         "uniqueItems": true,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/typeOfData"
+          "$ref": "./EGA.common-definitions.json#/$defs/typeOfData"
         }
       },
 
@@ -167,7 +167,7 @@
                 "uniqueItems": true,
                 "minItems": 1,
                 "items": {
-                  "$ref": "./EGA.common-definitions.json#/definitions/arrayLabel" 
+                  "$ref": "./EGA.common-definitions.json#/$defs/arrayLabel" 
                 }
               },
               
@@ -180,7 +180,7 @@
                 "uniqueItems": true,
                 "items": {
                   "title": "ADF File object",
-                  "$ref": "./EGA.common-definitions.json#/definitions/fileObject" 
+                  "$ref": "./EGA.common-definitions.json#/$defs/fileObject" 
                 }
               }
             }
@@ -194,12 +194,12 @@
             "properties": {
               "libraryLayout": {
                 "title": "Library layout of the sequencing experiment",
-                "$ref": "./EGA.common-definitions.json#/definitions/libraryLayout"
+                "$ref": "./EGA.common-definitions.json#/$defs/libraryLayout"
               },
               "spotDescriptor": {
                 "title": "Spot descriptor of the sequencing experiment",
                 "description": "Adapted from current ENA's XSDs without improvements. #! Expected to be investigated.",
-                "$ref": "./EGA.common-definitions.json#/definitions/spotDescriptor"
+                "$ref": "./EGA.common-definitions.json#/$defs/spotDescriptor"
               }
             }
           }
@@ -227,7 +227,7 @@
           "allOf": [
             {
               "title": "Inherited relationship node",
-              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
+              "$ref": "./EGA.common-definitions.json#/$defs/relationshipObject"
             },
             {
               "title": "Relationship constraints for an experiment",
@@ -237,36 +237,36 @@
                   "title": "Allowed relationships of type referencedBy (main ones)",
                   "allOf": [
                     {
-                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                      "$ref": "./EGA.common-definitions.json#/$defs/rTypeReferencedBy"
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceStudy"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceStudy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAssay"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetAssay"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAnalysis"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetAnalysis"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceSubmission"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceProtocol"
-                        },
-                        {
-                          "title": "Optional one, added here to simplify",
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExperiment"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceProtocol"
                         },
                         {
                           "title": "Optional one, added here to simplify",
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExperiment"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetExperiment"
                         },
                         {
                           "title": "Optional one, added here to simplify",
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetSample"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceExperiment"
+                        },
+                        {
+                          "title": "Optional one, added here to simplify",
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetSample"
                         }
                       ]
                     }
@@ -278,23 +278,23 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeGroupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeIsAfter"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeSameAs"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExperiment"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceExperiment"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExperiment"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetExperiment"
                         }
                       ]
                     }
@@ -307,44 +307,44 @@
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeChildOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeFamilyRelationshipWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeGroupedWith"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeSameAs"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeReferencedBy"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeDevelopsFrom"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeMemberOf"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTypeIsAfter"
                         }
                       ]
                     },
                     {
                       "anyOf": [
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceExternalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rSourceExternalURL"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetExternalAccession"
                         },
                         {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
+                          "$ref": "./EGA.common-definitions.json#/$defs/rTargetExternalURL"
                         }
                       ]
                     }
@@ -356,7 +356,7 @@
         },
         "contains": {
           "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
+          "$ref": "./EGA.common-definitions.json#/$defs/rConstraintOneSourcedSubmission"
         }
       },
 
@@ -368,7 +368,7 @@
         "uniqueItems": true,
         "minItems": 1,
         "items": {
-          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
+          "$ref": "./EGA.common-definitions.json#/$defs/customAttribute" 
         }
       }
     },
