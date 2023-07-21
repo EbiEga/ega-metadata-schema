@@ -2345,8 +2345,8 @@
             "type": "string",
             "title": "Email address",
             "description": "Current email address that would be used in case the contact needs to be reached. Its expected format is of a local-part (e.g. 'myname'), followed by an 'at' sign (i.e. '@') and the domain of the address (e.g. 'gmail.com' or 'ebi.ac.uk').",
-            "pattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
-            "examples": [ "myname@ebi.ac.uk" ]
+            "format": "idn-email",
+            "examples": [ "myname@ebi.ac.uk", "üser@example.com" ]
           },
           "phoneNumber": {
             "type": "string",
