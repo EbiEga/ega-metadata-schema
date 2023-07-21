@@ -52,7 +52,7 @@
             "type": "string",
             "title": "Reference to the policy",
             "description": "A publicly accessible reference to the policy, where the updated text of the policy is hosted.",
-            "pattern": "^(http(s)?:\\/\\/.)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)$",
+            "format": "uri",
             "examples": [ 
               "https://github.com/EbiEga/ega-metadata-schema/blob/main/schemas/EGA.policy.json",
               "https://ega-archive.org/submission/dac/documentation" 
