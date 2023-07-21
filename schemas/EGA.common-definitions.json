@@ -3698,7 +3698,7 @@
         "title": "Individual's age",
         "meta:propertyCurie": "EFO:0000246",
         "description": "Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represents a duration of three years, six months and four days.",
-        "format": "",
+        "format": "duration",
         "examples": [ "P3Y6M4D", "P4Y", "P23DT23H", "PT0S", "P0D", "P0,5Y", "P0.5Y"]
       },
 
