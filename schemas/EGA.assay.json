@@ -64,7 +64,7 @@
         "title": "Date of the assay",
         "description": "Date when the sequencing assay took place (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the assay concluded.",
         "format": "date",
-        "examples": [ "2021-04-30", "2020-12-29T19:30:45.123Z", "2020-12-29", "2020-12-29T19:30:45", "2021-10-13T04:13:00+01:00", "2021-10-13T12:13:00-08:00", "2021-10-13T12:13:00" ]
+        "examples": [ "2021-04-30", "2020-12-29" ]
       },
 
       "assayTypeSpecifications": {
