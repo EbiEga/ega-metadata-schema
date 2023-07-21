@@ -77,12 +77,9 @@
         "type": "string",
         "title": "Approximate release date of the dataset",
         "description": "An approximate date of the desired release of the dataset. Bare in mind that this will NOT automatically release the dataset, but instead may be used to set a reminder to the submitter (and EGA's HelpDesk team) in case the dataset was not released by this time. This would help in cases where this step was forgotten by the submitter or release was stalled for some reason.",
-        "examples": [ "2023-12-01", "2024-01-10" ],
+        "format": "date",
+        "examples": [ "2023-12-01", "2024-01-10", "2020-12-29T19:30:45.123Z", "2020-12-29", "2020-12-29T19:30:45", "2021-10-13T04:13:00+01:00", "2021-10-13T12:13:00-08:00", "2021-10-13T12:13:00" ],
         "allOf": [
-          {
-            "title": "The date has to match the common date pattern",
-            "$ref": "./EGA.common-definitions.json#/$defs/EGAISO8601DatePattern"
-          },
           {
             "title": "We cap the reminder up to 3 years",
             "Description": "We cap the reminder date to 3 years so that we avoid submitters setting a reminder too far in the future, sometimes intentionally.",

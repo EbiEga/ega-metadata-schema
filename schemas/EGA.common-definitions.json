@@ -748,14 +748,6 @@
         "examples": [ "EGAO00001159483" ]
       },
       
-      "EGAISO8601DatePattern": {
-        "type": "string",
-        "title": "Pattern of EGA ISO 8601 date",
-        "description": "Regular expression to check the syntax of a date following 'ISO 8601 date' format. Notice that the Time (denoted by 'T...') is optional. So is the time zone, specified at the end of the string (e.g. 'Z', '+01:00'...). See more detail at 'https://regexpattern.com/iso-8601-dates-times/'.",
-        "pattern": "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])(T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?)?$",
-        "examples": [ "2021-04-30", "2020-12-29T19:30:45.123Z", "2020-12-29", "2020-12-29T19:30:45", "2021-10-13T04:13:00+01:00", "2021-10-13T12:13:00-08:00", "2021-10-13T12:13:00" ]
-      },
-
       "EGAISO8601DurationPattern": {
         "type": "string",
         "title": "Pattern of a partial EGA ISO 8601 duration",
