@@ -748,14 +748,6 @@
         "examples": [ "EGAO00001159483" ]
       },
       
-      "EGAISO8601DurationPattern": {
-        "type": "string",
-        "title": "Pattern of a partial EGA ISO 8601 duration",
-        "description": "Pattern of ISO 8601 durations. It can be used to define time intervals (e.g. 'P3Y6M4DT12H30M5S' represents a duration of three years, six months, four days, twelve hours, thirty minutes, and five seconds). See more at https://en.wikipedia.org/wiki/ISO_8601#Durations.",
-        "pattern": "^[-+]?P(?!$)(([-+]?\\d+Y)|([-+]?\\d+\\.\\d+Y$))?(([-+]?\\d+M)|([-+]?\\d+\\.\\d+M$))?(([-+]?\\d+W)|([-+]?\\d+\\.\\d+W$))?(([-+]?\\d+D)|([-+]?\\d+\\.\\d+D$))?(T(?=[\\d+-])(([-+]?\\d+H)|([-+]?\\d+\\.\\d+H$))?(([-+]?\\d+M)|([-+]?\\d+\\.\\d+M$))?([-+]?\\d+(\\.\\d+)?S)?)??$",
-        "examples": [ "P3Y6M4DT12H30M5S", "P23DT23H", "PT0S", "P0D", "P0,5Y", "P0.5Y"]
-      },
-
       "filenameFiletypePatternCheck": {
         "type": "object",
         "title": "Check: filetype checks based on its filename",
@@ -3706,13 +3698,8 @@
         "title": "Individual's age",
         "meta:propertyCurie": "EFO:0000246",
         "description": "Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represents a duration of three years, six months and four days.",
-        "allOf": [
-          {
-            "title": "ISO8601 Date pattern",
-            "$ref": "./EGA.common-definitions.json#/$defs/EGAISO8601DurationPattern"
-          }
-        ],
-        "examples": [ "P3Y6M4D", "P23DT23H", "P4Y" ]
+        "format": "",
+        "examples": [ "P3Y6M4D", "P4Y", "P23DT23H", "PT0S", "P0D", "P0,5Y", "P0.5Y"]
       },
 
       "cellType": {
