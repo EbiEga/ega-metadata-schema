@@ -30,7 +30,7 @@
       "schemaDescriptor": {
         "title": "Schema descriptor node",
         "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
+        "$ref": "./EGA.common-definitions.json#/$defs/schemaDescriptor"
       },
 
       "objectArray": {

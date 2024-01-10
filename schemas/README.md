@@ -23,14 +23,14 @@ In case these schemas need to be modified, in this section you will find listed 
 * **Naming conventions**. Properties within the JSON schemas follow SWIFT naming conventions: they are named in ``lowerCammelCase`` format. For example, ``md5ChecksumPattern`` versus ``md5_checksum_pattern``.
 * **Shared definitions**. All schemas share some fields (_e.g._ ``alias``) or patterns (_e.g._ checksum patterns), which can lead to duplicated code. In order to avoid it, we created an additional schema that corresponds to none of the EGA objects: ``EGA.common-definitions.json``. Within this file those repeated objects are specified for other schemas or objects to inherit. Based on the
 **source and target** (being within the same file or another) **of the reference**, we can differentiate: (1) same-file shared definitions; (2) different-file shared definitions.
-    1. **Same-file shared definitions**. Objects within a JSON schema can be reused indefinitely. In order to do so, we stored them in the **``definitions`` anchor** (at the first level of the common schema), and then referenced them elsewhere using their relative JSON pointer (its path - _e.g._ ``"#/definitions/md5ChecksumPattern"``).
+    1. **Same-file shared definitions**. Objects within a JSON schema can be reused indefinitely. In order to do so, we stored them in the **``$defs`` anchor** (at the first level of the common schema), and then referenced them elsewhere using their relative JSON pointer (its path - _e.g._ ``"#/$defs/md5ChecksumPattern"``).
     See [Definitions](https://json-schema.org/understanding-json-schema/structuring.html#definitions) section for further details.
-    As an **example**, take a look at how we defined ``md5ChecksumPattern`` within ``definitions`` of the ``EGA.common-definitions.json``:
+    As an **example**, take a look at how we defined ``md5ChecksumPattern`` within ``$defs`` of the ``EGA.common-definitions.json``:
     ````
     # Simplified common schema:
     {
         "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json",
-        "definitions": {
+        "$defs": {
             "md5ChecksumPattern": {
                 "type": "string",
                 "pattern": "^[0-9a-z](?:-?[0-9a-z]){31}$"
@@ -39,18 +39,18 @@ In case these schemas need to be modified, in this section you will find listed 
     }
    
     # When referencing the pattern:
-    { "$ref": "#/definitions/md5ChecksumPattern" }
+    { "$ref": "#/$defs/md5ChecksumPattern" }
     ````
 
     2. **Different-file shared definitions**. The way these cross-file references are achieved is by using the IDs of the schemas (``$id`` within its first layer) and properties' anchors (_e.g._ ``"EGASampleIdPattern``), which point to the properties within the files, turning them into references (``$ref`` wherever they are needed). References are resolved against the absolute URL identifiers of the 
     schemas. In other words, a relative reference ($ref; e.g. ``./EGA.common-definitions.json#...``) is resolved against the absolute identifier (``$id``; e.g. ``https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json``) of the referencing schema (in this example ``EGA.analysis.json``), transforming the relative reference into an absolute one (e.g. 
     ``https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#...``). See 
-    [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html) for further details. As an **example**, take a look at how we defined ``objectCoreId`` within ``definitions`` of the ``EGA.common-definitions.json`` and then referenced it within the ``EGA.analysis.json``:
+    [Structuring a complex schema](https://json-schema.org/understanding-json-schema/structuring.html) for further details. As an **example**, take a look at how we defined ``objectCoreId`` within ``$defs`` of the ``EGA.common-definitions.json`` and then referenced it within the ``EGA.analysis.json``:
     ````
     # Simplified common schema
     {
         "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json",
-        "definitions": {
+        "$defs": {
             "objectCoreId": {
                 ...
             }
@@ -64,7 +64,7 @@ In case these schemas need to be modified, in this section you will find listed 
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
+                        "$ref": "./EGA.common-definitions.json#/$defs/objectCoreId"
                     }
                 ]
             }
