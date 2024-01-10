@@ -19,8 +19,8 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
 | :-------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectId](#objectid)                               | Merged   | Required | cannot be null | [EGA individual metadata schema](ega-6-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/objectId")                                                 |
-| [schemaDescriptor](#schemadescriptor)               | `object` | Optional | cannot be null | [EGA individual metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schemaDescriptor")                                        |
-| [organismDescriptor](#organismdescriptor)           | `object` | Required | cannot be null | [EGA individual metadata schema](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organismDescriptor")                   |
+| [schemaDescriptor](#schemadescriptor)               | `object` | Optional | cannot be null | [EGA individual metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schemaDescriptor")                                               |
+| [organismDescriptor](#organismdescriptor)           | `object` | Required | cannot be null | [EGA individual metadata schema](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organismDescriptor")                          |
 | [minimalPublicAttributes](#minimalpublicattributes) | Merged   | Required | cannot be null | [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes") |
 | [individualRelationships](#individualrelationships) | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-6-properties-individual-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individualRelationships")                           |
 | [individualAttributes](#individualattributes)       | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-6-properties-individual-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/individualAttributes")                          |
@@ -47,11 +47,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that individual EGA ID (EGAI) is correct](ega-6-properties-objects-ids-block-allof-check-that-individual-ega-id-egai-is-correct.md "check type definition")
 
@@ -63,15 +63,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schemaDescriptor")
+*   defined in: [EGA individual metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## organismDescriptor
 
@@ -81,15 +81,15 @@ This property describes the material entity the sample consists in. That is, an 
 
 *   is required
 
-*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
+*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organismDescriptor")
+*   defined in: [EGA individual metadata schema](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/organismDescriptor")
 
 ### organismDescriptor Type
 
-`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
+`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
 ## minimalPublicAttributes
 
@@ -147,7 +147,7 @@ Custom attributes of an individual: reusable attributes to encode tag-value pair
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -155,7 +155,7 @@ Custom attributes of an individual: reusable attributes to encode tag-value pair
 
 ### individualAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### individualAttributes Constraints
 

@@ -16,10 +16,10 @@ merged type ([Details](ega-5-properties-dataset-relationships-items-allof-relati
 
 any of
 
-*   [Relationship source: Policy](ega-4-definitions-relationship-source-policy.md "check type definition")
+*   [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
 
-*   [Relationship source: assay](ega-4-definitions-relationship-source-assay.md "check type definition")
+*   [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
 
-*   [Relationship source: analysis](ega-4-definitions-relationship-source-analysis.md "check type definition")
+*   [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
 
-*   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")

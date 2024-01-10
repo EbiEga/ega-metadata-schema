@@ -24,8 +24,8 @@ any of
 
 | Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                   |
 | :-------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [subjectId](#subjectid)                             | `string` | Required | cannot be null | [EGA individual metadata schema](ega-4-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId")                                                                                                   |
-| [biologicalSex](#biologicalsex)                     | `string` | Required | cannot be null | [EGA individual metadata schema](ega-4-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex")                                                                         |
+| [subjectId](#subjectid)                             | `string` | Required | cannot be null | [EGA individual metadata schema](ega-4-defs-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId")                                                                                                          |
+| [biologicalSex](#biologicalsex)                     | `string` | Required | cannot be null | [EGA individual metadata schema](ega-4-defs-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex")                                                                                |
 | [phenotypicAbnormalities](#phenotypicabnormalities) | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities") |
 | [diseases](#diseases)                               | `array`  | Optional | cannot be null | [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases")                                |
 
@@ -37,15 +37,15 @@ A unique identifier (e.g. 'Donor-10031') for the subject the sample derives from
 
 *   is required
 
-*   Type: `string` ([Subject ID](ega-4-definitions-subject-id.md))
+*   Type: `string` ([Subject ID](ega-4-defs-subject-id.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId")
+*   defined in: [EGA individual metadata schema](ega-4-defs-subject-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/subjectId")
 
 ### subjectId Type
 
-`string` ([Subject ID](ega-4-definitions-subject-id.md))
+`string` ([Subject ID](ega-4-defs-subject-id.md))
 
 ### subjectId Constraints
 
@@ -77,15 +77,15 @@ An organismal quality inhering in a bearer by virtue of the bearer's physical ex
 
 *   is required
 
-*   Type: `string` ([Biological sex of the individual](ega-4-definitions-biological-sex-of-the-individual.md))
+*   Type: `string` ([Biological sex of the individual](ega-4-defs-biological-sex-of-the-individual.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex")
+*   defined in: [EGA individual metadata schema](ega-4-defs-biological-sex-of-the-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/biologicalSex")
 
 ### biologicalSex Type
 
-`string` ([Biological sex of the individual](ega-4-definitions-biological-sex-of-the-individual.md))
+`string` ([Biological sex of the individual](ega-4-defs-biological-sex-of-the-individual.md))
 
 ### biologicalSex Constraints
 

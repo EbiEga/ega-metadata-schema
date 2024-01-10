@@ -14,6 +14,16 @@ Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too
 
 `string` ([Date of the sample collection](ega-10-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md))
 
-all of
+## sampleCollectionDate Constraints
 
-*   [Pattern of EGA ISO 8601 date](ega-4-definitions-pattern-of-ega-iso-8601-date.md "check type definition")
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
+
+## sampleCollectionDate Examples
+
+```json
+"2021-04-30"
+```
+
+```json
+"2020-12-29"
+```

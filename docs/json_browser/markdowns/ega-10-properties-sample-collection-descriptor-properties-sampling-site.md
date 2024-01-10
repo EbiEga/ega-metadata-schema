@@ -18,4 +18,4 @@ all of
 
 *   all of
 
-    *   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+    *   [Ontology term](ega-4-defs-ontology-term.md "check type definition")

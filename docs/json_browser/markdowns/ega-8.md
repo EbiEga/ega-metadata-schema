@@ -19,7 +19,7 @@ A policy, also known as Data Access Agreement (DAA), is a contract made between 
 | Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                          |
 | :------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")                |
-| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")       |
+| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA policy metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")              |
 | [objectTitle](#objecttitle)                 | `string` | Required | cannot be null | [EGA policy metadata schema](ega-8-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")           |
 | [policyDescriptor](#policydescriptor)       | Merged   | Required | cannot be null | [EGA policy metadata schema](ega-8-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")        |
 | [duoCodes](#duocodes)                       | `array`  | Optional | cannot be null | [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")      |
@@ -48,11 +48,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that policy EGA ID (EGAP) is correct](ega-8-properties-objects-ids-block-allof-check-that-policy-ega-id-egap-is-correct.md "check type definition")
 
@@ -64,15 +64,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")
+*   defined in: [EGA policy metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectTitle
 
@@ -178,7 +178,7 @@ Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -186,7 +186,7 @@ Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.
 
 ### policyAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### policyAttributes Constraints
 

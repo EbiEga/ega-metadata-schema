@@ -16,9 +16,9 @@ unknown ([Check that individual EGA ID (EGAI) is correct](ega-6-properties-objec
 
 # 1 Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                        |
-| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA individual metadata schema](ega-4-definitions-pattern-of-an-ega-individuals-id-egai.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/objectId/allOf/1/properties/egaAccession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                 |
+| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA individual metadata schema](ega-4-defs-pattern-of-an-ega-individuals-id-egai.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
 ## egaAccession
 
@@ -28,15 +28,15 @@ unknown ([Check that individual EGA ID (EGAI) is correct](ega-6-properties-objec
 
 *   is optional
 
-*   Type: `string` ([Pattern of an EGA Individual's ID (EGAI...)](ega-4-definitions-pattern-of-an-ega-individuals-id-egai.md))
+*   Type: `string` ([Pattern of an EGA Individual's ID (EGAI...)](ega-4-defs-pattern-of-an-ega-individuals-id-egai.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-pattern-of-an-ega-individuals-id-egai.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/objectId/allOf/1/properties/egaAccession")
+*   defined in: [EGA individual metadata schema](ega-4-defs-pattern-of-an-ega-individuals-id-egai.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 
-`string` ([Pattern of an EGA Individual's ID (EGAI...)](ega-4-definitions-pattern-of-an-ega-individuals-id-egai.md))
+`string` ([Pattern of an EGA Individual's ID (EGAI...)](ega-4-defs-pattern-of-an-ega-individuals-id-egai.md))
 
 ### egaAccession Constraints
 

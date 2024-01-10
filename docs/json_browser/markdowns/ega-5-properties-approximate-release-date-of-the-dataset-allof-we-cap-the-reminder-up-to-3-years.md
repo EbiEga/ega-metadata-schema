@@ -1,7 +1,7 @@
 # We cap the reminder up to 3 years Schema
 
 ```txt
-https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximateReleaseDate/allOf/1
+https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximateReleaseDate/allOf/0
 ```
 
 
@@ -10,11 +10,11 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.da
 | :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :----------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.dataset.json\*](../../../schemas/EGA.dataset.json "open original schema") |
 
-## 1 Type
+## 0 Type
 
 unknown ([We cap the reminder up to 3 years](ega-5-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md))
 
-## 1 Constraints
+## 0 Constraints
 
 **pattern**: the string must match the following regular expression:&#x20;
 

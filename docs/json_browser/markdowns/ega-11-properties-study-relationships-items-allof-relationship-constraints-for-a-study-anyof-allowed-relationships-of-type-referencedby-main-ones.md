@@ -16,14 +16,14 @@ merged type ([Allowed relationships of type referencedBy (main ones)](ega-11-pro
 
 all of
 
-*   [Relationship type: referencedBy](ega-4-definitions-relationship-type-referencedby.md "check type definition")
+*   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
 *   any of
 
-    *   [Relationship target: analysis](ega-4-definitions-relationship-target-analysis.md "check type definition")
+    *   [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")
 
-    *   [Relationship target: experiment](ega-4-definitions-relationship-target-experiment.md "check type definition")
+    *   [Relationship target: experiment](ega-4-defs-relationship-target-experiment.md "check type definition")
 
-    *   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+    *   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-    *   [Relationship source: protocol](ega-4-definitions-relationship-source-protocol.md "check type definition")
+    *   [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")

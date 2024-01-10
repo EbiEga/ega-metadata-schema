@@ -12,7 +12,7 @@ List of study designs (a.k.a. experimental designs). Contains specific keywords 
 
 ## studyDesigns Type
 
-`string[]` ([Enumeration of design keywords](ega-4-definitions-enumeration-of-design-keywords.md))
+`string[]` ([Enumeration of design keywords](ega-4-defs-enumeration-of-design-keywords.md))
 
 ## studyDesigns Constraints
 

@@ -16,10 +16,10 @@ Node containing the set of fields specific to an experiment of sequencing-type (
 
 # sequencingExperiment Properties
 
-| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
-| :-------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [libraryLayout](#librarylayout)   | `string` | Required | cannot be null | [EGA Experiment metadata schema](ega-4-definitions-sequencing-library-layout.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/libraryLayout") |
-| [spotDescriptor](#spotdescriptor) | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-4-definitions-spot-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/spotDescriptor")          |
+| Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                  |
+| :-------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [libraryLayout](#librarylayout)   | `string` | Required | cannot be null | [EGA Experiment metadata schema](ega-4-defs-sequencing-library-layout.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/libraryLayout") |
+| [spotDescriptor](#spotdescriptor) | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-4-defs-spot-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/spotDescriptor")          |
 
 ## libraryLayout
 
@@ -29,15 +29,15 @@ Whether the sequenced reads are paired or single. In other words, if the sequenc
 
 *   is required
 
-*   Type: `string` ([Sequencing library layout](ega-4-definitions-sequencing-library-layout.md))
+*   Type: `string` ([Sequencing library layout](ega-4-defs-sequencing-library-layout.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-definitions-sequencing-library-layout.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/libraryLayout")
+*   defined in: [EGA Experiment metadata schema](ega-4-defs-sequencing-library-layout.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/libraryLayout")
 
 ### libraryLayout Type
 
-`string` ([Sequencing library layout](ega-4-definitions-sequencing-library-layout.md))
+`string` ([Sequencing library layout](ega-4-defs-sequencing-library-layout.md))
 
 ### libraryLayout Constraints
 
@@ -56,15 +56,15 @@ The 'spotDescriptor' specifies how to decode the individual reads of interest fr
 
 *   is optional
 
-*   Type: `object[]` ([Spot decode spec](ega-4-definitions-spot-descriptor-spot-decode-spec.md))
+*   Type: `object[]` ([Spot decode spec](ega-4-defs-spot-descriptor-spot-decode-spec.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-definitions-spot-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/spotDescriptor")
+*   defined in: [EGA Experiment metadata schema](ega-4-defs-spot-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/spotDescriptor")
 
 ### spotDescriptor Type
 
-`object[]` ([Spot decode spec](ega-4-definitions-spot-descriptor-spot-decode-spec.md))
+`object[]` ([Spot decode spec](ega-4-defs-spot-descriptor-spot-decode-spec.md))
 
 ### spotDescriptor Constraints
 

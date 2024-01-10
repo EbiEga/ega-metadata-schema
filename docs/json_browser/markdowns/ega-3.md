@@ -27,11 +27,11 @@ all of
 | Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                |
 | :-------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectId](#objectid)                               | Merged   | Required | cannot be null | [EGA assay metadata schema](ega-3-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/objectId")                        |
-| [schemaDescriptor](#schemadescriptor)               | `object` | Optional | cannot be null | [EGA assay metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/schemaDescriptor")               |
+| [schemaDescriptor](#schemadescriptor)               | `object` | Optional | cannot be null | [EGA assay metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/schemaDescriptor")                      |
 | [objectTitle](#objecttitle)                         | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-3-properties-title-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/objectTitle")                    |
 | [objectDescription](#objectdescription)             | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-3-properties-description-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/objectDescription")        |
 | [assayCenter](#assaycenter)                         | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-3-properties-centername-that-performed-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayCenter")   |
-| [assayDate](#assaydate)                             | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-3-properties-pattern-of-ega-iso-8601-date.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayDate")            |
+| [assayDate](#assaydate)                             | `string` | Optional | cannot be null | [EGA assay metadata schema](ega-3-properties-date-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayDate")                       |
 | [assayTypeSpecifications](#assaytypespecifications) | Merged   | Required | cannot be null | [EGA assay metadata schema](ega-3-properties-assay-type-specifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications") |
 | [assayRelationships](#assayrelationships)           | `array`  | Optional | cannot be null | [EGA assay metadata schema](ega-3-properties-assay-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayRelationships")            |
 | [assayFiles](#assayfiles)                           | `array`  | Required | cannot be null | [EGA assay metadata schema](ega-3-properties-data-files-produced-from-an-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayFiles")      |
@@ -59,11 +59,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that assay's EGA ID (EGAR) is correct](ega-3-properties-objects-ids-block-allof-check-that-assays-ega-id-egar-is-correct.md "check type definition")
 
@@ -75,15 +75,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/schemaDescriptor")
+*   defined in: [EGA assay metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectTitle
 
@@ -171,31 +171,25 @@ The name of the center (e.g. 'EBI-TEST') responsible for performing assay, if ap
 
 ## assayDate
 
-Regular expression to check the syntax of a date following 'ISO 8601 date' format. Notice that the Time (denoted by 'T...') is optional. So is the time zone, specified at the end of the string (e.g. 'Z', '+01:00'...). See more detail at '<https://regexpattern.com/iso-8601-dates-times/>'.
+Date when the sequencing assay took place (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the assay concluded.
 
 `assayDate`
 
 *   is optional
 
-*   Type: `string` ([Pattern of EGA ISO 8601 date](ega-3-properties-pattern-of-ega-iso-8601-date.md))
+*   Type: `string` ([Date of the assay](ega-3-properties-date-of-the-assay.md))
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-pattern-of-ega-iso-8601-date.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayDate")
+*   defined in: [EGA assay metadata schema](ega-3-properties-date-of-the-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayDate")
 
 ### assayDate Type
 
-`string` ([Pattern of EGA ISO 8601 date](ega-3-properties-pattern-of-ega-iso-8601-date.md))
+`string` ([Date of the assay](ega-3-properties-date-of-the-assay.md))
 
 ### assayDate Constraints
 
-**pattern**: the string must match the following regular expression:&#x20;
-
-```regexp
-^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])(T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?)?$
-```
-
-[try pattern](https://regexr.com/?expression=%5E\(-%3F\(%3F%3A%5B1-9%5D%5B0-9%5D*\)%3F%5B0-9%5D%7B4%7D\)-\(1%5B0-2%5D%7C0%5B1-9%5D\)-\(3%5B01%5D%7C0%5B1-9%5D%7C%5B12%5D%5B0-9%5D\)\(T\(2%5B0-3%5D%7C%5B01%5D%5B0-9%5D\)%3A\(%5B0-5%5D%5B0-9%5D\)%3A\(%5B0-5%5D%5B0-9%5D\)\(%5C.%5B0-9%5D%2B\)%3F\(Z%7C%5B%2B-%5D\(%3F%3A2%5B0-3%5D%7C%5B01%5D%5B0-9%5D\)%3A%5B0-5%5D%5B0-9%5D\)%3F\)%3F%24 "try regular expression with regexr.com")
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ### assayDate Examples
 
@@ -204,27 +198,7 @@ Regular expression to check the syntax of a date following 'ISO 8601 date' forma
 ```
 
 ```json
-"2020-12-29T19:30:45.123Z"
-```
-
-```json
 "2020-12-29"
-```
-
-```json
-"2020-12-29T19:30:45"
-```
-
-```json
-"2021-10-13T04:13:00+01:00"
-```
-
-```json
-"2021-10-13T12:13:00-08:00"
-```
-
-```json
-"2021-10-13T12:13:00"
 ```
 
 ## assayTypeSpecifications
@@ -305,7 +279,7 @@ Custom attributes of an assay: reusable attributes to encode tag-value pairs (e.
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -313,7 +287,7 @@ Custom attributes of an assay: reusable attributes to encode tag-value pairs (e.
 
 ### assayAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### assayAttributes Constraints
 

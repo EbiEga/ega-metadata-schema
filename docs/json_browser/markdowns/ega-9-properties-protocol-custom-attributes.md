@@ -12,7 +12,7 @@ Custom attributes of a protocol: reusable attributes to encode tag-value pairs (
 
 ## protocolAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ## protocolAttributes Constraints
 

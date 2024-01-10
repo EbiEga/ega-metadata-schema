@@ -12,7 +12,7 @@ Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g
 
 ## studyAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ## studyAttributes Constraints
 

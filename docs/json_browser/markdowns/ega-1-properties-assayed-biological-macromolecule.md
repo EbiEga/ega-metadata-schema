@@ -16,7 +16,7 @@ Node containing information about the assayed biological macromolecule: the mate
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # assayedBiologicalMacromolecule Properties
 

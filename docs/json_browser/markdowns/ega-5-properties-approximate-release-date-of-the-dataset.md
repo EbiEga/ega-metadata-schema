@@ -16,16 +16,18 @@ An approximate date of the desired release of the dataset. Bare in mind that thi
 
 all of
 
-*   [Pattern of EGA ISO 8601 date](ega-4-definitions-pattern-of-ega-iso-8601-date.md "check type definition")
-
 *   [We cap the reminder up to 3 years](ega-5-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
+
+## approximateReleaseDate Constraints
+
+**date**: the string must be a date string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ## approximateReleaseDate Examples
 
 ```json
-"2023-12-01"
+"2021-04-30"
 ```
 
 ```json
-"2024-01-10"
+"2020-12-29"
 ```

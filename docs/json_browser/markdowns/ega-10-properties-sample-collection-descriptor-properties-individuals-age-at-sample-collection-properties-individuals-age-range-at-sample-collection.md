@@ -16,10 +16,10 @@ Age range of the individual when the sample was collected. Composed of two (star
 
 # ageRange Properties
 
-| Property        | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                  |
-| :-------------- | :----- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [start](#start) | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-4-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start") |
-| [end](#end)     | Merged | Optional | cannot be null | [EGA sample metadata schema](ega-4-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")   |
+| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
+| :-------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [start](#start) | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start") |
+| [end](#end)     | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")   |
 
 ## start
 
@@ -29,19 +29,19 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 *   is optional
 
-*   Type: `string` ([Individual's age](ega-4-definitions-individuals-age.md))
+*   Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start")
+*   defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start")
 
 ### start Type
 
-`string` ([Individual's age](ega-4-definitions-individuals-age.md))
+`string` ([Individual's age](ega-4-defs-individuals-age.md))
 
-all of
+### start Constraints
 
-*   [Pattern of a partial EGA ISO 8601 duration](ega-4-definitions-pattern-of-a-partial-ega-iso-8601-duration.md "check type definition")
+**duration**: the string must be a duration string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ### start Examples
 
@@ -50,11 +50,27 @@ all of
 ```
 
 ```json
+"P4Y"
+```
+
+```json
 "P23DT23H"
 ```
 
 ```json
-"P4Y"
+"PT0S"
+```
+
+```json
+"P0D"
+```
+
+```json
+"P0,5Y"
+```
+
+```json
+"P0.5Y"
 ```
 
 ## end
@@ -65,19 +81,19 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 *   is optional
 
-*   Type: `string` ([Individual's age](ega-4-definitions-individuals-age.md))
+*   Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")
+*   defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")
 
 ### end Type
 
-`string` ([Individual's age](ega-4-definitions-individuals-age.md))
+`string` ([Individual's age](ega-4-defs-individuals-age.md))
 
-all of
+### end Constraints
 
-*   [Pattern of a partial EGA ISO 8601 duration](ega-4-definitions-pattern-of-a-partial-ega-iso-8601-duration.md "check type definition")
+**duration**: the string must be a duration string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ### end Examples
 
@@ -86,9 +102,25 @@ all of
 ```
 
 ```json
+"P4Y"
+```
+
+```json
 "P23DT23H"
 ```
 
 ```json
-"P4Y"
+"PT0S"
+```
+
+```json
+"P0D"
+```
+
+```json
+"P0,5Y"
+```
+
+```json
+"P0.5Y"
 ```

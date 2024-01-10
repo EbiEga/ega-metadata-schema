@@ -16,9 +16,9 @@ unknown ([Check that study EGA ID (EGAS) is correct](ega-11-properties-objects-i
 
 # 1 Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                         |
-| :---------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA study metadata schema](ega-4-definitions-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties/egaAccession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                  |
+| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA study metadata schema](ega-4-defs-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
 ## egaAccession
 
@@ -28,15 +28,15 @@ unknown ([Check that study EGA ID (EGAS) is correct](ega-11-properties-objects-i
 
 *   is optional
 
-*   Type: `string` ([Pattern of an EGA study's ID (EGAS...)](ega-4-definitions-pattern-of-an-ega-studys-id-egas.md))
+*   Type: `string` ([Pattern of an EGA study's ID (EGAS...)](ega-4-defs-pattern-of-an-ega-studys-id-egas.md))
 
 *   cannot be null
 
-*   defined in: [EGA study metadata schema](ega-4-definitions-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties/egaAccession")
+*   defined in: [EGA study metadata schema](ega-4-defs-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 
-`string` ([Pattern of an EGA study's ID (EGAS...)](ega-4-definitions-pattern-of-an-ega-studys-id-egas.md))
+`string` ([Pattern of an EGA study's ID (EGAS...)](ega-4-defs-pattern-of-an-ega-studys-id-egas.md))
 
 ### egaAccession Constraints
 

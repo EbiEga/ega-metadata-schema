@@ -16,6 +16,6 @@ merged type ([Details](ega-properties-dac-relationships-items-allof-relationship
 
 any of
 
-*   [Relationship source: DAC](ega-4-definitions-relationship-source-dac.md "check type definition")
+*   [Relationship source: DAC](ega-4-defs-relationship-source-dac.md "check type definition")
 
-*   [Relationship target: DAC](ega-4-definitions-relationship-target-dac.md "check type definition")
+*   [Relationship target: DAC](ega-4-defs-relationship-target-dac.md "check type definition")

@@ -24,7 +24,7 @@ any of
 
 | Property              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                    |
 | :-------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [age](#age)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-4-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/age")                                                                                                                         |
+| [age](#age)           | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/age")                                                                                                                                |
 | [ageRange](#agerange) | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-properties-individuals-age-range-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange") |
 
 ## age
@@ -35,19 +35,19 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 *   is optional
 
-*   Type: `string` ([Individual's age](ega-4-definitions-individuals-age.md))
+*   Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-definitions-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/age")
+*   defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/age")
 
 ### age Type
 
-`string` ([Individual's age](ega-4-definitions-individuals-age.md))
+`string` ([Individual's age](ega-4-defs-individuals-age.md))
 
-all of
+### age Constraints
 
-*   [Pattern of a partial EGA ISO 8601 duration](ega-4-definitions-pattern-of-a-partial-ega-iso-8601-duration.md "check type definition")
+**duration**: the string must be a duration string, according to [RFC 3339, section 5.6](https://tools.ietf.org/html/rfc3339 "check the specification")
 
 ### age Examples
 
@@ -56,11 +56,27 @@ all of
 ```
 
 ```json
+"P4Y"
+```
+
+```json
 "P23DT23H"
 ```
 
 ```json
-"P4Y"
+"PT0S"
+```
+
+```json
+"P0D"
+```
+
+```json
+"P0,5Y"
+```
+
+```json
+"P0.5Y"
 ```
 
 ## ageRange

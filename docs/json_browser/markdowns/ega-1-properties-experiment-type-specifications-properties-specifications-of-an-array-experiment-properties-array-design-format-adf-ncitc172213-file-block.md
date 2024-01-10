@@ -12,7 +12,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 ## adfFiles Type
 
-`object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
+`object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
 ## adfFiles Constraints
 

@@ -16,8 +16,8 @@ merged type ([Details](ega-properties-dac-relationships-items-allof-relationship
 
 any of
 
-*   [Relationship type: sameAs](ega-4-definitions-relationship-type-sameas.md "check type definition")
+*   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-*   [Relationship type: groupedWith](ega-4-definitions-relationship-type-groupedwith.md "check type definition")
+*   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-*   [Relationship type: memberOf](ega-4-definitions-relationship-type-memberof.md "check type definition")
+*   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")

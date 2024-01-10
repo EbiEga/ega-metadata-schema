@@ -20,7 +20,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate an
 | :-------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectTitle](#objecttitle)             | `string` | Optional | cannot be null | [EGA object-set metadata schema](ega-7-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")             |
 | [objectDescription](#objectdescription) | `string` | Optional | cannot be null | [EGA object-set metadata schema](ega-7-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription") |
-| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA object-set metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")             |
+| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA object-set metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")                    |
 | [objectArray](#objectarray)             | `array`  | Required | cannot be null | [EGA object-set metadata schema](ega-7-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray")   |
 
 ## objectTitle
@@ -87,15 +87,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")
+*   defined in: [EGA object-set metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectArray
 

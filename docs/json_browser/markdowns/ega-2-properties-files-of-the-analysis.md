@@ -12,7 +12,7 @@ This property contains the files derived from performing any processing or analy
 
 ## analysisFiles Type
 
-`object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
+`object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
 ## analysisFiles Constraints
 

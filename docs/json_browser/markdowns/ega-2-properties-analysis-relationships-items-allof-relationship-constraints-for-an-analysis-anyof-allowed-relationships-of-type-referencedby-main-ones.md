@@ -16,22 +16,22 @@ merged type ([Allowed relationships of type referencedBy (main ones)](ega-2-prop
 
 all of
 
-*   [Relationship type: referencedBy](ega-4-definitions-relationship-type-referencedby.md "check type definition")
+*   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
 *   any of
 
-    *   [Relationship source: study](ega-4-definitions-relationship-source-study.md "check type definition")
+    *   [Relationship source: study](ega-4-defs-relationship-source-study.md "check type definition")
 
-    *   [Relationship source: sample](ega-4-definitions-relationship-source-sample.md "check type definition")
+    *   [Relationship source: sample](ega-4-defs-relationship-source-sample.md "check type definition")
 
-    *   [Relationship source: experiment](ega-4-definitions-relationship-source-experiment.md "check type definition")
+    *   [Relationship source: experiment](ega-4-defs-relationship-source-experiment.md "check type definition")
 
-    *   [Relationship source: assay](ega-4-definitions-relationship-source-assay.md "check type definition")
+    *   [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
 
-    *   [Relationship target: dataset](ega-4-definitions-relationship-target-dataset.md "check type definition")
+    *   [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
 
-    *   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+    *   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-    *   [Relationship source: protocol](ega-4-definitions-relationship-source-protocol.md "check type definition")
+    *   [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")
 
-    *   [Relationship target: analysis](ega-4-definitions-relationship-target-analysis.md "check type definition")
+    *   [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")

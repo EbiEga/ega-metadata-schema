@@ -16,9 +16,9 @@ unknown ([Check that dataset EGA ID (EGAD) is correct](ega-5-properties-objects-
 
 # 1 Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
-| :---------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA dataset metadata schema](ega-4-definitions-pattern-of-an-ega-datasets-id-egad.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId/allOf/1/properties/egaAccession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
+| :---------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA dataset metadata schema](ega-4-defs-pattern-of-an-ega-datasets-id-egad.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
 ## egaAccession
 
@@ -28,15 +28,15 @@ unknown ([Check that dataset EGA ID (EGAD) is correct](ega-5-properties-objects-
 
 *   is optional
 
-*   Type: `string` ([Pattern of an EGA dataset's ID (EGAD...)](ega-4-definitions-pattern-of-an-ega-datasets-id-egad.md))
+*   Type: `string` ([Pattern of an EGA dataset's ID (EGAD...)](ega-4-defs-pattern-of-an-ega-datasets-id-egad.md))
 
 *   cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-4-definitions-pattern-of-an-ega-datasets-id-egad.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId/allOf/1/properties/egaAccession")
+*   defined in: [EGA dataset metadata schema](ega-4-defs-pattern-of-an-ega-datasets-id-egad.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 
-`string` ([Pattern of an EGA dataset's ID (EGAD...)](ega-4-definitions-pattern-of-an-ega-datasets-id-egad.md))
+`string` ([Pattern of an EGA dataset's ID (EGAD...)](ega-4-defs-pattern-of-an-ega-datasets-id-egad.md))
 
 ### egaAccession Constraints
 

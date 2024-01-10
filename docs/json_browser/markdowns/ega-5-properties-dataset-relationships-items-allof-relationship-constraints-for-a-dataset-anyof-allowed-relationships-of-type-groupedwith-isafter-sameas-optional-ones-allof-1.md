@@ -16,6 +16,6 @@ merged type ([Details](ega-5-properties-dataset-relationships-items-allof-relati
 
 any of
 
-*   [Relationship source: dataset](ega-4-definitions-relationship-source-dataset.md "check type definition")
+*   [Relationship source: dataset](ega-4-defs-relationship-source-dataset.md "check type definition")
 
-*   [Relationship target: dataset](ega-4-definitions-relationship-target-dataset.md "check type definition")
+*   [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")

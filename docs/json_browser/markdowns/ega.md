@@ -4,7 +4,7 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Data Access Committee (DAC) metadata object. This object is intended to contain metadata about the body of one or more named individuals who are responsible for data release to external requestors based on consent and/or National Research Ethics terms. A DAC is typically formed, but not necessarily, from the same organization that collected the samples and generated any associated files/analyses. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/submission/data_access_committee>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to validate its Data Access Committee (DAC) metadata object. This object is intended to contain metadata about the body of one or more named individuals or legal entities who are data controllers. In other words, responsible for data release to external requestors based on consent and/or National Research Ethics terms. A DAC is typically formed, but not necessarily, from the same organization that collected the samples and generated any associated files/analyses. Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/submission/data_access_committee>)
 
 | Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                           |
 | :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------- |
@@ -19,7 +19,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | Property                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                 |
 | :-------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectId](#objectid)                   | Merged   | Required | cannot be null | [EGA DAC metadata schema](ega-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectId")               |
-| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA DAC metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/schemaDescriptor")    |
+| [schemaDescriptor](#schemadescriptor)   | `object` | Optional | cannot be null | [EGA DAC metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/schemaDescriptor")           |
 | [objectTitle](#objecttitle)             | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-properties-title-of-the-dac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectTitle")             |
 | [objectDescription](#objectdescription) | `string` | Optional | cannot be null | [EGA DAC metadata schema](ega-properties-description-of-the-dac.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/objectDescription") |
 | [dacContacts](#daccontacts)             | `object` | Required | cannot be null | [EGA DAC metadata schema](ega-properties-dac-contacts-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/dacContacts")         |
@@ -48,11 +48,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that DAC EGA ID (EGAC) is correct](ega-properties-objects-ids-block-allof-check-that-dac-ega-id-egac-is-correct.md "check type definition")
 
@@ -64,15 +64,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA DAC metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/schemaDescriptor")
+*   defined in: [EGA DAC metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectTitle
 
@@ -180,7 +180,7 @@ Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. 
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -188,7 +188,7 @@ Custom attributes of a DAC: reusable attributes to encode tag-value pairs (e.g. 
 
 ### dacAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### dacAttributes Constraints
 

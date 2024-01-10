@@ -18,12 +18,12 @@ all of
 
 *   any of
 
-    *   [Relationship type: groupedWith](ega-4-definitions-relationship-type-groupedwith.md "check type definition")
+    *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-    *   [Relationship type: sameAs](ega-4-definitions-relationship-type-sameas.md "check type definition")
+    *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
 *   any of
 
-    *   [Relationship source: Policy](ega-4-definitions-relationship-source-policy.md "check type definition")
+    *   [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
 
-    *   [Relationship target: Policy](ega-4-definitions-relationship-target-policy.md "check type definition")
+    *   [Relationship target: Policy](ega-4-defs-relationship-target-policy.md "check type definition")

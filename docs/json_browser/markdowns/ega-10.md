@@ -16,20 +16,20 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 
 # EGA sample metadata schema Properties
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                         |
-| :------------------------------------------ | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectId")                              |
-| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schemaDescriptor")                      |
-| [objectTitle](#objecttitle)                 | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectTitle")                         |
-| [objectDescription](#objectdescription)     | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectDescription")             |
-| [organismDescriptor](#organismdescriptor)   | `object` | Required | cannot be null | [EGA sample metadata schema](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organismDescriptor") |
-| [sampleCollection](#samplecollection)       | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection")           |
-| [sampleGrouping](#samplegrouping)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping")                  |
-| [sampleTypes](#sampletypes)                 | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-sample-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleTypes")                       |
-| [cellTypes](#celltypes)                     | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-cell-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes")                           |
-| [sampleStatus](#samplestatus)               | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus")                   |
-| [sampleRelationships](#samplerelationships) | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleRelationships")                |
-| [sampleAttributes](#sampleattributes)       | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleAttributes")               |
+| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                  |
+| :------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectId](#objectid)                       | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-10-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectId")                       |
+| [schemaDescriptor](#schemadescriptor)       | `object` | Optional | cannot be null | [EGA sample metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schemaDescriptor")                      |
+| [objectTitle](#objecttitle)                 | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-title-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectTitle")                  |
+| [objectDescription](#objectdescription)     | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-description-of-the-sample.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectDescription")      |
+| [organismDescriptor](#organismdescriptor)   | `object` | Required | cannot be null | [EGA sample metadata schema](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organismDescriptor") |
+| [sampleCollection](#samplecollection)       | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection")    |
+| [sampleGrouping](#samplegrouping)           | Merged   | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-group-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping")           |
+| [sampleTypes](#sampletypes)                 | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-sample-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleTypes")                |
+| [cellTypes](#celltypes)                     | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-cell-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes")                    |
+| [sampleStatus](#samplestatus)               | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus")            |
+| [sampleRelationships](#samplerelationships) | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleRelationships")         |
+| [sampleAttributes](#sampleattributes)       | `array`  | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-sample-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleAttributes")        |
 
 ## objectId
 
@@ -53,11 +53,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that sample EGA ID (EGAN) is correct](ega-10-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-is-correct.md "check type definition")
 
@@ -69,15 +69,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schemaDescriptor")
+*   defined in: [EGA sample metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectTitle
 
@@ -135,15 +135,15 @@ This property describes the material entity the sample consists in. That is, an 
 
 *   is required
 
-*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
+*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organismDescriptor")
+*   defined in: [EGA sample metadata schema](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/organismDescriptor")
 
 ### organismDescriptor Type
 
-`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
+`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
 ## sampleCollection
 
@@ -301,7 +301,7 @@ Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -309,7 +309,7 @@ Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.
 
 ### sampleAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### sampleAttributes Constraints
 
