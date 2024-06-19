@@ -1,258 +1,294 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema#",
-    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.submission.json",
     "type": "object",
     "title": "EGA Submission metadata schema",
     "meta:version": "1.0.0",
-    "required": ["SUBMISSION_SET"],
+    "required": [
+        "SUBMISSION_SET"
+    ],
     "additionalProperties": false,
     "properties": {
-      "SUBMISSION_SET": {
-        "type": "array",
-        "description": "A SUBMISSION_SET is a container for a set of submissions and a common namespace.",
-        "minItems": 1,
-        "uniqueItems": true,
-        "items": {
-          "type": "object",
-          "required": ["SUBMISSION"],
-          "properties": {
-            "SUBMISSION": {
-                "$ref": "#/definitions/SubmissionType"
-            }
-          }
-        }
-      }
-    },
-    "definitions": {
-      "SubmissionType": {
-        "type": "object",
-        "description": "A Submission type is used to describe an object that contains submission actions to be performed by the archive.",
-        "allOf": [
-          { "$ref": "EGA.common.json#/definitions/ObjectType" }
-        ],
-        "properties": {
-          "submission_date": {
-            "type": "string",
-            "format": "date-time",
-            "description": "Submitter assigned preparation date of this submission object."
-          },
-          "submission_comment": {
-            "type": "string",
-            "description": "Submitter assigned comment."
-          },
-          "lab_name": {
-            "type": "string",
-            "description": "Laboratory name within submitting institution."
-          },
-          "TITLE": {
-            "type": "string",
-            "description": "Short text that can be used to define submissions in searches or in displays."
-          },
-          "CONTACTS": {
+        "SUBMISSION_SET": {
             "type": "array",
+            "description": "A SUBMISSION_SET is a container for a set of submissions and a common namespace.",
             "minItems": 1,
             "uniqueItems": true,
-            "items": {
-              "type": "object",
-              "properties": {
-                "CONTACT": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string",
-                      "description": "Name of contact person for this submission."
-                    },
-                    "inform_on_status": {
-                      "type": "string",
-                      "format": "uri",
-                      "description": "Internet address of person or service to inform on any status changes for this submission."
-                    },
-                    "inform_on_error": {
-                      "type": "string",
-                      "format": "uri",
-                      "description": "Internet address of person or service to inform on any errors for this submission."
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "ACTIONS": {
-            "type": "array",
-            "description": "Actions to be executed by the archive.",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "type": "object",
-              "properties": {
-                "ADD": {
-                  "type": "object",
-                  "description": "Add an object to the archive.",
-                  "required": ["source", "schema"],
-                  "properties": {
-                    "source": {
-                      "$ref": "#/definitions/source"
-                    },
-                    "schema": {
-                      "$ref": "#/definitions/schema"
-                    }
-                  }
-                },
-                "MODIFY": {
-                  "type": "object",
-                  "description": "Modify an object in the archive.",
-                  "required": ["source", "schema"],
-                  "properties": {
-                    "source": {
-                      "$ref": "#/definitions/source"
-                    },
-                    "schema": {
-                      "$ref": "#/definitions/schema"
-                    }
-                  }
-                },
-                "CANCEL": {
-                  "type": "object",
-                  "description": "Cancels a private object and its dependent objects.",
-                  "required": ["target"],
-                  "properties": {
-                    "target": {
-                      "type": "string",
-                      "description": "Accession or refname of the object that is being cancelled."
-                    }
-                  }
-                },
-                "SUPPRESS": {
-                  "type": "object",
-                  "description": "Suppresses a public object and its dependent objects.",
-                  "required": ["target"],
-                  "properties": {
-                    "target": {
-                      "type": "string",
-                      "description": "Accession or refname of the object that is being suppressed."
-                    },
-                    "HoldUntilDate": {
-                      "type": "string",
-                      "format": "date",
-                      "description": "The date when a temporarily suppressed object will be made public."
-                    }
-                  }
-                },
-                "KILL": {
-                  "type": "object",
-                  "description": "Kills a public object and its dependent objects.",
-                  "required": ["target"],
-                  "properties": {
-                    "target": {
-                      "type": "string",
-                      "description": "Accession or refname of the object that is being killed."
-                    },
-                    "HoldUntilDate": {
-                      "type": "string",
-                      "format": "date",
-                      "description": "The date when a temporarily killed object will be made public."
-                    }
-                  }
-                },
-                "HOLD": {
-                  "type": "object",
-                  "description": "Make the object public only when the hold date expires.",
-                  "properties": {
-                    "target": {
-                      "type": "string",
-                      "description": "Accession or refname of the object that is being made public when the hold date expires. If not specified then all objects in the submission will be assigned the hold date."
-                    },
-                    "HoldUntilDate": {
-                      "type": "string",
-                      "format": "date",
-                      "description": "The date when the submission will be made public."
-                    }
-                  }
-                },
-                "RELEASE": {
-                  "type": "object",
-                  "description": "The object will be released immediately to public.",
-                  "properties": {
-                    "target": {
-                      "type": "string",
-                      "description": "Accession or refname of the object that is made public. If not specified then all objects in the submission will made public."
-                    }
-                  }
-                },
-                "PROTECT": {
-                  "type": "object",
-                  "description": "This action is required for data submitted to European Genome-Phenome Archive (EGA)."
-                },
-                "ROLLBACK": {
-                  "type": "object",
-                  "description": "This action will rollback the submission from the database."
-                },
-                "VALIDATE": {
-                  "type": "object",
-                  "description": "Validates the submitted XMLs without actually submitting them.",
-                  "required": ["source", "schema"],
-                  "properties": {
-                    "source": {
-                      "$ref": "#/definitions/source"
-                    },
-                    "schema": {
-                      "$ref": "#/definitions/schema"
-                    }
-                  }
-                },
-                "RECEIPT": {
-                  "type": "object",
-                  "description": "Returns the receipt for a given submission alias.",
-                  "required": ["target"],
-                  "properties": {
-                    "target": {
-                      "type": "string",
-                      "description": "Submission alias."
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "SUBMISSION_LINKS": {
-            "type": "array",
-            "description": "Links to resources related to this submission",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-                "properties": {
-                    "SUBMISSION_LINK": {
-                        "$ref": "EGA.common.json#/definitions/LinkType"
-                        }
-                }          
-            }
-          },
-          "SUBMISSION_ATTRIBUTES": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "description": "Properties and attributes of a submission.",
             "items": {
                 "type": "object",
-                "required": ["SUBMISSION_ATTRIBUTE"],
+                "required": [
+                    "SUBMISSION"
+                ],
                 "properties": {
-                    "SUBMISSION_ATTRIBUTE": {
-                        "$ref": "./EGA.common.json#/definitions/AttributeType"
+                    "SUBMISSION": {
+                        "$ref": "#/definitions/SubmissionType"
                     }
                 }
             }
-          }  
         }
-      },
-      "source": {
-        "type": "string",
-        "description": "Filename or relative path to the XML file upon which the action is executed."
-      },
-      "schema": {
-        "type": "string",
-        "description": "The type of the XML file upong which the action is executed.",
-        "enum": ["study", "experiment", "sample", "run", "analysis", "dataset", "policy", "dac", "project", "checklist", "sampleGroup"]
-      }
+    },
+    "definitions": {
+        "SubmissionType": {
+            "type": "object",
+            "description": "A Submission type is used to describe an object that contains submission actions to be performed by the archive.",
+            "allOf": [
+                {
+                    "$ref": "EGA.common.json#/definitions/ObjectType"
+                }
+            ],
+            "properties": {
+                "submission_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Submitter assigned preparation date of this submission object."
+                },
+                "submission_comment": {
+                    "type": "string",
+                    "description": "Submitter assigned comment."
+                },
+                "lab_name": {
+                    "type": "string",
+                    "description": "Laboratory name within submitting institution."
+                },
+                "TITLE": {
+                    "type": "string",
+                    "description": "Short text that can be used to define submissions in searches or in displays."
+                },
+                "CONTACTS": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "CONTACT": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Name of contact person for this submission."
+                                    },
+                                    "inform_on_status": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "description": "Internet address of person or service to inform on any status changes for this submission."
+                                    },
+                                    "inform_on_error": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "description": "Internet address of person or service to inform on any errors for this submission."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ACTIONS": {
+                    "type": "array",
+                    "description": "Actions to be executed by the archive.",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "ADD": {
+                                "type": "object",
+                                "description": "Add an object to the archive.",
+                                "required": [
+                                    "source",
+                                    "schema"
+                                ],
+                                "properties": {
+                                    "source": {
+                                        "$ref": "#/definitions/source"
+                                    },
+                                    "schema": {
+                                        "$ref": "#/definitions/schema"
+                                    }
+                                }
+                            },
+                            "MODIFY": {
+                                "type": "object",
+                                "description": "Modify an object in the archive.",
+                                "required": [
+                                    "source",
+                                    "schema"
+                                ],
+                                "properties": {
+                                    "source": {
+                                        "$ref": "#/definitions/source"
+                                    },
+                                    "schema": {
+                                        "$ref": "#/definitions/schema"
+                                    }
+                                }
+                            },
+                            "CANCEL": {
+                                "type": "object",
+                                "description": "Cancels a private object and its dependent objects.",
+                                "required": [
+                                    "target"
+                                ],
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "description": "Accession or refname of the object that is being cancelled."
+                                    }
+                                }
+                            },
+                            "SUPPRESS": {
+                                "type": "object",
+                                "description": "Suppresses a public object and its dependent objects.",
+                                "required": [
+                                    "target"
+                                ],
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "description": "Accession or refname of the object that is being suppressed."
+                                    },
+                                    "HoldUntilDate": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The date when a temporarily suppressed object will be made public."
+                                    }
+                                }
+                            },
+                            "KILL": {
+                                "type": "object",
+                                "description": "Kills a public object and its dependent objects.",
+                                "required": [
+                                    "target"
+                                ],
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "description": "Accession or refname of the object that is being killed."
+                                    },
+                                    "HoldUntilDate": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The date when a temporarily killed object will be made public."
+                                    }
+                                }
+                            },
+                            "HOLD": {
+                                "type": "object",
+                                "description": "Make the object public only when the hold date expires.",
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "description": "Accession or refname of the object that is being made public when the hold date expires. If not specified then all objects in the submission will be assigned the hold date."
+                                    },
+                                    "HoldUntilDate": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The date when the submission will be made public."
+                                    }
+                                }
+                            },
+                            "RELEASE": {
+                                "type": "object",
+                                "description": "The object will be released immediately to public.",
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "description": "Accession or refname of the object that is made public. If not specified then all objects in the submission will made public."
+                                    }
+                                }
+                            },
+                            "PROTECT": {
+                                "type": "object",
+                                "description": "This action is required for data submitted to European Genome-Phenome Archive (EGA)."
+                            },
+                            "ROLLBACK": {
+                                "type": "object",
+                                "description": "This action will rollback the submission from the database."
+                            },
+                            "VALIDATE": {
+                                "type": "object",
+                                "description": "Validates the submitted XMLs without actually submitting them.",
+                                "required": [
+                                    "source",
+                                    "schema"
+                                ],
+                                "properties": {
+                                    "source": {
+                                        "$ref": "#/definitions/source"
+                                    },
+                                    "schema": {
+                                        "$ref": "#/definitions/schema"
+                                    }
+                                }
+                            },
+                            "RECEIPT": {
+                                "type": "object",
+                                "description": "Returns the receipt for a given submission alias.",
+                                "required": [
+                                    "target"
+                                ],
+                                "properties": {
+                                    "target": {
+                                        "type": "string",
+                                        "description": "Submission alias."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "SUBMISSION_LINKS": {
+                    "type": "array",
+                    "description": "Links to resources related to this submission",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "properties": {
+                            "SUBMISSION_LINK": {
+                                "$ref": "EGA.common.json#/definitions/LinkType"
+                            }
+                        }
+                    }
+                },
+                "SUBMISSION_ATTRIBUTES": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "description": "Properties and attributes of a submission.",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "SUBMISSION_ATTRIBUTE"
+                        ],
+                        "properties": {
+                            "SUBMISSION_ATTRIBUTE": {
+                                "$ref": "./EGA.common.json#/definitions/AttributeType"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "source": {
+            "type": "string",
+            "description": "Filename or relative path to the XML file upon which the action is executed."
+        },
+        "schema": {
+            "type": "string",
+            "description": "The type of the XML file upong which the action is executed.",
+            "enum": [
+                "study",
+                "experiment",
+                "sample",
+                "run",
+                "analysis",
+                "dataset",
+                "policy",
+                "dac",
+                "project",
+                "checklist",
+                "sampleGroup"
+            ]
+        }
     }
-  }
-  
+}

@@ -1,10 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.DAC.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.DAC.json",
     "type": "object",
     "title": "EGA DAC metadata schema",
     "meta:version": "1.0.0",
-    "required": ["DAC_SET"],
+    "required": [
+        "DAC_SET"
+    ],
     "additionalProperties": false,
     "properties": {
         "DAC_SET": {
@@ -14,7 +16,9 @@
             "uniqueItems": true,
             "items": {
                 "type": "object",
-                "required": ["DAC"],
+                "required": [
+                    "DAC"
+                ],
                 "additionalProperties": false,
                 "properties": {
                     "DAC": {
@@ -29,9 +33,14 @@
             "type": "object",
             "description": "Describes an object that contains data access comittee  information including contacts",
             "allOf": [
-                { "$ref": "EGA.common.json#/definitions/ObjectType" }
+                {
+                    "$ref": "EGA.common.json#/definitions/ObjectType"
+                }
             ],
-            "required": ["TITLE", "CONTACTS"],
+            "required": [
+                "TITLE",
+                "CONTACTS"
+            ],
             "properties": {
                 "TITLE": {
                     "type": "string",
@@ -42,13 +51,19 @@
                     "minItems": 1,
                     "additionalProperties": false,
                     "uniqueItems": true,
-                    "items": { 
+                    "items": {
                         "type": "object",
-                        "required": ["CONTACT"],
+                        "required": [
+                            "CONTACT"
+                        ],
                         "properties": {
                             "CONTACT": {
                                 "types": "object",
-                                "required": ["name", "email", "organisation"],
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "organisation"
+                                ],
                                 "properties": {
                                     "name": {
                                         "type": "string",
@@ -73,7 +88,7 @@
                                     }
                                 }
                             }
-                        }              
+                        }
                     }
                 },
                 "DAC_LINKS": {
@@ -84,7 +99,9 @@
                     "uniqueItems": true,
                     "items": {
                         "type": "object",
-                        "required": ["DAC_LINK"],
+                        "required": [
+                            "DAC_LINK"
+                        ],
                         "properties": {
                             "DAC_LINK": {
                                 "$ref": "./EGA.common.json#/definitions/LinkType"
@@ -100,7 +117,9 @@
                     "uniqueItems": true,
                     "items": {
                         "type": "object",
-                        "required": ["DAC_ATTRIBUTE"],
+                        "required": [
+                            "DAC_ATTRIBUTE"
+                        ],
                         "properties": {
                             "DAC_ATTRIBUTE": {
                                 "$ref": "./EGA.common.json#/definitions/AttributeType"
@@ -108,7 +127,7 @@
                         }
                     }
                 }
-            }           
+            }
         }
     }
 }

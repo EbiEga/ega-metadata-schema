@@ -1,123 +1,136 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema#",
-    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.dataset.json",
     "type": "object",
     "title": "EGA Dataset metadata schema",
     "meta:version": "1.0.0",
-    "required": ["DATASETS"],
+    "required": [
+        "DATASETS"
+    ],
     "additionalProperties": false,
     "properties": {
-      "DATASETS": {
-        "type": "array",
-        "description": "Container for a set of data sets.",
-        "minItems": 1,
-        "uniqueItems": true,
-        "items": {
-          "type": "object",
-          "required": ["DATASET"],
-          "properties": {
-            "DATASET": {
-              "$ref": "#/definitions/DatasetType"
-            }
-          }
-        }
-      }
-    },
-    "definitions": {
-      "DatasetType": {
-        "type": "object",
-        "description": "Describes an object that contains the samples in the dataset.",
-        "allOf": [
-          { "$ref": "EGA.common.json#/definitions/ObjectType" }
-        ],
-        "required": ["TITLE", "POLICY_REF"],
-        "properties": {
-          "TITLE": {
-            "type": "string",
-            "description": "Short text that can be used to call out data sets in searches or in displays."
-          },
-          "DESCRIPTION": {
-            "type": "string",
-            "description": "Free-form text describing the data sets."
-          },
-          "DATASET_TYPE": {
+        "DATASETS": {
             "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "type": "string",
-              "enum": [
-                "Whole genome sequencing",
-                "Exome sequencing",
-                "Genotyping by array",
-                "Transcriptome profiling by high-throughput sequencing",
-                "Transcriptome profiling by array",
-                "Amplicon sequencing",
-                "Methylation binding domain sequencing",
-                "Methylation profiling by high-throughput sequencing",
-                "Phenotype information",
-                "Study summary information",
-                "Genomic variant calling",
-                "Chromatin accessibility profiling by high-throughput sequencing",
-                "Histone modification profiling by high-throughput sequencing",
-                "Chip-Seq"
-              ],
-              "description": "Type of the dataset."
-            }
-          },
-          "RUN_REF": {
-            "type": "array",
-            "description": "Identifies the runs which are part of this dataset.",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "$ref": "EGA.common.json#/definitions/RefObjectType"
-            }
-          },
-          "ANALYSIS_REF": {
-            "type": "array",
-            "description": "Identifies the analyses which are part of this dataset.",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "$ref": "EGA.common.json#/definitions/RefObjectType"
-            }
-          },
-          "POLICY_REF": {
-            "type": "object",
-            "description": "Identifies the data access policy controlling this dataset.",
-            "$ref": "EGA.common.json#/definitions/RefObjectType"
-          },
-          "DATASET_LINKS": {
-            "type": "array",
-            "description": "Links to related resources.",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-                "required": ["DATASET_LINK"],
-                "properties": {
-                    "DATASET_LINK": {
-                        "$ref": "EGA.common.json#/definitions/LinkType"
-                        }
-                }          
-            }
-          },
-          "DATASET_ATTRIBUTES": {
-            "type": "array",
-            "description": "Properties and attributes of the dataset. These can be entered as free-form tag-value pairs. Submitters may be asked to follow a community established ontology when describing the work.",
+            "description": "Container for a set of data sets.",
             "minItems": 1,
             "uniqueItems": true,
             "items": {
                 "type": "object",
-                "required": ["DATASET_ATTRIBUTE"],
+                "required": [
+                    "DATASET"
+                ],
                 "properties": {
-                    "DATASET_ATTRIBUTE": {
-                        "$ref": "./EGA.common.json#/definitions/AttributeType"
+                    "DATASET": {
+                        "$ref": "#/definitions/DatasetType"
                     }
                 }
             }
-          }
         }
-      }
+    },
+    "definitions": {
+        "DatasetType": {
+            "type": "object",
+            "description": "Describes an object that contains the samples in the dataset.",
+            "allOf": [
+                {
+                    "$ref": "EGA.common.json#/definitions/ObjectType"
+                }
+            ],
+            "required": [
+                "TITLE",
+                "POLICY_REF"
+            ],
+            "properties": {
+                "TITLE": {
+                    "type": "string",
+                    "description": "Short text that can be used to call out data sets in searches or in displays."
+                },
+                "DESCRIPTION": {
+                    "type": "string",
+                    "description": "Free-form text describing the data sets."
+                },
+                "DATASET_TYPE": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Whole genome sequencing",
+                            "Exome sequencing",
+                            "Genotyping by array",
+                            "Transcriptome profiling by high-throughput sequencing",
+                            "Transcriptome profiling by array",
+                            "Amplicon sequencing",
+                            "Methylation binding domain sequencing",
+                            "Methylation profiling by high-throughput sequencing",
+                            "Phenotype information",
+                            "Study summary information",
+                            "Genomic variant calling",
+                            "Chromatin accessibility profiling by high-throughput sequencing",
+                            "Histone modification profiling by high-throughput sequencing",
+                            "Chip-Seq"
+                        ],
+                        "description": "Type of the dataset."
+                    }
+                },
+                "RUN_REF": {
+                    "type": "array",
+                    "description": "Identifies the runs which are part of this dataset.",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "EGA.common.json#/definitions/RefObjectType"
+                    }
+                },
+                "ANALYSIS_REF": {
+                    "type": "array",
+                    "description": "Identifies the analyses which are part of this dataset.",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "$ref": "EGA.common.json#/definitions/RefObjectType"
+                    }
+                },
+                "POLICY_REF": {
+                    "type": "object",
+                    "description": "Identifies the data access policy controlling this dataset.",
+                    "$ref": "EGA.common.json#/definitions/RefObjectType"
+                },
+                "DATASET_LINKS": {
+                    "type": "array",
+                    "description": "Links to related resources.",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "required": [
+                            "DATASET_LINK"
+                        ],
+                        "properties": {
+                            "DATASET_LINK": {
+                                "$ref": "EGA.common.json#/definitions/LinkType"
+                            }
+                        }
+                    }
+                },
+                "DATASET_ATTRIBUTES": {
+                    "type": "array",
+                    "description": "Properties and attributes of the dataset. These can be entered as free-form tag-value pairs. Submitters may be asked to follow a community established ontology when describing the work.",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "DATASET_ATTRIBUTE"
+                        ],
+                        "properties": {
+                            "DATASET_ATTRIBUTE": {
+                                "$ref": "./EGA.common.json#/definitions/AttributeType"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-}  
+}

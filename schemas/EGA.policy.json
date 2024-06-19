@@ -1,134 +1,156 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema#",
-  "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json",
-  "type": "object",
-  "title": "EGA Policy metadata schema",
-  "meta:version": "1.0.0",
-  "required": ["POLICY_SET"],
-  "additionalProperties": false,
-  "properties": {
-    "POLICY_SET": {
-      "type": "array",
-      "description": "Container for a set of data access policies.",
-      "minItems": 1,
-      "uniqueItems": true,
-      "items": {
-        "type": "object",
-        "required": ["POLICY"],
-        "properties": {
-          "POLICY": {
-              "$ref": "#/definitions/PolicyType"
-          }
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.policy.json",
+    "type": "object",
+    "title": "EGA Policy metadata schema",
+    "meta:version": "1.0.0",
+    "required": [
+        "POLICY_SET"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "POLICY_SET": {
+            "type": "array",
+            "description": "Container for a set of data access policies.",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "required": [
+                    "POLICY"
+                ],
+                "properties": {
+                    "POLICY": {
+                        "$ref": "#/definitions/PolicyType"
+                    }
+                }
+            }
         }
-      }
-    }
-  },
-  "definitions": {
-    "DataUseType": {
-      "type": "object",
-      "required": ["ontology", "code", "version"],
-      "properties": {
-        "MODIFIER": {
-          "$ref": "EGA.common.json#/definitions/XRefType",
-          "description": "Describes modifiers to the Data Use Restriction"
-        },
-        "URL": {
-          "type": "string",
-          "format": "uri",
-          "description": "Link to URL describing the Data Use"
-        },
-        "ontology": {
-          "type": "string",
-          "description": "Ontology abbreviation, e.g. DUO for Data Use Ontology"
-        },
-        "code": {
-          "type": "string",
-          "description": "Code for the ontology"
-        },
-        "version": {
-          "type": "string",
-          "description": "Data Use Ontology code version"
-        }
-      }
     },
-    "PolicyType": {
-      "type": "object",
-      "description": "Describes an object that contains data access policy information",
-      "required": ["DAC_REF"],
-      "allOf": [
-        { "$ref": "EGA.common.json#/definitions/ObjectType" }
-      ],
-      "anyOf": [
-        {
-            "required": ["POLICY_TEXT"]
-        },
-        {
-            "required": ["POLICY_FILE"]
-        }
-      ],
-      "properties": {
-        "TITLE": {
-          "type": "string",
-          "description": "Short text that can be used to call out data access policies in searches or in displays."
-        },
-        "DAC_REF": {
-          "type": "object",
-          "$ref": "EGA.common.json#/definitions/RefObjectType",
-          "description": "Identifies the data access committee to which this policy pertains."
-        },
-        "POLICY_TEXT": {
-          "type": "string",
-          "description": "Text containing the policy."
-        },
-        "POLICY_FILE": {
-          "type": "string",
-          "description": "File containing the policy text."
-        },
-        "DATA_USES": {
-          "type": "array",
-          "description": "Data use ontologies (DUO) related to the policy",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
+    "definitions": {
+        "DataUseType": {
             "type": "object",
-            "required": ["DATA_USE"],
+            "required": [
+                "ontology",
+                "code",
+                "version"
+            ],
             "properties": {
-              "DATA_USE": {
-                "$ref": "#/definitions/DataUseType" 
-              }
+                "MODIFIER": {
+                    "$ref": "EGA.common.json#/definitions/XRefType",
+                    "description": "Describes modifiers to the Data Use Restriction"
+                },
+                "URL": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Link to URL describing the Data Use"
+                },
+                "ontology": {
+                    "type": "string",
+                    "description": "Ontology abbreviation, e.g. DUO for Data Use Ontology"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Code for the ontology"
+                },
+                "version": {
+                    "type": "string",
+                    "description": "Data Use Ontology code version"
+                }
             }
-          }
         },
-        "POLICY_LINKS": {
-          "type": "array",
-          "description": "Links to resources related to this policy.",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "required": ["POLICY_LINK"],
-            "properties": {
-              "POLICY_LINK": {
-                "$ref": "EGA.common.json#/definitions/LinkType"
-              }
-            }                
-          }
-        },
-        "POLICY_ATTRIBUTES": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "description": "Properties and attributes of the policy. These can be entered as free-form tag-value pairs. Submitters may be asked to follow a community established ontology when describing the work.",
-          "items": { 
+        "PolicyType": {
             "type": "object",
-            "required": ["POLICY_ATTRIBUTE"],
+            "description": "Describes an object that contains data access policy information",
+            "required": [
+                "DAC_REF"
+            ],
+            "allOf": [
+                {
+                    "$ref": "EGA.common.json#/definitions/ObjectType"
+                }
+            ],
+            "anyOf": [
+                {
+                    "required": [
+                        "POLICY_TEXT"
+                    ]
+                },
+                {
+                    "required": [
+                        "POLICY_FILE"
+                    ]
+                }
+            ],
             "properties": {
-              "POLICY_ATTRIBUTE": {
-                    "$ref": "./EGA.common.json#/definitions/AttributeType"
-              }
+                "TITLE": {
+                    "type": "string",
+                    "description": "Short text that can be used to call out data access policies in searches or in displays."
+                },
+                "DAC_REF": {
+                    "type": "object",
+                    "$ref": "EGA.common.json#/definitions/RefObjectType",
+                    "description": "Identifies the data access committee to which this policy pertains."
+                },
+                "POLICY_TEXT": {
+                    "type": "string",
+                    "description": "Text containing the policy."
+                },
+                "POLICY_FILE": {
+                    "type": "string",
+                    "description": "File containing the policy text."
+                },
+                "DATA_USES": {
+                    "type": "array",
+                    "description": "Data use ontologies (DUO) related to the policy",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "DATA_USE"
+                        ],
+                        "properties": {
+                            "DATA_USE": {
+                                "$ref": "#/definitions/DataUseType"
+                            }
+                        }
+                    }
+                },
+                "POLICY_LINKS": {
+                    "type": "array",
+                    "description": "Links to resources related to this policy.",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "required": [
+                            "POLICY_LINK"
+                        ],
+                        "properties": {
+                            "POLICY_LINK": {
+                                "$ref": "EGA.common.json#/definitions/LinkType"
+                            }
+                        }
+                    }
+                },
+                "POLICY_ATTRIBUTES": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "description": "Properties and attributes of the policy. These can be entered as free-form tag-value pairs. Submitters may be asked to follow a community established ontology when describing the work.",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "POLICY_ATTRIBUTE"
+                        ],
+                        "properties": {
+                            "POLICY_ATTRIBUTE": {
+                                "$ref": "./EGA.common.json#/definitions/AttributeType"
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }

@@ -1,10 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema#",
-    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.sample.json",
     "type": "object",
     "title": "EGA Sample metadata schema",
     "meta:version": "1.0.0",
-    "required": ["SAMPLE_SET"],
+    "required": [
+        "SAMPLE_SET"
+    ],
     "additionalProperties": false,
     "properties": {
         "SAMPLE_SET": {
@@ -14,7 +16,9 @@
             "uniqueItems": true,
             "items": {
                 "type": "object",
-                "required": ["SAMPLE"],
+                "required": [
+                    "SAMPLE"
+                ],
                 "properties": {
                     "SAMPLE": {
                         "$ref": "#/definitions/SampleType"
@@ -28,9 +32,13 @@
             "type": "object",
             "description": "A Sample defines an isolate of sequenceable material upon which sequencing experiments can be based. The Sample object may be a surrogate for taxonomy accession or an anonymized individual identifier.  Or, it may fully specify provenance and isolation method of the starting material.",
             "allOf": [
-                { "$ref": "EGA.common.json#/definitions/ObjectType" }
+                {
+                    "$ref": "EGA.common.json#/definitions/ObjectType"
+                }
             ],
-            "required": ["SAMPLE_NAME"],
+            "required": [
+                "SAMPLE_NAME"
+            ],
             "properties": {
                 "TITLE": {
                     "type": "string",
@@ -38,7 +46,9 @@
                 },
                 "SAMPLE_NAME": {
                     "type": "object",
-                    "required": ["TAXON_ID"],
+                    "required": [
+                        "TAXON_ID"
+                    ],
                     "properties": {
                         "TAXON_ID": {
                             "type": "integer",
@@ -70,8 +80,8 @@
                         "properties": {
                             "SAMPLE_LINK": {
                                 "$ref": "EGA.common.json#/definitions/LinkType"
-                                }
-                        }          
+                            }
+                        }
                     }
                 },
                 "SAMPLE_ATTRIBUTES": {
@@ -81,7 +91,9 @@
                     "description": "Properties and attributes of a sample.",
                     "items": {
                         "type": "object",
-                        "required": ["SAMPLE_ATTRIBUTE"],
+                        "required": [
+                            "SAMPLE_ATTRIBUTE"
+                        ],
                         "properties": {
                             "SAMPLE_ATTRIBUTE": {
                                 "$ref": "./EGA.common.json#/definitions/AttributeType"

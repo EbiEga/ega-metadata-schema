@@ -1,10 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema#",
-    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json",
+    "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.analysis.json",
     "type": "object",
     "title": "EGA Analysis metadata schema",
     "meta:version": "1.0.0",
-    "required": ["ANALYSIS_SET"],
+    "required": [
+        "ANALYSIS_SET"
+    ],
     "additionalProperties": false,
     "properties": {
         "ANALYSIS_SET": {
@@ -14,470 +16,583 @@
             "uniqueItems": true,
             "items": {
                 "type": "object",
-                "required": ["ANALYSIS"],
+                "required": [
+                    "ANALYSIS"
+                ],
                 "properties": {
                     "ANALYSIS": {
                         "$ref": "#/definitions/AnalysisType"
                     }
-                }                
+                }
             }
         }
     },
     "definitions": {
         "AnalysisType": {
-          "type": "object",
-          "description": "A SRA analysis object captures sequence analysis results including sequence alignments, sequence variations and sequence annotations.",
-          "required": ["ANALYSIS_TYPE"],
-          "allOf": [
-            { "$ref": "EGA.common.json#/definitions/ObjectType" }
-          ],
-          "properties": {
-            "TITLE": {
-              "type": ["string"],
-              "description": "Short text that can be used to define submissions in searches or in displays."
-            },
-            "DESCRIPTION": {
-                "type": ["string"],
-                "description": "Describes the analysis in detail."
-              },
-            "analysis_center": {
-                "type": "string",
-                "description": "If applicable, the center name of the institution responsible for this analysis."
-            },
-            "analysis_date": {
-                "type": "string",
-                "description": "The date when this analysis was produced.",
-                "format": "date-time"
-            },
-            "STUDY_REF": {
-                "allOf": [
-                    {
-                        "$ref": "EGA.common.json#/definitions/objectReferenceArray"
-                    },
-                    {
-                        "maxItems": 1
-                    }
-                ]
-            },
-            "SAMPLE_REF": {
-                "$ref": "EGA.common.json#/definitions/objectReferenceArrayWithLabels"
-            },
-            "EXPERIMENT_REF": {
-                "$ref": "EGA.common.json#/definitions/objectReferenceArray"
-            },
-            "RUN_REF": {
-                "$ref": "EGA.common.json#/definitions/objectReferenceArrayWithLabels"
-            },
-            "ANALYSIS_REF": {
-                "$ref": "EGA.common.json#/definitions/objectReferenceArrayWithLabels"
-            },
-            "ANALYSIS_TYPE": {
-                "type": "object",
-                "description": "The type of the analysis.",
-                "anyOf": [
-                    {
-                        "required": ["REFERENCE_ALIGNMENT"],
-                        "properties": {
-                            "REFERENCE_ALIGNMENT": {
-                                "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
-                            }
+            "type": "object",
+            "description": "A SRA analysis object captures sequence analysis results including sequence alignments, sequence variations and sequence annotations.",
+            "required": [
+                "ANALYSIS_TYPE"
+            ],
+            "allOf": [
+                {
+                    "$ref": "EGA.common.json#/definitions/ObjectType"
+                }
+            ],
+            "properties": {
+                "TITLE": {
+                    "type": [
+                        "string"
+                    ],
+                    "description": "Short text that can be used to define submissions in searches or in displays."
+                },
+                "DESCRIPTION": {
+                    "type": [
+                        "string"
+                    ],
+                    "description": "Describes the analysis in detail."
+                },
+                "analysis_center": {
+                    "type": "string",
+                    "description": "If applicable, the center name of the institution responsible for this analysis."
+                },
+                "analysis_date": {
+                    "type": "string",
+                    "description": "The date when this analysis was produced.",
+                    "format": "date-time"
+                },
+                "STUDY_REF": {
+                    "allOf": [
+                        {
+                            "$ref": "EGA.common.json#/definitions/objectReferenceArray"
+                        },
+                        {
+                            "maxItems": 1
                         }
-                    },
-                    {
-                        "required": ["SEQUENCE_VARIATION"],
-                        "properties": {
-                            "SEQUENCE_VARIATION": {
-                                "allOf": [
-                                    {
-                                        "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
-                                    },
-                                    {
-                                        "properties": {
-                                            "EXPERIMENT_TYPES": {
-                                                "title": "All associated EXPERIMENT_TYPEs",
-                                                "type": "array",
-                                                "minItems": 1,
-                                                "uniqueItems": true,
-                                                "items": {
-                                                    "type": "string",
-                                                    "enum": ["Whole genome sequencing", "Whole transcriptome sequencing", "Exome sequencing", "Genotyping by array", "transcriptomics", "Curation", "Genotyping by sequencing", "Target sequencing"]
+                    ]
+                },
+                "SAMPLE_REF": {
+                    "$ref": "EGA.common.json#/definitions/objectReferenceArrayWithLabels"
+                },
+                "EXPERIMENT_REF": {
+                    "$ref": "EGA.common.json#/definitions/objectReferenceArray"
+                },
+                "RUN_REF": {
+                    "$ref": "EGA.common.json#/definitions/objectReferenceArrayWithLabels"
+                },
+                "ANALYSIS_REF": {
+                    "$ref": "EGA.common.json#/definitions/objectReferenceArrayWithLabels"
+                },
+                "ANALYSIS_TYPE": {
+                    "type": "object",
+                    "description": "The type of the analysis.",
+                    "anyOf": [
+                        {
+                            "required": [
+                                "REFERENCE_ALIGNMENT"
+                            ],
+                            "properties": {
+                                "REFERENCE_ALIGNMENT": {
+                                    "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "SEQUENCE_VARIATION"
+                            ],
+                            "properties": {
+                                "SEQUENCE_VARIATION": {
+                                    "allOf": [
+                                        {
+                                            "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
+                                        },
+                                        {
+                                            "properties": {
+                                                "EXPERIMENT_TYPES": {
+                                                    "title": "All associated EXPERIMENT_TYPEs",
+                                                    "type": "array",
+                                                    "minItems": 1,
+                                                    "uniqueItems": true,
+                                                    "items": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "Whole genome sequencing",
+                                                            "Whole transcriptome sequencing",
+                                                            "Exome sequencing",
+                                                            "Genotyping by array",
+                                                            "transcriptomics",
+                                                            "Curation",
+                                                            "Genotyping by sequencing",
+                                                            "Target sequencing"
+                                                        ]
+                                                    }
+                                                },
+                                                "PROGRAM": {
+                                                    "type": "string"
+                                                },
+                                                "PLATFORM": {
+                                                    "type": "string"
+                                                },
+                                                "IMPUTATION": {
+                                                    "type": "boolean"
                                                 }
-                                            },
-                                            "PROGRAM": {
-                                                "type": "string"
-                                            },
-                                            "PLATFORM": {
-                                                "type": "string"
-                                            },
-                                            "IMPUTATION": {
-                                                "type": "boolean"
                                             }
                                         }
-                                    }
-                                ]
-
+                                    ]
+                                }
                             }
-                        }
-                    },
-                    {
-                        "required": ["SEQUENCE_ASSEMBLY"],
-                        "properties": {
-                            "SEQUENCE_ASSEMBLY": {
-                                "type": "object",
-                                "required": ["NAME", "PARTIAL", "COVERAGE", "PROGRAM", "PLATFORM"],
-                                "additionalProperties": false,
-                                "properties": {
-                                    "NAME": {
-                                        "type": "string"
-                                    },
-                                    "TYPE": {
-                                        "type": ["string"],
-                                        "enum": [
-                                            "clone or isolate",
-                                            "primary metagenome",
-                                            "binned metagenome",
-                                            "Metagenome-Assembled Genome (MAG)",
-                                            "Environmental Single-Cell Amplified Genome (SAG)",
-                                            "COVID-19 outbreak",
-                                            "clinical isolate assembly"
-                                        ],
-                                        "meta:enum": {
-                                            "clone or isolate": "An assembly of reads from an isolated cultured organism, tissues, cells or a cell line.",
-                                            "primary metagenome": "An original metagenome assembly prior to binning from a sampled biome or collection of sampled biomes without attempt to separate taxa.",
-                                            "binned metagenome": "A set of contigs drawn from primary or unbinned metagenomes grouped into a single-taxon set.",
-                                            "Metagenome-Assembled Genome (MAG)": "A single-taxon assembly based on a binned metagenome asserted to be a close representation to an actual individual genome (that could match an already existing isolate or represent a novel isolate).",
-                                            "Environmental Single-Cell Amplified Genome (SAG)": "A genome assembly from amplified environmental sampled single-cell DNA.",
-                                            "COVID-19 outbreak": "A genome assembly specific to COVID-19 outbreak.",
-                                            "clinical isolate assembly": "A bacterial pathogen genome assembly."
+                        },
+                        {
+                            "required": [
+                                "SEQUENCE_ASSEMBLY"
+                            ],
+                            "properties": {
+                                "SEQUENCE_ASSEMBLY": {
+                                    "type": "object",
+                                    "required": [
+                                        "NAME",
+                                        "PARTIAL",
+                                        "COVERAGE",
+                                        "PROGRAM",
+                                        "PLATFORM"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "NAME": {
+                                            "type": "string"
+                                        },
+                                        "TYPE": {
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "enum": [
+                                                "clone or isolate",
+                                                "primary metagenome",
+                                                "binned metagenome",
+                                                "Metagenome-Assembled Genome (MAG)",
+                                                "Environmental Single-Cell Amplified Genome (SAG)",
+                                                "COVID-19 outbreak",
+                                                "clinical isolate assembly"
+                                            ],
+                                            "meta:enum": {
+                                                "clone or isolate": "An assembly of reads from an isolated cultured organism, tissues, cells or a cell line.",
+                                                "primary metagenome": "An original metagenome assembly prior to binning from a sampled biome or collection of sampled biomes without attempt to separate taxa.",
+                                                "binned metagenome": "A set of contigs drawn from primary or unbinned metagenomes grouped into a single-taxon set.",
+                                                "Metagenome-Assembled Genome (MAG)": "A single-taxon assembly based on a binned metagenome asserted to be a close representation to an actual individual genome (that could match an already existing isolate or represent a novel isolate).",
+                                                "Environmental Single-Cell Amplified Genome (SAG)": "A genome assembly from amplified environmental sampled single-cell DNA.",
+                                                "COVID-19 outbreak": "A genome assembly specific to COVID-19 outbreak.",
+                                                "clinical isolate assembly": "A bacterial pathogen genome assembly."
+                                            }
+                                        },
+                                        "PARTIAL": {
+                                            "type": "boolean"
+                                        },
+                                        "COVERAGE": {
+                                            "type": "string"
+                                        },
+                                        "PROGRAM": {
+                                            "type": "string"
+                                        },
+                                        "PLATFORM": {
+                                            "type": "string"
+                                        },
+                                        "MIN_GAP_LENGTH": {
+                                            "type": [
+                                                "integer"
+                                            ]
+                                        },
+                                        "MOL_TYPE": {
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "enum": [
+                                                "genomic DNA",
+                                                "genomic RNA",
+                                                "viral cRNA"
+                                            ]
+                                        },
+                                        "TPA": {
+                                            "type": [
+                                                "boolean"
+                                            ]
+                                        },
+                                        "AUTHORS": {
+                                            "$ref": "EGA.common.json#/definitions/AUTHORS"
+                                        },
+                                        "ADDRESS": {
+                                            "type": [
+                                                "string"
+                                            ]
                                         }
-                                    },
-                                    "PARTIAL": {
-                                        "type": "boolean"
-                                    },
-                                    "COVERAGE": {
-                                        "type": "string"
-                                    },
-                                    "PROGRAM": {
-                                        "type": "string"
-                                    },
-                                    "PLATFORM": {
-                                        "type": "string"
-                                    },
-                                    "MIN_GAP_LENGTH": {
-                                        "type": ["integer"]
-                                    },
-                                    "MOL_TYPE": {
-                                    "type": ["string"],
-                                        "enum": [
-                                            "genomic DNA",
-                                            "genomic RNA",
-                                            "viral cRNA"
-                                        ]
-                                    },
-                                    "TPA": {
-                                        "type": ["boolean"]
-                                    },
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "SEQUENCE_FLATFILE"
+                            ],
+                            "properties": {
+                                "SEQUENCE_FLATFILE": {
                                     "AUTHORS": {
                                         "$ref": "EGA.common.json#/definitions/AUTHORS"
                                     },
                                     "ADDRESS": {
-                                        "type": ["string"]
+                                        "type": [
+                                            "string"
+                                        ]
                                     }
                                 }
                             }
-                        }
-                    },
-                    {
-                        "required": ["SEQUENCE_FLATFILE"],
-                        "properties": {
-                            "SEQUENCE_FLATFILE": {
-                                "AUTHORS": {
-                                    "$ref": "EGA.common.json#/definitions/AUTHORS"
-                                },
-                                "ADDRESS": {
-                                    "type": ["string"]
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "required": ["SEQUENCE_ANNOTATION"],
-                        "properties": {
-                            "SEQUENCE_ANNOTATION": {
-                                "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["REFERENCE_SEQUENCE"],
-                        "properties": {
-                            "REFERENCE_SEQUENCE": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["SAMPLE_PHENOTYPE"],
-                        "properties": {
-                            "SAMPLE_PHENOTYPE": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["PROCESSED_READS"],
-                        "properties": {
-                            "PROCESSED_READS": {
-                                "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["GENOME_MAP"],
-                        "properties": {
-                            "GENOME_MAP": {
-                                "type": "object",
-                                "required": ["PROGRAM", "PLATFORM"],
-                                "properties": {
-                                    "PROGRAM": {
-                                        "type": "string"
-                                    },
-                                    "PLATFORM": {
-                                        "type": "string",
-                                        "enum": ["BioNano"]
-                                    },
-                                    "DESCRIPTION": {
-                                        "type": "string"
-                                    }
-                                }
-
-                            }
-                        }
-                    },
-                    {
-                        "required": ["AMR_ANTIBIOGRAM"],
-                        "properties": {
-                            "AMR_ANTIBIOGRAM": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["PATHOGEN_ANALYSIS"],
-                        "properties": {
-                            "PATHOGEN_ANALYSIS": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["COVID19_CONSENSUS"],
-                        "properties": {
-                            "COVID19_CONSENSUS": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["COVID19_FILTERED_VCF"],
-                        "properties": {
-                            "COVID19_FILTERED_VCF": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["PHYLOGENY_ANALYSIS"],
-                        "properties": {
-                            "PHYLOGENY_ANALYSIS": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["ASSEMBLY_GRAPH"],
-                        "properties": {
-                            "ASSEMBLY_GRAPH": {
-                                "type": "object",
-                                "required": ["ASSEMBLIES"],
-                                "properties": {
-                                    "ASSEMBLIES": {
-                                        "type": "array",
-                                        "minItems": 1,
-                                        "uniqueItems": true,
-                                        "items": {
-                                            "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "required": ["TRANSCRIPTOME_ASSEMBLY"],
-                        "properties": {
-                            "TRANSCRIPTOME_ASSEMBLY": {
-                                "type": "object",
-                                "required": ["NAME", "PROGRAM", "PLATFORM"],
-                                "additionalProperties": false,
-                                "properties": {
-                                  "NAME": {
-                                    "type": "string"
-                                  },
-                                  "PROGRAM": {
-                                    "type": "string"
-                                  },
-                                  "PLATFORM": {
-                                    "type": "string"
-                                  },
-                                  "TPA": {
-                                    "type": ["boolean"]
-                                  },
-                                  "AUTHORS": {
-                                    "$ref": "EGA.common.json#/definitions/AUTHORS"
-                                  },
-                                  "ADDRESS": {
-                                    "type": ["string"]
-                                  },
-                                  "TYPE": {
-                                    "type": ["string"],
-                                    "enum": ["isolate", "metatranscriptome"],
-                                    "meta:enum": {
-                                      "isolate": "An assembly of reads from an isolated cultured organism, tissues, cells or a cell line.",
-                                      "metatranscriptome": "An original metatranscriptome assembly from a sampled biome or collection of sampled biomes without attempt to separate taxa."
-                                    }
-                                  }
-                                }
-                            }
-                        }
-                    },
-                    {
-                        "required": ["TAXONOMIC_REFERENCE_SET"],
-                        "properties": {
-                            "TAXONOMIC_REFERENCE_SET": {
-                                "type": "object",
-                                "required": ["NAME", "TAXONOMY_SYSTEM"],
-                                "additionalProperties": false,
-                                "properties": {
-                                  "NAME": {
-                                    "type": "string"
-                                  },
-                                  "TAXONOMY_SYSTEM": {
-                                    "type": "string"
-                                  },
-                                  "TAXONOMY_SYSTEM_VERSION": {
-                                    "type": ["string"]
-                                  },
-                                  "CUSTOM_FIELDS": {
-                                    "type": ["array"],
-                                    "items": {
-                                      "type": "object",
-                                      "required": ["FIELD"],
-                                      "properties": {
-                                        "FIELD": {
-                                          "type": "object",
-                                          "required": ["NAME", "DESCRIPTION"],
-                                          "properties": {
-                                            "NAME": {
-                                              "type": "string"
-                                            },
-                                            "DESCRIPTION": {
-                                              "type": "string"
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                            }                              
-                        }
-                    },
-                    {
-                        "required": ["ASSEMBLY_ANNOTATION"],
-                        "properties": {
-                            "ASSEMBLY_ANNOTATION": {
-                                "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["SEQUENCE_CONSENSUS"],
-                        "properties": {
-                            "SEQUENCE_CONSENSUS": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    {
-                        "required": ["FILTERED_VARIATION"],
-                        "properties": {
-                            "FILTERED_VARIATION": {
-                                "type": "object"
-                            }
-                        }
-                    }
-                ]
-            },
-            "FILES": {
-                "description": "Data files associated with the analysis",
-                "type": "array",
-                "minItems": 1,
-                "uniqueItems": true,
-                "items": {
-                    "allOf": [
-                        {
-                            "title": "Inherit the overall structure of files",
-                            "$ref": "EGA.common.json#/definitions/runAnalysisFileType"
                         },
                         {
-                            "title": "Inherit the costraint on the filetype based on being a Analysis",
-                            "required": ["FILE"],
+                            "required": [
+                                "SEQUENCE_ANNOTATION"
+                            ],
                             "properties": {
-                                "FILE": { 
+                                "SEQUENCE_ANNOTATION": {
+                                    "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "REFERENCE_SEQUENCE"
+                            ],
+                            "properties": {
+                                "REFERENCE_SEQUENCE": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "SAMPLE_PHENOTYPE"
+                            ],
+                            "properties": {
+                                "SAMPLE_PHENOTYPE": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "PROCESSED_READS"
+                            ],
+                            "properties": {
+                                "PROCESSED_READS": {
+                                    "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "GENOME_MAP"
+                            ],
+                            "properties": {
+                                "GENOME_MAP": {
                                     "type": "object",
-                                    "required": ["filetype"],
+                                    "required": [
+                                        "PROGRAM",
+                                        "PLATFORM"
+                                    ],
                                     "properties": {
-                                        "filetype": {
-                                            "$ref": "EGA.common.json#/definitions/analysisFileTypeEnum"
+                                        "PROGRAM": {
+                                            "type": "string"
+                                        },
+                                        "PLATFORM": {
+                                            "type": "string",
+                                            "enum": [
+                                                "BioNano"
+                                            ]
+                                        },
+                                        "DESCRIPTION": {
+                                            "type": "string"
                                         }
                                     }
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "AMR_ANTIBIOGRAM"
+                            ],
+                            "properties": {
+                                "AMR_ANTIBIOGRAM": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "PATHOGEN_ANALYSIS"
+                            ],
+                            "properties": {
+                                "PATHOGEN_ANALYSIS": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "COVID19_CONSENSUS"
+                            ],
+                            "properties": {
+                                "COVID19_CONSENSUS": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "COVID19_FILTERED_VCF"
+                            ],
+                            "properties": {
+                                "COVID19_FILTERED_VCF": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "PHYLOGENY_ANALYSIS"
+                            ],
+                            "properties": {
+                                "PHYLOGENY_ANALYSIS": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "ASSEMBLY_GRAPH"
+                            ],
+                            "properties": {
+                                "ASSEMBLY_GRAPH": {
+                                    "type": "object",
+                                    "required": [
+                                        "ASSEMBLIES"
+                                    ],
+                                    "properties": {
+                                        "ASSEMBLIES": {
+                                            "type": "array",
+                                            "minItems": 1,
+                                            "uniqueItems": true,
+                                            "items": {
+                                                "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "TRANSCRIPTOME_ASSEMBLY"
+                            ],
+                            "properties": {
+                                "TRANSCRIPTOME_ASSEMBLY": {
+                                    "type": "object",
+                                    "required": [
+                                        "NAME",
+                                        "PROGRAM",
+                                        "PLATFORM"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "NAME": {
+                                            "type": "string"
+                                        },
+                                        "PROGRAM": {
+                                            "type": "string"
+                                        },
+                                        "PLATFORM": {
+                                            "type": "string"
+                                        },
+                                        "TPA": {
+                                            "type": [
+                                                "boolean"
+                                            ]
+                                        },
+                                        "AUTHORS": {
+                                            "$ref": "EGA.common.json#/definitions/AUTHORS"
+                                        },
+                                        "ADDRESS": {
+                                            "type": [
+                                                "string"
+                                            ]
+                                        },
+                                        "TYPE": {
+                                            "type": [
+                                                "string"
+                                            ],
+                                            "enum": [
+                                                "isolate",
+                                                "metatranscriptome"
+                                            ],
+                                            "meta:enum": {
+                                                "isolate": "An assembly of reads from an isolated cultured organism, tissues, cells or a cell line.",
+                                                "metatranscriptome": "An original metatranscriptome assembly from a sampled biome or collection of sampled biomes without attempt to separate taxa."
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "TAXONOMIC_REFERENCE_SET"
+                            ],
+                            "properties": {
+                                "TAXONOMIC_REFERENCE_SET": {
+                                    "type": "object",
+                                    "required": [
+                                        "NAME",
+                                        "TAXONOMY_SYSTEM"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "NAME": {
+                                            "type": "string"
+                                        },
+                                        "TAXONOMY_SYSTEM": {
+                                            "type": "string"
+                                        },
+                                        "TAXONOMY_SYSTEM_VERSION": {
+                                            "type": [
+                                                "string"
+                                            ]
+                                        },
+                                        "CUSTOM_FIELDS": {
+                                            "type": [
+                                                "array"
+                                            ],
+                                            "items": {
+                                                "type": "object",
+                                                "required": [
+                                                    "FIELD"
+                                                ],
+                                                "properties": {
+                                                    "FIELD": {
+                                                        "type": "object",
+                                                        "required": [
+                                                            "NAME",
+                                                            "DESCRIPTION"
+                                                        ],
+                                                        "properties": {
+                                                            "NAME": {
+                                                                "type": "string"
+                                                            },
+                                                            "DESCRIPTION": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "ASSEMBLY_ANNOTATION"
+                            ],
+                            "properties": {
+                                "ASSEMBLY_ANNOTATION": {
+                                    "$ref": "EGA.common.json#/definitions/ReferenceSequenceType"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "SEQUENCE_CONSENSUS"
+                            ],
+                            "properties": {
+                                "SEQUENCE_CONSENSUS": {
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        {
+                            "required": [
+                                "FILTERED_VARIATION"
+                            ],
+                            "properties": {
+                                "FILTERED_VARIATION": {
+                                    "type": "object"
                                 }
                             }
                         }
                     ]
-                }
-            },
-            "ANALYSIS_LINKS": {
-                "type": "array",
-                "description": "Links to resources related to this analysis",
-                "minItems": 1,
-                "uniqueItems": true,
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "ANALYSIS_LINK": {
-                            "$ref": "EGA.common.json#/definitions/LinkType"
+                },
+                "FILES": {
+                    "description": "Data files associated with the analysis",
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "allOf": [
+                            {
+                                "title": "Inherit the overall structure of files",
+                                "$ref": "EGA.common.json#/definitions/runAnalysisFileType"
+                            },
+                            {
+                                "title": "Inherit the costraint on the filetype based on being a Analysis",
+                                "required": [
+                                    "FILE"
+                                ],
+                                "properties": {
+                                    "FILE": {
+                                        "type": "object",
+                                        "required": [
+                                            "filetype"
+                                        ],
+                                        "properties": {
+                                            "filetype": {
+                                                "$ref": "EGA.common.json#/definitions/analysisFileTypeEnum"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "ANALYSIS_LINKS": {
+                    "type": "array",
+                    "description": "Links to resources related to this analysis",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "ANALYSIS_LINK": {
+                                "$ref": "EGA.common.json#/definitions/LinkType"
+                            }
                         }
-                    }                
-                }
-            },
-            "ANALYSIS_ATTRIBUTES": {
-                "type": "array",
-                "minItems": 1,
-                "uniqueItems": true,
-                "description": "Properties and attributes of a ANALYSIS.  These can be entered as free-form tag-value pairs.",
-                "items": { 
-                  "type": "object",
-                  "required": ["ANALYSIS_ATTRIBUTE"],
-                  "properties": {
-                      "ANALYSIS_ATTRIBUTE": {
-                          "$ref": "./EGA.common.json#/definitions/AttributeType"
-                      }
-                  }
+                    }
+                },
+                "ANALYSIS_ATTRIBUTES": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "description": "Properties and attributes of a ANALYSIS.  These can be entered as free-form tag-value pairs.",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "ANALYSIS_ATTRIBUTE"
+                        ],
+                        "properties": {
+                            "ANALYSIS_ATTRIBUTE": {
+                                "$ref": "./EGA.common.json#/definitions/AttributeType"
+                            }
+                        }
+                    }
                 }
             }
-          }
         }
-      }
+    }
 }
