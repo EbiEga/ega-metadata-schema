@@ -8,30 +8,24 @@
                 "experiment": "1.0.0",
                 "study": "1.0.0",
                 "sample": "1.0.0",
-                "individual": "1.0.0",
                 "submission": "1.0.0",
-                "assay": "1.0.0",
+                "run": "1.0.0",
                 "dataset": "1.0.0",
                 "analysis": "1.0.0",
                 "policy": "1.0.0",
-                "DAC": "1.0.0",
-                "protocol": "1.0.0",
-                "object-set": "1.0.0"
+                "DAC": "1.0.0"
             },
             "allJsonSchemas": {
                 "common-definitions": "1.0.0",
                 "experiment": "1.0.0",
                 "study": "1.0.0",
                 "sample": "1.0.0",
-                "individual": "1.0.0",
                 "submission": "1.0.0",
-                "assay": "1.0.0",
+                "run": "1.0.0",
                 "dataset": "1.0.0",
                 "analysis": "1.0.0",
                 "policy": "1.0.0",
-                "DAC": "1.0.0",
-                "protocol": "1.0.0",
-                "object-set": "1.0.0"
+                "DAC": "1.0.0"
             }
         }
     ]
