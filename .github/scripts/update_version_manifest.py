@@ -142,12 +142,12 @@ if highest_version_index is not None:
     highest_release = existing_releases[highest_version_index]
     try:
         highest_allJsonSchemas = highest_release["allJsonSchemas"]
-    except NameError as e:
+    except:
         raise Exception(
             f"The project release of the highest version ({highest_release['version']}) did not have 'allJsonSchemas' as its keyword."
             f" This may suggest that there was something wrong with the way the last release was written into the version manifest."
             f" The new release will have nothing to compare to when checking what object versions changed between releases."
-        ) from e
+        )
     # We get the objects that differ in versions
     new_allJsonSchemas = new_release_dict["allJsonSchemas"]
     diff_keys_list = get_keys_for_diff_values(dict1=highest_allJsonSchemas, dict2=new_allJsonSchemas)
