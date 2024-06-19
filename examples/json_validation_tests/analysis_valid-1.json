@@ -53,7 +53,7 @@
                     "ANALYSIS_TYPE": {
                         "REFERENCE_ALIGNMENT": {
                             "ASSEMBLY": {
-                                    "STANDARD": {
+                                "STANDARD": {
                                     "refname": "GRCh37",
                                     "accession": "GCA_000001405.1"
                                 }
@@ -77,11 +77,11 @@
                     "FILES": [
                         {
                             "FILE": {
-                                    "filename": "analysis/D13_liver.cram",
-                                    "filetype": "cram",
-                                    "checksum_method": "MD5",
-                                    "checksum": "d41d8cd98f00b204e9800998ecf8427e",
-                                    "unencrypted_checksum": "e4d909c290d0fb1ca068ffaddf22cbd0"
+                                "filename": "analysis/D13_liver.cram",
+                                "filetype": "cram",
+                                "checksum_method": "MD5",
+                                "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+                                "unencrypted_checksum": "e4d909c290d0fb1ca068ffaddf22cbd0"
                             }
                         },
                         {
@@ -107,6 +107,6 @@
         ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.analysis.json"
     }
 }

@@ -22,8 +22,7 @@
                             }
                         }
                     ],
-                    "POLICY_LINKS": 
-                    [
+                    "POLICY_LINKS": [
                         {
                             "POLICY_LINK": {
                                 "URL_LINK": {
@@ -33,13 +32,12 @@
                             }
                         }
                     ],
-                    "POLICY_ATTRIBUTES": 
-                    [
+                    "POLICY_ATTRIBUTES": [
                         {
                             "POLICY_ATTRIBUTE": {
                                 "TAG": "ENA-SUBMISSION-TOOL",
                                 "VALUE": "SRA-Webin"
-                                }
+                            }
                         }
                     ]
                 }
@@ -47,6 +45,6 @@
         ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.policy.json"
     }
 }

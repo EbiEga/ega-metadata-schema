@@ -38,7 +38,7 @@
                                                 "match_edge": "full"
                                             }
                                         ]
-                                    }                                    
+                                    }
                                 }
                             ]
                         }
@@ -51,14 +51,17 @@
                     "PROCESSING": {
                         "PIPELINE": [
                             {
-                               "PIPE_SECTION": {
-                                "STEP_INDEX": "1",
-                                "PREV_STEP_INDEX": ["0", "0.2"],
-                                "PROGRAM": "Test program",
-                                "VERSION": "v1.0.0",
-                                "NOTES": "Test notes",
-                                "section_name": "The first chunk of test pipeline"
-                               }
+                                "PIPE_SECTION": {
+                                    "STEP_INDEX": "1",
+                                    "PREV_STEP_INDEX": [
+                                        "0",
+                                        "0.2"
+                                    ],
+                                    "PROGRAM": "Test program",
+                                    "VERSION": "v1.0.0",
+                                    "NOTES": "Test notes",
+                                    "section_name": "The first chunk of test pipeline"
+                                }
                             }
                         ],
                         "DIRECTIVES": {
@@ -79,26 +82,26 @@
                         "FILES": [
                             {
                                 "FILE": {
-                                    "filename":"runs/DJ0001_13/Example_DJ0001_13.cram",
-                                    "filetype":"cram",
-                                    "checksum_method":"MD5",
-                                    "checksum":"298ee70555532679d7c1f91b5dd07aef",
-                                    "unencrypted_checksum":"e609bc52c035ff1a62cdba0f0689889j",
-                                    "quality_scoring_system":"phred", 
-                                    "quality_encoding":"ascii",
-                                    "ascii_offset":"!"
+                                    "filename": "runs/DJ0001_13/Example_DJ0001_13.cram",
+                                    "filetype": "cram",
+                                    "checksum_method": "MD5",
+                                    "checksum": "298ee70555532679d7c1f91b5dd07aef",
+                                    "unencrypted_checksum": "e609bc52c035ff1a62cdba0f0689889j",
+                                    "quality_scoring_system": "phred",
+                                    "quality_encoding": "ascii",
+                                    "ascii_offset": "!"
                                 }
                             },
                             {
                                 "FILE": {
-                                    "filename":"runs/DJ0001_13/Example_DJ0001_14.cram",
-                                    "filetype":"cram",
-                                    "checksum_method":"MD5",
-                                    "checksum":"d41d8cd98f00b204e9800998ecf8427e",
-                                    "unencrypted_checksum":"e4d909c290d0fb1ca068ffaddf22cbd0",
-                                    "quality_scoring_system":"phred", 
-                                    "quality_encoding":"ascii",
-                                    "ascii_offset":"!"
+                                    "filename": "runs/DJ0001_13/Example_DJ0001_14.cram",
+                                    "filetype": "cram",
+                                    "checksum_method": "MD5",
+                                    "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+                                    "unencrypted_checksum": "e4d909c290d0fb1ca068ffaddf22cbd0",
+                                    "quality_scoring_system": "phred",
+                                    "quality_encoding": "ascii",
+                                    "ascii_offset": "!"
                                 }
                             }
                         ]
@@ -122,6 +125,6 @@
         ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.run.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.run.json"
     }
 }

@@ -1,106 +1,106 @@
 {
     "data": {
         "EXPERIMENT_SET": [
-          {
-            "EXPERIMENT": {
-              "TITLE": "Example Experiment",
-              "STUDY_REF": {
-                "refname": "my_study",
-                "refcenter": "EGA-TEST"
-              },
-              "DESIGN": {
-                "DESIGN_DESCRIPTION": "Goal and setup of the individual library including library construction.",
-                "SAMPLE_DESCRIPTOR": {
-                  "refname": "sample1",
-                  "refcenter": "EGA-TEST"
-                },
-                "LIBRARY_DESCRIPTOR": {
-                  "LIBRARY_STRATEGY": "WGS",
-                  "LIBRARY_SOURCE": "GENOMIC",
-                  "LIBRARY_SELECTION": "RANDOM",
-                  "LIBRARY_LAYOUT": {
-                    "SINGLE": {}
-                  },
-                  "TARGETED_LOCI": [
-                    {
-                      "LOCUS": {
-                        "locus_name": "16S rRNA",
-                        "description": "Bacterial small subunit ribosomal RNA"
-                      }
-                    }
-                  ],
-                  "POOLING_STRATEGY": "Random pooling",
-                  "LIBRARY_CONSTRUCTION_PROTOCOL": "Standard protocol"
-                },
-                "SPOT_DESCRIPTOR": [
-                  {
-                    "SPOT_LENGTH": 100,
-                    "READ_SPECS": [
-                      {
-                        "READ_INDEX": 0,
-                        "READ_LABEL": "F",
-                        "READ_CLASS": "Application Read",
-                        "READ_TYPE": "Forward",
-                        "RELATIVE_ORDER": {
-                          "follows_read_index": 1
+            {
+                "EXPERIMENT": {
+                    "TITLE": "Example Experiment",
+                    "STUDY_REF": {
+                        "refname": "my_study",
+                        "refcenter": "EGA-TEST"
+                    },
+                    "DESIGN": {
+                        "DESIGN_DESCRIPTION": "Goal and setup of the individual library including library construction.",
+                        "SAMPLE_DESCRIPTOR": {
+                            "refname": "sample1",
+                            "refcenter": "EGA-TEST"
                         },
-                        "BASE_COORD": 1,
-                        "EXPECTED_BASECALL_TABLE": {
-                          "BASECALLS": [
+                        "LIBRARY_DESCRIPTOR": {
+                            "LIBRARY_STRATEGY": "WGS",
+                            "LIBRARY_SOURCE": "GENOMIC",
+                            "LIBRARY_SELECTION": "RANDOM",
+                            "LIBRARY_LAYOUT": {
+                                "SINGLE": {}
+                            },
+                            "TARGETED_LOCI": [
+                                {
+                                    "LOCUS": {
+                                        "locus_name": "16S rRNA",
+                                        "description": "Bacterial small subunit ribosomal RNA"
+                                    }
+                                }
+                            ],
+                            "POOLING_STRATEGY": "Random pooling",
+                            "LIBRARY_CONSTRUCTION_PROTOCOL": "Standard protocol"
+                        },
+                        "SPOT_DESCRIPTOR": [
                             {
-                              "read_group_tag": "group1",
-                              "min_match": 5,
-                              "max_mismatch": 1,
-                              "match_edge": "full"
+                                "SPOT_LENGTH": 100,
+                                "READ_SPECS": [
+                                    {
+                                        "READ_INDEX": 0,
+                                        "READ_LABEL": "F",
+                                        "READ_CLASS": "Application Read",
+                                        "READ_TYPE": "Forward",
+                                        "RELATIVE_ORDER": {
+                                            "follows_read_index": 1
+                                        },
+                                        "BASE_COORD": 1,
+                                        "EXPECTED_BASECALL_TABLE": {
+                                            "BASECALLS": [
+                                                {
+                                                    "read_group_tag": "group1",
+                                                    "min_match": 5,
+                                                    "max_mismatch": 1,
+                                                    "match_edge": "full"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
                             }
-                          ]
+                        ]
+                    },
+                    "PLATFORM": {
+                        "ILLUMINA": {
+                            "INSTRUMENT_MODEL": "Illumina HiSeq 2500"
                         }
-                      }
+                    },
+                    "PROCESSING": {
+                        "PIPELINE": [
+                            {
+                                "PIPE_SECTION": {
+                                    "STEP_INDEX": "1",
+                                    "PREV_STEP_INDEX": null,
+                                    "section_name": "Alignment",
+                                    "PROGRAM": "BWA",
+                                    "VERSION": "0.7.17"
+                                }
+                            }
+                        ]
+                    },
+                    "EXPERIMENT_LINKS": [
+                        {
+                            "EXPERIMENT_LINK": {
+                                "URL_LINK": {
+                                    "LABEL": "Link to related resource",
+                                    "URL": "http://example.com/resource"
+                                }
+                            }
+                        }
+                    ],
+                    "EXPERIMENT_ATTRIBUTES": [
+                        {
+                            "EXPERIMENT_ATTRIBUTE": {
+                                "TAG": "Attribute Tag",
+                                "VALUE": "Attribute Value"
+                            }
+                        }
                     ]
-                  }
-                ]
-              },
-              "PLATFORM": {
-                "ILLUMINA": {
-                  "INSTRUMENT_MODEL": "Illumina HiSeq 2500"
                 }
-              },
-              "PROCESSING": {
-                "PIPELINE": [
-                  { 
-                    "PIPE_SECTION": {
-                        "STEP_INDEX": "1",
-                        "PREV_STEP_INDEX": null,
-                        "section_name": "Alignment",
-                        "PROGRAM": "BWA",
-                        "VERSION": "0.7.17"
-                    }
-                  }
-                ]
-              },
-              "EXPERIMENT_LINKS": [
-                {
-                  "EXPERIMENT_LINK": {
-                    "URL_LINK": {
-                      "LABEL": "Link to related resource",
-                      "URL": "http://example.com/resource"
-                    }
-                  }
-                }
-              ],
-              "EXPERIMENT_ATTRIBUTES": [
-                {
-                  "EXPERIMENT_ATTRIBUTE": {
-                    "TAG": "Attribute Tag",
-                    "VALUE": "Attribute Value"
-                  }
-                }
-              ]
             }
-          }
         ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.experiment.json"
     }
 }

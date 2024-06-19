@@ -1,56 +1,56 @@
 {
     "data": {
-      "DATASETS": [
-        {
-          "DATASET": {
-            "TITLE": "Example Dataset",
-            "DESCRIPTION": "This dataset contains whole genome sequencing data and phenotype information.",
-            "DATASET_TYPE": [
-              "Whole genome sequencing",
-              "Phenotype information"
-            ],
-            "RUN_REF": [
-              {
-                "refname": "run1",
-                "refcenter": "EGA-TEST"
-              },
-              {
-                "refname": "run2",
-                "refcenter": "EGA-TEST"
-              }
-            ],
-            "ANALYSIS_REF": [
-              {
-                "refname": "analysis1",
-                "refcenter": "EGA-TEST"
-              }
-            ],
-            "POLICY_REF": {
-              "accession": "EGAP00000000001"
-            },
-            "DATASET_LINKS": [
-              {
-                "DATASET_LINK": {
-                  "URL_LINK": {
-                    "LABEL": "Link to related resource",
-                    "URL": "http://example.com/resource"
-                  }
+        "DATASETS": [
+            {
+                "DATASET": {
+                    "TITLE": "Example Dataset",
+                    "DESCRIPTION": "This dataset contains whole genome sequencing data and phenotype information.",
+                    "DATASET_TYPE": [
+                        "Whole genome sequencing",
+                        "Phenotype information"
+                    ],
+                    "RUN_REF": [
+                        {
+                            "refname": "run1",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run2",
+                            "refcenter": "EGA-TEST"
+                        }
+                    ],
+                    "ANALYSIS_REF": [
+                        {
+                            "refname": "analysis1",
+                            "refcenter": "EGA-TEST"
+                        }
+                    ],
+                    "POLICY_REF": {
+                        "accession": "EGAP00000000001"
+                    },
+                    "DATASET_LINKS": [
+                        {
+                            "DATASET_LINK": {
+                                "URL_LINK": {
+                                    "LABEL": "Link to related resource",
+                                    "URL": "http://example.com/resource"
+                                }
+                            }
+                        }
+                    ],
+                    "DATASET_ATTRIBUTES": [
+                        {
+                            "DATASET_ATTRIBUTE": {
+                                "TAG": "Attribute Tag",
+                                "VALUE": "Attribute Value"
+                            }
+                        }
+                    ]
                 }
-              }
-            ],
-            "DATASET_ATTRIBUTES": [
-              {
-                "DATASET_ATTRIBUTE": {
-                  "TAG": "Attribute Tag",
-                  "VALUE": "Attribute Value"
-                }
-              }
-            ]
-          }
-        }
-      ]
+            }
+        ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.dataset.json"
     }
 }

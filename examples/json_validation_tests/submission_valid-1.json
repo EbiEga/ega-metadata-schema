@@ -1,59 +1,59 @@
 {
     "data": {
         "SUBMISSION_SET": [
-          {
-            "SUBMISSION": {
-              "submission_date": "2024-06-18T00:00:00Z",
-              "submission_comment": "Initial submission",
-              "lab_name": "Genomics Lab",
-              "TITLE": "Genome Sequencing Submission",
-              "CONTACTS": [
-                {
-                  "name": "Your name",
-                  "inform_on_status": "mailto:your.name@example.com",
-                  "inform_on_error": "mailto:your.name@example.com"
+            {
+                "SUBMISSION": {
+                    "submission_date": "2024-06-18T00:00:00Z",
+                    "submission_comment": "Initial submission",
+                    "lab_name": "Genomics Lab",
+                    "TITLE": "Genome Sequencing Submission",
+                    "CONTACTS": [
+                        {
+                            "name": "Your name",
+                            "inform_on_status": "mailto:your.name@example.com",
+                            "inform_on_error": "mailto:your.name@example.com"
+                        }
+                    ],
+                    "ACTIONS": [
+                        {
+                            "ADD": {
+                                "source": "path/to/file.xml",
+                                "schema": "study"
+                            }
+                        },
+                        {
+                            "MODIFY": {
+                                "source": "path/to/updated_file.xml",
+                                "schema": "experiment"
+                            }
+                        },
+                        {
+                            "PROTECT": {}
+                        }
+                    ],
+                    "SUBMISSION_LINKS": [
+                        {
+                            "SUBMISSION_LINK": {
+                                "URL_LINK": {
+                                    "LABEL": "Link to related resource",
+                                    "URL": "http://example.com/resource"
+                                }
+                            }
+                        }
+                    ],
+                    "SUBMISSION_ATTRIBUTES": [
+                        {
+                            "SUBMISSION_ATTRIBUTE": {
+                                "TAG": "Attribute Tag",
+                                "VALUE": "Attribute Value"
+                            }
+                        }
+                    ]
                 }
-              ],
-              "ACTIONS": [
-                {
-                  "ADD": {
-                    "source": "path/to/file.xml",
-                    "schema": "study"
-                  }
-                },
-                {
-                  "MODIFY": {
-                    "source": "path/to/updated_file.xml",
-                    "schema": "experiment"
-                  }
-                },
-                {
-                  "PROTECT": {}
-                }
-              ],
-              "SUBMISSION_LINKS": [
-                {
-                  "SUBMISSION_LINK": {
-                    "URL_LINK": {
-                      "LABEL": "Link to related resource",
-                      "URL": "http://example.com/resource"
-                    }
-                  }
-                }
-              ],
-              "SUBMISSION_ATTRIBUTES": [
-                {
-                  "SUBMISSION_ATTRIBUTE": {
-                    "TAG": "Attribute Tag",
-                    "VALUE": "Attribute Value"
-                  }
-                }
-              ]
             }
-          }
         ]
-      },
+    },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.submission.json"
     }
 }
