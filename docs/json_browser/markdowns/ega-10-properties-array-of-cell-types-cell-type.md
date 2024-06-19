@@ -18,7 +18,7 @@ One of the cell types that can be found in your sample or from which the genetic
 
 | Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                              |
 | :------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [cellType](#celltype)                 | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-4-definitions-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")                                                                |
+| [cellType](#celltype)                 | Merged   | Required | cannot be null | [EGA sample metadata schema](ega-4-defs-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")                                                                       |
 | [cellTypeInferred](#celltypeinferred) | `string` | Required | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-cell-types-cell-type-properties-inferred-cell-type-flag.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeInferred") |
 | [cellTypeLabel](#celltypelabel)       | `string` | Optional | cannot be null | [EGA sample metadata schema](ega-10-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")     |
 
@@ -30,19 +30,19 @@ Property to describe a cell type: a distinct morphological or functional form of
 
 *   is required
 
-*   Type: `object` ([Cell type](ega-4-definitions-cell-type.md))
+*   Type: `object` ([Cell type](ega-4-defs-cell-type.md))
 
 *   cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-definitions-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")
+*   defined in: [EGA sample metadata schema](ega-4-defs-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")
 
 ### cellType Type
 
-`object` ([Cell type](ega-4-definitions-cell-type.md))
+`object` ([Cell type](ega-4-defs-cell-type.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## cellTypeInferred
 

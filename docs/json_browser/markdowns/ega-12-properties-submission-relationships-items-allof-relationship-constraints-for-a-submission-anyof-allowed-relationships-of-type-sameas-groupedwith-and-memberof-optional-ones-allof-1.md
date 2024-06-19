@@ -16,6 +16,6 @@ merged type ([Details](ega-12-properties-submission-relationships-items-allof-re
 
 any of
 
-*   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-*   [Relationship target: submission](ega-4-definitions-relationship-target-submission.md "check type definition")
+*   [Relationship target: submission](ega-4-defs-relationship-target-submission.md "check type definition")

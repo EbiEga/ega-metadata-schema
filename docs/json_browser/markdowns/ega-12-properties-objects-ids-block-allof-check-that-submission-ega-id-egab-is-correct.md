@@ -16,9 +16,9 @@ unknown ([Check that Submission EGA ID (EGAB) is correct](ega-12-properties-obje
 
 # 1 Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                        |
-| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-4-definitions-pattern-of-an-ega-submissions-id-egab.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId/allOf/1/properties/egaAccession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                 |
+| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA submission metadata schema](ega-4-defs-pattern-of-an-ega-submissions-id-egab.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
 ## egaAccession
 
@@ -28,15 +28,15 @@ unknown ([Check that Submission EGA ID (EGAB) is correct](ega-12-properties-obje
 
 *   is optional
 
-*   Type: `string` ([Pattern of an EGA submission's ID (EGAB...)](ega-4-definitions-pattern-of-an-ega-submissions-id-egab.md))
+*   Type: `string` ([Pattern of an EGA submission's ID (EGAB...)](ega-4-defs-pattern-of-an-ega-submissions-id-egab.md))
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-4-definitions-pattern-of-an-ega-submissions-id-egab.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId/allOf/1/properties/egaAccession")
+*   defined in: [EGA submission metadata schema](ega-4-defs-pattern-of-an-ega-submissions-id-egab.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 
-`string` ([Pattern of an EGA submission's ID (EGAB...)](ega-4-definitions-pattern-of-an-ega-submissions-id-egab.md))
+`string` ([Pattern of an EGA submission's ID (EGAB...)](ega-4-defs-pattern-of-an-ega-submissions-id-egab.md))
 
 ### egaAccession Constraints
 

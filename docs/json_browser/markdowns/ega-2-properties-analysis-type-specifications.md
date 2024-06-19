@@ -19,7 +19,7 @@ Node containing different sets of fields that depend on the specific analysis ty
 | Property                                                | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
 | :------------------------------------------------------ | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [analysisTypes](#analysistypes)                         | `array` | Required | cannot be null | [EGA analysis metadata schema](ega-2-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/analysisTypes") |
-| [referenceAlignmentDetails](#referencealignmentdetails) | `array` | Optional | cannot be null | [EGA analysis metadata schema](ega-4-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/referenceAlignmentDetails")           |
+| [referenceAlignmentDetails](#referencealignmentdetails) | `array` | Optional | cannot be null | [EGA analysis metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/referenceAlignmentDetails")                  |
 
 ## analysisTypes
 
@@ -53,15 +53,15 @@ Node containing the information of the reference assembly that was used to obtai
 
 *   is optional
 
-*   Type: `object[]` ([NCBI's Assembly descriptor](ega-4-definitions-ncbis-assembly-descriptor.md))
+*   Type: `object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-4-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/referenceAlignmentDetails")
+*   defined in: [EGA analysis metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/referenceAlignmentDetails")
 
 ### referenceAlignmentDetails Type
 
-`object[]` ([NCBI's Assembly descriptor](ega-4-definitions-ncbis-assembly-descriptor.md))
+`object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
 ### referenceAlignmentDetails Constraints
 

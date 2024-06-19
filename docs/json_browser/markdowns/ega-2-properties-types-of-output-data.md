@@ -12,7 +12,7 @@ Types of output data the analysis uses to obtain the processed files.
 
 ## typesOfOutputData Type
 
-`string[]` ([Type of data](ega-4-definitions-type-of-data.md))
+`string[]` ([Type of data](ega-4-defs-type-of-data.md))
 
 ## typesOfOutputData Constraints
 

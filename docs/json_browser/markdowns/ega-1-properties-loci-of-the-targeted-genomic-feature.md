@@ -12,7 +12,7 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 ## targetedLoci Type
 
-`object[]` ([Locus identifier](ega-4-definitions-locus-identifier.md))
+`object[]` ([Locus identifier](ega-4-defs-locus-identifier.md))
 
 ## targetedLoci Constraints
 

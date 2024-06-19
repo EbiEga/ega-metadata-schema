@@ -4,11 +4,11 @@
 https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json
 ```
 
-Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': '<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId>'). See structuring documentation (<https://json-schema.org/understanding-json-schema/structuring.html>). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
+Metadata schema used by the European Genome-phenome Archive (EGA) to store common definitions for other metadata objects. Basically, we are defining here common properties (e.g. instances' aliases) that other metadata objects (e.g. sample) may use. The way we refer to them is by using this object's '$id' field, referencing it in other files (with '$ref' and the relative path of the property - e.g. '$ref': '<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId>'). See structuring documentation (<https://json-schema.org/understanding-json-schema/structuring.html>). Further details can be found in the EGA-metadata-schema GitHub repository (<https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas>) and EGA-archive website (<https://ega-archive.org/>)
 
-| Abstract               | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                         |
-| :--------------------- | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------- |
-| Cannot be instantiated | Yes        | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json](../../../schemas/EGA.common-definitions.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                         |
+| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [EGA.common-definitions.json](../../../schemas/EGA.common-definitions.json "open original schema") |
 
 ## EGA common metadata definitions Type
 
@@ -21,15 +21,15 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to store commo
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId"}
 ```
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                 |
-| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [alias](#alias)                           | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/alias")                     |
-| [centerName](#centername)                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/centerName")      |
-| [egaAccession](#egaaccession)             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/egaAccession")    |
-| [externalAccessions](#externalaccessions) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/externalAccessions") |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                    |
+| :---------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [alias](#alias)                           | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/alias")                     |
+| [centerName](#centername)                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/centerName")      |
+| [egaAccession](#egaaccession)             | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/egaAccession")    |
+| [externalAccessions](#externalaccessions) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-external-accessions-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/externalAccessions") |
 
 ### alias
 
@@ -39,15 +39,15 @@ Submitter designated name (e.g. 'my\_sample\_J13') for the object (e.g. Sample).
 
 *   is optional
 
-*   Type: `string` ([Alias of an object](ega-4-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md))
+*   Type: `string` ([Alias of an object](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/alias")
+*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/alias")
 
 #### alias Type
 
-`string` ([Alias of an object](ega-4-definitions-core-identifiers-of-an-object-properties-alias-of-an-object.md))
+`string` ([Alias of an object](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md))
 
 #### alias Constraints
 
@@ -67,15 +67,15 @@ Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is
 
 *   is optional
 
-*   Type: `string` ([Center name of the submitter](ega-4-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md))
+*   Type: `string` ([Center name of the submitter](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/centerName")
+*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/centerName")
 
 #### centerName Type
 
-`string` ([Center name of the submitter](ega-4-definitions-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md))
+`string` ([Center name of the submitter](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md))
 
 #### centerName Constraints
 
@@ -95,15 +95,15 @@ The object accession (i.e. unique identifier) assigned by the archive (EGA). Obj
 
 *   is optional
 
-*   Type: `string` ([EGA's accession of the object](ega-4-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md))
+*   Type: `string` ([EGA's accession of the object](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/egaAccession")
+*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/egaAccession")
 
 #### egaAccession Type
 
-`string` ([EGA's accession of the object](ega-4-definitions-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md))
+`string` ([EGA's accession of the object](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md))
 
 #### egaAccession Examples
 
@@ -119,15 +119,15 @@ External accession node to reference objects in other archives (e.g. an already 
 
 *   is optional
 
-*   Type: `object[]` ([Object External accession](ega-4-definitions-object-external-accession.md))
+*   Type: `object[]` ([Object External accession](ega-4-defs-object-external-accession.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-core-identifiers-of-an-object-properties-external-accessions-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectCoreId/properties/externalAccessions")
+*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-external-accessions-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/externalAccessions")
 
 #### externalAccessions Type
 
-`object[]` ([Object External accession](ega-4-definitions-object-external-accession.md))
+`object[]` ([Object External accession](ega-4-defs-object-external-accession.md))
 
 #### externalAccessions Constraints
 
@@ -140,14 +140,14 @@ External accession node to reference objects in other archives (e.g. an already 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute"}
 ```
 
-| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                           |
-| :-------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [tag](#tag)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/tag")     |
-| [value](#value) | Multiple | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/value") |
-| [units](#units) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/units") |
+| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                              |
+| :-------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [tag](#tag)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/tag")     |
+| [value](#value) | Multiple | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/value") |
+| [units](#units) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/units") |
 
 ### tag
 
@@ -157,15 +157,15 @@ The name of the attribute (e.g. 'Age').
 
 *   is required
 
-*   Type: `string` ([Tag of the custom attribute](ega-4-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md))
+*   Type: `string` ([Tag of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/tag")
+*   defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/tag")
 
 #### tag Type
 
-`string` ([Tag of the custom attribute](ega-4-definitions-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md))
+`string` ([Tag of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md))
 
 #### tag Constraints
 
@@ -185,15 +185,15 @@ The value of the attribute (e.g. '40').
 
 *   is required
 
-*   Type: any of the following: `string` or `number` ([Value of the custom attribute](ega-4-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
+*   Type: any of the following: `string` or `number` ([Value of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/value")
+*   defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/value")
 
 #### value Type
 
-any of the following: `string` or `number` ([Value of the custom attribute](ega-4-definitions-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
+any of the following: `string` or `number` ([Value of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
 
 #### value Examples
 
@@ -213,15 +213,15 @@ The optional units of the attribute (e.g. 'years').
 
 *   is optional
 
-*   Type: `string` ([Units of the custom attribute](ega-4-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md))
+*   Type: `string` ([Units of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/customAttribute/properties/units")
+*   defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/units")
 
 #### units Type
 
-`string` ([Units of the custom attribute](ega-4-definitions-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md))
+`string` ([Units of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md))
 
 #### units Constraints
 
@@ -238,18 +238,18 @@ The optional units of the attribute (e.g. 'years').
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject"}
 ```
 
-| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                    |
-| :------------------------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filename](#filename)                             | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-filename.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/filename")                                               |
-| [fileContent](#filecontent)                       | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-file-content-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent")                                  |
-| [filetype](#filetype)                             | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/filetype")                                               |
-| [checksumMethod](#checksummethod)                 | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-checksum-method-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/checksumMethod")                               |
-| [unencryptedChecksum](#unencryptedchecksum)       | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/unencryptedChecksum") |
-| [encryptedChecksum](#encryptedchecksum)           | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/encryptedChecksum")     |
-| [sequenceQualityDetails](#sequencequalitydetails) | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-sequence-quality-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails")                 |
+| Property                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                       |
+| :------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filename](#filename)                             | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-filename.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/filename")                                               |
+| [fileContent](#filecontent)                       | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-file-content-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/fileContent")                                  |
+| [filetype](#filetype)                             | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/filetype")                                               |
+| [checksumMethod](#checksummethod)                 | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-checksum-method-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/checksumMethod")                               |
+| [unencryptedChecksum](#unencryptedchecksum)       | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/unencryptedChecksum") |
+| [encryptedChecksum](#encryptedchecksum)           | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/encryptedChecksum")     |
+| [sequenceQualityDetails](#sequencequalitydetails) | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-sequence-quality-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/sequenceQualityDetails")                 |
 
 ### filename
 
@@ -259,15 +259,15 @@ The full name of a file, including all of their file extensions (e.g. .gpg, .md5
 
 *   is required
 
-*   Type: `string` ([Filename](ega-4-definitions-ega-file-object-properties-filename.md))
+*   Type: `string` ([Filename](ega-4-defs-ega-file-object-properties-filename.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-filename.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/filename")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-filename.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/filename")
 
 #### filename Type
 
-`string` ([Filename](ega-4-definitions-ega-file-object-properties-filename.md))
+`string` ([Filename](ega-4-defs-ega-file-object-properties-filename.md))
 
 #### filename Constraints
 
@@ -293,15 +293,15 @@ Array of file content items. This array exists to clarify what the purpose of a 
 
 *   is optional
 
-*   Type: `object[]` ([File content item](ega-4-definitions-ega-file-object-properties-file-content-array-file-content-item.md))
+*   Type: `object[]` ([File content item](ega-4-defs-ega-file-object-properties-file-content-array-file-content-item.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-file-content-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/fileContent")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-file-content-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/fileContent")
 
 #### fileContent Type
 
-`object[]` ([File content item](ega-4-definitions-ega-file-object-properties-file-content-array-file-content-item.md))
+`object[]` ([File content item](ega-4-defs-ega-file-object-properties-file-content-array-file-content-item.md))
 
 #### fileContent Constraints
 
@@ -317,15 +317,15 @@ The main format in which data is structured and represented in an electronic fil
 
 *   is required
 
-*   Type: `string` ([Filetype](ega-4-definitions-ega-file-object-properties-filetype.md))
+*   Type: `string` ([Filetype](ega-4-defs-ega-file-object-properties-filetype.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/filetype")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/filetype")
 
 #### filetype Type
 
-`string` ([Filetype](ega-4-definitions-ega-file-object-properties-filetype.md))
+`string` ([Filetype](ega-4-defs-ega-file-object-properties-filetype.md))
 
 #### filetype Constraints
 
@@ -414,15 +414,15 @@ Node containing both the ID (MD5 or SHA-256), describing the method which yields
 
 *   is required
 
-*   Type: `string` ([Checksum method ID](ega-4-definitions-ega-file-object-properties-checksum-method-id.md))
+*   Type: `string` ([Checksum method ID](ega-4-defs-ega-file-object-properties-checksum-method-id.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-checksum-method-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/checksumMethod")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-checksum-method-id.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/checksumMethod")
 
 #### checksumMethod Type
 
-`string` ([Checksum method ID](ega-4-definitions-ega-file-object-properties-checksum-method-id.md))
+`string` ([Checksum method ID](ega-4-defs-ega-file-object-properties-checksum-method-id.md))
 
 #### checksumMethod Constraints
 
@@ -441,21 +441,21 @@ A computed value which depends on the contents of a block of data and which is t
 
 *   is required
 
-*   Type: `string` ([Checksum \[NCIT:C43522\] of the unencrypted file](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md))
+*   Type: `string` ([Checksum \[NCIT:C43522\] of the unencrypted file](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/unencryptedChecksum")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/unencryptedChecksum")
 
 #### unencryptedChecksum Type
 
-`string` ([Checksum \[NCIT:C43522\] of the unencrypted file](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md))
+`string` ([Checksum \[NCIT:C43522\] of the unencrypted file](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file.md))
 
 one (and only one) of
 
-*   [Checksum pattern obtained by MD5](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-md5.md "check type definition")
+*   [Checksum pattern obtained by MD5](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-md5.md "check type definition")
 
-*   [Checksum pattern obtained by SHA-256](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-sha-256.md "check type definition")
+*   [Checksum pattern obtained by SHA-256](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-sha-256.md "check type definition")
 
 #### unencryptedChecksum Examples
 
@@ -471,21 +471,21 @@ A computed value which depends on the contents of a block of data and which is t
 
 *   is required
 
-*   Type: `string` ([Checksum \[NCIT:C43522\] of the encrypted file](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md))
+*   Type: `string` ([Checksum \[NCIT:C43522\] of the encrypted file](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/encryptedChecksum")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/encryptedChecksum")
 
 #### encryptedChecksum Type
 
-`string` ([Checksum \[NCIT:C43522\] of the encrypted file](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md))
+`string` ([Checksum \[NCIT:C43522\] of the encrypted file](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file.md))
 
 one (and only one) of
 
-*   [Checksum pattern obtained by MD5](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file-oneof-checksum-pattern-obtained-by-md5.md "check type definition")
+*   [Checksum pattern obtained by MD5](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file-oneof-checksum-pattern-obtained-by-md5.md "check type definition")
 
-*   [Checksum pattern obtained by SHA-256](ega-4-definitions-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file-oneof-checksum-pattern-obtained-by-sha-256.md "check type definition")
+*   [Checksum pattern obtained by SHA-256](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-encrypted-file-oneof-checksum-pattern-obtained-by-sha-256.md "check type definition")
 
 #### encryptedChecksum Examples
 
@@ -501,30 +501,30 @@ Sequencing quality scores measure the probability that a base is called (i.e. se
 
 *   is optional
 
-*   Type: `object` ([Sequence quality details](ega-4-definitions-ega-file-object-properties-sequence-quality-details.md))
+*   Type: `object` ([Sequence quality details](ega-4-defs-ega-file-object-properties-sequence-quality-details.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-file-object-properties-sequence-quality-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fileObject/properties/sequenceQualityDetails")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-sequence-quality-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/sequenceQualityDetails")
 
 #### sequenceQualityDetails Type
 
-`object` ([Sequence quality details](ega-4-definitions-ega-file-object-properties-sequence-quality-details.md))
+`object` ([Sequence quality details](ega-4-defs-ega-file-object-properties-sequence-quality-details.md))
 
 ## Definitions group relationshipObject
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject"}
 ```
 
-| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                             |
-| :------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-relationship-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rType")                 |
-| [rSource](#rsource) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rSource")      |
-| [rTarget](#rtarget) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rTarget")      |
-| [rLabel](#rlabel)   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rLabel") |
+| Property            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [rType](#rtype)     | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-relationship-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rType")                 |
+| [rSource](#rsource) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-source-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rSource")      |
+| [rTarget](#rtarget) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-target-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rTarget")      |
+| [rLabel](#rlabel)   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rLabel") |
 
 ### rType
 
@@ -534,15 +534,15 @@ ID (e.g. sameAs) of the type of the relationship. To be chosen from a controlled
 
 *   is required
 
-*   Type: `string` ([Relationship type](ega-4-definitions-ega-relationships-object-properties-relationship-type.md))
+*   Type: `string` ([Relationship type](ega-4-defs-ega-relationships-object-properties-relationship-type.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-relationship-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-relationship-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rType")
 
 #### rType Type
 
-`string` ([Relationship type](ega-4-definitions-ega-relationships-object-properties-relationship-type.md))
+`string` ([Relationship type](ega-4-defs-ega-relationships-object-properties-relationship-type.md))
 
 #### rType Constraints
 
@@ -577,15 +577,15 @@ Object reference of the relationship's source. In other words, the starting poin
 
 *   is optional
 
-*   Type: `object` ([Source of the relationship](ega-4-definitions-ega-relationships-object-properties-source-of-the-relationship.md))
+*   Type: `object` ([Source of the relationship](ega-4-defs-ega-relationships-object-properties-source-of-the-relationship.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-source-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-source-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rSource")
 
 #### rSource Type
 
-`object` ([Source of the relationship](ega-4-definitions-ega-relationships-object-properties-source-of-the-relationship.md))
+`object` ([Source of the relationship](ega-4-defs-ega-relationships-object-properties-source-of-the-relationship.md))
 
 all of
 
@@ -593,31 +593,31 @@ all of
 
     *   any of
 
-        *   [Alias and Centername: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
+        *   [Alias and Centername: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
 
-        *   [External accession: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
+        *   [External accession: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Experiment: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
+        *   [Experiment: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Study: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
+        *   [Study: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Sample: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
+        *   [Sample: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Submission: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
+        *   [Submission: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Assay: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
+        *   [Assay: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Dataset: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
+        *   [Dataset: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Analysis: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
+        *   [Analysis: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Policy: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
+        *   [Policy: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
 
-        *   [DAC: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
+        *   [DAC: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Individual: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
+        *   [Individual: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Protocol: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
+        *   [Protocol: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
 
 ### rTarget
 
@@ -627,15 +627,15 @@ Object reference of the relationship's target. In other words, the ending point 
 
 *   is optional
 
-*   Type: `object` ([Target of the relationship](ega-4-definitions-ega-relationships-object-properties-target-of-the-relationship.md))
+*   Type: `object` ([Target of the relationship](ega-4-defs-ega-relationships-object-properties-target-of-the-relationship.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-target-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-target-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rTarget")
 
 #### rTarget Type
 
-`object` ([Target of the relationship](ega-4-definitions-ega-relationships-object-properties-target-of-the-relationship.md))
+`object` ([Target of the relationship](ega-4-defs-ega-relationships-object-properties-target-of-the-relationship.md))
 
 all of
 
@@ -643,31 +643,31 @@ all of
 
     *   any of
 
-        *   [Alias and Centername: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
+        *   [Alias and Centername: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
 
-        *   [External accession: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
+        *   [External accession: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Experiment: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
+        *   [Experiment: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Study: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
+        *   [Study: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Sample: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
+        *   [Sample: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Submission: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
+        *   [Submission: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Assay: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
+        *   [Assay: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Dataset: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
+        *   [Dataset: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Analysis: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
+        *   [Analysis: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Policy: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
+        *   [Policy: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
 
-        *   [DAC: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
+        *   [DAC: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Individual: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
+        *   [Individual: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
 
-        *   [Protocol: objectId and objectType check](ega-4-definitions-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
+        *   [Protocol: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
 
 ### rLabel
 
@@ -677,15 +677,15 @@ Custom free-form label of the relationship, used to add extra details of the rel
 
 *   is optional
 
-*   Type: `string` ([Custom label of the relationship](ega-4-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md))
+*   Type: `string` ([Custom label of the relationship](ega-4-defs-ega-relationships-object-properties-custom-label-of-the-relationship.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/relationshipObject/properties/rLabel")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ega-relationships-object-properties-custom-label-of-the-relationship.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/relationshipObject/properties/rLabel")
 
 #### rLabel Type
 
-`string` ([Custom label of the relationship](ega-4-definitions-ega-relationships-object-properties-custom-label-of-the-relationship.md))
+`string` ([Custom label of the relationship](ega-4-defs-ega-relationships-object-properties-custom-label-of-the-relationship.md))
 
 #### rLabel Constraints
 
@@ -710,13 +710,13 @@ Custom free-form label of the relationship, used to add extra details of the rel
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel"}
 ```
 
-| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                             |
-| :---------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [arrayLabelIdentifier](#arraylabelidentifier)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelIdentifier")   |
-| [arrayLabelDescription](#arraylabeldescription) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelDescription") |
+| Property                                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                |
+| :---------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [arrayLabelIdentifier](#arraylabelidentifier)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelIdentifier")   |
+| [arrayLabelDescription](#arraylabeldescription) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelDescription") |
 
 ### arrayLabelIdentifier
 
@@ -726,19 +726,19 @@ The chosen term (e.g. 'Cy3 dye' \[CHEBI:37987]) needs to be a Chemical Entity fr
 
 *   is optional
 
-*   Type: `object` ([Array label identifier](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md))
+*   Type: `object` ([Array label identifier](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelIdentifier")
+*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelIdentifier")
 
 #### arrayLabelIdentifier Type
 
-`object` ([Array label identifier](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-identifier.md))
+`object` ([Array label identifier](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ### arrayLabelDescription
 
@@ -748,15 +748,15 @@ Additional description of the used array label, indicating further details: cont
 
 *   is optional
 
-*   Type: `string` ([Array label description](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-description.md))
+*   Type: `string` ([Array label description](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/arrayLabel/properties/arrayLabelDescription")
+*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelDescription")
 
 #### arrayLabelDescription Type
 
-`string` ([Array label description](ega-4-definitions-repeatable-arraylabel-node-properties-array-label-description.md))
+`string` ([Array label description](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md))
 
 #### arrayLabelDescription Constraints
 
@@ -781,7 +781,7 @@ Additional description of the used array label, indicating further details: cont
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectIdAndObjectTypeCheck"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -792,7 +792,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/checksumPatternCheck"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -803,7 +803,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/md5ChecksumPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/md5ChecksumPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -814,7 +814,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/SHA256ChecksumPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/SHA256ChecksumPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -825,7 +825,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAExperimentIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAExperimentIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -836,7 +836,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAStudyIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAStudyIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -847,7 +847,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGASampleIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGASampleIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -858,7 +858,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGASubmissionIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGASubmissionIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -869,7 +869,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAAssayIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAAssayIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -880,7 +880,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGADatasetIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGADatasetIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -891,7 +891,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAAnalysisIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAAnalysisIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -902,7 +902,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAPolicyIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAPolicyIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -913,7 +913,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGADACIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGADACIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -924,7 +924,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAIndividualIdPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAIndividualIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -935,29 +935,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAProtocolIdPattern"}
-```
-
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
-
-## Definitions group EGAISO8601DatePattern
-
-Reference this group by using
-
-```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAISO8601DatePattern"}
-```
-
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
-
-## Definitions group EGAISO8601DurationPattern
-
-Reference this group by using
-
-```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/EGAISO8601DurationPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/EGAProtocolIdPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -968,7 +946,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/filenameFiletypePatternCheck"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -979,12 +957,12 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayFiletypes"}
 ```
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                               |
-| :---------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [filetype](#filetype-1) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes/properties/filetype") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                  |
+| :---------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [filetype](#filetype-1) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayFiletypes/properties/filetype") |
 
 ### filetype
 
@@ -998,7 +976,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayFiletypes/properties/filetype")
+*   defined in: [EGA common metadata definitions](ega-4-defs-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayFiletypes/properties/filetype")
 
 #### filetype Type
 
@@ -1046,7 +1024,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/celFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/celFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1057,7 +1035,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tsvFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/tsvFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1068,7 +1046,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastqFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fastqFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1079,7 +1057,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastaFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fastaFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1090,7 +1068,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sdrfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sdrfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1101,7 +1079,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/idfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/idfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1112,7 +1090,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/vcfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/vcfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1123,7 +1101,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sraFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sraFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1134,7 +1112,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/srfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/srfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1145,7 +1123,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sffFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sffFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1156,7 +1134,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bamFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bamFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1167,7 +1145,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cramFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/cramFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1178,7 +1156,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/xlsxFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/xlsxFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1189,7 +1167,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/csvFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/csvFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1200,7 +1178,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bedFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bedFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1211,7 +1189,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/idatFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/idatFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1222,7 +1200,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/mapFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/mapFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1233,7 +1211,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pedFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/pedFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1244,7 +1222,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bimFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bimFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1255,7 +1233,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/famFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/famFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1266,7 +1244,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/txtFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/txtFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1277,7 +1255,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/expFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/expFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1288,7 +1266,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gprFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/gprFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1299,7 +1277,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pyFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/pyFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1310,7 +1288,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/shFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/shFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1321,7 +1299,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/adfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/adfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1332,7 +1310,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/md5FileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/md5FileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1343,7 +1321,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hapFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/hapFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1354,7 +1332,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/csfastaFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/csfastaFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1365,7 +1343,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1376,7 +1354,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tgzFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/tgzFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1387,7 +1365,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/zipFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/zipFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1398,7 +1376,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/htmlFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/htmlFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1409,7 +1387,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hicFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/hicFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1420,7 +1398,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tifFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/tifFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1431,7 +1409,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/mdFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/mdFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1442,7 +1420,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/matlabFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/matlabFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1453,7 +1431,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/perlFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/perlFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1464,7 +1442,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1475,7 +1453,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tarFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/tarFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1486,7 +1464,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/snpFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/snpFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1497,7 +1475,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/xmlFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/xmlFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1508,7 +1486,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/svgFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/svgFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1519,7 +1497,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pngFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/pngFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1530,7 +1508,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/jpgFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/jpgFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1541,7 +1519,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gtcFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/gtcFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1552,7 +1530,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/hdf5FileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/hdf5FileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1563,7 +1541,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fast5FileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fast5FileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1574,7 +1552,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pairFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/pairFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1585,7 +1563,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bgiFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bgiFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1596,7 +1574,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bgenFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bgenFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1607,7 +1585,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1618,7 +1596,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/pxfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/pxfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1629,7 +1607,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/loomFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/loomFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1640,7 +1618,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bax.h5FileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bax.h5FileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1651,7 +1629,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bas.h5FileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bas.h5FileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1662,7 +1640,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/asmFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/asmFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1673,7 +1651,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/csiFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/csiFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1684,7 +1662,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/tbiFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/tbiFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1695,7 +1673,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/bcfFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/bcfFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1706,7 +1684,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/qual454FileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/qual454FileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1717,7 +1695,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/qualsolidFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/qualsolidFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1728,7 +1706,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastqIlluminaFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fastqIlluminaFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1739,7 +1717,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastqHelicosFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fastqHelicosFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1750,7 +1728,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastqSangerFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fastqSangerFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1761,7 +1739,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/fastqSolexaFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fastqSolexaFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1772,7 +1750,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/samFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/samFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1783,7 +1761,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/craiFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/craiFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1794,7 +1772,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/baiFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/baiFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1805,7 +1783,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/mtxFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/mtxFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1816,7 +1794,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/mexFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/mexFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1827,7 +1805,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gmxFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/gmxFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1838,7 +1816,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/gmtFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/gmtFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1849,7 +1827,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/grpFileFilenamePattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/grpFileFilenamePattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -1860,14 +1838,14 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession"}
 ```
 
-| Property                                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                    |
-| :------------------------------------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectExternalAccessionIdentifier](#objectexternalaccessionidentifier)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-object-external-accession-properties-identifier-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionIdentifier")   |
-| [objectExternalAccessionURI](#objectexternalaccessionuri)                 | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-object-external-accession-properties-uri-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionURI")                 |
-| [objectExternalAccessionDescription](#objectexternalaccessiondescription) | Multiple | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-object-external-accession-properties-description-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionDescription") |
+| Property                                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
+| :------------------------------------------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [objectExternalAccessionIdentifier](#objectexternalaccessionidentifier)   | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionIdentifier")   |
+| [objectExternalAccessionURI](#objectexternalaccessionuri)                 | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionURI")                 |
+| [objectExternalAccessionDescription](#objectexternalaccessiondescription) | Multiple | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionDescription") |
 
 ### objectExternalAccessionIdentifier
 
@@ -1877,19 +1855,19 @@ Unique identifier of an external record. Its 'termId' (e.g. 'biosample:SAMEA7616
 
 *   is optional
 
-*   Type: `object` ([Identifier of the external accession](ega-4-definitions-object-external-accession-properties-identifier-of-the-external-accession.md))
+*   Type: `object` ([Identifier of the external accession](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-object-external-accession-properties-identifier-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionIdentifier")
+*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionIdentifier")
 
 #### objectExternalAccessionIdentifier Type
 
-`object` ([Identifier of the external accession](ega-4-definitions-object-external-accession-properties-identifier-of-the-external-accession.md))
+`object` ([Identifier of the external accession](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ### objectExternalAccessionURI
 
@@ -1899,19 +1877,19 @@ Full or partial URL/URI of the external accession, for systems to resolve it. Sh
 
 *   is optional
 
-*   Type: `string` ([URI of the external accession](ega-4-definitions-object-external-accession-properties-uri-of-the-external-accession.md))
+*   Type: `string` ([URI of the external accession](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-object-external-accession-properties-uri-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionURI")
+*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionURI")
 
 #### objectExternalAccessionURI Type
 
-`string` ([URI of the external accession](ega-4-definitions-object-external-accession-properties-uri-of-the-external-accession.md))
+`string` ([URI of the external accession](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md))
 
-all of
+#### objectExternalAccessionURI Constraints
 
-*   [URL/URI pattern](ega-4-definitions-object-external-accession-properties-uri-of-the-external-accession-allof-urluri-pattern.md "check type definition")
+**URI**: the string must be a URI, according to [RFC 3986](https://tools.ietf.org/html/rfc3986 "check the specification")
 
 #### objectExternalAccessionURI Examples
 
@@ -1935,15 +1913,15 @@ Optional description of the external accession, used to add context to the ident
 
 *   is optional
 
-*   Type: any of the following: `string` or `number` ([Description of the external accession](ega-4-definitions-object-external-accession-properties-description-of-the-external-accession.md))
+*   Type: any of the following: `string` or `number` ([Description of the external accession](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-object-external-accession-properties-description-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/objectExternalAccession/properties/objectExternalAccessionDescription")
+*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionDescription")
 
 #### objectExternalAccessionDescription Type
 
-any of the following: `string` or `number` ([Description of the external accession](ega-4-definitions-object-external-accession-properties-description-of-the-external-accession.md))
+any of the following: `string` or `number` ([Description of the external accession](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md))
 
 #### objectExternalAccessionDescription Examples
 
@@ -1972,13 +1950,13 @@ any of the following: `string` or `number` ([Description of the external accessi
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation"}
 ```
 
-| Property                  | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :------------------------ | :----- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [arrayLabel](#arraylabel) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/arrayLabel")                              |
-| [objectId](#objectid)     | Merged | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/objectId") |
+| Property                  | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                           |
+| :------------------------ | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [arrayLabel](#arraylabel) | Merged | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/arrayLabel")                              |
+| [objectId](#objectid)     | Merged | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/objectId") |
 
 ### arrayLabel
 
@@ -1988,21 +1966,21 @@ Chemical conjugated to nucleic acid/proteins to label them before microarray hyb
 
 *   is required
 
-*   Type: `object` ([Repeatable arrayLabel node](ega-4-definitions-repeatable-arraylabel-node.md))
+*   Type: `object` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/arrayLabel")
+*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/arrayLabel")
 
 #### arrayLabel Type
 
-`object` ([Repeatable arrayLabel node](ega-4-definitions-repeatable-arraylabel-node.md))
+`object` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
 
 any of
 
-*   [Untitled undefined type in EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node-anyof-0.md "check type definition")
+*   [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in EGA common metadata definitions](ega-4-definitions-repeatable-arraylabel-node-anyof-1.md "check type definition")
+*   [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-1.md "check type definition")
 
 ### objectId
 
@@ -2012,68 +1990,68 @@ any of
 
 *   is required
 
-*   Type: `object` ([Object's IDs block](ega-4-definitions-repeatable-sample-label-node-properties-objects-ids-block.md))
+*   Type: `object` ([Object's IDs block](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sampleLabelAssociation/properties/objectId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/objectId")
 
 #### objectId Type
 
-`object` ([Object's IDs block](ega-4-definitions-repeatable-sample-label-node-properties-objects-ids-block.md))
+`object` ([Object's IDs block](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md))
 
 all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that sample EGA ID (EGAN) pattern is correct](ega-4-definitions-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct.md "check type definition")
+*   [Check that sample EGA ID (EGAN) pattern is correct](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct.md "check type definition")
 
 ## Definitions group oneRelationshipEnd
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/oneRelationshipEnd"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd"}
 ```
 
-| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                     |
-| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectId](#objectid-1)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/oneRelationshipEnd/properties/objectId")    |
-| [objectType](#objecttype) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/oneRelationshipEnd/properties/objectType") |
+| Property                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                        |
+| :------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [objectId](#objectid-1)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectId")    |
+| [objectType](#objecttype) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectType") |
 
 ### objectId
 
-Node containing the main identifiers of the relationship's object (e.g. alias, centerName...), inherited from the common definitions (#/definitions/objectCoreId).
+Node containing the main identifiers of the relationship's object (e.g. alias, centerName...), inherited from the common definitions (#/$defs/objectCoreId).
 
 `objectId`
 
 *   is required
 
-*   Type: `object` ([Relationship's object's IDs block](ega-4-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md))
+*   Type: `object` ([Relationship's object's IDs block](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/oneRelationshipEnd/properties/objectId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectId")
 
 #### objectId Type
 
-`object` ([Relationship's object's IDs block](ega-4-definitions-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md))
+`object` ([Relationship's object's IDs block](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md))
 
 all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 ### objectType
 
@@ -2083,15 +2061,15 @@ Type of the relationship's object, chosen from a list of CV (e.g. experiment, da
 
 *   is required
 
-*   Type: `string` ([Type of the relationship's object](ega-4-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md))
+*   Type: `string` ([Type of the relationship's object](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/oneRelationshipEnd/properties/objectType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectType")
 
 #### objectType Type
 
-`string` ([Type of the relationship's object](ega-4-definitions-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md))
+`string` ([Type of the relationship's object](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md))
 
 #### objectType Constraints
 
@@ -2124,7 +2102,7 @@ Type of the relationship's object, chosen from a list of CV (e.g. experiment, da
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/subjectId"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/subjectId"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2135,7 +2113,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/biologicalSex"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/biologicalSex"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2146,13 +2124,13 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor"}
 ```
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                       |
-| :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [organismTaxon](#organismtaxon) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor/properties/organismTaxon")              |
-| [commonName](#commonname)       | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor/properties/commonName") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                          |
+| :------------------------------ | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [organismTaxon](#organismtaxon) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/organismTaxon")              |
+| [commonName](#commonname)       | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/commonName") |
 
 ### organismTaxon
 
@@ -2162,19 +2140,19 @@ Taxonomic classification of the organism (e.g. 'NCBITaxon:9606' and 'homo sapien
 
 *   is required
 
-*   Type: `object` ([NCBI Taxon of the organism](ega-4-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md))
+*   Type: `object` ([NCBI Taxon of the organism](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor/properties/organismTaxon")
+*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/organismTaxon")
 
 #### organismTaxon Type
 
-`object` ([NCBI Taxon of the organism](ega-4-definitions-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md))
+`object` ([NCBI Taxon of the organism](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ### commonName
 
@@ -2184,15 +2162,15 @@ Common name (e.g. 'human') used to designate a plant, animal or other organism, 
 
 *   is optional
 
-*   Type: `string` ([Biologic entity classification common name](ega-4-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
+*   Type: `string` ([Biologic entity classification common name](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/organismDescriptor/properties/commonName")
+*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/commonName")
 
 #### commonName Type
 
-`string` ([Biologic entity classification common name](ega-4-definitions-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
+`string` ([Biologic entity classification common name](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
 
 #### commonName Constraints
 
@@ -2217,15 +2195,15 @@ Common name (e.g. 'human') used to designate a plant, animal or other organism, 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor"}
 ```
 
-| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                         |
-| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [objectType](#objecttype-1)                   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-type-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/objectType")                                |
-| [describedBySchemaUri](#describedbyschemauri) | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-uri-of-the-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/describedBySchemaUri")                       |
-| [objectSchemaVersion](#objectschemaversion)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-version-of-the-objects-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/objectSchemaVersion")            |
-| [commonSchemaVersion](#commonschemaversion)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-version-of-the-common-definitions-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/commonSchemaVersion") |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
+| :-------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [objectType](#objecttype-1)                   | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-type-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectType")                                |
+| [describedBySchemaUri](#describedbyschemauri) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/describedBySchemaUri")                       |
+| [objectSchemaVersion](#objectschemaversion)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectSchemaVersion")            |
+| [commonSchemaVersion](#commonschemaversion)   | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/commonSchemaVersion") |
 
 ### objectType
 
@@ -2235,15 +2213,15 @@ Type of the object (e.g. 'sample') the JSON document describes.
 
 *   is required
 
-*   Type: `string` ([Type of the object](ega-4-definitions-schema-descriptor-properties-type-of-the-object.md))
+*   Type: `string` ([Type of the object](ega-4-defs-schema-descriptor-properties-type-of-the-object.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-type-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/objectType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-type-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectType")
 
 #### objectType Type
 
-`string` ([Type of the object](ega-4-definitions-schema-descriptor-properties-type-of-the-object.md))
+`string` ([Type of the object](ega-4-defs-schema-descriptor-properties-type-of-the-object.md))
 
 #### objectType Constraints
 
@@ -2272,19 +2250,19 @@ URI of the schema that describes the JSON document (e.g. 'my\_sample.json')
 
 *   is required
 
-*   Type: `string` ([URI of the schema](ega-4-definitions-schema-descriptor-properties-uri-of-the-schema.md))
+*   Type: `string` ([URI of the schema](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-uri-of-the-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/describedBySchemaUri")
+*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/describedBySchemaUri")
 
 #### describedBySchemaUri Type
 
-`string` ([URI of the schema](ega-4-definitions-schema-descriptor-properties-uri-of-the-schema.md))
+`string` ([URI of the schema](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md))
 
-all of
+#### describedBySchemaUri Constraints
 
-*   [URL/URI pattern](ega-4-definitions-schema-descriptor-properties-uri-of-the-schema-allof-urluri-pattern.md "check type definition")
+**URI**: the string must be a URI, according to [RFC 3986](https://tools.ietf.org/html/rfc3986 "check the specification")
 
 #### describedBySchemaUri Examples
 
@@ -2300,19 +2278,19 @@ The version of the object's schema, the one specific for the object the JSON doc
 
 *   is required
 
-*   Type: `string` ([Version of the object's schema](ega-4-definitions-schema-descriptor-properties-version-of-the-objects-schema.md))
+*   Type: `string` ([Version of the object's schema](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-version-of-the-objects-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/objectSchemaVersion")
+*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectSchemaVersion")
 
 #### objectSchemaVersion Type
 
-`string` ([Version of the object's schema](ega-4-definitions-schema-descriptor-properties-version-of-the-objects-schema.md))
+`string` ([Version of the object's schema](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md))
 
 all of
 
-*   [Semantic versioning pattern](ega-4-definitions-schema-descriptor-properties-version-of-the-objects-schema-allof-semantic-versioning-pattern.md "check type definition")
+*   [Semantic versioning pattern](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema-allof-semantic-versioning-pattern.md "check type definition")
 
 ### commonSchemaVersion
 
@@ -2322,26 +2300,26 @@ The version of the common definition's schema, the one containing all shared def
 
 *   is required
 
-*   Type: `string` ([Version of the common definition's schema](ega-4-definitions-schema-descriptor-properties-version-of-the-common-definitions-schema.md))
+*   Type: `string` ([Version of the common definition's schema](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-schema-descriptor-properties-version-of-the-common-definitions-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/schemaDescriptor/properties/commonSchemaVersion")
+*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/commonSchemaVersion")
 
 #### commonSchemaVersion Type
 
-`string` ([Version of the common definition's schema](ega-4-definitions-schema-descriptor-properties-version-of-the-common-definitions-schema.md))
+`string` ([Version of the common definition's schema](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md))
 
 all of
 
-*   [Semantic versioning pattern](ega-4-definitions-schema-descriptor-properties-version-of-the-common-definitions-schema-allof-semantic-versioning-pattern.md "check type definition")
+*   [Semantic versioning pattern](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema-allof-semantic-versioning-pattern.md "check type definition")
 
 ## Definitions group semanticVersioningPattern
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/semanticVersioningPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/semanticVersioningPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2352,15 +2330,15 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails"}
 ```
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                      |
-| :---------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [individualFullName](#individualfullname) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-contact-details-properties-full-name-of-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/individualFullName") |
-| [institutionName](#institutionname)       | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-contact-details-properties-institution-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/institutionName")              |
-| [emailAddress](#emailaddress)             | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-contact-details-properties-email-address.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/emailAddress")                    |
-| [phoneNumber](#phonenumber)               | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-contact-details-properties-phone-number.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/phoneNumber")                      |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                         |
+| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [individualFullName](#individualfullname) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-contact-details-properties-full-name-of-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/individualFullName") |
+| [institutionName](#institutionname)       | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-contact-details-properties-institution-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/institutionName")              |
+| [emailAddress](#emailaddress)             | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-contact-details-properties-email-address.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/emailAddress")                    |
+| [phoneNumber](#phonenumber)               | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-contact-details-properties-phone-number.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/phoneNumber")                      |
 
 ### individualFullName
 
@@ -2370,15 +2348,15 @@ A full set of all personal names by which an individual is known and that can be
 
 *   is optional
 
-*   Type: `string` ([Full name of an individual](ega-4-definitions-contact-details-properties-full-name-of-an-individual.md))
+*   Type: `string` ([Full name of an individual](ega-4-defs-contact-details-properties-full-name-of-an-individual.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-contact-details-properties-full-name-of-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/individualFullName")
+*   defined in: [EGA common metadata definitions](ega-4-defs-contact-details-properties-full-name-of-an-individual.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/individualFullName")
 
 #### individualFullName Type
 
-`string` ([Full name of an individual](ega-4-definitions-contact-details-properties-full-name-of-an-individual.md))
+`string` ([Full name of an individual](ega-4-defs-contact-details-properties-full-name-of-an-individual.md))
 
 #### individualFullName Constraints
 
@@ -2398,15 +2376,15 @@ The full name of an institution the contact belongs to. In case there are severa
 
 *   is optional
 
-*   Type: `string` ([Institution name](ega-4-definitions-contact-details-properties-institution-name.md))
+*   Type: `string` ([Institution name](ega-4-defs-contact-details-properties-institution-name.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-contact-details-properties-institution-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/institutionName")
+*   defined in: [EGA common metadata definitions](ega-4-defs-contact-details-properties-institution-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/institutionName")
 
 #### institutionName Type
 
-`string` ([Institution name](ega-4-definitions-contact-details-properties-institution-name.md))
+`string` ([Institution name](ega-4-defs-contact-details-properties-institution-name.md))
 
 #### institutionName Constraints
 
@@ -2426,30 +2404,28 @@ Current email address that would be used in case the contact needs to be reached
 
 *   is required
 
-*   Type: `string` ([Email address](ega-4-definitions-contact-details-properties-email-address.md))
+*   Type: `string` ([Email address](ega-4-defs-contact-details-properties-email-address.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-contact-details-properties-email-address.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/emailAddress")
+*   defined in: [EGA common metadata definitions](ega-4-defs-contact-details-properties-email-address.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/emailAddress")
 
 #### emailAddress Type
 
-`string` ([Email address](ega-4-definitions-contact-details-properties-email-address.md))
+`string` ([Email address](ega-4-defs-contact-details-properties-email-address.md))
 
 #### emailAddress Constraints
 
-**pattern**: the string must match the following regular expression:&#x20;
-
-```regexp
-^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
-```
-
-[try pattern](https://regexr.com/?expression=%5E\(%5Ba-zA-Z0-9_%5C-%5C.%5D%2B\)%40\(%5Ba-zA-Z0-9_%5C-%5C.%5D%2B\)%5C.\(%5Ba-zA-Z%5D%7B2%2C5%7D\)%24 "try regular expression with regexr.com")
+**(international) email**: the string must be an (international) email address, according to [RFC 6531](https://tools.ietf.org/html/rfc6531 "check the specification")
 
 #### emailAddress Examples
 
 ```json
 "myname@ebi.ac.uk"
+```
+
+```json
+"üser@example.com"
 ```
 
 ### phoneNumber
@@ -2460,15 +2436,15 @@ Current phone number that would be used in case the contact needs to be reached.
 
 *   is optional
 
-*   Type: `string` ([Phone number](ega-4-definitions-contact-details-properties-phone-number.md))
+*   Type: `string` ([Phone number](ega-4-defs-contact-details-properties-phone-number.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-contact-details-properties-phone-number.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/contactDetails/properties/phoneNumber")
+*   defined in: [EGA common metadata definitions](ega-4-defs-contact-details-properties-phone-number.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/contactDetails/properties/phoneNumber")
 
 #### phoneNumber Type
 
-`string` ([Phone number](ega-4-definitions-contact-details-properties-phone-number.md))
+`string` ([Phone number](ega-4-defs-contact-details-properties-phone-number.md))
 
 #### phoneNumber Constraints
 
@@ -2491,7 +2467,7 @@ Current phone number that would be used in case the contact needs to be reached.
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/studyDesignKeywords"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/studyDesignKeywords"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2502,13 +2478,13 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier"}
 ```
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                            |
-| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [organismDescriptor](#organismdescriptor) | `object` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/organismDescriptor")       |
-| [lociDescriptor](#locidescriptor)         | `array`  | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor") |
+| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
+| :---------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [organismDescriptor](#organismdescriptor) | `object` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/organismDescriptor")       |
+| [lociDescriptor](#locidescriptor)         | `array`  | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor") |
 
 ### organismDescriptor
 
@@ -2518,15 +2494,15 @@ This property describes the material entity the sample consists in. That is, an 
 
 *   is required
 
-*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
+*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/organismDescriptor")
+*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/organismDescriptor")
 
 #### organismDescriptor Type
 
-`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-definitions-organism-obi0100026-descriptor-block.md))
+`object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
 ### lociDescriptor
 
@@ -2536,15 +2512,15 @@ Array of locus context items. Multiple loci can be described in the array if the
 
 *   is required
 
-*   Type: `object[]` ([Locus context item](ega-4-definitions-locus-identifier-properties-loci-context-array-locus-context-item.md))
+*   Type: `object[]` ([Locus context item](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/locusIdentifier/properties/lociDescriptor")
+*   defined in: [EGA common metadata definitions](ega-4-defs-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor")
 
 #### lociDescriptor Type
 
-`object[]` ([Locus context item](ega-4-definitions-locus-identifier-properties-loci-context-array-locus-context-item.md))
+`object[]` ([Locus context item](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item.md))
 
 #### lociDescriptor Constraints
 
@@ -2557,15 +2533,15 @@ Array of locus context items. Multiple loci can be described in the array if the
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor"}
 ```
 
-| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                       |
-| :---------------------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [geneIdentifier](#geneidentifier)                     | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-gene-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/geneIdentifier")                                 |
-| [geneDescription](#genedescription)                   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/geneDescription")                        |
-| [alternateGeneIdentifiers](#alternategeneidentifiers) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-alternate-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneIdentifiers")            |
-| [relatedGeneIdentifiers](#relatedgeneidentifiers)     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/relatedGeneIdentifiers") |
+| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
+| :---------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [geneIdentifier](#geneidentifier)                     | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-gene-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneIdentifier")                                 |
+| [geneDescription](#genedescription)                   | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneDescription")                        |
+| [alternateGeneIdentifiers](#alternategeneidentifiers) | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/alternateGeneIdentifiers")            |
+| [relatedGeneIdentifiers](#relatedgeneidentifiers)     | `array`  | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/relatedGeneIdentifiers") |
 
 ### geneIdentifier
 
@@ -2575,19 +2551,19 @@ Property uniquely identifying a gene. It consists of a 'termId' and 'termLabel',
 
 *   is required
 
-*   Type: `object` ([Gene identifier](ega-4-definitions-gene-descriptor-properties-gene-identifier.md))
+*   Type: `object` ([Gene identifier](ega-4-defs-gene-descriptor-properties-gene-identifier.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-gene-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/geneIdentifier")
+*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-gene-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneIdentifier")
 
 #### geneIdentifier Type
 
-`object` ([Gene identifier](ega-4-definitions-gene-descriptor-properties-gene-identifier.md))
+`object` ([Gene identifier](ega-4-defs-gene-descriptor-properties-gene-identifier.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ### geneDescription
 
@@ -2597,15 +2573,15 @@ Free-text description of the gene, only to be used to provide additional context
 
 *   is optional
 
-*   Type: `string` ([Description of the gene](ega-4-definitions-gene-descriptor-properties-description-of-the-gene.md))
+*   Type: `string` ([Description of the gene](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/geneDescription")
+*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneDescription")
 
 #### geneDescription Type
 
-`string` ([Description of the gene](ega-4-definitions-gene-descriptor-properties-description-of-the-gene.md))
+`string` ([Description of the gene](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md))
 
 #### geneDescription Constraints
 
@@ -2625,15 +2601,15 @@ Array of alternate identifiers for this gene. This array can be used to provide 
 
 *   is optional
 
-*   Type: `object[]` ([Alternate gene identifier item](ega-4-definitions-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md))
+*   Type: `object[]` ([Alternate gene identifier item](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-alternate-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/alternateGeneIdentifiers")
+*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/alternateGeneIdentifiers")
 
 #### alternateGeneIdentifiers Type
 
-`object[]` ([Alternate gene identifier item](ega-4-definitions-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md))
+`object[]` ([Alternate gene identifier item](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md))
 
 #### alternateGeneIdentifiers Constraints
 
@@ -2649,15 +2625,15 @@ Array of related identifiers (e.g. termIds 'VGNC:97422', 'MGI:2385071', 'RGD:130
 
 *   is optional
 
-*   Type: `object[]` ([Related gene identifier item](ega-4-definitions-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md))
+*   Type: `object[]` ([Related gene identifier item](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/geneDescriptor/properties/relatedGeneIdentifiers")
+*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/relatedGeneIdentifiers")
 
 #### relatedGeneIdentifiers Type
 
-`object[]` ([Related gene identifier item](ega-4-definitions-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md))
+`object[]` ([Related gene identifier item](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md))
 
 #### relatedGeneIdentifiers Constraints
 
@@ -2670,13 +2646,13 @@ Array of related identifiers (e.g. termIds 'VGNC:97422', 'MGI:2385071', 'RGD:130
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor"}
 ```
 
-| Property                              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                              |
-| :------------------------------------ | :----- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ncbiAssembly](#ncbiassembly)         | Merged | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssembly")          |
-| [ncbiAssemblyUnit](#ncbiassemblyunit) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnit") |
+| Property                              | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
+| :------------------------------------ | :----- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ncbiAssembly](#ncbiassembly)         | Merged | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor/properties/ncbiAssembly")          |
+| [ncbiAssemblyUnit](#ncbiassemblyunit) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnit") |
 
 ### ncbiAssembly
 
@@ -2686,19 +2662,19 @@ Node defining an Assembly (e.g. 'GCF\_000001405.26'). For example, the assembly 
 
 *   is required
 
-*   Type: `object` ([NCBI Assembly](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly.md))
+*   Type: `object` ([NCBI Assembly](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssembly")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor/properties/ncbiAssembly")
 
 #### ncbiAssembly Type
 
-`object` ([NCBI Assembly](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly.md))
+`object` ([NCBI Assembly](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ### ncbiAssemblyUnit
 
@@ -2708,34 +2684,34 @@ NCBI's identifier of the assembly unit. An assembly unit is defined as the colle
 
 *   is optional
 
-*   Type: `object` ([NCBI assembly unit](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md))
+*   Type: `object` ([NCBI assembly unit](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnit")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor/properties/ncbiAssemblyUnit")
 
 #### ncbiAssemblyUnit Type
 
-`object` ([NCBI assembly unit](ega-4-definitions-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md))
+`object` ([NCBI assembly unit](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-unit.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## Definitions group genomicSequenceDescriptor
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor"}
 ```
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                         |
-| :------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assemblyDescriptor](#assemblydescriptor)   | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/assemblyDescriptor")                                     |
-| [sequenceCoordinates](#sequencecoordinates) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/sequenceCoordinates")                                         |
-| [dnaSequenceStrand](#dnasequencestrand)     | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/dnaSequenceStrand")                                            |
-| [nucleicAcidSequence](#nucleicacidsequence) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/nucleicAcidSequence") |
+| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                            |
+| :------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [assemblyDescriptor](#assemblydescriptor)   | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/assemblyDescriptor")                                     |
+| [sequenceCoordinates](#sequencecoordinates) | Merged   | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/sequenceCoordinates")                                         |
+| [dnaSequenceStrand](#dnasequencestrand)     | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/dnaSequenceStrand")                                            |
+| [nucleicAcidSequence](#nucleicacidsequence) | `string` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/nucleicAcidSequence") |
 
 ### assemblyDescriptor
 
@@ -2745,15 +2721,15 @@ Node describing a sequence assembly referenced in [NCBI's Assembly database](htt
 
 *   is optional
 
-*   Type: `object` ([NCBI's Assembly descriptor](ega-4-definitions-ncbis-assembly-descriptor.md))
+*   Type: `object` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/assemblyDescriptor")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/assemblyDescriptor")
 
 #### assemblyDescriptor Type
 
-`object` ([NCBI's Assembly descriptor](ega-4-definitions-ncbis-assembly-descriptor.md))
+`object` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
 ### sequenceCoordinates
 
@@ -2763,21 +2739,21 @@ A position in a map (for example a genetic map), either a single position (e.g. 
 
 *   is optional
 
-*   Type: `object` ([Sequence coordinates](ega-4-definitions-sequence-coordinates.md))
+*   Type: `object` ([Sequence coordinates](ega-4-defs-sequence-coordinates.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/sequenceCoordinates")
+*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/sequenceCoordinates")
 
 #### sequenceCoordinates Type
 
-`object` ([Sequence coordinates](ega-4-definitions-sequence-coordinates.md))
+`object` ([Sequence coordinates](ega-4-defs-sequence-coordinates.md))
 
 any of
 
-*   [Either a single position is given](ega-4-definitions-sequence-coordinates-anyof-either-a-single-position-is-given.md "check type definition")
+*   [Either a single position is given](ega-4-defs-sequence-coordinates-anyof-either-a-single-position-is-given.md "check type definition")
 
-*   [Or the whole sequence interval](ega-4-definitions-sequence-coordinates-anyof-or-the-whole-sequence-interval.md "check type definition")
+*   [Or the whole sequence interval](ega-4-defs-sequence-coordinates-anyof-or-the-whole-sequence-interval.md "check type definition")
 
 ### dnaSequenceStrand
 
@@ -2787,15 +2763,15 @@ DNA sequence is double-stranded. By convention, for a reference chromosome, one 
 
 *   is optional
 
-*   Type: `string` ([DNA Sequence strand](ega-4-definitions-dna-sequence-strand.md))
+*   Type: `string` ([DNA Sequence strand](ega-4-defs-dna-sequence-strand.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/dnaSequenceStrand")
+*   defined in: [EGA common metadata definitions](ega-4-defs-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/dnaSequenceStrand")
 
 #### dnaSequenceStrand Type
 
-`string` ([DNA Sequence strand](ega-4-definitions-dna-sequence-strand.md))
+`string` ([DNA Sequence strand](ega-4-defs-dna-sequence-strand.md))
 
 #### dnaSequenceStrand Constraints
 
@@ -2814,15 +2790,15 @@ Sequence of characters representing a specific nucleic (i.e. molecular species -
 
 *   is optional
 
-*   Type: `string` ([Nucleic acid sequence](ega-4-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
+*   Type: `string` ([Nucleic acid sequence](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/genomicSequenceDescriptor/properties/nucleicAcidSequence")
+*   defined in: [EGA common metadata definitions](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/nucleicAcidSequence")
 
 #### nucleicAcidSequence Type
 
-`string` ([Nucleic acid sequence](ega-4-definitions-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
+`string` ([Nucleic acid sequence](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
 
 #### nucleicAcidSequence Constraints
 
@@ -2853,13 +2829,13 @@ Sequence of characters representing a specific nucleic (i.e. molecular species -
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequenceCoordinates"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates"}
 ```
 
-| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
-| :------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [singlePosition](#singleposition)     | `number` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequenceCoordinates/properties/singlePosition") |
-| [sequenceInterval](#sequenceinterval) | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequenceCoordinates/properties/sequenceInterval")      |
+| Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
+| :------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [singlePosition](#singleposition)     | `number` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/singlePosition") |
+| [sequenceInterval](#sequenceinterval) | `object` | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval")      |
 
 ### singlePosition
 
@@ -2869,15 +2845,15 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 *   is optional
 
-*   Type: `number` ([Single sequence position](ega-4-definitions-sequence-coordinates-properties-single-sequence-position.md))
+*   Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequenceCoordinates/properties/singlePosition")
+*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/singlePosition")
 
 #### singlePosition Type
 
-`number` ([Single sequence position](ega-4-definitions-sequence-coordinates-properties-single-sequence-position.md))
+`number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md))
 
 #### singlePosition Examples
 
@@ -2901,22 +2877,22 @@ The location of a sequence feature in a genome, defined by its start (e.g. 71366
 
 *   is optional
 
-*   Type: `object` ([Sequence interval](ega-4-definitions-sequence-coordinates-properties-sequence-interval.md))
+*   Type: `object` ([Sequence interval](ega-4-defs-sequence-coordinates-properties-sequence-interval.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/sequenceCoordinates/properties/sequenceInterval")
+*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval")
 
 #### sequenceInterval Type
 
-`object` ([Sequence interval](ega-4-definitions-sequence-coordinates-properties-sequence-interval.md))
+`object` ([Sequence interval](ega-4-defs-sequence-coordinates-properties-sequence-interval.md))
 
 ## Definitions group dnaSequenceStrand
 
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/dnaSequenceStrand"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/dnaSequenceStrand"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2927,7 +2903,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/nucleicAcidSequence"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/nucleicAcidSequence"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2938,7 +2914,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/singleSequencePosition"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/singleSequencePosition"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2949,7 +2925,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieGeneralPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/curieGeneralPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2960,7 +2936,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieRefseqPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/curieRefseqPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2971,7 +2947,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieHgncSymbolPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/curieHgncSymbolPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2982,7 +2958,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieHgncIdentifierPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/curieHgncIdentifierPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -2993,7 +2969,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieNcbiGeneIdentifierPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/curieNcbiGeneIdentifierPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3004,7 +2980,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/curieNcbiAssemblyPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/curieNcbiAssemblyPattern"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3015,13 +2991,13 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor"}
 ```
 
-| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                      |
-| :-------------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [assayInstrument](#assayinstrument)                 | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrument")        |
-| [assayInstrumentPlatform](#assayinstrumentplatform) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrumentPlatform") |
+| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                         |
+| :-------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [assayInstrument](#assayinstrument)                 | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrument")        |
+| [assayInstrumentPlatform](#assayinstrumentplatform) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrumentPlatform") |
 
 ### assayInstrument
 
@@ -3031,15 +3007,15 @@ The general categories (e.g. sequencer) in which assay instruments are categoriz
 
 *   is required
 
-*   Type: `string` ([Assay's instrument category](ega-4-definitions-assay-technology-properties-assays-instrument-category.md))
+*   Type: `string` ([Assay's instrument category](ega-4-defs-assay-technology-properties-assays-instrument-category.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrument")
+*   defined in: [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrument")
 
 #### assayInstrument Type
 
-`string` ([Assay's instrument category](ega-4-definitions-assay-technology-properties-assays-instrument-category.md))
+`string` ([Assay's instrument category](ega-4-defs-assay-technology-properties-assays-instrument-category.md))
 
 #### assayInstrument Constraints
 
@@ -3058,15 +3034,15 @@ Platform of the used instrument (e.g. 'Illumina HiSeq 2500'). Given the heteroge
 
 *   is required
 
-*   Type: `string` ([Assay instrument platform](ega-4-definitions-assay-technology-properties-assay-instrument-platform.md))
+*   Type: `string` ([Assay instrument platform](ega-4-defs-assay-technology-properties-assay-instrument-platform.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/assayTechnologyDescriptor/properties/assayInstrumentPlatform")
+*   defined in: [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrumentPlatform")
 
 #### assayInstrumentPlatform Type
 
-`string` ([Assay instrument platform](ega-4-definitions-assay-technology-properties-assay-instrument-platform.md))
+`string` ([Assay instrument platform](ega-4-defs-assay-technology-properties-assay-instrument-platform.md))
 
 #### assayInstrumentPlatform Constraints
 
@@ -3091,7 +3067,7 @@ Platform of the used instrument (e.g. 'Illumina HiSeq 2500'). Given the heteroge
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/libraryLayout"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/libraryLayout"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3102,7 +3078,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/spotDescriptor"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3113,7 +3089,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/typeOfData"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/typeOfData"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3124,7 +3100,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/referenceAlignmentDetails"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/referenceAlignmentDetails"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -3135,12 +3111,12 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/materialAnatomicalEntity"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/materialAnatomicalEntity"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                  |
-| :---------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [termId](#termid) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/materialAnatomicalEntity/properties/termId") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                     |
+| :---------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [termId](#termid) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/materialAnatomicalEntity/properties/termId") |
 
 ### termId
 
@@ -3150,15 +3126,15 @@ Reference this group by using
 
 *   is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-4-definitions-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md))
+*   Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/materialAnatomicalEntity/properties/termId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/materialAnatomicalEntity/properties/termId")
 
 #### termId Type
 
-unknown ([Ontology constraints for this specific termId](ega-4-definitions-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md))
+unknown ([Ontology constraints for this specific termId](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md))
 
 #### termId Examples
 
@@ -3175,12 +3151,12 @@ unknown ([Ontology constraints for this specific termId](ega-4-definitions-mater
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeReferencedBy"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeReferencedBy"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :---------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype-1) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-referencedby-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeReferencedBy/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :---------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-1) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-referencedby-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeReferencedBy/properties/rType") |
 
 ### rType
 
@@ -3194,7 +3170,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-referencedby-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeReferencedBy/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-referencedby-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeReferencedBy/properties/rType")
 
 #### rType Type
 
@@ -3213,12 +3189,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeGroupedWith"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeGroupedWith"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
-| :---------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rType](#rtype-2) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-groupedwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeGroupedWith/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :---------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-2) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-groupedwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeGroupedWith/properties/rType") |
 
 ### rType
 
@@ -3232,7 +3208,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-groupedwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeGroupedWith/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-groupedwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeGroupedWith/properties/rType")
 
 #### rType Type
 
@@ -3251,12 +3227,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeMemberOf"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeMemberOf"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                              |
-| :---------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rType](#rtype-3) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-memberof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeMemberOf/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                 |
+| :---------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-3) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-memberof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeMemberOf/properties/rType") |
 
 ### rType
 
@@ -3270,7 +3246,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-memberof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeMemberOf/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-memberof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeMemberOf/properties/rType")
 
 #### rType Type
 
@@ -3289,12 +3265,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeIsAfter"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeIsAfter"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
-| :---------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype-4) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-isafter-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeIsAfter/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :---------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-4) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-isafter-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeIsAfter/properties/rType") |
 
 ### rType
 
@@ -3308,7 +3284,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-isafter-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeIsAfter/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-isafter-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeIsAfter/properties/rType")
 
 #### rType Type
 
@@ -3327,12 +3303,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeChildOf"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeChildOf"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
-| :---------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype-5) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-childof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeChildOf/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :---------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-5) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-childof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeChildOf/properties/rType") |
 
 ### rType
 
@@ -3346,7 +3322,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-childof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeChildOf/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-childof-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeChildOf/properties/rType")
 
 #### rType Type
 
@@ -3365,12 +3341,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeDevelopsFrom"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :---------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype-6) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-developsfrom-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeDevelopsFrom/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :---------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-6) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-developsfrom-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeDevelopsFrom/properties/rType") |
 
 ### rType
 
@@ -3384,7 +3360,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-developsfrom-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeDevelopsFrom/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-developsfrom-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeDevelopsFrom/properties/rType")
 
 #### rType Type
 
@@ -3403,12 +3379,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeFamilyRelationshipWith"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
-| :---------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype-7) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-familyrelationshipwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
+| :---------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-7) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-familyrelationshipwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeFamilyRelationshipWith/properties/rType") |
 
 ### rType
 
@@ -3422,7 +3398,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-familyrelationshipwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-familyrelationshipwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeFamilyRelationshipWith/properties/rType")
 
 #### rType Type
 
@@ -3441,12 +3417,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeSameAs"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeSameAs"}
 ```
 
-| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                          |
-| :---------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rType](#rtype-8) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-type-sameas-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeSameAs/properties/rType") |
+| Property          | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                             |
+| :---------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rType](#rtype-8) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-type-sameas-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeSameAs/properties/rType") |
 
 ### rType
 
@@ -3460,7 +3436,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-type-sameas-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTypeSameAs/properties/rType")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-sameas-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeSameAs/properties/rType")
 
 #### rType Type
 
@@ -3479,12 +3455,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetPolicy"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetPolicy"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                  |
-| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-1) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-policy-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetPolicy/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-1) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-policy-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetPolicy/properties/rTarget") |
 
 ### rTarget
 
@@ -3498,7 +3474,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-policy-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetPolicy/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-policy-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetPolicy/properties/rTarget")
 
 #### rTarget Type
 
@@ -3509,12 +3485,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourcePolicy"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourcePolicy"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                  |
-| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-1) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-policy-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourcePolicy/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-1) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-policy-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourcePolicy/properties/rSource") |
 
 ### rSource
 
@@ -3528,7 +3504,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-policy-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourcePolicy/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-policy-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourcePolicy/properties/rSource")
 
 #### rSource Type
 
@@ -3539,12 +3515,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetDAC"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetDAC"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
-| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-2) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-dac-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetDAC/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-2) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-dac-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetDAC/properties/rTarget") |
 
 ### rTarget
 
@@ -3558,7 +3534,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-dac-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetDAC/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-dac-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetDAC/properties/rTarget")
 
 #### rTarget Type
 
@@ -3569,12 +3545,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDAC"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceDAC"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                            |
-| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-2) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-dac-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDAC/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-2) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-dac-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceDAC/properties/rSource") |
 
 ### rSource
 
@@ -3588,7 +3564,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-dac-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDAC/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-dac-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceDAC/properties/rSource")
 
 #### rSource Type
 
@@ -3599,12 +3575,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetDataset"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetDataset"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rTarget](#rtarget-3) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-dataset-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetDataset/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-3) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-dataset-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetDataset/properties/rTarget") |
 
 ### rTarget
 
@@ -3618,7 +3594,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-dataset-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetDataset/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-dataset-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetDataset/properties/rTarget")
 
 #### rTarget Type
 
@@ -3629,12 +3605,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDataset"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceDataset"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rSource](#rsource-3) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-dataset-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDataset/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-3) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-dataset-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceDataset/properties/rSource") |
 
 ### rSource
 
@@ -3648,7 +3624,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-dataset-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceDataset/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-dataset-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceDataset/properties/rSource")
 
 #### rSource Type
 
@@ -3659,12 +3635,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAnalysis"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetAnalysis"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-4) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-analysis-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAnalysis/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-4) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-analysis-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetAnalysis/properties/rTarget") |
 
 ### rTarget
 
@@ -3678,7 +3654,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-analysis-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAnalysis/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-analysis-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetAnalysis/properties/rTarget")
 
 #### rTarget Type
 
@@ -3689,12 +3665,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceAnalysis"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceAnalysis"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-4) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-analysis-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceAnalysis/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-4) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-analysis-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceAnalysis/properties/rSource") |
 
 ### rSource
 
@@ -3708,7 +3684,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-analysis-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceAnalysis/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-analysis-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceAnalysis/properties/rSource")
 
 #### rSource Type
 
@@ -3719,12 +3695,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetSample"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSample"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                  |
-| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-5) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-sample-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetSample/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-5) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-sample-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSample/properties/rTarget") |
 
 ### rTarget
 
@@ -3738,7 +3714,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-sample-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetSample/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-sample-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSample/properties/rTarget")
 
 #### rTarget Type
 
@@ -3749,12 +3725,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceSample"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceSample"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                  |
-| :-------------------- | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-5) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-sample-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceSample/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                     |
+| :-------------------- | :------------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-5) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-sample-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceSample/properties/rSource") |
 
 ### rSource
 
@@ -3768,7 +3744,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-sample-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceSample/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-sample-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceSample/properties/rSource")
 
 #### rSource Type
 
@@ -3779,12 +3755,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExperiment"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExperiment"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rTarget](#rtarget-6) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-experiment-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExperiment/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-6) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-experiment-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExperiment/properties/rTarget") |
 
 ### rTarget
 
@@ -3798,7 +3774,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-experiment-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExperiment/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-experiment-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExperiment/properties/rTarget")
 
 #### rTarget Type
 
@@ -3809,12 +3785,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExperiment"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExperiment"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rSource](#rsource-6) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-experiment-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExperiment/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-6) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-experiment-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExperiment/properties/rSource") |
 
 ### rSource
 
@@ -3828,7 +3804,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-experiment-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExperiment/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-experiment-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExperiment/properties/rSource")
 
 #### rSource Type
 
@@ -3839,12 +3815,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceIndividual"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceIndividual"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rSource](#rsource-7) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-individual-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceIndividual/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-7) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-individual-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceIndividual/properties/rSource") |
 
 ### rSource
 
@@ -3858,7 +3834,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-individual-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceIndividual/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-individual-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceIndividual/properties/rSource")
 
 #### rSource Type
 
@@ -3869,12 +3845,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetIndividual"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetIndividual"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rTarget](#rtarget-7) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-individual-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetIndividual/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-7) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-individual-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetIndividual/properties/rTarget") |
 
 ### rTarget
 
@@ -3888,7 +3864,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-individual-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetIndividual/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-individual-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetIndividual/properties/rTarget")
 
 #### rTarget Type
 
@@ -3899,12 +3875,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceProtocol"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceProtocol"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-8) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-protocol-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceProtocol/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-8) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-protocol-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceProtocol/properties/rSource") |
 
 ### rSource
 
@@ -3918,7 +3894,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-protocol-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceProtocol/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-protocol-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceProtocol/properties/rSource")
 
 #### rSource Type
 
@@ -3929,12 +3905,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetProtocol"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetProtocol"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                      |
-| :-------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-8) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-protocol-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetProtocol/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-8) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-protocol-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetProtocol/properties/rTarget") |
 
 ### rTarget
 
@@ -3948,7 +3924,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-protocol-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetProtocol/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-protocol-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetProtocol/properties/rTarget")
 
 #### rTarget Type
 
@@ -3959,12 +3935,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceSubmission"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceSubmission"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rSource](#rsource-9) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-submission-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceSubmission/properties/rSource") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-9) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-submission-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceSubmission/properties/rSource") |
 
 ### rSource
 
@@ -3978,7 +3954,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-submission-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceSubmission/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-submission-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceSubmission/properties/rSource")
 
 #### rSource Type
 
@@ -3989,12 +3965,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetSubmission"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSubmission"}
 ```
 
-| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
-| :-------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rTarget](#rtarget-9) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-submission-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetSubmission/properties/rTarget") |
+| Property              | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :-------------------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-9) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-submission-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSubmission/properties/rTarget") |
 
 ### rTarget
 
@@ -4008,7 +3984,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-submission-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetSubmission/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-submission-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSubmission/properties/rTarget")
 
 #### rTarget Type
 
@@ -4019,12 +3995,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExternalAccession"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalAccession"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-10) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-externalaccession-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExternalAccession/properties/rSource") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                           |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-10) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-externalaccession-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalAccession/properties/rSource") |
 
 ### rSource
 
@@ -4038,7 +4014,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-externalaccession-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExternalAccession/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-externalaccession-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalAccession/properties/rSource")
 
 #### rSource Type
 
@@ -4049,12 +4025,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExternalAccession"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExternalAccession"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-10) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-externalaccession-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExternalAccession/properties/rTarget") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                           |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-10) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-externalaccession-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExternalAccession/properties/rTarget") |
 
 ### rTarget
 
@@ -4068,7 +4044,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-externalaccession-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExternalAccession/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-externalaccession-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExternalAccession/properties/rTarget")
 
 #### rTarget Type
 
@@ -4079,12 +4055,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExternalURL"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                            |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-11) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-externalurl-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExternalURL/properties/rSource") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-11) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-externalurl-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL/properties/rSource") |
 
 ### rSource
 
@@ -4098,7 +4074,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-externalurl-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceExternalURL/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-externalurl-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL/properties/rSource")
 
 #### rSource Type
 
@@ -4109,12 +4085,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExternalURL"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExternalURL"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                            |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-11) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-externalurl-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExternalURL/properties/rTarget") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-11) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-externalurl-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExternalURL/properties/rTarget") |
 
 ### rTarget
 
@@ -4128,7 +4104,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-externalurl-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetExternalURL/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-externalurl-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetExternalURL/properties/rTarget")
 
 #### rTarget Type
 
@@ -4139,12 +4115,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceStudy"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceStudy"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-12) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-study-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceStudy/properties/rSource") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-12) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-study-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceStudy/properties/rSource") |
 
 ### rSource
 
@@ -4158,7 +4134,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-study-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceStudy/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-study-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceStudy/properties/rSource")
 
 #### rSource Type
 
@@ -4169,12 +4145,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetStudy"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetStudy"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-12) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-study-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetStudy/properties/rTarget") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-12) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-study-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetStudy/properties/rTarget") |
 
 ### rTarget
 
@@ -4188,7 +4164,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-study-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetStudy/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-study-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetStudy/properties/rTarget")
 
 #### rTarget Type
 
@@ -4199,12 +4175,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAssay"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetAssay"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rTarget](#rtarget-13) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-target-assay-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAssay/properties/rTarget") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rTarget](#rtarget-13) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-target-assay-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetAssay/properties/rTarget") |
 
 ### rTarget
 
@@ -4218,7 +4194,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-target-assay-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rTargetAssay/properties/rTarget")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-assay-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetAssay/properties/rTarget")
 
 #### rTarget Type
 
@@ -4229,12 +4205,12 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceAssay"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceAssay"}
 ```
 
-| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
-| :--------------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [rSource](#rsource-13) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-relationship-source-assay-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceAssay/properties/rSource") |
+| Property               | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
+| :--------------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rSource](#rsource-13) | Not specified | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-relationship-source-assay-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceAssay/properties/rSource") |
 
 ### rSource
 
@@ -4248,7 +4224,7 @@ Reference this group by using
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-relationship-source-assay-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rSourceAssay/properties/rSource")
+*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-assay-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceAssay/properties/rSource")
 
 #### rSource Type
 
@@ -4259,18 +4235,7 @@ unknown
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"}
-```
-
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
-
-## Definitions group urlUriPattern
-
-Reference this group by using
-
-```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/urlUriPattern"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rConstraintOneSourcedSubmission"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -4281,7 +4246,7 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/individualAge"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/individualAge"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |
@@ -4292,12 +4257,12 @@ Reference this group by using
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellType"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/cellType"}
 ```
 
-| Property            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                 |
-| :------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [termId](#termid-1) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-cell-type-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellType/properties/termId") |
+| Property            | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                                    |
+| :------------------ | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [termId](#termid-1) | Not specified | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-cell-type-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/cellType/properties/termId") |
 
 ### termId
 
@@ -4307,15 +4272,15 @@ Reference this group by using
 
 *   is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-4-definitions-cell-type-properties-ontology-constraints-for-this-specific-termid.md))
+*   Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-cell-type-properties-ontology-constraints-for-this-specific-termid.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-cell-type-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/cellType/properties/termId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-cell-type-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/cellType/properties/termId")
 
 #### termId Type
 
-unknown ([Ontology constraints for this specific termId](ega-4-definitions-cell-type-properties-ontology-constraints-for-this-specific-termid.md))
+unknown ([Ontology constraints for this specific termId](ega-4-defs-cell-type-properties-ontology-constraints-for-this-specific-termid.md))
 
 #### termId Examples
 
@@ -4336,12 +4301,12 @@ unknown ([Ontology constraints for this specific termId](ega-4-definitions-cell-
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/phenotypicAbnormality"}
 ```
 
-| Property            | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                           |
-| :------------------ | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [termId](#termid-2) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality/properties/termId") |
+| Property            | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                              |
+| :------------------ | :----- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [termId](#termid-2) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/phenotypicAbnormality/properties/termId") |
 
 ### termId
 
@@ -4351,21 +4316,21 @@ Reference this group by using
 
 *   is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-4-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
+*   Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/phenotypicAbnormality/properties/termId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/phenotypicAbnormality/properties/termId")
 
 #### termId Type
 
-merged type ([Ontology constraints for this specific termId](ega-4-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
+merged type ([Ontology constraints for this specific termId](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
 
 any of
 
-*   [Ontology validation of phenotypic abnormality](ega-4-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
+*   [Ontology validation of phenotypic abnormality](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
 
-*   [In case the phenotypic abnormality is unknown or there is none](ega-4-definitions-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
+*   [In case the phenotypic abnormality is unknown or there is none](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
 #### termId Examples
 
@@ -4394,12 +4359,12 @@ any of
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/disease"}
 ```
 
-| Property            | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                              |
-| :------------------ | :----- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [termId](#termid-3) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease/properties/termId") |
+| Property            | Type   | Required | Nullable       | Defined by                                                                                                                                                                                                                                                 |
+| :------------------ | :----- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [termId](#termid-3) | Merged | Optional | cannot be null | [EGA common metadata definitions](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/disease/properties/termId") |
 
 ### termId
 
@@ -4409,25 +4374,25 @@ Reference this group by using
 
 *   is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md))
+*   Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/disease/properties/termId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/disease/properties/termId")
 
 #### termId Type
 
-merged type ([Ontology constraints for this specific termId](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid.md))
+merged type ([Ontology constraints for this specific termId](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid.md))
 
 any of
 
-*   [Ontology validation of 'disease' - EFO](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-disease---efo.md "check type definition")
+*   [Ontology validation of 'disease' - EFO](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-disease---efo.md "check type definition")
 
-*   [Ontology validation of 'disease' - ORDO](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-disease---ordo.md "check type definition")
+*   [Ontology validation of 'disease' - ORDO](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-disease---ordo.md "check type definition")
 
-*   [Ontology validation of 'human disease or disorder' - MONDO](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-human-disease-or-disorder---mondo.md "check type definition")
+*   [Ontology validation of 'human disease or disorder' - MONDO](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-human-disease-or-disorder---mondo.md "check type definition")
 
-*   [In case the phenotypic abnormality is unknown or there is none](ega-4-definitions-disease-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
+*   [In case the phenotypic abnormality is unknown or there is none](ega-4-defs-disease-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
 #### termId Examples
 
@@ -4452,13 +4417,13 @@ any of
 Reference this group by using
 
 ```json
-{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ontologyTerm"}
+{"$ref":"https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm"}
 ```
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                |
-| :---------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [termId](#termid-4)     | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ontology-term-properties-id-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ontologyTerm/properties/termId")       |
-| [termLabel](#termlabel) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-definitions-ontology-term-properties-label-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ontologyTerm/properties/termLabel") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                   |
+| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [termId](#termid-4)     | Merged   | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ontology-term-properties-id-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termId")       |
+| [termLabel](#termlabel) | `string` | Required | cannot be null | [EGA common metadata definitions](ega-4-defs-ontology-term-properties-label-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termLabel") |
 
 ### termId
 
@@ -4468,19 +4433,19 @@ The identifier of an ontology term must be in CURIE format (check property 'curi
 
 *   is required
 
-*   Type: `string` ([ID of the term](ega-4-definitions-ontology-term-properties-id-of-the-term.md))
+*   Type: `string` ([ID of the term](ega-4-defs-ontology-term-properties-id-of-the-term.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ontology-term-properties-id-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ontologyTerm/properties/termId")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ontology-term-properties-id-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termId")
 
 #### termId Type
 
-`string` ([ID of the term](ega-4-definitions-ontology-term-properties-id-of-the-term.md))
+`string` ([ID of the term](ega-4-defs-ontology-term-properties-id-of-the-term.md))
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-4-definitions-ontology-term-properties-id-of-the-term-allof-compact-uri-curie-pattern.md "check type definition")
+*   [Compact URI (CURIE) pattern](ega-4-defs-ontology-term-properties-id-of-the-term-allof-compact-uri-curie-pattern.md "check type definition")
 
 #### termId Constraints
 
@@ -4516,15 +4481,15 @@ The label of a term is the human-readable string associated with the identifier.
 
 *   is required
 
-*   Type: `string` ([Label of the term](ega-4-definitions-ontology-term-properties-label-of-the-term.md))
+*   Type: `string` ([Label of the term](ega-4-defs-ontology-term-properties-label-of-the-term.md))
 
 *   cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-definitions-ontology-term-properties-label-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/definitions/ontologyTerm/properties/termLabel")
+*   defined in: [EGA common metadata definitions](ega-4-defs-ontology-term-properties-label-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termLabel")
 
 #### termLabel Type
 
-`string` ([Label of the term](ega-4-definitions-ontology-term-properties-label-of-the-term.md))
+`string` ([Label of the term](ega-4-defs-ontology-term-properties-label-of-the-term.md))
 
 #### termLabel Constraints
 

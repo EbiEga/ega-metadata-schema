@@ -16,6 +16,6 @@ merged type ([Details](ega-3-properties-assay-relationships-items-allof-relation
 
 any of
 
-*   [Relationship source: assay](ega-4-definitions-relationship-source-assay.md "check type definition")
+*   [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
 
-*   [Relationship target: assay](ega-4-definitions-relationship-target-assay.md "check type definition")
+*   [Relationship target: assay](ega-4-defs-relationship-target-assay.md "check type definition")

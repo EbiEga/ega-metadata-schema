@@ -19,7 +19,7 @@ One individual disease of the array. Keep in mind that in order to correctly int
 | Property              | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                               |
 | :-------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [excluded](#excluded) | `boolean` | Optional | cannot be null | [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-diseases-disease-item-properties-excluded.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items/properties/excluded") |
-| [disease](#disease)   | Merged    | Required | cannot be null | [EGA individual metadata schema](ega-4-definitions-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items/properties/disease")                                                                                                          |
+| [disease](#disease)   | Merged    | Required | cannot be null | [EGA individual metadata schema](ega-4-defs-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items/properties/disease")                                                                                                                 |
 
 ## excluded
 
@@ -47,16 +47,16 @@ Property to describe a disease (i.e. a disposition to undergo pathological proce
 
 *   is required
 
-*   Type: `object` ([Disease](ega-4-definitions-disease.md))
+*   Type: `object` ([Disease](ega-4-defs-disease.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items/properties/disease")
+*   defined in: [EGA individual metadata schema](ega-4-defs-disease.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/diseases/items/properties/disease")
 
 ### disease Type
 
-`object` ([Disease](ega-4-definitions-disease.md))
+`object` ([Disease](ega-4-defs-disease.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")

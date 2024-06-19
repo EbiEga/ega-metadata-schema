@@ -19,7 +19,7 @@ Collaborator item comprising both the collaborator's contact details and rights.
 | Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                 |
 | :-------------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [collaboratorRights](#collaboratorrights)                 | `string` | Required | cannot be null | [EGA submission metadata schema](ega-12-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorRights") |
-| [collaboratorContactDetails](#collaboratorcontactdetails) | Merged   | Required | cannot be null | [EGA submission metadata schema](ega-4-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorContactDetails")                                                     |
+| [collaboratorContactDetails](#collaboratorcontactdetails) | Merged   | Required | cannot be null | [EGA submission metadata schema](ega-4-defs-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorContactDetails")                                                            |
 
 ## collaboratorRights
 
@@ -56,18 +56,18 @@ An object to contain the required metadata to identify and reach an individual o
 
 *   is required
 
-*   Type: `object` ([Contact details](ega-4-definitions-contact-details.md))
+*   Type: `object` ([Contact details](ega-4-defs-contact-details.md))
 
 *   cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-4-definitions-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorContactDetails")
+*   defined in: [EGA submission metadata schema](ega-4-defs-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorContactDetails")
 
 ### collaboratorContactDetails Type
 
-`object` ([Contact details](ega-4-definitions-contact-details.md))
+`object` ([Contact details](ega-4-defs-contact-details.md))
 
 any of
 
-*   [Either the individual's name is required.](ega-4-definitions-contact-details-anyof-either-the-individuals-name-is-required.md "check type definition")
+*   [Either the individual's name is required.](ega-4-defs-contact-details-anyof-either-the-individuals-name-is-required.md "check type definition")
 
-*   [Or the institution's name is required.](ega-4-definitions-contact-details-anyof-or-the-institutions-name-is-required.md "check type definition")
+*   [Or the institution's name is required.](ega-4-defs-contact-details-anyof-or-the-institutions-name-is-required.md "check type definition")

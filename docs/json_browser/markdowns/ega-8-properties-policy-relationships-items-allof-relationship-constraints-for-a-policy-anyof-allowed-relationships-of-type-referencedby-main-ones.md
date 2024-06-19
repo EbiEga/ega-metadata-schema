@@ -16,12 +16,12 @@ merged type ([Allowed relationships of type referencedBy (main ones)](ega-8-prop
 
 all of
 
-*   [Relationship type: referencedBy](ega-4-definitions-relationship-type-referencedby.md "check type definition")
+*   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
 *   any of
 
-    *   [Relationship target: dataset](ega-4-definitions-relationship-target-dataset.md "check type definition")
+    *   [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
 
-    *   [Relationship source: DAC](ega-4-definitions-relationship-source-dac.md "check type definition")
+    *   [Relationship source: DAC](ega-4-defs-relationship-source-dac.md "check type definition")
 
-    *   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+    *   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")

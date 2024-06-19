@@ -16,9 +16,9 @@ unknown ([Check that policy EGA ID (EGAP) is correct](ega-8-properties-objects-i
 
 # 1 Properties
 
-| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                            |
-| :---------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-4-definitions-pattern-of-an-ega-policys-id-egap.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId/allOf/1/properties/egaAccession") |
+| Property                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                     |
+| :---------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [egaAccession](#egaaccession) | `string` | Optional | cannot be null | [EGA policy metadata schema](ega-4-defs-pattern-of-an-ega-policys-id-egap.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId/allOf/1/properties/egaAccession") |
 
 ## egaAccession
 
@@ -28,15 +28,15 @@ unknown ([Check that policy EGA ID (EGAP) is correct](ega-8-properties-objects-i
 
 *   is optional
 
-*   Type: `string` ([Pattern of an EGA policy's ID (EGAP...)](ega-4-definitions-pattern-of-an-ega-policys-id-egap.md))
+*   Type: `string` ([Pattern of an EGA policy's ID (EGAP...)](ega-4-defs-pattern-of-an-ega-policys-id-egap.md))
 
 *   cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-4-definitions-pattern-of-an-ega-policys-id-egap.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId/allOf/1/properties/egaAccession")
+*   defined in: [EGA policy metadata schema](ega-4-defs-pattern-of-an-ega-policys-id-egap.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 
-`string` ([Pattern of an EGA policy's ID (EGAP...)](ega-4-definitions-pattern-of-an-ega-policys-id-egap.md))
+`string` ([Pattern of an EGA policy's ID (EGAP...)](ega-4-defs-pattern-of-an-ega-policys-id-egap.md))
 
 ### egaAccession Constraints
 

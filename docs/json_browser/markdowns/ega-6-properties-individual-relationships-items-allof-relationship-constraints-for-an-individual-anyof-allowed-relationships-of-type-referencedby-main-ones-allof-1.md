@@ -16,8 +16,8 @@ merged type ([Details](ega-6-properties-individual-relationships-items-allof-rel
 
 any of
 
-*   [Relationship target: sample](ega-4-definitions-relationship-target-sample.md "check type definition")
+*   [Relationship target: sample](ega-4-defs-relationship-target-sample.md "check type definition")
 
-*   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-*   [Relationship source: protocol](ega-4-definitions-relationship-source-protocol.md "check type definition")
+*   [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")

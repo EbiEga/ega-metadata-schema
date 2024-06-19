@@ -16,6 +16,6 @@ merged type ([Details](ega-properties-dac-relationships-items-allof-relationship
 
 any of
 
-*   [Relationship target: Policy](ega-4-definitions-relationship-target-policy.md "check type definition")
+*   [Relationship target: Policy](ega-4-defs-relationship-target-policy.md "check type definition")
 
-*   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")

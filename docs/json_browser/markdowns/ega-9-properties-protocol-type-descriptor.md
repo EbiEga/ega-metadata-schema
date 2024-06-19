@@ -84,4 +84,4 @@ Ontology term of the protocol subtype. Search for yours at the [Ontology Lookup 
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")

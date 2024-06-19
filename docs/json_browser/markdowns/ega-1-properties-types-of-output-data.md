@@ -12,7 +12,7 @@ Types of data the experiment produces.
 
 ## typesOfOutputData Type
 
-`string[]` ([Type of data](ega-4-definitions-type-of-data.md))
+`string[]` ([Type of data](ega-4-defs-type-of-data.md))
 
 ## typesOfOutputData Constraints
 

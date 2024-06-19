@@ -16,9 +16,9 @@ Node containing the set of fields specific to an assay of type 'sequencer' (i.e.
 
 # sequencingAssaySpecifications Properties
 
-| Property                                                | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                             |
-| :------------------------------------------------------ | :------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [referenceAlignmentDetails](#referencealignmentdetails) | `array` | Optional | cannot be null | [EGA assay metadata schema](ega-4-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications/properties/referenceAlignmentDetails") |
+| Property                                                | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                      |
+| :------------------------------------------------------ | :------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [referenceAlignmentDetails](#referencealignmentdetails) | `array` | Optional | cannot be null | [EGA assay metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications/properties/referenceAlignmentDetails") |
 
 ## referenceAlignmentDetails
 
@@ -28,15 +28,15 @@ Node containing the information of the reference assembly that was used to obtai
 
 *   is optional
 
-*   Type: `object[]` ([NCBI's Assembly descriptor](ega-4-definitions-ncbis-assembly-descriptor.md))
+*   Type: `object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-4-definitions-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications/properties/referenceAlignmentDetails")
+*   defined in: [EGA assay metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications/properties/referenceAlignmentDetails")
 
 ### referenceAlignmentDetails Type
 
-`object[]` ([NCBI's Assembly descriptor](ega-4-definitions-ncbis-assembly-descriptor.md))
+`object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
 ### referenceAlignmentDetails Constraints
 

@@ -29,7 +29,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 *   is required
 
-*   Type: `object[]` ([Repeatable arrayLabel node](ega-4-definitions-repeatable-arraylabel-node.md))
+*   Type: `object[]` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
 
 *   cannot be null
 
@@ -37,7 +37,7 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 ### arrayLabels Type
 
-`object[]` ([Repeatable arrayLabel node](ega-4-definitions-repeatable-arraylabel-node.md))
+`object[]` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
 
 ### arrayLabels Constraints
 
@@ -53,7 +53,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 *   is required
 
-*   Type: `object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
+*   Type: `object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
 *   cannot be null
 
@@ -61,7 +61,7 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 ### adfFiles Type
 
-`object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
+`object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
 ### adfFiles Constraints
 

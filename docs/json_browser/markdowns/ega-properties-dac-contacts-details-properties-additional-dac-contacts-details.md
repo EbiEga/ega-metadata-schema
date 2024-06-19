@@ -12,7 +12,7 @@ An array compromising additional contact details to use when in need to reach th
 
 ## additionalContacts Type
 
-`object[]` ([Contact details](ega-4-definitions-contact-details.md))
+`object[]` ([Contact details](ega-4-defs-contact-details.md))
 
 ## additionalContacts Constraints
 

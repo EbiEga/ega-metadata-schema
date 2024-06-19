@@ -25,11 +25,11 @@ one (and only one) of
 | Property                                                          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                        |
 | :---------------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectId](#objectid)                                             | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-1-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId")                                      |
-| [schemaDescriptor](#schemadescriptor)                             | `object` | Optional | cannot be null | [EGA Experiment metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schemaDescriptor")                             |
+| [schemaDescriptor](#schemadescriptor)                             | `object` | Optional | cannot be null | [EGA Experiment metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schemaDescriptor")                                    |
 | [objectTitle](#objecttitle)                                       | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-1-properties-title-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectTitle")                             |
 | [objectDescription](#objectdescription)                           | `string` | Optional | cannot be null | [EGA Experiment metadata schema](ega-1-properties-description-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectDescription")                 |
 | [targetedLoci](#targetedloci)                                     | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-1-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/targetedLoci")               |
-| [assayTechnology](#assaytechnology)                               | `object` | Required | cannot be null | [EGA Experiment metadata schema](ega-4-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTechnology")                               |
+| [assayTechnology](#assaytechnology)                               | `object` | Required | cannot be null | [EGA Experiment metadata schema](ega-4-defs-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTechnology")                                      |
 | [assayType](#assaytype)                                           | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-1-properties-type-of-used-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayType")                                    |
 | [assayedBiologicalMacromolecule](#assayedbiologicalmacromolecule) | Merged   | Required | cannot be null | [EGA Experiment metadata schema](ega-1-properties-assayed-biological-macromolecule.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayedBiologicalMacromolecule") |
 | [typesOfOutputData](#typesofoutputdata)                           | `array`  | Optional | cannot be null | [EGA Experiment metadata schema](ega-1-properties-types-of-output-data.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/typesOfOutputData")                          |
@@ -59,11 +59,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that experiment EGA ID (EGAX) is correct](ega-1-properties-objects-ids-block-allof-check-that-experiment-ega-id-egax-is-correct.md "check type definition")
 
@@ -75,15 +75,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schemaDescriptor")
+*   defined in: [EGA Experiment metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectTitle
 
@@ -141,7 +141,7 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 *   is optional
 
-*   Type: `object[]` ([Locus identifier](ega-4-definitions-locus-identifier.md))
+*   Type: `object[]` ([Locus identifier](ega-4-defs-locus-identifier.md))
 
 *   cannot be null
 
@@ -149,7 +149,7 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 ### targetedLoci Type
 
-`object[]` ([Locus identifier](ega-4-definitions-locus-identifier.md))
+`object[]` ([Locus identifier](ega-4-defs-locus-identifier.md))
 
 ### targetedLoci Constraints
 
@@ -165,15 +165,15 @@ Metadata of the assay instrument (e.g. sequencer Illumina NextSeq 500) used to o
 
 *   is required
 
-*   Type: `object` ([Assay technology](ega-4-definitions-assay-technology.md))
+*   Type: `object` ([Assay technology](ega-4-defs-assay-technology.md))
 
 *   cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-definitions-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTechnology")
+*   defined in: [EGA Experiment metadata schema](ega-4-defs-assay-technology.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayTechnology")
 
 ### assayTechnology Type
 
-`object` ([Assay technology](ega-4-definitions-assay-technology.md))
+`object` ([Assay technology](ega-4-defs-assay-technology.md))
 
 ## assayType
 
@@ -195,7 +195,7 @@ Node defining the type of assay applicable to the experiment. Notice how, depend
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## assayedBiologicalMacromolecule
 
@@ -217,7 +217,7 @@ Node containing information about the assayed biological macromolecule: the mate
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## typesOfOutputData
 
@@ -227,7 +227,7 @@ Types of data the experiment produces.
 
 *   is optional
 
-*   Type: `string[]` ([Type of data](ega-4-definitions-type-of-data.md))
+*   Type: `string[]` ([Type of data](ega-4-defs-type-of-data.md))
 
 *   cannot be null
 
@@ -235,7 +235,7 @@ Types of data the experiment produces.
 
 ### typesOfOutputData Type
 
-`string[]` ([Type of data](ega-4-definitions-type-of-data.md))
+`string[]` ([Type of data](ega-4-defs-type-of-data.md))
 
 ### typesOfOutputData Constraints
 
@@ -297,7 +297,7 @@ Custom attributes of an experiment: reusable attributes to encode tag-value pair
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -305,7 +305,7 @@ Custom attributes of an experiment: reusable attributes to encode tag-value pair
 
 ### experimentAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### experimentAttributes Constraints
 

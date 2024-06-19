@@ -19,7 +19,7 @@ One individual Phenotypic abnormality of the array. Keep in mind that in order t
 | Property                                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                             |
 | :---------------------------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [excluded](#excluded)                           | `boolean` | Optional | cannot be null | [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item-properties-excluded.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/excluded") |
-| [phenotypicAbnormality](#phenotypicabnormality) | Merged    | Required | cannot be null | [EGA individual metadata schema](ega-4-definitions-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality")                                                                                                            |
+| [phenotypicAbnormality](#phenotypicabnormality) | Merged    | Required | cannot be null | [EGA individual metadata schema](ega-4-defs-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality")                                                                                                                   |
 
 ## excluded
 
@@ -47,16 +47,16 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 *   is required
 
-*   Type: `object` ([Phenotypic abnormality](ega-4-definitions-phenotypic-abnormality.md))
+*   Type: `object` ([Phenotypic abnormality](ega-4-defs-phenotypic-abnormality.md))
 
 *   cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-definitions-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality")
+*   defined in: [EGA individual metadata schema](ega-4-defs-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality")
 
 ### phenotypicAbnormality Type
 
-`object` ([Phenotypic abnormality](ega-4-definitions-phenotypic-abnormality.md))
+`object` ([Phenotypic abnormality](ega-4-defs-phenotypic-abnormality.md))
 
 all of
 
-*   [Ontology term](ega-4-definitions-ontology-term.md "check type definition")
+*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")

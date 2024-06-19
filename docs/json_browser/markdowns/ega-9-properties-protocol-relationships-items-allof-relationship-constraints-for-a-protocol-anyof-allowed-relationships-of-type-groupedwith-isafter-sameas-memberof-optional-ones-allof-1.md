@@ -16,6 +16,6 @@ merged type ([Details](ega-9-properties-protocol-relationships-items-allof-relat
 
 any of
 
-*   [Relationship source: protocol](ega-4-definitions-relationship-source-protocol.md "check type definition")
+*   [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")
 
-*   [Relationship target: protocol](ega-4-definitions-relationship-target-protocol.md "check type definition")
+*   [Relationship target: protocol](ega-4-defs-relationship-target-protocol.md "check type definition")

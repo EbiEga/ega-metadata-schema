@@ -16,10 +16,10 @@ merged type ([Details](ega-3-properties-assay-relationships-items-allof-relation
 
 any of
 
-*   [Relationship source: externalAccession](ega-4-definitions-relationship-source-externalaccession.md "check type definition")
+*   [Relationship source: externalAccession](ega-4-defs-relationship-source-externalaccession.md "check type definition")
 
-*   [Relationship source: externalURL](ega-4-definitions-relationship-source-externalurl.md "check type definition")
+*   [Relationship source: externalURL](ega-4-defs-relationship-source-externalurl.md "check type definition")
 
-*   [Relationship target: externalAccession](ega-4-definitions-relationship-target-externalaccession.md "check type definition")
+*   [Relationship target: externalAccession](ega-4-defs-relationship-target-externalaccession.md "check type definition")
 
-*   [Relationship target: externalURL](ega-4-definitions-relationship-target-externalurl.md "check type definition")
+*   [Relationship target: externalURL](ega-4-defs-relationship-target-externalurl.md "check type definition")

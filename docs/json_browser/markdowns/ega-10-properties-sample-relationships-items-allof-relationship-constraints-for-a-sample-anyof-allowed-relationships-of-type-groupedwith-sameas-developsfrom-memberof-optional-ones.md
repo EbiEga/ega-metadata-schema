@@ -18,16 +18,16 @@ all of
 
 *   any of
 
-    *   [Relationship type: groupedWith](ega-4-definitions-relationship-type-groupedwith.md "check type definition")
+    *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-    *   [Relationship type: sameAs](ega-4-definitions-relationship-type-sameas.md "check type definition")
+    *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-    *   [Relationship type: developsFrom](ega-4-definitions-relationship-type-developsfrom.md "check type definition")
+    *   [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
 
-    *   [Relationship type: memberOf](ega-4-definitions-relationship-type-memberof.md "check type definition")
+    *   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
 
 *   any of
 
-    *   [Relationship source: sample](ega-4-definitions-relationship-source-sample.md "check type definition")
+    *   [Relationship source: sample](ega-4-defs-relationship-source-sample.md "check type definition")
 
-    *   [Relationship target: sample](ega-4-definitions-relationship-target-sample.md "check type definition")
+    *   [Relationship target: sample](ega-4-defs-relationship-target-sample.md "check type definition")

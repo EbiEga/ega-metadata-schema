@@ -12,7 +12,7 @@ Custom attributes of an experiment: reusable attributes to encode tag-value pair
 
 ## experimentAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ## experimentAttributes Constraints
 

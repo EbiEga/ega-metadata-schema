@@ -16,16 +16,16 @@ merged type ([Details](ega-9-properties-protocol-relationships-items-allof-relat
 
 any of
 
-*   [Relationship source: submission](ega-4-definitions-relationship-source-submission.md "check type definition")
+*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-*   [Relationship source: protocol](ega-4-definitions-relationship-source-protocol.md "check type definition")
+*   [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")
 
-*   [Relationship target: sample](ega-4-definitions-relationship-target-sample.md "check type definition")
+*   [Relationship target: sample](ega-4-defs-relationship-target-sample.md "check type definition")
 
-*   [Relationship target: experiment](ega-4-definitions-relationship-target-experiment.md "check type definition")
+*   [Relationship target: experiment](ega-4-defs-relationship-target-experiment.md "check type definition")
 
-*   [Relationship target: analysis](ega-4-definitions-relationship-target-analysis.md "check type definition")
+*   [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")
 
-*   [Relationship target: study](ega-4-definitions-relationship-target-study.md "check type definition")
+*   [Relationship target: study](ega-4-defs-relationship-target-study.md "check type definition")
 
-*   [Relationship target: individual](ega-4-definitions-relationship-target-individual.md "check type definition")
+*   [Relationship target: individual](ega-4-defs-relationship-target-individual.md "check type definition")

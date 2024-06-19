@@ -19,7 +19,7 @@ Metadata schema used by the European Genome-phenome Archive (EGA) to validate it
 | Property                                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                            |
 | :-------------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [objectId](#objectid)                                     | Merged   | Required | cannot be null | [EGA analysis metadata schema](ega-2-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId")                              |
-| [schemaDescriptor](#schemadescriptor)                     | `object` | Optional | cannot be null | [EGA analysis metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")                     |
+| [schemaDescriptor](#schemadescriptor)                     | `object` | Optional | cannot be null | [EGA analysis metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")                            |
 | [objectTitle](#objecttitle)                               | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-2-properties-title-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectTitle")                       |
 | [objectDescription](#objectdescription)                   | `string` | Optional | cannot be null | [EGA analysis metadata schema](ega-2-properties-description-of-the-analysis.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectDescription")           |
 | [targetedLoci](#targetedloci)                             | `array`  | Optional | cannot be null | [EGA analysis metadata schema](ega-2-properties-loci-of-the-targeted-genomic-feature.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/targetedLoci")       |
@@ -52,11 +52,11 @@ all of
 
 *   any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-definitions-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 *   [Check that analysis EGA ID (EGAZ) is correct](ega-2-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct.md "check type definition")
 
@@ -68,15 +68,15 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 *   is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 *   cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-4-definitions-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")
+*   defined in: [EGA analysis metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
-`object` ([Schema descriptor](ega-4-definitions-schema-descriptor.md))
+`object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
 ## objectTitle
 
@@ -142,7 +142,7 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 *   is optional
 
-*   Type: `object[]` ([Locus identifier](ega-4-definitions-locus-identifier.md))
+*   Type: `object[]` ([Locus identifier](ega-4-defs-locus-identifier.md))
 
 *   cannot be null
 
@@ -150,7 +150,7 @@ Array of items that unambiguously define the loci of targeted genomic features i
 
 ### targetedLoci Type
 
-`object[]` ([Locus identifier](ega-4-definitions-locus-identifier.md))
+`object[]` ([Locus identifier](ega-4-defs-locus-identifier.md))
 
 ### targetedLoci Constraints
 
@@ -232,7 +232,7 @@ This property contains the files derived from performing any processing or analy
 
 *   is optional
 
-*   Type: `object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
+*   Type: `object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
 *   cannot be null
 
@@ -240,7 +240,7 @@ This property contains the files derived from performing any processing or analy
 
 ### analysisFiles Type
 
-`object[]` ([EGA File object](ega-4-definitions-ega-file-object.md))
+`object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
 ### analysisFiles Constraints
 
@@ -280,7 +280,7 @@ Custom attributes of an analysis: reusable attributes to encode tag-value pairs 
 
 *   is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 *   cannot be null
 
@@ -288,7 +288,7 @@ Custom attributes of an analysis: reusable attributes to encode tag-value pairs 
 
 ### analysisAttributes Type
 
-`object[]` ([Custom attribute of an object](ega-4-definitions-custom-attribute-of-an-object.md))
+`object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
 ### analysisAttributes Constraints
 
