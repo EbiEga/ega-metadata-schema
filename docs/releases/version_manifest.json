@@ -1,22 +1,37 @@
 {
     "releases": [
         {
-            "version": "0.0.0",
-            "date": "2023-04-12",
+            "version": "1.0.0",
+            "date": "2024-06-19",
             "changedJsonSchemas": {
-                "common-definitions": "0.0.0",
-                "experiment": "0.0.0",
-                "study": "0.0.0",
-                "sample": "0.0.0",
-                "individual": "0.0.0",
-                "submission": "0.0.0",
-                "assay": "0.0.0",
-                "dataset": "0.0.0",
-                "analysis": "0.0.0",
-                "policy": "0.0.0",
-                "DAC": "0.0.0",
-                "protocol": "0.0.0",
-                "object-set": "0.0.0"
+                "common-definitions": "1.0.0",
+                "experiment": "1.0.0",
+                "study": "1.0.0",
+                "sample": "1.0.0",
+                "individual": "1.0.0",
+                "submission": "1.0.0",
+                "assay": "1.0.0",
+                "dataset": "1.0.0",
+                "analysis": "1.0.0",
+                "policy": "1.0.0",
+                "DAC": "1.0.0",
+                "protocol": "1.0.0",
+                "object-set": "1.0.0"
+            },
+            "allJsonSchemas": {
+                "common-definitions": "1.0.0",
+                "experiment": "1.0.0",
+                "study": "1.0.0",
+                "sample": "1.0.0",
+                "individual": "1.0.0",
+                "submission": "1.0.0",
+                "assay": "1.0.0",
+                "dataset": "1.0.0",
+                "analysis": "1.0.0",
+                "policy": "1.0.0",
+                "DAC": "1.0.0",
+                "protocol": "1.0.0",
+                "object-set": "1.0.0"
             }
         }
     ]
