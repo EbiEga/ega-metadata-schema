@@ -1,122 +1,61 @@
 {
     "data": {
-        "cellTypes": [
+        "SAMPLE_SET": [
             {
-                "cellType": {
-                    "termId": "CL:0000066",
-                    "termLabel": "epithelial cell"
-                },
-                "cellTypeInferred": "not inferred"
-            },
-            {
-                "cellType": {
-                    "termId": "CL:0000097",
-                    "termLabel": "mast cell"
-                },
-                "cellTypeInferred": "not inferred"
-            }
-        ],
-        "objectDescription": "Skin biopsy from COVID positive patient (NM305004) that travelled back from Alaska.",
-        "objectId": {
-            "alias": "My_sample_X_from_NM305004",
-            "centerName": "EBI-TEST",
-            "egaAccession": "EGAN00000000001"
-        },
-        "objectTitle": "Skin biopsy from COVID+ patient NM305004",
-        "organismDescriptor": {
-            "organismTaxon": {
-                "termId": "NCBITaxon:9606",
-                "termLabel": "homo sapiens"
-            },
-            "commonName": "human"
-        },
-        "sampleAttributes": [
-            {
-                "tag": "biopsy volume",
-                "units": "ml",
-                "value": "30"
-            }
-        ],
-        "sampleCollection": {
-            "ageAtCollection": {
-                "ageRange": {
-                    "end": "P10Y",
-                    "start": "P5Y"
-                }
-            },
-            "sampleCollectionDate": "2021-12-20",
-            "samplingSite": {
-                "termId": "UBERON:0015474",
-                "termLabel": "axilla skin"
-            }
-        },
-        "sampleGrouping": {
-            "sampleGroupBoolean": false
-        },
-        "sampleRelationships": [
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAI00002045411"
+                "SAMPLE": {
+                    "alias": "Example!_HG03464",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "TITLE": "Example!_Sample HG03464 from the 1000 Genomes Project",
+                    "SAMPLE_NAME": {
+                        "TAXON_ID": 9606,
+                        "SCIENTIFIC_NAME": "homo sapiens",
+                        "COMMON_NAME": "human"
                     },
-                    "objectType": "individual"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "externalAccessions": [
-                            {
-                                "objectExternalAccessionIdentifier": {
-                                    "termId": "biosample:SAMEA7616999",
-                                    "termLabel": "test12345"
-                                },
-                                "objectExternalAccessionDescription": "A test sample"
+                    "DESCRIPTION": "Example!_Individual HG03464 corresponds to a female from MSL",
+                    "SAMPLE_ATTRIBUTES": [
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "subject_id",
+                                "VALUE": "HG03464"
                             }
-                        ]
-                    },
-                    "objectType": "externalAccession"
-                },
-                "rType": "sameAs"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAO00002045411"
-                    },
-                    "objectType": "protocol"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAB00002045411"
-                    },
-                    "objectType": "submission"
-                },
-                "rType": "referencedBy"
-            }
-        ],
-        "sampleStatus": [
-            {
-                "caseVsControl": "case",
-                "conditionUnderStudy": {
-                    "termId": "XCO:0000398",
-                    "termLabel": "treated with cisplatin"
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "sex",
+                                "VALUE": "female"
+                            }
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "phenotype",
+                                "VALUE": "EFO:0000574"
+                            }
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "Population",
+                                "VALUE": "MSL",
+                                "UNITS": "ISO3"
+                            }
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "Super Population",
+                                "VALUE": "AFR",
+                                "UNITS": "ISO3"
+                            }
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "Growth protocol",
+                                "VALUE": "https://www.encodeproject.org/documents/2a32df77-1325-4a2d-af71-2f2b68eb9830/@@download/attachment/Snyder_MCF7%20Cell%20Growth%20Protocol.pdf"
+                            }
+                        }
+                    ]
                 }
             }
-        ],
-        "sampleTypes": [
-            "tissue culture"
-        ],
-        "schemaDescriptor": {
-            "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json",
-            "objectSchemaVersion": "0.0.0",
-            "objectType": "sample"
-        }
+        ]
     },
     "schema": {
         "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json"

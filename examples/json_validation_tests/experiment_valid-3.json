@@ -1,0 +1,41 @@
+{
+    "data": {
+      "EXPERIMENT_SET": [
+        {
+          "EXPERIMENT": {
+            "STUDY_REF": {
+              "refname": "minimal_study",
+              "refcenter": "EGA-MINIMAL"
+            },
+            "DESIGN": {
+              "DESIGN_DESCRIPTION": "Minimal library design.",
+              "SAMPLE_DESCRIPTOR": {
+                "refname": "minimal_sample",
+                "refcenter": "EGA-TEST"
+              },
+              "LIBRARY_DESCRIPTOR": {
+                "LIBRARY_STRATEGY": "WGS",
+                "LIBRARY_SOURCE": "GENOMIC",
+                "LIBRARY_SELECTION": "RANDOM",
+                "LIBRARY_LAYOUT": {
+                  "PAIRED": {
+                    "NOMINAL_LENGTH": 50,
+                    "NOMINAL_SDEV": 0.5
+                  }
+                }
+              }
+            },
+            "PLATFORM": {
+              "ILLUMINA": {
+                "INSTRUMENT_MODEL": "Illumina NovaSeq 6000"
+              }
+            }
+          }
+        }
+      ]
+    }
+    ,
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
+    }
+}

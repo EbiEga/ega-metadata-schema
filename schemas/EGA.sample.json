@@ -1,473 +1,95 @@
-  {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema#",
     "$id": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json",
     "type": "object",
-    "title": "EGA sample metadata schema",
-    "meta:version": "0.0.0",
-    "$async": true,
-    "description": "Metadata schema used by the European Genome-phenome Archive (EGA) to validate its sample metadata object. This object is intended to contain metadata about the physical sample [OBI:0000747] used in the experiment. A sample is defined as a limited quantity of something (e.g. a portion of a substance or individual) to be used for testing, analysis, inspection, investigation, demonstration, or trial use. It is a material which is collected with the intention of being representative of a greater whole. A sample shall not be confused with the individual (i.e. a person or donor) such sample derives from, for 'individual' is its own metadata object (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas/EGA.individual.json). Further details can be found in the EGA-metadata-schema GitHub repository (https://github.com/EbiEga/ega-metadata-schema/tree/main/schemas) and EGA-archive website (https://ega-archive.org/)",
-    "required": ["objectId", "organismDescriptor"],
+    "title": "EGA Sample metadata schema",
+    "meta:version": "1.0.0",
+    "required": ["SAMPLE_SET"],
     "additionalProperties": false,
     "properties": {
-      "objectId": {
-        "type": "object",
-        "title": "Object's IDs block",
-        "description": "Node containing the main identifiers of the object (e.g. alias, centerName...), inherited from the common definitions. #! We extend the core object (objectCoreId) by adding a pattern check based on this schema's nature: a sample (by using EGASampleIdPattern)", 
-        "allOf": [
-          {
-            "title": "Inherited objectCoreId object",
-            "$ref": "./EGA.common-definitions.json#/definitions/objectCoreId"
-          },
-          {
-            "title": "Check that sample EGA ID (EGAN) is correct",
-            "properties": {
-              "egaAccession": {
-                "$ref": "./EGA.common-definitions.json#/definitions/EGASampleIdPattern"
-              }
-            }
-          }
-        ]
-      },
-
-      "schemaDescriptor": {
-        "title": "Schema descriptor node",
-        "description": "Inherited schema descriptor node containing metadata about the schemas and standards used to create the JSON document itself.",
-        "$ref": "./EGA.common-definitions.json#/definitions/schemaDescriptor"
-      },
-
-      "objectTitle": {
-        "type": "string",
-        "title": "Title of the sample",
-        "description": "An informative sample title that should serve as an overview (e.g. sample tag, pseudonyms, sample type, sample groups, purpose...) of the sample and differentiate it from others. This short text can be used to call out sample records in searches or in displays.",
-        "examples": [ "Buccal swab from COVID+ patient NM305004" ]
-      },
-
-      "objectDescription": {
-        "type": "string",
-        "title": "Description of the sample",
-        "description": "An informative sample description that describes the sample and differentiates it from others.",
-        "examples": [ "Buccal swab from COVID positive patient (NM305004) was taken on a sunny morning, had a lower volume than expected, then was sent to..." ]
-      },
-
-      "organismDescriptor": {
-        "$ref": "./EGA.common-definitions.json#/definitions/organismDescriptor"
-      },
-      
-      "sampleCollection": {
-        "type": "object",
-        "title": "Sample collection descriptor",
-        "meta:propertyCurie": "OBI:0000659",
-        "description": "Node containing the provenance details (when and where) of the sample. This information does not include the whole sample collection protocol (expected at experiment's protocols), only the sampling date (when the sample was taken from the individual) and site (where was it taken within the individual).",
-        "additionalProperties": false,
-        "properties": {
-          "sampleCollectionDate": {
-            "type": "string",
-            "title": "Date of the sample collection",
-            "meta:propertyCurie": "EFO:0000689",
-            "description": "Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too long, the date shall be the day the collection concluded.",
-            "allOf": [
-              {
-                "title": "ISO8601 Date pattern",
-                "$ref": "./EGA.common-definitions.json#/definitions/EGAISO8601DatePattern"
-              }
-            ]
-          },
-          "ageAtCollection": {
-            "type": "object",
-            "title": "Individual's age at sample collection",
-            "description": "Property describing the individual's age at sample collection. Can either be the precise age an age range.",
-            "additionalProperties": false,
-            "properties": {
-              "age": {
-                "title": "Individual's age at sample collection",
-                "$ref": "./EGA.common-definitions.json#/definitions/individualAge"                
-              },
-              "ageRange": {
+        "SAMPLE_SET": {
+            "type": "array",
+            "description": "Container for a set of samples and a namespace for establishing referential integrity between them.",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
                 "type": "object",
-                "title": "Individual's age range at sample collection",
-                "description": "Age range of the individual when the sample was collected. Composed of two (start and end) age points.",
-                "additionalProperties": false,
+                "required": ["SAMPLE"],
                 "properties": {
-                  "start": {
-                    "title": "Start of the individual's age range",
-                    "$ref": "./EGA.common-definitions.json#/definitions/individualAge"
-                  },
-                  "end": {
-                    "title": "End of the individual's age range",
-                    "$ref": "./EGA.common-definitions.json#/definitions/individualAge"
-                  }
+                    "SAMPLE": {
+                        "$ref": "#/definitions/SampleType"
+                    }
                 }
-              }
-            },
-            "anyOf": [
-              {
-                "title": "Either the age is needed",
-                "required": ["age"]
-              },
-              {
-                "title": "Or the age-range is needed",
-                "required": ["ageRange"]
-              }
-            ]
-          },
-          "samplingSite": {
+            }
+        }
+    },
+    "definitions": {
+        "SampleType": {
             "type": "object",
-            "title": "Sampling site",
-            "description": "A site or entity from which a sample (i.e. a statistically representative of the whole) is extracted from the whole. Search for your sample collection site at http://purl.obolibrary.org/obo/UBERON_0000465. For example: in the case of a nasal swab, it would be 'nasal cavity'; in a liver biopsy it would be 'liver'.",
-            "meta:propertyCurie": "EFO:0000688",
+            "description": "A Sample defines an isolate of sequenceable material upon which sequencing experiments can be based. The Sample object may be a surrogate for taxonomy accession or an anonymized individual identifier.  Or, it may fully specify provenance and isolation method of the starting material.",
             "allOf": [
-              {
-                "$ref": "./EGA.common-definitions.json#/definitions/materialAnatomicalEntity"
-              }
-            ]
-          }
-        },
-        "anyOf": [
-          {
-            "title": "Either the collection date is required",
-            "required": ["sampleCollectionDate"]
-          },
-          {
-            "title": "Or the age at collection is required",
-            "required": ["ageAtCollection"]
-          },
-          {
-            "title": "Or the sampling site is required",
-            "required": ["samplingSite"]
-          }
-        ]
-      },
-
-      "sampleGrouping": {
-        "type": "object",
-        "title": "Sample group descriptor",
-        "description": "Node describing whether the sample object is: (1) a single physical sample (a single blood sample), collected individually through its corresponding protocol; or (2) corresponds to a set of samples that, after being individually collected, was grouped together (e.g. blood samples from different donors) physically or during the experimentation and analysis. One sample corresponds to one biological replicate [EFO:0002091] (e.g. genetic content from a single cell, a tissue, buccal swab, etc.) from a single individual or from several individuals. Shall not be mistaken for technical replicates [EFO:0002090] being used several times (see https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/miscellaneous/sample_replicate.jpg).",
-        "additionalProperties": false,
-        "required": ["sampleGroupBoolean"],
-        "properties": {
-          "sampleGroupBoolean": {
-            "type": "boolean",
-            "title": "Sample group boolean",
-            "description": "Boolean flag on whether the sample object is a group or an individual sample. Please note that boolean values (true or false) cannot be quoted, nor in uppercase.",
-            "examples": [ true ]
-          }, 
-          "sampleNumber": {
-            "type": "integer",
-            "title": "Number of samples",
-            "description": "Number of individual samples (e.g. 300) encompassed by the sample group",
-            "examples": [ 300 ]
-          },
-          "sampleGroupingLabel": {
-            "type": "string",
-            "title": "Label of the sample grouping",
-            "description": "Optional label of the sample grouping, used to add context to the group.",
-            "examples": [ "Group of samples X based on the day they were taken." ]
-          }
-        },
-        "oneOf": [
-          { 
-            "title": "Either the sampleNumber is present and above 1",
-            "required": ["sampleNumber"],
+                { "$ref": "EGA.common.json#/definitions/ObjectType" }
+            ],
+            "required": ["SAMPLE_NAME"],
             "properties": {
-              "sampleGroupBoolean": {
-                "enum": [ true ]
-              },
-              "sampleNumber": {
-                "type": "integer",
-                "minimum": 2
-              }
-            }
-          },
-          { 
-            "title": "Or the sampleGroupBoolean is 'false', hence an individual sample with sampleNumber being '1' or no sampleNumber",
-            "properties": {
-              "sampleGroupBoolean": {
-                "enum": [ false ]
-              },
-              "sampleNumber": {
-                "enum": [ 1 ]
-              }
-            }
-          }
-        ]
-      },
-
-      "sampleTypes": {
-        "type": "array",
-        "title": "Array of sample types",
-        "description": "Array of sample types: the material entity (e.g. DNA) that is this sample. Use this property as tags that befit your sample, picking as many as needed. Choose the specific terms if possible (e.g. if the assayed molecule is cDNA, add 'cDNA' instead of just 'DNA'). This property should not be confused with the sample collection protocols: regardless of the procedure to collect the sample, this property specifies what this sample is representing.",
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "minItems": 1,
-        "items": {
-          "type": "string",
-          "title": "Type of sample",
-          "description": "Sample type item. Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",   
-          "enum": [ "DNA", "RNA", "metabolite", "protein", "cDNA", "genomic DNA", "mitochondrial DNA", "messenger RNA", "ncRNA", "non polyA RNA", "long non polyA RNA", "nuclear RNA", "polyA RNA", "long polyA RNA", "snRNA", "total RNA", "cell culture", "biofilm", "tissue culture" ],
-          "meta:enum": {
-            "DNA": "[CHEBI:16991]",
-            "RNA": "[CHEBI:33697]",
-            "metabolite": "[EFO:0004727]",
-            "protein": "[CHEBI:36080]",
-            "cDNA": "[EFO:0008481]",
-            "genomic DNA": "[EFO:0008479]",
-            "mitochondrial DNA": "[EFO:0008480]",  
-            "messenger RNA": "[CHEBI:33699]",
-            "ncRNA": "[SO:0000655]",
-            "non polyA RNA": "[EFO:0005017]",
-            "long non polyA RNA": "[EFO:0005018]",
-            "nuclear RNA": "[EFO:0030052]",
-            "polyA RNA": "[OBI:0000869]",
-            "long polyA RNA": "[EFO:0005019]",
-            "snRNA": "[SO:0000274]",
-            "total RNA": "[EFO:0004964]", 
-            "cell culture": "[BTO:0000214]: Cells taken from a living organism and grown under controlled conditions (in culture).", 
-            "biofilm": "[BTO:0002690]",
-            "tissue culture": "[BTO:0001384]: Fragments of tissue from an animal transferred to an artificial environment to continue its survival and function."
-          }
-        }        
-      },
-
-      "cellTypes": {
-        "type": "array",
-        "title": "Array of cell types",
-        "description": "Array of cell types, in case the sample is composed of cells (e.g. cell culture) or the cells from which the genetic material derived are known (e.g. extract DNA from astrocytes). Use this property as tags that befit your sample, picking as many cell types as your sample contains or may contain.",
-        "meta:propertyCurie": "EFO:0000324",
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "minItems": 1,
-        "items": {
-          "type": "object",
-          "title": "Cell type",
-          "description": "One of the cell types that can be found in your sample or from which the genetic content was derived.",
-          "required": [ "cellType", "cellTypeInferred" ],
-          "additionalProperties": false,
-          "properties": {
-            "cellType": {
-              "title": "Inherited ontologyTerm for Cell types",
-              "$ref": "./EGA.common-definitions.json#/definitions/cellType"
-            },
-            "cellTypeInferred": {
-              "type": "string",
-              "title": "Inferred cell type flag",
-              "description": "A flag to specify whether the cell type classification was inferred though single-cell analysis (e.g. cell clustering or trajectory analysis) or was determined otherwise (i.e. was visually observed or asserted to be in the sample).",
-              "meta:propertyCurie": "EFO:0010196",
-              "enum": [ "inferred", "not inferred" ],
-              "meta:enum": {
-                "inferred": "The cell type was inferred through single-cell analysis.",
-                "not inferred": "The cell type was not inferred through single-cell analysis (i.e. it was asserted to be in the sample)."
-              }
-            },
-            "cellTypeLabel": {
-              "type": "string",
-              "title": "Label of the cell type",
-              "description": "A field to add extra context to the cell type. For example, the expression profile (e.g. FCGR3A+) used to distinguish within the cell group or the morphology. Only advised to be used when the ontology term for the cell type is not granular enough. Otherwise, the most granular ontology term for the cell type should be used.",
-              "minLength": 1,
-              "examples": [ "FCGR3A+ Monocytes", "TUNEL-positive ACE2-positive neurons" ]
-            }
-          }          
-        }
-      },
-
-      "sampleStatus": {
-        "type": "array",
-        "title": "Array of sample statuses",
-        "description": "Array of statuses of the sample. Used to specify the condition(s) under study **if** the diagnosis of the individual is not enough to describe the status of the sample. In other words, if the differenciation between affected and unaffected groups is done at the sample level and not at the individual level. This differentiation exists when the study design is of case-control [[EFO:0001427](http://www.ebi.ac.uk/efo/EFO_0001427)]. \nFor example, if two samples derive from an individual with 'renal cell carcinoma', one deriving from the affected tissue and the other from an unaffected tissue, this node can be used to specify whether the sample belongs to the unaffected group (i.e. control) or the affected one (i.e. case). On the other hand, if two samples derived from different probands each, one person being affected and the other unaffected by the condition under study, this node **is not** required. \nSame could be applied, for instance, for treated or untreated samples, but not for treated or untreated individuals.",
-        "meta:propertyCurie": "EFO:0000324",
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "minItems": 1,
-        "items": {
-          "type": "object",
-          "title": "Sample status item",
-          "description": "One individual sample status of the array.",
-          "additionalProperties": false,
-          "required": [ "caseVsControl", "conditionUnderStudy" ],
-          "properties": {
-            "caseVsControl": {
-              "type": "string",
-              "title": "Case vs control",
-              "description": "Property that specifies whether the sample is subject to the (usually altered) condition under study (i.e. case), or part of reference group (i.e. control). Term chosen from a list of controlled vocabulary (CV). If you cannot find your term in the CV list, please create an issue at our [metadata GitHub repository](https://github.com/EbiEga/ega-metadata-schema/issues/new/choose) proposing its addition.",
-              "enum": ["case", "control", "not applicable"],
-              "meta:enum": {
-                "case": "[PATO:0000460]: Abnormal - A quality inhering in a bearer by virtue of the bearer's deviation from normal or average.",
-                "control": "[PATO:0000461]: Normal - A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average.",
-                "not applicable": "[NCIT:C48660]: Determination of a case or control is not relevant for this condition under study."
-              }
-            },
-            "conditionUnderStudy": {
-              "type": "object",
-              "title": "Sample condition",
-              "description": "One of the primary conditions under study (CUS). For example: treated with cisplatin, sample taken from a fibroadenoma, osteonecrosis, differences in sequencing workflows, etcetera. Notice that the sample may or may not be affected by this condition under study, belonging to the case or control groups respectively (defined by 'caseVsControl' for each CUS).",
-              "meta:propertyCurie": "NCIT:C161319",
-              "allOf": [
-                {
-                  "title": "Inherited ontologyTerm structure of termId and termLabel",
-                  "$ref": "./EGA.common-definitions.json#/definitions/ontologyTerm"
-                }
-              ],
-              "properties": {        
-                "termId": {
-                  "title": "Ontology constraints for this specific termId",
-                  "description": "The term should exist within the [Ontology Lookup Service](https://www.ebi.ac.uk/ols/search?q=&groupField=iri&start=0&ontology=hp&ontology=efo&ontology=ordo&ontology=mondo) (OLS). We highly recommend the usage of the following ontologies: Experimental Factor Ontology (EFO), Human Phenotype Ontology (HP), Mondo Disease Ontology (MONDO) and Orphanet Rare Disease Ontology (ORDO).",
-                  "examples": [ "MONDO:0021354", "EFO:1002024", "MAXO:0000647", "MONDO:0005081", "MONDO:0100096" ]
-                }
-              }
-            }
-          }
-        }
-      },
-
-      "sampleRelationships": {
-        "type": "array",
-        "title": "Sample relationships",
-        "description": "Comprises metadata (e.g. Source or Target) of a directional association between two entities. This relationships node contains all the possible relationships between metadata objects, both outside of (e.g. a viral sample from BioSamples being linked to a blood sample within the EGA) and within (e.g. a sample being linked to a sequencing run) the EGA.",
-        "minItems": 1,
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "items": { 
-          "allOf": [
-            {
-              "title": "Inherited relationship node",
-              "$ref": "./EGA.common-definitions.json#/definitions/relationshipObject"
-            },
-            {
-              "title": "Relationship constraints for a sample",
-              "description": "Not all possible relationships between objects are allowed (e.g. an individual should not be linked to a policy). This node contains the restricted relationships that can be given for a sample.",
-              "anyOf": [
-                {
-                  "title": "Allowed relationships of type referencedBy (main ones)",
-                  "allOf": [
-                    {
-                      "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
-                    },
-                    {
-                      "anyOf": [
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAnalysis"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetAssay"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSubmission"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceProtocol"
-                        },
-                        { 
-                          "title": "Optional one, added here to simplify",
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExperiment"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceIndividual"
-                        }
-                      ]
-                    }
-                  ]                  
+                "TITLE": {
+                    "type": "string",
+                    "description": "Short text that can be used to call out sample records in search results or in displays."
                 },
-                {
-                  "title": "Allowed relationships of type groupedWith, sameAs, developsFrom, memberOf (optional ones)",
-                  "allOf": [
-                    {
-                      "anyOf": [
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
+                "SAMPLE_NAME": {
+                    "type": "object",
+                    "required": ["TAXON_ID"],
+                    "properties": {
+                        "TAXON_ID": {
+                            "type": "integer",
+                            "description": "NCBI Taxonomy Identifier.  This is appropriate for individual organisms and some environmental samples."
                         },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
+                        "SCIENTIFIC_NAME": {
+                            "type": "string",
+                            "description": "Scientific name of sample that distinguishes its taxonomy.  Please use a name or synonym that is tracked in the INSDC Taxonomy database. Also, this field can be used to confirm the TAXON_ID setting."
                         },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
+                        "COMMON_NAME": {
+                            "type": "string",
+                            "description": "GenBank common name of the organism.  Examples: human, mouse."
                         },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
+                        "display_name": {
+                            "type": "string"
                         }
-                      ]
-                    },
-                    {
-                      "anyOf": [
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceSample"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetSample"
-                        }
-                      ]
                     }
-                  ]
                 },
-                {
-                  "title": "Relationships of external accessions and URLs (optional ones)",
-                  "description": "Almost any relationship is imaginable with external accessions and URLs.",
-                  "allOf": [
-                    {
-                      "anyOf": [
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeChildOf"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeFamilyRelationshipWith"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeGroupedWith"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeSameAs"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeReferencedBy"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeDevelopsFrom"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeMemberOf"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTypeIsAfter"
-                        }
-                      ]
-                    },
-                    {
-                      "anyOf": [
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalAccession"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rSourceExternalURL"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalAccession"
-                        },
-                        {
-                          "$ref": "./EGA.common-definitions.json#/definitions/rTargetExternalURL"
-                        }
-                      ]
+                "DESCRIPTION": {
+                    "type": "string",
+                    "description": "Free-form text describing the sample, its origin, and its method of isolation."
+                },
+                "SAMPLE_LINKS": {
+                    "type": "array",
+                    "description": "Links to resources related to this sample",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "properties": {
+                            "SAMPLE_LINK": {
+                                "$ref": "EGA.common.json#/definitions/LinkType"
+                                }
+                        }          
                     }
-                  ]
+                },
+                "SAMPLE_ATTRIBUTES": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "description": "Properties and attributes of a sample.",
+                    "items": {
+                        "type": "object",
+                        "required": ["SAMPLE_ATTRIBUTE"],
+                        "properties": {
+                            "SAMPLE_ATTRIBUTE": {
+                                "$ref": "./EGA.common.json#/definitions/AttributeType"
+                            }
+                        }
+                    }
                 }
-              ]
             }
-          ] 
-        },
-        "contains": {
-          "title": "Constraint to have at least one 'submission' relationship",
-          "$ref": "./EGA.common-definitions.json#/definitions/rConstraintOneSourcedSubmission"
         }
-      },
-
-      "sampleAttributes": {
-        "type": "array",
-        "title": "Sample custom attributes",
-        "description": "Custom attributes of a sample: reusable attributes to encode tag-value pairs (e.g. Tag being 'age' and its Value '30') with optional units (e.g. 'years'). Its properties are inherited from the common-definitions.json schema.",
-        "minItems": 1,
-        "additionalProperties": false,
-        "uniqueItems": true,
-        "items": { 
-          "$ref": "./EGA.common-definitions.json#/definitions/customAttribute" 
-        }
-      }
     }
-      
-  }
+}

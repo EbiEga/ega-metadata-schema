@@ -1,0 +1,182 @@
+{
+    "data": {
+      "EXPERIMENT_SET": [
+        {
+          "EXPERIMENT": {
+            "TITLE": "Comprehensive Experiment",
+            "STUDY_REF": {
+              "refname": "comprehensive_study",
+              "refcenter": "EGA-TEST"
+            },
+            "DESIGN": {
+              "DESIGN_DESCRIPTION": "Comprehensive library design.",
+              "SAMPLE_DESCRIPTOR": {
+                "POOL": {
+                  "DEFAULT_MEMBER": {
+                    "refname": "X2-sample",
+                    "refcenter": "EGA-TEST",
+                    "member_name": "X2-member",
+                    "proportion": 60,
+                    "READ_LABEL": [
+                      {
+                        "value": "X2",
+                        "read_group_tag": "X2"
+                      }
+                    ]
+                  },
+                  "MEMBERS": [
+                    {
+                      "refname": "Y2-sample",
+                      "refcenter": "EGA-TEST",
+                      "member_name": "Y2-member",
+                      "proportion": 20,
+                      "READ_LABEL": [
+                        {
+                          "value": "Y2",
+                          "read_group_tag": "Y2"
+                        }
+                      ]
+                    },
+                    {
+                      "refname": "Y1-sample",
+                      "refcenter": "EGA-TEST",
+                      "member_name": "Y1-member",
+                      "proportion": 20,
+                      "READ_LABEL": [
+                        {
+                          "value": "Y1",
+                          "read_group_tag": "Y1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "LIBRARY_DESCRIPTOR": {
+                "LIBRARY_STRATEGY": "RNA-Seq",
+                "LIBRARY_SOURCE": "TRANSCRIPTOMIC",
+                "LIBRARY_SELECTION": "PCR",
+                "LIBRARY_LAYOUT": {
+                  "PAIRED": {
+                    "NOMINAL_LENGTH": 200,
+                    "NOMINAL_SDEV": 10
+                  }
+                },
+                "TARGETED_LOCI": [
+                  {
+                    "LOCUS": {
+                      "locus_name": "COX1",
+                      "description": "Mitochondrial cytochrome c oxidase 1 gene"
+                    }
+                  }
+                ],
+                "POOLING_STRATEGY": "Sample pooling strategy",
+                "LIBRARY_CONSTRUCTION_PROTOCOL": "Detailed protocol for library construction..."
+              },
+              "SPOT_DESCRIPTOR": [
+                {
+                  "SPOT_LENGTH": 150,
+                  "READ_SPECS": [
+                    {
+                      "READ_INDEX": 0,
+                      "READ_LABEL": "Forward read",
+                      "READ_CLASS": "Application Read",
+                      "READ_TYPE": "Forward",
+                      "RELATIVE_ORDER": {
+                        "precedes_read_index": 1
+                      },
+                      "BASE_COORD": 1,
+                      "EXPECTED_BASECALL_TABLE": {
+                        "BASECALLS": [
+                          {
+                            "read_group_tag": "groupA",
+                            "min_match": 5,
+                            "max_mismatch": 1,
+                            "match_edge": "start"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "READ_INDEX": 1,
+                      "READ_LABEL": "Reverse read",
+                      "READ_CLASS": "Application Read",
+                      "READ_TYPE": "Reverse",
+                      "RELATIVE_ORDER": {
+                        "follows_read_index": 0
+                      },
+                      "BASE_COORD": 150,
+                      "EXPECTED_BASECALL_TABLE": {
+                        "BASECALLS": [
+                          {
+                            "read_group_tag": "groupB",
+                            "min_match": 5,
+                            "max_mismatch": 1,
+                            "match_edge": "end"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "PLATFORM": {
+              "ION_TORRENT": {
+                "INSTRUMENT_MODEL": "Ion GeneStudio S5"
+              }
+            },
+            "PROCESSING": {
+              "PIPELINE": [
+                { 
+                  "PIPE_SECTION": {
+                      "STEP_INDEX": "1",
+                      "PREV_STEP_INDEX": null,
+                      "section_name": "Alignment",
+                      "PROGRAM": "STAR",
+                      "VERSION": "2.7.0"
+                  }
+                },
+                { 
+                  "PIPE_SECTION": {
+                      "STEP_INDEX": "2",
+                      "PREV_STEP_INDEX": ["1"],
+                      "section_name": "Quantification",
+                      "PROGRAM": "RSEM",
+                      "VERSION": "1.3.1"
+                  }
+                }
+              ]
+            },
+            "EXPERIMENT_LINKS": [
+              {
+                "EXPERIMENT_LINK": {
+                  "URL_LINK": {
+                    "LABEL": "Link to data repository",
+                    "URL": "http://example.com/data_repository"
+                  }
+                }
+              }
+            ],
+            "EXPERIMENT_ATTRIBUTES": [
+              {
+                "EXPERIMENT_ATTRIBUTE": {
+                  "TAG": "Organism",
+                  "VALUE": "Homo sapiens"
+                }
+              },
+              {
+                "EXPERIMENT_ATTRIBUTE": {
+                  "TAG": "Tissue Type",
+                  "VALUE": "Liver"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json"
+    }
+}

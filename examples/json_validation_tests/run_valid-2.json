@@ -1,0 +1,31 @@
+{
+    "data": {
+        "RUN_SET": [
+          {
+            "RUN": {
+              "alias": "minimal_run",
+              "center_name": "EGA-TEST",
+              "EXPERIMENT_REF": {
+                "refname": "minimal_experiment",
+                "refcenter": "EGA-TEST"
+              },
+              "DATA_BLOCK": {
+                "FILES": [
+                  {
+                    "FILE": {
+                      "filename": "minimal.fastq",
+                      "filetype": "fastq",
+                      "checksum_method": "MD5",
+                      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.run.json"
+    }
+}

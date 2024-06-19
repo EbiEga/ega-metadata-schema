@@ -1,0 +1,85 @@
+{
+    "data": {
+        "ANALYSIS_SET": [
+          {
+            "ANALYSIS": {
+              "alias": "Example_Seq_Var",
+              "center_name": "EBI-TEST",
+              "broker_name": "EGA",
+              "analysis_date": "2024-06-18T12:00:00Z",
+              "analysis_center": "EBI-TEST",
+              "TITLE": "Example Sequence Variation Analysis",
+              "DESCRIPTION": "This analysis identifies sequence variations in the genome.",
+              "STUDY_REF": [
+                {
+                  "refname": "Study_Seq_Var",
+                  "refcenter": "EBI-TEST"
+                }
+              ],
+              "SAMPLE_REF": [
+                {
+                  "refname": "Sample_Seq_Var",
+                  "refcenter": "EBI-TEST"
+                }
+              ],
+              "EXPERIMENT_REF": [
+                {
+                  "refname": "Exp_Seq_Var",
+                  "refcenter": "EBI-TEST"
+                }
+              ],
+              "RUN_REF": [
+                {
+                  "refname": "Run_Seq_Var",
+                  "refcenter": "EBI-TEST"
+                }
+              ],
+              "ANALYSIS_TYPE": {
+                "SEQUENCE_VARIATION": {
+                  "ASSEMBLY": {
+                    "STANDARD": {
+                      "refname": "GRCh38",
+                      "accession": "GCA_000001405.15"
+                    }
+                  },
+                  "SEQUENCE": [
+                    {
+                      "accession": "CM000663.2",
+                      "label": "chr1"
+                    }
+                  ],
+                  "EXPERIMENT_TYPES": [
+                    "Whole genome sequencing"
+                  ],
+                  "PROGRAM": "GATK",
+                  "PLATFORM": "Illumina",
+                  "IMPUTATION": true
+                }
+              },
+              "FILES": [
+                {
+                  "FILE": {
+                    "filename": "analysis/seq_var.vcf",
+                    "filetype": "vcf",
+                    "checksum_method": "MD5",
+                    "checksum": "1a2b3c4d5e6f7890abcdefabcdef1234",
+                    "unencrypted_checksum": "abcdefabcdefabcdefabcdefabcdefabcd"
+                  }
+                }
+              ],
+              "ANALYSIS_ATTRIBUTES": [
+                {
+                  "ANALYSIS_ATTRIBUTE": {
+                    "TAG": "Analysis protocol",
+                    "VALUE": "https://example.com/protocols/seq_var"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"
+    }
+}

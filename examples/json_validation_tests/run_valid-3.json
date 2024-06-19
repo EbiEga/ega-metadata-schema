@@ -1,0 +1,99 @@
+{
+    "data": {
+        "RUN_SET": [
+          {
+            "RUN": {
+              "alias": "comprehensive_run",
+              "center_name": "EGA-TEST",
+              "broker_name": "EGA-BROKER",
+              "IDENTIFIERS": {
+                "PRIMARY_ID": {
+                  "identifier": "RUN123456",
+                  "label": "Primary ID"
+                },
+                "SECONDARY_ID": {
+                  "identifier": "RUN_SEC123456",
+                  "label": "Secondary ID"
+                },
+                "EXTERNAL_ID": {
+                  "NameType": {
+                    "identifier": "EXT123456",
+                    "label": "External ID"
+                  },
+                  "namespace": "external_namespace"
+                },
+                "SUBMITTER_ID": {
+                  "NameType": {
+                    "identifier": "SUB123456",
+                    "label": "Submitter ID"
+                  },
+                  "namespace": "submitter_namespace"
+                },
+                "UUID": {
+                  "identifier": "550e8400-e29b-41d4-a716-446655440000",
+                  "label": "UUID"
+                }
+              },
+              "EXPERIMENT_REF": {
+                "refname": "comprehensive_experiment",
+                "refcenter": "EGA-TEST"
+              },
+              "DATA_BLOCK": {
+                "FILES": [
+                  {
+                    "FILE": {
+                      "filename": "comprehensive.bam",
+                      "filetype": "bam",
+                      "checksum_method": "SHA-256",
+                      "checksum": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                      "READ_LABEL": ["forward", "reverse"],
+                      "READ_TYPE": ["paired"],
+                      "quality_scoring_system": "phred",
+                      "quality_encoding": "ascii",
+                      "ascii_offset": "@",
+                      "unencrypted_checksum": "d41d8cd98f00b204e9800998ecf8427e",
+                      "checklist": "EGA-RUN-CHECKLIST"
+                    }
+                  },
+                  {
+                    "FILE": {
+                      "filename": "comprehensive.sra",
+                      "filetype": "sra",
+                      "checksum_method": "MD5",
+                      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
+                    }
+                  }
+                ]
+              },
+              "RUN_LINKS": [
+                {
+                  "RUN_LINK": {
+                    "URL_LINK": {
+                      "LABEL": "Link to data repository",
+                      "URL": "http://example.com/data_repository"
+                    }
+                  }
+                }
+              ],
+              "RUN_ATTRIBUTES": [
+                {
+                  "RUN_ATTRIBUTE": {
+                    "TAG": "Sequencing Center",
+                    "VALUE": "Center A"
+                  }
+                },
+                {
+                  "RUN_ATTRIBUTE": {
+                    "TAG": "Project",
+                    "VALUE": "Project XYZ"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.run.json"
+    }
+}
