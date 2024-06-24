@@ -25,6 +25,10 @@ for file in os.scandir(dirname):
     if not file.path.endswith(extension):
         continue
 
+    #!
+    print(f"----Validation attempt for file '{file}'")
+    #!
+
     request = request_validation(
         data_filepath=file,
         validator_url=curl_URL

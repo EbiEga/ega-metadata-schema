@@ -76,6 +76,12 @@ jobs:
           # We want to specify the JSON schemas and documents with the new 
           #   changes. Therefore we specify the schemas at deployment level (-r)
         run: |
+          #!
+          echo "--- Listing files:"
+          pwd
+          ll
+          ll ./schemas
+          #!
           schemas_dir="./schemas"
           node biovalidator/src/biovalidator -r "$schemas_dir/*.json" > biovalidator.log 2>&1 &
           
@@ -111,5 +117,6 @@ jobs:
           url="http://localhost:3020/validate"
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
           #!
+          echo "Biovalidator log:\n"
           cat biovalidator.log
           #!
