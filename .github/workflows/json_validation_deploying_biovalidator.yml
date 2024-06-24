@@ -45,6 +45,7 @@ jobs:
           # See https://github.com/elixir-europe/biovalidator#installation
           # We want to test the "main" branch of the project
         run: git clone https://github.com/elixir-europe/biovalidator.git
+
       - name: Install Biovalidator
           # We want to test with the latest Node.js version, but if not, we 
           # could make use of action: https://github.com/actions/setup-node
@@ -59,11 +60,22 @@ jobs:
           #   changes. Therefore we specify the schemas at deployment level (-r)
         run: |
           schemas_dir="./schemas"
+          node biovalidator/src/biovalidator -r "$schemas_dir/*.json" > biovalidator.log 2>&1 &
           
-          node biovalidator/src/biovalidator -r "$schemas_dir/*.json" &
-          
-          # We stop for a few seconds to give the server time
-          sleep 3
+          # Check if the server is up and running, and wait for a few seconds if not
+          for i in {1..10}; do
+            if curl --output /dev/null --silent --head --fail "http://localhost:3020/validate"; then
+              echo "Biovalidator server is up!"
+              break
+            fi
+            echo "Waiting ($i time(s)) for Biovalidator server to start..."
+            sleep 5
+          done
+          if ! curl --output /dev/null --silent --head --fail "http://localhost:3020/validate"; then
+            echo "Biovalidator server failed to start"
+            cat biovalidator.log
+            exit 1
+          fi
 
       - uses: actions/setup-python@v4
         with:
@@ -86,5 +98,4 @@ jobs:
           # The following URL points to the locally deployed server of
           #   Biovalidator
           url="http://localhost:3020/validate"
-
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
