@@ -44,7 +44,7 @@ jobs:
           python-version: '3.x'
 
       - name: Cache pip
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           # On subsequent runs, if the cache key matches (i.e., operating system and the hash of the requirements.txt file),
           #   the dependencies are restored from the cache instead of being downloaded and installed again.
@@ -53,6 +53,8 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
+          # If there is no cache for this key, we create it at the end of the run, even if there was an error mid-way
+          save-always: true
 
       - name: Install dependencies
         run: |
