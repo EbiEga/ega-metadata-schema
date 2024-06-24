@@ -26,13 +26,13 @@ unknown
 
 `objectType`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-externalurl-properties-rsource-properties-objecttype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL/properties/rSource/properties/objectType")
+* defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-externalurl-properties-rsource-properties-objecttype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL/properties/rSource/properties/objectType")
 
 ### objectType Type
 

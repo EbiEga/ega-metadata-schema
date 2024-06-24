@@ -26,13 +26,13 @@ unknown
 
 `assayedBiologicalMacromolecule`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-anyof-if-the-assayed-molecule-is-deoxyribonucleic-acid-then-the-assay-type-must-be-of-dna-asay-type-if-properties-assayedbiologicalmacromolecule.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/anyOf/0/if/properties/assayedBiologicalMacromolecule")
+* defined in: [EGA Experiment metadata schema](ega-1-anyof-if-the-assayed-molecule-is-deoxyribonucleic-acid-then-the-assay-type-must-be-of-dna-asay-type-if-properties-assayedbiologicalmacromolecule.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/anyOf/0/if/properties/assayedBiologicalMacromolecule")
 
 ### assayedBiologicalMacromolecule Type
 

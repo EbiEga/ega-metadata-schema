@@ -27,13 +27,13 @@ unknown ([4 labels per array check](ega-3-properties-assay-type-specifications-p
 
 `nLabelsPerArray`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-properties-nlabelsperarray.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/properties/nLabelsPerArray")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-properties-nlabelsperarray.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/properties/nLabelsPerArray")
 
 ### nLabelsPerArray Type
 
@@ -53,13 +53,13 @@ unknown
 
 `arraySampleLabels`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-properties-arraysamplelabels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/properties/arraySampleLabels")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check-properties-arraysamplelabels.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/anyOf/2/properties/arraySampleLabels")
 
 ### arraySampleLabels Type
 

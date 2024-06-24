@@ -16,7 +16,7 @@ Single Data Use Ontology (DUO) code.
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # items Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: merged type ([Ontology constraints for this specific termId](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes/items/properties/termId")
+* defined in: [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes/items/properties/termId")
 
 ### termId Type
 
@@ -44,11 +44,11 @@ merged type ([Ontology constraints for this specific termId](ega-8-properties-da
 
 any of
 
-*   [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-0.md "check type definition")
+* [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-1.md "check type definition")
+* [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-1.md "check type definition")
 
-*   [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-2.md "check type definition")
+* [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-2.md "check type definition")
 
 ### termId Examples
 

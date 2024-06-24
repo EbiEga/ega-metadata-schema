@@ -16,9 +16,9 @@ merged type ([Ontology constraints for this specific termId](ega-1-properties-ty
 
 any of
 
-*   [Ontology validation of terms below 'assay by sequencer'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-sequencer.md "check type definition")
+* [Ontology validation of terms below 'assay by sequencer'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-sequencer.md "check type definition")
 
-*   [Ontology validation of terms below 'assay by array'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-array.md "check type definition")
+* [Ontology validation of terms below 'assay by array'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-array.md "check type definition")
 
 ## termId Examples
 

@@ -16,6 +16,6 @@ A site or entity from which a sample (i.e. a statistically representative of the
 
 all of
 
-*   all of
+* all of
 
-    *   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+  * [Ontology term](ega-4-defs-ontology-term.md "check type definition")

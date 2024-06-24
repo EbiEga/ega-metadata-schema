@@ -16,7 +16,7 @@ Ontology term of the protocol subtype. Search for yours at the [Ontology Lookup 
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # protocolSubtype Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: merged type ([Ontology constraints for this specific termId](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype/properties/termId")
+* defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype/properties/termId")
 
 ### termId Type
 
@@ -44,13 +44,13 @@ merged type ([Ontology constraints for this specific termId](ega-9-properties-pr
 
 any of
 
-*   [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-0.md "check type definition")
+* [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-1.md "check type definition")
+* [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-1.md "check type definition")
 
-*   [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-2.md "check type definition")
+* [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-2.md "check type definition")
 
-*   [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-3.md "check type definition")
+* [Untitled undefined type in EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol-properties-ontology-constraints-for-this-specific-termid-anyof-3.md "check type definition")
 
 ### termId Examples
 

@@ -27,13 +27,13 @@ Whether the sequenced reads are paired or single. In other words, if the sequenc
 
 `libraryLayout`
 
-*   is required
+* is required
 
-*   Type: `string` ([Sequencing library layout](ega-4-defs-sequencing-library-layout.md))
+* Type: `string` ([Sequencing library layout](ega-4-defs-sequencing-library-layout.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-defs-sequencing-library-layout.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/libraryLayout")
+* defined in: [EGA Experiment metadata schema](ega-4-defs-sequencing-library-layout.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/libraryLayout")
 
 ### libraryLayout Type
 
@@ -54,13 +54,13 @@ The 'spotDescriptor' specifies how to decode the individual reads of interest fr
 
 `spotDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Spot decode spec](ega-4-defs-spot-descriptor-spot-decode-spec.md))
+* Type: `object[]` ([Spot decode spec](ega-4-defs-spot-descriptor-spot-decode-spec.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-defs-spot-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/spotDescriptor")
+* defined in: [EGA Experiment metadata schema](ega-4-defs-spot-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/sequencingExperiment/properties/spotDescriptor")
 
 ### spotDescriptor Type
 

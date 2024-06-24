@@ -16,35 +16,35 @@ The Reference Sequence (RefSeq) CURIEs take the structure of `refseq`:`accession
 
 one (and only one) of
 
-*   [NC - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nc---molecule-type-dna.md "check type definition")
+* [NC - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nc---molecule-type-dna.md "check type definition")
 
-*   [AC - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-ac---molecule-type-dna.md "check type definition")
+* [AC - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-ac---molecule-type-dna.md "check type definition")
 
-*   [NZ - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nz---molecule-type-dna.md "check type definition")
+* [NZ - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nz---molecule-type-dna.md "check type definition")
 
-*   [NT - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nt---molecule-type-dna.md "check type definition")
+* [NT - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nt---molecule-type-dna.md "check type definition")
 
-*   [NW - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nw---molecule-type-dna.md "check type definition")
+* [NW - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nw---molecule-type-dna.md "check type definition")
 
-*   [NG - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-ng---molecule-type-dna.md "check type definition")
+* [NG - Molecule type: DNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-ng---molecule-type-dna.md "check type definition")
 
-*   [NM - Molecule type: mRNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nm---molecule-type-mrna.md "check type definition")
+* [NM - Molecule type: mRNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nm---molecule-type-mrna.md "check type definition")
 
-*   [XM - Molecule type: mRNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-xm---molecule-type-mrna.md "check type definition")
+* [XM - Molecule type: mRNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-xm---molecule-type-mrna.md "check type definition")
 
-*   [NR - Molecule type: RNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nr---molecule-type-rna.md "check type definition")
+* [NR - Molecule type: RNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-nr---molecule-type-rna.md "check type definition")
 
-*   [XR - Molecule type: RNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-xr---molecule-type-rna.md "check type definition")
+* [XR - Molecule type: RNA](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-xr---molecule-type-rna.md "check type definition")
 
-*   [NP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-np---molecule-type-protein.md "check type definition")
+* [NP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-np---molecule-type-protein.md "check type definition")
 
-*   [AP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-ap---molecule-type-protein.md "check type definition")
+* [AP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-ap---molecule-type-protein.md "check type definition")
 
-*   [XP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-xp---molecule-type-protein.md "check type definition")
+* [XP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-xp---molecule-type-protein.md "check type definition")
 
-*   [YP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-yp---molecule-type-protein.md "check type definition")
+* [YP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-yp---molecule-type-protein.md "check type definition")
 
-*   [WP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-wp---molecule-type-protein.md "check type definition")
+* [WP - Molecule type: protein](ega-4-defs-refseq-accessions-data1098-curie-pattern-oneof-wp---molecule-type-protein.md "check type definition")
 
 ## curieRefseqPattern Constraints
 

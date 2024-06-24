@@ -28,13 +28,13 @@ Specify whether the spot should have a default length for this tag if the expect
 
 `defaultLength`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([Default length](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-default-length.md))
+* Type: `integer` ([Default length](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-default-length.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-default-length.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/defaultLength")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-default-length.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/defaultLength")
 
 ### defaultLength Type
 
@@ -46,13 +46,13 @@ Specify an optional starting point for tag (base offset from 1).
 
 `baseCoord`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([Base coord](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-base-coord.md))
+* Type: `integer` ([Base coord](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-base-coord.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-base-coord.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/baseCoord")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-base-coord.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/baseCoord")
 
 ### baseCoord Type
 
@@ -64,13 +64,13 @@ Element's body contains a basecall, attribute provide description of this read m
 
 `basecalls`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Basecall](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall.md))
+* Type: `object[]` ([Basecall](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls")
 
 ### basecalls Type
 

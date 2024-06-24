@@ -27,13 +27,13 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 `start`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
+* Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start")
+* defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/start")
 
 ### start Type
 
@@ -79,13 +79,13 @@ Precise age in ISO8601 format of the individual. For example, 'P3Y6M4D' represen
 
 `end`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
+* Type: `string` ([Individual's age](ega-4-defs-individuals-age.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")
+* defined in: [EGA sample metadata schema](ega-4-defs-individuals-age.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection/properties/ageRange/properties/end")
 
 ### end Type
 

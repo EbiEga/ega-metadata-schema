@@ -16,11 +16,11 @@ Base definition containing the properties (e.g. Sample's alias) of a minimal ide
 
 any of
 
-*   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+* [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-*   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+* [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-*   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+* [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 # 0 Properties
 
@@ -37,13 +37,13 @@ Submitter designated name (e.g. 'my\_sample\_J13') for the object (e.g. Sample).
 
 `alias`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Alias of an object](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md))
+* Type: `string` ([Alias of an object](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/alias")
+* defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-alias-of-an-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/alias")
 
 ### alias Type
 
@@ -65,13 +65,13 @@ Center name (e.g. 'EBI-TEST') associated to the submitter. In other words, it is
 
 `centerName`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Center name of the submitter](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md))
+* Type: `string` ([Center name of the submitter](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/centerName")
+* defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-center-name-of-the-submitter.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/centerName")
 
 ### centerName Type
 
@@ -93,13 +93,13 @@ The object accession (i.e. unique identifier) assigned by the archive (EGA). Obj
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([EGA's accession of the object](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md))
+* Type: `string` ([EGA's accession of the object](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/egaAccession")
+* defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-egas-accession-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/egaAccession")
 
 ### egaAccession Type
 
@@ -117,13 +117,13 @@ External accession node to reference objects in other archives (e.g. an already 
 
 `externalAccessions`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Object External accession](ega-4-defs-object-external-accession.md))
+* Type: `object[]` ([Object External accession](ega-4-defs-object-external-accession.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-external-accessions-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/externalAccessions")
+* defined in: [EGA common metadata definitions](ega-4-defs-core-identifiers-of-an-object-properties-external-accessions-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectCoreId/properties/externalAccessions")
 
 ### externalAccessions Type
 

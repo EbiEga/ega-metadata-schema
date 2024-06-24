@@ -16,7 +16,7 @@ The part of organism's anatomy or substance arising from an organism from which 
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # 0 Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/materialAnatomicalEntity/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-material-anatomical-entity-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/materialAnatomicalEntity/properties/termId")
 
 ### termId Type
 

@@ -28,13 +28,13 @@ unknown ([Checksum pattern check - MD5](ega-4-defs-check-checksum-checks-based-o
 
 `checksumMethod`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksummethod.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck/anyOf/0/properties/checksumMethod")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksummethod.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck/anyOf/0/properties/checksumMethod")
 
 ### checksumMethod Type
 
@@ -54,13 +54,13 @@ This object exists to hold the pattern that a checksum would have if it was obta
 
 `unencryptedChecksum`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Checksum pattern obtained by MD5](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5.md))
+* Type: `string` ([Checksum pattern obtained by MD5](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck/anyOf/0/properties/unencryptedChecksum")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck/anyOf/0/properties/unencryptedChecksum")
 
 ### unencryptedChecksum Type
 
@@ -88,13 +88,13 @@ This object exists to hold the pattern that a checksum would have if it was obta
 
 `encryptedChecksum`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Checksum pattern obtained by MD5](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5-1.md))
+* Type: `string` ([Checksum pattern obtained by MD5](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5-1.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck/anyOf/0/properties/encryptedChecksum")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5-properties-checksum-pattern-obtained-by-md5-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/checksumPatternCheck/anyOf/0/properties/encryptedChecksum")
 
 ### encryptedChecksum Type
 

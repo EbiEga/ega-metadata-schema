@@ -27,13 +27,13 @@ Property that specifies whether the phenotype was observed or not. Similar to ph
 
 `excluded`
 
-*   is optional
+* is optional
 
-*   Type: `boolean` ([Excluded](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item-properties-excluded.md))
+* Type: `boolean` ([Excluded](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item-properties-excluded.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item-properties-excluded.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/excluded")
+* defined in: [EGA individual metadata schema](ega-6-properties-minimal-public-attributes-describing-an-individual-properties-array-of-phenotypic-abnormalities-phenotypic-abnormality-item-properties-excluded.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/excluded")
 
 ### excluded Type
 
@@ -45,13 +45,13 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 `phenotypicAbnormality`
 
-*   is required
+* is required
 
-*   Type: `object` ([Phenotypic abnormality](ega-4-defs-phenotypic-abnormality.md))
+* Type: `object` ([Phenotypic abnormality](ega-4-defs-phenotypic-abnormality.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA individual metadata schema](ega-4-defs-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality")
+* defined in: [EGA individual metadata schema](ega-4-defs-phenotypic-abnormality.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.individual.json#/properties/minimalPublicAttributes/properties/phenotypicAbnormalities/items/properties/phenotypicAbnormality")
 
 ### phenotypicAbnormality Type
 
@@ -59,4 +59,4 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")

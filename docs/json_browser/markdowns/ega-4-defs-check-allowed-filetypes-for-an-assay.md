@@ -26,13 +26,13 @@ This object exists with the only purpose of being a reference list of the allowe
 
 `filetype`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayFiletypes/properties/filetype")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-allowed-filetypes-for-an-assay-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayFiletypes/properties/filetype")
 
 ### filetype Type
 

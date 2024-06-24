@@ -26,13 +26,13 @@ unknown
 
 `assayInstrument`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected-if-properties-assayinstrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/allOf/0/if/properties/assayInstrument")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected-if-properties-assayinstrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/allOf/0/if/properties/assayInstrument")
 
 ### assayInstrument Type
 

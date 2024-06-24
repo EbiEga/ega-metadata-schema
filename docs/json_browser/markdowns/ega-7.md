@@ -29,13 +29,13 @@ Free-form title of the object-set. Used as a convenient way to identify differen
 
 `objectTitle`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Title of the object-set](ega-7-properties-title-of-the-object-set.md))
+* Type: `string` ([Title of the object-set](ega-7-properties-title-of-the-object-set.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-7-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")
+* defined in: [EGA object-set metadata schema](ega-7-properties-title-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectTitle")
 
 ### objectTitle Type
 
@@ -57,13 +57,13 @@ More extensive free-form description of the object-set. Used to provide context 
 
 `objectDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Description of the object-set](ega-7-properties-description-of-the-object-set.md))
+* Type: `string` ([Description of the object-set](ega-7-properties-description-of-the-object-set.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-7-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription")
+* defined in: [EGA object-set metadata schema](ega-7-properties-description-of-the-object-set.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectDescription")
 
 ### objectDescription Type
 
@@ -85,13 +85,13 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 `schemaDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
+* Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")
+* defined in: [EGA object-set metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
@@ -103,13 +103,13 @@ The array per se containing the list of metadata objects to be validated. For ea
 
 `objectArray`
 
-*   is required
+* is required
 
-*   Type: an array of merged types ([Schemas being conditionally applied based on value of 'objectType' from 'schemaDescriptor' in each object.](ega-7-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-objecttype-from-schemadescriptor-in-each-object.md))
+* Type: an array of merged types ([Schemas being conditionally applied based on value of 'objectType' from 'schemaDescriptor' in each object.](ega-7-properties-array-containing-metadata-objects-schemas-being-conditionally-applied-based-on-value-of-objecttype-from-schemadescriptor-in-each-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA object-set metadata schema](ega-7-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray")
+* defined in: [EGA object-set metadata schema](ega-7-properties-array-containing-metadata-objects.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.object-set.json#/properties/objectArray")
 
 ### objectArray Type
 

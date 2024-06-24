@@ -32,13 +32,13 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 `objectId`
 
-*   is required
+* is required
 
-*   Type: `object` ([Object's IDs block](ega-8-properties-objects-ids-block.md))
+* Type: `object` ([Object's IDs block](ega-8-properties-objects-ids-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")
+* defined in: [EGA policy metadata schema](ega-8-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectId")
 
 ### objectId Type
 
@@ -46,15 +46,15 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 all of
 
-*   any of
+* any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+  * [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+  * [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+  * [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that policy EGA ID (EGAP) is correct](ega-8-properties-objects-ids-block-allof-check-that-policy-ega-id-egap-is-correct.md "check type definition")
+* [Check that policy EGA ID (EGAP) is correct](ega-8-properties-objects-ids-block-allof-check-that-policy-ega-id-egap-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -62,13 +62,13 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 `schemaDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
+* Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")
+* defined in: [EGA policy metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
@@ -80,13 +80,13 @@ Free-form title of the policy. Can be used to call out policy records in searche
 
 `objectTitle`
 
-*   is required
+* is required
 
-*   Type: `string` ([Title of the policy](ega-8-properties-title-of-the-policy.md))
+* Type: `string` ([Title of the policy](ega-8-properties-title-of-the-policy.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")
+* defined in: [EGA policy metadata schema](ega-8-properties-title-of-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/objectTitle")
 
 ### objectTitle Type
 
@@ -104,13 +104,13 @@ Node containing the full description of the policy, whether it is hosted at some
 
 `policyDescriptor`
 
-*   is required
+* is required
 
-*   Type: `object` ([Policy descriptor](ega-8-properties-policy-descriptor.md))
+* Type: `object` ([Policy descriptor](ega-8-properties-policy-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")
+* defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor")
 
 ### policyDescriptor Type
 
@@ -118,9 +118,9 @@ Node containing the full description of the policy, whether it is hosted at some
 
 any of
 
-*   [Either the policy reference is given](ega-8-properties-policy-descriptor-anyof-either-the-policy-reference-is-given.md "check type definition")
+* [Either the policy reference is given](ega-8-properties-policy-descriptor-anyof-either-the-policy-reference-is-given.md "check type definition")
 
-*   [Or the policy text is given](ega-8-properties-policy-descriptor-anyof-or-the-policy-text-is-given.md "check type definition")
+* [Or the policy text is given](ega-8-properties-policy-descriptor-anyof-or-the-policy-text-is-given.md "check type definition")
 
 ## duoCodes
 
@@ -128,13 +128,13 @@ Collection of Data Use Ontology (DUO) codes. These allow to semantically tag dat
 
 `duoCodes`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Data Use Ontology (DUO)](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md))
+* Type: `object[]` ([Data Use Ontology (DUO)](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")
+* defined in: [EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/duoCodes")
 
 ### duoCodes Type
 
@@ -152,13 +152,13 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 `policyRelationships`
 
-*   is optional
+* is optional
 
-*   Type: an array of merged types ([Details](ega-8-properties-policy-relationships-items.md))
+* Type: an array of merged types ([Details](ega-8-properties-policy-relationships-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships")
+* defined in: [EGA policy metadata schema](ega-8-properties-policy-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyRelationships")
 
 ### policyRelationships Type
 
@@ -176,13 +176,13 @@ Custom attributes of a policy: reusable attributes to encode tag-value pairs (e.
 
 `policyAttributes`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
+* Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyAttributes")
+* defined in: [EGA policy metadata schema](ega-8-properties-policy-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyAttributes")
 
 ### policyAttributes Type
 

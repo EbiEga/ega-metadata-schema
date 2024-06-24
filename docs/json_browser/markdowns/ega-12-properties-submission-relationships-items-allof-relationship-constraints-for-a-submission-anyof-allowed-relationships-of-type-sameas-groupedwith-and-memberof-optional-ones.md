@@ -16,16 +16,16 @@ merged type ([Allowed relationships of type sameAs, groupedWith and memberOf (op
 
 all of
 
-*   any of
+* any of
 
-    *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+  * [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-    *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+  * [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-    *   [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
+  * [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
 
-*   any of
+* any of
 
-    *   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
+  * [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-    *   [Relationship target: submission](ega-4-defs-relationship-target-submission.md "check type definition")
+  * [Relationship target: submission](ega-4-defs-relationship-target-submission.md "check type definition")

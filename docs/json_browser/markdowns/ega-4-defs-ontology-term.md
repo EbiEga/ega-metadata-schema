@@ -27,13 +27,13 @@ The identifier of an ontology term must be in CURIE format (check property 'curi
 
 `termId`
 
-*   is required
+* is required
 
-*   Type: `string` ([ID of the term](ega-4-defs-ontology-term-properties-id-of-the-term.md))
+* Type: `string` ([ID of the term](ega-4-defs-ontology-term-properties-id-of-the-term.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-ontology-term-properties-id-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-ontology-term-properties-id-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termId")
 
 ### termId Type
 
@@ -41,7 +41,7 @@ The identifier of an ontology term must be in CURIE format (check property 'curi
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-4-defs-compact-uri-curie-pattern.md "check type definition")
+* [Compact URI (CURIE) pattern](ega-4-defs-compact-uri-curie-pattern.md "check type definition")
 
 ### termId Constraints
 
@@ -75,13 +75,13 @@ The label of a term is the human-readable string associated with the identifier.
 
 `termLabel`
 
-*   is required
+* is required
 
-*   Type: `string` ([Label of the term](ega-4-defs-ontology-term-properties-label-of-the-term.md))
+* Type: `string` ([Label of the term](ega-4-defs-ontology-term-properties-label-of-the-term.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-ontology-term-properties-label-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termLabel")
+* defined in: [EGA common metadata definitions](ega-4-defs-ontology-term-properties-label-of-the-term.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ontologyTerm/properties/termLabel")
 
 ### termLabel Type
 

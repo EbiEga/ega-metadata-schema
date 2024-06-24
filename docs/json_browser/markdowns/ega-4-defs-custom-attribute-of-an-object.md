@@ -28,13 +28,13 @@ The name of the attribute (e.g. 'Age').
 
 `tag`
 
-*   is required
+* is required
 
-*   Type: `string` ([Tag of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md))
+* Type: `string` ([Tag of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/tag")
+* defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-tag-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/tag")
 
 ### tag Type
 
@@ -56,13 +56,13 @@ The value of the attribute (e.g. '40').
 
 `value`
 
-*   is required
+* is required
 
-*   Type: any of the following: `string` or `number` ([Value of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
+* Type: any of the following: `string` or `number` ([Value of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/value")
+* defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-value-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/value")
 
 ### value Type
 
@@ -84,13 +84,13 @@ The optional units of the attribute (e.g. 'years').
 
 `units`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Units of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md))
+* Type: `string` ([Units of the custom attribute](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/units")
+* defined in: [EGA common metadata definitions](ega-4-defs-custom-attribute-of-an-object-properties-units-of-the-custom-attribute.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/customAttribute/properties/units")
 
 ### units Type
 

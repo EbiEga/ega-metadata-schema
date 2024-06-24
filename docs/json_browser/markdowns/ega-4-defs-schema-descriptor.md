@@ -29,13 +29,13 @@ Type of the object (e.g. 'sample') the JSON document describes.
 
 `objectType`
 
-*   is required
+* is required
 
-*   Type: `string` ([Type of the object](ega-4-defs-schema-descriptor-properties-type-of-the-object.md))
+* Type: `string` ([Type of the object](ega-4-defs-schema-descriptor-properties-type-of-the-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-type-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectType")
+* defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-type-of-the-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectType")
 
 ### objectType Type
 
@@ -66,13 +66,13 @@ URI of the schema that describes the JSON document (e.g. 'my\_sample.json')
 
 `describedBySchemaUri`
 
-*   is required
+* is required
 
-*   Type: `string` ([URI of the schema](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md))
+* Type: `string` ([URI of the schema](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/describedBySchemaUri")
+* defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-uri-of-the-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/describedBySchemaUri")
 
 ### describedBySchemaUri Type
 
@@ -94,13 +94,13 @@ The version of the object's schema, the one specific for the object the JSON doc
 
 `objectSchemaVersion`
 
-*   is required
+* is required
 
-*   Type: `string` ([Version of the object's schema](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md))
+* Type: `string` ([Version of the object's schema](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectSchemaVersion")
+* defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/objectSchemaVersion")
 
 ### objectSchemaVersion Type
 
@@ -108,7 +108,7 @@ The version of the object's schema, the one specific for the object the JSON doc
 
 all of
 
-*   [Semantic versioning pattern](ega-4-defs-semantic-versioning-pattern.md "check type definition")
+* [Semantic versioning pattern](ega-4-defs-semantic-versioning-pattern.md "check type definition")
 
 ## commonSchemaVersion
 
@@ -116,13 +116,13 @@ The version of the common definition's schema, the one containing all shared def
 
 `commonSchemaVersion`
 
-*   is required
+* is required
 
-*   Type: `string` ([Version of the common definition's schema](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md))
+* Type: `string` ([Version of the common definition's schema](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/commonSchemaVersion")
+* defined in: [EGA common metadata definitions](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/schemaDescriptor/properties/commonSchemaVersion")
 
 ### commonSchemaVersion Type
 
@@ -130,4 +130,4 @@ The version of the common definition's schema, the one containing all shared def
 
 all of
 
-*   [Semantic versioning pattern](ega-4-defs-semantic-versioning-pattern.md "check type definition")
+* [Semantic versioning pattern](ega-4-defs-semantic-versioning-pattern.md "check type definition")

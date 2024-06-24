@@ -16,11 +16,11 @@ Node providing the context of the locus: its sequence, coordinates, encompassed 
 
 any of
 
-*   [Either the gene description is given](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-anyof-either-the-gene-description-is-given.md "check type definition")
+* [Either the gene description is given](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-anyof-either-the-gene-description-is-given.md "check type definition")
 
-*   [Or the genomic sequence context](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-anyof-or-the-genomic-sequence-context.md "check type definition")
+* [Or the genomic sequence context](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-anyof-or-the-genomic-sequence-context.md "check type definition")
 
-*   [Or an external reference to the locus context](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-anyof-or-an-external-reference-to-the-locus-context.md "check type definition")
+* [Or an external reference to the locus context](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-anyof-or-an-external-reference-to-the-locus-context.md "check type definition")
 
 # items Properties
 
@@ -37,13 +37,13 @@ Node to uniquely identify a gene \[SO:0000704]: a region (or regions) that inclu
 
 `geneDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Gene descriptor](ega-4-defs-gene-descriptor.md))
+* Type: `object` ([Gene descriptor](ega-4-defs-gene-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/geneDescriptor")
+* defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/geneDescriptor")
 
 ### geneDescriptor Type
 
@@ -55,13 +55,13 @@ Node used to describe with sufficient detail a genomic sequence (e.g. Human Chro
 
 `genomicSequenceDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Genomic sequence descriptor](ega-4-defs-genomic-sequence-descriptor.md))
+* Type: `object` ([Genomic sequence descriptor](ega-4-defs-genomic-sequence-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/genomicSequenceDescriptor")
+* defined in: [EGA common metadata definitions](ega-4-defs-genomic-sequence-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/genomicSequenceDescriptor")
 
 ### genomicSequenceDescriptor Type
 
@@ -69,9 +69,9 @@ Node used to describe with sufficient detail a genomic sequence (e.g. Human Chro
 
 any of
 
-*   [Either the full position context is given](ega-4-defs-genomic-sequence-descriptor-anyof-either-the-full-position-context-is-given.md "check type definition")
+* [Either the full position context is given](ega-4-defs-genomic-sequence-descriptor-anyof-either-the-full-position-context-is-given.md "check type definition")
 
-*   [Or at least the sequence itself is given](ega-4-defs-genomic-sequence-descriptor-anyof-or-at-least-the-sequence-itself-is-given.md "check type definition")
+* [Or at least the sequence itself is given](ega-4-defs-genomic-sequence-descriptor-anyof-or-at-least-the-sequence-itself-is-given.md "check type definition")
 
 ## locusExternalReference
 
@@ -79,13 +79,13 @@ External accession property defining a reference to an external record in anothe
 
 `locusExternalReference`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Object External accession](ega-4-defs-object-external-accession.md))
+* Type: `object` ([Object External accession](ega-4-defs-object-external-accession.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")
+* defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/locusExternalReference")
 
 ### locusExternalReference Type
 
@@ -93,9 +93,9 @@ External accession property defining a reference to an external record in anothe
 
 any of
 
-*   [Either the identifier is needed](ega-4-defs-object-external-accession-anyof-either-the-identifier-is-needed.md "check type definition")
+* [Either the identifier is needed](ega-4-defs-object-external-accession-anyof-either-the-identifier-is-needed.md "check type definition")
 
-*   [Or the reference is needed](ega-4-defs-object-external-accession-anyof-or-the-reference-is-needed.md "check type definition")
+* [Or the reference is needed](ega-4-defs-object-external-accession-anyof-or-the-reference-is-needed.md "check type definition")
 
 ## locusAdditionalDescription
 
@@ -103,13 +103,13 @@ Optional free-text description of the locus to add any additional context.
 
 `locusAdditionalDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Additional description of the locus](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md))
+* Type: `string` ([Additional description of the locus](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/locusAdditionalDescription")
+* defined in: [EGA common metadata definitions](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item-properties-additional-description-of-the-locus.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor/items/properties/locusAdditionalDescription")
 
 ### locusAdditionalDescription Type
 

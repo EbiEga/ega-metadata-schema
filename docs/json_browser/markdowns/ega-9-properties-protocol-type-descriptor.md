@@ -27,13 +27,13 @@ Classification by type of the protocol (e.g. 'Sample collection'), to be chosen 
 
 `protocolType`
 
-*   is required
+* is required
 
-*   Type: `string` ([Type of protocol](ega-9-properties-protocol-type-descriptor-properties-type-of-protocol.md))
+* Type: `string` ([Type of protocol](ega-9-properties-protocol-type-descriptor-properties-type-of-protocol.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-type-of-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolType")
+* defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-type-of-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolType")
 
 ### protocolType Type
 
@@ -70,13 +70,13 @@ Ontology term of the protocol subtype. Search for yours at the [Ontology Lookup 
 
 `protocolSubtype`
 
-*   is required
+* is required
 
-*   Type: `object` ([Subtype of the protocol](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md))
+* Type: `object` ([Subtype of the protocol](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype")
+* defined in: [EGA protocol metadata schema](ega-9-properties-protocol-type-descriptor-properties-subtype-of-the-protocol.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/protocolTypeDescriptor/properties/protocolSubtype")
 
 ### protocolSubtype Type
 
@@ -84,4 +84,4 @@ Ontology term of the protocol subtype. Search for yours at the [Ontology Lookup 
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")

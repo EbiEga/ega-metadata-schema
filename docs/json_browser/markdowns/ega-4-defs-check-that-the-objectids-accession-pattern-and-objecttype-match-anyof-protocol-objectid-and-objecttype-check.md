@@ -27,13 +27,13 @@ unknown ([Protocol: objectId and objectType check](ega-4-defs-check-that-the-obj
 
 `objectId`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check-properties-objectid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck/anyOf/12/properties/objectId")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check-properties-objectid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck/anyOf/12/properties/objectId")
 
 ### objectId Type
 
@@ -45,13 +45,13 @@ unknown
 
 `objectType`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check-properties-objecttype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck/anyOf/12/properties/objectType")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check-properties-objecttype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck/anyOf/12/properties/objectType")
 
 ### objectType Type
 

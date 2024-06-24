@@ -27,13 +27,13 @@ unknown ([CRAI Filename patternCheck](ega-4-defs-check-filetype-checks-based-on-
 
 `filetype`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-crai-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/65/properties/filetype")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-crai-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/65/properties/filetype")
 
 ### filetype Type
 
@@ -53,13 +53,13 @@ This object exists to hold the filename pattern that a 'CRAI' filetypeId would h
 
 `filename`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Filename pattern of a CRAI file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-crai-filename-patterncheck-properties-filename-pattern-of-a-crai-file.md))
+* Type: `string` ([Filename pattern of a CRAI file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-crai-filename-patterncheck-properties-filename-pattern-of-a-crai-file.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-crai-filename-patterncheck-properties-filename-pattern-of-a-crai-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/65/properties/filename")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-crai-filename-patterncheck-properties-filename-pattern-of-a-crai-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/65/properties/filename")
 
 ### filename Type
 

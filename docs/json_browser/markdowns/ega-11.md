@@ -33,13 +33,13 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 `objectId`
 
-*   is required
+* is required
 
-*   Type: `object` ([Object's IDs block](ega-11-properties-objects-ids-block.md))
+* Type: `object` ([Object's IDs block](ega-11-properties-objects-ids-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId")
+* defined in: [EGA study metadata schema](ega-11-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId")
 
 ### objectId Type
 
@@ -47,15 +47,15 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 all of
 
-*   any of
+* any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+  * [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+  * [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+  * [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that study EGA ID (EGAS) is correct](ega-11-properties-objects-ids-block-allof-check-that-study-ega-id-egas-is-correct.md "check type definition")
+* [Check that study EGA ID (EGAS) is correct](ega-11-properties-objects-ids-block-allof-check-that-study-ega-id-egas-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -63,13 +63,13 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 `schemaDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
+* Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schemaDescriptor")
+* defined in: [EGA study metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
@@ -81,13 +81,13 @@ Short free-form text that can be used to call out study records in searches or d
 
 `objectTitle`
 
-*   is required
+* is required
 
-*   Type: `string` ([Title of the study](ega-11-properties-title-of-the-study.md))
+* Type: `string` ([Title of the study](ega-11-properties-title-of-the-study.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectTitle")
+* defined in: [EGA study metadata schema](ega-11-properties-title-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectTitle")
 
 ### objectTitle Type
 
@@ -105,13 +105,13 @@ An in-depth description of the study, including its overall purpose, goals, scop
 
 `objectDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Description of the study](ega-11-properties-description-of-the-study.md))
+* Type: `string` ([Description of the study](ega-11-properties-description-of-the-study.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectDescription")
+* defined in: [EGA study metadata schema](ega-11-properties-description-of-the-study.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectDescription")
 
 ### objectDescription Type
 
@@ -129,13 +129,13 @@ List of study types. Contains specific keywords (e.g. 'COVID-19') as items that 
 
 `studyTypes`
 
-*   is required
+* is required
 
-*   Type: `string[]` ([Study type](ega-11-properties-studytypes-array-study-type.md))
+* Type: `string[]` ([Study type](ega-11-properties-studytypes-array-study-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-studytypes-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyTypes")
+* defined in: [EGA study metadata schema](ega-11-properties-studytypes-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyTypes")
 
 ### studyTypes Type
 
@@ -153,13 +153,13 @@ List of study designs (a.k.a. experimental designs). Contains specific keywords 
 
 `studyDesigns`
 
-*   is required
+* is required
 
-*   Type: `string[]` ([Enumeration of design keywords](ega-4-defs-enumeration-of-design-keywords.md))
+* Type: `string[]` ([Enumeration of design keywords](ega-4-defs-enumeration-of-design-keywords.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-studydesigns-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyDesigns")
+* defined in: [EGA study metadata schema](ega-11-properties-studydesigns-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyDesigns")
 
 ### studyDesigns Type
 
@@ -177,13 +177,13 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 `studyRelationships`
 
-*   is optional
+* is optional
 
-*   Type: an array of merged types ([Details](ega-11-properties-study-relationships-items.md))
+* Type: an array of merged types ([Details](ega-11-properties-study-relationships-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyRelationships")
+* defined in: [EGA study metadata schema](ega-11-properties-study-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyRelationships")
 
 ### studyRelationships Type
 
@@ -201,13 +201,13 @@ Custom attributes of a study: reusable attributes to encode tag-value pairs (e.g
 
 `studyAttributes`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
+* Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-11-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyAttributes")
+* defined in: [EGA study metadata schema](ega-11-properties-study-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/studyAttributes")
 
 ### studyAttributes Type
 

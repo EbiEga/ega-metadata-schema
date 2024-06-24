@@ -16,9 +16,9 @@ A computed value which depends on the contents of a block of data and which is t
 
 one (and only one) of
 
-*   [Checksum pattern obtained by MD5](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-md5.md "check type definition")
+* [Checksum pattern obtained by MD5](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-md5.md "check type definition")
 
-*   [Checksum pattern obtained by SHA-256](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-sha-256.md "check type definition")
+* [Checksum pattern obtained by SHA-256](ega-4-defs-ega-file-object-properties-checksum-ncitc43522-of-the-unencrypted-file-oneof-checksum-pattern-obtained-by-sha-256.md "check type definition")
 
 ## unencryptedChecksum Examples
 

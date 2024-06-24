@@ -26,13 +26,13 @@ Node to be used as an object type for relationship contraints.
 
 `rSource`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-externalurl-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL/properties/rSource")
+* defined in: [EGA common metadata definitions](ega-4-defs-relationship-source-externalurl-properties-rsource.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rSourceExternalURL/properties/rSource")
 
 ### rSource Type
 

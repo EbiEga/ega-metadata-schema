@@ -16,30 +16,30 @@ merged type ([Relationships of external accessions and URLs (optional ones)](ega
 
 all of
 
-*   any of
+* any of
 
-    *   [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
+  * [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
 
-    *   [Relationship type: familyRelationshipWith](ega-4-defs-relationship-type-familyrelationshipwith.md "check type definition")
+  * [Relationship type: familyRelationshipWith](ega-4-defs-relationship-type-familyrelationshipwith.md "check type definition")
 
-    *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+  * [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-    *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+  * [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-    *   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
+  * [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
-    *   [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
+  * [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
 
-    *   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
+  * [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
 
-    *   [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
+  * [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
 
-*   any of
+* any of
 
-    *   [Relationship source: externalAccession](ega-4-defs-relationship-source-externalaccession.md "check type definition")
+  * [Relationship source: externalAccession](ega-4-defs-relationship-source-externalaccession.md "check type definition")
 
-    *   [Relationship source: externalURL](ega-4-defs-relationship-source-externalurl.md "check type definition")
+  * [Relationship source: externalURL](ega-4-defs-relationship-source-externalurl.md "check type definition")
 
-    *   [Relationship target: externalAccession](ega-4-defs-relationship-target-externalaccession.md "check type definition")
+  * [Relationship target: externalAccession](ega-4-defs-relationship-target-externalaccession.md "check type definition")
 
-    *   [Relationship target: externalURL](ega-4-defs-relationship-target-externalurl.md "check type definition")
+  * [Relationship target: externalURL](ega-4-defs-relationship-target-externalurl.md "check type definition")

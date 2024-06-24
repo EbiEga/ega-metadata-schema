@@ -16,11 +16,11 @@ merged type ([Ontology constraints for this specific termId](ega-8-properties-da
 
 any of
 
-*   [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-0.md "check type definition")
+* [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-1.md "check type definition")
+* [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-1.md "check type definition")
 
-*   [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-2.md "check type definition")
+* [Untitled undefined type in EGA policy metadata schema](ega-8-properties-data-use-ontology-duo-codes-data-use-ontology-duo-properties-ontology-constraints-for-this-specific-termid-anyof-2.md "check type definition")
 
 ## termId Examples
 

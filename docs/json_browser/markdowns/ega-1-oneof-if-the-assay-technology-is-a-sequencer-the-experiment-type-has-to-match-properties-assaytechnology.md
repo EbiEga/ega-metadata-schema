@@ -26,13 +26,13 @@ unknown
 
 `assayInstrument`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assaytechnology-properties-assayinstrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/0/properties/assayTechnology/properties/assayInstrument")
+* defined in: [EGA Experiment metadata schema](ega-1-oneof-if-the-assay-technology-is-a-sequencer-the-experiment-type-has-to-match-properties-assaytechnology-properties-assayinstrument.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/oneOf/0/properties/assayTechnology/properties/assayInstrument")
 
 ### assayInstrument Type
 

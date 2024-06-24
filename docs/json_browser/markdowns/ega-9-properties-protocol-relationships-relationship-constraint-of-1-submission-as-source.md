@@ -16,6 +16,6 @@ merged type ([Relationship constraint of 1 submission as source](ega-9-propertie
 
 all of
 
-*   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
+* [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
-*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
+* [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")

@@ -26,13 +26,13 @@ unknown
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA sample's ID (EGAN...)](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check-properties-objectid-properties-pattern-of-an-ega-samples-id-egan.md))
+* Type: `string` ([Pattern of an EGA sample's ID (EGAN...)](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check-properties-objectid-properties-pattern-of-an-ega-samples-id-egan.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check-properties-objectid-properties-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck/anyOf/4/properties/objectId/properties/egaAccession")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check-properties-objectid-properties-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectIdAndObjectTypeCheck/anyOf/4/properties/objectId/properties/egaAccession")
 
 ### egaAccession Type
 

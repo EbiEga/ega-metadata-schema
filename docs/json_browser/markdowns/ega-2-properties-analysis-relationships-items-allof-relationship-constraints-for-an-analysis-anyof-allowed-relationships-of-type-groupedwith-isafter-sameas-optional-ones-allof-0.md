@@ -16,8 +16,8 @@ merged type ([Details](ega-2-properties-analysis-relationships-items-allof-relat
 
 any of
 
-*   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+* [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-*   [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
+* [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
 
-*   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+* [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")

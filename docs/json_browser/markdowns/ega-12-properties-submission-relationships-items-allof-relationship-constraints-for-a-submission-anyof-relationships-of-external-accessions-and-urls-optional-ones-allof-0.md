@@ -16,16 +16,16 @@ merged type ([Details](ega-12-properties-submission-relationships-items-allof-re
 
 any of
 
-*   [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
+* [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
 
-*   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+* [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-*   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+* [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-*   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
+* [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
-*   [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
+* [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
 
-*   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
+* [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
 
-*   [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
+* [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")

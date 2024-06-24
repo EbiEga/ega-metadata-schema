@@ -16,7 +16,7 @@ Entrez Gene is the NCBI's database for gene-specific information, focusing on co
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-4-defs-compact-uri-curie-pattern.md "check type definition")
+* [Compact URI (CURIE) pattern](ega-4-defs-compact-uri-curie-pattern.md "check type definition")
 
 ## curieNcbiGeneIdentifierPattern Constraints
 

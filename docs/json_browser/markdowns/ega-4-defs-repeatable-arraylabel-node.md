@@ -16,9 +16,9 @@ Chemical conjugated to nucleic acid/proteins to label them before microarray hyb
 
 any of
 
-*   [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-0.md "check type definition")
+* [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-1.md "check type definition")
+* [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-1.md "check type definition")
 
 # items Properties
 
@@ -33,13 +33,13 @@ The chosen term (e.g. 'Cy3 dye' \[CHEBI:37987]) needs to be a Chemical Entity fr
 
 `arrayLabelIdentifier`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Array label identifier](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md))
+* Type: `object` ([Array label identifier](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelIdentifier")
+* defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelIdentifier")
 
 ### arrayLabelIdentifier Type
 
@@ -47,7 +47,7 @@ The chosen term (e.g. 'Cy3 dye' \[CHEBI:37987]) needs to be a Chemical Entity fr
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## arrayLabelDescription
 
@@ -55,13 +55,13 @@ Additional description of the used array label, indicating further details: cont
 
 `arrayLabelDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Array label description](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md))
+* Type: `string` ([Array label description](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelDescription")
+* defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-description.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelDescription")
 
 ### arrayLabelDescription Type
 

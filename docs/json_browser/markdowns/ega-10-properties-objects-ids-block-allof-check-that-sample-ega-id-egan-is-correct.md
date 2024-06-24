@@ -26,13 +26,13 @@ unknown ([Check that sample EGA ID (EGAN) is correct](ega-10-properties-objects-
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA sample's ID (EGAN...)](ega-4-defs-pattern-of-an-ega-samples-id-egan.md))
+* Type: `string` ([Pattern of an EGA sample's ID (EGAN...)](ega-4-defs-pattern-of-an-ega-samples-id-egan.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-defs-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectId/allOf/1/properties/egaAccession")
+* defined in: [EGA sample metadata schema](ega-4-defs-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 

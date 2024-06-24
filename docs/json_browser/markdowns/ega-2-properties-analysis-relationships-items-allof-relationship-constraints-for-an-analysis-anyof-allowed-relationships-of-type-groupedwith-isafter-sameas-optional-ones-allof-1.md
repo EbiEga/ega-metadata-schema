@@ -16,6 +16,6 @@ merged type ([Details](ega-2-properties-analysis-relationships-items-allof-relat
 
 any of
 
-*   [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
+* [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
 
-*   [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")
+* [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")

@@ -16,4 +16,4 @@ The version of the common definition's schema, the one containing all shared def
 
 all of
 
-*   [Semantic versioning pattern](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema-allof-semantic-versioning-pattern.md "check type definition")
+* [Semantic versioning pattern](ega-4-defs-schema-descriptor-properties-version-of-the-common-definitions-schema-allof-semantic-versioning-pattern.md "check type definition")

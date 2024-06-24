@@ -16,7 +16,7 @@ Node defining the type of assay applicable to the experiment. Notice how, depend
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # assayType Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: merged type ([Ontology constraints for this specific termId](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayType/properties/termId")
+* defined in: [EGA Experiment metadata schema](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayType/properties/termId")
 
 ### termId Type
 
@@ -44,9 +44,9 @@ merged type ([Ontology constraints for this specific termId](ega-1-properties-ty
 
 any of
 
-*   [Ontology validation of terms below 'assay by sequencer'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-sequencer.md "check type definition")
+* [Ontology validation of terms below 'assay by sequencer'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-sequencer.md "check type definition")
 
-*   [Ontology validation of terms below 'assay by array'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-array.md "check type definition")
+* [Ontology validation of terms below 'assay by array'](ega-1-properties-type-of-used-assay-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-terms-below-assay-by-array.md "check type definition")
 
 ### termId Examples
 

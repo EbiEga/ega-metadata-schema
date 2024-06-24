@@ -16,14 +16,14 @@ merged type ([Allowed relationships of type referencedBy (main ones)](ega-5-prop
 
 all of
 
-*   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
+* [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
-*   any of
+* any of
 
-    *   [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
+  * [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
 
-    *   [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
+  * [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
 
-    *   [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
+  * [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
 
-    *   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
+  * [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")

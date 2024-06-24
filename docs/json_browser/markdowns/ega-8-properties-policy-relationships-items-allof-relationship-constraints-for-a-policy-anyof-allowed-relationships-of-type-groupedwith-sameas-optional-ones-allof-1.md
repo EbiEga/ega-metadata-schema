@@ -16,6 +16,6 @@ merged type ([Details](ega-8-properties-policy-relationships-items-allof-relatio
 
 any of
 
-*   [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
+* [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
 
-*   [Relationship target: Policy](ega-4-defs-relationship-target-policy.md "check type definition")
+* [Relationship target: Policy](ega-4-defs-relationship-target-policy.md "check type definition")

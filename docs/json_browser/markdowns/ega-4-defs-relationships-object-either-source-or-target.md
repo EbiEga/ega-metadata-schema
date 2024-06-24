@@ -16,33 +16,33 @@ Node containing metadata (identifiers and the type of reference) of one of the e
 
 all of
 
-*   any of
+* any of
 
-    *   [Alias and Centername: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
+  * [Alias and Centername: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
 
-    *   [External accession: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
+  * [External accession: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Experiment: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
+  * [Experiment: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Study: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
+  * [Study: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Sample: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
+  * [Sample: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Submission: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
+  * [Submission: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Assay: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
+  * [Assay: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Dataset: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
+  * [Dataset: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Analysis: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
+  * [Analysis: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Policy: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
+  * [Policy: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
 
-    *   [DAC: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
+  * [DAC: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Individual: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
+  * [Individual: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
 
-    *   [Protocol: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
+  * [Protocol: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
 
 # oneRelationshipEnd Properties
 
@@ -57,13 +57,13 @@ Node containing the main identifiers of the relationship's object (e.g. alias, c
 
 `objectId`
 
-*   is required
+* is required
 
-*   Type: `object` ([Relationship's object's IDs block](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md))
+* Type: `object` ([Relationship's object's IDs block](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectId")
+* defined in: [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-relationships-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectId")
 
 ### objectId Type
 
@@ -71,13 +71,13 @@ Node containing the main identifiers of the relationship's object (e.g. alias, c
 
 all of
 
-*   any of
+* any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+  * [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+  * [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+  * [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
 ## objectType
 
@@ -85,13 +85,13 @@ Type of the relationship's object, chosen from a list of CV (e.g. experiment, da
 
 `objectType`
 
-*   is required
+* is required
 
-*   Type: `string` ([Type of the relationship's object](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md))
+* Type: `string` ([Type of the relationship's object](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectType")
+* defined in: [EGA common metadata definitions](ega-4-defs-relationships-object-either-source-or-target-properties-type-of-the-relationships-object.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/oneRelationshipEnd/properties/objectType")
 
 ### objectType Type
 

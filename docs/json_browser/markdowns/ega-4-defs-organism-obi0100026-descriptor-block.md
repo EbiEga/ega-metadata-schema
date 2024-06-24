@@ -27,13 +27,13 @@ Taxonomic classification of the organism (e.g. 'NCBITaxon:9606' and 'homo sapien
 
 `organismTaxon`
 
-*   is required
+* is required
 
-*   Type: `object` ([NCBI Taxon of the organism](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md))
+* Type: `object` ([NCBI Taxon of the organism](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/organismTaxon")
+* defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/organismTaxon")
 
 ### organismTaxon Type
 
@@ -41,7 +41,7 @@ Taxonomic classification of the organism (e.g. 'NCBITaxon:9606' and 'homo sapien
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## commonName
 
@@ -49,13 +49,13 @@ Common name (e.g. 'human') used to designate a plant, animal or other organism, 
 
 `commonName`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Biologic entity classification common name](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
+* Type: `string` ([Biologic entity classification common name](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/commonName")
+* defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-biologic-entity-classification-common-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/commonName")
 
 ### commonName Type
 

@@ -33,13 +33,13 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 `objectId`
 
-*   is required
+* is required
 
-*   Type: `object` ([Object's IDs block](ega-5-properties-objects-ids-block.md))
+* Type: `object` ([Object's IDs block](ega-5-properties-objects-ids-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId")
+* defined in: [EGA dataset metadata schema](ega-5-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectId")
 
 ### objectId Type
 
@@ -47,15 +47,15 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 all of
 
-*   any of
+* any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+  * [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+  * [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+  * [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that dataset EGA ID (EGAD) is correct](ega-5-properties-objects-ids-block-allof-check-that-dataset-ega-id-egad-is-correct.md "check type definition")
+* [Check that dataset EGA ID (EGAD) is correct](ega-5-properties-objects-ids-block-allof-check-that-dataset-ega-id-egad-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -63,13 +63,13 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 `schemaDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
+* Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/schemaDescriptor")
+* defined in: [EGA dataset metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
@@ -81,13 +81,13 @@ Free-form title of the Dataset. It should be the first picture of the dataset co
 
 `objectTitle`
 
-*   is required
+* is required
 
-*   Type: `string` ([Title of the dataset](ega-5-properties-title-of-the-dataset.md))
+* Type: `string` ([Title of the dataset](ega-5-properties-title-of-the-dataset.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-title-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectTitle")
+* defined in: [EGA dataset metadata schema](ega-5-properties-title-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectTitle")
 
 ### objectTitle Type
 
@@ -105,13 +105,13 @@ More extensive free-form description of the Dataset. It should include the conte
 
 `objectDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Description of the dataset](ega-5-properties-description-of-the-dataset.md))
+* Type: `string` ([Description of the dataset](ega-5-properties-description-of-the-dataset.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-description-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectDescription")
+* defined in: [EGA dataset metadata schema](ega-5-properties-description-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/objectDescription")
 
 ### objectDescription Type
 
@@ -129,13 +129,13 @@ Type of the dataset, expressing the overall purpose of the dataset. Term chosen 
 
 `datasetType`
 
-*   is required
+* is required
 
-*   Type: `string` ([Dataset type](ega-5-properties-dataset-type.md))
+* Type: `string` ([Dataset type](ega-5-properties-dataset-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-dataset-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetType")
+* defined in: [EGA dataset metadata schema](ega-5-properties-dataset-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetType")
 
 ### datasetType Type
 
@@ -174,13 +174,13 @@ An approximate date of the desired release of the dataset. Bare in mind that thi
 
 `approximateReleaseDate`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Approximate release date of the dataset](ega-5-properties-approximate-release-date-of-the-dataset.md))
+* Type: `string` ([Approximate release date of the dataset](ega-5-properties-approximate-release-date-of-the-dataset.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-approximate-release-date-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximateReleaseDate")
+* defined in: [EGA dataset metadata schema](ega-5-properties-approximate-release-date-of-the-dataset.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/approximateReleaseDate")
 
 ### approximateReleaseDate Type
 
@@ -188,7 +188,7 @@ An approximate date of the desired release of the dataset. Bare in mind that thi
 
 all of
 
-*   [We cap the reminder up to 3 years](ega-5-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
+* [We cap the reminder up to 3 years](ega-5-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
 
 ### approximateReleaseDate Constraints
 
@@ -210,13 +210,13 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 `datasetRelationships`
 
-*   is optional
+* is optional
 
-*   Type: an array of merged types ([Details](ega-5-properties-dataset-relationships-items.md))
+* Type: an array of merged types ([Details](ega-5-properties-dataset-relationships-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-dataset-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetRelationships")
+* defined in: [EGA dataset metadata schema](ega-5-properties-dataset-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetRelationships")
 
 ### datasetRelationships Type
 
@@ -234,13 +234,13 @@ Custom attributes of a dataset: reusable attributes to encode tag-value pairs (e
 
 `datasetAttributes`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
+* Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA dataset metadata schema](ega-5-properties-dataset-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetAttributes")
+* defined in: [EGA dataset metadata schema](ega-5-properties-dataset-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.dataset.json#/properties/datasetAttributes")
 
 ### datasetAttributes Type
 

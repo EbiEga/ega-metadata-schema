@@ -26,13 +26,13 @@ unknown
 
 `assayFiles`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-allof-allowed-filetypes-for-a-sequencing-assay-then-properties-assayfiles.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/1/then/properties/assayFiles")
+* defined in: [EGA assay metadata schema](ega-3-allof-allowed-filetypes-for-a-sequencing-assay-then-properties-assayfiles.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/1/then/properties/assayFiles")
 
 ### assayFiles Type
 

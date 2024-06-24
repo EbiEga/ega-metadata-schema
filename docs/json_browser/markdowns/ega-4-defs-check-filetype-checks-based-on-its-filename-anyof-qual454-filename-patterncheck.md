@@ -27,13 +27,13 @@ unknown ([qual454 Filename patternCheck](ega-4-defs-check-filetype-checks-based-
 
 `filetype`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/58/properties/filetype")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/58/properties/filetype")
 
 ### filetype Type
 
@@ -53,13 +53,13 @@ This object exists to hold the filename pattern that a 'QUAL454' filetypeId woul
 
 `filename`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Filename pattern of a QUAL454 file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-patterncheck-properties-filename-pattern-of-a-qual454-file.md))
+* Type: `string` ([Filename pattern of a QUAL454 file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-patterncheck-properties-filename-pattern-of-a-qual454-file.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-patterncheck-properties-filename-pattern-of-a-qual454-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/58/properties/filename")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-qual454-filename-patterncheck-properties-filename-pattern-of-a-qual454-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/58/properties/filename")
 
 ### filename Type
 

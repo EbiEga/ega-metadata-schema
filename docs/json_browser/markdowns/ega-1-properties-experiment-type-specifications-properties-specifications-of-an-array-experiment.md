@@ -27,13 +27,13 @@ Chemicals conjugated to nucleic acid/proteins to label them before microarray hy
 
 `arrayLabels`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
+* Type: `object[]` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-properties-experiment-type-specifications-properties-specifications-of-an-array-experiment-properties-array-label-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/arrayExperiment/properties/arrayLabels")
+* defined in: [EGA Experiment metadata schema](ega-1-properties-experiment-type-specifications-properties-specifications-of-an-array-experiment-properties-array-label-of-the-experiment.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/arrayExperiment/properties/arrayLabels")
 
 ### arrayLabels Type
 
@@ -51,13 +51,13 @@ The array design format (ADF) \[NCIT:C172213] is the unique set of probes (with 
 
 `adfFiles`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
+* Type: `object[]` ([EGA File object](ega-4-defs-ega-file-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-properties-experiment-type-specifications-properties-specifications-of-an-array-experiment-properties-array-design-format-adf-ncitc172213-file-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/arrayExperiment/properties/adfFiles")
+* defined in: [EGA Experiment metadata schema](ega-1-properties-experiment-type-specifications-properties-specifications-of-an-array-experiment-properties-array-design-format-adf-ncitc172213-file-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/experimentTypeSpecifications/properties/arrayExperiment/properties/adfFiles")
 
 ### adfFiles Type
 

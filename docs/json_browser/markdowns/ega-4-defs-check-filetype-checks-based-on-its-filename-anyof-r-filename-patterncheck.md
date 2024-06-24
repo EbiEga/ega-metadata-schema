@@ -27,13 +27,13 @@ unknown ([R Filename patternCheck](ega-4-defs-check-filetype-checks-based-on-its
 
 `filetype`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-r-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/36/properties/filetype")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-r-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/36/properties/filetype")
 
 ### filetype Type
 
@@ -53,13 +53,13 @@ This object exists to hold the filename pattern that a 'R' filetypeId would have
 
 `filename`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Filename pattern of a R file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-r-filename-patterncheck-properties-filename-pattern-of-a-r-file.md))
+* Type: `string` ([Filename pattern of a R file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-r-filename-patterncheck-properties-filename-pattern-of-a-r-file.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-r-filename-patterncheck-properties-filename-pattern-of-a-r-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/36/properties/filename")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-r-filename-patterncheck-properties-filename-pattern-of-a-r-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/36/properties/filename")
 
 ### filename Type
 

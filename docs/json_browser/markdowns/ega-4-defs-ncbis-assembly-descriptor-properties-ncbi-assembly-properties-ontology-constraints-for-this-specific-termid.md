@@ -16,9 +16,9 @@ merged type ([Ontology constraints for this specific termId](ega-4-defs-ncbis-as
 
 all of
 
-*   all of
+* all of
 
-    *   [Compact URI (CURIE) pattern](ega-4-defs-ncbi-assembly-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
+  * [Compact URI (CURIE) pattern](ega-4-defs-ncbi-assembly-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## termId Examples
 

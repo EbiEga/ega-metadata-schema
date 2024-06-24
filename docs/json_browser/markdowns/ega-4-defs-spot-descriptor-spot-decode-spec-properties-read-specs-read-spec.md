@@ -32,13 +32,13 @@ READ\_INDEX starts at 0 and is incrementally increased for each sequential READ\
 
 `readIndex`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Read index](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-index.md))
+* Type: `string` ([Read index](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-index.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readIndex")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-index.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readIndex")
 
 ### readIndex Type
 
@@ -54,13 +54,13 @@ READ\_LABEL is a name for this tag, and can be used to on output to determine re
 
 `readLabel`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Read label](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-label.md))
+* Type: `string` ([Read label](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-label.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readLabel")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-label.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readLabel")
 
 ### readLabel Type
 
@@ -76,13 +76,13 @@ READ\_LABEL is a name for this tag, and can be used to on output to determine re
 
 `readClass`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Read class](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-class.md))
+* Type: `string` ([Read class](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-class.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-class.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readClass")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-class.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readClass")
 
 ### readClass Type
 
@@ -103,13 +103,13 @@ READ\_LABEL is a name for this tag, and can be used to on output to determine re
 
 `readType`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Read type](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-type.md))
+* Type: `string` ([Read type](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readType")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-read-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/readType")
 
 ### readType Type
 
@@ -135,13 +135,13 @@ The read is located beginning at the offset or cycle relative to another read. T
 
 `relativeOrder`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Relative order](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order.md))
+* Type: `object` ([Relative order](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-relative-order.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/relativeOrder")
 
 ### relativeOrder Type
 
@@ -153,13 +153,13 @@ The location of the read start in terms of base count (1 is beginning of spot)
 
 `baseCoord`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([Base coord](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-base-coord.md))
+* Type: `integer` ([Base coord](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-base-coord.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-base-coord.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/baseCoord")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-base-coord.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/baseCoord")
 
 ### baseCoord Type
 
@@ -171,13 +171,13 @@ A set of choices of expected basecalls for a current read. Read will be zero-len
 
 `expectedBasecallTable`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Expected basecall table](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table.md))
+* Type: `object` ([Expected basecall table](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable")
 
 ### expectedBasecallTable Type
 

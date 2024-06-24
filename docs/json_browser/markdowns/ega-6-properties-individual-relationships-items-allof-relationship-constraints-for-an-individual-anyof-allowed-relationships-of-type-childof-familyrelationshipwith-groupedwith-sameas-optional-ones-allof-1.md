@@ -16,6 +16,6 @@ merged type ([Details](ega-6-properties-individual-relationships-items-allof-rel
 
 any of
 
-*   [Relationship source: individual](ega-4-defs-relationship-source-individual.md "check type definition")
+* [Relationship source: individual](ega-4-defs-relationship-source-individual.md "check type definition")
 
-*   [Relationship target: individual](ega-4-defs-relationship-target-individual.md "check type definition")
+* [Relationship target: individual](ega-4-defs-relationship-target-individual.md "check type definition")

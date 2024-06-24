@@ -16,4 +16,4 @@ Unique identifier of an external record. Its 'termId' (e.g. 'biosample:SAMEA7616
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")

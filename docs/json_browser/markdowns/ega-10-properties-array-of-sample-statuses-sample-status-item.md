@@ -27,13 +27,13 @@ Property that specifies whether the sample is subject to the (usually altered) c
 
 `caseVsControl`
 
-*   is required
+* is required
 
-*   Type: `string` ([Case vs control](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-case-vs-control.md))
+* Type: `string` ([Case vs control](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-case-vs-control.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-case-vs-control.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/caseVsControl")
+* defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-case-vs-control.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/caseVsControl")
 
 ### caseVsControl Type
 
@@ -55,13 +55,13 @@ One of the primary conditions under study (CUS). For example: treated with cispl
 
 `conditionUnderStudy`
 
-*   is required
+* is required
 
-*   Type: `object` ([Sample condition](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md))
+* Type: `object` ([Sample condition](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy")
+* defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy")
 
 ### conditionUnderStudy Type
 
@@ -69,4 +69,4 @@ One of the primary conditions under study (CUS). For example: treated with cispl
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")

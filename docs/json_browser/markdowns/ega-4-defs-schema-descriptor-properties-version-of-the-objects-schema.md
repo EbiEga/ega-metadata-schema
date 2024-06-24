@@ -16,4 +16,4 @@ The version of the object's schema, the one specific for the object the JSON doc
 
 all of
 
-*   [Semantic versioning pattern](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema-allof-semantic-versioning-pattern.md "check type definition")
+* [Semantic versioning pattern](ega-4-defs-schema-descriptor-properties-version-of-the-objects-schema-allof-semantic-versioning-pattern.md "check type definition")

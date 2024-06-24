@@ -16,7 +16,7 @@ Node defining an Assembly (e.g. 'GCF\_000001405.26'). For example, the assembly 
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # ncbiAssembly Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor/properties/ncbiAssembly/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor-properties-ncbi-assembly-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/ncbiAssemblyDescriptor/properties/ncbiAssembly/properties/termId")
 
 ### termId Type
 
@@ -44,9 +44,9 @@ merged type ([Ontology constraints for this specific termId](ega-4-defs-ncbis-as
 
 all of
 
-*   all of
+* all of
 
-    *   [Compact URI (CURIE) pattern](ega-4-defs-ncbi-assembly-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
+  * [Compact URI (CURIE) pattern](ega-4-defs-ncbi-assembly-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
 
 ### termId Examples
 

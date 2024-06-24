@@ -16,7 +16,7 @@ An approximate date of the desired release of the dataset. Bare in mind that thi
 
 all of
 
-*   [We cap the reminder up to 3 years](ega-5-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
+* [We cap the reminder up to 3 years](ega-5-properties-approximate-release-date-of-the-dataset-allof-we-cap-the-reminder-up-to-3-years.md "check type definition")
 
 ## approximateReleaseDate Constraints
 

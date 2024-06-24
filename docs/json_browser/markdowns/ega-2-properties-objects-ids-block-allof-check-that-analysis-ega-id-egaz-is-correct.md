@@ -26,13 +26,13 @@ unknown ([Check that analysis EGA ID (EGAZ) is correct](ega-2-properties-objects
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA analysis's ID (EGAZ...)](ega-2-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md))
+* Type: `string` ([Pattern of an EGA analysis's ID (EGAZ...)](ega-2-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-2-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId/allOf/1/properties/egaAccession")
+* defined in: [EGA analysis metadata schema](ega-2-properties-objects-ids-block-allof-check-that-analysis-ega-id-egaz-is-correct-properties-pattern-of-an-ega-analysiss-id-egaz.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 

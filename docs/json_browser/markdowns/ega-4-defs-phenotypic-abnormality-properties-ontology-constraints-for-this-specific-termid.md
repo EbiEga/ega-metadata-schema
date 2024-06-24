@@ -16,9 +16,9 @@ merged type ([Ontology constraints for this specific termId](ega-4-defs-phenotyp
 
 any of
 
-*   [Ontology validation of phenotypic abnormality](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
+* [Ontology validation of phenotypic abnormality](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
 
-*   [In case the phenotypic abnormality is unknown or there is none](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
+* [In case the phenotypic abnormality is unknown or there is none](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
 ## termId Examples
 

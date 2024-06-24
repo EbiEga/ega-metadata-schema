@@ -27,13 +27,13 @@ This property describes the material entity the sample consists in. That is, an 
 
 `organismDescriptor`
 
-*   is required
+* is required
 
-*   Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
+* Type: `object` ([Organism \[OBI:0100026\] descriptor block](ega-4-defs-organism-obi0100026-descriptor-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/organismDescriptor")
+* defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/organismDescriptor")
 
 ### organismDescriptor Type
 
@@ -45,13 +45,13 @@ Array of locus context items. Multiple loci can be described in the array if the
 
 `lociDescriptor`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Locus context item](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item.md))
+* Type: `object[]` ([Locus context item](ega-4-defs-locus-identifier-properties-loci-context-array-locus-context-item.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor")
+* defined in: [EGA common metadata definitions](ega-4-defs-locus-identifier-properties-loci-context-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/locusIdentifier/properties/lociDescriptor")
 
 ### lociDescriptor Type
 

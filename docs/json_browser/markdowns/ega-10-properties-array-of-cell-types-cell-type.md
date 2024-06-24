@@ -28,13 +28,13 @@ Property to describe a cell type: a distinct morphological or functional form of
 
 `cellType`
 
-*   is required
+* is required
 
-*   Type: `object` ([Cell type](ega-4-defs-cell-type.md))
+* Type: `object` ([Cell type](ega-4-defs-cell-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-4-defs-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")
+* defined in: [EGA sample metadata schema](ega-4-defs-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellType")
 
 ### cellType Type
 
@@ -42,7 +42,7 @@ Property to describe a cell type: a distinct morphological or functional form of
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## cellTypeInferred
 
@@ -50,13 +50,13 @@ A flag to specify whether the cell type classification was inferred though singl
 
 `cellTypeInferred`
 
-*   is required
+* is required
 
-*   Type: `string` ([Inferred cell type flag](ega-10-properties-array-of-cell-types-cell-type-properties-inferred-cell-type-flag.md))
+* Type: `string` ([Inferred cell type flag](ega-10-properties-array-of-cell-types-cell-type-properties-inferred-cell-type-flag.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-cell-types-cell-type-properties-inferred-cell-type-flag.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeInferred")
+* defined in: [EGA sample metadata schema](ega-10-properties-array-of-cell-types-cell-type-properties-inferred-cell-type-flag.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeInferred")
 
 ### cellTypeInferred Type
 
@@ -77,13 +77,13 @@ A field to add extra context to the cell type. For example, the expression profi
 
 `cellTypeLabel`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Label of the cell type](ega-10-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md))
+* Type: `string` ([Label of the cell type](ega-10-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")
+* defined in: [EGA sample metadata schema](ega-10-properties-array-of-cell-types-cell-type-properties-label-of-the-cell-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/cellTypes/items/properties/cellTypeLabel")
 
 ### cellTypeLabel Type
 

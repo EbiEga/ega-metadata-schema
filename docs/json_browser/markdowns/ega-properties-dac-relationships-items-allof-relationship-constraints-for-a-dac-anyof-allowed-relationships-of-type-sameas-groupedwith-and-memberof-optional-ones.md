@@ -16,16 +16,16 @@ merged type ([Allowed relationships of type sameAs, groupedWith and memberOf (op
 
 all of
 
-*   any of
+* any of
 
-    *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+  * [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-    *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+  * [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-    *   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
+  * [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
 
-*   any of
+* any of
 
-    *   [Relationship source: DAC](ega-4-defs-relationship-source-dac.md "check type definition")
+  * [Relationship source: DAC](ega-4-defs-relationship-source-dac.md "check type definition")
 
-    *   [Relationship target: DAC](ega-4-defs-relationship-target-dac.md "check type definition")
+  * [Relationship target: DAC](ega-4-defs-relationship-target-dac.md "check type definition")

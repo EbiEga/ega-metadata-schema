@@ -16,4 +16,4 @@ https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.co
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")

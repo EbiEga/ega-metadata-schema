@@ -27,13 +27,13 @@ Chemical conjugated to nucleic acid/proteins to label them before microarray hyb
 
 `arrayLabel`
 
-*   is required
+* is required
 
-*   Type: `object` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
+* Type: `object` ([Repeatable arrayLabel node](ega-4-defs-repeatable-arraylabel-node.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/arrayLabel")
+* defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/arrayLabel")
 
 ### arrayLabel Type
 
@@ -41,9 +41,9 @@ Chemical conjugated to nucleic acid/proteins to label them before microarray hyb
 
 any of
 
-*   [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-0.md "check type definition")
+* [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-1.md "check type definition")
+* [Untitled undefined type in EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-anyof-1.md "check type definition")
 
 ## objectId
 
@@ -51,13 +51,13 @@ any of
 
 `objectId`
 
-*   is required
+* is required
 
-*   Type: `object` ([Object's IDs block](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md))
+* Type: `object` ([Object's IDs block](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/objectId")
+* defined in: [EGA common metadata definitions](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/objectId")
 
 ### objectId Type
 
@@ -65,12 +65,12 @@ any of
 
 all of
 
-*   any of
+* any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+  * [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+  * [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+  * [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that sample EGA ID (EGAN) pattern is correct](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct.md "check type definition")
+* [Check that sample EGA ID (EGAN) pattern is correct](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct.md "check type definition")

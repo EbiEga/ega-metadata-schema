@@ -16,9 +16,9 @@ Node describing whether the sample object is: (1) a single physical sample (a si
 
 one (and only one) of
 
-*   [Either the sampleNumber is present and above 1](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1.md "check type definition")
+* [Either the sampleNumber is present and above 1](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1.md "check type definition")
 
-*   [Or the sampleGroupBoolean is 'false', hence an individual sample with sampleNumber being '1' or no sampleNumber](ega-10-properties-sample-group-descriptor-oneof-or-the-samplegroupboolean-is-false-hence-an-individual-sample-with-samplenumber-being-1-or-no-samplenumber.md "check type definition")
+* [Or the sampleGroupBoolean is 'false', hence an individual sample with sampleNumber being '1' or no sampleNumber](ega-10-properties-sample-group-descriptor-oneof-or-the-samplegroupboolean-is-false-hence-an-individual-sample-with-samplenumber-being-1-or-no-samplenumber.md "check type definition")
 
 # sampleGrouping Properties
 
@@ -34,13 +34,13 @@ Boolean flag on whether the sample object is a group or an individual sample. Pl
 
 `sampleGroupBoolean`
 
-*   is required
+* is required
 
-*   Type: `boolean` ([Sample group boolean](ega-10-properties-sample-group-descriptor-properties-sample-group-boolean.md))
+* Type: `boolean` ([Sample group boolean](ega-10-properties-sample-group-descriptor-properties-sample-group-boolean.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-properties-sample-group-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleGroupBoolean")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-properties-sample-group-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleGroupBoolean")
 
 ### sampleGroupBoolean Type
 
@@ -58,13 +58,13 @@ Number of individual samples (e.g. 300) encompassed by the sample group
 
 `sampleNumber`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([Number of samples](ega-10-properties-sample-group-descriptor-properties-number-of-samples.md))
+* Type: `integer` ([Number of samples](ega-10-properties-sample-group-descriptor-properties-number-of-samples.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-properties-number-of-samples.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleNumber")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-properties-number-of-samples.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleNumber")
 
 ### sampleNumber Type
 
@@ -82,13 +82,13 @@ Optional label of the sample grouping, used to add context to the group.
 
 `sampleGroupingLabel`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Label of the sample grouping](ega-10-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md))
+* Type: `string` ([Label of the sample grouping](ega-10-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleGroupingLabel")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-properties-label-of-the-sample-grouping.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/properties/sampleGroupingLabel")
 
 ### sampleGroupingLabel Type
 

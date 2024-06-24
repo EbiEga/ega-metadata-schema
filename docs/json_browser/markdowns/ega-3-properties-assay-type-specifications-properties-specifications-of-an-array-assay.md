@@ -16,11 +16,11 @@ Node containing the set of fields specific to an assay of type 'array' (i.e. an 
 
 any of
 
-*   [2 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-2-labels-per-array-check.md "check type definition")
+* [2 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-2-labels-per-array-check.md "check type definition")
 
-*   [3 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check.md "check type definition")
+* [3 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check.md "check type definition")
 
-*   [4 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check.md "check type definition")
+* [4 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check.md "check type definition")
 
 # arrayAssaySpecifications Properties
 
@@ -35,13 +35,13 @@ A single array can be prepared with biological materials labelled differently fo
 
 `nLabelsPerArray`
 
-*   is required
+* is required
 
-*   Type: `number` ([Number of labels per array](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md))
+* Type: `number` ([Number of labels per array](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/properties/nLabelsPerArray")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-number-of-labels-per-array.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/properties/nLabelsPerArray")
 
 ### nLabelsPerArray Type
 
@@ -64,13 +64,13 @@ Sample-Label pairs (e.g. sample 'EGAN00000000001' and label 'Cy3') to know which
 
 `arraySampleLabels`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Repeatable Sample-label node](ega-4-defs-repeatable-sample-label-node.md))
+* Type: `object[]` ([Repeatable Sample-label node](ega-4-defs-repeatable-sample-label-node.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-array-of-samplelabel-pairs-of-the-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/properties/arraySampleLabels")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-properties-array-of-samplelabel-pairs-of-the-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications/properties/arraySampleLabels")
 
 ### arraySampleLabels Type
 
