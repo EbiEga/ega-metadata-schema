@@ -79,8 +79,8 @@ jobs:
           #!
           echo "--- Listing files:"
           pwd
-          ll
-          ll ./schemas
+          ls
+          ls ./schemas
           #!
           schemas_dir="./schemas"
           node biovalidator/src/biovalidator -r "$schemas_dir/*.json" > biovalidator.log 2>&1 &
