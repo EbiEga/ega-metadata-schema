@@ -49,8 +49,8 @@ def get_errors_response(
     if not response.status_code == requests.codes.ok:
         error_message = (
             f"The POST response was not successful: instead of {requests.codes.ok},"
-            f" the status code was '{response.status_code}' when validating file '{filename}'.\n"
-            f"Response content: {response.content.decode('utf-8')}"
+            f" the status code was '{response.status_code}' when validating file '{filename}'."
+            f" Response content: {response.content.decode('utf-8')}"
         )
         return error_message
 
