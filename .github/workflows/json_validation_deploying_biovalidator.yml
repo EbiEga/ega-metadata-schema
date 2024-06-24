@@ -111,3 +111,6 @@ jobs:
           #   Biovalidator
           url="http://localhost:3020/validate"
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"
+          #!
+          cat biovalidator.log
+          #!
