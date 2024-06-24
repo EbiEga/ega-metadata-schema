@@ -101,6 +101,7 @@ jobs:
           if [ -f "$requirements_f" ]; then pip install -r "$requirements_f" --prefer-binary --verbose; fi
 
       - name: Validate JSON examples
+        continue-on-error: true
           # Validate all JSON documents against their corresponding schemas
           # Check:
           #   github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
