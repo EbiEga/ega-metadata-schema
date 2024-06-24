@@ -16,6 +16,6 @@ merged type ([Details](ega-10-properties-sample-relationships-items-allof-relati
 
 any of
 
-*   [Relationship source: sample](ega-4-defs-relationship-source-sample.md "check type definition")
+* [Relationship source: sample](ega-4-defs-relationship-source-sample.md "check type definition")
 
-*   [Relationship target: sample](ega-4-defs-relationship-target-sample.md "check type definition")
+* [Relationship target: sample](ega-4-defs-relationship-target-sample.md "check type definition")

@@ -26,13 +26,13 @@ unknown
 
 `termId`
 
-*   is required
+* is required
 
-*   Type: unknown ([Ontology constraint for 'RNA assay'](ega-1-anyof-if-the-assayed-molecule-is-ribonucleic-acid-then-the-assay-type-must-be-of-rna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-rna-assay.md))
+* Type: unknown ([Ontology constraint for 'RNA assay'](ega-1-anyof-if-the-assayed-molecule-is-ribonucleic-acid-then-the-assay-type-must-be-of-rna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-rna-assay.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-anyof-if-the-assayed-molecule-is-ribonucleic-acid-then-the-assay-type-must-be-of-rna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-rna-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/anyOf/1/then/properties/assayType/properties/termId")
+* defined in: [EGA Experiment metadata schema](ega-1-anyof-if-the-assayed-molecule-is-ribonucleic-acid-then-the-assay-type-must-be-of-rna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-rna-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/anyOf/1/then/properties/assayType/properties/termId")
 
 ### termId Type
 

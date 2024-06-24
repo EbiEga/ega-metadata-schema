@@ -26,13 +26,13 @@ Node containing the information of the reference assembly that was used to obtai
 
 `referenceAlignmentDetails`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
+* Type: `object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications/properties/referenceAlignmentDetails")
+* defined in: [EGA assay metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications/properties/referenceAlignmentDetails")
 
 ### referenceAlignmentDetails Type
 

@@ -16,8 +16,8 @@ merged type ([Details](ega-8-properties-policy-relationships-items-allof-relatio
 
 any of
 
-*   [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
+* [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
 
-*   [Relationship source: DAC](ega-4-defs-relationship-source-dac.md "check type definition")
+* [Relationship source: DAC](ega-4-defs-relationship-source-dac.md "check type definition")
 
-*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
+* [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")

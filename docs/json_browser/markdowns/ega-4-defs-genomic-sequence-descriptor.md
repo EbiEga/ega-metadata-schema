@@ -16,9 +16,9 @@ Node used to describe with sufficient detail a genomic sequence (e.g. Human Chro
 
 any of
 
-*   [Either the full position context is given](ega-4-defs-genomic-sequence-descriptor-anyof-either-the-full-position-context-is-given.md "check type definition")
+* [Either the full position context is given](ega-4-defs-genomic-sequence-descriptor-anyof-either-the-full-position-context-is-given.md "check type definition")
 
-*   [Or at least the sequence itself is given](ega-4-defs-genomic-sequence-descriptor-anyof-or-at-least-the-sequence-itself-is-given.md "check type definition")
+* [Or at least the sequence itself is given](ega-4-defs-genomic-sequence-descriptor-anyof-or-at-least-the-sequence-itself-is-given.md "check type definition")
 
 # genomicSequenceDescriptor Properties
 
@@ -35,13 +35,13 @@ Node describing a sequence assembly referenced in [NCBI's Assembly database](htt
 
 `assemblyDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
+* Type: `object` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/assemblyDescriptor")
+* defined in: [EGA common metadata definitions](ega-4-defs-ncbis-assembly-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/assemblyDescriptor")
 
 ### assemblyDescriptor Type
 
@@ -53,13 +53,13 @@ A position in a map (for example a genetic map), either a single position (e.g. 
 
 `sequenceCoordinates`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Sequence coordinates](ega-4-defs-sequence-coordinates.md))
+* Type: `object` ([Sequence coordinates](ega-4-defs-sequence-coordinates.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/sequenceCoordinates")
+* defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/sequenceCoordinates")
 
 ### sequenceCoordinates Type
 
@@ -67,9 +67,9 @@ A position in a map (for example a genetic map), either a single position (e.g. 
 
 any of
 
-*   [Either a single position is given](ega-4-defs-sequence-coordinates-anyof-either-a-single-position-is-given.md "check type definition")
+* [Either a single position is given](ega-4-defs-sequence-coordinates-anyof-either-a-single-position-is-given.md "check type definition")
 
-*   [Or the whole sequence interval](ega-4-defs-sequence-coordinates-anyof-or-the-whole-sequence-interval.md "check type definition")
+* [Or the whole sequence interval](ega-4-defs-sequence-coordinates-anyof-or-the-whole-sequence-interval.md "check type definition")
 
 ## dnaSequenceStrand
 
@@ -77,13 +77,13 @@ DNA sequence is double-stranded. By convention, for a reference chromosome, one 
 
 `dnaSequenceStrand`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([DNA Sequence strand](ega-4-defs-dna-sequence-strand.md))
+* Type: `string` ([DNA Sequence strand](ega-4-defs-dna-sequence-strand.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/dnaSequenceStrand")
+* defined in: [EGA common metadata definitions](ega-4-defs-dna-sequence-strand.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/dnaSequenceStrand")
 
 ### dnaSequenceStrand Type
 
@@ -104,13 +104,13 @@ Sequence of characters representing a specific nucleic (i.e. molecular species -
 
 `nucleicAcidSequence`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Nucleic acid sequence](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
+* Type: `string` ([Nucleic acid sequence](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/nucleicAcidSequence")
+* defined in: [EGA common metadata definitions](ega-4-defs-genomic-sequence-descriptor-properties-nucleic-acid-sequence.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/genomicSequenceDescriptor/properties/nucleicAcidSequence")
 
 ### nucleicAcidSequence Type
 

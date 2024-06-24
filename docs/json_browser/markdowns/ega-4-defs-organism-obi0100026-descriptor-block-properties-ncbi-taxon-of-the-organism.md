@@ -16,7 +16,7 @@ Taxonomic classification of the organism (e.g. 'NCBITaxon:9606' and 'homo sapien
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # organismTaxon Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/organismTaxon/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-organism-obi0100026-descriptor-block-properties-ncbi-taxon-of-the-organism-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/organismDescriptor/properties/organismTaxon/properties/termId")
 
 ### termId Type
 

@@ -29,13 +29,13 @@ Formal (common) name of the resource.
 
 `name`
 
-*   is required
+* is required
 
-*   Type: `string` ([Resource name](ega-12-properties-resources-ontologies-resource-properties-resource-name.md))
+* Type: `string` ([Resource name](ega-12-properties-resources-ontologies-resource-properties-resource-name.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-resource-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/name")
+* defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-resource-name.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/name")
 
 ### name Type
 
@@ -65,13 +65,13 @@ Prefixes of namespaces are used to uniquely resolve the ambiguity between identi
 
 `namespacePrefix`
 
-*   is required
+* is required
 
-*   Type: `string` ([Resource namespace prefix](ega-12-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md))
+* Type: `string` ([Resource namespace prefix](ega-12-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/namespacePrefix")
+* defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-resource-namespace-prefix.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/namespacePrefix")
 
 ### namespacePrefix Type
 
@@ -101,13 +101,13 @@ The version of the used resource. This is the main item of the object, since it'
 
 `version`
 
-*   is required
+* is required
 
-*   Type: `string` ([Resource version](ega-12-properties-resources-ontologies-resource-properties-resource-version.md))
+* Type: `string` ([Resource version](ega-12-properties-resources-ontologies-resource-properties-resource-version.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-resource-version.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/version")
+* defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-resource-version.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/version")
 
 ### version Type
 
@@ -133,13 +133,13 @@ Boolean switch to know if this specific resource was automatically assigned by E
 
 `automaticallyAssigned`
 
-*   is optional
+* is optional
 
-*   Type: `boolean` ([Automatically assigned boolean](ega-12-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md))
+* Type: `boolean` ([Automatically assigned boolean](ega-12-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/automaticallyAssigned")
+* defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies-resource-properties-automatically-assigned-boolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources/items/properties/automaticallyAssigned")
 
 ### automaticallyAssigned Type
 

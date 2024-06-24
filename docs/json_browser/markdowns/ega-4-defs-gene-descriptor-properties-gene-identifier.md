@@ -16,7 +16,7 @@ Property uniquely identifying a gene. It consists of a 'termId' and 'termLabel',
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # geneIdentifier Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-gene-descriptor-properties-gene-identifier-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-gene-descriptor-properties-gene-identifier-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-gene-identifier-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneIdentifier/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-gene-identifier-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneIdentifier/properties/termId")
 
 ### termId Type
 
@@ -44,13 +44,13 @@ merged type ([Ontology constraints for this specific termId](ega-4-defs-gene-des
 
 any of
 
-*   all of
+* all of
 
-    *   [Compact URI (CURIE) pattern](ega-4-defs-ncbi-gene-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
+  * [Compact URI (CURIE) pattern](ega-4-defs-ncbi-gene-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
 
-*   all of
+* all of
 
-    *   [Compact URI (CURIE) pattern](ega-4-defs-hgnc-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
+  * [Compact URI (CURIE) pattern](ega-4-defs-hgnc-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
 
 ### termId Examples
 

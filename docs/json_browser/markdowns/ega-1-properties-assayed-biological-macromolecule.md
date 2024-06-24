@@ -16,7 +16,7 @@ Node containing information about the assayed biological macromolecule: the mate
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # assayedBiologicalMacromolecule Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-1-properties-assayed-biological-macromolecule-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: unknown ([Ontology constraints for this specific termId](ega-1-properties-assayed-biological-macromolecule-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-properties-assayed-biological-macromolecule-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayedBiologicalMacromolecule/properties/termId")
+* defined in: [EGA Experiment metadata schema](ega-1-properties-assayed-biological-macromolecule-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/assayedBiologicalMacromolecule/properties/termId")
 
 ### termId Type
 

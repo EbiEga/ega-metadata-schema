@@ -33,13 +33,13 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 `objectId`
 
-*   is required
+* is required
 
-*   Type: `object` ([Object's IDs block](ega-12-properties-objects-ids-block.md))
+* Type: `object` ([Object's IDs block](ega-12-properties-objects-ids-block.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId")
+* defined in: [EGA submission metadata schema](ega-12-properties-objects-ids-block.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectId")
 
 ### objectId Type
 
@@ -47,15 +47,15 @@ Node containing the main identifiers of the object (e.g. alias, centerName...), 
 
 all of
 
-*   any of
+* any of
 
-    *   [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
+  * [Check core IDs: combination of Alias and Center name](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-combination-of-alias-and-center-name.md "check type definition")
 
-    *   [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
+  * [Check core IDs: EGA accession ID](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-ega-accession-id.md "check type definition")
 
-    *   [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
+  * [Check core IDs: external accessions](ega-4-defs-core-identifiers-of-an-object-anyof-check-core-ids-external-accessions.md "check type definition")
 
-*   [Check that Submission EGA ID (EGAB) is correct](ega-12-properties-objects-ids-block-allof-check-that-submission-ega-id-egab-is-correct.md "check type definition")
+* [Check that Submission EGA ID (EGAB) is correct](ega-12-properties-objects-ids-block-allof-check-that-submission-ega-id-egab-is-correct.md "check type definition")
 
 ## schemaDescriptor
 
@@ -63,13 +63,13 @@ This node is intended to be used to describe the schemas and standards that a JS
 
 `schemaDescriptor`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
+* Type: `object` ([Schema descriptor](ega-4-defs-schema-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schemaDescriptor")
+* defined in: [EGA submission metadata schema](ega-4-defs-schema-descriptor.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/schemaDescriptor")
 
 ### schemaDescriptor Type
 
@@ -81,13 +81,13 @@ Short free-form text that can be used to call out submission project records in 
 
 `objectTitle`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Title of the submission project](ega-12-properties-title-of-the-submission-project.md))
+* Type: `string` ([Title of the submission project](ega-12-properties-title-of-the-submission-project.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectTitle")
+* defined in: [EGA submission metadata schema](ega-12-properties-title-of-the-submission-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectTitle")
 
 ### objectTitle Type
 
@@ -109,13 +109,13 @@ An in-depth description of the submission, including its overall purpose or natu
 
 `objectDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Description of the submissions project](ega-12-properties-description-of-the-submissions-project.md))
+* Type: `string` ([Description of the submissions project](ega-12-properties-description-of-the-submissions-project.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectDescription")
+* defined in: [EGA submission metadata schema](ega-12-properties-description-of-the-submissions-project.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/objectDescription")
 
 ### objectDescription Type
 
@@ -137,13 +137,13 @@ An array containing metadata of all the ontologies used in the submission. Its o
 
 `resources`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Resource](ega-12-properties-resources-ontologies-resource.md))
+* Type: `object[]` ([Resource](ega-12-properties-resources-ontologies-resource.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources")
+* defined in: [EGA submission metadata schema](ega-12-properties-resources-ontologies.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/resources")
 
 ### resources Type
 
@@ -161,13 +161,13 @@ Object containing optional collaborators of the submission project, who shall ha
 
 `additionalCollaborators`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Collaborator](ega-12-properties-submission-collaborator-details-collaborator.md))
+* Type: `object[]` ([Collaborator](ega-12-properties-submission-collaborator-details-collaborator.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators")
+* defined in: [EGA submission metadata schema](ega-12-properties-submission-collaborator-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators")
 
 ### additionalCollaborators Type
 
@@ -185,13 +185,13 @@ Comprises metadata (e.g. Source or Target) of a directional association between 
 
 `submissionRelationships`
 
-*   is optional
+* is optional
 
-*   Type: an array of merged types ([Details](ega-12-properties-submission-relationships-items.md))
+* Type: an array of merged types ([Details](ega-12-properties-submission-relationships-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionRelationships")
+* defined in: [EGA submission metadata schema](ega-12-properties-submission-relationships.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionRelationships")
 
 ### submissionRelationships Type
 
@@ -209,13 +209,13 @@ Custom attributes of a submission: reusable attributes to encode tag-value pairs
 
 `submissionAttributes`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
+* Type: `object[]` ([Custom attribute of an object](ega-4-defs-custom-attribute-of-an-object.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionAttributes")
+* defined in: [EGA submission metadata schema](ega-12-properties-submission-custom-attributes.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/submissionAttributes")
 
 ### submissionAttributes Type
 

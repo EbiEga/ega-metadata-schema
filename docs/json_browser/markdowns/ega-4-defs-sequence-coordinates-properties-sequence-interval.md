@@ -27,13 +27,13 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 `start`
 
-*   is required
+* is required
 
-*   Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md))
+* Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval/properties/start")
+* defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval/properties/start")
 
 ### start Type
 
@@ -59,13 +59,13 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 `end`
 
-*   is required
+* is required
 
-*   Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md))
+* Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval/properties/end")
+* defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval-properties-single-sequence-position-1.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval/properties/end")
 
 ### end Type
 

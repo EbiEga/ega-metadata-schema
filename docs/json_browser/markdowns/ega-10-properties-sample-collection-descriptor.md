@@ -16,11 +16,11 @@ Node containing the provenance details (when and where) of the sample. This info
 
 any of
 
-*   [Either the collection date is required](ega-10-properties-sample-collection-descriptor-anyof-either-the-collection-date-is-required.md "check type definition")
+* [Either the collection date is required](ega-10-properties-sample-collection-descriptor-anyof-either-the-collection-date-is-required.md "check type definition")
 
-*   [Or the age at collection is required](ega-10-properties-sample-collection-descriptor-anyof-or-the-age-at-collection-is-required.md "check type definition")
+* [Or the age at collection is required](ega-10-properties-sample-collection-descriptor-anyof-or-the-age-at-collection-is-required.md "check type definition")
 
-*   [Or the sampling site is required](ega-10-properties-sample-collection-descriptor-anyof-or-the-sampling-site-is-required.md "check type definition")
+* [Or the sampling site is required](ega-10-properties-sample-collection-descriptor-anyof-or-the-sampling-site-is-required.md "check type definition")
 
 # sampleCollection Properties
 
@@ -36,13 +36,13 @@ Date when the sample was collected (e.g. '2021-05-15'). If the protocols are too
 
 `sampleCollectionDate`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Date of the sample collection](ega-10-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md))
+* Type: `string` ([Date of the sample collection](ega-10-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/sampleCollectionDate")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-date-of-the-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/sampleCollectionDate")
 
 ### sampleCollectionDate Type
 
@@ -68,13 +68,13 @@ Property describing the individual's age at sample collection. Can either be the
 
 `ageAtCollection`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Individual's age at sample collection](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md))
+* Type: `object` ([Individual's age at sample collection](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/ageAtCollection")
 
 ### ageAtCollection Type
 
@@ -82,9 +82,9 @@ Property describing the individual's age at sample collection. Can either be the
 
 any of
 
-*   [Either the age is needed](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-anyof-either-the-age-is-needed.md "check type definition")
+* [Either the age is needed](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-anyof-either-the-age-is-needed.md "check type definition")
 
-*   [Or the age-range is needed](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-anyof-or-the-age-range-is-needed.md "check type definition")
+* [Or the age-range is needed](ega-10-properties-sample-collection-descriptor-properties-individuals-age-at-sample-collection-anyof-or-the-age-range-is-needed.md "check type definition")
 
 ## samplingSite
 
@@ -92,13 +92,13 @@ A site or entity from which a sample (i.e. a statistically representative of the
 
 `samplingSite`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Sampling site](ega-10-properties-sample-collection-descriptor-properties-sampling-site.md))
+* Type: `object` ([Sampling site](ega-10-properties-sample-collection-descriptor-properties-sampling-site.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-collection-descriptor-properties-sampling-site.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleCollection/properties/samplingSite")
 
 ### samplingSite Type
 
@@ -106,6 +106,6 @@ A site or entity from which a sample (i.e. a statistically representative of the
 
 all of
 
-*   all of
+* all of
 
-    *   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+  * [Ontology term](ega-4-defs-ontology-term.md "check type definition")

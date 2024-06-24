@@ -16,10 +16,10 @@ merged type ([Details](ega-10-properties-sample-relationships-items-allof-relati
 
 any of
 
-*   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+* [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-*   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+* [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-*   [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
+* [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
 
-*   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
+* [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")

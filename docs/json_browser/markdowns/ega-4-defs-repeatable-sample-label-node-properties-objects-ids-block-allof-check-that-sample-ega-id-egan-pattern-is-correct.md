@@ -26,13 +26,13 @@ unknown ([Check that sample EGA ID (EGAN) pattern is correct](ega-4-defs-repeata
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA sample's ID (EGAN...)](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct-properties-pattern-of-an-ega-samples-id-egan.md))
+* Type: `string` ([Pattern of an EGA sample's ID (EGAN...)](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct-properties-pattern-of-an-ega-samples-id-egan.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct-properties-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/objectId/allOf/1/properties/egaAccession")
+* defined in: [EGA common metadata definitions](ega-4-defs-repeatable-sample-label-node-properties-objects-ids-block-allof-check-that-sample-ega-id-egan-pattern-is-correct-properties-pattern-of-an-ega-samples-id-egan.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sampleLabelAssociation/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 

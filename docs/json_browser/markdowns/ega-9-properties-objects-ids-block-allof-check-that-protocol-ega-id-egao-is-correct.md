@@ -26,13 +26,13 @@ unknown ([Check that protocol EGA ID (EGAO) is correct](ega-9-properties-objects
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA protocol's ID (EGAO...)](ega-4-defs-pattern-of-an-ega-protocols-id-egao.md))
+* Type: `string` ([Pattern of an EGA protocol's ID (EGAO...)](ega-4-defs-pattern-of-an-ega-protocols-id-egao.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA protocol metadata schema](ega-4-defs-pattern-of-an-ega-protocols-id-egao.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId/allOf/1/properties/egaAccession")
+* defined in: [EGA protocol metadata schema](ega-4-defs-pattern-of-an-ega-protocols-id-egao.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.protocol.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 

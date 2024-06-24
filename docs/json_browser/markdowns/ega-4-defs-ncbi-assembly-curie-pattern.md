@@ -16,7 +16,7 @@ The assembly accession starts with a three letter prefix, GCA for GenBank assemb
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-4-defs-compact-uri-curie-pattern.md "check type definition")
+* [Compact URI (CURIE) pattern](ega-4-defs-compact-uri-curie-pattern.md "check type definition")
 
 ## curieNcbiAssemblyPattern Constraints
 

@@ -27,13 +27,13 @@ The general categories (e.g. sequencer) in which assay instruments are categoriz
 
 `assayInstrument`
 
-*   is required
+* is required
 
-*   Type: `string` ([Assay's instrument category](ega-4-defs-assay-technology-properties-assays-instrument-category.md))
+* Type: `string` ([Assay's instrument category](ega-4-defs-assay-technology-properties-assays-instrument-category.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrument")
+* defined in: [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assays-instrument-category.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrument")
 
 ### assayInstrument Type
 
@@ -54,13 +54,13 @@ Platform of the used instrument (e.g. 'Illumina HiSeq 2500'). Given the heteroge
 
 `assayInstrumentPlatform`
 
-*   is required
+* is required
 
-*   Type: `string` ([Assay instrument platform](ega-4-defs-assay-technology-properties-assay-instrument-platform.md))
+* Type: `string` ([Assay instrument platform](ega-4-defs-assay-technology-properties-assay-instrument-platform.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrumentPlatform")
+* defined in: [EGA common metadata definitions](ega-4-defs-assay-technology-properties-assay-instrument-platform.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/assayTechnologyDescriptor/properties/assayInstrumentPlatform")
 
 ### assayInstrumentPlatform Type
 

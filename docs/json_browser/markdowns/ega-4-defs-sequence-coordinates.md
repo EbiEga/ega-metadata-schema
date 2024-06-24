@@ -16,9 +16,9 @@ A position in a map (for example a genetic map), either a single position (e.g. 
 
 any of
 
-*   [Either a single position is given](ega-4-defs-sequence-coordinates-anyof-either-a-single-position-is-given.md "check type definition")
+* [Either a single position is given](ega-4-defs-sequence-coordinates-anyof-either-a-single-position-is-given.md "check type definition")
 
-*   [Or the whole sequence interval](ega-4-defs-sequence-coordinates-anyof-or-the-whole-sequence-interval.md "check type definition")
+* [Or the whole sequence interval](ega-4-defs-sequence-coordinates-anyof-or-the-whole-sequence-interval.md "check type definition")
 
 # sequenceCoordinates Properties
 
@@ -33,13 +33,13 @@ A single 1-based (first base of the assembly unit is 1, not 0) sequence coordina
 
 `singlePosition`
 
-*   is optional
+* is optional
 
-*   Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md))
+* Type: `number` ([Single sequence position](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/singlePosition")
+* defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-single-sequence-position.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/singlePosition")
 
 ### singlePosition Type
 
@@ -65,13 +65,13 @@ The location of a sequence feature in a genome, defined by its start (e.g. 71366
 
 `sequenceInterval`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Sequence interval](ega-4-defs-sequence-coordinates-properties-sequence-interval.md))
+* Type: `object` ([Sequence interval](ega-4-defs-sequence-coordinates-properties-sequence-interval.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval")
+* defined in: [EGA common metadata definitions](ega-4-defs-sequence-coordinates-properties-sequence-interval.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/sequenceCoordinates/properties/sequenceInterval")
 
 ### sequenceInterval Type
 

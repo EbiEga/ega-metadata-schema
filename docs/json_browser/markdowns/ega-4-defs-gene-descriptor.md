@@ -29,13 +29,13 @@ Property uniquely identifying a gene. It consists of a 'termId' and 'termLabel',
 
 `geneIdentifier`
 
-*   is required
+* is required
 
-*   Type: `object` ([Gene identifier](ega-4-defs-gene-descriptor-properties-gene-identifier.md))
+* Type: `object` ([Gene identifier](ega-4-defs-gene-descriptor-properties-gene-identifier.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-gene-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneIdentifier")
+* defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-gene-identifier.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneIdentifier")
 
 ### geneIdentifier Type
 
@@ -43,7 +43,7 @@ Property uniquely identifying a gene. It consists of a 'termId' and 'termLabel',
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## geneDescription
 
@@ -51,13 +51,13 @@ Free-text description of the gene, only to be used to provide additional context
 
 `geneDescription`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Description of the gene](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md))
+* Type: `string` ([Description of the gene](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneDescription")
+* defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-description-of-the-gene.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/geneDescription")
 
 ### geneDescription Type
 
@@ -79,13 +79,13 @@ Array of alternate identifiers for this gene. This array can be used to provide 
 
 `alternateGeneIdentifiers`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Alternate gene identifier item](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md))
+* Type: `object[]` ([Alternate gene identifier item](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers-alternate-gene-identifier-item.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/alternateGeneIdentifiers")
+* defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-alternate-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/alternateGeneIdentifiers")
 
 ### alternateGeneIdentifiers Type
 
@@ -103,13 +103,13 @@ Array of related identifiers (e.g. termIds 'VGNC:97422', 'MGI:2385071', 'RGD:130
 
 `relatedGeneIdentifiers`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Related gene identifier item](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md))
+* Type: `object[]` ([Related gene identifier item](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers-related-gene-identifier-item.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/relatedGeneIdentifiers")
+* defined in: [EGA common metadata definitions](ega-4-defs-gene-descriptor-properties-related-not-equivalent-gene-identifiers.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/geneDescriptor/properties/relatedGeneIdentifiers")
 
 ### relatedGeneIdentifiers Type
 

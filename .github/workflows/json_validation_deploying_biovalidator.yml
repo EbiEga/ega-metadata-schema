@@ -27,7 +27,6 @@ name: |
   (json_validation_deploying_biovalidator.yml)
 
 on:
-  # Executes on any commit to a PR to the "main" branch
   pull_request:
     branches: [main]
 
@@ -38,13 +37,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          # Full git history
           fetch-depth: 0
+
+      - uses: actions/setup-python@v4
+        with:
+          # We'll use the latest version of python from major 3 release
+          # This bit is needed for running the following python script
+          python-version: '3.x'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          # On subsequent runs, if the cache key matches (i.e., operating system and the hash of the requirements.txt file),
+          #   the dependencies are restored from the cache instead of being downloaded and installed again.
+          path: ~/.cache/pip
+          # combines the OS type and a hash of the requirements.txt file: the cache is specific to the dependencies listed
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+          # If there is no cache for this key, we create it at the end of the run, even if there was an error mid-way
+          save-always: true
 
       - name: Clone Biovalidator
           # See https://github.com/elixir-europe/biovalidator#installation
           # We want to test the "main" branch of the project
         run: git clone https://github.com/elixir-europe/biovalidator.git
+
       - name: Install Biovalidator
           # We want to test with the latest Node.js version, but if not, we 
           # could make use of action: https://github.com/actions/setup-node
@@ -59,23 +77,28 @@ jobs:
           #   changes. Therefore we specify the schemas at deployment level (-r)
         run: |
           schemas_dir="./schemas"
+          node biovalidator/src/biovalidator -r "$schemas_dir/*.json" > biovalidator.log 2>&1 &
           
-          node biovalidator/src/biovalidator -r "$schemas_dir/*.json" &
-          
-          # We stop for a few seconds to give the server time
-          sleep 3
-
-      - uses: actions/setup-python@v4
-        with:
-          # We'll use the latest version of python from major 3 release
-          # This bit is needed for running the following python script
-          python-version: '3.x'
+          # Check if the server is up and running, and wait for a few seconds if not
+          for i in {1..10}; do
+            if curl --output /dev/null --silent --head --fail "http://localhost:3020/validate"; then
+              echo "Biovalidator server is up!"
+              break
+            fi
+            echo "Waiting ($i time(s)) for Biovalidator server to start..."
+            sleep 5
+          done
+          if ! curl --output /dev/null --silent --head --fail "http://localhost:3020/validate"; then
+            echo "Biovalidator server failed to start"
+            cat biovalidator.log
+            exit 1
+          fi
 
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           requirements_f="./.github/scripts/requirements.txt"
-          if [ -f "$requirements_f" ]; then pip install -r "$requirements_f"; fi
+          if [ -f "$requirements_f" ]; then pip install -r "$requirements_f" --prefer-binary --verbose; fi
 
       - name: Validate JSON examples
           # Validate all JSON documents against their corresponding schemas
@@ -86,5 +109,4 @@ jobs:
           # The following URL points to the locally deployed server of
           #   Biovalidator
           url="http://localhost:3020/validate"
-
           python3 ./.github/scripts/request_validation.py "$json_ex_dir" "$url"

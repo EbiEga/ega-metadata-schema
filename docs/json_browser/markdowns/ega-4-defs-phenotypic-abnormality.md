@@ -16,7 +16,7 @@ Property to describe any abnormal (i.e. deviation from normal or average) phenot
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # phenotypicAbnormality Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: merged type ([Ontology constraints for this specific termId](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/phenotypicAbnormality/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/phenotypicAbnormality/properties/termId")
 
 ### termId Type
 
@@ -44,9 +44,9 @@ merged type ([Ontology constraints for this specific termId](ega-4-defs-phenotyp
 
 any of
 
-*   [Ontology validation of phenotypic abnormality](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
+* [Ontology validation of phenotypic abnormality](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-ontology-validation-of-phenotypic-abnormality.md "check type definition")
 
-*   [In case the phenotypic abnormality is unknown or there is none](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
+* [In case the phenotypic abnormality is unknown or there is none](ega-4-defs-phenotypic-abnormality-properties-ontology-constraints-for-this-specific-termid-anyof-in-case-the-phenotypic-abnormality-is-unknown-or-there-is-none.md "check type definition")
 
 ### termId Examples
 

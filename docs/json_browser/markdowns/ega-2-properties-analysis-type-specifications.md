@@ -27,13 +27,13 @@ Array of all analysis types applicable to this analysis. Details on how the anal
 
 `analysisTypes`
 
-*   is required
+* is required
 
-*   Type: `string[]` ([Type of analysis](ega-2-properties-analysis-type-specifications-properties-list-of-analysis-types-type-of-analysis.md))
+* Type: `string[]` ([Type of analysis](ega-2-properties-analysis-type-specifications-properties-list-of-analysis-types-type-of-analysis.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-2-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/analysisTypes")
+* defined in: [EGA analysis metadata schema](ega-2-properties-analysis-type-specifications-properties-list-of-analysis-types.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/analysisTypes")
 
 ### analysisTypes Type
 
@@ -51,13 +51,13 @@ Node containing the information of the reference assembly that was used to obtai
 
 `referenceAlignmentDetails`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
+* Type: `object[]` ([NCBI's Assembly descriptor](ega-4-defs-ncbis-assembly-descriptor.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA analysis metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/referenceAlignmentDetails")
+* defined in: [EGA analysis metadata schema](ega-4-defs-reference-assembly-and-sequence-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json#/properties/analysisTypeSpecifications/properties/referenceAlignmentDetails")
 
 ### referenceAlignmentDetails Type
 

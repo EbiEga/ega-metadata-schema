@@ -16,7 +16,7 @@ Node containing different sets of fields that depend on the instrument used for 
 
 all of
 
-*   [If the assay is of type array its specifications will be expected](ega-3-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected.md "check type definition")
+* [If the assay is of type array its specifications will be expected](ega-3-properties-assay-type-specifications-allof-if-the-assay-is-of-type-array-its-specifications-will-be-expected.md "check type definition")
 
 # assayTypeSpecifications Properties
 
@@ -32,13 +32,13 @@ The general categories, either sequencing or array, in which assays are categori
 
 `assayInstrument`
 
-*   is required
+* is required
 
-*   Type: `string` ([Assay type](ega-3-properties-assay-type-specifications-properties-assay-type.md))
+* Type: `string` ([Assay type](ega-3-properties-assay-type-specifications-properties-assay-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-assay-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/assayInstrument")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-assay-type.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/assayInstrument")
 
 ### assayInstrument Type
 
@@ -59,13 +59,13 @@ Node containing the set of fields specific to an assay of type 'array' (i.e. an 
 
 `arrayAssaySpecifications`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Specifications of an array assay](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md))
+* Type: `object` ([Specifications of an array assay](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/arrayAssaySpecifications")
 
 ### arrayAssaySpecifications Type
 
@@ -73,11 +73,11 @@ Node containing the set of fields specific to an assay of type 'array' (i.e. an 
 
 any of
 
-*   [2 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-2-labels-per-array-check.md "check type definition")
+* [2 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-2-labels-per-array-check.md "check type definition")
 
-*   [3 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check.md "check type definition")
+* [3 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-3-labels-per-array-check.md "check type definition")
 
-*   [4 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check.md "check type definition")
+* [4 labels per array check](ega-3-properties-assay-type-specifications-properties-specifications-of-an-array-assay-anyof-4-labels-per-array-check.md "check type definition")
 
 ## sequencingAssaySpecifications
 
@@ -85,13 +85,13 @@ Node containing the set of fields specific to an assay of type 'sequencer' (i.e.
 
 `sequencingAssaySpecifications`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Specifications of a sequencing assay](ega-3-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md))
+* Type: `object` ([Specifications of a sequencing assay](ega-3-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications")
+* defined in: [EGA assay metadata schema](ega-3-properties-assay-type-specifications-properties-specifications-of-a-sequencing-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications")
 
 ### sequencingAssaySpecifications Type
 

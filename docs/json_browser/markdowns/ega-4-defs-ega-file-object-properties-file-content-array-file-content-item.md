@@ -16,7 +16,7 @@ Item describing the type of data a file contains or represents.
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # items Properties
 
@@ -30,13 +30,13 @@ Property containing just the ontology constraints for the file content. Notice t
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-ega-file-object-properties-file-content-array-file-content-item-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-ega-file-object-properties-file-content-array-file-content-item-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-file-content-array-file-content-item-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/fileContent/items/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-ega-file-object-properties-file-content-array-file-content-item-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/fileObject/properties/fileContent/items/properties/termId")
 
 ### termId Type
 

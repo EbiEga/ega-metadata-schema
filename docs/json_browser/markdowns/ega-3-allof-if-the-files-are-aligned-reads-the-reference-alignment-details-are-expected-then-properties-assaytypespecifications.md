@@ -26,13 +26,13 @@ unknown
 
 `sequencingAssaySpecifications`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA assay metadata schema](ega-3-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assaytypespecifications-properties-sequencingassayspecifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications")
+* defined in: [EGA assay metadata schema](ega-3-allof-if-the-files-are-aligned-reads-the-reference-alignment-details-are-expected-then-properties-assaytypespecifications-properties-sequencingassayspecifications.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.assay.json#/allOf/0/then/properties/assayTypeSpecifications/properties/sequencingAssaySpecifications")
 
 ### sequencingAssaySpecifications Type
 

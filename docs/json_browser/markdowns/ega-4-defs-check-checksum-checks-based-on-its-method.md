@@ -16,6 +16,6 @@ This object exists with the only purpose of being a reference of pattern checks 
 
 any of
 
-*   [Checksum pattern check - MD5](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5.md "check type definition")
+* [Checksum pattern check - MD5](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---md5.md "check type definition")
 
-*   [Checksum pattern check - SHA-256](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256.md "check type definition")
+* [Checksum pattern check - SHA-256](ega-4-defs-check-checksum-checks-based-on-its-method-anyof-checksum-pattern-check---sha-256.md "check type definition")

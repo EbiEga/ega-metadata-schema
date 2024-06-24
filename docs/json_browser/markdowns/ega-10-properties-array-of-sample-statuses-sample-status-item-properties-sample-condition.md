@@ -16,7 +16,7 @@ One of the primary conditions under study (CUS). For example: treated with cispl
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # conditionUnderStudy Properties
 
@@ -30,13 +30,13 @@ The term should exist within the [Ontology Lookup Service](https://www.ebi.ac.uk
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: unknown ([Ontology constraints for this specific termId](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/termId")
+* defined in: [EGA sample metadata schema](ega-10-properties-array-of-sample-statuses-sample-status-item-properties-sample-condition-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleStatus/items/properties/conditionUnderStudy/properties/termId")
 
 ### termId Type
 

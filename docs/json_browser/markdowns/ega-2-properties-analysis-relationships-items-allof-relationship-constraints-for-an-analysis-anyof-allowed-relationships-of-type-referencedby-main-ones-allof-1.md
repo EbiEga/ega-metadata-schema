@@ -16,18 +16,18 @@ merged type ([Details](ega-2-properties-analysis-relationships-items-allof-relat
 
 any of
 
-*   [Relationship source: study](ega-4-defs-relationship-source-study.md "check type definition")
+* [Relationship source: study](ega-4-defs-relationship-source-study.md "check type definition")
 
-*   [Relationship source: sample](ega-4-defs-relationship-source-sample.md "check type definition")
+* [Relationship source: sample](ega-4-defs-relationship-source-sample.md "check type definition")
 
-*   [Relationship source: experiment](ega-4-defs-relationship-source-experiment.md "check type definition")
+* [Relationship source: experiment](ega-4-defs-relationship-source-experiment.md "check type definition")
 
-*   [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
+* [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
 
-*   [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
+* [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
 
-*   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
+* [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-*   [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")
+* [Relationship source: protocol](ega-4-defs-relationship-source-protocol.md "check type definition")
 
-*   [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")
+* [Relationship target: analysis](ega-4-defs-relationship-target-analysis.md "check type definition")

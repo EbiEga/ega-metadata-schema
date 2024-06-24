@@ -26,13 +26,13 @@ unknown
 
 `termId`
 
-*   is required
+* is required
 
-*   Type: unknown ([Ontology constraint for 'DNA assay'](ega-1-anyof-if-the-assayed-molecule-is-deoxyribonucleic-acid-then-the-assay-type-must-be-of-dna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-dna-assay.md))
+* Type: unknown ([Ontology constraint for 'DNA assay'](ega-1-anyof-if-the-assayed-molecule-is-deoxyribonucleic-acid-then-the-assay-type-must-be-of-dna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-dna-assay.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-1-anyof-if-the-assayed-molecule-is-deoxyribonucleic-acid-then-the-assay-type-must-be-of-dna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-dna-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/anyOf/0/then/properties/assayType/properties/termId")
+* defined in: [EGA Experiment metadata schema](ega-1-anyof-if-the-assayed-molecule-is-deoxyribonucleic-acid-then-the-assay-type-must-be-of-dna-asay-type-then-properties-assaytype-properties-ontology-constraint-for-dna-assay.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/anyOf/0/then/properties/assayType/properties/termId")
 
 ### termId Type
 

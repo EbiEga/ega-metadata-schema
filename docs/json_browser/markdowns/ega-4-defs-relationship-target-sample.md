@@ -26,13 +26,13 @@ Node to be used as an object type for relationship contraints.
 
 `rTarget`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-sample-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSample/properties/rTarget")
+* defined in: [EGA common metadata definitions](ega-4-defs-relationship-target-sample-properties-rtarget.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTargetSample/properties/rTarget")
 
 ### rTarget Type
 

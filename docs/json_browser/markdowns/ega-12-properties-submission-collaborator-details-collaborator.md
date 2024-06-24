@@ -27,13 +27,13 @@ Property defining the rights of the specified collaborator. Either read-only or 
 
 `collaboratorRights`
 
-*   is required
+* is required
 
-*   Type: `string` ([Collaborator rights](ega-12-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md))
+* Type: `string` ([Collaborator rights](ega-12-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-12-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorRights")
+* defined in: [EGA submission metadata schema](ega-12-properties-submission-collaborator-details-collaborator-properties-collaborator-rights.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorRights")
 
 ### collaboratorRights Type
 
@@ -54,13 +54,13 @@ An object to contain the required metadata to identify and reach an individual o
 
 `collaboratorContactDetails`
 
-*   is required
+* is required
 
-*   Type: `object` ([Contact details](ega-4-defs-contact-details.md))
+* Type: `object` ([Contact details](ega-4-defs-contact-details.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA submission metadata schema](ega-4-defs-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorContactDetails")
+* defined in: [EGA submission metadata schema](ega-4-defs-contact-details.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.submission.json#/properties/additionalCollaborators/items/properties/collaboratorContactDetails")
 
 ### collaboratorContactDetails Type
 
@@ -68,6 +68,6 @@ An object to contain the required metadata to identify and reach an individual o
 
 any of
 
-*   [Either the individual's name is required.](ega-4-defs-contact-details-anyof-either-the-individuals-name-is-required.md "check type definition")
+* [Either the individual's name is required.](ega-4-defs-contact-details-anyof-either-the-individuals-name-is-required.md "check type definition")
 
-*   [Or the institution's name is required.](ega-4-defs-contact-details-anyof-or-the-institutions-name-is-required.md "check type definition")
+* [Or the institution's name is required.](ega-4-defs-contact-details-anyof-or-the-institutions-name-is-required.md "check type definition")

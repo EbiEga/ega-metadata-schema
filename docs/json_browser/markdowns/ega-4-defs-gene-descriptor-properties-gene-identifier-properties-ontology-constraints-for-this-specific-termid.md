@@ -16,13 +16,13 @@ merged type ([Ontology constraints for this specific termId](ega-4-defs-gene-des
 
 any of
 
-*   all of
+* all of
 
-    *   [Compact URI (CURIE) pattern](ega-4-defs-ncbi-gene-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
+  * [Compact URI (CURIE) pattern](ega-4-defs-ncbi-gene-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
 
-*   all of
+* all of
 
-    *   [Compact URI (CURIE) pattern](ega-4-defs-hgnc-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
+  * [Compact URI (CURIE) pattern](ega-4-defs-hgnc-identifier-curie-pattern-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## termId Examples
 

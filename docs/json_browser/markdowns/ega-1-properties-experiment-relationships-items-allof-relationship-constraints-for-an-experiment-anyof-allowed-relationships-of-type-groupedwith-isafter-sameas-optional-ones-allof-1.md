@@ -16,6 +16,6 @@ merged type ([Details](ega-1-properties-experiment-relationships-items-allof-rel
 
 any of
 
-*   [Relationship source: experiment](ega-4-defs-relationship-source-experiment.md "check type definition")
+* [Relationship source: experiment](ega-4-defs-relationship-source-experiment.md "check type definition")
 
-*   [Relationship target: experiment](ega-4-defs-relationship-target-experiment.md "check type definition")
+* [Relationship target: experiment](ega-4-defs-relationship-target-experiment.md "check type definition")

@@ -16,28 +16,28 @@ This object exists with the only purpose of being a reference as a pattern check
 
 any of
 
-*   [Alias and Centername: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
+* [Alias and Centername: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-alias-and-centername-objectid-and-objecttype-check.md "check type definition")
 
-*   [External accession: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
+* [External accession: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-external-accession-objectid-and-objecttype-check.md "check type definition")
 
-*   [Experiment: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
+* [Experiment: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-experiment-objectid-and-objecttype-check.md "check type definition")
 
-*   [Study: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
+* [Study: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-study-objectid-and-objecttype-check.md "check type definition")
 
-*   [Sample: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
+* [Sample: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-sample-objectid-and-objecttype-check.md "check type definition")
 
-*   [Submission: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
+* [Submission: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-submission-objectid-and-objecttype-check.md "check type definition")
 
-*   [Assay: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
+* [Assay: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-assay-objectid-and-objecttype-check.md "check type definition")
 
-*   [Dataset: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
+* [Dataset: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dataset-objectid-and-objecttype-check.md "check type definition")
 
-*   [Analysis: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
+* [Analysis: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-analysis-objectid-and-objecttype-check.md "check type definition")
 
-*   [Policy: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
+* [Policy: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-policy-objectid-and-objecttype-check.md "check type definition")
 
-*   [DAC: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
+* [DAC: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-dac-objectid-and-objecttype-check.md "check type definition")
 
-*   [Individual: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
+* [Individual: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-individual-objectid-and-objecttype-check.md "check type definition")
 
-*   [Protocol: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")
+* [Protocol: objectId and objectType check](ega-4-defs-check-that-the-objectids-accession-pattern-and-objecttype-match-anyof-protocol-objectid-and-objecttype-check.md "check type definition")

@@ -16,4 +16,4 @@ One of the possible alternate gene identifiers for the designated gene. The 'ter
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")

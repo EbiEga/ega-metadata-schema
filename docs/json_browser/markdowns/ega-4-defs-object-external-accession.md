@@ -16,9 +16,9 @@ External accession property defining a reference to an external record in anothe
 
 any of
 
-*   [Either the identifier is needed](ega-4-defs-object-external-accession-anyof-either-the-identifier-is-needed.md "check type definition")
+* [Either the identifier is needed](ega-4-defs-object-external-accession-anyof-either-the-identifier-is-needed.md "check type definition")
 
-*   [Or the reference is needed](ega-4-defs-object-external-accession-anyof-or-the-reference-is-needed.md "check type definition")
+* [Or the reference is needed](ega-4-defs-object-external-accession-anyof-or-the-reference-is-needed.md "check type definition")
 
 # objectExternalAccession Properties
 
@@ -34,13 +34,13 @@ Unique identifier of an external record. Its 'termId' (e.g. 'biosample:SAMEA7616
 
 `objectExternalAccessionIdentifier`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Identifier of the external accession](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md))
+* Type: `object` ([Identifier of the external accession](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionIdentifier")
+* defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-identifier-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionIdentifier")
 
 ### objectExternalAccessionIdentifier Type
 
@@ -48,7 +48,7 @@ Unique identifier of an external record. Its 'termId' (e.g. 'biosample:SAMEA7616
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 ## objectExternalAccessionURI
 
@@ -56,13 +56,13 @@ Full or partial URL/URI of the external accession, for systems to resolve it. Sh
 
 `objectExternalAccessionURI`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([URI of the external accession](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md))
+* Type: `string` ([URI of the external accession](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionURI")
+* defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-uri-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionURI")
 
 ### objectExternalAccessionURI Type
 
@@ -92,13 +92,13 @@ Optional description of the external accession, used to add context to the ident
 
 `objectExternalAccessionDescription`
 
-*   is optional
+* is optional
 
-*   Type: any of the following: `string` or `number` ([Description of the external accession](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md))
+* Type: any of the following: `string` or `number` ([Description of the external accession](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionDescription")
+* defined in: [EGA common metadata definitions](ega-4-defs-object-external-accession-properties-description-of-the-external-accession.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/objectExternalAccession/properties/objectExternalAccessionDescription")
 
 ### objectExternalAccessionDescription Type
 

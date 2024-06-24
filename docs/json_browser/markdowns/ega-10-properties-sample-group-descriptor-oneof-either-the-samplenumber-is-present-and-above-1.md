@@ -27,13 +27,13 @@ unknown ([Either the sampleNumber is present and above 1](ega-10-properties-samp
 
 `sampleGroupBoolean`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1-properties-samplegroupboolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/oneOf/0/properties/sampleGroupBoolean")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1-properties-samplegroupboolean.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/oneOf/0/properties/sampleGroupBoolean")
 
 ### sampleGroupBoolean Type
 
@@ -53,13 +53,13 @@ unknown
 
 `sampleNumber`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1-properties-samplenumber.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/oneOf/0/properties/sampleNumber")
+* defined in: [EGA sample metadata schema](ega-10-properties-sample-group-descriptor-oneof-either-the-samplenumber-is-present-and-above-1-properties-samplenumber.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.sample.json#/properties/sampleGrouping/oneOf/0/properties/sampleNumber")
 
 ### sampleNumber Type
 

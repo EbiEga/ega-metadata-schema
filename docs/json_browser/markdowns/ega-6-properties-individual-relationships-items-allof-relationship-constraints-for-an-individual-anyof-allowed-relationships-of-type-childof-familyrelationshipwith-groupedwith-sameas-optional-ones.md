@@ -16,18 +16,18 @@ merged type ([Allowed relationships of type childOf, familyRelationshipWith, gro
 
 all of
 
-*   any of
+* any of
 
-    *   [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
+  * [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
 
-    *   [Relationship type: familyRelationshipWith](ega-4-defs-relationship-type-familyrelationshipwith.md "check type definition")
+  * [Relationship type: familyRelationshipWith](ega-4-defs-relationship-type-familyrelationshipwith.md "check type definition")
 
-    *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+  * [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-    *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+  * [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-*   any of
+* any of
 
-    *   [Relationship source: individual](ega-4-defs-relationship-source-individual.md "check type definition")
+  * [Relationship source: individual](ega-4-defs-relationship-source-individual.md "check type definition")
 
-    *   [Relationship target: individual](ega-4-defs-relationship-target-individual.md "check type definition")
+  * [Relationship target: individual](ega-4-defs-relationship-target-individual.md "check type definition")

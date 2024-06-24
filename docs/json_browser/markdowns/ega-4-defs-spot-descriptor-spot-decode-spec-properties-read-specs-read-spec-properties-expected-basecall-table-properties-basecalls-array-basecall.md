@@ -29,13 +29,13 @@ When match occurs, the read will be tagged with this group membership.
 
 `readGroupTag`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Read group tag](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-read-group-tag.md))
+* Type: `string` ([Read group tag](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-read-group-tag.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-read-group-tag.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/readGroupTag")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-read-group-tag.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/readGroupTag")
 
 ### readGroupTag Type
 
@@ -51,13 +51,13 @@ Minimum number of matches to trigger identification.
 
 `minMatch`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([Min match](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-min-match.md))
+* Type: `integer` ([Min match](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-min-match.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-min-match.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/minMatch")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-min-match.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/minMatch")
 
 ### minMatch Type
 
@@ -69,13 +69,13 @@ Maximum number of mismatches
 
 `maxMismatch`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([Max mismatch](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-max-mismatch.md))
+* Type: `integer` ([Max mismatch](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-max-mismatch.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-max-mismatch.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/maxMismatch")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-max-mismatch.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/maxMismatch")
 
 ### maxMismatch Type
 
@@ -87,13 +87,13 @@ Where the match should occur. Changes the rules on how minMatch and maxMismatch 
 
 `matchEdge`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Match edge](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-match-edge.md))
+* Type: `string` ([Match edge](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-match-edge.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-match-edge.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/matchEdge")
+* defined in: [EGA common metadata definitions](ega-4-defs-spot-descriptor-spot-decode-spec-properties-read-specs-read-spec-properties-expected-basecall-table-properties-basecalls-array-basecall-properties-match-edge.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/spotDescriptor/items/properties/readSpecs/items/properties/expectedBasecallTable/properties/basecalls/items/properties/matchEdge")
 
 ### matchEdge Type
 

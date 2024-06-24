@@ -16,9 +16,9 @@ Node containing the full description of the policy, whether it is hosted at some
 
 any of
 
-*   [Either the policy reference is given](ega-8-properties-policy-descriptor-anyof-either-the-policy-reference-is-given.md "check type definition")
+* [Either the policy reference is given](ega-8-properties-policy-descriptor-anyof-either-the-policy-reference-is-given.md "check type definition")
 
-*   [Or the policy text is given](ega-8-properties-policy-descriptor-anyof-or-the-policy-text-is-given.md "check type definition")
+* [Or the policy text is given](ega-8-properties-policy-descriptor-anyof-or-the-policy-text-is-given.md "check type definition")
 
 # policyDescriptor Properties
 
@@ -33,13 +33,13 @@ A publicly accessible reference to the policy, where the updated text of the pol
 
 `policyReference`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Reference to the policy](ega-8-properties-policy-descriptor-properties-reference-to-the-policy.md))
+* Type: `string` ([Reference to the policy](ega-8-properties-policy-descriptor-properties-reference-to-the-policy.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor-properties-reference-to-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor/properties/policyReference")
+* defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor-properties-reference-to-the-policy.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor/properties/policyReference")
 
 ### policyReference Type
 
@@ -65,13 +65,13 @@ Text describing in detail the Data Access Agreement (DAA) of the policy.
 
 `policyText`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Policy text](ega-8-properties-policy-descriptor-properties-policy-text.md))
+* Type: `string` ([Policy text](ega-8-properties-policy-descriptor-properties-policy-text.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor-properties-policy-text.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor/properties/policyText")
+* defined in: [EGA policy metadata schema](ega-8-properties-policy-descriptor-properties-policy-text.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json#/properties/policyDescriptor/properties/policyText")
 
 ### policyText Type
 

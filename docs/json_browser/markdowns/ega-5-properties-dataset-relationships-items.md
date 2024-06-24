@@ -16,70 +16,70 @@ merged type ([Details](ega-5-properties-dataset-relationships-items.md))
 
 all of
 
-*   one (and only one) of
+* one (and only one) of
 
-    *   [The source is given (i.e. the target is inferred as the current instance)](ega-4-defs-ega-relationships-object-oneof-the-source-is-given-ie-the-target-is-inferred-as-the-current-instance.md "check type definition")
+  * [The source is given (i.e. the target is inferred as the current instance)](ega-4-defs-ega-relationships-object-oneof-the-source-is-given-ie-the-target-is-inferred-as-the-current-instance.md "check type definition")
 
-    *   [The target is given (i.e. the source is inferred as the current instance)](ega-4-defs-ega-relationships-object-oneof-the-target-is-given-ie-the-source-is-inferred-as-the-current-instance.md "check type definition")
+  * [The target is given (i.e. the source is inferred as the current instance)](ega-4-defs-ega-relationships-object-oneof-the-target-is-given-ie-the-source-is-inferred-as-the-current-instance.md "check type definition")
 
-*   any of
+* any of
 
-    *   all of
+  * all of
 
-        *   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
+    * [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
-        *   any of
+    * any of
 
-            *   [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
+      * [Relationship source: Policy](ega-4-defs-relationship-source-policy.md "check type definition")
 
-            *   [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
+      * [Relationship source: assay](ega-4-defs-relationship-source-assay.md "check type definition")
 
-            *   [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
+      * [Relationship source: analysis](ega-4-defs-relationship-source-analysis.md "check type definition")
 
-            *   [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
+      * [Relationship source: submission](ega-4-defs-relationship-source-submission.md "check type definition")
 
-    *   all of
+  * all of
 
-        *   any of
+    * any of
 
-            *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+      * [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-            *   [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
+      * [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
 
-            *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+      * [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-        *   any of
+    * any of
 
-            *   [Relationship source: dataset](ega-4-defs-relationship-source-dataset.md "check type definition")
+      * [Relationship source: dataset](ega-4-defs-relationship-source-dataset.md "check type definition")
 
-            *   [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
+      * [Relationship target: dataset](ega-4-defs-relationship-target-dataset.md "check type definition")
 
-    *   all of
+  * all of
 
-        *   any of
+    * any of
 
-            *   [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
+      * [Relationship type: childOf](ega-4-defs-relationship-type-childof.md "check type definition")
 
-            *   [Relationship type: familyRelationshipWith](ega-4-defs-relationship-type-familyrelationshipwith.md "check type definition")
+      * [Relationship type: familyRelationshipWith](ega-4-defs-relationship-type-familyrelationshipwith.md "check type definition")
 
-            *   [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
+      * [Relationship type: groupedWith](ega-4-defs-relationship-type-groupedwith.md "check type definition")
 
-            *   [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
+      * [Relationship type: sameAs](ega-4-defs-relationship-type-sameas.md "check type definition")
 
-            *   [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
+      * [Relationship type: referencedBy](ega-4-defs-relationship-type-referencedby.md "check type definition")
 
-            *   [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
+      * [Relationship type: developsFrom](ega-4-defs-relationship-type-developsfrom.md "check type definition")
 
-            *   [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
+      * [Relationship type: memberOf](ega-4-defs-relationship-type-memberof.md "check type definition")
 
-            *   [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
+      * [Relationship type: isAfter](ega-4-defs-relationship-type-isafter.md "check type definition")
 
-        *   any of
+    * any of
 
-            *   [Relationship source: externalAccession](ega-4-defs-relationship-source-externalaccession.md "check type definition")
+      * [Relationship source: externalAccession](ega-4-defs-relationship-source-externalaccession.md "check type definition")
 
-            *   [Relationship source: externalURL](ega-4-defs-relationship-source-externalurl.md "check type definition")
+      * [Relationship source: externalURL](ega-4-defs-relationship-source-externalurl.md "check type definition")
 
-            *   [Relationship target: externalAccession](ega-4-defs-relationship-target-externalaccession.md "check type definition")
+      * [Relationship target: externalAccession](ega-4-defs-relationship-target-externalaccession.md "check type definition")
 
-            *   [Relationship target: externalURL](ega-4-defs-relationship-target-externalurl.md "check type definition")
+      * [Relationship target: externalURL](ega-4-defs-relationship-target-externalurl.md "check type definition")

@@ -16,7 +16,7 @@ The chosen term (e.g. 'Cy3 dye' \[CHEBI:37987]) needs to be a Chemical Entity fr
 
 all of
 
-*   [Ontology term](ega-4-defs-ontology-term.md "check type definition")
+* [Ontology term](ega-4-defs-ontology-term.md "check type definition")
 
 # arrayLabelIdentifier Properties
 
@@ -30,13 +30,13 @@ all of
 
 `termId`
 
-*   is optional
+* is optional
 
-*   Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier-properties-ontology-constraints-for-this-specific-termid.md))
+* Type: unknown ([Ontology constraints for this specific termId](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier-properties-ontology-constraints-for-this-specific-termid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelIdentifier/properties/termId")
+* defined in: [EGA common metadata definitions](ega-4-defs-repeatable-arraylabel-node-properties-array-label-identifier-properties-ontology-constraints-for-this-specific-termid.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/arrayLabel/properties/arrayLabelIdentifier/properties/termId")
 
 ### termId Type
 

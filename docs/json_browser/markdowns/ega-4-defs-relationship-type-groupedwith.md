@@ -26,13 +26,13 @@ Node to be used as a relationship type for relationship contraints.
 
 `rType`
 
-*   is required
+* is required
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-groupedwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeGroupedWith/properties/rType")
+* defined in: [EGA common metadata definitions](ega-4-defs-relationship-type-groupedwith-properties-rtype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/rTypeGroupedWith/properties/rType")
 
 ### rType Type
 

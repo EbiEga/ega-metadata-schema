@@ -27,13 +27,13 @@ unknown ([FASTQ-sanger Filename patternCheck](ega-4-defs-check-filetype-checks-b
 
 `filetype`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/62/properties/filetype")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/62/properties/filetype")
 
 ### filetype Type
 
@@ -53,13 +53,13 @@ This object exists to hold the filename pattern that a 'FASTQ-SANGER' filetypeId
 
 `filename`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Filename pattern of a FASTQ-SANGER file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-patterncheck-properties-filename-pattern-of-a-fastq-sanger-file.md))
+* Type: `string` ([Filename pattern of a FASTQ-SANGER file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-patterncheck-properties-filename-pattern-of-a-fastq-sanger-file.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-patterncheck-properties-filename-pattern-of-a-fastq-sanger-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/62/properties/filename")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-fastq-sanger-filename-patterncheck-properties-filename-pattern-of-a-fastq-sanger-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/62/properties/filename")
 
 ### filename Type
 

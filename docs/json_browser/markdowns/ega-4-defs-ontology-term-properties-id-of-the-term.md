@@ -16,7 +16,7 @@ The identifier of an ontology term must be in CURIE format (check property 'curi
 
 all of
 
-*   [Compact URI (CURIE) pattern](ega-4-defs-ontology-term-properties-id-of-the-term-allof-compact-uri-curie-pattern.md "check type definition")
+* [Compact URI (CURIE) pattern](ega-4-defs-ontology-term-properties-id-of-the-term-allof-compact-uri-curie-pattern.md "check type definition")
 
 ## termId Constraints
 

@@ -26,13 +26,13 @@ unknown ([Check that study EGA ID (EGAS) is correct](ega-11-properties-objects-i
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA study's ID (EGAS...)](ega-4-defs-pattern-of-an-ega-studys-id-egas.md))
+* Type: `string` ([Pattern of an EGA study's ID (EGAS...)](ega-4-defs-pattern-of-an-ega-studys-id-egas.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA study metadata schema](ega-4-defs-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties/egaAccession")
+* defined in: [EGA study metadata schema](ega-4-defs-pattern-of-an-ega-studys-id-egas.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.study.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 

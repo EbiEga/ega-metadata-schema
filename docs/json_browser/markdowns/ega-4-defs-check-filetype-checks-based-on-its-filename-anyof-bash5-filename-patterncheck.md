@@ -27,13 +27,13 @@ unknown ([BAS.H5 Filename patternCheck](ega-4-defs-check-filetype-checks-based-o
 
 `filetype`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/53/properties/filetype")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-patterncheck-properties-filetype.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/53/properties/filetype")
 
 ### filetype Type
 
@@ -53,13 +53,13 @@ This object exists to hold the filename pattern that a 'BAS.H5' filetypeId would
 
 `filename`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Filename pattern of a BAS.H5 file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-patterncheck-properties-filename-pattern-of-a-bash5-file.md))
+* Type: `string` ([Filename pattern of a BAS.H5 file](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-patterncheck-properties-filename-pattern-of-a-bash5-file.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-patterncheck-properties-filename-pattern-of-a-bash5-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/53/properties/filename")
+* defined in: [EGA common metadata definitions](ega-4-defs-check-filetype-checks-based-on-its-filename-anyof-bash5-filename-patterncheck-properties-filename-pattern-of-a-bash5-file.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.common-definitions.json#/$defs/filenameFiletypePatternCheck/anyOf/53/properties/filename")
 
 ### filename Type
 

@@ -26,13 +26,13 @@ unknown ([Check that experiment EGA ID (EGAX) is correct](ega-1-properties-objec
 
 `egaAccession`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Pattern of an EGA experiment's ID (EGAX...)](ega-4-defs-pattern-of-an-ega-experiments-id-egax.md))
+* Type: `string` ([Pattern of an EGA experiment's ID (EGAX...)](ega-4-defs-pattern-of-an-ega-experiments-id-egax.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [EGA Experiment metadata schema](ega-4-defs-pattern-of-an-ega-experiments-id-egax.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId/allOf/1/properties/egaAccession")
+* defined in: [EGA Experiment metadata schema](ega-4-defs-pattern-of-an-ega-experiments-id-egax.md "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.experiment.json#/properties/objectId/allOf/1/properties/egaAccession")
 
 ### egaAccession Type
 
