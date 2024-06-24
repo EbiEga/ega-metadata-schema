@@ -43,11 +43,22 @@ jobs:
           # This bit is needed for running the following python script
           python-version: '3.x'
 
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          # On subsequent runs, if the cache key matches (i.e., operating system and the hash of the requirements.txt file),
+          #   the dependencies are restored from the cache instead of being downloaded and installed again.
+          path: ~/.cache/pip
+          # combines the OS type and a hash of the requirements.txt file: the cache is specific to the dependencies listed
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           requirements_f="./.github/scripts/requirements.txt"
-          if [ -f "$requirements_f" ]; then pip install -r "$requirements_f"; fi
+          if [ -f "$requirements_f" ]; then pip install -r "$requirements_f" --prefer-binary --verbose; fi
 
       - name: Run version modification check
         id: run-version-modification-check
