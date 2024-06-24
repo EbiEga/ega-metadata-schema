@@ -67,7 +67,7 @@ jobs:
         run: |          
           script_path="./.github/scripts/check_project_version_change.py"
           python3 "$script_path" --git_var_name "VERSION_CHANGE" --verbose
-          echo "- The version change is: $VERSION_CHANGE"
+          echo "- The version change is: ${{ env.VERSION_CHANGE }}"
         
         # The output of this previous script will determine if changes are not "major" (i.e. minor or patch), and therefore retrocompatibility
         #   has to be tested through JSON Schema validation (combination of old and new schemas with old and new examples).
@@ -79,8 +79,10 @@ jobs:
         run: |
           if [[ "${{ env.VERSION_CHANGE }}" != "Major" ]]; then
             echo "version_needs_to_be_checked=True" >> $GITHUB_ENV
+            echo "- Since the changes are not 'Major', we will make sure by testing retrocompatibility"
           else
             echo "version_needs_to_be_checked=False" >> $GITHUB_ENV
+            echo "- Since the changes are 'Major', there is no need to test retrocompatibility"
           fi
 
       - name: Clone Biovalidator
