@@ -103,6 +103,13 @@ jobs:
           # Check:
           #   github.com/EbiEga/ega-metadata-schema/tree/main/.github/scripts
         run: |
+          #!
+          if curl --output /dev/null --silent --head --fail "http://localhost:3020/validate"; then
+            echo "Biovalidator server is up!"
+          else
+            echo "Biovalidator went down"
+          fi
+          #!
           json_ex_dir="./examples/json_validation_tests"
           # The following URL points to the locally deployed server of
           #   Biovalidator
