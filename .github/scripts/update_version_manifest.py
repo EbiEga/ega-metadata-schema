@@ -14,7 +14,7 @@ from utils.string_manipulation import is_semantic_version, \
 from utils.json_validation import validate_json
 
 # Script used to update the version manifest (./docs/releases) with the versions of the JSON schemas. For further details, please check:
-#   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/biovalidator_benchmarks
+#   https://github.com/EbiEga/ega-metadata-schema/tree/main/docs/releases
 
 # --------- #
 # Handling arguments
