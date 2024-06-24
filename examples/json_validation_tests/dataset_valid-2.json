@@ -1,0 +1,55 @@
+{
+    "data": {
+        "DATASETS": [
+            {
+                "DATASET": {
+                    "TITLE": "Example Whole Genome Dataset",
+                    "DESCRIPTION": "This dataset contains whole genome sequencing data...",
+                    "DATASET_TYPE": [
+                        "Whole genome sequencing"
+                    ],
+                    "RUN_REF": [
+                        {
+                            "accession": "EGAR00000000001"
+                        },
+                        {
+                            "refname": "run2",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run3",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run4",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run5",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run6",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run7",
+                            "refcenter": "EGA-TEST"
+                        },
+                        {
+                            "refname": "run8",
+                            "refcenter": "EGA-TEST"
+                        }
+                    ],
+                    "POLICY_REF": {
+                        "refname": "policy1",
+                        "refcenter": "EGA-TEST"
+                    }
+                }
+            }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.dataset.json"
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "data": {
+        "ANALYSIS_SET": [
+            {
+                "ANALYSIS": {
+                    "alias": "Example_Transcriptome_Assembly",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "analysis_date": "2024-06-18T12:00:00Z",
+                    "analysis_center": "EBI-TEST",
+                    "TITLE": "Example Transcriptome Assembly",
+                    "DESCRIPTION": "This analysis involves the assembly of transcriptome data.",
+                    "STUDY_REF": [
+                        {
+                            "refname": "Study_Trans_Assembly",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "SAMPLE_REF": [
+                        {
+                            "refname": "Sample_Trans_Assembly",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "EXPERIMENT_REF": [
+                        {
+                            "refname": "Exp_Trans_Assembly",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "RUN_REF": [
+                        {
+                            "refname": "Run_Trans_Assembly",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "ANALYSIS_TYPE": {
+                        "TRANSCRIPTOME_ASSEMBLY": {
+                            "NAME": "Trans_Assembly_V1",
+                            "PROGRAM": "Trinity",
+                            "PLATFORM": "Illumina",
+                            "TPA": true,
+                            "AUTHORS": [
+                                "John Doe",
+                                "Jane Smith"
+                            ],
+                            "ADDRESS": "1234 Research Lab, EBI-TEST",
+                            "TYPE": "isolate"
+                        }
+                    },
+                    "FILES": [
+                        {
+                            "FILE": {
+                                "filename": "analysis/trans_assembly.fasta",
+                                "filetype": "fasta",
+                                "checksum_method": "MD5",
+                                "checksum": "1234567890abcdef1234567890abcdef",
+                                "unencrypted_checksum": "abcdef1234567890abcdef1234567890"
+                            }
+                        }
+                    ],
+                    "ANALYSIS_ATTRIBUTES": [
+                        {
+                            "ANALYSIS_ATTRIBUTE": {
+                                "TAG": "Analysis protocol",
+                                "VALUE": "https://example.com/protocols/trans_assembly"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.analysis.json"
+    }
+}

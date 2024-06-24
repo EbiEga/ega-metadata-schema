@@ -1,152 +1,112 @@
 {
     "data": {
-        "analysisAttributes": [
+        "ANALYSIS_SET": [
             {
-                "tag": "sub_project",
-                "value": "CB4-1UD"
-            }
-        ],
-        "analysisFiles": [
-            {
-                "checksumMethod": "MD5",
-                "encryptedChecksum": "c6779ec2960296ed9a04f08d67fa4415",
-                "filename": "sequence_variation.vcf",
-                "filetype": "VCF",
-                "unencryptedChecksum": "9a4249e4b0538b9789c5d7f25d6342f0"
-            },
-            {
-                "checksumMethod": "MD5",
-                "encryptedChecksum": "d92463599ed4548cfa4fff55c1b48d7e",
-                "filename": "analysis_script.py",
-                "filetype": "PY",
-                "unencryptedChecksum": "e8c111e482c9ca49967497fecd988fe9"
-            }
-        ],
-        "analysisRelationships": [
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAS00002045411"
+                "ANALYSIS": {
+                    "alias": "Example!_D13_Liver_treatment_XX",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "analysis_date": "2001-12-17T09:30:47Z",
+                    "analysis_center": "EBI-TEST",
+                    "TITLE": "Example!_Reference alignment of liver from D13 using treatment X",
+                    "DESCRIPTION": "Example!_Reference alignment related to the obesity scoop, using compound X over samples from liver_D13 project",
+                    "STUDY_REF": [
+                        {
+                            "refname": "Human Microbiome Project SP56J",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "SAMPLE_REF": [
+                        {
+                            "refname": "HG03464",
+                            "refcenter": "EBI-TEST"
+                        },
+                        {
+                            "refname": "HG03465",
+                            "refcenter": "EBI-TEST",
+                            "label": "Treated for a longer time"
+                        },
+                        {
+                            "refname": "HG03463",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "EXPERIMENT_REF": [
+                        {
+                            "refname": "BM_15day_Africa-RG50002",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "RUN_REF": [
+                        {
+                            "refname": "Run_for_1000Genomes",
+                            "refcenter": "EBI-TEST"
+                        }
+                    ],
+                    "ANALYSIS_REF": [
+                        {
+                            "refname": "D12_Liver_treatment_Y",
+                            "refcenter": "EBI-TEST",
+                            "label": "Previous analysis"
+                        }
+                    ],
+                    "ANALYSIS_TYPE": {
+                        "REFERENCE_ALIGNMENT": {
+                            "ASSEMBLY": {
+                                "STANDARD": {
+                                    "refname": "GRCh37",
+                                    "accession": "GCA_000001405.1"
+                                }
+                            },
+                            "SEQUENCE": [
+                                {
+                                    "accession": "CM000663.1",
+                                    "label": "chr1"
+                                },
+                                {
+                                    "accession": "CM000664.1",
+                                    "label": "chr2"
+                                },
+                                {
+                                    "accession": "CM000665.1",
+                                    "label": "chr3"
+                                }
+                            ]
+                        }
                     },
-                    "objectType": "study"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rTarget": {
-                    "objectId": {
-                        "egaAccession": "EGAZ00001051423"
-                    },
-                    "objectType": "analysis"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAX00001051423"
-                    },
-                    "objectType": "experiment"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "alias": "Genome indexing protocol",
-                        "egaAccession": "EGAO00001031671"
-                    },
-                    "objectType": "protocol"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "alias": "Read mapping protocol",
-                        "egaAccession": "EGAO00001031672"
-                    },
-                    "objectType": "protocol"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rLabel": "Differed from the general protocol by using parameters X and Y with values ...",
-                "rSource": {
-                    "objectId": {
-                        "alias": "Variant calling protocol",
-                        "egaAccession": "EGAO00001031673"
-                    },
-                    "objectType": "protocol"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAB00002045411"
-                    },
-                    "objectType": "submission"
-                },
-                "rType": "referencedBy"
-            }
-        ],
-        "analysisTypeSpecifications": {
-            "analysisTypes": [
-                "sequence variation",
-                "phenotype characterization"
-            ],
-            "referenceAlignmentDetails": [
-                {
-                    "ncbiAssembly": {
-                        "termId": "assembly:GCA_000001405.29",
-                        "termLabel": "GRCh38.p14"
-                    }
-                }
-            ]
-        },
-        "objectDescription": "Sequenced reads of 120 human patients (79 controls vs 41 cases) were aligned against the human referenced and then extracted sequence variation... ...VCF files were compared along patients' clinical histories.",
-        "objectId": {
-            "alias": "Sequencing_analysis_13",
-            "centerName": "EBI-TEST"
-        },
-        "objectTitle": "Example VCF analysis",
-        "schemaDescriptor": {
-            "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json",
-            "objectSchemaVersion": "0.0.0",
-            "objectType": "analysis"
-        },
-        "targetedLoci": [
-            {
-                "lociDescriptor": [
-                    {
-                        "geneDescriptor": {
-                            "geneIdentifier": {
-                                "termId": "HGNC:11998",
-                                "termLabel": "TP53"
+                    "FILES": [
+                        {
+                            "FILE": {
+                                "filename": "analysis/D13_liver.cram",
+                                "filetype": "cram",
+                                "checksum_method": "MD5",
+                                "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+                                "unencrypted_checksum": "e4d909c290d0fb1ca068ffaddf22cbd0"
                             }
                         },
-                        "locusAdditionalDescription": "Variation within the VCF corresponds to TP53 variation among patients."
-                    }
-                ],
-                "organismDescriptor": {
-                    "organismTaxon": {
-                        "termId": "NCBITaxon:9606",
-                        "termLabel": "homo sapiens"
-                    },
-                    "commonName": "human"
+                        {
+                            "FILE": {
+                                "filename": "analysis/D13_liver.crai",
+                                "filetype": "crai",
+                                "checksum_method": "MD5",
+                                "checksum": "298ee70555532679d7c1f91b5dd07aef",
+                                "unencrypted_checksum": "e609bc52c035ff1a62cdba0f0689889j"
+                            }
+                        }
+                    ],
+                    "ANALYSIS_ATTRIBUTES": [
+                        {
+                            "ANALYSIS_ATTRIBUTE": {
+                                "TAG": "Analysis protocol",
+                                "VALUE": "https://www.protocols.view/yourprotocol"
+                            }
+                        }
+                    ]
                 }
             }
-        ],
-        "typesOfInputData": [
-            "genomic data"
-        ],
-        "typesOfOutputData": [
-            "processed sequencing data"
         ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.analysis.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.analysis.json"
     }
 }

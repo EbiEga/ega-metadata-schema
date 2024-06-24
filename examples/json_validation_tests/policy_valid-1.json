@@ -1,71 +1,50 @@
 {
     "data": {
-        "duoCodes": [
+        "POLICY_SET": [
             {
-                "termId": "DUO:0000046",
-                "termLabel": "non-commercial use only"
-            },
-            {
-                "termId": "DUO:0000028",
-                "termLabel": "institution specific restriction"
-            },
-            {
-                "termId": "DUO:0000032",
-                "termLabel": "population research"
-            }
-        ],
-        "objectId": {
-            "alias": "my-cancer-policy",
-            "centerName": "EBI-TEST"
-        },
-        "objectTitle": "EBI test case-control policy for cancer datasets",
-        "policyAttributes": [
-            {
-                "tag": "Associated project ID",
-                "value": "X33981-DGH"
-            }
-        ],
-        "policyDescriptor": {
-            "policyReference": "https://ega-archive.org/submission/dac/documentation",
-            "policyText": "The data is fully available upon request with the data-access committee of this study."
-        },
-        "policyRelationships": [
-            {
-                "rTarget": {
-                    "objectId": {
-                        "egaAccession": "EGAD00002043982"
+                "POLICY": {
+                    "alias": "Example!_Human_genomicData_policy",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "TITLE": "Example!_Access policy to the human genomic data from Project F0094_2",
+                    "DAC_REF": {
+                        "accession": "EGAC00001000084",
+                        "refcenter": "ENA"
                     },
-                    "objectType": "dataset"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rTarget": {
-                    "objectId": {
-                        "egaAccession": "EGAD00004543981"
-                    },
-                    "objectType": "dataset"
-                },
-                "rType": "referencedBy"
-            },
-            {
-                "rSource": {
-                    "objectId": {
-                        "egaAccession": "EGAB00002045411"
-                    },
-                    "objectType": "submission"
-                },
-                "rType": "referencedBy"
+                    "POLICY_FILE": "http://docs.icgc.org/portal/access",
+                    "DATA_USES": [
+                        {
+                            "DATA_USE": {
+                                "ontology": "DUO",
+                                "code": "0000014",
+                                "version": "2019-01-07",
+                                "URL": "https://www.ebi.ac.uk/ols/ontologies/duo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FDUO_0000026"
+                            }
+                        }
+                    ],
+                    "POLICY_LINKS": [
+                        {
+                            "POLICY_LINK": {
+                                "URL_LINK": {
+                                    "LABEL": "ICGC Data Access Agreements",
+                                    "URL": "http://www.icgc.org"
+                                }
+                            }
+                        }
+                    ],
+                    "POLICY_ATTRIBUTES": [
+                        {
+                            "POLICY_ATTRIBUTE": {
+                                "TAG": "ENA-SUBMISSION-TOOL",
+                                "VALUE": "SRA-Webin"
+                            }
+                        }
+                    ]
+                }
             }
-        ],
-        "schemaDescriptor": {
-            "commonSchemaVersion": "0.0.0",
-            "describedBySchemaUri": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json",
-            "objectSchemaVersion": "0.0.0",
-            "objectType": "policy"
-        }
+        ]
     },
     "schema": {
-        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/main/schemas/EGA.policy.json"
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.policy.json"
     }
 }

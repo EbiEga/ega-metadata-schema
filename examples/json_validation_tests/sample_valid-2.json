@@ -1,0 +1,75 @@
+{
+    "data": {
+        "SAMPLE_SET": [
+            {
+                "SAMPLE": {
+                    "alias": "Sample_123",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "TITLE": "Sample from a human patient",
+                    "SAMPLE_NAME": {
+                        "TAXON_ID": 9606,
+                        "SCIENTIFIC_NAME": "Homo sapiens",
+                        "COMMON_NAME": "human",
+                        "display_name": "human"
+                    },
+                    "DESCRIPTION": "Sample from a human patient with a specific condition",
+                    "SAMPLE_LINKS": [
+                        {
+                            "SAMPLE_LINK": {
+                                "URL_LINK": {
+                                    "LABEL": "Sample Information",
+                                    "URL": "https://example.com/sample-info"
+                                }
+                            }
+                        }
+                    ],
+                    "SAMPLE_ATTRIBUTES": [
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "condition",
+                                "VALUE": "disease XYZ"
+                            }
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "age",
+                                "VALUE": "45",
+                                "UNITS": "years"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "SAMPLE": {
+                    "alias": "Sample_456",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "TITLE": "Blood Sample X",
+                    "SAMPLE_NAME": {
+                        "TAXON_ID": 3702
+                    },
+                    "DESCRIPTION": "Blood sample from the model tissue",
+                    "SAMPLE_ATTRIBUTES": [
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "collection_date",
+                                "VALUE": "2023-05-15"
+                            }
+                        },
+                        {
+                            "SAMPLE_ATTRIBUTE": {
+                                "TAG": "collection_location",
+                                "VALUE": "Greenhouse, Cambridge"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.sample.json"
+    }
+}
