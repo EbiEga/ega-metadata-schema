@@ -7,7 +7,6 @@
     "definitions": {
         "NameType": {
             "type": "object",
-            "additionalProperties": false,
             "properties": {
                 "identifier": {
                     "type": "string"
@@ -21,14 +20,15 @@
         "QualifiedNameType": {
             "type": "object",
             "required": [
-                "NameType",
                 "namespace"
             ],
             "additionalProperties": false,
-            "properties": {
-                "NameType": {
+            "allOf": [
+                {
                     "$ref": "#/definitions/NameType"
-                },
+                }
+            ],
+            "properties": {
                 "namespace": {
                     "type": "string",
                     "description": "A string value that constrains the domain of named identifiers (namespace)."
