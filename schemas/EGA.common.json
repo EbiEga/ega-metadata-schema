@@ -22,7 +22,6 @@
             "required": [
                 "namespace"
             ],
-            "additionalProperties": false,
             "allOf": [
                 {
                     "$ref": "#/definitions/NameType"
