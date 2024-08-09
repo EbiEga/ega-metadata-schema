@@ -581,7 +581,9 @@ class JSONManipulationFormatter:
             )
             # Notice how we are intentionally overwritting "describedBySchemaUri" with "$ref" from "schema"
             self.current_json["schema"]["$ref"] = modified_url
-            self.current_json["data"]["schemaDescriptor"]["describedBySchemaUri"] = modified_url
+            schema_node_name = "schemaDescriptor"
+            if schema_node_name in self.current_json.get("data", {}):
+                self.current_json["data"][schema_node_name]["describedBySchemaUri"] = modified_url
             return modified_url
 
 class CreateObjectSet:

@@ -1,0 +1,130 @@
+{
+    "data": {
+        "RUN_SET": [
+            {
+                "RUN": {
+                    "alias": "Example!_DJ0001_13",
+                    "center_name": "EBI-TEST",
+                    "broker_name": "EGA",
+                    "run_date": "2009-07-20T23:21:00Z",
+                    "run_center": "EBI-TEST",
+                    "TITLE": "Example!_Illumina Sequencing of HG3125 NBRC 101655 - random whole genome shotgun library",
+                    "EXPERIMENT_REF": {
+                        "refname": "Experiment_NA415001",
+                        "refcenter": "EBI-TEST"
+                    },
+                    "SPOT_DESCRIPTOR": [
+                        {
+                            "SPOT_LENGTH": 15,
+                            "READ_SPECS": [
+                                {
+                                    "READ_INDEX": 0,
+                                    "READ_LABEL": "F",
+                                    "READ_CLASS": "Application Read",
+                                    "READ_TYPE": "Forward",
+                                    "RELATIVE_ORDER": {
+                                        "follows_read_index": 0,
+                                        "precedes_read_index": 1
+                                    },
+                                    "BASE_COORD": 10,
+                                    "EXPECTED_BASECALL_TABLE": {
+                                        "default_length": 100,
+                                        "base_coord": 99,
+                                        "BASECALLS": [
+                                            {
+                                                "read_group_tag": "TAG",
+                                                "min_match": 5,
+                                                "max_mismatch": 3,
+                                                "match_edge": "full"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "PLATFORM": {
+                        "ILLUMINA": {
+                            "INSTRUMENT_MODEL": "HiSeq X Five"
+                        }
+                    },
+                    "PROCESSING": {
+                        "PIPELINE": [
+                            {
+                                "PIPE_SECTION": {
+                                    "STEP_INDEX": "1",
+                                    "PREV_STEP_INDEX": [
+                                        "0",
+                                        "0.2"
+                                    ],
+                                    "PROGRAM": "Test program",
+                                    "VERSION": "v1.0.0",
+                                    "NOTES": "Test notes",
+                                    "section_name": "The first chunk of test pipeline"
+                                }
+                            }
+                        ],
+                        "DIRECTIVES": {
+                            "SAMPLE_DEMUX_DIRECTIVE": "leave_as_pool"
+                        }
+                    },
+                    "RUN_TYPE": {
+                        "REFERENCE_ALIGNMENT": {
+                            "ASSEMBLY": {
+                                "STANDARD": {
+                                    "refname": "GRCh38",
+                                    "accession": "GCF_000001405.26"
+                                }
+                            }
+                        }
+                    },
+                    "DATA_BLOCK": {
+                        "FILES": [
+                            {
+                                "FILE": {
+                                    "filename": "runs/DJ0001_13/Example_DJ0001_13.cram",
+                                    "filetype": "cram",
+                                    "checksum_method": "MD5",
+                                    "checksum": "298ee70555532679d7c1f91b5dd07aef",
+                                    "unencrypted_checksum": "e609bc52c035ff1a62cdba0f0689889j",
+                                    "quality_scoring_system": "phred",
+                                    "quality_encoding": "ascii",
+                                    "ascii_offset": "!"
+                                }
+                            },
+                            {
+                                "FILE": {
+                                    "filename": "runs/DJ0001_13/Example_DJ0001_14.cram",
+                                    "filetype": "cram",
+                                    "checksum_method": "MD5",
+                                    "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+                                    "unencrypted_checksum": "e4d909c290d0fb1ca068ffaddf22cbd0",
+                                    "quality_scoring_system": "phred",
+                                    "quality_encoding": "ascii",
+                                    "ascii_offset": "!"
+                                }
+                            }
+                        ]
+                    },
+                    "RUN_ATTRIBUTES": [
+                        {
+                            "RUN_ATTRIBUTE": {
+                                "TAG": "flowcell_barcode",
+                                "VALUE": "C3JV3ACXY"
+                            }
+                        },
+                        {
+                            "RUN_ATTRIBUTE": {
+                                "TAG": "product_order",
+                                "VALUE": "PDO-2711991-X"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "schema": {
+        "$ref": "https://raw.githubusercontent.com/EbiEga/ega-metadata-schema/v1.0.0/schemas/EGA.run.json"
+    }
+}
