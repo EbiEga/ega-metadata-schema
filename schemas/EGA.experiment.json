@@ -246,10 +246,6 @@
                             "properties": {
                                 "PAIRED": {
                                     "type": "object",
-                                    "required": [
-                                        "NOMINAL_LENGTH",
-                                        "NOMINAL_SDEV"
-                                    ],
                                     "properties": {
                                         "NOMINAL_LENGTH": {
                                             "type": "integer",
